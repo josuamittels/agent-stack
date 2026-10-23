@@ -1,0 +1,80 @@
+---
+name: translate
+description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
+version: "0.1.0"
+updated: "2026-10-24"
+author:
+  - "Josua Mittelstaedt"
+references:
+  - "Kostja Zhang"
+  - "Ghaida Zahran"
+type: "skill"
+status: "draft"
+---
+
+# Translate
+
+Prepare translation context, then use natural-writing to produce fluent target-language prose. Default to faithful localization: preserve meaning and intent while expressing them as the intended reader would naturally encounter them.
+
+## Scope and inputs
+
+Use for translation, localization, requested transcreation, and script conversion within a translation task. This skill does not own market rollout, interface redesign, publishing, or unrelated research workflows.
+
+Require source text and a determinable target language. Infer the source language where clear. Ask for missing source material or a missing target language. Natural-writing's English guidance fallback does not choose the output language.
+
+Use supplied locale, audience, purpose, medium, tone, style, examples, terminology, and length constraints. These contextual inputs are optional. Infer reasonable defaults from the task, and ask only when ambiguity materially changes the translation. Do not infer a country or a form of address from language alone when the distinction matters.
+
+Read the relevant source material in context. Resolve consequential contradictions or ambiguous passages before choosing an interpretation. Distinguish ambiguity deliberately present in the source from confusion that needs clarification.
+
+## Prepare an internal translation brief
+
+Before invoking natural-writing, establish:
+
+- The source's explicit meaning, relevant implications, purpose, and intended response or action.
+- Its register, emotional intensity, speaker-reader relationship, humor, rhetorical devices, and degree of directness.
+- The audience's likely knowledge and the context needed to understand unfamiliar references.
+- Target language and locale, requested style, medium, and space constraints.
+- Approved terminology, established names, untranslated terms, and protected technical elements.
+- Facts, qualifications, commitments, quantities, and other meanings that must remain intact.
+- Idioms, cultural references, formats, and script choices needing adaptation.
+
+Keep the brief internal unless requested. Distinguish supplied facts from inferred context. Do not manufacture cultural preferences or turn national stereotypes into writing requirements. Reuse an existing glossary or style brief rather than creating competing versions.
+
+## Choose the treatment
+
+| Treatment | Application |
+| --- | --- |
+| Faithful localization | Default. Recast syntax, idioms, politeness, and phrasing to preserve meaning, register, and intended effect. |
+| Direct translation | Use when meaning transfers cleanly or exact correspondence matters. Avoid unnatural source-language syntax. |
+| Transcreation | Use only when explicitly requested. Permit broader changes to slogans, humor, or framing within the authorized scope while preserving factual claims and the underlying promise. |
+| Transliteration | Treat script conversion separately from translation. Use established target-language spellings or an appropriate consistent convention where needed. |
+
+Prefer an equivalent idiom when it preserves meaning and register. Otherwise express the meaning naturally. Do not force a saying, joke, or cultural replacement into a passage that does not need it.
+
+Preserve names and brands unless an established localized form or explicit instruction supports a change. Do not automatically romanize text. For transliteration, honor a supplied convention and distinguish phonetic rendering from translation of meaning.
+
+Localize presentation of dates, numbers, units, currencies, and forms of address without silently changing underlying values. Currency conversion, substituted locations, altered examples, market-specific offers, and changed legal obligations require an established basis or explicit direction. Do not invent exchange rates, local evidence, or product availability.
+
+## Invoke natural-writing
+
+Before producing target prose, require [natural-writing](../natural-writing/SKILL.md). Pass the original source and internal brief, including the target locale, permitted adaptations, terminology, protected elements, and fidelity requirements.
+
+Have natural-writing compose and review the target-language text using its mandatory language-guideline selection and fallback. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
+
+Use the host's invocation mechanism when available. Otherwise read and apply the skill in the current context. Do not claim a separate invocation occurred when it did not. If natural-writing or its required usable guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
+
+Explicitly identify prose authorized for translation, including quoted passages. Distinguish it from citations, code, identifiers, interpolation variables, link destinations, and other elements that must remain exact. Preserve attribution and distinguish translated quotations from original-language wording where necessary.
+
+## Review fidelity and deliver
+
+After natural-writing returns, compare the finished translation with the original:
+
+- Check completeness, negation, agency, chronology, certainty, scope, numbers, names, claims, and intended action.
+- Check terminology, register, locale, idiomatic phrasing, cultural appropriateness, and unintended additions.
+- Preserve markup, interpolation variables, link destinations, code, and required section correspondence.
+- For UI text, preserve action and state meaning, grammatical agreement, plural handling, and supplied length constraints. Do not change placeholders or remove necessary meaning to make a string fit.
+- Keep legal, safety, and technically exact material within its semantic limits. Surface unresolved consequential ambiguity instead of choosing a convenient interpretation.
+
+Route necessary prose revisions through natural-writing, then repeat the fidelity comparison on the final text. Fluency alone does not establish accuracy.
+
+Return the translation in the requested format. Include explanations, alternatives, or adaptation notes only when requested or necessary to resolve a material ambiguity. Report native-speaker review or rendered-context verification only when it actually occurred. Do not imply specialist approval or release readiness, or represent generated text as human-authored.
