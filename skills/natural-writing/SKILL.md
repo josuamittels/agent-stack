@@ -30,10 +30,10 @@ Before composing on every writing task, including a small edit or short label, d
 
 | Output Language | Required reference |
 | --- | --- |
-| English | [English guidelines](../../best-practices/english/reference.md) |
-| German | [German guidelines](../../best-practices/german/reference.md) |
-| Dutch | [Dutch guidelines](../../best-practices/dutch/reference.md) |
-| French | [French guidelines](../../best-practices/french/reference.md) |
+| English | [English guidelines](../../guidelines/languages/english.md) |
+| German | [German guidelines](../../guidelines/languages/german.md) |
+| Dutch | [Dutch guidelines](../../guidelines/languages/dutch.md) |
+| French | [French guidelines](../../guidelines/languages/french.md) |
 
 Read its general guidance and applicable style sections before drafting. Metadata, a contents list, or remembered advice is insufficient. Apply only the style conventions relevant to the artifact, including narrative guidance only for narrative work.
 
