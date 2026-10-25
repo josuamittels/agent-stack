@@ -171,11 +171,11 @@ class StorageTests(unittest.TestCase):
         self.assertFalse(e.lookup(self.root, 'demo', dict(prepared, qualitative_assessment=True))['hit'])
         self.assertEqual(self.do_record(prepared, [])['duplicate'], True)
 
-    def test_sampling_does_not_bypass_suite_or_selected_judge(self):
+    def test_sampling_does_not_require_suite_or_bypass_selected_judge(self):
         p = self.live_packet()
         with patch.object(e.secrets, 'randbelow', return_value=99):
             prepared = e.prepare(self.root, 'demo', p)
-        self.assertEqual(self.do_record(prepared, [])['process_gap'], 'suite-required')
+        self.assertEqual(self.do_record(prepared, [])['decision'], 'good')
         with patch.object(e.secrets, 'randbelow', return_value=4):
             selected = e.prepare(self.root, 'demo', dict(p, invocation_id='selected'))
         self.ready(selected)
@@ -202,8 +202,21 @@ class StorageTests(unittest.TestCase):
         (self.root / 'skills/demo/SKILL.md').write_text('---\nstatus: stable\n---\nRevised.')
         with self.assertRaises(ValueError): e.prepare(self.root, 'demo', p)
 
+    def authorize(self, packet):
+        request = {'evaluation_id': e.evaluation_id(packet), 'mode': packet.get('mode', 'live')}
+        state = e.begin(self.root, 'demo', request)
+        if not state['finished']:
+            if state['mode'] == 'suite':
+                for cid in state['case_ids']:
+                    if 'producer:' + cid not in state['claims']:
+                        e.claim(self.root, 'demo', {**request, 'role': 'producer', 'case_id': cid})
+            if 'judge' not in state['claims']:
+                e.claim(self.root, 'demo', {**request, 'role': 'judge'})
+
     def do_record(self, packet=None, judgments=None):
-        return e.record(self.root, 'demo', packet or self.packet, self.judgments if judgments is None else judgments)
+        packet = packet or self.packet
+        self.authorize(packet)
+        return e.record(self.root, 'demo', packet, self.judgments if judgments is None else judgments)
 
     def test_lookup_reuse_and_abstract_log(self):
         self.assertFalse(e.lookup(self.root, 'demo', self.packet)['hit'])
@@ -213,7 +226,7 @@ class StorageTests(unittest.TestCase):
         second = self.do_record(p, [])
         self.assertEqual(second['score'], first['score'])
         self.assertTrue(second['cache_reused'])
-        all_saved = '\n'.join(f.read_text() for f in self.path.rglob('*') if f.is_file() and ('.local' in f.parts or f.name == 'runs.jsonl'))
+        all_saved = '\n'.join(f.read_text() for f in (self.root / 'evals').rglob('*') if f.is_file() and ('.local' in f.parts or f.name == 'runs.jsonl'))
         for sentinel in ['PRIVATE_INPUT_SENTINEL', 'PRIVATE_OUTPUT_SENTINEL', 'PRIVATE_EVIDENCE_SENTINEL', 'PRIVATE_JUDGE_SENTINEL']:
             self.assertNotIn(sentinel, all_saved)
 
@@ -251,27 +264,84 @@ class StorageTests(unittest.TestCase):
         self.write('suite.json', manifest)
         self.assertEqual(self.do_record(dict(self.packet, invocation_id='new-version'))['verdict'], 'acceptable')
 
-    def test_live_requires_completed_suite(self):
+    def test_live_never_requires_synthetic_suite(self):
         p = dict(self.packet, mode='live'); p.pop('case_id')
         result = self.do_record(p)
-        self.assertEqual(result['verdict'], 'incomplete')
-        self.assertEqual(result['process_gap'], 'suite-required')
-        self.assertFalse(e.lookup(self.root, 'demo', p)['hit'])
+        self.assertEqual((result['verdict'], result['decision']), ('acceptable', 'good'))
+        self.assertTrue(e.lookup(self.root, 'demo', p)['hit'])
+        e.atomic_json(self.path / '.local/suite.json', {'key': 'stale'})
+        self.assertTrue(e.lookup(self.root, 'demo', p)['hit'])
 
-    def test_suite_marker_requires_real_matching_records(self):
+    def test_exactly_three_scenario_records_no_calibration_or_retry(self):
         with self.assertRaises(ValueError): e.mark_suite(self.root, 'demo', self.packet['evaluator'], [])
         fps = []
-        for mode, ids in [('suite', ['normal', 'boundary', 'failure']), ('calibration', ['known-good', 'known-bad'])]:
-            for cid in ids:
-                p = dict(self.packet, mode=mode, case_id=cid, invocation_id=cid)
-                judgments = [outcome('quality', 0), outcome('finish', 0)] if cid == 'known-bad' else self.judgments
-                fps.append(self.do_record(p, judgments)['fingerprint'])
-        self.assertTrue(e.mark_suite(self.root, 'demo', self.packet['evaluator'], fps)['suite_complete'])
-        p = dict(self.packet, mode='live', invocation_id='live-ready'); p.pop('case_id')
-        self.assertEqual(self.do_record(p)['verdict'], 'acceptable')
-        (self.root / 'skills/demo/SKILL.md').write_text('New resource bytes.')
-        p['invocation_id'] = 'live-changed'
-        self.assertEqual(self.do_record(p)['verdict'], 'incomplete')
+        for cid in ['normal', 'boundary', 'failure']:
+            p = dict(self.packet, case_id=cid, invocation_id=cid, evaluation_id='one-suite')
+            judgments = [] if cid == 'failure' else self.judgments
+            fps.append(self.do_record(p, judgments)['fingerprint'])
+        result = e.mark_suite(self.root, 'demo', self.packet['evaluator'], fps)
+        self.assertEqual((result['suite_complete'], result['decision']), (True, 'not-good'))
+        with self.assertRaises(ValueError): e.mark_suite(self.root, 'demo', self.packet['evaluator'], fps + [fps[0]])
+        p = dict(self.packet, case_id='failure', invocation_id='replacement', evaluation_id='one-suite')
+        with self.assertRaises(ValueError): self.do_record(p)
+
+    def test_live_budget_only_one_judge_and_no_producers(self):
+        req = {'evaluation_id': 'budget-live', 'mode': 'live'}
+        e.begin(self.root, 'demo', req)
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'producer', 'case_id': 'normal'})
+        self.assertTrue(e.claim(self.root, 'demo', {**req, 'role': 'judge'})['permitted'])
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        # Re-entering the same request cannot refund a failed agent attempt.
+        e.begin(self.root, 'demo', req)
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        with self.assertRaises(ValueError): e.begin(self.root, 'demo', {**req, 'mode': 'suite'})
+
+    def test_suite_dispatch_budget_is_three_producers_one_judge(self):
+        req = {'evaluation_id': 'budget-suite', 'mode': 'suite'}
+        e.begin(self.root, 'demo', req)
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        for cid in ['normal', 'boundary', 'failure']:
+            self.assertTrue(e.claim(self.root, 'demo', {**req, 'role': 'producer', 'case_id': cid})['permitted'])
+            with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'producer', 'case_id': cid})
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'producer', 'case_id': 'extra'})
+        e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+
+    def test_record_requires_begun_budget_and_judge_claim(self):
+        p = dict(self.packet, mode='live'); p.pop('case_id')
+        with self.assertRaises(ValueError): e.record(self.root, 'demo', p, self.judgments)
+        req = {'evaluation_id': p['invocation_id'], 'mode': 'live'}
+        e.begin(self.root, 'demo', req)
+        with self.assertRaises(ValueError): e.record(self.root, 'demo', p, self.judgments)
+        e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        result = e.record(self.root, 'demo', p, [])
+        self.assertEqual(result['decision'], 'not-good')
+        with self.assertRaises(ValueError): e.claim(self.root, 'demo', {**req, 'role': 'judge'})
+        with self.assertRaises(ValueError): e.record(self.root, 'demo', dict(p, invocation_id='retry', evaluation_id=req['evaluation_id']), self.judgments)
+
+    def test_legacy_extra_cases_and_calibrations_never_expand_budget(self):
+        cases = e.load(self.path / 'cases.json')
+        cases['cases'].append({'id': 'extra', 'expected_verdict': 'acceptable'})
+        self.write('cases.json', cases)
+        state = e.begin(self.root, 'demo', {'evaluation_id': 'legacy', 'mode': 'suite'})
+        self.assertEqual(state['case_ids'], ['normal', 'boundary', 'failure'])
+        with self.assertRaises(ValueError): e.identity(self.root, 'demo', dict(self.packet, case_id='extra'))
+        with self.assertRaises(ValueError): e.identity(self.root, 'demo', dict(self.packet, mode='calibration', case_id='known-good'))
+        cases.pop('calibrations'); self.write('cases.json', cases)
+        self.assertTrue(e.package(self.root, 'demo'))
+
+    def test_budget_cannot_switch_to_caller_target(self):
+        req = {'evaluation_id': 'same-user-request', 'mode': 'live'}
+        e.begin(self.root, 'demo', req)
+        other = self.root / 'evals/caller'; (other / 'rubrics').mkdir(parents=True)
+        (self.root / 'skills/caller').mkdir(parents=True)
+        (self.root / 'skills/caller/SKILL.md').write_text('Caller instructions.')
+        r = rubric();r['skill'] = 'caller'
+        (other / 'rubrics/v1.json').write_text(json.dumps(r))
+        (other / 'suite.json').write_text(json.dumps({'schema_version':1,'skill':'caller','active_rubric':'v1','resources':['skills/caller/SKILL.md']}))
+        cases=e.load(self.path / 'cases.json');cases['skill']='caller';(other / 'cases.json').write_text(json.dumps(cases))
+        with self.assertRaises(ValueError): e.begin(self.root, 'caller', req)
+        with self.assertRaises(ValueError): e.claim(self.root, 'caller', {**req, 'role':'judge'})
 
     def test_path_escape_and_meta_bypass(self):
         with self.assertRaises(ValueError): e.package(self.root, '../demo')

@@ -1,8 +1,8 @@
 ---
 name: natural-writing
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "0.1.0"
-updated: "2026-10-24"
+version: "0.2.0"
+updated: "2026-10-25"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -55,16 +55,14 @@ Use the available material to build a coherent progression. Establish concepts b
 
 Preserve facts, uncertainty, attribution, scope, and the intended meaning. Do not invent evidence or experiences for vividness. Change only the requested prose when editing. Preserve code, data, quotations, and identifiers rather than restyling them.
 
-## Review before delivery
+## Validation
 
-Privately review the actual finished text before returning or inserting it. Compare it with the loaded language guidance, applicable style conventions, user instructions, and supplied material.
+When used as a helper inside another requested skill, return to that owner without a separate evaluation.
 
-Assess meaning and factual fidelity, reader comprehension, voice consistency, structure, sentence clarity, vocabulary, rhythm, punctuation, formatting, and formulaic AI patterns. Judge explicit stylistic exceptions against the user's request.
+Before delivery, invoke [spawn-evals](../../disciplines/spawn-evals/SKILL.md) as this invocation's final validation. Pass the original writing requirements, source material, necessary voice/audience context, completed prose, relevant language guidance, and observable evidence. Supply an invocation ID. Evaluate this requested result once; do not add separate evaluations of nested helpers.
 
-Repair problems in reasoning and structure as well as wording. Recheck revised passages and their effect on the whole piece. Return only after the result meets the applicable guidance and requested constraints. If a material factual gap remains, request the necessary information or state the limitation without inventing a resolution.
-
-Use editorial judgment rather than detector scores, arbitrary quotas, or artificial errors. Do not claim that generated text was human-authored or guarantees a particular detector result.
+The package at `evals/natural-writing/` owns the quality criteria: meaning and factual fidelity, reader fit and voice, structure and clarity, language conventions, protected elements, and formulaic phrasing. Explicit user style choices govern. Use its scored verdict rather than a parallel private review procedure. Report an unacceptable or unverifiable result and stop; no repair or replay is part of evaluation. Do not claim human authorship or a detector guarantee.
 
 ## Deliver
 
-Return the requested text or artifact in its required format. Omit internal notes, voice analysis, review reports, and compliance claims unless requested. Preserve any surrounding application or artifact structure required by the task.
+Return the requested text or artifact in its required format. Omit internal notes, voice analysis, and compliance claims unless requested. Include the concise shared evaluation result alongside the deliverable. Preserve any surrounding application or artifact structure required by the task.

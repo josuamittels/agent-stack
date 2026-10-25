@@ -1,7 +1,7 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Use when turning a described workflow into a skill, authoring SKILL.md, or fixing a skill's instructions, discovery, dependencies, or completion criteria."
-version: "0.2.0"
+version: "0.3.0"
 updated: "2026-10-25"
 author:
   - "Josua Mittelstaedt"
@@ -102,7 +102,7 @@ Use this stack’s template rather than another creator’s initializer, and rep
 - `### Default Procedures`, including all three shared Inputs paragraphs, at the end of ## Inputs.
 - `### N. Validate implementation`, including its mandatory spawn-evals handoff, as the last step in the workflow (replacing N by the appropriate step number).
 
-For a discipline, leave final evaluation to the calling workflow; do not add a nested final handoff. Put domain-specific checks and acceptance criteria in the target’s evaluation package rather than writing a second final-validation procedure.
+An authoring workflow validates only its authored target; its final handoff must not add creator self-evaluation. For spawn-evals specifically, preserve its bounded missing-evidence handling instead of adding shared clarification/delegation procedures. For a discipline, leave final evaluation to the calling workflow; do not add a nested final handoff. Put domain-specific checks and acceptance criteria in the target’s evaluation package rather than writing a second final-validation procedure.
 
 Fill the template's top-level metadata: the chosen slug, a compact capability and activation description, version `0.1.0`, current date as `YYYY-MM-DD`, type `skill` or `discipline`, and status `draft`. The author should be set as the person creating the request, so ask the user for clarification if their name is unknown. Format `author` and `references` as YAML block lists. List only meaningful source influences in `references`, ordered by contribution, using verified personal names in given-name/family-name order or verified publishing organizations when individual authorship is not established. Keep source URLs and attribution evidence in the research record; use `references: []` if there are no external influences.
 
@@ -126,21 +126,19 @@ Research files stay local under the repository's existing ignore rule. Do not ch
 
 Before validation, show the user what has been created or changed, with links to the authored skill and relevant resources. Summarize how the resulting skill works: what activates it, what inputs it uses, its main workflow and handoffs, and what it returns. Compare the result with the original request. Explain any deviations, their reasons, and their effect on behavior; state explicitly when there are none. Include material limitations and outstanding work so the user can review the actual result.
 
-Then ask whether to complete evaluation through spawn-evals and wait for an explicit answer. Approval to create or edit a skill does not by itself approve this evaluation handoff. If the user already explicitly approved evaluation of this completed result, provide the mirror and reuse that approval. If evaluation is declined or deferred, leave the authored work in place and report evaluation as pending, without a score or passing verdict. If feedback changes the result, complete the authorized changes and mirror the revised result before requesting evaluation again.
+Then ask whether to complete evaluation through spawn-evals and wait for an explicit answer. Approval to create or edit a skill does not by itself approve this evaluation handoff. If the user already explicitly approved evaluation of this completed result, provide the mirror and reuse that approval. If evaluation is declined or deferred, leave the authored work in place and report evaluation as pending, without a score or passing verdict. Feedback authorizes another edit or evaluation only when the user explicitly requests that new work.
 
-This checkpoint covers the entire create-skill evaluation handoff: target package initialization or refresh, synthetic suite execution, and create-skill's own final grading. It applies when create-skill is called directly or by another skill. It does not add an approval step to ordinary invocations of the skills it authors.
+This checkpoint authorizes only the authored target's three-scenario evaluation: three producers and one judge, at most four agents. It does not authorize evaluating create-skill or refreshing its suite. It applies when create-skill is called directly or by another skill. It does not add an approval step to ordinary invocations of the skills it authors.
 
 ### 7. Validate implementation
 
-After the completed-work mirror and explicit evaluation approval, invoke `disciplines/spawn-evals` as the single final validator. First initialize or refresh the authored target's package under `evals/<skill-name>/`, passing the skill and resources, intended use, quality requirements, dependencies, and failure modes. Have it run the lightweight synthetic suite after initialization or relevant changes. Keep target setup/synthetic results distinct from evidence of real use.
+After the completed-work mirror and explicit evaluation approval, invoke `disciplines/spawn-evals` once in post-edit mode for the authored target only. Pass its completed instructions/resources, intended use, original requirements, observable evidence, and one evaluation ID tied to this request. Prepare or refresh only the target's rubric and exactly three scenarios locally; run those three producers and one Betabert, then report good or not good.
 
-Then pass create-skill's own completed authoring output, original requirements, research and change evidence, necessary input context, and invocation ID to spawn-evals for this invocation's final score. Its [evaluation package](../../evals/create-skill/suite.json) owns template metadata, YAML types, slug agreement, the required Default Procedures subsection at the end of Inputs, links, author attribution, approval boundaries, map correctness, discovery boundaries, and completion criteria. Use the stack template's schema rather than a foreign host validator's allowlist. For map checks, pass the update-map discipline and its Mermaid guideline with the returned evidence, including the rendering actually inspected.
-
-Do not claim success from an authored rubric or an unexecuted fixture. Use spawn-evals' verdict and report material gaps. After an unacceptable result, ask for confirmation before another skill-edit round; specific prior approval is not permission for an unlimited repair loop. Target quality checks stay in its package rather than duplicated in this workflow. The original request remains in active task context for approved replay; keep only abstract outcomes in run history.
+Do not separately grade create-skill's authoring output, refresh an upstream or nested suite, run calibrations or extra regression cases, or replay the original request. The evaluator's result is terminal even if it fails or cannot verify the evidence. Report gaps without initiating another skill edit, asking for a repair/evaluation approval, or launching more agents. A later explicit user request starts separate work.
 
 ## Output
 
-Before evaluation, return the completed-work mirror and evaluation approval question from step 6, with evaluation marked pending. After approved evaluation, return the skill and useful resources, the updated map, and evaluation package locations with the shared score and verdict. Concisely explain what was created or changed, which consulted skills meaningfully informed it and how, how the workflow handles its task, and how it connects to other skills, disciplines, and guidelines. Include verification results and material limitations; link the local research record while it is retained. For a proposed edit, return the concrete proposal and approval question instead of a completion claim.
+Before evaluation, return the completed-work mirror and evaluation approval question from step 6, with evaluation marked pending. After approved evaluation, return the skill and useful resources, the updated map, and evaluation package locations with the target's good/not-good verdict and any verification limits. Concisely explain what was created or changed, which consulted skills meaningfully informed it and how, how the workflow handles its task, and how it connects to other skills, disciplines, and guidelines. Include verification results and material limitations; link the local research record while it is retained. For a proposed edit, return the concrete proposal and approval question instead of a completion claim.
 
 ## Boundaries
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "skill": "spawn-evals",
-  "active_rubric": "v2",
+  "active_rubric": "v3",
   "resources": [
     "disciplines/spawn-evals/SKILL.md",
     "disciplines/spawn-evals/references/betabert.md",

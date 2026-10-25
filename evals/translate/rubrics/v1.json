@@ -1,0 +1,77 @@
+{
+  "skill": "translate",
+  "version": "v1",
+  "criteria": [
+    {
+      "id": "fidelity",
+      "weight": 35,
+      "critical": true,
+      "kind": "judge",
+      "category": "fidelity",
+      "description": "Preserve source meaning, negation, qualifications, agency, chronology, certainty and factual scope.",
+      "anchors": {
+        "0": "Meaning reversed, unsupported claims added or material qualification lost.",
+        "1": "Mostly faithful with a consequential nuance missing.",
+        "2": "Meaning and all material qualifications are preserved."
+      },
+      "improvement_guidance": "Restore source meaning and qualifiers while keeping fluent target prose."
+    },
+    {
+      "id": "localization",
+      "weight": 25,
+      "critical": false,
+      "kind": "judge",
+      "category": "quality",
+      "description": "Produce idiomatic target prose with suitable locale, register and terminology.",
+      "anchors": {
+        "0": "Wrong target language or misleading cultural adaptation.",
+        "1": "Understandable but source syntax, register or terminology remains awkward.",
+        "2": "Fluent localization preserves register and approved terminology."
+      },
+      "improvement_guidance": "Improve target phrasing without changing source claims or intent."
+    },
+    {
+      "id": "protected",
+      "weight": 20,
+      "critical": true,
+      "kind": "check",
+      "category": "structure",
+      "description": "Preserve protected markup, variables, links, code and specified exact tokens.",
+      "anchors": {
+        "0": "A required token is changed or absent.",
+        "1": "Only part of the protected content is intact.",
+        "2": "Every supplied protected token is retained exactly."
+      },
+      "improvement_guidance": "Restore exact protected elements in the translation."
+    },
+    {
+      "id": "completeness",
+      "weight": 10,
+      "critical": false,
+      "kind": "judge",
+      "category": "fidelity",
+      "description": "Account for every supplied passage without adding unrelated explanation.",
+      "anchors": {
+        "0": "Material passage omitted or unrelated content replaces translation.",
+        "1": "Minor omission or unnecessary explanation remains.",
+        "2": "All source content is translated with appropriate correspondence."
+      },
+      "improvement_guidance": "Account for the missing passage and remove unrequested additions."
+    },
+    {
+      "id": "ui-limits",
+      "weight": 10,
+      "critical": false,
+      "kind": "check",
+      "category": "structure",
+      "description": "Respect supplied measurable UI length constraints without dropping meaning.",
+      "anchors": {
+        "0": "A supplied hard length limit is exceeded.",
+        "1": "Some supplied measurable constraints remain unmet.",
+        "2": "Every applicable UI length constraint is met."
+      },
+      "improvement_guidance": "Revise the UI string within its supplied limits while preserving meaning.",
+      "applies_if": "ui-limits"
+    }
+  ]
+}

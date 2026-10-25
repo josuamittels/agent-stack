@@ -1,0 +1,77 @@
+{
+  "skill": "spawn-evals",
+  "version": "v3",
+  "criteria": [
+    {
+      "id": "purpose",
+      "weight": 30,
+      "critical": true,
+      "kind": "judge",
+      "category": "intent",
+      "description": "Criteria cover the target purpose, required quality, failure conditions and evidence with discriminating anchors.",
+      "anchors": {
+        "0": "Essential requirements absent or good and defective work indistinguishable.",
+        "1": "Purpose covered but a material requirement or evidence anchor is vague.",
+        "2": "Load-bearing requirements and failure conditions have usable evidence-based anchors."
+      },
+      "improvement_guidance": "Map omitted requirements to concrete anchored criteria."
+    },
+    {
+      "id": "measurement",
+      "weight": 25,
+      "critical": true,
+      "kind": "check",
+      "category": "evaluation",
+      "description": "Deterministic checks verify arithmetic, evidence gates, one-target dispatch budgets, terminal failures and abstract storage.",
+      "anchors": {
+        "0": "Deterministic tests fail.",
+        "1": "Tests execute but required boundaries are untested.",
+        "2": "All required engine tests pass, including gates, malformed results, caching and privacy."
+      },
+      "improvement_guidance": "Report the demonstrated engine failure and stop."
+    },
+    {
+      "id": "isolation",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "boundaries",
+      "description": "Only the requested target is evaluated. Live mode uses at most one judge; post-edit mode uses exactly three producer slots and one judge. No nested or self-evaluation.",
+      "anchors": {
+        "0": "Budget exceeded, caller/dependency/self-evaluation launched, or producer/judge separation violated.",
+        "1": "Scope or dispatch-budget evidence is missing.",
+        "2": "One target and the allowed mode budget are preserved, with a fresh isolated judge and no additional work."
+      },
+      "improvement_guidance": "Report the scope or budget violation; do not initiate another run."
+    },
+    {
+      "id": "lifecycle",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "lifecycle",
+      "description": "The evaluation reports good or not good and stops, including on failure, missing evidence or malformed output.",
+      "anchors": {
+        "0": "Repair, replay, calibration, retry, optimization, automatic promotion, or further judging is prescribed or performed.",
+        "1": "Stopping behavior or verification limits are ambiguous.",
+        "2": "Binary result and evidence limits are accurate; the invocation ends without further work."
+      },
+      "improvement_guidance": "Report the stopping-rule violation without initiating follow-up work."
+    },
+    {
+      "id": "usability",
+      "weight": 15,
+      "critical": false,
+      "kind": "judge",
+      "category": "quality",
+      "description": "The package and reporting are lightweight and operationally usable.",
+      "anchors": {
+        "0": "Instructions do not lead to a usable graded result.",
+        "1": "Usable but unnecessary work or an ambiguous handoff remains.",
+        "2": "Concrete commands and concise good/not-good reporting require no prerequisite or upstream suites."
+      },
+      "improvement_guidance": "Remove unnecessary work or clarify the handoff that blocks ordinary use."
+    }
+  ],
+  "scope_policy": "Grade only the requested target and mode. Evaluate one completed result once, or exactly three scenarios after editing. Missing evidence is not good\u2014unable to verify. No caller self-evaluation, repair, optimization, retries, calibration, or additional runs."
+}

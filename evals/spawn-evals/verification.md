@@ -44,3 +44,12 @@ This initial setup used 19 agents: 12 producers and seven judging passes, includ
 The host's actual inherited model ID was not exposed; evaluator configuration is explicitly session-scoped rather than asserting an unverified model identity. Fresh AI judgment is not mathematically deterministic. Scoring arithmetic is deterministic, and identical complete evaluation packets reuse the stored verdict. Temporary producer copies and read-only judge assignments are context boundaries, not a claim to an OS-enforced sandbox.
 
 Real host discovery and long-term live performance were not benchmarked. Shared invocation behavior is implemented through the template and skill instructions; no host hook, external service, installation, publication or commit was added. Rubric/example creation alone is never reported as a runtime pass.
+
+
+## Bounded policy revision: 0.3.0 — 2026-10-25
+
+This revision replaces the initial orchestration policy above. Live evaluation grades one existing result with at most one judge and no prerequisite suite. Post-edit evaluation consumes exactly three producer slots and one batched judge slot. Calibration and meta modes, caller self-evaluation, retries, repair/replay, automatic lifecycle changes, and upstream suite refreshes are removed. Reports end with good or not good.
+
+The engine now records a request-bound target/mode budget before dispatch and rejects duplicate slots, extra scenarios, target switching, and replacement records. Historical larger packages and calibration records remain evidence only; the active suite selects only three cases. New callers must use begin/claim and carry the same evaluation ID. Stale suite markers no longer gate live recording. This is a breaking workflow change from 0.2.0, recorded as the next development minor.
+
+All 36 local Python regression checks passed, including dispatch limits, cross-target binding, terminal missing evidence, absence of a live-suite prerequisite, legacy-case exclusion, score/evidence gates, retained stable sampling, and abstract storage. No model agents or qualitative evaluation were launched for this policy revision. Prior numeric scores in this record belong to the earlier revision and do not validate 0.3.0.

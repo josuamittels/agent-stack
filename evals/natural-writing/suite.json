@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "skill": "natural-writing",
+  "active_rubric": "v1",
+  "resources": [
+    "skills/natural-writing/SKILL.md",
+    "guidelines/languages/english.md",
+    "guidelines/languages/german.md",
+    "guidelines/languages/dutch.md",
+    "guidelines/languages/french.md",
+    "disciplines/spawn-evals/scripts/checks.py"
+  ]
+}

@@ -5,3 +5,6 @@ sources/*
 /evals/*/runs.jsonl
 /evals/*/.local/
 **/__pycache__/
+
+# Cross-target evaluation dispatch budgets.
+/evals/.local/

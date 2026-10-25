@@ -1,8 +1,8 @@
 ---
 name: translate
 description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
-version: "0.1.0"
-updated: "2026-10-24"
+version: "0.2.0"
+updated: "2026-10-25"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -59,22 +59,18 @@ Localize presentation of dates, numbers, units, currencies, and forms of address
 
 Before producing target prose, require [natural-writing](../natural-writing/SKILL.md). Pass the original source and internal brief, including the target locale, permitted adaptations, terminology, protected elements, and fidelity requirements.
 
-Have natural-writing compose and review the target-language text using its mandatory language-guideline selection and fallback. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
+Have natural-writing compose the target-language text using its mandatory language-guideline selection and fallback; the translation invocation owns evaluation. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
 
 Use the host's invocation mechanism when available. Otherwise read and apply the skill in the current context. Do not claim a separate invocation occurred when it did not. If natural-writing or its required usable guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
 
 Explicitly identify prose authorized for translation, including quoted passages. Distinguish it from citations, code, identifiers, interpolation variables, link destinations, and other elements that must remain exact. Preserve attribution and distinguish translated quotations from original-language wording where necessary.
 
-## Review fidelity and deliver
+## Validation and delivery
 
-After natural-writing returns, compare the finished translation with the original:
+When used as a helper inside another requested skill, return to that owner without a separate evaluation.
 
-- Check completeness, negation, agency, chronology, certainty, scope, numbers, names, claims, and intended action.
-- Check terminology, register, locale, idiomatic phrasing, cultural appropriateness, and unintended additions.
-- Preserve markup, interpolation variables, link destinations, code, and required section correspondence.
-- For UI text, preserve action and state meaning, grammatical agreement, plural handling, and supplied length constraints. Do not change placeholders or remove necessary meaning to make a string fit.
-- Keep legal, safety, and technically exact material within its semantic limits. Surface unresolved consequential ambiguity instead of choosing a convenient interpretation.
+Invoke [spawn-evals](../../disciplines/spawn-evals/SKILL.md) as the translation invocation's final validation. Pass the original source, translation brief, target-language text, terminology and protected elements, UI constraints when applicable, and observable evidence with an invocation ID. Evaluate the requested translation result once; do not separately grade the nested writing helper.
 
-Route necessary prose revisions through natural-writing, then repeat the fidelity comparison on the final text. Fluency alone does not establish accuracy.
+The package at `evals/translate/` owns fidelity and localization criteria: completeness, negation, agency, chronology, certainty, scope, numbers, names, claims, terminology, register, locale, idiom, markup, variables, link destinations, code, and supplied UI limits. Preserve semantic limits of technically exact content. Use the shared verdict instead of a separate fidelity-review procedure. Report unacceptable or unverifiable results and stop; fluency alone does not establish accuracy. No repair, replay, or extra evaluation is part of this handoff.
 
-Return the translation in the requested format. Include explanations, alternatives, or adaptation notes only when requested or necessary to resolve a material ambiguity. Report native-speaker review or rendered-context verification only when it actually occurred. Do not imply specialist approval or release readiness, or represent generated text as human-authored.
+Return the translation in the requested format with a concise evaluation result. Add explanations, alternatives, or adaptation notes only when requested or needed to resolve material ambiguity. Report native-speaker review or rendered-context verification only when actually performed. Do not imply specialist approval, release readiness, or human authorship.

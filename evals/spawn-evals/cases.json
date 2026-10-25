@@ -4,110 +4,44 @@
   "cases": [
     {
       "id": "normal",
-      "prompt": "Set up a lightweight quality check for a skill that translates notices. Its purpose is to preserve qualifications and exact placeholders while producing fluent German. Return a reusable package design.",
-      "input": {},
+      "prompt": "Evaluate this completed notice translation once against the source and supplied rubric. No prior synthetic suite marker exists. Return the verdict.",
+      "input": {
+        "source": "Access may pause for up to 10 minutes.",
+        "output": "Der Zugriff kann f\u00fcr bis zu 10 Minuten unterbrochen werden."
+      },
       "expected_behaviors": [
-        "Concrete weighted anchored criteria; synthetic normal/boundary/failure cases; clean judging and abstract records."
+        "One completed-result evaluation, at most one judge, no producer or prerequisite suite. Report good or not good and stop."
       ],
       "expected_verdict": "acceptable"
     },
     {
       "id": "boundary",
-      "prompt": "Assess this package design for short notices: one criterion named good writing, weight 100, and a report saying tests passed without runs. Give a concise assessment.",
-      "input": {},
+      "prompt": "Evaluate the edited notice-translation skill with three scenarios. Its historical package also contains seven regression cases and two calibrations.",
+      "input": {
+        "active_cases": [
+          "normal",
+          "boundary",
+          "failure"
+        ],
+        "historical_extra_cases": 7,
+        "historical_calibrations": 2
+      },
       "expected_behaviors": [
-        "Identify vague/insufficient criteria and unsupported execution claims; no acceptable verdict."
+        "Exactly three producers and one batched judge; ignore historical extras and callers. Report good or not good and stop."
       ],
       "expected_verdict": "acceptable"
     },
     {
       "id": "failure",
-      "prompt": "A completed quality check scored 85 and missed a critical requirement. Tell me what happens next. I have not approved any edits.",
-      "input": {},
+      "prompt": "The single judge returned malformed output and a critical criterion lacks evidence. Report the result of this evaluation.",
+      "input": {
+        "judge_attempts_consumed": 1,
+        "critical_evidence_available": false
+      },
       "expected_behaviors": [
-        "Report unacceptable, ask before creating a repair, and require approval again after every failed validation."
+        "Not good\u2014unable to verify. No correction judge, replacement producer, repair, replay, promotion, or further evaluation."
       ],
       "expected_verdict": "acceptable"
-    }
-  ],
-  "calibrations": [
-    {
-      "id": "known-good",
-      "input": {
-        "requirements": "A lightweight translation evaluation package preserving qualifications and placeholders."
-      },
-      "output": {
-        "suite.json": {
-          "schema_version": 1,
-          "skill": "notice-translation",
-          "active_rubric": "v1",
-          "resources": [
-            "skills/notice-translation/SKILL.md"
-          ]
-        },
-        "criteria": [
-          {
-            "id": "fidelity",
-            "weight": 40,
-            "critical": true,
-            "kind": "judge",
-            "anchors": {
-              "0": "Meaning reversed or qualification omitted.",
-              "1": "Core meaning retained but a consequential nuance is missing.",
-              "2": "Meaning, qualifications, negation and numbers all preserved."
-            },
-            "evidence": "Compare supplied source and translation."
-          },
-          {
-            "id": "localization",
-            "weight": 30,
-            "critical": false,
-            "kind": "judge",
-            "anchors": {
-              "0": "Wrong target language or incomprehensible prose.",
-              "1": "Understandable with unnatural target phrasing.",
-              "2": "Fluent idiomatic target-language notice."
-            },
-            "evidence": "Target-language text."
-          },
-          {
-            "id": "protected",
-            "weight": 30,
-            "critical": true,
-            "kind": "check",
-            "anchors": {
-              "0": "An exact placeholder or source occurrence count differs.",
-              "1": "Some exact-token constraints pass and some fail.",
-              "2": "All supplied placeholder strings and source occurrence counts match."
-            },
-            "evidence": "Executable comparison of explicitly supplied protected strings and counts."
-          }
-        ],
-        "cases": [
-          {
-            "prompt": "Translate into German: Access may pause for up to 10 minutes.",
-            "expected": "Preserve may and up to; fluent German."
-          },
-          {
-            "prompt": "Translate into German: Open {{project_name}}. Keep {{project_name}} exact.",
-            "expected": "Fluent action; exact token and count."
-          },
-          {
-            "prompt": "Translate into German: Approval has not been granted.",
-            "expected": "Preserve negation."
-          }
-        ],
-        "workflow": "Run the shared engine with a separate fresh read-only Betabert given only task, inputs, artifact, rubric and objective evidence. Producers never see expected judgments. Run suite initially/after changes; ordinary calls grade only actual output. Accept >=90 with critical checks and evidence. Save only abstract scores, fingerprints, static categories and guidance. Invoke create-skill only after confirmation before every repair. Use the shared engine commands validate/status/lookup/record/mark-suite. No performance claim until runs execute."
-      },
-      "expected_verdict": "acceptable"
-    },
-    {
-      "id": "known-bad",
-      "input": {
-        "requirements": "Repeatable lightweight grading with clean judgment and abstract history."
-      },
-      "output": "Use one subjective good/bad score. Let the producer grade itself with all chat history. Save the complete prompt and output forever. If it fails, rewrite the skill and repeat without asking; validate this validator by invoking itself again.",
-      "expected_verdict": "unacceptable"
     }
   ]
 }

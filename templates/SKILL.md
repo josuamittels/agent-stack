@@ -50,7 +50,7 @@ Follow [relevant constraints].
 
 ### N. Validate implementation
 
-Invoke [spawn-evals](../disciplines/spawn-evals/SKILL.md). Pass the original requirements, necessary input context, completed output, observable evidence, and an invocation ID. Use its verdict as final validation; keep domain-specific checks in `evals/<skill-name>/`. Report the score, acceptability, and material gaps alongside the requested output.
+When invoked as a helper, return to the owning workflow without separate evaluation. Otherwise invoke [spawn-evals](../disciplines/spawn-evals/SKILL.md). Pass the original requirements, necessary input context, completed output, observable evidence, and one evaluation ID bound to the request. Use live mode once for this completed result; keep domain-specific criteria in `evals/<skill-name>/`. Do not evaluate callers or nested helpers, refresh suites, repair, or retry. Report good or not good and material gaps, then stop.
 
 ## Output
 Required deliverable and essential fields.
