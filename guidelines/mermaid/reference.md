@@ -161,6 +161,9 @@ flowchart LR
 
     subgraph guidelines [Guidelines]
         english[("English")]
+    end
+
+    subgraph template_files [Templates]
         templates[("Templates")]
         skill_template("Skill Template")
         reference_template("Reference Template")
@@ -183,7 +186,7 @@ flowchart LR
     class stack,translate,natural_writing,create_skill entry
     class think_harder,ask_user_question task
     class english,templates,skill_template,reference_template,router_template reference
-    class writing_skills,admin_skills,disciplines,guidelines section
+    class writing_skills,admin_skills,disciplines,guidelines,template_files section
     linkStyle default stroke:#002B3D,stroke-width:1.5px,color:#002B3D
 ```
 
