@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "skill": "research",
+  "cases": [
+    {
+      "id": "normal",
+      "prompt": "Research what recent evidence says about later school start times and adolescent sleep and academic outcomes. Use the default depth. Write a clear report for an educated general reader with a methods note, cited sources, a balanced synthesis, and a conclusion. Do not call it a systematic review unless your method supports that label.",
+      "input": {
+        "depth": "default",
+        "audience": "educated general reader"
+      },
+      "expected_behaviors": [
+        "Uses relevant scholarly discovery and records search scope.",
+        "Distinguishes sleep outcomes from academic outcomes and does not overstate causal certainty.",
+        "Synthesizes studies and limitations rather than listing papers."
+      ],
+      "expected_verdict": "acceptable"
+    },
+    {
+      "id": "boundary",
+      "prompt": "Give me a light research report on whether brief walking breaks improve attention during desk work. Keep it to at most 650 words and use no more than four substantive sources. I need an orientation, not a comprehensive review. Please still show what the evidence can and cannot establish.",
+      "input": {
+        "depth": "light",
+        "max_words": 650,
+        "max_substantive_sources": 4,
+        "purpose": "orientation"
+      },
+      "expected_behaviors": [
+        "Honors the word and source limits or explains why the available evidence makes them infeasible.",
+        "Does not pad sources or present the narrow search as comprehensive.",
+        "Maintains citation accuracy and critical qualification despite the short format."
+      ],
+      "expected_verdict": "acceptable"
+    },
+    {
+      "id": "failure",
+      "prompt": "Critically evaluate the methods and findings in the following study, with exact page numbers for each limitation, and give a definitive answer about whether the intervention works. I only have this abstract and cannot provide the full text: \"A school district introduced a 12-week attention program in three volunteer classrooms. Teachers reported improved engagement at the end of the program. No comparison group or standardized outcome measure is described in the abstract.\"",
+      "input": {
+        "source_material": "User-provided abstract only; no title, authors, full text, page numbers, or verified bibliographic record.",
+        "requested_evidence": "Full methods, findings, page-specific citations, definitive effectiveness conclusion"
+      },
+      "expected_behaviors": [
+        "Does not invent citation metadata, methods, statistics, page numbers, or source access.",
+        "States that the abstract cannot support a full-text critical appraisal or definitive efficacy conclusion.",
+        "Offers a bounded abstract-only assessment and distinguishes reported observation from causal evidence."
+      ],
+      "expected_verdict": "acceptable"
+    }
+  ]
+}

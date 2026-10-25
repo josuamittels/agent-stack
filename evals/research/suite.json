@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "skill": "research",
+  "active_rubric": "v1",
+  "resources": [
+    "skills/research/SKILL.md",
+    "disciplines/research-literature/SKILL.md",
+    "disciplines/research-literature/references/openalex_docs.md",
+    "disciplines/think-deeper/SKILL.md",
+    "guidelines/languages/english.md"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "skill": "research",
+  "version": "v1",
+  "criteria": [
+    {
+      "id": "question-method-fit",
+      "weight": 20,
+      "critical": true,
+      "kind": "judge",
+      "category": "intent",
+      "description": "Frames the user's question, scope, and suitable research method without silently turning a topical report into a formal systematic review.",
+      "anchors": {
+        "0": "The report misses or materially distorts the question, or claims a formal review method it did not conduct.",
+        "1": "The question is mostly answered, but scope, method choice, or review-type distinction is materially unclear.",
+        "2": "The report answers the bounded question and accurately describes a method suited to its scope and evidence type."
+      },
+      "improvement_guidance": "Align the question, evidence method, and description of review status."
+    },
+    {
+      "id": "depth-calibration",
+      "weight": 20,
+      "critical": true,
+      "kind": "judge",
+      "category": "intent",
+      "description": "Honors the requested or default depth and any explicit length or source constraints while preserving the same evidence-integrity standards.",
+      "anchors": {
+        "0": "The report ignores the requested depth or constraints, or treats lower depth as permission for unsupported claims.",
+        "1": "The report roughly matches the requested scale but misses a stated constraint or provides little indication of the resulting coverage limit.",
+        "2": "The report matches the selected scope and length, or transparently explains a material evidence limit without padding or overclaiming."
+      },
+      "improvement_guidance": "Match the requested scale and state how search or source limits affect coverage."
+    },
+    {
+      "id": "source-grounding",
+      "weight": 25,
+      "critical": true,
+      "kind": "judge",
+      "category": "evidence",
+      "description": "Grounds substantive claims in identifiable, relevant sources; distinguishes discovered records, inspected full text, and limited abstract or secondary evidence; and avoids invented citations or source details.",
+      "anchors": {
+        "0": "Substantive claims lack traceable support, citations or details appear fabricated, or the report misrepresents what source material was inspected.",
+        "1": "Most claims have identifiable support, but some important evidence is weakly linked, insufficiently verified, or unclear about access level.",
+        "2": "Claims are traceable to relevant cited sources, inspected material is represented accurately, and any citation or access limits are explicit."
+      },
+      "improvement_guidance": "Tie claims to verified sources and make source-access status explicit."
+    },
+    {
+      "id": "critical-synthesis",
+      "weight": 25,
+      "critical": true,
+      "kind": "judge",
+      "category": "evidence",
+      "description": "Critically compares evidence, evaluates limitations using criteria appropriate to source type, and represents disagreement and counterevidence fairly.",
+      "anchors": {
+        "0": "The report is an uncritical source list, overstates certainty or causation, or omits material contrary evidence apparent in its cited sources.",
+        "1": "Some comparison and limitations appear, but important disagreements, design differences, or alternative explanations are underdeveloped.",
+        "2": "The report synthesizes rather than inventories sources, explains material strengths and limitations, and qualifies conclusions to fit the evidence."
+      },
+      "improvement_guidance": "Compare findings and methods, include relevant counterevidence, and qualify interpretations."
+    },
+    {
+      "id": "transparency-limits",
+      "weight": 10,
+      "critical": false,
+      "kind": "judge",
+      "category": "boundaries",
+      "description": "Makes search choices, remaining uncertainty, and limits on the conclusion legible to the reader.",
+      "anchors": {
+        "0": "Material search or evidence limits are concealed and the conclusion is presented as more complete than the work supports.",
+        "1": "Some methods or limitations are stated, but a material uncertainty or scope limit is omitted.",
+        "2": "The report briefly but clearly states meaningful search choices, uncertainties, and what the evidence cannot establish."
+      },
+      "improvement_guidance": "Report material search scope and limits on what the evidence can establish."
+    }
+  ]
+}
