@@ -16,15 +16,27 @@ status: "draft"
 
 Prepare translation context, then use natural-writing to produce fluent target-language prose. Default to faithful localization: preserve meaning and intent while expressing them as the intended reader would naturally encounter them.
 
-## Scope and inputs
+## Scope
 
 Use for translation, localization, requested transcreation, and script conversion within a translation task. This skill does not own market rollout, interface redesign, publishing, or unrelated research workflows.
+
+## Inputs
+
+Apply this sequence before the clarification instructions below.
 
 Require source text and a determinable target language. Infer the source language where clear. Ask for missing source material or a missing target language. Natural-writing's English guidance fallback does not choose the output language.
 
 Use supplied locale, audience, purpose, medium, tone, style, examples, terminology, and length constraints. These contextual inputs are optional. Infer reasonable defaults from the task, and ask only when ambiguity materially changes the translation. Do not infer a country or a form of address from language alone when the distinction matters.
 
 Read the relevant source material in context. Resolve consequential contradictions or ambiguous passages before choosing an interpretation. Distinguish ambiguity deliberately present in the source from confusion that needs clarification.
+
+### Default Procedures
+
+If you miss relevant information, first invoke `disciplines/think-harder`, passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use `disciplines/ask-user-question` to inquire the missing information.
+
+Stack paths in backticks are relative to the repository root, identified by `templates/SKILL.md` and `map.mmd`. Use the host's invocation mechanism when available; otherwise read and apply the destination's instructions in context. Reading a file does not establish a separate agent invocation.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
 ## Prepare an internal translation brief
 

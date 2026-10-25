@@ -16,6 +16,18 @@ status: "draft"
 
 Produce clear, natural prose suited to its reader, purpose, and medium. Apply this base layer alongside specialized skills for the requested artifact. Keep detailed writing rules in the language references.
 
+## Inputs
+
+Apply this sequence before the clarification instructions below.
+
+### Default Procedures
+
+If you miss relevant information, first invoke `disciplines/think-harder`, passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use `disciplines/ask-user-question` to inquire the missing information.
+
+Stack paths in backticks are relative to the repository root, identified by `templates/SKILL.md` and `map.mmd`. Use the host's invocation mechanism when available; otherwise read and apply the destination's instructions in context. Reading a file does not establish a separate agent invocation.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
 ## Establish the writing context
 
 Use the user's purpose, audience, output language, format, length, tone, brand guidance, and writing samples when supplied. These inputs are optional. Infer reasonable defaults from the task, surrounding content, and intended use. Ask only when missing information materially prevents an accurate or useful result.
