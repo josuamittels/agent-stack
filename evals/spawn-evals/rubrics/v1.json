@@ -1,0 +1,77 @@
+{
+  "skill": "spawn-evals",
+  "version": "v1",
+  "criteria": [
+    {
+      "id": "purpose",
+      "weight": 30,
+      "critical": true,
+      "kind": "judge",
+      "category": "intent",
+      "description": "Criteria cover the target purpose, required quality, failure conditions and evidence with discriminating anchors.",
+      "anchors": {
+        "0": "Essential requirements absent or good and defective work indistinguishable.",
+        "1": "Purpose covered but a material requirement or evidence anchor is vague.",
+        "2": "Load-bearing requirements and failure conditions have usable evidence-based anchors."
+      },
+      "improvement_guidance": "Map omitted requirements to concrete anchored criteria."
+    },
+    {
+      "id": "measurement",
+      "weight": 25,
+      "critical": true,
+      "kind": "check",
+      "category": "evaluation",
+      "description": "Engine arithmetic, gates, identity, reuse and storage checks execute successfully.",
+      "anchors": {
+        "0": "Deterministic tests fail.",
+        "1": "Tests execute but required boundaries are untested.",
+        "2": "All required engine tests pass, including gates, malformed results, caching and privacy."
+      },
+      "improvement_guidance": "Repair the demonstrated engine failure and rerun affected regression checks."
+    },
+    {
+      "id": "isolation",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "boundaries",
+      "description": "Judge is fresh and producer-blind; terminal meta-validation stops recursion.",
+      "anchors": {
+        "0": "Judge sees producer rationale or recursive validation occurs.",
+        "1": "Contract exists but fresh context or evidence of termination is missing.",
+        "2": "Fresh judge receives only task/output/rubric/evidence and terminates after grading."
+      },
+      "improvement_guidance": "Correct context boundaries and terminal evaluator handling."
+    },
+    {
+      "id": "lifecycle",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "lifecycle",
+      "description": "Actual-output cadence, suite setup, abstract storage and confirmation before each repair are preserved.",
+      "anchors": {
+        "0": "Raw run content retained or skill edits proceed without required confirmation.",
+        "1": "Some cadence, retention or repair transitions are unclear.",
+        "2": "Light live grading, changed-setup suites, abstract history and every-round consent are explicit."
+      },
+      "improvement_guidance": "Clarify the failed lifecycle transition without weakening the quality bar."
+    },
+    {
+      "id": "usability",
+      "weight": 15,
+      "critical": false,
+      "kind": "judge",
+      "category": "quality",
+      "description": "The package and reporting are lightweight and operationally usable.",
+      "anchors": {
+        "0": "Instructions do not lead to a usable graded result.",
+        "1": "Usable but unnecessary work or an ambiguous handoff remains.",
+        "2": "Concrete commands and concise outcomes support ordinary use without full-suite repetition."
+      },
+      "improvement_guidance": "Remove unnecessary work or clarify the handoff that blocks ordinary use."
+    }
+  ],
+  "scope_policy": "Judge the stage requested in input, not unrequested later stages. A design specifies the required protocol without claiming execution; an assessment or clarification completes its own requested obligations. For actual performed work require observed evidence, and never infer a pass from a promise."
+}

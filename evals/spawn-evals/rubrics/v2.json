@@ -1,0 +1,77 @@
+{
+  "skill": "spawn-evals",
+  "version": "v2",
+  "criteria": [
+    {
+      "id": "purpose",
+      "weight": 30,
+      "critical": true,
+      "kind": "judge",
+      "category": "intent",
+      "description": "Criteria cover the target purpose, required quality, failure conditions and evidence with discriminating anchors.",
+      "anchors": {
+        "0": "Essential requirements absent or good and defective work indistinguishable.",
+        "1": "Purpose covered but a material requirement or evidence anchor is vague.",
+        "2": "Load-bearing requirements and failure conditions have usable evidence-based anchors."
+      },
+      "improvement_guidance": "Map omitted requirements to concrete anchored criteria."
+    },
+    {
+      "id": "measurement",
+      "weight": 25,
+      "critical": true,
+      "kind": "check",
+      "category": "evaluation",
+      "description": "Engine arithmetic, gates, identity, reuse and storage checks execute successfully.",
+      "anchors": {
+        "0": "Deterministic tests fail.",
+        "1": "Tests execute but required boundaries are untested.",
+        "2": "All required engine tests pass, including gates, malformed results, caching and privacy."
+      },
+      "improvement_guidance": "Repair the demonstrated engine failure and rerun affected regression checks."
+    },
+    {
+      "id": "isolation",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "boundaries",
+      "description": "Preserve producer/judge separation at the requested stage. A design for another skill uses the shared fresh-judge contract; terminal self-validation is required only when designing or executing the evaluator itself.",
+      "anchors": {
+        "0": "Self-grading, leaked expected verdicts or recursive judging is prescribed or performed.",
+        "1": "The requested judging boundary is ambiguous or required observed independence is unproven.",
+        "2": "The requested stage preserves fresh producer/judge separation and hidden expected judgments; evaluator self-grading is terminal when that stage is requested."
+      },
+      "improvement_guidance": "Correct context boundaries and terminal evaluator handling."
+    },
+    {
+      "id": "lifecycle",
+      "weight": 15,
+      "critical": true,
+      "kind": "judge",
+      "category": "lifecycle",
+      "description": "Preserve the shared evaluation lifecycle within the requested output scope: lightweight ordinary grading, honest evidence, abstract retention and confirmation before repair.",
+      "anchors": {
+        "0": "Raw history, unsupported success or unapproved skill repair is prescribed or performed.",
+        "1": "The requested lifecycle transition is incomplete, contradicts shared policy or lacks required evidence.",
+        "2": "The requested transition is correct and either specifies shared policy or explicitly relies on the shared engine/skill, without contradicting its cadence, retention or approval rules."
+      },
+      "improvement_guidance": "Clarify the failed lifecycle transition without weakening the quality bar."
+    },
+    {
+      "id": "usability",
+      "weight": 15,
+      "critical": false,
+      "kind": "judge",
+      "category": "quality",
+      "description": "The package and reporting are lightweight and operationally usable.",
+      "anchors": {
+        "0": "Instructions do not lead to a usable graded result.",
+        "1": "Usable but unnecessary work or an ambiguous handoff remains.",
+        "2": "Concrete commands and concise outcomes support ordinary use without full-suite repetition."
+      },
+      "improvement_guidance": "Remove unnecessary work or clarify the handoff that blocks ordinary use."
+    }
+  ],
+  "scope_policy": "Judge the stage requested in input, not unrequested later stages. A design specifies the required protocol without claiming execution; an assessment or clarification completes its own requested obligations. For actual performed work require observed evidence, and never infer a pass from a promise."
+}

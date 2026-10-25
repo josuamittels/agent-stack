@@ -1,2 +1,7 @@
 sources/*
 .DS_Store
+
+# Evaluation setup is maintained; runtime records are local and abstract.
+/evals/*/runs.jsonl
+/evals/*/.local/
+**/__pycache__/
