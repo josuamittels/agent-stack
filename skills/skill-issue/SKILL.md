@@ -58,6 +58,7 @@ Use these through a matching skill first; select them directly for a scoped main
 | Write concise in-chat answers: "be concise", "just the answer", "quit the yap". | [quit-the-yap](../../disciplines/quit-the-yap/SKILL.md) | Applies English Absolute style to chat replies; use natural-writing for broader prose authoring, editing, or translation. |
 | Research related skills for inspiration: "browse skills", "find comparable workflows", "inspect GetEdge skills", "compare skill approaches". | [browse-skills](../../disciplines/browse-skills/SKILL.md) | Source discovery and inspection; the caller owns final authoring decisions. Does not install skills or execute them. |
 | Deepen a settled substantive task: "go deeper", "use primary sources", "what would a top professional do?" | [think-deeper](../../disciplines/think-deeper/SKILL.md) | Improves methods, inputs, tools, and verification without expanding the goal; use Think Harder to resolve uncertainty about the goal. |
+| Stress-test a concrete plan before commitment: "run a pre-mortem", "what could kill this plan?", "find failure paths". | [pre-mortem](../../disciplines/pre-mortem/SKILL.md) | Surfaces plausible failure paths and plan changes; use Think Harder for unclear goals and Think Deeper for broader evidence or methods. |
 | Resolve ambiguity before asking the user: "think harder", "use the context to decide", "choose a reasonable default". | [think-harder](../../disciplines/think-harder/SKILL.md) | Rechecks relevant caller-triggered guidelines and returns assumptions and remaining questions; preserves required approvals and user-owned choices. |
 | Evaluate a completed skill invocation or manage its measurement: "grade this skill run", "set up its evaluation package", "run the synthetic suite", "inspect the failed rubric criteria". | [spawn-evals](../../disciplines/spawn-evals/SKILL.md) | One completed result or exactly three post-edit scenarios; report good/not good and stop. No caller self-evaluation, repair, replay, or additional runs. |
 | Update a project changelog: "record these changes in CHANGELOG.md", "update the changelog", "prepare the changelog release section". | [update-changelog](../../disciplines/update-changelog/SKILL.md) | Maintains the repository's durable change record. A release announcement or commit message is a different artifact. |
@@ -66,7 +67,7 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
-Ask User Question, Browse Skills, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
+Ask User Question, Browse Skills, Pre-Mortem, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 
 ### Resolve neighboring intents
 
