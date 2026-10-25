@@ -1,6 +1,6 @@
 # Target package setup
 
-Prepare only the requested target's measuring instrument. This is local setup, not another evaluation mode or permission to launch agents.
+Prepare only the requested skill’s measuring instrument. The target must be `skills/<skill-name>/SKILL.md`; never create a package for a discipline. This is local setup, not another evaluation mode or permission to launch agents.
 
 Maintain `evals/<skill-name>/suite.json`, a frozen versioned rubric, and `cases.json`. The manifest identifies schema version 1, target slug, active rubric, and relevant production resources. A rubric has 3–6 criteria with positive integer weights totaling 100, `check` or `judge` kinds, critical flags, explicit 0/1/2 anchors, categories, and abstract improvement guidance. Preserve immutable rubric versions; a changed quality bar needs a new version.
 

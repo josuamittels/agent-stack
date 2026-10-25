@@ -4,7 +4,7 @@ The Python helper owns arithmetic, abstract history, invocation deduplication, a
 
 ## Bounded sessions
 
-Run from the repository root with a usable Python 3.9+ interpreter. Commands take `--skill <target>` and optional `--root /absolute/stack`. Except `validate`, each reads one JSON object from stdin. Keep raw packets outside the repository.
+Run from the repository root with a usable Python 3.9+ interpreter. Commands take `--skill <target>` and optional `--root /absolute/stack`. The manifest must list `skills/<target>/SKILL.md` as its authoritative target; discipline targets are rejected. Except `validate`, each reads one JSON object from stdin. Keep raw packets outside the repository.
 
 1. `begin`: pass `{"evaluation_id":"opaque ID for this authorized request","mode":"live"}` or mode `suite`. This binds the request to one target, mode, resource revision, and (for suite) the first three maintained cases. Re-entry returns the existing budget; it never resets attempts. Use the same evaluation ID throughout the request, including any nested callers.
 2. `claim`: pass the evaluation ID and `role:"judge"`, or `role:"producer"` plus a selected `case_id`. Live permits one judge and no producers. Suite permits one producer per selected case and one judge after the three producer attempts. Slots are consumed before dispatch; failure does not refund them. A duplicate claim is terminal: report and stop.

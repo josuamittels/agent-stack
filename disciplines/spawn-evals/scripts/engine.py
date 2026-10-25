@@ -153,6 +153,10 @@ def package(root, slug):
     require(path.is_relative_to(root / 'evals'), 'package escapes evals root')
     manifest = load(path / 'suite.json')
     require(manifest.get('schema_version') == 1 and manifest.get('skill') == slug, 'invalid suite manifest')
+    require(f'skills/{slug}/SKILL.md' in manifest.get('resources', []),
+            'evaluation target must be a skill under skills/; disciplines are not eligible')
+    require(f'disciplines/{slug}/SKILL.md' not in manifest['resources'],
+            'a discipline cannot be the evaluation target')
     version = manifest.get('active_rubric')
     require(isinstance(version, str) and bool(re.fullmatch(r'v[1-9][0-9]*', version)), 'invalid active rubric')
     rubric = validate_rubric(load(path / 'rubrics' / (version + '.json')))
@@ -246,7 +250,7 @@ def target_status(root, slug):
     # Read only the stack's simple top-level status field, not arbitrary YAML.
     root = root.resolve()
     manifest = load(root / 'evals' / slug / 'suite.json')
-    candidates = [f'{folder}/{slug}/SKILL.md' for folder in ('skills', 'disciplines')]
+    candidates = [f'skills/{slug}/SKILL.md']
     targets = [safe_file(root, p) for p in candidates if p in manifest['resources']]
     require(len(targets) == 1, 'one authoritative target SKILL.md must be listed in resources')
     text = targets[0].read_text()

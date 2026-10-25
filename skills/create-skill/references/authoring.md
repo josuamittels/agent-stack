@@ -90,6 +90,8 @@ Before presenting a consequential choice, read
 
 ## Shared validation
 
-Use spawn-evals once for the requested completed result, unless the user excludes evaluation. After authoring, create-skill's separate approval checkpoint permits only the authored target's three scenarios and one judge. Do not add evaluation of create-skill, nested skills, dependencies, or the evaluator. No suite marker is a prerequisite for grading a live result.
+Disciplines use relevant local checks only: omit the template’s final evaluation handoff, evaluator references, and discipline evaluation packages. Never evaluate a discipline, including through its caller.
+
+For skills, use spawn-evals once for the requested completed result, unless the user excludes evaluation. After authoring, create-skill's separate approval checkpoint permits only the authored target's three scenarios and one judge. Do not add evaluation of create-skill, nested skills, dependencies, or the evaluator. No suite marker is a prerequisite for grading a live result.
 
 Keep domain criteria in the target package, preserve the applicable handoff, and follow update-map for validation connections. Use the stack template's metadata schema and observable evidence. Prepared fixtures do not prove executed success. Report good or not good and stop, including on missing evidence or failure. The evaluator never starts repairs, replays, optimizations, or additional judging.

@@ -1,7 +1,7 @@
 ---
 name: spawn-evals
 description: "Evaluate one completed skill result once, or exactly three scenarios after a skill edit. Return good or not good, then stop."
-version: "0.3.0"
+version: "0.4.0"
 updated: "2026-10-25"
 author:
   - "Josua Mittelstaedt"
@@ -15,7 +15,7 @@ status: "draft"
 
 # Spawn Evals
 
-Evaluate only the requested target. Report **good** or **not good**, then stop. This discipline does not improve skills or arrange further work.
+Evaluate only the requested skill under `skills/`. Disciplines are never evaluation targets and must not have evaluation packages. Report **good** or **not good**, then stop. This discipline does not improve skills or arrange further work.
 
 ## Inputs
 

@@ -147,6 +147,19 @@ class StorageTests(unittest.TestCase):
         base = e.lookup(self.root, 'demo', packet)
         e.atomic_json(self.path / '.local/suite.json', {'key': e.suite_key(base)})
 
+    def test_discipline_targets_rejected_before_session_creation(self):
+        target = self.root / 'disciplines/demo/SKILL.md'
+        target.parent.mkdir(parents=True)
+        target.write_text('Discipline instructions.')
+        manifest = e.load(self.path / 'suite.json')
+        for resources in [['disciplines/demo/SKILL.md'],
+                          ['skills/demo/SKILL.md', 'disciplines/demo/SKILL.md']]:
+            manifest['resources'] = resources
+            self.write('suite.json', manifest)
+            with self.assertRaises(ValueError):
+                e.begin(self.root, 'demo', {'evaluation_id': 'discipline', 'mode': 'live'})
+            self.assertFalse((self.root / 'evals/.local').exists())
+
     def test_sampling_exact_five_percent_and_retry_retention(self):
         p = self.live_packet()
         selected = []
