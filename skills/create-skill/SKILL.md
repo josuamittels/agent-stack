@@ -1,7 +1,7 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Use when turning a described workflow into a skill, authoring SKILL.md, or fixing a skill's instructions, discovery, dependencies, or completion criteria."
-version: "0.4.0"
+version: "0.5.0"
 updated: "2026-10-25"
 author:
   - "Josua Mittelstaedt"
@@ -38,6 +38,10 @@ For a new skill, require the intended capability and a precise name for a new sk
 If the name was not supplied, ask thoughtfully: "What shall we name this one? A skill deserves a name you've chosen." Reasoning cannot choose the name on the user's behalf. Use `disciplines/ask-user-question` to resolve a missing, invalid, or colliding name; do not silently rename or overwrite an existing skill. You may include suggestions to resolve the conflict in the request. From the name, derive a lowercase slug of letters, digits, and single hyphens, at most 64 characters, without leading or trailing hyphens.
 
 For a skill modification, require an identifiable existing skill and the desired change or observed problem.
+
+Before composing or revising skill or discipline instruction prose, apply [natural-writing](../natural-writing/SKILL.md) as an authoring helper. Read the [English guidelines](../../guidelines/languages/english.md), including the general guidance and specifically the [Technical style](../../guidelines/languages/english.md#technical). Use them to write the instructions in English. Return to this workflow without a separate writing evaluation.
+
+This requirement governs the authored instructions. The resulting skill's task and user requirements determine the language and style of its output artifacts. Keep language rules in the English guideline and skill-specific workflow conventions in [authoring conventions](references/authoring.md).
 
 ### Default Procedures
 

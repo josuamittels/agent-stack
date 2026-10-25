@@ -2,9 +2,30 @@
 name: "english-best-practices"
 description: "Reference for English-language writing conventions and examples. Consult when drafting or editing English content."
 version: "0.1.0"
-updated: "2026-10-23"
-author: "Josua Mittelstaedt"
-references: "Lauren Tan, Daniel Miessler, Cheng-I Wu, Joe Amditis, Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, John Wieting, Affaan Mustafa, Tsogt Otgonbaatar, Momo Young, Mark Forsyth, Will Storr, Lisa Cron, Brandon Sanderson, Aristotle, Quintilian, Cicero"
+updated: "2026-10-25"
+author:
+  - "Josua Mittelstaedt"
+references:
+  - "Aerospace, Security and Defence Industries Association of Europe"
+  - "Lauren Tan"
+  - "Daniel Miessler"
+  - "Cheng-I Wu"
+  - "Joe Amditis"
+  - "Jenna Russell"
+  - "Rishanth Rajendhran"
+  - "Chau Minh Pham"
+  - "Mohit Iyyer"
+  - "John Wieting"
+  - "Affaan Mustafa"
+  - "Tsogt Otgonbaatar"
+  - "Momo Young"
+  - "Mark Forsyth"
+  - "Will Storr"
+  - "Lisa Cron"
+  - "Brandon Sanderson"
+  - "Aristotle"
+  - "Quintilian"
+  - "Cicero"
 type: "reference"
 status: "draft"
 ---
@@ -788,6 +809,14 @@ The revision illustrates bounded reporting. It requires evidence for both the re
 
 ### Technical
 
+#### Use controlled English with practical flexibility
+
+Use a house style inspired by ASD-STE100 Simplified Technical English (STE). Favor direct commands, active voice, simple sentence structures, and stable terminology. Apply these principles to documentation and reusable agent instructions.
+
+Treat STE as a strong starting point. This house style does not require its approved-word dictionary, every grammatical restriction, or strict sentence limits. Use a technical term, longer sentence, or explanatory passage when it communicates the task more accurately. Keep each departure tied to a concrete benefit, such as preserving a necessary condition or explaining a difficult relationship. Do not claim STE compliance or assign a compliance percentage.
+
+Reduce reading effort and unnecessary tokens while preserving the information needed for correct execution. Shorter text alone does not establish lower total task cost or better results.
+
 #### Organize around the reader's purpose
 
 A technical document should support one main purpose. Keep substantial material serving another purpose in a separately identified section or document, connected by a descriptive link.
@@ -805,9 +834,11 @@ A how-to title identifies the task, such as "How to calibrate the radar array." 
 
 #### Make instructions actionable
 
-Write direct commands: "Click Submit" or "Install the component." Give each instruction one principal action.
+Write direct commands: "Click Submit" or "Install the component." Use active voice and give each instruction one principal action. Name the actor when several people, agents, or systems could perform it. Name the object instead of using an ambiguous "it" or "this."
 
-Put a warning or prerequisite before the action it governs. State the common case first and exceptions afterward, unless an exception must be known before a consequential action.
+Use numbered steps when order matters. Keep prerequisites, actions, and verification in execution order. State the expected result and observable completion condition where readers need them to recognize success.
+
+Put conditions, warnings, and prerequisites before the actions they govern. State the common case first and exceptions afterward, unless an exception must be known before a consequential action.
 
 Describe the visible result where it helps readers recognize progress. A tutorial benefits from the expected output, changed prompt, or relevant log line.
 
@@ -815,11 +846,21 @@ Use a knowledgeable, approachable tone without adding "please" to instructions. 
 
 Use the present tense for current behavior. Reserve "will" for an actual future event. Do not insert promises about planned features into descriptions of current capability.
 
+#### Distinguish requirements, defaults, and options
+
+Use ordinary commands for workflow steps. Reserve "must" and "must not" for critical requirements and prohibitions. Use "default to" for a preferred choice that permits a justified alternative, and "may" for an optional action. Use "can" to describe capability. Make permission and uncertainty distinguishable from context.
+
+State the condition for an exception. Avoid "always" and "never" unless the rule applies throughout the stated scope. These are house conventions, not a claim of ISO requirements-language compliance.
+
+> "The export must preserve record IDs. Default to CSV. For nested records, you may use JSON."
+
 #### Keep terminology and syntax dependable
 
 Use the actual symbol, file, flag, command, and operation names. Keep one term for each operation and one meaning for each term. If "check" means inspect, do not also use it to mean restrain.
 
 Explain necessary technical terms near their first relevant use. Avoid idioms, colloquialisms, unnecessary Latin abbreviations, and figurative descriptions that make interpretation or translation harder.
+
+Prefer familiar words and simple clauses. Keep articles, verbs, and connecting words that make the relationship explicit. Avoid compressed fragments, noun piles, and synonym changes made only for variety.
 
 An instruction longer than about 20 words, or another sentence longer than about 25, often benefits from simplification. These are practical density signals rather than fixed limits. Keep a longer sentence when it carries one clear thought with its necessary condition.
 
@@ -839,6 +880,8 @@ Use task headings as verb phrases, such as "Create an instance," and concept hea
 
 Use descriptive link text rather than "click here." Include essential context on the current page rather than making the reader follow a link for the basic explanation.
 
+For a procedure or reusable agent instruction, state its purpose, relevant system context, inputs, constraints, and completion criteria. Use clear sections to separate these from the steps. Include surrounding behavior and reasons when they affect a decision. Remove repeated rules, filler, and background the intended reader already knows. Keep qualifications and explanations that prevent an incorrect action.
+
 Use serial commas. Avoid "etc." when it conceals an unspecified category, and state when a list is partial.
 
 #### Keep change descriptions focused
@@ -856,6 +899,16 @@ Product interface text follows the needs of its screen and action. Documentation
 > Clear: "The script reads the import budget from `budget.json`. If the current count exceeds the budget, CI fails. Run the script with `--write` only to lower the budget."
 
 The revision identifies the file, condition, and action while keeping the program's stated behavior intact.
+
+> Overcompressed: "Schema valid → write; else stop."
+>
+> Clear: "Validate the generated JSON against the schema. If validation passes, save the JSON to the requested path. Otherwise, report the validation errors."
+
+The clear version names the object, condition, destination, and failure response. Removing those details would make the instruction shorter but less dependable.
+
+> Justified longer instruction: "If the migration changes a public field name and existing clients still use that field, preserve the old name as an alias until those clients have migrated."
+
+This instruction exceeds the STE procedural sentence limit. Keep the combined condition and timing because they determine when the compatibility action applies. Splitting or simplifying is useful only if those relationships remain clear.
 
 ### Absolute
 
