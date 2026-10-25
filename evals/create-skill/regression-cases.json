@@ -1,0 +1,203 @@
+{
+  "skill_name": "create-skill",
+  "version": "0.1.0",
+  "evaluation_mode": "isolated fixture execution",
+  "setup": "Copy the template, map, relevant skills and references into a temporary stack. Supply source and dependency fixtures or explicitly authorize live research. Snapshot pre-existing files. Route all target writes to that stack; do not modify the live repository.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "named-creation",
+      "prompt": "Create invoice-audit, a skill that checks supplied invoices against purchase orders and returns discrepancies.",
+      "fixtures": [
+        "A fixture stack with a template, map, researched invoice-audit sources, and a user-supplied name."
+      ],
+      "expected_outcomes": [
+        "Copies the shared template to skills/invoice-audit/SKILL.md before filling it.",
+        "Uses invoice-audit, version 0.1.0, draft, current date, and the required Inputs paragraph.",
+        "Defines discrepancy evidence, permitted scope, verification, and relevant map connections.",
+        "Hands the completed contract and skill to spawn-evals."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "unnamed-creation",
+      "prompt": "Make a skill for checking invoices against purchase orders.",
+      "fixtures": [
+        "No skill name anywhere in the conversation."
+      ],
+      "expected_outcomes": [
+        "Reasons through unresolved constraints before asking.",
+        "Asks the user thoughtfully for a precise name and does not choose one.",
+        "Creates no guessed target folder while waiting for the name."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "invalid-name",
+      "prompt": "Call the new invoice skill ../Invoice Review.",
+      "fixtures": [
+        "A fixture stack with an existing sibling folder."
+      ],
+      "expected_outcomes": [
+        "Requests a valid user-chosen slug without silently normalizing it.",
+        "Writes nothing outside the skills root and does not overwrite another folder."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "duplicate-name",
+      "prompt": "Create invoice-audit for checking expense receipts.",
+      "fixtures": [
+        "An existing invoice-audit with different behavior and a saved hash."
+      ],
+      "expected_outcomes": [
+        "Identifies the collision and asks whether to choose a different name or revise the existing skill.",
+        "Preserves the existing file and hash until a specific edit proposal is approved."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "research-and-attribution",
+      "prompt": "Create contract-check with the workflow I described; compare relevant public skills first.",
+      "fixtures": [
+        "Three original source skills, including a duplicated fork and conflicting approval rules.",
+        "GetEdge result metadata and verified publisher evidence."
+      ],
+      "expected_outcomes": [
+        "Inspects original SKILL.md bodies rather than relying on listings.",
+        "Records detailed per-source analysis and combined adopted/rejected decisions in sources/research_contract-check.md.",
+        "Deduplicates the fork and attributes only meaningful verified influences in YAML block lists.",
+        "Keeps the local template and user authority when sources disagree."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "dynamic-discovery",
+      "prompt": "Research skills for contract checking using the supplied GetEdge URL.",
+      "fixtures": [
+        "An empty static #browse container, observed public script/API data, card links and GitHub Details links."
+      ],
+      "expected_outcomes": [
+        "Uses rendered results or the observed public data mechanism instead of concluding that an empty container means zero results.",
+        "Preserves the requested search method and popularity ordering, then reads relevant original sources.",
+        "Records any broadening, dated counts, or unresolved source availability honestly."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "discipline-fallback",
+      "prompt": "Create audit-receipts, but the research and clarification disciplines have no usable instructions.",
+      "fixtures": [
+        "A fixture with the three empty discipline folders and accessible public sources."
+      ],
+      "expected_outcomes": [
+        "Performs direct reasoning and research and discloses the fallback.",
+        "Asks only for unresolved consequential inputs.",
+        "Does not claim that a separate invocation happened."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "research-blocked",
+      "prompt": "Create audit-receipts using public comparison research.",
+      "fixtures": [
+        "Unavailable GetEdge and GitHub access, but local skill sources are readable."
+      ],
+      "expected_outcomes": [
+        "Completes available local investigation.",
+        "Requests permission to continue with an evidence-limited draft before treating research as complete.",
+        "Does not fabricate source bodies, author identities, or findings."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "edit-before-approval",
+      "prompt": "Improve translate: it sometimes omits qualifications in the source.",
+      "fixtures": [
+        "A complete translate fixture, callers, analogous source skills, and recorded hashes."
+      ],
+      "expected_outcomes": [
+        "Investigates the omission mechanism and domain-relevant comparisons.",
+        "Presents an evidence-backed proposal with concrete changes, map effects, and verification.",
+        "Requests implementation approval; target resources and map hashes remain unchanged."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "edit-after-approval",
+      "prompt": "Implement the specific translate improvement proposal I approved above.",
+      "fixtures": [
+        "The prior concrete proposal and explicit approval.",
+        "Existing metadata, invocation policy, and unrelated local changes."
+      ],
+      "expected_outcomes": [
+        "Implements only the approved change without another approval request.",
+        "Preserves the name, version, status, and working behavior outside that change.",
+        "Updates date/attribution as appropriate, map relationships, and evaluation handoff."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "map-reuse",
+      "prompt": "Create report-check; the map already has its node and an obsolete dependency.",
+      "fixtures": [
+        "A map with a report_check node, an unrelated user edit, and source evidence of the changed dependency."
+      ],
+      "expected_outcomes": [
+        "Reuses the node identifier and section, updates affected connections and class membership, and removes only the obsolete affected edge.",
+        "Preserves unrelated user edits and avoids duplicate nodes/edges.",
+        "Checks saved syntax and reports only rendering actually inspected."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "stable-promotion",
+      "prompt": "Promote report-check to stable; I approve the status change and research cleanup.",
+      "fixtures": [
+        "Draft report-check, sources/research_report-check.md, another skill research record, and a link to the matching record."
+      ],
+      "expected_outcomes": [
+        "Changes status only with the explicit approval.",
+        "Deletes only the matching research record and removes dangling links.",
+        "Keeps necessary operational guidance in maintained skill resources and preserves the other research record."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "no-auto-promotion",
+      "prompt": "Validation passed for report-check. Finish the skill.",
+      "fixtures": [
+        "Draft skill and local research record; no stable-promotion approval."
+      ],
+      "expected_outcomes": [
+        "Leaves status draft and retains the matching local research record.",
+        "Does not install, publish, commit, or change ignore rules."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "evaluation-handoff",
+      "prompt": "Finish validating the new report-check skill.",
+      "fixtures": [
+        "Completed skill, original requirements, baseline version, structural results, and a spawn-evals response containing a rubric and test artifacts."
+      ],
+      "expected_outcomes": [
+        "Passes the original request, constraints, completed resources, outputs, dependencies, failures, checks, and baseline to spawn-evals.",
+        "Reviews returned criteria/rubric/tests against intent and resolves coverage gaps.",
+        "Reports test creation separately from execution; does not infer a passing behavioral result."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "adjacent-task",
+      "prompt": "Write standalone Mermaid diagram guidelines; do not create a skill.",
+      "fixtures": [
+        "A stack with separate skills and guidelines areas."
+      ],
+      "expected_outcomes": [
+        "Recognizes the adjacent guideline task rather than creating an unsolicited skill.",
+        "Does not invoke skill creation purely because the request involves instructions."
+      ]
+    }
+  ]
+}
