@@ -35,7 +35,7 @@ Route guideline creation to [create-guidelines](../create-guidelines/SKILL.md).
 
 For a new skill, require the intended capability and a precise name for a new skill.
 
-If the name was not supplied, ask thoughtfully: "What shall we name this one? A skill deserves a name you've chosen." Reasoning cannot choose the name on the user's behalf. Use `disciplines/ask-user-question` to resolve a missing, invalid, or colliding name; do not silently rename or overwrite an existing skill. You may include suggestions to resolve the conflict in the request. From the name, derive a lowercase slug of letters, digits, and single hyphens, at most 64 characters, without leading or trailing hyphens.
+If the name was not supplied, ask thoughtfully: "What shall we name this one? A skill deserves a name you've chosen." Reasoning cannot choose the name on the user's behalf. Use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to resolve a missing, invalid, or colliding name; do not silently rename or overwrite an existing skill. You may include suggestions to resolve the conflict in the request. From the name, derive a lowercase slug of letters, digits, and single hyphens, at most 64 characters, without leading or trailing hyphens.
 
 For a skill modification, require an identifiable existing skill and the desired change or observed problem.
 
@@ -45,9 +45,7 @@ This requirement governs the authored instructions. The resulting skill's task a
 
 ### Default Procedures
 
-If you miss relevant information, first invoke `disciplines/think-harder`, passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use `disciplines/ask-user-question` to inquire the missing information.
-
-Stack paths in backticks are relative to the repository root, identified by `templates/SKILL.md` and `map.mmd`. Use the host's invocation mechanism when available; otherwise read and apply the destination's instructions in context. Reading a file does not establish a separate agent invocation.
+If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -80,7 +78,7 @@ Establish the research questions from the contract: which comparable workflows, 
 
 For an edit, include the reported domain and failure mechanism as well as the overall capability. Keep the intended outcome and constraints authoritative when assessing inspiration.
 
-1. Invoke `disciplines/browse-skills` for related-skill discovery and inspection. Pass the contract, chosen name, relevant context and references, constraints, research questions, useful search terms, supplied sources or prior findings, and `sources/research_<skill-name>.md` as the record path.
+1. Invoke [browse-skills](../../disciplines/browse-skills/SKILL.md) for related-skill discovery and inspection. Pass the contract, chosen name, relevant context and references, constraints, research questions, useful search terms, supplied sources or prior findings, and `sources/research_<skill-name>.md` as the record path.
 
 2. Use `disciplines/research-web` to research domain facts, standards, or tool behavior beyond the skill sources. Keep that evidence in the same research record. Do not duplicate browse-skills' discovery procedure here or treat a listing as an inspected source.
 
@@ -98,12 +96,12 @@ Combine related guideline and skill fixes into one proposal, and identify who ow
 
 ### 4A. Author the skill
 
-For a skill, create `skills/<skill-name>/` and copy `templates/SKILL.md` to its `SKILL.md` before filling it in.
+For a skill, create `skills/<skill-name>/` and copy [skill template](../../templates/SKILL.md) to its `SKILL.md` before filling it in.
 
-For a discipline, create `disciplines/<discipline-name>/` and copy `templates/SKILL.md` to its `SKILL.md` before filling it in.
+For a discipline, create `disciplines/<discipline-name>/` and copy [skill template](../../templates/SKILL.md) to its `SKILL.md` before filling it in.
 
 Use this stack’s template rather than another creator’s initializer, and replace all scaffold placeholders. For every skill created or edited through this workflow, preserve these template sections verbatim:
-- `### Default Procedures`, including all three shared Inputs paragraphs, at the end of ## Inputs.
+- `### Default Procedures`, including both shared Inputs paragraphs, at the end of ## Inputs.
 - `### N. Validate implementation`, including its mandatory spawn-evals handoff, as the last step in the workflow (replacing N by the appropriate step number).
 
 An authoring workflow validates only its authored target; its final handoff must not add creator self-evaluation. For spawn-evals specifically, preserve its bounded missing-evidence handling instead of adding shared clarification/delegation procedures. For a discipline, remove the template’s final validation handoff; do not include evaluator references or create an `evals/<discipline-name>/` package. Verify its instructions and any changed helpers with relevant local checks only. Disciplines neither invoke evaluations nor become evaluation targets. For skills, put domain-specific checks and acceptance criteria in the target’s evaluation package rather than writing a second final-validation procedure.
@@ -114,15 +112,15 @@ Fill the template's top-level metadata: the chosen slug, a compact capability an
 
 Preserve the name, status, authorship, invocation policy, and working behavior unless the approved change calls for an adjustment. Update the date and meaningful source attribution.
 
-Increment the version according to `guidelines/versioning`. If the edit is significant, you may add to the `author` list the user making the request, so ask the user for claification if their name is unknown.
+Increment the version according to [versioning guidelines](../../guidelines/versioning/reference.md). If the edit is significant, you may add to the `author` list the user making the request, so ask the user for claification if their name is unknown.
 
 Edit in place rather than reinitializing the skill. Apply the authoring conventions to scope, decision points, required outputs, resource loading, handoffs, and completion criteria. Link substantial supporting guidance only where it is needed. Add helpers only for concrete recurring mechanics, and exercise any new or changed executable helper.
 
 ### 5. Maintain the map and lifecycle
 
-Invoke `disciplines/update-map` after authoring or changing a stack resource. Pass the changed paths, resource types, explicit calls and consulted references, obsolete relationships, and approved scope.
+Invoke [update-map](../../disciplines/update-map/SKILL.md) after authoring or changing a stack resource. Pass the changed paths, resource types, explicit calls and consulted references, obsolete relationships, and approved scope.
 
-Invoke `disciplines/update-router` and pass the repository root, changed capability paths and types, authorized scope, and the completed map update with its remaining gaps. If the refresh cannot complete, report discovery maintenance as incomplete; do not claim that the new or changed capability is exposed. Follow this order for skill and discipline additions, changes, moves, and removals without restarting route selection for the active task.
+Invoke [update-router](../../disciplines/update-router/SKILL.md) and pass the repository root, changed capability paths and types, authorized scope, and the completed map update with its remaining gaps. If the refresh cannot complete, report discovery maintenance as incomplete; do not claim that the new or changed capability is exposed. Follow this order for skill and discipline additions, changes, moves, and removals without restarting route selection for the active task.
 
 Research files stay local under the repository's existing ignore rule. Do not change that rule or force-add them.
 
@@ -138,7 +136,7 @@ This checkpoint authorizes only the authored target's three-scenario evaluation:
 
 ### 7. Validate implementation
 
-After the completed-work mirror and explicit evaluation approval, invoke `disciplines/spawn-evals` once in post-edit mode for the authored target only. Pass its completed instructions/resources, intended use, original requirements, observable evidence, and one evaluation ID tied to this request. Prepare or refresh only the target's rubric and exactly three scenarios locally; run those three producers and one Betabert, then report good or not good.
+After the completed-work mirror and explicit evaluation approval, invoke [spawn-evals](../../disciplines/spawn-evals/SKILL.md) once in post-edit mode for the authored target only. Pass its completed instructions/resources, intended use, original requirements, observable evidence, and one evaluation ID tied to this request. Prepare or refresh only the target's rubric and exactly three scenarios locally; run those three producers and one Betabert, then report good or not good.
 
 Do not separately grade create-skill's authoring output, refresh an upstream or nested suite, run calibrations or extra regression cases, or replay the original request. The evaluator's result is terminal even if it fails or cannot verify the evidence. Report gaps without initiating another skill edit, asking for a repair/evaluation approval, or launching more agents. A later explicit user request starts separate work.
 

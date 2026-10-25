@@ -29,9 +29,7 @@ Resolve Markdown links from their containing file.
 
 ### Default Procedures
 
-If you miss relevant information, first invoke `disciplines/think-harder`, passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use `disciplines/ask-user-question` to inquire the missing information.
-
-Stack paths in backticks are relative to the repository root, identified by `templates/SKILL.md` and `map.mmd`. Use the host's invocation mechanism when available; otherwise read and apply the destination's instructions in context. Reading a file does not establish a separate agent invocation.
+If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -56,7 +54,7 @@ For Git, this includes what belongs in one commit, when to split or combine chan
 
 Distinguish tool mechanics from working conventions. Official documentation can establish what a command does; a guideline must also establish how the reader should organize and perform the work. Use the brief to direct research rather than letting the first sources found determine the document's coverage. Keep this planning proportionate and continue without a separate approval checkpoint when the task supplies enough context.
 
-Preserve an existing path. For a new grouped topic use `guidelines/<area>/<topic>.md`, such as `guidelines/languages/english.md`; for a standalone area use `guidelines/<area>/reference.md`, such as `guidelines/mermaid/reference.md`. Reuse established groups and lowercase hyphenated path segments. Infer a clear name from an explicit subject; ask when competing names or a collision would change ownership. Update an existing overlapping guide rather than creating a competing authority, subject to approval.
+Preserve an existing path. For a new grouped topic use `guidelines/<area>/<topic>.md`, such as [English guidelines](../../guidelines/languages/english.md); for a standalone area use `guidelines/<area>/reference.md`, such as [Mermaid guidelines](../../guidelines/mermaid/reference.md). Reuse established groups and lowercase hyphenated path segments. Infer a clear name from an explicit subject; ask when competing names or a collision would change ownership. Update an existing overlapping guide rather than creating a competing authority, subject to approval.
 
 For failures received from another skill, read [repair ownership and handoffs](references/repair-handoffs.md) before deciding what to change. Keep the demonstrated failure distinct from a suggested solution.
 
@@ -78,7 +76,7 @@ When guideline and skill changes belong to one repair, present one coordinated p
 
 ### 4. Author one complete reference
 
-Copy `templates/reference.md` for a new document and replace the scaffold. Adapt headings to the subject rather than preserving empty template sections. Use a contents list when it helps navigate a long reference.
+Copy [reference template](../../templates/reference.md) for a new document and replace the scaffold. Adapt headings to the subject rather than preserving empty template sections. Use a contents list when it helps navigate a long reference.
 
 Write positively and directly in one consistent editorial voice. Present the adopted conventions as the document's own standard, with precise conditions and rich, realistic examples. Include use-case selection and tradeoffs where they affect decisions. Place each rule, rationale, exception, and example in its single relevant section. Integrate related additions there; consolidate repetition and reconcile contradictions throughout the document. Concision means removing duplication and filler while retaining the agreed coverage.
 

@@ -22,9 +22,7 @@ Use the repository root, changed paths and types, authorized scope, and availabl
 
 ### Default Procedures
 
-If you miss relevant information, first invoke `disciplines/think-harder`, passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use `disciplines/ask-user-question` to inquire the missing information.
-
-Stack paths in backticks are relative to the repository root, identified by `templates/SKILL.md` and `map.mmd`. Use the host's invocation mechanism when available; otherwise read and apply the destination's instructions in context. Reading a file does not establish a separate agent invocation.
+If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -32,7 +30,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ### 1. Establish what exists
 
-Read the current map, root `AGENTS.md` when present, complete skill-issue instructions, [AGENTS template](../../templates/AGENTS.md), and top-level `skills/*/SKILL.md` and `disciplines/*/SKILL.md` files. Read supporting files only for scope, exclusions, or invocation policies affecting selection.
+Read the current map, root [AGENTS instructions](../../AGENTS.md) when present, complete skill-issue instructions, [AGENTS template](../../templates/AGENTS.md), and top-level `skills/*/SKILL.md` and `disciplines/*/SKILL.md` files. Read supporting files only for scope, exclusions, or invocation policies affecting selection.
 
 Actual instructions establish availability; the map supplies grouping and relationships. Include substantive drafts, even when unmapped. Exclude empty folders, map-only entries, metadata-only files, and scaffolds. Discover candidates only in the two top-level capability directories; research copies and other repository resources are not routes. Report map discrepancies to the caller.
 
