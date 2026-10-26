@@ -1,8 +1,8 @@
 ---
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
-version: "0.1.0"
-updated: "2026-10-25"
+version: "0.2.0"
+updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -48,6 +48,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 | Write or edit prose: "rewrite this", "make it sound natural", "tighten this copy", "draft a message", "remove formulaic phrasing". Also applies as a base layer when another task produces prose. | [natural-writing](../natural-writing/SKILL.md) | Translating supplied text into another language, which starts with translate. Preserve protected code, data, quotations, and identifiers. |
 | Produce a source-grounded report: "research this question", "write a research report", "synthesize the literature", "compare evidence", "research with stricter journals". | [research](../research/SKILL.md) | Research Literature finds records and abstracts; Research appraises and synthesizes sources. Its objective checker can measure report and source counts, compare cited journal scores with the selected rules, and test article-link reachability when a package exists; it cannot establish findings accuracy. |
 | Translate or localize supplied text: "translate into Dutch", "make a German version", "localize these strings", "adapt this for French readers", requested transcreation or transliteration. | [translate](../translate/SKILL.md) | Drafting original text in another language. Translate owns its required natural-writing handoff. |
+| Ship changes in a repository: "ship it", "release this", "push to main", "create or update a PR/MR". | [ship](../ship/SKILL.md) | Follow the target repository's release, checks, and Git rules. Agent Stack's `VERSIONS.md` and lifecycle gate apply only after its identity markers match. A changelog-only task routes to Update Changelog. |
 
 ### Disciplines
 
@@ -65,6 +66,7 @@ Use these through a matching skill first; select them directly for a scoped main
 | Prepare or run objective skill checks: "set up a checker for this skill", "evaluate this completed skill output", "what failed the script?". | [spawn-evals](../../disciplines/spawn-evals/SKILL.md) | Prepares or runs objective checks only for skills with meaningful script-verifiable criteria. If none are possible, omit Spawn Evals from the skill and create no package. No agents, model judges, qualitative assessments, synthetic cases, or scores; a missing package for an objectively checkable skill is unverified. |
 | Update a project changelog: "record these changes in CHANGELOG.md", "update the changelog", "prepare the changelog release section". | [update-changelog](../../disciplines/update-changelog/SKILL.md) | Maintains the repository's durable change record. A release announcement or commit message is a different artifact. |
 | Maintain the stack resource map: "update map.mmd", "add this skill to the map", "fix the dependency arrows". | [update-map](../../disciplines/update-map/SKILL.md) | Drawing an unrelated diagram or refreshing routing instructions. |
+| Apply this repository's stack release rules through Ship: reconcile `VERSIONS.md`, component frontmatter, lifecycle delivery route, and capability discovery. | [release-agent-stack](../../disciplines/release-agent-stack/SKILL.md) | Use only after Ship verifies the Agent Stack identity marker and root structure; other repositories follow their own release policy. |
 | Synchronize discovery after capability changes: "refresh the routing catalog", "sync the skill catalog", "update AGENTS routing", "remove a stale route", "expose this new skill". | [update-router](../../disciplines/update-router/SKILL.md) | Selecting a route for the current request, which this skill handles. Native host installation remains separate. |
 
 ### Availability
@@ -78,7 +80,7 @@ Ask User Question, Browse Skills, Pre-Mortem, Think Deeper, Think Harder, and Up
 - "Update the repository changelog" selects update-changelog. "Write release announcement copy" uses the changelog as source material but does not by itself request a changelog edit; commit messages and pull request descriptions remain separate formats.
 - "Improve this skill" starts with create-skill. "Evaluate this completed skill run" starts with spawn-evals. Each owner handles its own repair or validation handoff.
 - "Refresh the routing catalog" invokes update-router. "Which skill should do this?" is a selection-only request: return the route and reason without executing the underlying task.
-- A bug report, deployment request, general factual question, or other task outside the available scopes is handled directly with suitable host tools. Planned skills such as Ship or Research do not become executable because the map names them.
+- A bug report, deployment request, general factual question, or other task outside the available scopes is handled directly with suitable host tools. Planned skills such as Research do not become executable because the map names them.
 <!-- END agent-stack:route-catalog -->
 
 ## Handoff and return

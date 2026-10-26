@@ -15,7 +15,7 @@ config:
 %% Skill Issue is a decision diamond. Spawn Evals has a coral end node and muted red objective-check connections without arrowheads.
 %% Yellow rounded rectangles: disciplines. Incoming guideline arrows are dashed; internal guideline connections are plain solid lines.
 %% Think Harder and Ask User Question run by default and have no relationship lines.
-%% Skills with meaningful objective checks show runtime and package-preparation links to Spawn Evals.
+%% Skills that invoke Spawn Evals show runtime and package-preparation links to it.
 %% Gray cylinders: knowledge stores. Gray rounded documents: individual files.
 %% Subgraphs group resources. Connections show organization or source references.
 %% Flow determines columns; prefer short, direct routes with few crossings and bends.
@@ -93,6 +93,7 @@ flowchart LR
         quit_the_yap("Quit the Yap")
         update_map("Update Map")
         update_router("Update Router")
+        release_agent_stack("Release Agent Stack")
         research_web("Research Web")
         research_literature("Research Literature")
         scrape_web("Scrape Web")
@@ -206,9 +207,15 @@ flowchart LR
     audit_accessibility -.-> aesthetics
     brand_discovery --> brainstorm
     brand_discovery --> research_web
+    ship --> update_changelog
+    ship --> release_agent_stack
     ship -.-> git
+    ship -.-> versioning
     ship -.-> changelog
-    ship -.-> docs
+    release_agent_stack -.-> git
+    release_agent_stack -.-> versioning
+    release_agent_stack --> update_map
+    release_agent_stack --> update_router
     prototype -.-> tech_spec
 
     classDef entry fill:#DFF7A5,stroke:#002B3D,color:#002B3D,stroke-width:2px
@@ -220,7 +227,7 @@ flowchart LR
     classDef knowledge fill:#EFF4FA,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef document fill:#EFF4FA,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef section rx:8px,ry:8px
-    class ask_user_question,think_harder,think_deeper,pre_mortem,browse_skills,update_changelog,quit_the_yap,update_map,update_router,research_web,scrape_web,research_literature,manage_ads,creativity,image_tools,video_tools method;
+    class ask_user_question,think_harder,think_deeper,pre_mortem,browse_skills,update_changelog,quit_the_yap,update_map,update_router,release_agent_stack,research_web,scrape_web,research_literature,manage_ads,creativity,image_tools,video_tools method;
     class skill_issue decision
     class prepare_target_eval,eval_research evaluation_link
     class spawn_evals evaluation
