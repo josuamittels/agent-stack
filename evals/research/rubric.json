@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "skill": "research",
+  "checks": [
+    {
+      "id": "report-word-range",
+      "description": "The complete report text has a whitespace-delimited word count within the resolved inclusive bounds.",
+      "handler": "check_report_word_range",
+      "mandatory": true,
+      "required_inputs": [
+        "/constraints/word_count_min",
+        "/constraints/word_count_max",
+        "/outputs/report"
+      ]
+    },
+    {
+      "id": "cited-source-range",
+      "description": "The structured source inventory contains a number of cited substantive sources within the resolved inclusive bounds.",
+      "handler": "check_cited_source_range",
+      "mandatory": true,
+      "required_inputs": [
+        "/constraints/source_count_min",
+        "/constraints/source_count_max",
+        "/evidence/sources"
+      ]
+    },
+    {
+      "id": "journal-selection-thresholds",
+      "description": "Each cited journal article or review qualifies under the resolved journal score thresholds, except a source explicitly exempted by the request.",
+      "handler": "check_journal_selection",
+      "mandatory": true,
+      "required_inputs": [
+        "/constraints/journal_preset",
+        "/constraints/journal_article_influence_min",
+        "/constraints/journal_influence_percentile_min",
+        "/constraints/journal_combination",
+        "/constraints/journal_filter_disabled",
+        "/constraints/journal_category",
+        "/constraints/journal_exceptions",
+        "/evidence/sources"
+      ]
+    },
+    {
+      "id": "article-link-reachability",
+      "description": "Each cited journal article or review has an article URL that resolves successfully; reachability does not verify article identity or findings.",
+      "handler": "check_article_links",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/sources"
+      ]
+    }
+  ]
+}

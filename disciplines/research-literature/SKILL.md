@@ -1,12 +1,14 @@
 ---
 name: "research-literature"
-description: "Search OpenAlex for relevant academic works, apply author, journal, date and other filters, and return source-linked records and abstracts."
-version: "0.2.0"
-updated: "2026-10-25"
+description: "Search OpenAlex for academic works with lenient, default, or strict journal-influence selection and other requested filters, and return source-linked records and abstracts."
+version: "0.4.0"
+updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
 references:
   - "OpenAlex"
+  - "Clarivate"
+  - "DORA"
 type: "discipline"
 status: "draft"
 ---
@@ -25,7 +27,27 @@ Use the supplied topic or question and any stated inclusion and exclusion criter
 
 Before searching, read [`references/openalex_docs.md`](references/openalex_docs.md) for OpenAlex endpoints, search syntax, filters, paging, and record fields. Consult the official documentation linked there only if an API request errors, this reference does not cover a needed behavior, or observed behavior appears to have changed.
 
-Use the [`Journals Database`](../references/journals.csv) when journal scores or ERIM journal classes are relevant. The file preserves the supplied ERIM workbook's categories and metrics. It can contain several rows for one journal because a journal may appear in multiple categories. Match by ISSN when possible, then confirm the journal title. Treat its scores and classes as user-provided context, not as proof of reliability or article quality.
+Use the [journal CSV](references/journals.csv) to select eligible journals. Its fields are `journal`, `issn_print`, `issn_online`, `category`, `area`, `inception`, `article_influence`, and `influence_percentile`. A journal may have multiple category rows. Treat these supplied metrics as venue-selection criteria, not proof of reliability or article quality.
+
+### Journal selection
+
+Accept **lenient**, **default**, or **strict** journal selection, independently of research depth. Use **default** when unspecified. Interpret "more lenient" as lenient and "stricter" as strict when no explicit preset or numeric cutoffs were supplied. Announce the selection and cutoffs, and proceed without asking the user to choose again.
+
+| Selection | Minimum `article_influence` | Minimum `influence_percentile` |
+| --- | --- | --- |
+| Lenient | 1.0 | 60 |
+| Default | 2.5 | 80 |
+| Strict | 5.0 | 90 |
+
+Accept a journal when `article_influence >= minimum OR influence_percentile >= minimum`. Boundaries are inclusive. Honor explicit numeric cutoffs or a request to disable the filter as overrides, rather than additional presets. If only one numeric cutoff is supplied, use only that metric unless the user also requests a preset for the other. Preserve the user's explicit combination rule if it differs from OR.
+
+Read the [selection rationale](references/journal-selection.md) when explaining or reconsidering the presets. It supplies dated sources, CSV calibration counts, and provenance limits. The CSV does not specify the metric year or percentile calculation. Use its supplied percentile values without recomputing them or labeling them as JIF, CiteScore, or field-normalized percentiles.
+
+Parse finite, nonnegative Article Influence scores and percentiles in 0–100. Compare without rounding. Zero is valid. Missing or invalid values fail only their own branch, so one available score can qualify a journal. If neither branch passes, exclude the journal from the eligible set. Record unknown scores or unmatched journals separately from measured below-threshold exclusions.
+
+Match normalized print or electronic ISSNs first, ignoring hyphens and case, then confirm titles. Use title matching only when usable ISSNs are unavailable, and report ambiguous matches. Preserve category rows. For an explicit category restriction, test only matching category rows. Otherwise any qualifying category row suffices. Retain the qualifying row and metric branch in the search log rather than averaging or silently collapsing scores.
+
+Apply this filter to journal articles and reviews. Search requested preprints, conference papers, books, and other source types separately and label them. Use the publishing journal to judge a journal article's eligibility, even when an accessible copy is hosted in a repository. An OA hosting location does not override the journal filter.
 
 ### Default Procedures
 
@@ -39,26 +61,28 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 Identify the main concepts, population or setting, and outcome or relationship in the topic where applicable. Build a short concept list with relevant synonyms, spelling variants, and closely related terms. Prepare a few focused searches that cover those terms. Do not force a clinical or other field-specific framework onto a topic that does not fit it.
 
-Keep the user's exact search string when supplied. Otherwise, record the query text and the filters used for every request. Use separate queries for distinct concepts when one long Boolean query would become difficult to inspect or exceed OpenAlex's request URL limit.
+Keep the user's exact search string when supplied. Record the selected journal preset or override, query text, and filters used for every request. Use separate queries for distinct concepts when one long Boolean query would become difficult to inspect or exceed OpenAlex's request URL limit.
 
 ### 2. Resolve filters to OpenAlex identifiers
 
 Follow [`references/openalex_docs.md`](references/openalex_docs.md) for supported parameters, filters, and limits.
 
 - Resolve a named author through the OpenAlex Authors endpoint. Confirm the candidate using available identifiers such as ORCID, affiliation, and known works before filtering by author ID. Do not silently choose between people with similar names.
-- Resolve a journal through `references/journals.csv` by ISSN or eISSN when possible. Then resolve that ISSN through the OpenAlex Sources endpoint and filter works by the journal's source ID. Use the journal name only when no usable ISSN is available, and report ambiguous matches.
-- Apply requested year bounds with publication-date filters, and apply other requested constraints with supported work filters. Do not silently add prestige, citation-count, open-access, language, or date cutoffs that the user did not request.
+- Build the eligible journal set from the CSV using the journal-selection rules above. Intersect it with explicit journal and category restrictions. Resolve eligible journals by ISSN through the OpenAlex Sources endpoint, confirming titles and retaining all confirmed source IDs. Report ambiguous or unresolved venues rather than guessing. When the journal filter is disabled, resolve only requested journal constraints.
+- Apply requested year bounds with publication-date filters and other requested constraints with supported work filters. Apply the stated default journal selection, but do not add further prestige, citation-count, open-access, language, or date cutoffs without a request.
 - Combine multiple author IDs or source IDs with OpenAlex's OR syntax within that filter. Combine separate filter dimensions with AND only when the user intends all of them to apply together.
 
 Use an available HTTP/API client to call `https://api.openalex.org`. Basic metadata queries can be made without an API key. If direct HTTP access is unavailable, use an available browser route to inspect OpenAlex records and report any missing fields or paging limits. Do not install a client or expose credentials to work around missing access.
 
-If a requested value cannot be resolved or OpenAlex does not expose the needed filter, report the gap and continue with the remaining constraints where that still produces useful results.
+If a requested value cannot be resolved or OpenAlex does not expose the needed filter, report the gap. Continue only where useful results can still honor the inclusion criteria. The CSV metrics are local criteria, not OpenAlex filter fields.
 
 ### 3. Search and retrieve records
 
 Query the OpenAlex Works endpoint. Prefer `search.title_and_abstract` for targeted retrieval; use `search` when full-text terms or keywords are useful. Use semantic search when meaning-based retrieval could find useful terminology variants, subject to its documented limits. Use relevance ordering for discovery, but do not present its score as a measure of evidence quality. If a request errors or a needed field or behavior is unclear, consult the relevant official fallback link in the [`Openalex Documentation`](references/openalex_docs.md), correct the request, and record the change.
 
-For example, a focused request can use `search.title_and_abstract` with `filter=authorships.author.id:<author-id>,primary_location.source.id:<source-id>,from_publication_date:2020-01-01,to_publication_date:2024-12-31`. Omit filters the user did not request. Let the HTTP client encode spaces, quotes, and the `|` OR separator. Follow the reference's paging rules, including the API-key requirement for cursor pages after the first.
+Filter journal works by eligible `primary_location.source.id` values. Batch OR lists at no more than 100 source IDs per request, splitting further for the URL limit. Keep the topic, author, date, and other constraints on every batch. Merge results by stable work identifiers. For example, a focused request can use `search.title_and_abstract` with `filter=authorships.author.id:<author-id>,primary_location.source.id:<eligible-source-id>,from_publication_date:2020-01-01,to_publication_date:2024-12-31`. Omit unspecified optional filters. Let the HTTP client encode spaces, quotes, and the `|` OR separator. Follow the reference's paging rules, including the API-key requirement for cursor pages after the first.
+
+If resolving the complete eligible journal set is impractical within access or resource limits, retrieve topic matches first and apply the same CSV eligibility check before relevance screening or inclusion. Label this as post-filtered, bounded retrieval and report its limits. Do not claim coverage of every eligible venue. Retain the preset throughout follow-up searches. Empty results do not authorize relaxing the thresholds, dropping the filter, or including unknown venues.
 
 Page through results when needed. If a Boolean query approaches OpenAlex's URL length limit, split its OR terms into smaller requests and merge the results by work ID. Record the total matching count and how many records were actually inspected or returned. If the result set is too large to inspect in full, state the selection rule and that the results are partial.
 
@@ -68,11 +92,11 @@ Use OpenAlex's `best_oa_location` to identify an available full-text page or PDF
 
 ### 4. Screen and deduplicate
 
-Compare titles and available abstracts against the topic and stated criteria. Exclude only works that are clearly outside scope. Keep uncertain matches in a separate short list or mark why relevance is uncertain. When an abstract is absent, make clear that screening used title and metadata only.
+Confirm journal eligibility before screening titles and available abstracts against the topic and other criteria. Exclude ineligible journal works and works clearly outside scope. Keep uncertain relevance matches among eligible works in a separate short list or mark why relevance is uncertain. When an abstract is absent, make clear that screening used title and metadata only.
 
 Deduplicate by DOI first, then OpenAlex work ID. If neither is available, compare normalized titles and years. Preserve meaningful distinctions between a preprint, accepted manuscript, and version of record; do not imply they are identical versions when the records show otherwise.
 
-Use the journal CSV to add matching journal metadata when useful. Join by ISSN/eISSN before title. Retain category-specific rows and scores instead of collapsing them to one score. Do not use journal scores as an automatic inclusion rule unless the user explicitly requests that filter. Citation counts and journal classifications describe metadata; they do not establish the quality or truth of an individual article.
+Retain the journal match, qualifying category row, scores, and eligibility reason with screened records. When the filter is disabled, journal metadata remains optional context. Citation counts and journal metrics do not establish the quality or truth of an individual article.
 
 ### 5. Return the search results
 
@@ -80,9 +104,11 @@ Present the matching works with a DOI or OpenAlex record link, title, authors, y
 
 Alongside the results, report the search date, exact query strings, filters, total matched count, number returned or inspected, and any unresolved filters or truncation. Separate preprints and other work types where that distinction matters. Do not turn the list into a claim about what the literature collectively concludes.
 
+Include the selected preset or override and numeric combination rule, CSV path and snapshot limitation, category rule, eligible and resolved journal counts, actual query batches, and retrieval mode. For retrieved records, distinguish inspected and included works, measured below-threshold exclusions, unknown journal matches or scores, and unresolved source IDs. Report counts actually observed in the chosen retrieval mode. Do not sum overlapping batch totals as unique works or imply that source-filtered queries enumerated excluded works.
+
 ## Output
 
-Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches and filters, result counts, screening or truncation notes, and journal-score context when requested. Identify the search as OpenAlex-only.
+Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, result counts, and screening or truncation notes. Identify the search as OpenAlex-only.
 
 ## Boundaries
 

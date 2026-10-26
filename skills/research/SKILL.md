@@ -1,8 +1,8 @@
 ---
 name: "research"
-description: "Produce source-grounded, critically appraised academic research reports. Use for researching a topic, answering a research question, or synthesizing literature at a user-selected depth."
-version: "0.1.0"
-updated: "2026-10-25"
+description: "Produce source-grounded, critically appraised academic research reports at a user-selected depth with lenient, default, or strict journal selection. Use for researching a question or synthesizing literature."
+version: "0.6.0"
+updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -34,7 +34,11 @@ Use the topic or question, intended audience and use, requested deliverable or f
 
 Accept a depth of **light**, **default**, or **thorough**. If the user gives a word count, source range, deadline, field, date range, geography, population, or source preference, honor it and note any resulting coverage limit. Default to **default** depth when no depth is specified.
 
-Read [English guidelines](../../guidelines/languages/english.md) for English reports, including its Academic section. For another requested language, read its matching language guideline. Use the field's established reporting guidance when the report type calls for it; consult a reporting checklist as a reporting aid, not proof that the underlying research was systematic or complete.
+Accept **lenient**, **default**, or **strict** journal selection independently of depth. Journal selection defaults to **default**. Tell the user they can request **lenient** for broader venue coverage or **strict** for a narrower selection, then proceed with the default unless they specify otherwise. Use [Research Literature's journal-selection rules](../../disciplines/research-literature/SKILL.md#journal-selection) as the authoritative cutoffs and override policy. Honor requests for more lenient or stricter journal selection, explicit numeric thresholds, or disabling the filter. Keep the selection throughout follow-up searches and citation chasing, and identify any explicitly requested exceptions.
+
+The journal filter governs journal articles and reviews. Continue to use suitable primary records, official sources, books, and grey literature according to the question and stated inclusion criteria. Label their discovery separately. Journal eligibility does not establish individual study quality or replace the appraisal below.
+
+Invoke [Natural Writing](../natural-writing/SKILL.md) as a writing helper with an academic writing focus. Pass the report language, audience, field, citation style, format, and depth; it owns language guidance and returns here without a separate evaluation. Use the field's established reporting guidance when the report type calls for it; consult a reporting checklist as a reporting aid, not proof that the underlying research was systematic or complete.
 
 ### Depth choices
 
@@ -58,7 +62,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ### 1. Set the question and depth
 
-Translate the topic into a bounded research question. Identify the phenomenon, population or material, context, time period, and relationship or claim at issue where they apply. Distinguish descriptive, explanatory, causal, comparative, interpretive, and predictive questions. Record the user's depth and any assumptions that affect what counts as relevant evidence.
+Translate the topic into a bounded research question. Identify the phenomenon, population or material, context, time period, and relationship or claim at issue where they apply. Distinguish descriptive, explanatory, causal, comparative, interpretive, and predictive questions. Record research depth and journal selection separately, including numeric overrides, exceptions, and any assumptions that affect what counts as relevant evidence.
 
 If scope is too broad for the selected depth, choose a focused angle that preserves the user's intent and state it. Ask a concise question only when the answer would materially change the report and cannot be inferred.
 
@@ -70,7 +74,7 @@ Choose methods that fit the field and question. Use a framework such as PICO onl
 
 ### 3. Search and screen evidence
 
-Invoke [Research Literature](../../disciplines/research-literature/SKILL.md) for scholarly discovery. Pass the question, concepts and synonyms, inclusion or exclusion criteria, depth, date bounds if any, and any relevant author or publication constraints. Retain its search details, returned records, abstracts, and open-access links. Its records and abstracts support discovery; they do not establish that a full paper was read or appraised.
+Invoke [Research Literature](../../disciplines/research-literature/SKILL.md) for scholarly discovery. Pass the question, concepts and synonyms, inclusion or exclusion criteria, depth, journal selection and any overrides or exceptions, date bounds if any, and relevant author or publication constraints. Retain its journal-eligibility and exclusion evidence, search details, returned records, abstracts, and open-access links. Apply the same journal criteria to other routes that discover journal articles. Its records and abstracts support discovery; they do not establish that a full paper was read or appraised.
 
 Add field-appropriate searches for primary sources, official statistics, standards, books, or grey literature when those materials can answer the question directly. Prefer original studies, records, and authoritative documentation for claims about what was observed or what a policy or system says. Use review articles to locate and contextualize primary work. Check publication type, version, venue, date, retraction or correction notices when relevant, and conflicts of interest where disclosed. Citation counts, journal rank, search ranking, and institutional reputation may help locate sources but do not establish quality.
 
@@ -100,12 +104,14 @@ Use tables for evidence comparisons or claim-to-source traceability when they ma
 
 ### 6. Write the report
 
+Apply Natural Writing with an academic writing focus while composing the report. Preserve verified findings, uncertainty, quotations, and attribution through prose revisions.
+
 Lead with a direct, appropriately qualified answer. Adapt section names to the deliverable, but include the functions needed for the reader to assess the work:
 
 1. Title and date of the evidence search.
 2. Executive summary or abstract, when useful for the requested length.
 3. Research question and scope.
-4. Search and selection method, including sources, date, and meaningful limits.
+4. Search and selection method, including sources, date, journal preset or override with its numeric rule, important exclusions, coverage limits, and any exceptions.
 5. Thematic findings and critical comparison of evidence.
 6. Interpretation, theoretical implications, or practical implications where warranted.
 7. Limitations, remaining uncertainty, and conclusion.
@@ -123,7 +129,27 @@ Check that the report answers the question, matches the selected depth, distingu
 
 ### 8. Run objective checks
 
-When invoked as a helper, return the report and its structured source inventory to the owning workflow without a separate check. Otherwise save the complete report as UTF-8 and create a private invocation record for Spawn Evals. Include the original request; selected depth; source-count and word-count ranges or explicit user overrides; the selected journal preset or numeric override; and structured records for each cited work with its URL, publication type, journal title and ISSNs where applicable. Mark every resolved constraint as coming from the request or the skill default. Keep search and inspection notes available as evidence, but do not ask Spawn Evals to judge findings, writing quality, or research quality.
+The private invocation record must use schema version 1, set skill to research, provide a unique non-empty invocation_id, include the original non-empty request, and map the saved report path under output_files.report. Its top-level structure is:
+
+```json
+{
+  "schema_version": 1,
+  "skill": "research",
+  "invocation_id": "unique-id",
+  "request": "the original user request",
+  "constraints": {},
+  "output_files": {"report": "/absolute/path/to/report.txt"},
+  "evidence": {"sources": []}
+}
+```
+
+When invoked as a helper, return the report and its structured source inventory to the owning workflow without a separate check. Otherwise save the complete report as UTF-8 and create a private invocation record for Spawn Evals. Include the original request and these resolved constraints, each as `{"value": ..., "source": "request"|"skill_default"}`:
+
+- `word_count_min` and `word_count_max`, using the selected depth's defaults unless the request supplies a bound. The checker counts whitespace-delimited words across the complete report, including citations and references. For thorough depth, the default word maximum is `null` because the documented range says “or more.”
+- `source_count_min` and `source_count_max`, using the selected depth's defaults unless the request supplies a bound. The checker counts `evidence.sources` entries; include one entry per substantive cited source.
+- `journal_preset`, `journal_article_influence_min`, `journal_influence_percentile_min`, `journal_combination`, `journal_filter_disabled`, `journal_category`, and `journal_exceptions`. Use the documented inclusive preset thresholds by default: lenient `1.0` or `60`, default `2.5` or `80`, strict `5.0` or `90`. Use `or` by default. Record request overrides on the specific values they changed. If the request disables the filter, set the preset to `disabled`, both thresholds to `null`, and `journal_filter_disabled` to `true`. Use `null` for an unrestricted `journal_category` and an empty list for no exceptions. Exceptions are a list of exact `source_id` values and must be request-sourced.
+
+Each `evidence.sources` record must include `source_id`, `publication_type`, and `title`. Use `publication_type: "journal_article"` or `"review"` for journal works; include `journal_title`, an `issns` list (empty when unavailable), and `article_url` for these items. Give other substantive source types an explicit non-empty publication type. Keep search and inspection notes available as evidence. The source-count check counts this inventory and does not prove that every entry appears in the report. The journal and link checks do not judge findings, writing, or research quality.
 
 Run the prepared objective package through the Research wrapper:
 
@@ -137,7 +163,7 @@ Do not evaluate nested Natural Writing output separately. Include the concise ob
 
 ## Output
 
-Return the requested report in the requested format or save it to the requested location. If neither is specified, deliver the report in the conversation. Include a concise methods note, in-text citations and a reference list, and the selected depth. For a material access or search limit, identify what was inaccessible and how it affects the conclusion. Do not expose internal chain-of-thought; present the research decisions, evidence, and reasoning needed to audit the report.
+Return the requested report in the requested format or save it to the requested location. If neither is specified, deliver the report in the conversation. Include a concise methods note, in-text citations and a reference list, the selected depth and journal selection, and the objective evaluation result with failed or unverified checks. For a material access or search limit, identify what was inaccessible and how it affects the conclusion. Do not expose internal chain-of-thought; present the research decisions, evidence, and reasoning needed to audit the report.
 
 ## Boundaries
 
