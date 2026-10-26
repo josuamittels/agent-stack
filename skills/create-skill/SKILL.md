@@ -1,7 +1,7 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria."
-version: "0.8.0"
+version: "0.8.1"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -108,7 +108,7 @@ An authoring workflow prepares an objective package only when the authored skill
 
 Fill the template's top-level metadata: the chosen slug, a compact capability and activation description, version `0.1.0`, current date as `YYYY-MM-DD`, type `skill` or `discipline`, and status `draft`. The author should be set as the person creating the request, so ask the user for clarification if their name is unknown. Format `author` and `references` as YAML block lists. List only meaningful source influences in `references`, ordered by contribution, using verified personal names in given-name/family-name order or verified publishing organizations when individual authorship is not established. Keep source URLs and attribution evidence in the research record; use `references: []` if there are no external influences.
 
-For a skill with at least one meaningful objective criterion, invoke [Spawn Evals](../../disciplines/spawn-evals/SKILL.md) to prepare its package after authoring. Pass its completed instructions, intended uses, original requirements, and documented defaults and ranges. The package contains a machine-readable rubric and executable checks for only those criteria. Do not run the checks against the authoring result. If no meaningful objective criterion is possible, skip Spawn Evals entirely, create no package, and remove the template's validation section and every Spawn Evals reference from the target skill. Disciplines do not get evaluation packages.
+For a skill with at least one meaningful objective criterion, invoke [Spawn Evals](../../disciplines/spawn-evals/SKILL.md) after authoring to prepare a package containing a machine-readable rubric and executable checks for only those criteria. Pass the completed instructions, intended uses, original requirements, and documented defaults and ranges. Package preparation validates the package structure only; it does not execute checks against the authoring result. On a later real invocation, the target skill supplies the structured invocation record to the checker. Do not use sub-agents, model judges, qualitative assessments, or synthetic cases. If no meaningful objective criterion is possible, skip Spawn Evals entirely, create no package, and remove the template's validation section and every Spawn Evals reference from the target skill. Disciplines do not get evaluation packages.
 
 ### 4B. Author the skill
 
