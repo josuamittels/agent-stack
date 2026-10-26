@@ -12,10 +12,10 @@ config:
 ---
 %%{init: {"theme": "base", "themeVariables": {"background": "transparent", "clusterBkg": "#EFF4FA", "clusterBorder": "#CBD5E1", "edgeLabelBackground": "transparent", "primaryTextColor": "#002B3D", "lineColor": "#002B3D", "fontFamily": "Fira Code, monospace"}}}%%
 %% Agent is the sole entry point. Green rounded rectangles: skills.
-%% Skill Issue is a decision diamond. Spawn Evals has a coral end node and muted red validation connections without arrowheads.
+%% Skill Issue is a decision diamond. Spawn Evals has a coral end node and muted red objective-check connections without arrowheads.
 %% Yellow rounded rectangles: disciplines. Incoming guideline arrows are dashed; internal guideline connections are plain solid lines.
 %% Think Harder and Ask User Question run by default and have no relationship lines.
-%% Skills that invoke Spawn Evals for validation show a solid line to that discipline.
+%% Skills with meaningful objective checks show runtime and package-preparation links to Spawn Evals.
 %% Gray cylinders: knowledge stores. Gray rounded documents: individual files.
 %% Subgraphs group resources. Connections show organization or source references.
 %% Flow determines columns; prefer short, direct routes with few crossings and bends.
@@ -166,6 +166,7 @@ flowchart LR
     create_skill --> browse_skills
     create_skill --> update_map
     create_skill --> update_router
+    create_skill eval_create_skill@--- spawn_evals
     update_router --> templates
     create_guidelines --> templates
     create_guidelines --> research_web

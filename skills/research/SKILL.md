@@ -18,6 +18,10 @@ status: "draft"
 
 Produce an academically grounded report that answers a defined question, shows how the evidence was found and assessed, and makes the limits of the conclusions visible.
 
+## Evaluation contract
+
+Evaluate a completed real use only. There are no synthetic scenarios or qualitative assessments. For standalone reports, run the objective checks described in step 8 after producing the report. Evaluation does not attempt to verify whether a report's substantive findings are true. When invoked as a helper, return the report and structured source inventory to the owning workflow; the owner retains evaluation and delivery. Explicit user instructions to skip evaluation take precedence and must be reflected in the delivered status.
+
 ## Scope
 
 Use for research reports, literature syntheses, evidence-based background briefs, and critical analyses of a topic. The output may draw on scholarly literature, primary materials, official data, and carefully selected grey literature, depending on the question.
@@ -42,7 +46,7 @@ Depth changes research effort and report scale. It does not change standards for
 | **Default** | Search multiple relevant routes or databases, screen for fit, inspect full text for sources carrying central claims, and check references or citations where useful. Aim for roughly 10–20 substantive sources when the field supports that scope. | Roughly 2,000–4,000 words: a developed report with a transparent method, thematic synthesis, source-quality discussion, competing explanations, and actionable conclusions only where supported. |
 | **thorough** | Broaden and document the search across suitable databases and primary or grey-literature sources; use backward and forward citation searching; inspect full texts and compare relevant theories, designs, contexts, and counterevidence. Aim for roughly 20–40 substantive sources when the question and evidence base justify it. | Roughly 5,000–10,000 words or more: a substantial report with an explicit research protocol, evidence map or comparison tables where useful, deeper theoretical integration, stronger treatment of heterogeneity and uncertainty, and detailed limitations. |
 
-The source and word ranges are planning guides, not quotas or evidence-quality thresholds. Follow a user-specified length when supplied. Stop when further searching yields diminishing relevant evidence or when the chosen scope has been reached. Say when the available literature is sparse, search access is limited, or a target range would add weakly relevant sources. Do not pad a bibliography or report to meet a number. If the user asks for a formal systematic, scoping, or other named review, use its field-appropriate conduct and reporting standards; a depth label alone does not make a report systematic.
+The source and word ranges are default evaluation bounds when a user has not supplied a different numeric limit. A request-specific bound takes precedence. Do not add weak sources or pad prose to meet a bound; when the evidence or access cannot support it, report that limit and expect the corresponding objective check to fail or remain unverified. If the user asks for a formal systematic, scoping, or other named review, use its field-appropriate conduct and reporting standards; a depth label alone does not make a report systematic.
 
 ### Default Procedures
 
@@ -117,9 +121,19 @@ Apply the outside check selected through Think Deeper. Examples include verifyin
 
 Check that the report answers the question, matches the selected depth, distinguishes searched from inspected material, cites every substantive evidence claim, represents contrary findings fairly, and records important uncertainty. If the check finds a material gap, correct the analysis within scope or report the limit. Do not present model self-review as independent validation.
 
-### 8. Validate implementation
+### 8. Run objective checks
 
-When invoked as a helper, return to the owning workflow without separate evaluation. Otherwise invoke [spawn-evals](../../disciplines/spawn-evals/SKILL.md). Pass the original requirements, necessary input context, completed output, observable evidence, and one evaluation ID bound to the request. Use live mode once for this completed result; keep domain-specific criteria in `evals/research/`. Do not evaluate callers or nested helpers, refresh suites, repair, or retry. Report good or not good and material gaps, then stop.
+When invoked as a helper, return the report and its structured source inventory to the owning workflow without a separate check. Otherwise save the complete report as UTF-8 and create a private invocation record for Spawn Evals. Include the original request; selected depth; source-count and word-count ranges or explicit user overrides; the selected journal preset or numeric override; and structured records for each cited work with its URL, publication type, journal title and ISSNs where applicable. Mark every resolved constraint as coming from the request or the skill default. Keep search and inspection notes available as evidence, but do not ask Spawn Evals to judge findings, writing quality, or research quality.
+
+Run the prepared objective package through the Research wrapper:
+
+```sh
+python skills/research/scripts/complete.py --record /private/tmp/research-invocation.json
+```
+
+The configured package may check report length and source count against the resolved bounds, compare cited journal identities and scores with the selected preset, and test article-link reachability. A reachable link does not establish the identity or findings of the linked article. The checker returns PASS, FAIL, or NOT PASSED — UNVERIFIED with the failed or unavailable verification step. If no package exists, report NOT PASSED — UNVERIFIED and still deliver the completed report with that status; do not create a package during the invocation.
+
+Do not evaluate nested Natural Writing output separately. Include the concise objective result with the report. Never describe the mechanical checks as proof that research findings are correct.
 
 ## Output
 

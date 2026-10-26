@@ -15,7 +15,7 @@ At the start of a new task, or when its intended outcome changes, read [skill-is
 | `disciplines/` | Reusable methods and task-specific procedures. Direct use can fit a scoped task or a gap without a matching skill. |
 | `guidelines/` | Language, design, and technical references loaded by their consuming workflows; never route destinations. |
 | `templates/` | Authoring scaffolds for skills, references, standalone routers, and AGENTS instructions. |
-| `evals/` | Evaluation packages and checks for capabilities that use them. Fixtures do not expose executable capabilities. |
+| `evals/` | Objective rubrics and checker scripts for skills with meaningful script-verifiable checks; qualitative-only skills have no evaluator handoff or package. |
 | `sources/` | Local research and third-party examples; exclude these copies from capability discovery. |
 | `agents/`, `playbooks/` | Reserved directories, currently empty. |
 

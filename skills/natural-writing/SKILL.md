@@ -1,8 +1,8 @@
 ---
 name: natural-writing
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "0.2.0"
-updated: "2026-10-25"
+version: "0.3.0"
+updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -69,10 +69,8 @@ Preserve facts, uncertainty, attribution, scope, and the intended meaning. Do no
 
 When used as a helper inside another requested skill, return to that owner without a separate evaluation.
 
-Before delivery, invoke [spawn-evals](../../disciplines/spawn-evals/SKILL.md) as this invocation's final validation. Pass the original writing requirements, source material, necessary voice/audience context, completed prose, relevant language guidance, and observable evidence. Supply an invocation ID. Evaluate this requested result once; do not add separate evaluations of nested helpers.
-
-The package at `evals/natural-writing/` owns the quality criteria: meaning and factual fidelity, reader fit and voice, structure and clarity, language conventions, protected elements, and formulaic phrasing. Explicit user style choices govern. Use its scored verdict rather than a parallel private review procedure. Report an unacceptable or unverifiable result and stop; no repair or replay is part of evaluation. Do not claim human authorship or a detector guarantee.
+For an independent invocation, save the complete output in a private UTF-8 temporary file and pass Spawn Evals an invocation record containing the original request, resolved measurable constraints with their source, the output path, and machine-readable evidence. Do not evaluate a nested helper separately. The package may check objective requirements such as exact protected tokens or a requested length bound; it cannot establish prose quality or semantic correctness. If the package is missing or a required check is unverified, report NOT PASSED — UNVERIFIED and name the affected step. Do not substitute a model judgment or claim human authorship or a detector guarantee.
 
 ## Deliver
 
-Return the requested text or artifact in its required format. Omit internal notes, voice analysis, and compliance claims unless requested. Include the concise shared evaluation result alongside the deliverable. Preserve any surrounding application or artifact structure required by the task.
+Return the requested text or artifact in its required format. Omit internal notes and voice analysis. Include the concise objective evaluation result alongside the deliverable. Preserve any surrounding application or artifact structure required by the task.

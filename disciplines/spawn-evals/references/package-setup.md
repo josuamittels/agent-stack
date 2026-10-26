@@ -1,13 +1,45 @@
-# Target package setup
+# Objective package setup
 
-Prepare only the requested skill’s measuring instrument. The target must be `skills/<skill-name>/SKILL.md`; never create a package for a discipline. This is local setup, not another evaluation mode or permission to launch agents.
+Use this reference only after Create Skill determines that the target skill has at least one meaningful, deterministic, task-specific check. If no such check is possible, Create Skill must skip Spawn Evals entirely, create no package, and omit all evaluator references and handoffs from the target skill. This step authors checks for future real invocations; it does not run them.
 
-Maintain `evals/<skill-name>/suite.json`, a frozen versioned rubric, and `cases.json`. The manifest identifies schema version 1, target slug, active rubric, and relevant production resources. A rubric has 3–6 criteria with positive integer weights totaling 100, `check` or `judge` kinds, critical flags, explicit 0/1/2 anchors, categories, and abstract improvement guidance. Preserve immutable rubric versions; a changed quality bar needs a new version.
+## Package files
 
-For live evaluation, use or prepare the rubric and inspect the completed output once. Do not run synthetic cases. No existing suite marker is required.
+Create only these files under `evals/<skill>/`:
 
-For an authorized post-edit evaluation, select exactly three cases: normal, boundary, and failure. Prepare synthetic fixtures and organic requests with observable requirements. In legacy packages, only the first three maintained cases are active; additional regressions and calibrations remain historical and are never scheduled. New packages contain exactly three cases and no calibrations.
+- `rubric.json` declares `schema_version: 1`, the exact skill slug, and a non-empty `checks` array.
+- `checks.py` defines one callable function named by each check's `handler` field. The runner calls each handler once with the invocation record.
 
-Freeze setup before dispatch. Apollo, Athena, and Prometheus each receive one case in a fresh temporary production context, without rubric, expected outcomes, prior scores, or evaluation awareness. Remove validation and delegation handoffs from temporary copies. Each producer has one attempt and may not invoke other skills as agents or execute external effects. One fresh Betabert grades all three outputs in a single call. A missing output stays failed; do not replace its producer.
+Each rubric check has exactly `id`, `description`, `handler`, `mandatory`, and `required_inputs`. IDs are unique lowercase slugs. `required_inputs` contains JSON Pointers into the runtime object. `mandatory` is boolean. Descriptions state the measurable pass condition in plain language. Do not add weights, qualitative anchors, expected outputs, or test scenarios.
 
-Keep check evidence and model evidence distinct. Missing evidence never proves success. Do not run calibrations, broaden cases, refresh upstream packages, or tune the rubric after seeing outputs. If setup or criteria prove unusable, report not good—unable to verify and stop. Preserve past abstract records without rewriting them.
+Each handler returns exactly `status`, `step`, `aspect`, `observed`, `expected`, and `evidence`. Status is `pass`, `fail`, `unverified`, or `not_applicable`. `step` and `aspect` are non-empty strings. `evidence` lists JSON Pointers to the supplied invocation record or its output/evidence fields. The runner ensures every declared check gets a result; never turn missing data into a pass.
+
+Each check handler receives this object:
+
+```json
+{
+  "schema_version": 1,
+  "skill": "example-skill",
+  "invocation_id": "unique-run-id",
+  "request": "Original request text",
+  "constraints": {
+    "max_words": {"value": 600, "source": "request"},
+    "depth": {"value": "standard", "source": "skill_default"}
+  },
+  "outputs": {"main": "Complete UTF-8 artifact text"},
+  "evidence": {}
+}
+```
+
+The source of each constraint is exactly `request` or `skill_default`. If the request explicitly overrides a default, pass the requested value and use `request`. Include only constraints that apply to this invocation. `output_files` in the input record maps artifact names to complete UTF-8 file paths; the runner loads their contents into `outputs`. Evidence must be structured JSON and may include source inventories, link lists, process counts, or other machine-verifiable records.
+
+## Authoring checks
+
+1. Map each meaningful objective criterion to an input field and a reproducible script condition. Exclude generic checks such as output existence when they do not measure the skill's intended outcome.
+2. Use shared helpers from `disciplines/spawn-evals/scripts/checklib.py` for word counts, character counts, protected tokens, and URL reachability where they fit.
+3. Treat timeouts, blocked requests, unavailable files, missing evidence, and ambiguous matches as unverified. A confirmed limit violation is a failure.
+4. Keep request limits separate from skill defaults so the output can identify why a threshold applied.
+5. Run `python disciplines/spawn-evals/scripts/runner.py --validate-package --skill <skill-slug>`. This checks rubric shape and checker syntax without calling handlers. Do not run the skill's checks or the completed authoring result here.
+
+## Research example criteria
+
+When a future Research package is prepared, its checks can use structured evidence to verify report word count, cited-source count, journal identity and supplied score thresholds, and whether cited article URLs resolve. The run record must include the selected depth, its configured ranges, any request overrides, a complete source inventory, and the journal score data revision. Reachability alone does not prove source identity or the truth of findings. Do not retain or recreate the old Research qualitative or claim-verification rubric.

@@ -48,7 +48,7 @@ Follow [relevant constraints].
 
 ### N. Validate implementation
 
-When invoked as a helper, return to the owning workflow without separate evaluation. Otherwise invoke [spawn-evals](../disciplines/spawn-evals/SKILL.md). Pass the original requirements, necessary input context, completed output, observable evidence, and one evaluation ID bound to the request. Use live mode once for this completed result; keep domain-specific criteria in `evals/<skill-name>/`. Do not evaluate callers or nested helpers, refresh suites, repair, or retry. Report good or not good and material gaps, then stop.
+When invoked as a helper, return to the owning workflow without separate evaluation. For a skill with meaningful, deterministic, task-specific checks, invoke [Spawn Evals](../disciplines/spawn-evals/SKILL.md) once with a structured invocation record containing the original request, resolved constraints and their source, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `evals/<skill-name>/` defines only those checks. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
 
 ## Output
 Required deliverable and essential fields.
