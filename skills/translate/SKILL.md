@@ -1,7 +1,7 @@
 ---
 name: translate
 description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
-version: "0.4.0"
+version: "0.4.1"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -36,7 +36,9 @@ If you miss relevant information, first invoke [think-harder](../../disciplines/
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
-## Prepare an internal translation brief
+## Workflow
+
+### 1. Prepare an internal translation brief
 
 Before invoking natural-writing, establish:
 
@@ -50,7 +52,7 @@ Before invoking natural-writing, establish:
 
 Keep the brief internal unless requested. Distinguish supplied facts from inferred context. Do not manufacture cultural preferences or turn national stereotypes into writing requirements. Reuse an existing glossary or style brief rather than creating competing versions.
 
-## Choose the treatment
+### 2. Choose the treatment
 
 | Treatment | Application |
 | --- | --- |
@@ -65,7 +67,7 @@ Preserve names and brands unless an established localized form or explicit instr
 
 Localize presentation of dates, numbers, units, currencies, and forms of address without silently changing underlying values. Currency conversion, substituted locations, altered examples, market-specific offers, and changed legal obligations require an established basis or explicit direction. Do not invent exchange rates, local evidence, or product availability.
 
-## Invoke natural-writing
+### 3. Invoke natural-writing
 
 Before producing target prose, require [natural-writing](../natural-writing/SKILL.md). Pass the original source and internal brief, including the target locale, permitted adaptations, terminology, protected elements, and fidelity requirements.
 
@@ -75,8 +77,12 @@ Use the host's invocation mechanism when available. Otherwise read and apply the
 
 Explicitly identify prose authorized for translation, including quoted passages. Distinguish it from citations, code, identifiers, interpolation variables, link destinations, and other elements that must remain exact. Preserve attribution and distinguish translated quotations from original-language wording where necessary.
 
-## Delivery
+## Output
 
 When used as a helper inside another requested skill, return the completed translation to that owner.
 
 Return the translation in the requested format. Add explanations, alternatives, or adaptation notes only when requested or needed to resolve material ambiguity. Report native-speaker review or rendered-context verification only when actually performed. Do not imply specialist approval, release readiness, or human authorship.
+
+## Boundaries
+
+Do not undertake market rollout, interface redesign, publishing, or unrelated research as part of a translation request. Do not change underlying values, product offers, or legal obligations without an established basis or explicit direction. Do not invent facts, cultural preferences, or product availability. If natural-writing or its required usable language guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
