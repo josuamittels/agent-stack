@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.3.0` |
+| Version | `0.4.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.3.0` records the compatible addition of Compose Voice Profile; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.4.0` records the compatible addition of Mind Wandering and its Creative Moves reference; the stack has not been released.
 
 ## Component versions
 
@@ -29,6 +29,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Skill | `skills/translate/SKILL.md` | `0.4.1` | `draft` |
 | Discipline | `disciplines/ask-user-question/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `disciplines/browse-skills/SKILL.md` | `1.0.0` | `draft` |
+| Discipline | `disciplines/mind-wandering/SKILL.md` | `0.1.1` | `draft` |
 | Discipline | `disciplines/pre-mortem/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `disciplines/quit-the-yap/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `disciplines/release-agent-stack/SKILL.md` | `0.1.0` | `draft` |
