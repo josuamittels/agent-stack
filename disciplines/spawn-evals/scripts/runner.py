@@ -194,23 +194,31 @@ def run(root, skill, record_path):
                     'aspect': 'required input missing', 'observed': missing,
                     'expected': spec['required_inputs'], 'evidence': []}
         else:
-            item = handler(runtime)
-        require(isinstance(item, dict) and set(item) == HANDLER_RESULT_KEYS,
-                'handler result has invalid fields: ' + spec['id'])
-        require(item['status'] in STATUSES, 'invalid check status: ' + spec['id'])
-        require(all(isinstance(item[k], str) and item[k].strip() for k in ('step', 'aspect')),
-                'each check needs a verification step and aspect: ' + spec['id'])
-        require(isinstance(item['evidence'], list), 'evidence must be a list of locations: ' + spec['id'])
-        for location in item['evidence']:
-            require(isinstance(location, str) and location.startswith('/'),
-                    'evidence locations must be JSON Pointers: ' + spec['id'])
             try:
-                pointer(runtime, location)
-            except (KeyError, IndexError, ValueError, TypeError):
-                item = {'status': 'unverified', 'step': 'result validation',
-                        'aspect': 'evidence location does not resolve', 'observed': location,
-                        'expected': 'a JSON Pointer into the invocation record', 'evidence': []}
-                break
+                item = handler(runtime)
+                require(isinstance(item, dict) and set(item) == HANDLER_RESULT_KEYS,
+                        'handler result has invalid fields: ' + spec['id'])
+                require(item['status'] in STATUSES, 'invalid check status: ' + spec['id'])
+                require(all(isinstance(item[k], str) and item[k].strip() for k in ('step', 'aspect')),
+                        'each check needs a verification step and aspect: ' + spec['id'])
+                require(isinstance(item['evidence'], list),
+                        'evidence must be a list of locations: ' + spec['id'])
+                for location in item['evidence']:
+                    require(isinstance(location, str) and location.startswith('/'),
+                            'evidence locations must be JSON Pointers: ' + spec['id'])
+                    try:
+                        pointer(runtime, location)
+                    except (KeyError, IndexError, ValueError, TypeError):
+                        item = {'status': 'unverified', 'step': 'result validation',
+                                'aspect': 'evidence location does not resolve', 'observed': location,
+                                'expected': 'a JSON Pointer into the invocation record', 'evidence': []}
+                        break
+            except Exception as error:
+                item = {'status': 'unverified', 'step': 'check execution',
+                        'aspect': 'check handler failed or returned an invalid result',
+                        'observed': {'error_type': type(error).__name__, 'message': str(error)},
+                        'expected': 'handler returns a valid structured check result',
+                        'evidence': []}
         item = {'id': spec['id'], **item}
         item['mandatory'] = spec['mandatory']
         final.append(item)
@@ -247,7 +255,8 @@ def main():
         return {'pass': 0, 'fail': 1, 'not_passed_unverified': 2}[result['status']]
     except Exception as error:
         print(canonical({'schema_version': 1, 'skill': args.skill, 'status': 'not_passed_unverified',
-                         'checks': [], 'error': str(error) if isinstance(error, ValueError) else 'checker-input-unavailable'}))
+                         'checks': [], 'error_type': type(error).__name__,
+                         'error': str(error) if isinstance(error, ValueError) else 'checker-input-unavailable'}))
         return 2
 
 

@@ -14,15 +14,15 @@ status: "draft"
 
 # Update Router
 
+## Scope
+
+Maintain the root guide and [skill-issue catalog](../../skills/skill-issue/SKILL.md) within the calling workflow.
+
 ### Boundaries
 
 Maintain discovery only; do not repair capabilities or the map, install integrations, invoke the router or create-skill, or run background watchers. Final evaluation and lifecycle decisions remain with the caller.
 
 If required discovery inputs or the router are missing or unreadable, markers are invalid, or generated content conflicts with manual instructions, stop before writing and report the dependency or conflict. Preserve unrelated and concurrent edits; reread changed inputs before applying. Never guess section boundaries or overwrite a conflicting manual rule.
-
-## Scope
-
-Maintain the root guide and [skill-issue catalog](../../skills/skill-issue/SKILL.md) within the calling workflow.
 
 ## Inputs
 

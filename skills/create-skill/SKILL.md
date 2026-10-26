@@ -1,7 +1,7 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria."
-version: "0.8.1"
+version: "0.9.0"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -55,8 +55,8 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ## Workflow
 
-For new creation of skills, follow steps 1A, 2, 3A, 4A, 5, 6, 7.
-For modification of existing skills, follow steps 1B, 2, 3B, 4B, 5, 6, 7.
+For new skills, follow steps 1A, 2, 3, 4A, 5A, 6, 7, 8.
+For skill revisions, follow steps 1B, 2, 3, 4B, 5B, 6, 7, 8.
 
 ### 1A. Establish the contract
 
@@ -76,29 +76,35 @@ Before changing instructions, check whether the failure came from incorrect exec
 
 If the evidence shows a guideline defect, invoke [create-guidelines](../create-guidelines/SKILL.md). Include the evidence, affected callers, approved scope, and the context needed to identify the coordinator and return the result. Resume any pending skill work when the result comes back. Do not start another handoff for the same issue if one is already active or completed.
 
-### 2. Research comparable skills
+### 2. Research comparable skills and web sources
 
 Establish the research questions from the contract: which comparable workflows, decision rules, tools, handoffs, and failure-handling approaches could improve this capability?
 
 For an edit, include the reported domain and failure mechanism as well as the overall capability. Keep the intended outcome and constraints authoritative when assessing inspiration.
 
-1. Invoke [browse-skills](../../disciplines/browse-skills/SKILL.md) for related-skill discovery and inspection. Pass the contract, chosen name, relevant context and references, constraints, research questions, useful search terms, supplied sources or prior findings, and `sources/research_<skill-name>.md` as the record path.
+1. Invoke [Browse Skills](../../disciplines/browse-skills/SKILL.md) for related-skill discovery and inspection. Pass the contract, chosen name, context, constraints, research questions, search terms, supplied sources or prior findings, and `sources/research_<skill-name>.md` as the record path.
 
-2. Use `disciplines/research-web` to research domain facts, standards, or tool behavior beyond the skill sources. Keep that evidence in the same research record. Do not duplicate browse-skills' discovery procedure here or treat a listing as an inspected source.
+2. Research domain facts, standards, or tool behavior beyond the skill sources with Research Web when usable instructions are available. Otherwise use available web search and page-reading tools directly. Prefer primary sources. Record queries, sources, retrieval dates, findings, and limits in the same research record. If no web tool is available, record the gap and follow the evidence-limited-draft agreement rule below. Do not duplicate Browse Skills' discovery or treat a listing as an inspected source.
 
-Use the returned findings to choose what to incorporate into the original design or revision proposal. Resolve conflicts against the contract and explain adoption and rejection decisions in the research record. If essential research remains blocked, finish available investigation and obtain agreement to an evidence-limited draft before treating research as complete; reuse explicit agreement already supplied for that scope. This skill retains authoring, approval, attribution, lifecycle, and the decision whether objective checks are suitable for the target.
+Use both research streams to inform the design. Resolve conflicts against the contract and record what to adopt or reject and why. If essential research remains blocked, finish available investigation and obtain agreement to an evidence-limited draft before treating research as complete; reuse explicit agreement already supplied for that scope.
 
-### 3A. Choose creation
+### 3. Design and stress-test the skill
 
-Synthesize an original design from the contract and research. The user's creation request authorizes implementation within that scope.
+Invoke [Think Deeper](../../disciplines/think-deeper/SKILL.md) with the contract and research findings. Ask it to define the reusable outcome, trigger, inputs, boundaries, workflow and decisions, tools and resources, handoffs, outputs, and completion criteria. Decide which research insights fit this stack and which do not. Keep the user's goal and scope fixed.
 
-### 3B. Choose approved revision
+Then invoke [Pre-Mortem](../../disciplines/pre-mortem/SKILL.md) on that concrete design. Use the first intended invocation as the horizon. Imagine the skill fails; probe its trigger, workflow, dependencies, handoffs, and completion conditions for omissions or failure paths. Apply actionable findings to the design and record changes, unresolved assumptions, or that no change was needed in the research record. Keep this pass proportionate and do not add scores or artifacts unless they change a decision. Begin authoring only after this review.
 
-First present the observed problem, source evidence, concrete proposed changes, affected files and map connections, preserved behavior, and verification approach. Ask for implementation approval and wait before editing the target, its supporting resources, or map relationships. Research notes may be prepared beforehand. If the user already approved this specific proposal, proceed without requesting approval again. A materially expanded proposal needs renewed approval.
+### 4A. Choose creation
+
+Synthesize the final design from the contract, research, and pre-mortem changes. The user's creation request authorizes implementation within that scope.
+
+### 4B. Choose approved revision
+
+Present the observed problem, source evidence, post-pre-mortem changes, affected files and map connections, preserved behavior, and verification approach. Ask for implementation approval and wait before editing the target, supporting resources, or map relationships. If the user already approved this specific proposal, proceed without asking again. A materially expanded proposal needs renewed approval.
 
 Combine related guideline and skill fixes into one proposal, and identify who owns each fix. When create-guidelines hands off a consumer update, use its approved scope and completed guideline changes. Update when and how the skill consults the guideline; keep domain conventions in the guideline instead of copying them into the skill. Send the outcome back to the create-guidelines coordinator. Identify any other affected callers, but do not change them unless they are included in the approved scope.
 
-### 4A. Author the skill
+### 5A. Author a new skill
 
 For a skill, create `skills/<skill-name>/` and copy [skill template](../../templates/SKILL.md) to its `SKILL.md` before filling it in.
 
@@ -108,13 +114,13 @@ Use this stack’s template rather than another creator’s initializer, and rep
 - `### Default Procedures`, including both shared Inputs paragraphs, at the end of ## Inputs.
 - `### N. Validate implementation` only when the skill has at least one meaningful, deterministic, task-specific check; replace N by the appropriate step number. When no such check is possible, omit this entire section and all Spawn Evals references from the target skill.
 
-An authoring workflow prepares an objective package only when the authored skill has at least one meaningful, deterministic, task-specific condition that a script can verify from supplied output or evidence without judging meaning, quality, or correctness. Generic checks such as “an output exists” do not qualify. For skills with both qualitative goals and measurable requirements, package only the measurable requirements. If no meaningful objective check is possible, do not invoke Spawn Evals, create a package, or leave any Spawn Evals reference or runtime handoff in the target skill. Do not create an empty or placeholder rubric. In all cases, do not evaluate the authoring result. For Spawn Evals itself, preserve its bounded missing-input handling instead of adding shared clarification or delegation procedures. For a discipline, remove the template’s final runtime-check handoff; do not include evaluator references or create an `evals/<discipline-name>/` package. Verify discipline instructions and changed helpers with relevant local checks only. Disciplines neither invoke evaluations nor become evaluation targets.
+An authoring workflow prepares an objective package only for the distinct target skill it creates or edits, and only when that target has at least one meaningful, deterministic, task-specific condition that a script can verify from supplied output or evidence without judging meaning, quality, or correctness. `create-skill` is the authoring workflow, never an evaluation target: do not invoke Spawn Evals for `create-skill`, create or maintain `evals/create-skill/`, or evaluate the authoring workflow through Spawn Evals, including when revising `create-skill` itself. Generic checks such as “an output exists” do not qualify. For target skills with both qualitative goals and measurable requirements, package only the measurable requirements. If no meaningful objective check is possible, do not invoke Spawn Evals, create a package, or leave any Spawn Evals reference or runtime handoff in the target skill. Do not create an empty or placeholder rubric. In all cases, do not evaluate the authoring result. For Spawn Evals itself, preserve its bounded missing-input handling instead of adding shared clarification or delegation procedures. For a discipline, remove the template’s final runtime-check handoff; do not include evaluator references or create an `evals/<discipline-name>/` package. Verify discipline instructions and changed helpers with relevant local checks only. Disciplines neither invoke evaluations nor become evaluation targets.
 
 Fill the template's top-level metadata: the chosen slug, a compact capability and activation description, version `0.1.0`, current date as `YYYY-MM-DD`, type `skill` or `discipline`, and status `draft`. The author should be set as the person creating the request, so ask the user for clarification if their name is unknown. Format `author` and `references` as YAML block lists. List only meaningful source influences in `references`, ordered by contribution, using verified personal names in given-name/family-name order or verified publishing organizations when individual authorship is not established. Keep source URLs and attribution evidence in the research record; use `references: []` if there are no external influences.
 
-For a skill with at least one meaningful objective criterion, invoke [Spawn Evals](../../disciplines/spawn-evals/SKILL.md) after authoring to prepare a package containing a machine-readable rubric and executable checks for only those criteria. Pass the completed instructions, intended uses, original requirements, and documented defaults and ranges. Package preparation validates the package structure only; it does not execute checks against the authoring result. On a later real invocation, the target skill supplies the structured invocation record to the checker. Do not use sub-agents, model judges, qualitative assessments, or synthetic cases. If no meaningful objective criterion is possible, skip Spawn Evals entirely, create no package, and remove the template's validation section and every Spawn Evals reference from the target skill. Disciplines do not get evaluation packages.
+For an eligible target skill with at least one meaningful objective criterion, invoke [Spawn Evals](../../disciplines/spawn-evals/SKILL.md) after authoring to prepare a package containing a machine-readable rubric and executable checks for only those criteria. Pass the completed target instructions, intended uses, original requirements, and documented defaults and ranges. Package preparation validates the package structure only; it does not execute checks against the authoring result. On a later real invocation, the target skill supplies the structured invocation record to the checker. Do not use sub-agents, model judges, qualitative assessments, or synthetic cases. Never pass `create-skill` as the target to Spawn Evals. If no meaningful objective criterion is possible, skip Spawn Evals entirely, create no package, and remove the template's validation section and every Spawn Evals reference from the target skill. Disciplines do not get evaluation packages.
 
-### 4B. Author the skill
+### 5B. Author a skill revision
 
 Preserve the name, status, authorship, invocation policy, and working behavior unless the approved change calls for an adjustment. Update the date and meaningful source attribution.
 
@@ -122,7 +128,7 @@ Increment the version according to [versioning guidelines](../../guidelines/vers
 
 Edit in place rather than reinitializing the skill. Apply the authoring conventions to scope, decision points, required outputs, resource loading, handoffs, and completion criteria. Link substantial supporting guidance only where it is needed. Add helpers only for concrete recurring mechanics, and exercise any new or changed executable helper.
 
-### 5. Maintain the map and lifecycle
+### 6. Maintain the map and lifecycle
 
 Invoke [update-map](../../disciplines/update-map/SKILL.md) after authoring or changing a stack resource. Pass the changed paths, resource types, explicit calls and consulted references, obsolete relationships, and approved scope.
 
@@ -130,13 +136,13 @@ Invoke [update-router](../../disciplines/update-router/SKILL.md) and pass the re
 
 Research files stay local under the repository's existing ignore rule. Do not change that rule or force-add them.
 
-### 6. Mirror the completed work
+### 7. Mirror the completed work
 
 Before validation, show the user what has been created or changed, with links to the authored skill and relevant resources. Summarize how the resulting skill works: what activates it, what inputs it uses, its main workflow and handoffs, and what it returns. Compare the result with the original request. Explain any deviations, their reasons, and their effect on behavior; state explicitly when there are none. Include material limitations and outstanding work so the user can review the actual result.
 
 Report the authored skill and prepared objective package when one applies, or state that objective checks do not apply without adding evaluator instructions to the skill. Report local verification only for a discipline. Do not evaluate the authoring result or request evaluation approval. Existing skills with objective criteria but no package remain unevaluated until a later authorized Create Skill edit prepares one.
 
-### 7. Confirm implementation
+### 8. Confirm implementation
 
 For an authored skill with objective criteria, confirm the package rubric and checker are present and structurally valid. For a skill with no meaningful objective criteria, confirm there is no package and no Spawn Evals reference or handoff in the target. Package preparation is not an evaluation: do not run the skill's checks, create test scenarios, spawn producers, or grade the Create Skill result. Run appropriate local tests for changed evaluator infrastructure separately. When repairing a skill used for an original task, return the updated target and regenerated objective package to the owning workflow only when a package applies; it may run them on its completed invocation.
 

@@ -1,7 +1,7 @@
 ---
 name: "research-literature"
 description: "Search OpenAlex for academic works with lenient, default, or strict journal-influence selection and other requested filters, and return source-linked records and abstracts."
-version: "0.4.0"
+version: "0.5.0"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -76,13 +76,18 @@ Follow [`references/openalex-docs.md`](references/openalex-docs.md) for supporte
 - Apply requested year bounds with publication-date filters and other requested constraints with supported work filters. Apply the stated default journal selection, but do not add further prestige, citation-count, open-access, language, or date cutoffs without a request.
 - Combine multiple author IDs or source IDs with OpenAlex's OR syntax within that filter. Combine separate filter dimensions with AND only when the user intends all of them to apply together.
 
-Use an available HTTP/API client to call `https://api.openalex.org`. Basic metadata queries can be made without an API key. If direct HTTP access is unavailable, use an available browser route to inspect OpenAlex records and report any missing fields or paging limits. Do not install a client or expose credentials to work around missing access.
+Use an available HTTP/API client to call `https://api.openalex.org`. Basic metadata queries can be made without an API key. Classify the result of a small read-only request before continuing:
+
+- A valid OpenAlex response, including a successful response with zero matches, establishes API access. Record API errors separately from successful zero-result searches.
+- A DNS, connection, TLS, or tool-access failure means the selected route could not reach the API. It does not establish that OpenAlex is down, that the query has zero matches, or that the API rejected the request. Do not repeat the same blocked route or broaden a query to compensate for transport failure.
+- If direct API access is unavailable, use an available browser to search the OpenAlex website and inspect its work, author, or source records. Identify this as an OpenAlex website search, record the queries and which fields or result counts were visible, and mark filters or pagination that the interface could not verify. Do not present generic web-search results that merely mention OpenAlex as an OpenAlex search.
+- If neither the API nor the OpenAlex website is available, stop OpenAlex retrieval and report the access gap. Do not install clients, configure proxies, or seek credentials to work around host restrictions.
 
 If a requested value cannot be resolved or OpenAlex does not expose the needed filter, report the gap. Continue only where useful results can still honor the inclusion criteria. The CSV metrics are local criteria, not OpenAlex filter fields.
 
 ### 3. Search and retrieve records
 
-Query the OpenAlex Works endpoint. Prefer `search.title_and_abstract` for targeted retrieval; use `search` when full-text terms or keywords are useful. Use semantic search when meaning-based retrieval could find useful terminology variants, subject to its documented limits. Use relevance ordering for discovery, but do not present its score as a measure of evidence quality. If a request errors or a needed field or behavior is unclear, consult the relevant official fallback link in the [`Openalex Documentation`](references/openalex-docs.md), correct the request, and record the change.
+When API access is available, query the OpenAlex Works endpoint. Prefer `search.title_and_abstract` for targeted retrieval; use `search` when full-text terms or keywords are useful. Use semantic search when meaning-based retrieval could find useful terminology variants, subject to its documented limits. Use relevance ordering for discovery, but do not present its score as a measure of evidence quality. If a request errors or a needed field or behavior is unclear, consult the relevant official fallback link in the [`Openalex Documentation`](references/openalex-docs.md), correct the request, and record the change. When using the OpenAlex website fallback, follow its available search and record pages instead; do not claim API filters, counts, or pagination that the website did not expose.
 
 Filter journal works by eligible `primary_location.source.id` values. Batch OR lists at no more than 100 source IDs per request, splitting further for the URL limit. Keep the topic, author, date, and other constraints on every batch. Merge results by stable work identifiers. For example, a focused request can use `search.title_and_abstract` with `filter=authorships.author.id:<author-id>,primary_location.source.id:<eligible-source-id>,from_publication_date:2020-01-01,to_publication_date:2024-12-31`. Omit unspecified optional filters. Let the HTTP client encode spaces, quotes, and the `|` OR separator. Follow the reference's paging rules, including the API-key requirement for cursor pages after the first.
 
@@ -108,8 +113,8 @@ Present the matching works with a DOI or OpenAlex record link, title, authors, y
 
 Alongside the results, report the search date, exact query strings, filters, total matched count, number returned or inspected, and any unresolved filters or truncation. Separate preprints and other work types where that distinction matters. Do not turn the list into a claim about what the literature collectively concludes.
 
-Include the selected preset or override and numeric combination rule, CSV path and snapshot limitation, category rule, eligible and resolved journal counts, actual query batches, and retrieval mode. For retrieved records, distinguish inspected and included works, measured below-threshold exclusions, unknown journal matches or scores, and unresolved source IDs. Report counts actually observed in the chosen retrieval mode. Do not sum overlapping batch totals as unique works or imply that source-filtered queries enumerated excluded works.
+Include the selected preset or override and numeric combination rule, CSV path and snapshot limitation, category rule, eligible and resolved journal counts, actual query batches, and retrieval mode (`API` or `OpenAlex website`). For retrieved records, distinguish inspected and included works, measured below-threshold exclusions, unknown journal matches or scores, and unresolved source IDs. Report counts actually observed in the chosen retrieval mode; mark counts unavailable when the website does not expose them. Do not sum overlapping batch totals as unique works or imply that source-filtered queries enumerated excluded works.
 
 ## Output
 
-Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, result counts, and screening or truncation notes. Identify the search as OpenAlex-only.
+Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, observed result counts, retrieval mode, and screening or truncation notes. Identify the work as an OpenAlex search only when records were retrieved from its API or website. If neither route was available, state that OpenAlex discovery was not completed; do not label another provider's results as OpenAlex results.

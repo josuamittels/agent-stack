@@ -1,8 +1,8 @@
 ---
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
-version: "0.1.0"
-updated: "2026-10-25"
+version: "0.2.0"
+updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -21,6 +21,8 @@ Use this reference for routine literature searches through the OpenAlex API. Rea
 - Use `/works` to find publications, `/authors` to resolve researchers, and `/sources` to resolve journals and other sources. All return JSON.
 - Basic metadata requests work without a key. A free API key is required to follow cursor pagination after its first page. Use only credentials already available in the environment; do not create, expose, or request credentials as part of a literature search.
 - Pass request parameters through an HTTP client's parameter map so it encodes spaces, quotes, `|`, and other reserved characters.
+
+OpenAlex also provides a website search for locating works and their OpenAlex IDs. Use the website as a fallback only when an available API route cannot reach the API. The website may not expose the API's filters, result totals, fields, or pagination; report those limits rather than inferring API behavior from the visible records. A web-search result that points to an OpenAlex page is not, by itself, a search performed in OpenAlex.
 - OpenAlex returns its curated core works corpus by default. State when the `corpus` parameter was changed, because `corpus=all` includes a larger expansion set and changes result counts.
 
 ## Search modes

@@ -169,16 +169,25 @@ flowchart LR
 
     create_skill --> templates
     create_skill --> natural_writing
+    create_skill -.-> english
     create_skill --> research_web
     create_skill --> browse_skills
+    create_skill --> think_deeper
+    create_skill --> pre_mortem
     create_skill --> update_map
     create_skill --> update_router
-    create_skill eval_create_skill@--- spawn_evals
+    create_skill prepare_target_eval@--- spawn_evals
     update_router --> templates
     create_guidelines --> templates
+    create_guidelines --> natural_writing
+    create_guidelines -.-> english
     create_guidelines --> research_web
     create_guidelines --> browse_skills
+    create_guidelines --> think_deeper
+    create_guidelines --> pre_mortem
+    create_guidelines --> create_skill
     create_guidelines --> update_map
+    create_guidelines --> update_router
     update_map -.-> mermaid
     update_changelog -.-> changelog
     update_changelog -.-> versioning
@@ -213,7 +222,7 @@ flowchart LR
     classDef section rx:8px,ry:8px
     class ask_user_question,think_harder,think_deeper,pre_mortem,browse_skills,update_changelog,quit_the_yap,update_map,update_router,research_web,scrape_web,research_literature,manage_ads,creativity,image_tools,video_tools method;
     class skill_issue decision
-    class eval_create_skill,eval_research evaluation_link
+    class prepare_target_eval,eval_research evaluation_link
     class spawn_evals evaluation
     class stack entry
     class natural_writing,create_guidelines,research,translate,analyse_ads,audit_accessibility,audit_ux,brainstorm,brand_discovery,business_plan,create_image_ads,create_skill,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,ship,steal skill

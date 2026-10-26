@@ -13,15 +13,15 @@ status: "draft"
 
 # Spawn Evals
 
-### Boundaries
-
-Do not dispatch producers, graders, calibration runs, or nested agents. Do not carry out target repairs. A failed result identifies the exact check; the skill owner decides whether to revise the skill. Do not rebuild old evaluation packages during general evaluator maintenance.
-
 ## Scope
 
 Prepare an objective evaluation package only for a skill with at least one meaningful, deterministic, task-specific condition that a script can verify from supplied output or evidence. Run an existing package against one completed invocation. Checks are executable scripts with explicit inputs and pass conditions. Do not spawn agents, use model judges, create synthetic producer cases, infer qualitative quality, or calculate weighted scores. Skills with no meaningful objective check do not use this discipline and receive no package or runtime handoff.
 
 Use [package setup](references/package-setup.md) when Create Skill hands off a newly created or edited skill. Use [the runner contract](references/runner.md) when executing checks or constructing an invocation record.
+
+### Boundaries
+
+Do not dispatch producers, graders, calibration runs, or nested agents. Do not carry out target repairs. A failed result identifies the exact check; the skill owner decides whether to revise the skill. Do not rebuild old evaluation packages during general evaluator maintenance.
 
 ## Inputs
 

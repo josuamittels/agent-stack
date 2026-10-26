@@ -49,7 +49,7 @@ def _bounds(context, minimum_name, maximum_name):
 
 
 def _range_outcome(count, bounds):
-    minimum, maximum = bounds
+    minimum, maximum = bounds[:2]
     return minimum <= count and (maximum is None or count <= maximum)
 
 

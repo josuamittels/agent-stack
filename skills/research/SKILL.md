@@ -1,7 +1,7 @@
 ---
 name: "research"
 description: "Produce source-grounded, critically appraised academic research reports at a user-selected depth with lenient, default, or strict journal selection. Use for researching a question or synthesizing literature."
-version: "0.6.0"
+version: "0.7.0"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -80,7 +80,7 @@ Choose methods that fit the field and question. Use a framework such as PICO onl
 
 Invoke [Research Literature](../../disciplines/research-literature/SKILL.md) for scholarly discovery. Pass the question, concepts and synonyms, inclusion or exclusion criteria, depth, journal selection and any overrides or exceptions, date bounds if any, and relevant author or publication constraints. Retain its journal-eligibility and exclusion evidence, search details, returned records, abstracts, and open-access links. Apply the same journal criteria to other routes that discover journal articles. Its records and abstracts support discovery; they do not establish that a full paper was read or appraised.
 
-Add field-appropriate searches for primary sources, official statistics, standards, books, or grey literature when those materials can answer the question directly. Prefer original studies, records, and authoritative documentation for claims about what was observed or what a policy or system says. Use review articles to locate and contextualize primary work. Check publication type, version, venue, date, retraction or correction notices when relevant, and conflicts of interest where disclosed. Citation counts, journal rank, search ranking, and institutional reputation may help locate sources but do not establish quality.
+Add field-appropriate searches for primary sources, official statistics, standards, books, or grey literature when those materials can answer the question directly. Prefer original studies, records, and authoritative documentation for claims about what was observed or what a policy or system says. Use review articles to locate and contextualize primary work. Check publication type, version, venue, date, retraction or correction notices when relevant, and conflicts of interest where disclosed. Citation counts, journal rank, search ranking, and institutional reputation may help locate sources but do not establish quality. If Research Literature cannot reach OpenAlex through its API or website, continue useful discovery through other available sources when that preserves the question and inclusion rules. Record the actual providers and queries, identify this as a non-OpenAlex fallback, and report that OpenAlex discovery was incomplete.
 
 Screen results against the question and stated criteria. De-duplicate records. Distinguish discovered, screened, full-text inspected, and included sources; do not imply that all search results were read. Record important exclusions and reasons at a level proportionate to depth. If a central source is inaccessible, use a clearly identified abstract or secondary account only as a limited proxy, seek an accessible version where practical, and state what could not be verified.
 
@@ -161,7 +161,7 @@ Run the prepared objective package through the Research wrapper:
 python skills/research/scripts/complete.py --record /private/tmp/research-invocation.json
 ```
 
-The configured package may check report length and source count against the resolved bounds, compare cited journal identities and scores with the selected preset, and test article-link reachability. A reachable link does not establish the identity or findings of the linked article. The checker returns PASS, FAIL, or NOT PASSED — UNVERIFIED with the failed or unavailable verification step. If no package exists, report NOT PASSED — UNVERIFIED and still deliver the completed report with that status; do not create a package during the invocation.
+The configured package may check report length and source count against the resolved bounds, compare cited journal identities and scores with the selected preset, and test article-link reachability. A reachable link does not establish the identity or findings of the linked article. Use the wrapper's structured result as the evaluation record: distinguish a completed check, an unverified check, a top-level invocation error, and a missing package. A checker exception is not evidence that the package is missing. Network-blocked link checks should remain unverified; do not call links broken when the environment could not reach them. If no package exists, report NOT PASSED — UNVERIFIED and still deliver the completed report with that status; do not create a package during the invocation.
 
 Do not evaluate nested Natural Writing output separately. Include the concise objective result with the report. Never describe the mechanical checks as proof that research findings are correct.
 
