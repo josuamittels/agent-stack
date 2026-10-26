@@ -1,8 +1,8 @@
 ---
 name: "update-changelog"
 description: "Create, update, or prepare a repository changelog from verified changes. Use when the user asks to record changes, maintain CHANGELOG.md, or prepare a changelog release section."
-version: "0.1.0"
-updated: "2026-10-25"
+version: "0.2.0"
+updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -14,7 +14,7 @@ status: "draft"
 
 # Update Changelog
 
-Create or update a project's changelog so readers can understand notable changes and their effect. Use this discipline when the user asks to create, update, repair, or prepare a changelog section. Do not update a changelog automatically for every code change.
+Create or update a project's changelog so readers can understand notable changes and their effect. Use this discipline when the user asks to create, update, repair, or prepare a changelog section. Ship invokes this discipline for every requested ship operation so it can assess the verified change set; record only notable user-facing changes and omit routine internal work.
 
 ## Scope
 

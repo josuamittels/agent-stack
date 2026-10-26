@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.4.1` |
+| Version | `0.5.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.4.1` adds the research references for Mind Wandering; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.5.0` adds versioned changelog maintenance to the Ship workflow; the stack has not been released.
 
 ## Component versions
 
@@ -24,7 +24,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Skill | `skills/create-skill/SKILL.md` | `0.9.0` | `experimental` |
 | Skill | `skills/natural-writing/SKILL.md` | `0.4.1` | `draft` |
 | Skill | `skills/research/SKILL.md` | `0.7.0` | `draft` |
-| Skill | `skills/ship/SKILL.md` | `0.2.0` | `draft` |
+| Skill | `skills/ship/SKILL.md` | `0.3.0` | `draft` |
 | Skill | `skills/skill-issue/SKILL.md` | `0.2.0` | `draft` |
 | Skill | `skills/translate/SKILL.md` | `0.4.1` | `draft` |
 | Discipline | `disciplines/ask-user-question/SKILL.md` | `0.1.0` | `draft` |
@@ -39,7 +39,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `disciplines/spawn-evals/SKILL.md` | `0.9.0` | `draft` |
 | Discipline | `disciplines/think-deeper/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `disciplines/think-harder/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/update-changelog/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `disciplines/update-changelog/SKILL.md` | `0.2.0` | `draft` |
 | Discipline | `disciplines/update-map/SKILL.md` | `0.1.1` | `draft` |
 | Discipline | `disciplines/update-router/SKILL.md` | `0.1.1` | `draft` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `draft` |

@@ -1,8 +1,8 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.2.0"
-updated: "2026-10-26"
+version: "0.3.0"
+updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -59,7 +59,7 @@ For this Agent Stack repository only, require both the root `AGENTS.md` marker `
 
 Define the exact change set from the request, current diffs, and relevant history. Do not treat every checkout change as in scope. Identify the authoritative version source and scheme, the canonical changelog and its release format, the target branch, and any repository release procedure. Do not assume commit messages alone establish user-facing change facts.
 
-If the repository has a changelog and its policy or the requested release calls for an update, invoke [Update Changelog](../../disciplines/update-changelog/SKILL.md) with verified changes, the intended version or section, and the evidence for each entry. Do not create a changelog or invent a version when the repository has no such convention unless the user requests it or repository instructions require it.
+Invoke [Update Changelog](../../disciplines/update-changelog/SKILL.md) for every requested ship operation, passing the verified change set, intended version or section, and evidence for each candidate entry. Let the discipline omit routine or internal changes and follow the repository's established convention. If the repository has no changelog, do not create one or invent a version unless the user requests it or repository instructions require it.
 
 When the Agent Stack identity checks pass, read and apply [Release Agent Stack](../../disciplines/release-agent-stack/SKILL.md). Pass the request, exact change set, Git state, and repository metadata. It returns any `VERSIONS.md` edits and the permitted delivery route. Do not repeat its stack version decision or apply its status gate to another repository.
 
