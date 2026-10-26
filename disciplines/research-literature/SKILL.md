@@ -25,7 +25,7 @@ This discipline returns bibliographic records, abstracts, search details, and li
 
 Use the supplied topic or question and any stated inclusion and exclusion criteria. Accept optional filters for authors, journals, publication dates or years, work types, fields, language, open access, citation count, and result size. Preserve explicit query terms and constraints.
 
-Before searching, read [`references/openalex_docs.md`](references/openalex_docs.md) for OpenAlex endpoints, search syntax, filters, paging, and record fields. Consult the official documentation linked there only if an API request errors, this reference does not cover a needed behavior, or observed behavior appears to have changed.
+Before searching, read [`references/openalex-docs.md`](references/openalex-docs.md) for OpenAlex endpoints, search syntax, filters, paging, and record fields. Consult the official documentation linked there only if an API request errors, this reference does not cover a needed behavior, or observed behavior appears to have changed.
 
 Use the [journal CSV](references/journals.csv) to select eligible journals. Its fields are `journal`, `issn_print`, `issn_online`, `category`, `area`, `inception`, `article_influence`, and `influence_percentile`. A journal may have multiple category rows. Treat these supplied metrics as venue-selection criteria, not proof of reliability or article quality.
 
@@ -65,7 +65,7 @@ Keep the user's exact search string when supplied. Record the selected journal p
 
 ### 2. Resolve filters to OpenAlex identifiers
 
-Follow [`references/openalex_docs.md`](references/openalex_docs.md) for supported parameters, filters, and limits.
+Follow [`references/openalex-docs.md`](references/openalex-docs.md) for supported parameters, filters, and limits.
 
 - Resolve a named author through the OpenAlex Authors endpoint. Confirm the candidate using available identifiers such as ORCID, affiliation, and known works before filtering by author ID. Do not silently choose between people with similar names.
 - Build the eligible journal set from the CSV using the journal-selection rules above. Intersect it with explicit journal and category restrictions. Resolve eligible journals by ISSN through the OpenAlex Sources endpoint, confirming titles and retaining all confirmed source IDs. Report ambiguous or unresolved venues rather than guessing. When the journal filter is disabled, resolve only requested journal constraints.
@@ -78,7 +78,7 @@ If a requested value cannot be resolved or OpenAlex does not expose the needed f
 
 ### 3. Search and retrieve records
 
-Query the OpenAlex Works endpoint. Prefer `search.title_and_abstract` for targeted retrieval; use `search` when full-text terms or keywords are useful. Use semantic search when meaning-based retrieval could find useful terminology variants, subject to its documented limits. Use relevance ordering for discovery, but do not present its score as a measure of evidence quality. If a request errors or a needed field or behavior is unclear, consult the relevant official fallback link in the [`Openalex Documentation`](references/openalex_docs.md), correct the request, and record the change.
+Query the OpenAlex Works endpoint. Prefer `search.title_and_abstract` for targeted retrieval; use `search` when full-text terms or keywords are useful. Use semantic search when meaning-based retrieval could find useful terminology variants, subject to its documented limits. Use relevance ordering for discovery, but do not present its score as a measure of evidence quality. If a request errors or a needed field or behavior is unclear, consult the relevant official fallback link in the [`Openalex Documentation`](references/openalex-docs.md), correct the request, and record the change.
 
 Filter journal works by eligible `primary_location.source.id` values. Batch OR lists at no more than 100 source IDs per request, splitting further for the URL limit. Keep the topic, author, date, and other constraints on every batch. Merge results by stable work identifiers. For example, a focused request can use `search.title_and_abstract` with `filter=authorships.author.id:<author-id>,primary_location.source.id:<eligible-source-id>,from_publication_date:2020-01-01,to_publication_date:2024-12-31`. Omit unspecified optional filters. Let the HTTP client encode spaces, quotes, and the `|` OR separator. Follow the reference's paging rules, including the API-key requirement for cursor pages after the first.
 

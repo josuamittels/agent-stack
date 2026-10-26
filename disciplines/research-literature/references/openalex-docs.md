@@ -43,7 +43,7 @@ Semantic search accepts up to 2,000 characters and returns at most 50 works per 
 Resolve people and journals before filtering. Names can be ambiguous, and OpenAlex filters should use identifiers.
 
 1. Search `/authors?search=<name>` and confirm the candidate with available evidence such as ORCID, affiliation, and known works. Filter works with `authorships.author.id:<author-id>`.
-2. Match a journal in `../../references/journals.csv` by ISSN or eISSN when that file is relevant. Resolve it through `/sources` and confirm the ISSN and title. Filter with `primary_location.source.id:<source-id>`. The source's ISSN can also be used under `primary_location.source.issn` where supported.
+2. Match a journal in `journals.csv` by ISSN or eISSN when that file is relevant. Resolve it through `/sources` and confirm the ISSN and title. Filter with `primary_location.source.id:<source-id>`. The source's ISSN can also be used under `primary_location.source.issn` where supported.
 3. If identity remains ambiguous, report the candidates and continue without that filter rather than selecting one silently.
 
 ## Filters

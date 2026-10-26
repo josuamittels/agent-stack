@@ -28,7 +28,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ### 1. Inspect the change
 
-Read the [Mermaid guidelines](../../guidelines/mermaid/reference.md) for notation, styling, layout, and verification. Inspect the existing map and changed resources' actual instructions, including affected callers.
+Read the [Mermaid guidelines](../../guidelines/coding/mermaid.md) for notation, styling, layout, and verification. Inspect the existing map and changed resources' actual instructions, including affected callers.
 
 Use the map's legend, placement, labels, shapes, and shared classes for its established conventions and deviations from the guidelines. Preserve grouping, configuration, identifiers, and unrelated edits unless restructuring is authorized. For a new map, use the guidelines' defaults.
 
