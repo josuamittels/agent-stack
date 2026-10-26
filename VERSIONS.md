@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.2.0` |
+| Version | `0.3.0` |
 | Status | `draft` |
-| Recorded | `2026-10-26` |
+| Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.2.0` records the compatible addition of portable Ship and its Agent Stack release discipline; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.3.0` records the compatible addition of Compose Voice Profile; the stack has not been released.
 
 ## Component versions
 
@@ -19,6 +19,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
+| Skill | `skills/compose-voice-profile/SKILL.md` | `0.1.0` | `draft` |
 | Skill | `skills/create-guidelines/SKILL.md` | `0.3.0` | `draft` |
 | Skill | `skills/create-skill/SKILL.md` | `0.9.0` | `experimental` |
 | Skill | `skills/natural-writing/SKILL.md` | `0.4.1` | `draft` |
