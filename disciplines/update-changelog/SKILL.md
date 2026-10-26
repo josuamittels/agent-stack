@@ -22,6 +22,10 @@ Use this method for a repository changelog or its established package-level chan
 
 The changelog guideline defines entry content and format. This discipline defines how to inspect the project, decide what to edit, preserve work, and verify the result.
 
+### Boundaries
+
+Do not commit, tag, publish, or create a hosted release unless the user separately asks and repository instructions permit that action. Do not change code, documentation, or translated changelogs to make an entry true. Do not backfill broad history, invent content, edit unrelated release sections, or expose undisclosed security details.
+
 ## Inputs
 
 Use the repository root and user-requested change scope. A requested commit range, version, release date, package, or section is optional; infer it from the task and repository when the evidence is clear. Treat the user's explicit scope and project release instructions as controlling.
@@ -85,7 +89,3 @@ Run a repository changelog-specific check if the project provides one and it app
 ## Output
 
 Report the changelog path, whether it was created or updated, the notable changes recorded and their sections, the evidence or range used, and any unresolved facts or checks. State when the requested change produced no notable entries, and explain the evidence for that choice.
-
-## Boundaries
-
-Do not commit, tag, publish, or create a hosted release unless the user separately asks and repository instructions permit that action. Do not change code, documentation, or translated changelogs to make an entry true. Do not backfill broad history, invent content, edit unrelated release sections, or expose undisclosed security details.

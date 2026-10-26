@@ -28,6 +28,10 @@ Use for research reports, literature syntheses, evidence-based background briefs
 
 Use [Research Literature](../../disciplines/research-literature/SKILL.md) to discover academic works in OpenAlex. This skill owns full-text retrieval where available, source appraisal, synthesis, and the report. Use [Think Deeper](../../disciplines/think-deeper/SKILL.md) to select the professional research methods, primary material, and an independent check for the specific question. A request to locate papers or return bibliographic records only belongs to Research Literature. A single-paper critique may use this skill when the user also needs it situated in relevant scholarship.
 
+### Boundaries
+
+Do not invent or alter research evidence, hide material counterevidence, or represent incomplete searching as comprehensive. Do not claim systematic-review status unless the conduct and documentation meet the relevant method. Do not imply that PRISMA or another reporting checklist alone establishes methodological quality. If the question calls for specialist interpretation beyond the accessible evidence or the source base cannot support a reliable answer, narrow the claim and state the limitation.
+
 ## Inputs
 
 Use the topic or question, intended audience and use, requested deliverable or format, language, any supplied sources or constraints, and desired research depth. Ask only for a missing choice that would materially change what evidence can answer the question. Otherwise state a reasonable assumption and proceed.
@@ -164,7 +168,3 @@ Do not evaluate nested Natural Writing output separately. Include the concise ob
 ## Output
 
 Return the requested report in the requested format or save it to the requested location. If neither is specified, deliver the report in the conversation. Include a concise methods note, in-text citations and a reference list, the selected depth and journal selection, and the objective evaluation result with failed or unverified checks. For a material access or search limit, identify what was inaccessible and how it affects the conclusion. Do not expose internal chain-of-thought; present the research decisions, evidence, and reasoning needed to audit the report.
-
-## Boundaries
-
-Do not invent or alter research evidence, hide material counterevidence, or represent incomplete searching as comprehensive. Do not claim systematic-review status unless the conduct and documentation meet the relevant method. Do not imply that PRISMA or another reporting checklist alone establishes methodological quality. If the question calls for specialist interpretation beyond the accessible evidence or the source base cannot support a reliable answer, narrow the claim and state the limitation.

@@ -21,6 +21,10 @@ Create a cohesive reference booklet that other skills can consult for domain dec
 
 Own reference documents under `guidelines/`, their local research records, and their map relationships. Use [create-skill](../create-skill/SKILL.md) for consumer skill changes. Ordinary task output that follows an existing standard does not require a new guideline.
 
+### Boundaries
+
+Creation does not authorize replacing a colliding document, rewriting unrelated guides or callers, installing tools or skills, publishing, committing, or promoting to stable. Honor specific approved edits and report additional affected consumers without silently expanding the work.
+
 ## Inputs
 
 Require an area needing a guideline, or an identifiable existing guideline and the feedback, additional sources, or demonstrated defect to address. Derive the audience, intended coverage, supplied frameworks and standards, relevant versions, target path, and requested consumer skills from the conversation and stack. Ask only about consequential gaps that inspection and reasoning cannot settle.
@@ -113,7 +117,3 @@ Keep this review internal and proportionate. Report only a concise coverage conc
 ## Output
 
 Return the guideline path, concise coverage and change summary, requested consumer updates, relevant map changes, and a brief internal-verification conclusion stating whether coverage matches the requested breadth and depth, with any material gaps. Link the local research record while retained; explain source contributions in the delivery summary if useful, leaving the guideline body self-contained. For an unapproved revision, return the concrete coordinated proposal and approval question instead of claiming implementation.
-
-## Boundaries
-
-Creation does not authorize replacing a colliding document, rewriting unrelated guides or callers, installing tools or skills, publishing, committing, or promoting to stable. Honor specific approved edits and report additional affected consumers without silently expanding the work.

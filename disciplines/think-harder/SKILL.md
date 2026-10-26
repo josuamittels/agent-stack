@@ -23,6 +23,10 @@ Apply when a calling skill encounters missing information, competing interpretat
 
 The caller owns the task, execution, clarification, and final evaluation. Return a decision brief without creating a new plan or approval ceremony. An explicitly requested interview still warrants useful questions. Required permissions, approvals, and user-owned decisions remain with their existing owners.
 
+### Boundaries
+
+Concern is only the reassesment of open questions and their relevant contexts. Final validation stays with the calling skill.
+
 ## Inputs
 
 Use the caller's identity and current stage, original user outcome and exact framing, relevant chat history and prior answers, unresolved constraints, available artifacts, explicit permissions, and the guidelines already selected or triggered by the caller. Identify guideline paths and applicable sections when available. Reconstruct missing handoff context from accessible task materials before asking for it.
@@ -92,7 +96,3 @@ Return a concise brief using only the fields needed:
 - **Next step:** proceed, proceed with stated assumptions, or pause the dependent part while advancing independent work. Carry any deliberate deferrals forward.
 
 Provide decision summaries and evidence, not hidden deliberation or a question-by-question reasoning transcript. Keep the brief in the existing conversation or task state; create no separate artifact unless the caller needs one. The caller carries adopted assumptions into its user-facing update or deliverable, with material assumptions visible before dependent consequential action. Reporting an assumption does not itself request confirmation.
-
-## Boundaries
-
-Concern is only the reassesment of open questions and their relevant contexts. Final validation stays with the calling skill.

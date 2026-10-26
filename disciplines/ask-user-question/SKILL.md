@@ -19,6 +19,10 @@ Give the user enough information to choose without reconstructing the task. Keep
 
 Use within the owning workflow for unresolved user decisions, missing facts, or required interview questions. The caller owns execution and approval requirements. Preserve established answers and authorizations; do not create approval checkpoints for routine implementation choices.
 
+### Boundaries
+
+Own question preparation, delivery, and interpretation. Do not restart routing, execute selected work, install question tools, or add gstack runtime dependencies. The caller retains execution, lifecycle, and validation responsibilities.
+
 ## Inputs
 
 Use the original outcome, caller and current stage, unresolved gaps, evidence, prior answers, permissions, alternatives, and host question-tool limits. Reuse the caller's Think Harder findings; inspect accessible context before asking for facts it already contains.
@@ -90,7 +94,3 @@ For an existing approval gate involving irreversible or destructive action, stat
 ## Output
 
 Return answered question IDs, selected options or supplied facts, resulting constraints, and pending questions to the owning workflow. Preserve accepted scope cuts and their consequences in task state. Create a separate decision record only when the caller requires one. Check that each returned answer maps to the question actually asked; leave unresolved items explicit.
-
-## Boundaries
-
-Own question preparation, delivery, and interpretation. Do not restart routing, execute selected work, install question tools, or add gstack runtime dependencies. The caller retains execution, lifecycle, and validation responsibilities.

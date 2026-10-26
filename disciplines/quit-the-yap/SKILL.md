@@ -20,6 +20,10 @@ Give the useful answer with minimal reading effort. Keep it clear, complete, and
 
 Use when composing an English reply in chat. Apply it alongside the task's owning skill or workflow; it governs the reply's wording and structure, not the work itself. Follow an explicit request for another tone, format, or level of detail when it remains accurate and useful.
 
+### Boundaries
+
+Do not change the underlying answer, omit a necessary warning, or imply certainty the evidence does not support for the sake of brevity. Do not force a short reply when the user asks for detail or the subject needs explanation.
+
 ## Inputs
 
 Use the user's latest request, relevant conversation context, established facts, and the answer or action the caller needs to communicate. Before drafting, read the [English guidelines](../../guidelines/languages/english.md), including the general guidance and [Absolute style](../../guidelines/languages/english.md#absolute). The guideline defines clarity, grammar, neutrality, and which qualifications to retain; this discipline applies those rules to in-chat answers.
@@ -55,7 +59,3 @@ For each sentence, ask: does it answer the request, explain a necessary reason o
 ## Output
 
 Return the requested answer in the requested format. Keep it direct and complete. If a necessary fact is missing, state the specific gap and ask only for the information needed to continue.
-
-## Boundaries
-
-Do not change the underlying answer, omit a necessary warning, or imply certainty the evidence does not support for the sake of brevity. Do not force a short reply when the user asks for detail or the subject needs explanation.

@@ -31,6 +31,10 @@ Create disciplines under `disciplines/` with type `discipline`. Disciplines are 
 
 Route guideline creation to [create-guidelines](../create-guidelines/SKILL.md).
 
+### Boundaries
+
+Creation does not authorize overwriting another skill, broad refactoring, host installation, publication, commits, or unrelated external writes. Editing follows the proposal approval boundary above. Keep evaluative side effects within the original authorization. A file on disk, a map node, and custom metadata do not install capabilities or establish host discovery.
+
 ## Inputs
 
 For a new skill, require the intended capability and a precise name for a new skill.
@@ -139,7 +143,3 @@ For an authored skill with objective criteria, confirm the package rubric and ch
 ## Output
 
 For a discipline, return the completed-work mirror, local verification results, and remaining gaps without an evaluation package. For a skill, return the completed-work mirror, updated map, and either the applicable objective package with its measurable checks or the reason no objective package was created. Do not report a verdict on the authoring output. Explain how the workflow operates and connects to skills, disciplines, and guidelines. Link the local research record while it is retained. For an unapproved proposed edit, return the concrete proposal and approval question instead of a completion claim.
-
-## Boundaries
-
-Creation does not authorize overwriting another skill, broad refactoring, host installation, publication, commits, or unrelated external writes. Editing follows the proposal approval boundary above. Keep evaluative side effects within the original authorization. A file on disk, a map node, and custom metadata do not install capabilities or establish host discovery.

@@ -28,6 +28,10 @@ Use [Think Harder](../think-harder/SKILL.md) to resolve ambiguity about the inte
 
 An AI pass can surface candidate risks. It cannot supply private team knowledge, tacit experience, or the candor and coordination benefits of a live session. When those affect the plan, treat this analysis as preparation for the people who know the work.
 
+### Boundaries
+
+Do not present imagined causes as facts, forecasts, calibrated probabilities, or proof that the plan should stop. Do not invent private context or claim a simulated discussion represents a real team. Keep the decision and approval authority with the plan's owner. Do not add implementation, publication, spending, or other commitments beyond the user's request.
+
 ## Inputs
 
 Use the plan, its owner, intended outcome, success condition, relevant time horizon, constraints, available records, and prior decisions. Recover details from the conversation and accessible files before asking for them. Distinguish known facts from assumptions.
@@ -83,7 +87,3 @@ Return:
 4. The limits of the analysis, including assumptions and any team knowledge it could not access.
 
 Keep the result proportionate to the plan. Do not create a persistent record unless requested.
-
-## Boundaries
-
-Do not present imagined causes as facts, forecasts, calibrated probabilities, or proof that the plan should stop. Do not invent private context or claim a simulated discussion represents a real team. Keep the decision and approval authority with the plan's owner. Do not add implementation, publication, spending, or other commitments beyond the user's request.

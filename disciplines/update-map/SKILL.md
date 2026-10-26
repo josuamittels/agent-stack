@@ -12,6 +12,12 @@ status: "draft"
 
 # Update Map
 
+### Boundaries
+
+Change only the authorized resources and relationships in the map. Preserve unrelated work; do not add dependencies or evaluation requirements merely to make the diagram consistent. The caller retains final evaluation, lifecycle decisions, and discovery maintenance.
+
+## Scope
+
 Keep the [stack map](../../map.mmd) aligned with changed stack resources and their operational relationships. Apply this method within the calling workflow.
 
 ## Inputs
@@ -53,7 +59,3 @@ Follow the guidelines' validation procedure on the complete saved map, including
 ## Output
 
 Return the map path, changed resources and relationships, checks actually performed, and remaining gaps to the caller.
-
-## Boundaries
-
-Change only the authorized resources and relationships in the map. Preserve unrelated work; do not add dependencies or evaluation requirements merely to make the diagram consistent. The caller retains final evaluation, lifecycle decisions, and discovery maintenance.

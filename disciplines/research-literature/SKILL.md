@@ -21,6 +21,10 @@ Use this discipline to find academic works in OpenAlex for a research topic, que
 
 This discipline returns bibliographic records, abstracts, search details, and links to available full text. It does not read and appraise full papers, synthesize findings, assess study quality, or draft a literature review.
 
+### Boundaries
+
+Search OpenAlex for records and abstracts. Return available full-text links without reading or evaluating whole papers. Do not infer missing metadata, peer-review status, journal reliability, or research conclusions. Do not treat journal classes, impact metrics, citation counts, or search ranking as substitutes for evaluating an individual study.
+
 ## Inputs
 
 Use the supplied topic or question and any stated inclusion and exclusion criteria. Accept optional filters for authors, journals, publication dates or years, work types, fields, language, open access, citation count, and result size. Preserve explicit query terms and constraints.
@@ -109,7 +113,3 @@ Include the selected preset or override and numeric combination rule, CSV path a
 ## Output
 
 Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, result counts, and screening or truncation notes. Identify the search as OpenAlex-only.
-
-## Boundaries
-
-Search OpenAlex for records and abstracts. Return available full-text links without reading or evaluating whole papers. Do not infer missing metadata, peer-review status, journal reliability, or research conclusions. Do not treat journal classes, impact metrics, citation counts, or search ranking as substitutes for evaluating an individual study.

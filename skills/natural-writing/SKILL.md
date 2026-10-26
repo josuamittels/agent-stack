@@ -20,6 +20,10 @@ Produce clear, natural prose suited to its reader, purpose, and medium. Apply th
 
 Use when writing, editing, or translating prose people will read. Apply it alongside a specialized skill when that skill owns the artifact or domain workflow.
 
+### Boundaries
+
+Preserve facts, uncertainty, attribution, scope, and intended meaning. Do not invent evidence or experiences, alter protected code or data, or change unrelated material when editing. Do not claim human authorship or guarantee that text will evade a detector.
+
 ## Inputs
 
 Apply this sequence before the clarification instructions below.
@@ -78,7 +82,3 @@ When used as a helper inside another requested skill, return the completed prose
 ## Output
 
 Return the requested text or artifact in its required format. Omit internal notes and voice analysis. Preserve any surrounding application or artifact structure required by the task. Do not claim human authorship or a detector guarantee.
-
-## Boundaries
-
-Preserve facts, uncertainty, attribution, scope, and intended meaning. Do not invent evidence or experiences, alter protected code or data, or change unrelated material when editing. Do not claim human authorship or guarantee that text will evade a detector.

@@ -20,6 +20,10 @@ status: "draft" # draft, experimental, stable, or deprecated
 Use for/when...
 For [adjacent task], use [other skill].
 
+### Boundaries
+
+Task-specific approval points and stopping conditions.
+
 ## Inputs
 
 Require...
@@ -52,6 +56,3 @@ When invoked as a helper, return to the owning workflow without separate evaluat
 
 ## Output
 Required deliverable and essential fields.
-
-## Boundaries
-Task-specific approval points and stopping conditions.

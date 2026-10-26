@@ -22,6 +22,10 @@ Use when the user asks to go deeper or when a substantive task would benefit mat
 
 This discipline can prepare a prompt or guide authorized work. A request to rewrite a prompt ends with the rewritten prompt. A request to perform the task continues through the caller's workflow and authorization.
 
+### Boundaries
+
+Do not enlarge the goal, add deliverables, change acceptance criteria, or extend access, spending, installation, publication, communication, or persistent side effects without the authorization required by the caller. Ambition changes the quality of the approach, not the user's permissions. Do not invent methods, materials, or verification results.
+
 ## Inputs
 
 Use the user's goal, requested deliverable, constraints, known assumptions, available source material, tools, access, and any acceptance criteria. Identify which details are established and which are assumptions. Do not assume that raw data, software installation, external services, or additional permissions are available.
@@ -69,7 +73,3 @@ Distinguish the proposed method and planned check from work actually completed. 
 ## Output
 
 For a prompt rewrite, return the unchanged goal, the chosen source material and methods, the outside check and pass condition, any missing access, and a copyable prompt. For task execution, report the work completed, evidence and check results, and remaining limits. Keep the explanation proportionate; do not make the response longer merely to display every step.
-
-## Boundaries
-
-Do not enlarge the goal, add deliverables, change acceptance criteria, or extend access, spending, installation, publication, communication, or persistent side effects without the authorization required by the caller. Ambition changes the quality of the approach, not the user's permissions. Do not invent methods, materials, or verification results.

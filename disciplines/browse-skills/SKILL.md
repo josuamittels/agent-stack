@@ -22,6 +22,10 @@ Use within a skill that needs inspiration from existing public skills, or direct
 
 The caller establishes the research brief, decides when browsing is needed, selects the record path, and owns final synthesis into its deliverable. This discipline does not author or revise that deliverable, install skills, or decide that incomplete evidence is acceptable.
 
+### Boundaries
+
+Browsing does not authorize installation, host setup, publication, commits, stable promotion, changes to third-party systems, or execution of inspected packages. A research record is evidence for a decision, not a completed artifact or a passing evaluation.
+
 ## Inputs
 
 Use the intended outcome, candidate skill name or guideline subject, current stage, relevant context and already selected references, constraints, specific research questions, useful search terms, supplied sources or prior findings, and the caller's research-record path. For a repair, include the reported failure mechanism. Use only public, non-sensitive concepts in external searches.
@@ -77,7 +81,3 @@ Return the research-record path or inline findings, inspected sources and their 
 If research is blocked, finish available investigation and return the exact missing evidence and its consequences. The original caller obtains agreement to an evidence-limited draft when necessary before treating research as complete; reuse explicit agreement already given for that scope. Continue independent work while dependent decisions remain open. For a direct request, report the same gap and obtain that agreement before claiming a complete draft.
 
 The caller resumes its own procedure. Do not invoke those authoring or evaluation workflows from this discipline.
-
-## Boundaries
-
-Browsing does not authorize installation, host setup, publication, commits, stable promotion, changes to third-party systems, or execution of inspected packages. A research record is evidence for a decision, not a completed artifact or a passing evaluation.

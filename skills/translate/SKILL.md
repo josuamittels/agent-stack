@@ -20,6 +20,10 @@ Prepare translation context, then use natural-writing to produce fluent target-l
 
 Use for translation, localization, requested transcreation, and script conversion within a translation task. This skill does not own market rollout, interface redesign, publishing, or unrelated research workflows.
 
+### Boundaries
+
+Do not undertake market rollout, interface redesign, publishing, or unrelated research as part of a translation request. Do not change underlying values, product offers, or legal obligations without an established basis or explicit direction. Do not invent facts, cultural preferences, or product availability. If natural-writing or its required usable language guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
+
 ## Inputs
 
 Apply this sequence before the clarification instructions below.
@@ -82,7 +86,3 @@ Explicitly identify prose authorized for translation, including quoted passages.
 When used as a helper inside another requested skill, return the completed translation to that owner.
 
 Return the translation in the requested format. Add explanations, alternatives, or adaptation notes only when requested or needed to resolve material ambiguity. Report native-speaker review or rendered-context verification only when actually performed. Do not imply specialist approval, release readiness, or human authorship.
-
-## Boundaries
-
-Do not undertake market rollout, interface redesign, publishing, or unrelated research as part of a translation request. Do not change underlying values, product offers, or legal obligations without an established basis or explicit direction. Do not invent facts, cultural preferences, or product availability. If natural-writing or its required usable language guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.

@@ -14,6 +14,14 @@ status: "draft"
 
 # Update Router
 
+### Boundaries
+
+Maintain discovery only; do not repair capabilities or the map, install integrations, invoke the router or create-skill, or run background watchers. Final evaluation and lifecycle decisions remain with the caller.
+
+If required discovery inputs or the router are missing or unreadable, markers are invalid, or generated content conflicts with manual instructions, stop before writing and report the dependency or conflict. Preserve unrelated and concurrent edits; reread changed inputs before applying. Never guess section boundaries or overwrite a conflicting manual rule.
+
+## Scope
+
 Maintain the root guide and [skill-issue catalog](../../skills/skill-issue/SKILL.md) within the calling workflow.
 
 ## Inputs
@@ -61,9 +69,3 @@ It requires Node.js and an existing skill-issue file, validates both candidates 
 ## Output
 
 Return changed or unchanged paths, added/changed/removed routes, map discrepancies, and remaining gaps. Report partial writes and which files need recovery; the helper writes files separately, not transactionally. Unchanged inputs should produce no changes.
-
-## Boundaries
-
-Maintain discovery only; do not repair capabilities or the map, install integrations, invoke the router or create-skill, or run background watchers. Final evaluation and lifecycle decisions remain with the caller.
-
-If required discovery inputs or the router are missing or unreadable, markers are invalid, or generated content conflicts with manual instructions, stop before writing and report the dependency or conflict. Preserve unrelated and concurrent edits; reread changed inputs before applying. Never guess section boundaries or overwrite a conflicting manual rule.
