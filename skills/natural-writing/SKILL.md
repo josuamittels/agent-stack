@@ -1,7 +1,7 @@
 ---
 name: natural-writing
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "0.3.0"
+version: "0.4.0"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -65,12 +65,10 @@ Use the available material to build a coherent progression. Establish concepts b
 
 Preserve facts, uncertainty, attribution, scope, and the intended meaning. Do not invent evidence or experiences for vividness. Change only the requested prose when editing. Preserve code, data, quotations, and identifiers rather than restyling them.
 
-## Validation
+## Return to owner
 
-When used as a helper inside another requested skill, return to that owner without a separate evaluation.
-
-For an independent invocation, save the complete output in a private UTF-8 temporary file and pass Spawn Evals an invocation record containing the original request, resolved measurable constraints with their source, the output path, and machine-readable evidence. Do not evaluate a nested helper separately. The package may check objective requirements such as exact protected tokens or a requested length bound; it cannot establish prose quality or semantic correctness. If the package is missing or a required check is unverified, report NOT PASSED — UNVERIFIED and name the affected step. Do not substitute a model judgment or claim human authorship or a detector guarantee.
+When used as a helper inside another requested skill, return the completed prose to that owner.
 
 ## Deliver
 
-Return the requested text or artifact in its required format. Omit internal notes and voice analysis. Include the concise objective evaluation result alongside the deliverable. Preserve any surrounding application or artifact structure required by the task.
+Return the requested text or artifact in its required format. Omit internal notes and voice analysis. Preserve any surrounding application or artifact structure required by the task. Do not claim human authorship or a detector guarantee.

@@ -1,7 +1,7 @@
 ---
 name: translate
 description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
-version: "0.3.0"
+version: "0.4.0"
 updated: "2026-10-26"
 author:
   - "Josua Mittelstaedt"
@@ -69,16 +69,14 @@ Localize presentation of dates, numbers, units, currencies, and forms of address
 
 Before producing target prose, require [natural-writing](../natural-writing/SKILL.md). Pass the original source and internal brief, including the target locale, permitted adaptations, terminology, protected elements, and fidelity requirements.
 
-Have natural-writing compose the target-language text using its mandatory language-guideline selection and fallback; the translation invocation owns the final objective check. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
+Have natural-writing compose the target-language text using its mandatory language-guideline selection and fallback. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
 
 Use the host's invocation mechanism when available. Otherwise read and apply the skill in the current context. Do not claim a separate invocation occurred when it did not. If natural-writing or its required usable guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
 
 Explicitly identify prose authorized for translation, including quoted passages. Distinguish it from citations, code, identifiers, interpolation variables, link destinations, and other elements that must remain exact. Preserve attribution and distinguish translated quotations from original-language wording where necessary.
 
-## Validation and delivery
+## Delivery
 
-When used as a helper inside another requested skill, return to that owner without a separate evaluation.
+When used as a helper inside another requested skill, return the completed translation to that owner.
 
-For an independent translation invocation, save the complete target-language output to a private UTF-8 temporary file and pass Spawn Evals an invocation record with the original request and source, resolved measurable constraints with their source, completed output, and machine-readable evidence. Do not evaluate the nested natural-writing helper separately. The package may verify objective requirements such as protected variables, exact tokens, formatting, or explicit UI limits; it cannot establish translation accuracy, fluency, or localization quality. A missing package or unavailable required check is NOT PASSED — UNVERIFIED. Do not substitute a model judgment.
-
-Return the translation in the requested format with a concise objective evaluation result. Add explanations, alternatives, or adaptation notes only when requested or needed to resolve material ambiguity. Report native-speaker review or rendered-context verification only when actually performed. Do not imply specialist approval, release readiness, or human authorship.
+Return the translation in the requested format. Add explanations, alternatives, or adaptation notes only when requested or needed to resolve material ambiguity. Report native-speaker review or rendered-context verification only when actually performed. Do not imply specialist approval, release readiness, or human authorship.
