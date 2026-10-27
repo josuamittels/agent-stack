@@ -16,7 +16,8 @@ At the start of a new task, or when its intended outcome changes, read [skill-is
 | `skills/*/templates/` | Authoring scaffolds kept beside the capability that uses them. |
 | `evals/` | Objective rubrics and checker scripts for skills with meaningful script-verifiable checks; qualitative-only skills have no evaluator handoff or package. |
 | `sources/` | Local research and third-party examples; exclude these copies from capability discovery. |
-| `agents/`, `playbooks/` | Reserved directories, currently empty. |
+| `agents/` | Reserved for future agent definitions; currently empty. |
+| `playbooks/` | Draft workflow outlines, including `playbooks/startup.md`. |
 
 Skill-issue lists usable instruction files, including drafts. Empty folders and map-only entries are planned. Paths here provide navigation and do not install native host integrations; use a supported host invocation when available, otherwise read and apply the selected local instructions in context.
 

@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.17.0] - 2026-10-27
+
+### Added
+
+- Add a startup playbook outline from idea through market research, strategy, design system, and voice profile.
+
 ## [0.16.1] - 2026-10-27
 
 ### Fixed
