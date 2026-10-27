@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.9.0` |
+| Version | `0.10.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.9.0` adds comprehensive accessibility guidance covering functional needs, EU legal scoping, design and implementation, assistive technology, design systems, evaluation, and ongoing operations; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.10.0` adds comprehensive colour guidance covering perception, language and culture, theory, formats and conversion, composition, palettes, accessibility, interface systems, and colour-managed production; the stack has not been released.
 
 ## Component versions
 
@@ -43,6 +43,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `disciplines/update-map/SKILL.md` | `0.1.1` | `draft` |
 | Discipline | `disciplines/update-router/SKILL.md` | `0.1.1` | `draft` |
 | Guideline | `guidelines/aesthetics/accessibility.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/colour.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `draft` |

@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.10.0] - 2026-10-27
+
+### Added
+
+- Add comprehensive colour guidance covering perception, history, language and culture, descriptive vocabulary, colour theory, formats and conversion, composition, palettes, meaning and psychology, accessibility, interface systems, data visualisation, and colour-managed production, with worked examples and troubleshooting.
+
 ## [0.9.0] - 2026-10-27
 
 ### Added
