@@ -26,7 +26,7 @@ Evaluate a completed real use only. There are no synthetic scenarios or qualitat
 
 Use for research reports, literature syntheses, evidence-based background briefs, and critical analyses of a topic. The output may draw on scholarly literature, primary materials, official data, and carefully selected grey literature, depending on the question.
 
-Use [Research Literature](../../disciplines/research-literature/SKILL.md) to discover academic works in OpenAlex. This skill owns full-text retrieval where available, source appraisal, synthesis, and the report. Use [Think Deeper](../../disciplines/think-deeper/SKILL.md) to select the professional research methods, primary material, and an independent check for the specific question. A request to locate papers or return bibliographic records only belongs to Research Literature. A single-paper critique may use this skill when the user also needs it situated in relevant scholarship.
+Use [Research Literature](../research-literature/SKILL.md) to discover academic works in OpenAlex. This skill owns full-text retrieval where available, source appraisal, synthesis, and the report. Use [Think Deeper](../think-deeper/SKILL.md) to select the professional research methods, primary material, and an independent check for the specific question. A request to locate papers or return bibliographic records only belongs to Research Literature. A single-paper critique may use this skill when the user also needs it situated in relevant scholarship.
 
 ### Boundaries
 
@@ -38,7 +38,7 @@ Use the topic or question, intended audience and use, requested deliverable or f
 
 Accept a depth of **light**, **default**, or **thorough**. If the user gives a word count, source range, deadline, field, date range, geography, population, or source preference, honor it and note any resulting coverage limit. Default to **default** depth when no depth is specified.
 
-Accept **lenient**, **default**, or **strict** journal selection independently of depth. Journal selection defaults to **default**. Tell the user they can request **lenient** for broader venue coverage or **strict** for a narrower selection, then proceed with the default unless they specify otherwise. Use [Research Literature's journal-selection rules](../../disciplines/research-literature/SKILL.md#journal-selection) as the authoritative cutoffs and override policy. Honor requests for more lenient or stricter journal selection, explicit numeric thresholds, or disabling the filter. Keep the selection throughout follow-up searches and citation chasing, and identify any explicitly requested exceptions.
+Accept **lenient**, **default**, or **strict** journal selection independently of depth. Journal selection defaults to **default**. Tell the user they can request **lenient** for broader venue coverage or **strict** for a narrower selection, then proceed with the default unless they specify otherwise. Use [Research Literature's journal-selection rules](../research-literature/SKILL.md#journal-selection) as the authoritative cutoffs and override policy. Honor requests for more lenient or stricter journal selection, explicit numeric thresholds, or disabling the filter. Keep the selection throughout follow-up searches and citation chasing, and identify any explicitly requested exceptions.
 
 The journal filter governs journal articles and reviews. Continue to use suitable primary records, official sources, books, and grey literature according to the question and stated inclusion criteria. Label their discovery separately. Journal eligibility does not establish individual study quality or replace the appraisal below.
 
@@ -58,7 +58,7 @@ The source and word ranges are default evaluation bounds when a user has not sup
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
+If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -72,13 +72,13 @@ If scope is too broad for the selected depth, choose a focused angle that preser
 
 ### 2. Choose and document a method
 
-Invoke [Think Deeper](../../disciplines/think-deeper/SKILL.md) with the question, depth, intended reader, and known limits. Use its method to identify the most direct evidence, suitable search and appraisal approaches, and a practical check that could challenge the synthesis. Apply the recommendations within this workflow; do not substitute a vague instruction to “be rigorous.”
+Invoke [Think Deeper](../think-deeper/SKILL.md) with the question, depth, intended reader, and known limits. Use its method to identify the most direct evidence, suitable search and appraisal approaches, and a practical check that could challenge the synthesis. Apply the recommendations within this workflow; do not substitute a vague instruction to “be rigorous.”
 
 Choose methods that fit the field and question. Use a framework such as PICO only when it fits the question; use an interpretive, historical, theoretical, or other appropriate structure when it does not. Select reporting or appraisal standards for the actual study and review types. Do not apply one checklist to every source. Record the search date, each source or database consulted, material query terms and filters, inclusion and exclusion logic, and any access or language limits. This is a research report unless a named review method is actually followed.
 
 ### 3. Search and screen evidence
 
-Invoke [Research Literature](../../disciplines/research-literature/SKILL.md) for scholarly discovery. Pass the question, concepts and synonyms, inclusion or exclusion criteria, depth, journal selection and any overrides or exceptions, date bounds if any, and relevant author or publication constraints. Retain its journal-eligibility and exclusion evidence, search details, returned records, abstracts, and open-access links. Apply the same journal criteria to other routes that discover journal articles. Its records and abstracts support discovery; they do not establish that a full paper was read or appraised.
+Invoke [Research Literature](../research-literature/SKILL.md) for scholarly discovery. Pass the question, concepts and synonyms, inclusion or exclusion criteria, depth, journal selection and any overrides or exceptions, date bounds if any, and relevant author or publication constraints. Retain its journal-eligibility and exclusion evidence, search details, returned records, abstracts, and open-access links. Apply the same journal criteria to other routes that discover journal articles. Its records and abstracts support discovery; they do not establish that a full paper was read or appraised.
 
 Add field-appropriate searches for primary sources, official statistics, standards, books, or grey literature when those materials can answer the question directly. Prefer original studies, records, and authoritative documentation for claims about what was observed or what a policy or system says. Use review articles to locate and contextualize primary work. Check publication type, version, venue, date, retraction or correction notices when relevant, and conflicts of interest where disclosed. Citation counts, journal rank, search ranking, and institutional reputation may help locate sources but do not establish quality. If Research Literature cannot reach OpenAlex through its API or website, continue useful discovery through other available sources when that preserves the question and inclusion rules. Record the actual providers and queries, identify this as a non-OpenAlex fallback, and report that OpenAlex discovery was incomplete.
 

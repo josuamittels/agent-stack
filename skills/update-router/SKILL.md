@@ -38,9 +38,9 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ### 1. Establish what exists
 
-Read the current map, root [AGENTS instructions](../../AGENTS.md) when present, complete skill-issue instructions, [AGENTS template](../../templates/AGENTS.md), and top-level `skills/*/SKILL.md` and `disciplines/*/SKILL.md` files. Read supporting files only for scope, exclusions, or invocation policies affecting selection.
+Read the current map, root [AGENTS instructions](../../AGENTS.md) when present, complete skill-issue instructions, [AGENTS template](templates/AGENTS.md), and all `skills/*/SKILL.md` files. Read supporting files only for scope, exclusions, or invocation policies affecting selection.
 
-Actual instructions establish availability; the map supplies grouping and relationships. Include substantive drafts, even when unmapped. Exclude empty folders, map-only entries, metadata-only files, and scaffolds. Discover candidates only in the two top-level capability directories; research copies and other repository resources are not routes. Report map discrepancies to the caller.
+Actual instructions establish availability; the map supplies grouping and relationships. Include substantive drafts, even when unmapped. Exclude empty folders, map-only entries, metadata-only files, and scaffolds. Discover candidates only from `skills/*/SKILL.md`, classifying them by their `type` metadata; research copies and other repository resources are not routes. Report map discrepancies to the caller.
 
 ### 2. Maintain the catalog
 
@@ -61,7 +61,7 @@ For missing AGENTS, adapt the template with repository details and supplied proj
 Prepare both nonempty bodies before writing. Use [the section helper](scripts/sections.mjs), passing JSON on stdin with string fields `entry` and `catalog`, without marker lines:
 
 ```sh
-node disciplines/update-router/scripts/sections.mjs /absolute/path/to/stack < /absolute/path/to/temporary-bodies.json
+node skills/update-router/scripts/sections.mjs /absolute/path/to/stack < /absolute/path/to/temporary-bodies.json
 ```
 
 It requires Node.js and an existing skill-issue file, validates both candidates before writing, preserves surrounding content, rejects malformed markers, and skips unchanged writes. For missing AGENTS it creates a title and entry; retain project instructions outside that section. Without Node.js, apply the same marker validation and preservation rules using file tools. Keep temporary inputs outside the repository and remove them afterward.

@@ -13,15 +13,14 @@ At the start of a new task, or when its intended outcome changes, read [skill-is
 
 | Location | Role |
 | --- | --- |
-| `skills/` | Task workflows and the skill-issue router. Read the chosen SKILL.md when using it. |
-| `disciplines/` | Reusable methods called by skills; direct use can fit a small task or a gap. |
+| `skills/` | Workflows and reusable methods, differentiated by `type: skill` or `type: discipline`; read the chosen SKILL.md when using it. |
 | `guidelines/` | Supporting standards and references selected by workflows; never routing destinations. |
-| `templates/` | Authoring scaffolds, including separate AGENTS and router templates. |
+| `skills/*/templates/` | Authoring scaffolds kept beside the capability that uses them. |
 | `evals/` | Evaluation packages for capabilities that use them; fixtures are not available skills. |
 | `sources/` | Research and third-party examples; exclude them from capability discovery. |
 | `agents/`, `playbooks/` | [Describe actual contents or state that these directories are reserved and empty.] |
 
 The router catalog exposes usable instructions, including drafts. Empty folders and map-only entries are planned. Repository paths provide navigation; native host discovery requires separate installation or configuration. Use the host's supported invocation when available, otherwise read and apply the local instructions in context.
 
-After capability or routing changes, use [update-router](disciplines/update-router/SKILL.md) to refresh this section and skill-issue's managed catalog. Keep manual instructions outside the markers.
+During an authorized stack release, [release-agent-stack](skills/release-agent-stack/SKILL.md) coordinates any required map and router refresh for capability or routing changes. Keep manual instructions outside the markers.
 <!-- END agent-stack:entry -->

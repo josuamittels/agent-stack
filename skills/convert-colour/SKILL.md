@@ -29,7 +29,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ## Workflow
 
-Run `node disciplines/convert-colour/scripts/convert-colour.mjs <input-format> '<value>' <output-format>`, for example `node disciplines/convert-colour/scripts/convert-colour.mjs rgb '255 0 0' lab`.
+Run `node skills/convert-colour/scripts/convert-colour.mjs <input-format> '<value>' <output-format>`, for example `node skills/convert-colour/scripts/convert-colour.mjs rgb '255 0 0' lab`.
 
 Supported formats: `hex`, `rgb`, `hsl`, `hsv`, `cmyk`, `lab`, `lch`, and `p3`.
 

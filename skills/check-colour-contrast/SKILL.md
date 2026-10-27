@@ -29,7 +29,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ## Workflow
 
-Run `node disciplines/check-colour-contrast/scripts/check-colour-contrast.mjs <format> '<foreground>' <format> '<background>'`, for example `node disciplines/check-colour-contrast/scripts/check-colour-contrast.mjs hex '#222' hex '#ffe66d'`.
+Run `node skills/check-colour-contrast/scripts/check-colour-contrast.mjs <format> '<foreground>' <format> '<background>'`, for example `node skills/check-colour-contrast/scripts/check-colour-contrast.mjs hex '#222' hex '#ffe66d'`.
 
 Interpret the ratio for the element being checked:
 

@@ -20,7 +20,7 @@ status: "draft"
 
 # Compose Voice Profile
 
-Compose a detailed, reusable voice profile that fits the brand, its audience, product, market, language, and intended use. Base it on the inputs and sources available for the task, then return it in the structure of [`templates/voice-profile.md`](../../templates/voice-profile.md).
+Compose a detailed, reusable voice profile that fits the brand, its audience, product, market, language, and intended use. Base it on the inputs and sources available for the task, then return it in the structure of [`templates/voice-profile.md`](templates/voice-profile.md).
 
 ## Scope
 
@@ -51,13 +51,13 @@ Use the user's stated goal and any available details about:
 
 These inputs are optional. Use materials the user supplies or clearly identifies as relevant. Do not scan unrelated private files, collect more examples by default, or conduct broad market research unless the user asks for it. When a referenced source is unavailable, record that limit and proceed with the remaining evidence when possible.
 
-Read [`templates/voice-profile.md`](../../templates/voice-profile.md) before drafting; it supplies the required headings, tables, fields, and front matter. If local copies of ECC’s brand-voice skill and voice-profile schema are available in `sources/ECC/`, use their evidence-led extraction and conflict-reporting methods when analyzing writing samples or current voice. Those source copies may be absent; in that case, apply the evidence inventory, sample analysis, and conflict checks in this skill directly. Do not claim to have consulted unavailable materials, and do not import ECC-specific defaults or hard bans as universal rules.
+Read [`templates/voice-profile.md`](templates/voice-profile.md) before drafting; it supplies the required headings, tables, fields, and front matter. If local copies of ECC’s brand-voice skill and voice-profile schema are available in `sources/ECC/`, use their evidence-led extraction and conflict-reporting methods when analyzing writing samples or current voice. Those source copies may be absent; in that case, apply the evidence inventory, sample analysis, and conflict checks in this skill directly. Do not claim to have consulted unavailable materials, and do not import ECC-specific defaults or hard bans as universal rules.
 
 Before composing the profile, read the language guideline for the requested output language when available. Start with [English](../../guidelines/languages/english.md), [Dutch](../../guidelines/languages/dutch.md), [German](../../guidelines/languages/german.md), or [French](../../guidelines/languages/french.md). Keep the template's section headings in their original order and fill its content in the requested language unless the user asks to localize the headings too. When no matching guideline exists, use English guidance for transferable writing principles and preserve the requested language.
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
+If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -71,7 +71,7 @@ Ask a concise question only when a missing decision could materially change the 
 
 ### 2. Read the template and inventory evidence
 
-Read the current [`templates/voice-profile.md`](../../templates/voice-profile.md). Preserve its complete heading order, front matter, and table structure in the completed profile. Use **Profile Details** to record the profile's purpose, product or offer, market, geography, language/locale, channels, source set, and confidence when those details apply.
+Read the current [`templates/voice-profile.md`](templates/voice-profile.md). Preserve its complete heading order, front matter, and table structure in the completed profile. Use **Profile Details** to record the profile's purpose, product or offer, market, geography, language/locale, channels, source set, and confidence when those details apply.
 
 Create a working source inventory. For each relevant input, note its type, origin, date or freshness, market/language/channel, and what it can establish. Classify evidence as:
 
@@ -97,7 +97,7 @@ Separate **observed current voice** from **intended voice direction**. If an app
 
 ### 4. Synthesize with Think Deeper
 
-Invoke [Think Deeper](../../disciplines/think-deeper/SKILL.md) before drafting. Pass:
+Invoke [Think Deeper](../think-deeper/SKILL.md) before drafting. Pass:
 
 - The requested outcome and exact template path.
 - The source inventory and provenance labels.
@@ -142,11 +142,11 @@ Return the completed Markdown in the conversation unless the user requested a fi
 
 ### 7. Validate implementation
 
-When invoked as a helper, return to the owning workflow without separate evaluation. For a skill with meaningful, deterministic, task-specific checks, invoke [Spawn Evals](../../disciplines/spawn-evals/SKILL.md) once with a structured invocation record containing the original request, resolved constraints and their source, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `evals/compose-voice-profile/` defines only those checks. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
+When invoked as a helper, return to the owning workflow without separate evaluation. For a skill with meaningful, deterministic, task-specific checks, invoke [Spawn Evals](../spawn-evals/SKILL.md) once with a structured invocation record containing the original request, resolved constraints and their source, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `evals/compose-voice-profile/` defines only those checks. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
 
 ## Output
 
-Return a completed Markdown voice profile based on [`templates/voice-profile.md`](../../templates/voice-profile.md), with its template sections filled, metadata resolved, source evidence identified, and unknowns or conflicts labeled. Use the requested output path when supplied; otherwise provide the complete profile in the response. Include a short note on the sources used, the current-versus-intended voice basis, and material confidence limits. Do not return only analysis, a list of adjectives, or an empty scaffold.
+Return a completed Markdown voice profile based on [`templates/voice-profile.md`](templates/voice-profile.md), with its template sections filled, metadata resolved, source evidence identified, and unknowns or conflicts labeled. Use the requested output path when supplied; otherwise provide the complete profile in the response. Include a short note on the sources used, the current-versus-intended voice basis, and material confidence limits. Do not return only analysis, a list of adjectives, or an empty scaffold.
 
 ## References
 

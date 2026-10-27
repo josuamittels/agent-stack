@@ -16,7 +16,7 @@ Apply Agent Stack-specific release metadata and delivery rules for the general [
 
 ## Scope
 
-Use only when Ship has confirmed both the root `AGENTS.md` marker `agent-stack:entry` and the expected `VERSIONS.md`, `map.mmd`, `skills/`, `disciplines/`, and `guidelines/` structure.
+Use only when Ship has confirmed both the root `AGENTS.md` marker `agent-stack:entry` and the expected `VERSIONS.md`, `map.mmd`, `skills/`, and `guidelines/` structure.
 
 ### Boundaries
 

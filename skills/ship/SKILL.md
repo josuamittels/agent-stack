@@ -23,7 +23,7 @@ Prepare and deliver a requested change through the target repository's release w
 
 Use when the user asks to ship or release work, push changes, or create or update a pull request or merge request.
 
-For a changelog-only request, use [Update Changelog](../../disciplines/update-changelog/SKILL.md). For Agent Stack repositories, read [Release Agent Stack](../../disciplines/release-agent-stack/SKILL.md) to apply its local version and delivery rules.
+For a changelog-only request, use [Update Changelog](../update-changelog/SKILL.md). For Agent Stack repositories, read [Release Agent Stack](../release-agent-stack/SKILL.md) to apply its local version and delivery rules.
 
 ### Boundaries
 
@@ -41,7 +41,7 @@ Read the target repository’s `AGENTS.md` and relevant contribution, release, C
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
+If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -53,15 +53,15 @@ Inspect the repository root, current branch, staged and unstaged changes, untrac
 
 Read project instructions and detect the hosting platform and available authenticated CLI. Identify the requested destination: local commits, a topic-branch push, a direct push to an integration branch, or a pull/merge request. Follow the user’s explicit destination only when repository policy permits it. If the destination, base branch, or authorization is unclear and changes the required Git operation, ask before publishing.
 
-For this Agent Stack repository only, require both the root `AGENTS.md` marker `agent-stack:entry` and the expected `VERSIONS.md`, `map.mmd`, `skills/`, `disciplines/`, and `guidelines/` paths before invoking the repository-specific discipline. If either identity check fails, do not apply Agent Stack release rules.
+For this Agent Stack repository only, require both the root `AGENTS.md` marker `agent-stack:entry` and the expected `VERSIONS.md`, `map.mmd`, `skills/`, and `guidelines/` paths before invoking the repository-specific discipline. If either identity check fails, do not apply Agent Stack release rules.
 
 ### 2. Inspect the change and project release sources
 
 Define the exact change set from the request, current diffs, and relevant history. Do not treat every checkout change as in scope. Identify the authoritative version source and scheme, the canonical changelog and its release format, the target branch, and any repository release procedure. Do not assume commit messages alone establish user-facing change facts.
 
-Invoke [Update Changelog](../../disciplines/update-changelog/SKILL.md) for every requested ship operation, passing the verified change set, intended version or section, and evidence for each candidate entry. Let the discipline omit routine or internal changes and follow the repository's established convention. If the repository has no changelog, do not create one or invent a version unless the user requests it or repository instructions require it.
+Invoke [Update Changelog](../update-changelog/SKILL.md) for every requested ship operation, passing the verified change set, intended version or section, and evidence for each candidate entry. Let the discipline omit routine or internal changes and follow the repository's established convention. If the repository has no changelog, do not create one or invent a version unless the user requests it or repository instructions require it.
 
-When the Agent Stack identity checks pass, read and apply [Release Agent Stack](../../disciplines/release-agent-stack/SKILL.md). Pass the request, exact change set, Git state, and repository metadata. It returns any `VERSIONS.md` edits and the permitted delivery route. Do not repeat its stack version decision or apply its status gate to another repository.
+When the Agent Stack identity checks pass, read and apply [Release Agent Stack](../release-agent-stack/SKILL.md). Pass the request, exact change set, Git state, and repository metadata. It returns any `VERSIONS.md` edits and the permitted delivery route. Do not repeat its stack version decision or apply its status gate to another repository.
 
 ### 3. Prepare release metadata
 
@@ -81,7 +81,7 @@ After creating or updating a hosted request, inspect its checks on the latest he
 
 Use a topic branch for a review request. Reuse the appropriate working branch when it is already established. For direct integration-branch pushes, verify the exact branch and repository policy before proceeding. If the checkout is on the target branch and the requested work needs review, create a topic branch only when doing so preserves the current work safely; otherwise stop and report the blocker.
 
-Group changes into coherent, ordered commits. Include tests and documentation with the behavior they support; keep release metadata with the release it describes. Stage explicit paths or hunks. Review the complete staged diff, `git diff --cached --check`, and staged file list before each commit. If unrelated staged work cannot be kept out of the commit, stop before committing and ask the user to separate the index. Never create an empty commit.
+
 
 Use the project’s commit format. If none exists, default to `type(scope): description` with optional scope, as described in the Git guide. Report each created commit and its included paths.
 

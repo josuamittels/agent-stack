@@ -1,14 +1,14 @@
 ---
 name: natural-writing
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "0.4.1"
-updated: "2026-10-26"
+version: "0.5.0"
+updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Affaan Mustafa"
   - "Matt Pocock"
-type: "skill"
+type: "discipline"
 status: "draft"
 ---
 
@@ -30,7 +30,7 @@ Apply this sequence before the clarification instructions below.
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../../disciplines/think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../../disciplines/ask-user-question/SKILL.md) to inquire the missing information.
+If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 

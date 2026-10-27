@@ -9,9 +9,9 @@ class AuthoringPolicyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.create_skill = (ROOT / "skills/create-skill/SKILL.md").read_text(encoding="utf-8")
-        cls.template = (ROOT / "templates/SKILL.md").read_text(encoding="utf-8")
+        cls.template = (ROOT / "skills/create-skill/templates/SKILL.md").read_text(encoding="utf-8")
         cls.package_setup = (
-            ROOT / "disciplines/spawn-evals/references/package-setup.md"
+            ROOT / "skills/spawn-evals/references/package-setup.md"
         ).read_text(encoding="utf-8")
         cls.natural_writing = (
             ROOT / "skills/natural-writing/SKILL.md"

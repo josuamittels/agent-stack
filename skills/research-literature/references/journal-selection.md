@@ -51,7 +51,7 @@ import math
 from collections import defaultdict
 
 groups = defaultdict(list)
-with open("disciplines/research-literature/references/journals.csv",
+with open("skills/research-literature/references/journals.csv",
           encoding="utf-8-sig", newline="") as source:
     for row in csv.DictReader(source):
         groups[row["issn_print"], row["issn_online"], row["journal"]].append(row)

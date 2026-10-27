@@ -7,7 +7,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "disciplines" / "spawn-evals" / "scripts"))
+sys.path.insert(0, str(ROOT / "skills" / "spawn-evals" / "scripts"))
 import checklib  # noqa: E402
 
 
@@ -183,7 +183,7 @@ def _title_key(value):
 
 
 def _load_journal_rows():
-    path = ROOT / "disciplines" / "research-literature" / "references" / "journals.csv"
+    path = ROOT / "skills" / "research-literature" / "references" / "journals.csv"
     with path.open(encoding="utf-8-sig", newline="") as source:
         return list(csv.DictReader(source))
 

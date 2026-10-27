@@ -25,7 +25,7 @@ Write one JSON object with exactly these fields:
 Run from the repository root:
 
 ```sh
-python disciplines/spawn-evals/scripts/runner.py --skill example-skill --record /absolute/path/to/record.json
+python skills/spawn-evals/scripts/runner.py --skill example-skill --record /absolute/path/to/record.json
 ```
 
 The runner prints a JSON result with schema version, skill, invocation ID, overall status, and one result per package check. It exits 0 for pass, 1 for fail, and 2 for unverified or invalid inputs. A missing package produces `not_passed_unverified`; the runner does not create one.

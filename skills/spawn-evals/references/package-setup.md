@@ -35,10 +35,10 @@ The source of each constraint is exactly `request` or `skill_default`. If the re
 ## Authoring checks
 
 1. Map each meaningful objective criterion to an input field and a reproducible script condition. Exclude generic checks such as output existence when they do not measure the skill's intended outcome.
-2. Use shared helpers from `disciplines/spawn-evals/scripts/checklib.py` for word counts, character counts, protected tokens, and URL reachability where they fit.
+2. Use shared helpers from `skills/spawn-evals/scripts/checklib.py` for word counts, character counts, protected tokens, and URL reachability where they fit.
 3. Treat timeouts, blocked requests, unavailable files, missing evidence, and ambiguous matches as unverified. A confirmed limit violation is a failure.
 4. Keep request limits separate from skill defaults so the output can identify why a threshold applied.
-5. Run `python disciplines/spawn-evals/scripts/runner.py --validate-package --skill <skill-slug>`. This checks rubric shape and checker syntax without calling handlers. Do not run the skill's checks or the completed authoring result here.
+5. Run `python skills/spawn-evals/scripts/runner.py --validate-package --skill <skill-slug>`. This checks rubric shape and checker syntax without calling handlers. Do not run the skill's checks or the completed authoring result here.
 
 ## Research example criteria
 
