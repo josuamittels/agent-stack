@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.15.0` |
+| Version | `0.16.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.15.0` requires each non-empty Agent Stack commit to carry its own sequential stack version increment and matching component inventory snapshot. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.16.0` adds substantive references for composition, wireframes, haptics, and motion. The stack has not been released.
 
 ## Component versions
 
@@ -21,9 +21,13 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | --- | --- | --- | --- |
 | Guideline | `guidelines/aesthetics/accessibility.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/colour.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/composition.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/haptics.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/motion.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/sound.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/wireframes.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `draft` |
 | Guideline | `guidelines/coding/python.md` | `0.1.0` | `draft` |

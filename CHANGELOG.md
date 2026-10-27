@@ -2,6 +2,16 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.16.0] - 2026-10-27
+
+### Added
+
+- Add substantive composition, wireframe, haptics, and motion references with supporting composition diagrams.
+
+### Changed
+
+- Refresh the map to show the completed aesthetic references and remove the empty Interface placeholder.
+
 ## [0.15.0] - 2026-10-27
 
 ### Changed
