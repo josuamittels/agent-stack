@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.6.0] - 2026-10-27
+
+### Added
+
+- Add a local Markdown collection of Apple Human Interface Guidelines articles, organized by topic with links between included pages.
+
 ## [0.5.0] - 2026-10-27
 
 ### Added
