@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.12.0` |
+| Version | `0.13.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.12.0` promotes mathematical colour format conversion and WCAG contrast checking to stable `1.0.0` disciplines; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.13.0` adds draft sound design guidance; the stack has not been released.
 
 ## Component versions
 
@@ -47,6 +47,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/aesthetics/accessibility.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/colour.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/sound.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `draft` |

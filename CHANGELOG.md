@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.13.0] - 2026-10-27
+
+### Added
+
+- Add a draft sound design guide covering hearing, emotion, musical structure, sound construction, production, and product audio.
+
 ## [0.12.0] - 2026-10-27
 
 ### Changed
