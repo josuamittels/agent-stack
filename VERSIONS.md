@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.13.0` |
+| Version | `0.14.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.13.0` adds draft sound design guidance; the stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.14.0` consolidates disciplines under `skills/`, colocates authoring templates with their consumers, and refreshes the capability map and discovery catalog. The stack has not been released.
 
 ## Component versions
 
@@ -19,31 +19,6 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
-| Skill | `skills/compose-voice-profile/SKILL.md` | `0.1.0` | `draft` |
-| Skill | `skills/create-guidelines/SKILL.md` | `0.3.0` | `draft` |
-| Skill | `skills/create-skill/SKILL.md` | `0.9.0` | `experimental` |
-| Skill | `skills/natural-writing/SKILL.md` | `0.4.1` | `draft` |
-| Skill | `skills/research/SKILL.md` | `0.7.0` | `draft` |
-| Skill | `skills/ship/SKILL.md` | `0.3.0` | `draft` |
-| Skill | `skills/skill-issue/SKILL.md` | `0.2.0` | `draft` |
-| Skill | `skills/translate/SKILL.md` | `0.4.1` | `draft` |
-| Discipline | `disciplines/ask-user-question/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/browse-skills/SKILL.md` | `1.0.0` | `draft` |
-| Discipline | `disciplines/check-colour-contrast/SKILL.md` | `1.0.0` | `stable` |
-| Discipline | `disciplines/convert-colour/SKILL.md` | `1.0.0` | `stable` |
-| Discipline | `disciplines/mind-wandering/SKILL.md` | `0.1.1` | `draft` |
-| Discipline | `disciplines/pre-mortem/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/quit-the-yap/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/release-agent-stack/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/research-literature/SKILL.md` | `0.5.0` | `draft` |
-| Reference | `disciplines/research-literature/references/journal-selection.md` | `0.2.0` | `draft` |
-| Reference | `disciplines/research-literature/references/openalex-docs.md` | `0.2.0` | `draft` |
-| Discipline | `disciplines/spawn-evals/SKILL.md` | `0.9.0` | `draft` |
-| Discipline | `disciplines/think-deeper/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/think-harder/SKILL.md` | `0.1.0` | `draft` |
-| Discipline | `disciplines/update-changelog/SKILL.md` | `0.2.0` | `draft` |
-| Discipline | `disciplines/update-map/SKILL.md` | `0.1.1` | `draft` |
-| Discipline | `disciplines/update-router/SKILL.md` | `0.1.1` | `draft` |
 | Guideline | `guidelines/aesthetics/accessibility.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/colour.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `draft` |
@@ -60,6 +35,31 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/languages/french.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/languages/german.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `draft` |
+| Discipline | `skills/ask-user-question/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/browse-skills/SKILL.md` | `1.0.0` | `draft` |
+| Discipline | `skills/check-colour-contrast/SKILL.md` | `1.0.0` | `stable` |
+| Skill | `skills/compose-voice-profile/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/convert-colour/SKILL.md` | `1.0.0` | `stable` |
+| Skill | `skills/create-guidelines/SKILL.md` | `0.4.0` | `draft` |
+| Skill | `skills/create-skill/SKILL.md` | `0.12.0` | `experimental` |
+| Discipline | `skills/mind-wandering/SKILL.md` | `0.1.1` | `draft` |
+| Discipline | `skills/natural-writing/SKILL.md` | `0.5.0` | `draft` |
+| Discipline | `skills/pre-mortem/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/quit-the-yap/SKILL.md` | `0.2.0` | `draft` |
+| Discipline | `skills/release-agent-stack/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/research-literature/SKILL.md` | `0.5.0` | `draft` |
+| Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `draft` |
+| Reference | `skills/research-literature/references/openalex-docs.md` | `0.2.0` | `draft` |
+| Skill | `skills/research/SKILL.md` | `0.7.0` | `draft` |
+| Skill | `skills/ship/SKILL.md` | `0.4.0` | `draft` |
+| Discipline | `skills/show-me-your-work/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/spawn-evals/SKILL.md` | `0.9.0` | `draft` |
+| Discipline | `skills/think-deeper/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/think-harder/SKILL.md` | `0.1.0` | `draft` |
+| Skill | `skills/translate/SKILL.md` | `0.4.1` | `draft` |
+| Discipline | `skills/update-changelog/SKILL.md` | `0.2.0` | `draft` |
+| Discipline | `skills/update-map/SKILL.md` | `0.2.0` | `draft` |
+| Discipline | `skills/update-router/SKILL.md` | `0.1.1` | `draft` |
 
 ## Versioning and maintenance
 

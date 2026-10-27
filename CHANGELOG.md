@@ -2,6 +2,18 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.14.0] - 2026-10-27
+
+### Added
+
+- Add Show Me Your Work, a discipline for evidence-linked decision logs and handoffs.
+
+### Changed
+
+- **Breaking:** Move disciplines under `skills/<name>/` while preserving `type: discipline`, and move each authoring template beside the skill that uses it. Update references that use the former paths.
+- Restructure the stack map and discovery catalog to show the new capability layout, grouped relationships, and planned resources distinctly.
+- Ship now separates independently reviewable themes into ordered commits and puts shared release metadata in a final record commit.
+
 ## [0.13.0] - 2026-10-27
 
 ### Added
