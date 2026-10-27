@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.9.0] - 2026-10-27
+
+### Added
+
+- Add comprehensive accessibility guidance covering disability and assistive technology, EU legal obligations, visual and interaction design, content and media, documents, native platforms, design systems, testing, procurement, and governance, with worked examples and all 55 WCAG 2.2 Level A and AA criteria.
+
 ## [0.8.0] - 2026-10-27
 
 ### Added
