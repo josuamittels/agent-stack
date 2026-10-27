@@ -17,7 +17,7 @@ status: "draft"
 
 Wireframes communicate an interface's structure and direction through rough skeleton blocks. They make placement, hierarchy, contrast, density, and the main action visible while leaving final styling and content open. Aim for a minimalist, aesthetic composition that remains quick to change.
 
-Use this reference for individual screens, interface variants, and short flows on mobile, tablet, desktop, or another declared rectangular format. The consuming skill owns the brief, number of alternatives, selection process, and later implementation. Use [Composition](composition.md) for broader spatial principles and [Accessibility](accessibility.md) for access requirements.
+Use this reference for individual screens, interface variants, and short flows on mobile, tablet, desktop, or another declared rectangular format. The consuming skill owns the brief, number of alternatives, selection process, and later implementation. Use [Composition](../aesthetics/composition.md) for broader spatial principles and [Accessibility](../aesthetics/accessibility.md) for access requirements.
 
 **Include a detail when it helps someone understand or compare the concept. Abstract it when it only specifies the final design.** Grayscale alone does not make a detailed mockup low fidelity.
 

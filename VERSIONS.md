@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.17.0` |
+| Version | `0.17.1` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.17.0` adds a startup playbook outline from idea through research, strategy, design system, and voice profile. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.17.1` moves the Wireframes reference to `guidelines/wireframes/reference.md`. The stack has not been released.
 
 ## Component versions
 
@@ -27,7 +27,6 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/aesthetics/motion.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/sound.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `draft` |
-| Guideline | `guidelines/aesthetics/wireframes.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `draft` |
 | Guideline | `guidelines/coding/python.md` | `0.1.0` | `draft` |
@@ -39,6 +38,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/languages/french.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/languages/german.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/wireframes/reference.md` | `0.1.0` | `draft` |
 | Discipline | `skills/ask-user-question/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `skills/browse-skills/SKILL.md` | `1.0.0` | `draft` |
 | Discipline | `skills/check-colour-contrast/SKILL.md` | `1.0.0` | `stable` |

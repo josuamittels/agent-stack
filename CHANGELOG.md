@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.17.1] - 2026-10-27
+
+### Changed
+
+- Move the Wireframes reference to `guidelines/wireframes/reference.md`.
+
 ## [0.17.0] - 2026-10-27
 
 ### Added
