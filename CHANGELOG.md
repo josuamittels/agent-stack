@@ -2,6 +2,13 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.11.0] - 2026-10-27
+
+### Added
+
+- Add `convert-colour`, a standalone mathematical converter for HEX, RGB, HSL, HSV, CMYK, Lab, LCh, and Display P3 values.
+- Add `check-colour-contrast`, a standalone RGB/HEX/HSL contrast calculator with WCAG 2.2 AA and AAA guidance for normal and large text and non-text interface components.
+
 ## [0.10.0] - 2026-10-27
 
 ### Added

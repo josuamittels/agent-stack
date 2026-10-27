@@ -59,6 +59,8 @@ Use these through a matching skill first; select them directly for a scoped main
 | --- | --- | --- |
 | Ask about unresolved decisions or missing facts: "ask the user", "present the tradeoffs", "clarify this choice". | [ask-user-question](../../disciplines/ask-user-question/SKILL.md) | Context and Think Harder resolve discoverable facts first. Owns question delivery and answer interpretation; the caller retains execution and approval requirements. |
 | Write concise in-chat answers: "be concise", "just the answer", "quit the yap". | [quit-the-yap](../../disciplines/quit-the-yap/SKILL.md) | Applies English Absolute style to chat replies; use natural-writing for broader prose authoring, editing, or translation. |
+| Convert a supplied color value between formats: "convert this hex to Lab", "convert Display P3 to RGB", "change this color to CMYK". | [convert-colour](../../disciplines/convert-colour/SKILL.md) | Converts the provided value only; it does not select or design colors. |
+| Check contrast between two supplied colors: "check this text/background pair", "is this button color accessible?", "compare these hex colors". | [check-colour-contrast](../../disciplines/check-colour-contrast/SKILL.md) | Calculates a pair ratio and WCAG thresholds; it does not audit full page context. |
 | Research related skills for inspiration: "browse skills", "find comparable workflows", "inspect GetEdge skills", "compare skill approaches". | [browse-skills](../../disciplines/browse-skills/SKILL.md) | Source discovery and inspection; the caller owns final authoring decisions. Does not install skills or execute them. |
 | Search academic literature by topic: "find papers on", "search OpenAlex", "find articles by author or journal", "use more lenient journal cutoffs". | [research-literature](../../disciplines/research-literature/SKILL.md) | Searches OpenAlex through its API or website with CSV-backed Lenient, Default, or Strict journal selection; reports access limits and retrieval mode. Does not read or synthesize full papers. |
 | Deepen a settled substantive task: "go deeper", "use primary sources", "what would a top professional do?" | [think-deeper](../../disciplines/think-deeper/SKILL.md) | Improves methods, inputs, tools, and verification without expanding the goal; use Think Harder to resolve uncertainty about the goal. |
@@ -73,7 +75,7 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
-Ask User Question, Browse Skills, Mind Wandering, Pre-Mortem, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
+Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 
 ### Resolve neighboring intents
 
