@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.17.2] - 2026-10-27
+
+### Fixed
+
+- Remove the stale Layout placeholder from the map after its scaffold was deleted.
+
 ## [0.17.1] - 2026-10-27
 
 ### Changed
