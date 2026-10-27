@@ -1,7 +1,7 @@
 ---
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
-version: "0.3.0"
+version: "0.4.0"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
@@ -63,6 +63,7 @@ Use these through a matching skill first; select them directly for a scoped main
 | Check contrast between two supplied colors: "check this text/background pair", "is this button color accessible?", "compare these hex colors". | [check-colour-contrast](../check-colour-contrast/SKILL.md) | Calculates a pair ratio and WCAG thresholds; it does not audit full page context. |
 | Research related skills for inspiration: "browse skills", "find comparable workflows", "inspect GetEdge skills", "compare skill approaches". | [browse-skills](../browse-skills/SKILL.md) | Source discovery and inspection; the caller owns final authoring decisions. Does not install skills or execute them. |
 | Search academic literature by topic: "find papers on", "search OpenAlex", "find articles by author or journal", "use more lenient journal cutoffs". | [research-literature](../research-literature/SKILL.md) | Searches OpenAlex through its API or website with CSV-backed Lenient, Default, or Strict journal selection; reports access limits and retrieval mode. Does not read or synthesize full papers. |
+| Keep an evidence-linked decision log for long-running, multi-phase, or unattended work: "show your work", "maintain an audit trail", "record decisions and checkpoints". | [show-me-your-work](../show-me-your-work/SKILL.md) | Records consequential decisions, evidence, results, and handoffs; does not capture private chain-of-thought or routine steps. |
 | Deepen a settled substantive task: "go deeper", "use primary sources", "what would a top professional do?" | [think-deeper](../think-deeper/SKILL.md) | Improves methods, inputs, tools, and verification without expanding the goal; use Think Harder to resolve uncertainty about the goal. |
 | Explore creative possibilities: "mind-wandering", "find an unexpected connection", "escape repetitive ideas", "try another medium". | [mind-wandering](../mind-wandering/SKILL.md) | Creative exploration and deliberate return; Think Harder resolves intent, while Think Deeper strengthens evidence and methods. Uses the owning task’s standards and returns creative material, without a separate evaluator. |
 | Stress-test a concrete plan before commitment: "run a pre-mortem", "what could kill this plan?", "find failure paths". | [pre-mortem](../pre-mortem/SKILL.md) | Surfaces plausible failure paths and plan changes; use Think Harder for unclear goals and Think Deeper for broader evidence or methods. |
@@ -75,7 +76,7 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
-Natural Writing, Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
+Natural Writing, Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Show Me Your Work, Think Deeper, Think Harder, and Update Changelog have usable draft instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 
 ### Resolve neighboring intents
 
