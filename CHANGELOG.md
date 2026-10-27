@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.12.0] - 2026-10-27
+
+### Changed
+
+- Promote `convert-colour` and `check-colour-contrast` to stable `1.0.0` disciplines after conversion and contrast results matched their verification references.
+
 ## [0.11.0] - 2026-10-27
 
 ### Added

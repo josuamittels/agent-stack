@@ -1,14 +1,14 @@
 ---
 name: check-colour-contrast
 description: "Calculate the WCAG contrast ratio for two opaque hex, RGB, or HSL colors and interpret the result."
-version: "0.1.0"
+version: "1.0.0"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
 references:
   - "World Wide Web Consortium"
 type: "discipline"
-status: "draft"
+status: "stable"
 ---
 
 # Check Colour Contrast
