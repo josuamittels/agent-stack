@@ -1,7 +1,7 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.3.0"
+version: "0.4.0"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
@@ -81,7 +81,9 @@ After creating or updating a hosted request, inspect its checks on the latest he
 
 Use a topic branch for a review request. Reuse the appropriate working branch when it is already established. For direct integration-branch pushes, verify the exact branch and repository policy before proceeding. If the checkout is on the target branch and the requested work needs review, create a topic branch only when doing so preserves the current work safely; otherwise stop and report the blocker.
 
+Before staging, make a short ordered commit plan whenever the change set has multiple themes. Give each group one purpose, list its paths or hunks, include the companion changes it needs, and order groups by dependency. Keep a move with its required reference updates, a feature with its route and supporting docs, and tests with the behavior they verify. Put independently reviewable outcomes in separate commits; do not hide them in one omnibus commit or split one coherent outcome across arbitrary file-type commits. One commit is appropriate when the whole change set serves one purpose.
 
+Keep coordinated release metadata with the release it describes. When several implementation themes share one stack version, changelog section, and inventory refresh, make those metadata edits a final release-record commit after the implementation commits. Stage explicit paths or hunks for one planned group at a time. Review the complete staged diff, `git diff --cached --check`, and staged file list before each commit. After each commit, compare the remaining changes with the plan. If unrelated staged work cannot be kept out of a commit, stop before committing and ask the user to separate the index. Never create an empty commit.
 
 Use the project’s commit format. If none exists, default to `type(scope): description` with optional scope, as described in the Git guide. Report each created commit and its included paths.
 
