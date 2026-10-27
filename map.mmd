@@ -6,261 +6,265 @@ config:
     considerModelOrder: NONE
     forceNodeModelOrder: false
     mergeEdges: false
-    nodePlacementStrategy: NETWORK_SIMPLEX
+    nodePlacementStrategy: LINEAR_SEGMENTS
   flowchart:
     curve: linear
 ---
 %%{init: {"theme": "base", "themeVariables": {"background": "transparent", "clusterBkg": "#EFF4FA", "clusterBorder": "#CBD5E1", "edgeLabelBackground": "transparent", "primaryTextColor": "#002B3D", "lineColor": "#002B3D", "fontFamily": "Fira Code, monospace"}}}%%
-%% Agent is the sole entry point. Green rounded rectangles: skills.
-%% Skill Issue is a decision diamond. Spawn Evals has a coral end node and muted red objective-check connections without arrowheads.
-%% Yellow rounded rectangles: disciplines. Incoming guideline arrows are dashed; internal guideline connections are plain solid lines.
-%% Think Harder and Ask User Question run by default and have no relationship lines.
-%% Skills that invoke Spawn Evals show runtime and package-preparation links to it.
-%% Gray cylinders: knowledge stores. Gray rounded documents: individual files.
+%% Agent is the sole entry point. Green process rectangles: skills.
+%% White process or document nodes: planned resources with no SKILL.md or document content.
+%% Skill Issue, Has Objective Criteria, and Missing Information are decision diamonds.
+%% Yellow process rectangles: disciplines and subprocesses. Yellow hexagons: conditional disciplines. Incoming guideline arrows are dashed; internal guideline connections are plain solid lines.
+%% Missing-information decisions route work through Think Harder and, if unresolved, Ask User Question.
+%% Skill categories that may invoke Spawn Evals route through the objective-criteria decision; Create Skill retains its package-preparation link.
+%% Blue document and storage shapes: existing references and collections.
 %% Subgraphs group resources. Connections show organization or source references.
 %% Flow determines columns; prefer short, direct routes with few crossings and bends.
 flowchart LR
     skill_issue{"Skill Issue"}
+    has_objective_criteria{"Has Objective Criteria?"}
+    missing_information{"Missing Information?"}
     stack(["AGENT"])
     stack --> skill_issue
 
-    subgraph admin_skills [Admin Skills]
-        create_skill("Create Skill")
-        create_guidelines("Create Guidelines")
+    subgraph skills [SKILLS]
+      subgraph admin_skills [ADMIN]
+          create_skill["Create Skill"]
+          create_guidelines["Create Guidelines"]
+          skill_template@{ shape: tag-doc, label: "Skill Template" }
+          reference_template@{ shape: tag-doc, label: "Reference Template" }
+      end
+
+      subgraph writing_skills [WRITING]
+          translate["Translate"]
+          compose_voice_profile["Compose Voice Profile"]
+          voice_profile_template@{ shape: tag-doc, label: "Voice Profile Template" }
+
+      end
+
+      subgraph academic_skills [ACADEMIC]
+          research["Research"]
+      end
+
+      subgraph product_skills [PRODUCT & BUSINESS]
+		  market_research["Market Research"]
+          business_plan["Business Plan"]
+          investor_deck["Investor Deck"]
+      end
+
+      subgraph design_skills [DESIGN]
+          audit_accessibility["Audit Accessibility"]
+          brand_discovery["Brand Discovery"]
+          audit_ux["Audit UX"]
+          design_shotgun["Design Shotgun"]
+          design_system["Design System"]
+      end
+
+      subgraph engineering_skills [ENGINEERING]
+          prototype["Prototype"]
+          create_docs["Create Docs"]
+          ship["Ship"]
+
+      end
+
+      subgraph data_skills [DATA]
+          steal["Steal"]
+      end
+
+      subgraph marketing_skills [MARKETING]
+          create_image_ads["Create Image Ads"]
+          polish_video["Polish Short Video"]
+          product_video["Product Video"]
+          launch_ads["Launch Ads"]
+          analyse_ads["Analyse Ads Performance"]
+
+      end
     end
 
-    subgraph writing_skills [Writing Skills]
-        natural_writing("Natural Writing")
-        translate("Translate")
-        compose_voice_profile("Compose Voice Profile")
-
-    end
-
-    subgraph academic_skills [Academic Skills]
-        research("Research")
-    end
-
-    subgraph product_skills [Product & Business Skills]
-		market_research("Market Research")
-        business_plan("Business Plan")
-        investor_deck("Investor Deck")
-    end
-
-	subgraph design_skills [Design Skills]
-        audit_accessibility("Audit Accessibility")
-        brand_discovery("Brand Discovery")
-        audit_ux("Audit UX")
-        design_shotgun("Design Shotgun")
-        design_system("Design System")
-        brainstorm("Brainstorm")
-
-    end
-
-    subgraph engineering_skills [Engineering Skills]
-        prototype("Prototype")
-        ship("Ship")
-
-    end
-
-	subgraph data_skills [Data Skills]
-        steal("Steal")
-    end
-
-    subgraph marketing_skills [Marketing Skills]
-        create_image_ads("Create Image Ads")
-        polish_video("Polish Short Video")
-        product_video("Product Video")
-        launch_ads("Launch Ads")
-        analyse_ads("Analyse Ads Performance")
-
-    end
-
-    skill_issue -.- admin_skills
-    skill_issue -.- writing_skills
-    skill_issue -.- academic_skills
-    skill_issue -.- marketing_skills
-    skill_issue -.- product_skills
-    skill_issue -.- design_skills
-    skill_issue -.- engineering_skills
-    skill_issue -.- data_skills
-    subgraph discipline_map [Disciplines]
-        spawn_evals(["Spawn Evals"])
-        ask_user_question("Ask User Question")
-        think_harder("Think Harder")
-        think_deeper("Think Deeper")
-        mind_wandering("Mind Wandering")
-        pre_mortem("Pre-Mortem")
-        browse_skills("Browse Skills")
-        update_changelog("Update Changelog")
-        quit_the_yap("Quit the Yap")
-        update_map("Update Map")
-        update_router("Update Router")
-        release_agent_stack("Release Agent Stack")
-        research_web("Research Web")
-        research_literature("Research Literature")
-        scrape_web("Scrape Web")
-        manage_ads("Manage Ads")
-        image_tools("Image Tools")
-        video_tools("Video Tools")
-        creativity("Creativity")
-        convert_colour("Convert Colour")
-        convert_colour_script("convert-colour.mjs")
-        check_colour_contrast("Check Colour Contrast")
-        check_colour_contrast_script("check-colour-contrast.mjs")
-    end
-
-    subgraph academic_references [Academic References]
-        erim_journals[("Journals")]
-        openalex_docs("OpenAlex Documentation")
-        journal_selection("Journal Selection")
-    end
-
-    subgraph creative_references [Creative References]
-        creative_moves("Creative Moves")
+    skill_issue --> skills
+    skills --> missing_information
+    missing_information --> think_harder
+    think_harder --> ask_user_question
+    writing_skills --> has_objective_criteria
+    academic_skills --> has_objective_criteria
+    product_skills --> has_objective_criteria
+    design_skills --> has_objective_criteria
+    engineering_skills --> has_objective_criteria
+    data_skills --> has_objective_criteria
+    marketing_skills --> has_objective_criteria
+    has_objective_criteria --> spawn_evals
+    create_skill --> has_objective_criteria
+    subgraph discipline_map [DISCIPLINES]
+        natural_writing["Natural Writing"]
+        spawn_evals{{Spawn Evals}}
+        ask_user_question{{Ask User Question}}
+        think_harder{{Think Harder}}
+        think_deeper["Think Deeper"]
+        mind_wandering["Mind Wandering"]
+        pre_mortem["Pre-Mortem"]
+        browse_skills["Browse Skills"]
+        update_changelog["Update Changelog"]
+        quit_the_yap["Quit the Yap"]
+        update_map{{Update Map}}
+        update_router{{Update Router}}
+        agents_template@{ shape: tag-doc, label: "AGENTS Template" }
+        router_template@{ shape: tag-doc, label: "Router Template" }
+        release_agent_stack["Release Agent Stack"]
+        fresh_eyes["Fresh Eyes"]
+        show_me_your_work["Show Me Your Work"]
+        decision_log_template@{ shape: tag-doc, label: "Decision Log Template" }
+        research_web["Research Web"]
+        research_literature["Research Literature"]
+        scrape_web["Scrape Web"]
+        manage_ads["Manage Ads"]
+        image_tools["Image Tools"]
+        video_tools["Video Tools"]
+        brainstorm["Brainstorm"]
+        convert_colour["Convert Colour"]
+        check_colour_contrast["Check Colour Contrast"]
+        erim_journals@{ shape: win-pane, label: "Journals" }
+        openalex_docs@{ shape: doc, label: "OpenAlex Documentation" }
+        journal_selection@{ shape: subproc, label: "Journal Selection" }
+        creative_moves@{ shape: subproc, label: "Creative Moves" }
     end
 
     mind_wandering -.-> creative_moves
 
-    research --> research_literature
-    research --> think_deeper
-    research --> natural_writing
-    research eval_research@--- spawn_evals
+    academic_skills --> research_literature
+    academic_skills --> think_deeper
+    academic_skills --> natural_writing
     research_literature --> erim_journals
     research_literature --> openalex_docs
     research_literature --> journal_selection
-    steal --> scrape_web
+    data_skills --> scrape_web
     market_research --> research_web
     launch_ads --> manage_ads
     analyse_ads --> manage_ads
     product_video --> video_tools
     polish_video --> video_tools
     create_image_ads --> image_tools
-    brainstorm --> creativity
+    brainstorm --> mind_wandering
     compose_voice_profile --> think_deeper
-    compose_voice_profile --> natural_writing
-    compose_voice_profile -. "if requested" .-> research
-    compose_voice_profile -.-> english
-    compose_voice_profile -.-> dutch
-    compose_voice_profile -.-> french
-    compose_voice_profile -.-> german
-    compose_voice_profile --> voice_profile_template
-    compose_voice_profile eval_compose_voice_profile@--- spawn_evals
+    subgraph guidelines [GUIDELINES]
+      subgraph language_guides [LANGUAGE]
+          english@{ shape: doc, label: "English" }
+          german@{ shape: doc, label: "German" }
+          dutch@{ shape: doc, label: "Dutch" }
+          french@{ shape: doc, label: "French" }
+      end
 
-    subgraph template_files [Templates]
-        templates[("Templates")]
-        templates --- template_skill("SKILL")
-        templates --- template_ref("Reference")
-        templates --- router_ref("Router")
-        templates --- agents_template("AGENTS")
-        templates --- voice_profile_template("Voice Profile")
+      subgraph product_biz_guides [PRODUCT & BUSINESS]
+          product_pitch@{ shape: doc, label: "Product Pitch" }
+      end
+
+      subgraph design_guides [DESIGN]
+          aesthetics@{ shape: docs, label: "Aesthetics" }
+          design_system_guide@{ shape: doc, label: "Design System" }
+          wireframes@{ shape: doc, label: "Wireframes" }
+          interface@{ shape: doc, label: "Interface" }
+          typography@{ shape: doc, label: "Typography" }
+          colour@{ shape: doc, label: "Colour" }
+          iconography@{ shape: doc, label: "Iconography" }
+          accessibility@{ shape: doc, label: "Accessibility" }
+          sound@{ shape: doc, label: "Sound" }
+          haptics@{ shape: doc, label: "Haptics" }
+          interaction@{ shape: doc, label: "Interaction" }
+          layout@{ shape: doc, label: "Layout" }
+          motion@{ shape: doc, label: "Motion" }
+          aesthetics --- interface
+          aesthetics --- typography
+          aesthetics --- colour
+          aesthetics --- iconography
+          aesthetics --- accessibility
+          aesthetics --- sound
+          aesthetics --- haptics
+          aesthetics --- interaction
+          aesthetics --- layout
+          aesthetics --- motion
+      end
+
+      subgraph coding_guides [CODING]
+          python@{ shape: doc, label: "Python" }
+          ts@{ shape: doc, label: "TypeScript" }
+          sql@{ shape: doc, label: "SQL" }
+          mermaid@{ shape: doc, label: "Mermaid" }
+      end
+
+      subgraph tech_guides [TECHNICAL]
+          docs@{ shape: doc, label: "Documentation" }
+          changelog@{ shape: doc, label: "Changelog" }
+          git@{ shape: doc, label: "Git" }
+          versioning@{ shape: doc, label: "Versioning" }
+          tech_spec@{ shape: doc, label: "Technical Specifications" }
+      end
     end
 
-    subgraph language_guides [Language Guidelines]
-        english[("English")]
-        german[("German")]
-        dutch[("Dutch")]
-        french[("French")]
-    end
-
-    subgraph product_biz_guides [Product & Business Guidelines]
-        product_pitch[("Product Pitch")]
-    end
-
-    subgraph design_guides [Design Guidelines]
-        aesthetics[("Aesthetics")]
-        design_system_guide[("Design System")]
-        wireframes[("Wireframes")]
-        aesthetics --- interface("Interface")
-        aesthetics --- typography("Typography")
-        aesthetics --- colour("Colour")
-        aesthetics --- iconography("Iconography")
-        aesthetics --- accessibility("Accessibility")
-        aesthetics --- sound("Sound")
-    end
-
-    subgraph coding_guides [Coding Guidelines]
-        python[("Python")]
-        ts[("TypeScript")]
-        sql[("SQL")]
-        mermaid[("Mermaid")]
-    end
-
-    subgraph tech_guides [Technical Guidelines]
-        docs[("Documentation")]
-        changelog[("Changelog")]
-        git[("Git")]
-        versioning[("Versioning")]
-        tech_spec[("Technical Specifications")]
-    end
-
-    create_skill --> templates
-    create_skill --> natural_writing
-    create_skill -.-> english
-    create_skill --> research_web
-    create_skill --> browse_skills
-    create_skill --> think_deeper
-    create_skill --> pre_mortem
-    create_skill --> update_map
-    create_skill --> update_router
-    create_skill prepare_target_eval@--- spawn_evals
-    update_router --> templates
-    create_guidelines --> templates
-    create_guidelines --> natural_writing
-    create_guidelines -.-> english
-    create_guidelines --> research_web
-    create_guidelines --> browse_skills
-    create_guidelines --> think_deeper
-    create_guidelines --> pre_mortem
-    create_guidelines --> create_skill
-    create_guidelines --> update_map
-    create_guidelines --> update_router
-    update_map -.-> mermaid
-    update_changelog -.-> changelog
-    update_changelog -.-> versioning
-    update_changelog -.-> git
-    quit_the_yap -.-> english
-    translate --> natural_writing
-    natural_writing -.-> english
-    natural_writing -.-> dutch
-    natural_writing -.-> french
-    natural_writing -.-> german
-    design_shotgun -.-> wireframes
-    design_shotgun -.-> aesthetics
-    design_system -.-> design_system_guide
-    design_system -.-> aesthetics
-    audit_ux -.-> aesthetics
-    audit_accessibility -.-> aesthetics
+    create_skill -.- skill_template
+    create_guidelines -.- reference_template
+    compose_voice_profile -.- voice_profile_template
+    update_router -.- agents_template
+    update_router -.- router_template
+    admin_skills --> natural_writing
+    admin_skills --> research_web
+    admin_skills --> browse_skills
+    admin_skills --> think_deeper
+    admin_skills --> pre_mortem
+    update_map -.- mermaid
+    update_changelog -.- changelog
+    update_changelog -.- versioning
+    update_changelog -.- git
+    docs -.- create_docs
+    quit_the_yap --> natural_writing
+    writing_skills --> natural_writing
+    natural_writing -.- english
+    natural_writing -.- dutch
+    natural_writing -.- french
+    natural_writing -.- german
+    design_shotgun -.- wireframes
+    design_system -.- design_system_guide
+    design_skills -.- aesthetics
+    image_tools -.- aesthetics
+    video_tools -.- aesthetics
     brand_discovery --> brainstorm
     brand_discovery --> research_web
     ship --> update_changelog
     ship --> release_agent_stack
-    ship -.-> git
-    ship -.-> versioning
-    ship -.-> changelog
-    release_agent_stack -.-> git
-    release_agent_stack -.-> versioning
+    ship -.- git
+    ship -.- versioning
+    release_agent_stack -.- git
+    release_agent_stack -.- versioning
     release_agent_stack --> update_map
-    release_agent_stack --> update_router
-    prototype -.-> tech_spec
-    convert_colour --> convert_colour_script
-    check_colour_contrast --> check_colour_contrast_script
-
+    update_map --> update_router
+    show_me_your_work -.- decision_log_template
+    prototype -.- tech_spec
     classDef entry fill:#DFF7A5,stroke:#002B3D,color:#002B3D,stroke-width:2px
     classDef skill fill:#DFF7A5,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef method fill:#FFE99A,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
+    classDef planned fill:#FFFFFF,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef decision fill:#C9CEF4,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
-    classDef evaluation_link stroke:#C96B6B,stroke-width:2px,color:#C96B6B
-    classDef evaluation fill:#F5C9C5,stroke:#002B3D,color:#002B3D,stroke-width:2px
-    classDef knowledge fill:#EFF4FA,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
-    classDef document fill:#EFF4FA,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
+    classDef document fill:#B3E5FC,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef section rx:8px,ry:8px
-    class ask_user_question,think_harder,think_deeper,mind_wandering,pre_mortem,browse_skills,update_changelog,quit_the_yap,update_map,update_router,release_agent_stack,research_web,scrape_web,research_literature,manage_ads,creativity,image_tools,video_tools,convert_colour,check_colour_contrast method;
-    class skill_issue decision
-    class prepare_target_eval,eval_research,eval_compose_voice_profile evaluation_link
-    class spawn_evals evaluation
+    style admin_skills fill:#FFFFFF
+    style writing_skills fill:#FFFFFF
+    style academic_skills fill:#FFFFFF
+    style product_skills fill:#FFFFFF
+    style design_skills fill:#FFFFFF
+    style engineering_skills fill:#FFFFFF
+    style data_skills fill:#FFFFFF
+    style marketing_skills fill:#FFFFFF
+    style language_guides fill:#FFFFFF
+    style product_biz_guides fill:#FFFFFF
+    style design_guides fill:#FFFFFF
+    style coding_guides fill:#FFFFFF
+    style tech_guides fill:#FFFFFF
+    class spawn_evals,ask_user_question,think_harder,think_deeper,mind_wandering,pre_mortem,browse_skills,update_changelog,quit_the_yap,update_map,update_router,release_agent_stack,research_literature,convert_colour,check_colour_contrast,journal_selection,creative_moves,show_me_your_work method;
+    class skill_issue,missing_information decision
+    class has_objective_criteria decision
     class stack entry
-    class natural_writing,create_guidelines,research,translate,compose_voice_profile,analyse_ads,audit_accessibility,audit_ux,brainstorm,brand_discovery,business_plan,create_image_ads,create_skill,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,ship,steal skill
-    class aesthetics,changelog,design_system_guide,docs,dutch,english,erim_journals,french,german,git,versioning,mermaid,sql,product_pitch,tech_spec,templates,ts,python,wireframes knowledge;
-    class interface,typography,colour,iconography,accessibility,sound,openalex_docs,journal_selection,template_skill,template_ref,router_ref,agents_template,voice_profile_template,creative_moves,convert_colour_script,check_colour_contrast_script document;
-    class design_guides,product_biz_guides,coding_guides,tech_guides,template_files,admin_skills,language_guides,academic_references,creative_references,academic_skills,data_skills,design_skills,marketing_skills,product_skills,writing_skills,video_skills,engineering_skills,discipline_map,guide_map section
+    class create_guidelines,research,translate,compose_voice_profile,create_skill,ship skill
+    class natural_writing method
+    class analyse_ads,audit_accessibility,audit_ux,brand_discovery,business_plan,create_docs,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,brainstorm,fresh_eyes planned
+    class english,german,dutch,french,typography,colour,iconography,accessibility,sound,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,decision_log_template document;
+    class interface,docs,tech_spec,product_pitch,design_system_guide,wireframes,haptics,interaction,layout,motion planned
+    class design_guides,product_biz_guides,coding_guides,tech_guides,skills,guidelines,admin_skills,language_guides,academic_skills,data_skills,design_skills,marketing_skills,product_skills,writing_skills,video_skills,engineering_skills,discipline_map,guide_map section
     linkStyle default stroke-width:1.5px,color:#002B3D
