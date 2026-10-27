@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.8.0] - 2026-10-27
+
+### Added
+
+- Add comprehensive iconography guidance covering metaphors, icon and family construction, optical correction, composition, accessible application, localization, semantic systems, implementation, production, testing, and governance, with a vector construction plate and runnable web examples.
+
 ## [0.7.0] - 2026-10-27
 
 ### Added
