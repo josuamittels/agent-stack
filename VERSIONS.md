@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.14.0` |
+| Version | `0.15.0` |
 | Status | `draft` |
 | Recorded | `2026-10-27` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.14.0` consolidates disciplines under `skills/`, colocates authoring templates with their consumers, and refreshes the capability map and discovery catalog. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.15.0` requires each non-empty Agent Stack commit to carry its own sequential stack version increment and matching component inventory snapshot. The stack has not been released.
 
 ## Component versions
 
@@ -46,12 +46,12 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `skills/natural-writing/SKILL.md` | `0.5.0` | `draft` |
 | Discipline | `skills/pre-mortem/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `skills/quit-the-yap/SKILL.md` | `0.2.0` | `draft` |
-| Discipline | `skills/release-agent-stack/SKILL.md` | `0.1.0` | `draft` |
+| Discipline | `skills/release-agent-stack/SKILL.md` | `0.2.0` | `draft` |
 | Discipline | `skills/research-literature/SKILL.md` | `0.5.0` | `draft` |
 | Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `draft` |
 | Reference | `skills/research-literature/references/openalex-docs.md` | `0.2.0` | `draft` |
 | Skill | `skills/research/SKILL.md` | `0.7.0` | `draft` |
-| Skill | `skills/ship/SKILL.md` | `0.4.0` | `draft` |
+| Skill | `skills/ship/SKILL.md` | `0.5.0` | `draft` |
 | Discipline | `skills/show-me-your-work/SKILL.md` | `0.1.0` | `draft` |
 | Discipline | `skills/spawn-evals/SKILL.md` | `0.9.0` | `draft` |
 | Discipline | `skills/think-deeper/SKILL.md` | `0.1.0` | `draft` |

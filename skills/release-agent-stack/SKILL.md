@@ -1,8 +1,8 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.1.0"
-updated: "2026-10-26"
+version: "0.2.0"
+updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
 references: []
@@ -45,20 +45,20 @@ Recheck the root `AGENTS.md` marker and all expected structure before editing. I
 
 Read the current stack version, lifecycle status, `Recorded` date, release date, and component table. Validate the version and status against the Versioning guide. If the record is malformed or internally inconsistent, stop before editing and report the exact mismatch.
 
-### 2. Classify and update the stack version
+### 2. Classify and update the stack version per commit
 
-For a non-empty, authorized coordinated stack release, compare the proposed changes with the current stack contract and choose the largest required SemVer increment:
+Treat each planned non-empty Ship commit as its own stack revision. Classify each commit's change group against the stack contract and calculate its increment from the version produced by the preceding commit in the plan. Choose the largest required SemVer increment for that commit:
 
 - At `0.y.z`, use patch for compatible corrections and minor for additions or breaking changes; identify breaking changes explicitly.
 - At `1.0.0` or later, use patch for compatible corrections, minor for compatible additions or deprecations, and major for incompatible changes.
 
-Do not bump for an empty change set. Do not treat commits or saves alone as releases. If the compatibility impact cannot be established from the changes and repository policy, return the unresolved decision to Ship before editing.
+Do not bump for an empty change set. This per-commit rule is an Agent Stack release requirement: every planned non-empty commit must include its own stack version increment, rather than sharing one bump across multiple implementation commits. Commits and saves alone do not create a release revision; each increment records the substantive change group committed with it. If the compatibility impact cannot be established from a commit group's changes and repository policy, return the unresolved decision to Ship before editing.
 
-Update the stack version and `Recorded` date in `VERSIONS.md`. Keep the current lifecycle status. Leave `Release date` as `Not released` until an actual release date is authorized and known. Stable status requires version `1.0.0` or later; stop on an inconsistent stable version rather than silently changing status or version to hide it.
+For each planned commit, update the stack version and `Recorded` date in `VERSIONS.md` to the state that commit will record. Include those edits with that commit's substantive changes; do not create one final aggregate version-only commit. Keep the current lifecycle status. Leave `Release date` as `Not released` until an actual release date is authorized and known. Stable status requires version `1.0.0` or later; stop on an inconsistent stable version rather than silently changing status or version to hide it.
 
-### 3. Refresh the component inventory
+### 3. Refresh the component inventory for each commit
 
-Read each independently versioned skill, discipline, and guideline under the corresponding top-level directories, including nested reference Markdown with valid substantive `version` and `status` frontmatter. Preserve each artifact’s own frontmatter as the source of truth. Refresh the table with its component kind, path, version, and status.
+For every planned commit, determine the component inventory state after that commit's changes and refresh the `VERSIONS.md` table in that same commit. Read each independently versioned skill, discipline, and guideline under the corresponding top-level directories, including nested reference Markdown with valid substantive `version` and `status` frontmatter. Preserve each artifact’s own frontmatter as the source of truth. Refresh the table with its component kind, path, version, and status.
 
 Exclude templates, source copies, evaluation schemas, files without substantive version metadata, and placeholders such as `[version]`. Do not infer a component version from a directory name or a stack bump. Compare every inventory row with its source frontmatter and confirm no eligible artifact is missing or duplicated.
 
@@ -70,7 +70,7 @@ For changes that do not affect capability discovery, do not edit the map or rout
 
 ### 5. Return the delivery route to Ship
 
-Return the current and proposed stack version, lifecycle status, changed paths, inventory reconciliation result, capability-map/router updates, unresolved decisions, and delivery route:
+Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, unresolved decisions, and delivery route:
 
 | Stack lifecycle status | Delivery route |
 | --- | --- |

@@ -1,7 +1,7 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.4.0"
+version: "0.5.0"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"
@@ -61,7 +61,7 @@ Define the exact change set from the request, current diffs, and relevant histor
 
 Invoke [Update Changelog](../update-changelog/SKILL.md) for every requested ship operation, passing the verified change set, intended version or section, and evidence for each candidate entry. Let the discipline omit routine or internal changes and follow the repository's established convention. If the repository has no changelog, do not create one or invent a version unless the user requests it or repository instructions require it.
 
-When the Agent Stack identity checks pass, read and apply [Release Agent Stack](../release-agent-stack/SKILL.md). Pass the request, exact change set, Git state, and repository metadata. It returns any `VERSIONS.md` edits and the permitted delivery route. Do not repeat its stack version decision or apply its status gate to another repository.
+When the Agent Stack identity checks pass, read [Release Agent Stack](../release-agent-stack/SKILL.md). Apply it after the commit plan is established in step 5 so it can calculate the version sequence for the actual groups. Do not repeat its stack version decision or apply its status gate to another repository.
 
 ### 3. Prepare release metadata
 
@@ -83,7 +83,9 @@ Use a topic branch for a review request. Reuse the appropriate working branch wh
 
 Before staging, make a short ordered commit plan whenever the change set has multiple themes. Give each group one purpose, list its paths or hunks, include the companion changes it needs, and order groups by dependency. Keep a move with its required reference updates, a feature with its route and supporting docs, and tests with the behavior they verify. Put independently reviewable outcomes in separate commits; do not hide them in one omnibus commit or split one coherent outcome across arbitrary file-type commits. One commit is appropriate when the whole change set serves one purpose.
 
-Keep coordinated release metadata with the release it describes. When several implementation themes share one stack version, changelog section, and inventory refresh, make those metadata edits a final release-record commit after the implementation commits. Stage explicit paths or hunks for one planned group at a time. Review the complete staged diff, `git diff --cached --check`, and staged file list before each commit. After each commit, compare the remaining changes with the plan. If unrelated staged work cannot be kept out of a commit, stop before committing and ask the user to separate the index. Never create an empty commit.
+For an Agent Stack release, each planned non-empty commit is a separate stack revision. Calculate the stack version increment for that commit's change group and include the corresponding `VERSIONS.md` version and inventory state in the same commit. Do not defer one aggregate version bump or inventory refresh to a final release-record commit after multiple implementation commits. A commit must not contain only a version bump; include the bump with the change it records. Apply the repository's normal coordinated release metadata rules for other repositories. Stage explicit paths or hunks for one planned group at a time. Review the complete staged diff, `git diff --cached --check`, and staged file list before each commit. After each commit, compare the remaining changes with the plan. If unrelated staged work cannot be kept out of a commit, stop before committing and ask the user to separate the index. Never create an empty commit.
+
+When the Agent Stack identity checks pass, now invoke [Release Agent Stack](../release-agent-stack/SKILL.md) with the ordered commit plan, exact paths or hunks for each group, current release metadata, and Git state. Apply its sequential version decisions and inventory snapshot to each matching commit. Record each planned commit's resulting stack version before staging.
 
 Use the project’s commit format. If none exists, default to `type(scope): description` with optional scope, as described in the Git guide. Report each created commit and its included paths.
 

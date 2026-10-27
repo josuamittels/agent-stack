@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.15.0] - 2026-10-27
+
+### Changed
+
+- Require each non-empty Agent Stack commit to include its own sequential stack version increment and component inventory snapshot.
+
 ## [0.14.0] - 2026-10-27
 
 ### Added
