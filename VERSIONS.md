@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.17.2` |
+| Version | `0.18.0` |
 | Status | `draft` |
-| Recorded | `2026-10-27` |
+| Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.17.2` removes the stale Layout placeholder from the map after its scaffold was deleted. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.18.0` adds the interaction design guide and marks it as an available reference in the map. The stack has not been released.
 
 ## Component versions
 
@@ -24,6 +24,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/aesthetics/composition.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/haptics.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `draft` |
+| Guideline | `guidelines/aesthetics/interaction.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/motion.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/sound.md` | `0.1.0` | `draft` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `draft` |

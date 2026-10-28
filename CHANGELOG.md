@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.18.0] - 2026-10-28
+
+### Added
+
+- Add an interaction design guide for task flows, controls, state, input, feedback, persistence, recovery, and evaluation.
+
 ## [0.17.2] - 2026-10-27
 
 ### Fixed
