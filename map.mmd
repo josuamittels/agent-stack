@@ -159,6 +159,7 @@ flowchart LR
 
       subgraph design_guides [DESIGN]
           aesthetics@{ shape: docs, label: "Aesthetics" }
+          aesthetics_framework@{ shape: doc, label: "Aesthetics Framework" }
           composition@{ shape: doc, label: "Composition" }
           design_system_guide@{ shape: doc, label: "Design System" }
           wireframes@{ shape: doc, label: "Wireframes" }
@@ -170,6 +171,7 @@ flowchart LR
           haptics@{ shape: doc, label: "Haptics" }
           interaction@{ shape: doc, label: "Interaction" }
           motion@{ shape: doc, label: "Motion" }
+          aesthetics --- aesthetics_framework
           aesthetics --- typography
           aesthetics --- composition
           aesthetics --- colour
@@ -262,7 +264,7 @@ flowchart LR
     class create_guidelines,research,translate,compose_voice_profile,create_skill,ship skill
     class natural_writing method
     class analyse_ads,audit_accessibility,audit_ux,brand_discovery,business_plan,create_docs,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,brainstorm,fresh_eyes planned
-    class english,german,dutch,french,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,decision_log_template,interaction document;
+    class english,german,dutch,french,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,aesthetics,aesthetics_framework,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,decision_log_template,interaction document;
     class docs,tech_spec,product_pitch,design_system_guide planned
     class design_guides,product_biz_guides,coding_guides,tech_guides,skills,guidelines,admin_skills,language_guides,academic_skills,data_skills,design_skills,marketing_skills,product_skills,writing_skills,video_skills,engineering_skills,discipline_map,guide_map section
     linkStyle default stroke-width:1.5px,color:#002B3D

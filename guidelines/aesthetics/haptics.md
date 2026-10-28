@@ -1,7 +1,7 @@
 ---
 name: "haptic-design"
 description: "Reference for designing and evaluating touch, tactile materials, physical controls, force feedback, vibration, and embodied experiences across digital products, objects, print, and spaces."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -26,7 +26,7 @@ references:
   - "Creative Market"
   - "Artiss"
   - "World Wide Web Consortium"
-type: "reference"
+type: reference
 status: "experimental"
 ---
 
@@ -38,32 +38,38 @@ Use this guide to design actual touch and the expectations surrounding it. It co
 
 The conventions are design starting points. Validate them with the intended people, physical samples, and supported hardware. A written pattern, material name, render, or waveform cannot establish how something feels.
 
+## Use this reference
+
+This guide owns tactile perception, materials, contact geometry, force, vibration, tactile vocabulary, and physical delivery. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI feedback, start with [1–2](#1-establish-the-purpose-of-touch), [11–16](#11-compose-vibration-and-temporal-feedback), and [20–24](#20-preserve-access-comfort-and-control). Use [3–10](#3-understand-human-perception) for perception, materials, and mechanisms; [17–19](#17-design-print-and-packaging) for physical and wearable applications. [Interaction](interaction.md) owns event semantics; [Motion](motion.md) owns visual movement; [Sound](sound.md) owns audible expression; [Accessibility](accessibility.md) owns equivalent access.
+
 ## Contents
 
-- [1. Establish the purpose of touch](#1-establish-the-purpose-of-touch)
-- [2. Separate the channels of experience](#2-separate-the-channels-of-experience)
-- [3. Understand human perception](#3-understand-human-perception)
-- [4. Design for exploration and movement](#4-design-for-exploration-and-movement)
-- [5. Describe tactile character precisely](#5-describe-tactile-character-precisely)
-- [6. Shape feeling and meaning](#6-shape-feeling-and-meaning)
-- [7. Design texture at the right scale](#7-design-texture-at-the-right-scale)
-- [8. Choose materials and finishes](#8-choose-materials-and-finishes)
-- [9. Design geometry, grip, and contact](#9-design-geometry-grip-and-contact)
-- [10. Shape force, travel, and resistance](#10-shape-force-travel-and-resistance)
-- [11. Compose vibration and temporal feedback](#11-compose-vibration-and-temporal-feedback)
-- [12. Build an interaction vocabulary](#12-build-an-interaction-vocabulary)
-- [13. Coordinate touch, sight, and sound](#13-coordinate-touch-sight-and-sound)
-- [14. Choose the delivery technology](#14-choose-the-delivery-technology)
-- [15. Apply platform conventions](#15-apply-platform-conventions)
-- [16. Implement reliable feedback](#16-implement-reliable-feedback)
-- [17. Design print and packaging](#17-design-print-and-packaging)
-- [18. Design spaces and bodily journeys](#18-design-spaces-and-bodily-journeys)
-- [19. Design wearables and mediated touch](#19-design-wearables-and-mediated-touch)
-- [20. Preserve access, comfort, and control](#20-preserve-access-comfort-and-control)
-- [21. Prototype and evaluate](#21-prototype-and-evaluate)
-- [22. Specify and hand off](#22-specify-and-hand-off)
-- [23. Work through concrete examples](#23-work-through-concrete-examples)
-- [24. Diagnose and review](#24-diagnose-and-review)
+1. [Establish the purpose of touch](#1-establish-the-purpose-of-touch)
+2. [Separate the channels of experience](#2-separate-the-channels-of-experience)
+3. [Understand human perception](#3-understand-human-perception)
+4. [Design for exploration and movement](#4-design-for-exploration-and-movement)
+5. [Describe tactile character precisely](#5-describe-tactile-character-precisely)
+6. [Shape feeling and meaning](#6-shape-feeling-and-meaning)
+7. [Design texture at the right scale](#7-design-texture-at-the-right-scale)
+8. [Choose materials and finishes](#8-choose-materials-and-finishes)
+9. [Design geometry, grip, and contact](#9-design-geometry-grip-and-contact)
+10. [Shape force, travel, and resistance](#10-shape-force-travel-and-resistance)
+11. [Compose vibration and temporal feedback](#11-compose-vibration-and-temporal-feedback)
+12. [Build an interaction vocabulary](#12-build-an-interaction-vocabulary)
+13. [Coordinate touch, sight, and sound](#13-coordinate-touch-sight-and-sound)
+14. [Choose the delivery technology](#14-choose-the-delivery-technology)
+15. [Apply platform conventions](#15-apply-platform-conventions)
+16. [Implement reliable feedback](#16-implement-reliable-feedback)
+17. [Design print and packaging](#17-design-print-and-packaging)
+18. [Design spaces and bodily journeys](#18-design-spaces-and-bodily-journeys)
+19. [Design wearables and mediated touch](#19-design-wearables-and-mediated-touch)
+20. [Preserve access, comfort, and control](#20-preserve-access-comfort-and-control)
+21. [Prototype and evaluate](#21-prototype-and-evaluate)
+22. [Specify and hand off](#22-specify-and-hand-off)
+23. [Work through concrete examples](#23-work-through-concrete-examples)
+24. [Diagnose and review](#24-diagnose-and-review)
 
 ## 1. Establish the purpose of touch
 
@@ -383,7 +389,7 @@ Do not automatically repeat an unnoticed cue indefinitely. Escalation needs a re
 
 ## 12. Build an interaction vocabulary
 
-Give each functional cue a stable relationship to an event. Separate input receipt, a changing value, a boundary, an accepted action, a completed outcome, and an error. These may occur at different times.
+Map cues to the [Interaction event and state model](interaction.md#3-model-states-and-transitions). The table below selects tactile expression for those events; their commitment and recovery behavior remains in [Interaction](interaction.md#11-communicate-response-and-progress).
 
 | Interaction | Default convention | Failure to avoid |
 | --- | --- | --- |
@@ -433,7 +439,7 @@ Latency includes sensing, gesture recognition, state processing, scheduling, dri
 
 A crisp visual collision may pair with a compact tactile onset. A yielding object may need a gradual force profile and damped release. These are craft hypotheses, not mandatory mappings between colours, materials, and vibration presets.
 
-A sound can change perceived material character. Listen to and feel the assembled product together. Also inspect channels separately to detect a mechanical rattle or a sensation masked by a persuasive audio track.
+Use [Sound’s construction model](sound.md#8-construct-a-sound) for the audible material character. Listen to and feel the assembled product together. Also inspect channels separately to detect a mechanical rattle or a sensation masked by a persuasive audio track.
 
 Vibration can be audible through an enclosure or tabletop. A cue intended to be private may still attract attention or reveal a recognizable rhythm. Consider the resting device, shared desk, microphone, camera, and motion sensors as part of the context.
 
@@ -516,7 +522,7 @@ Prefer the platform's documented interaction path. Keep essential state visible 
 
 ## 16. Implement reliable feedback
 
-A good pattern can fail through incorrect event ownership, duplication, lifecycle handling, or scheduling. Centralize the semantic policy while keeping device implementations replaceable.
+Use [Interaction’s asynchronous contract](interaction.md#12-keep-asynchronous-work-trustworthy) for event truth and [attention policy](interaction.md#14-protect-attention-and-informed-choice) for interruption. This section applies that contract to tactile scheduling, device lifecycle, and actuator output.
 
 ### Own events at the correct state transition
 
@@ -645,9 +651,7 @@ Make essential meaning and operation available without requiring a particular ta
 
 ### Redundancy should preserve meaning
 
-Do not instruct someone solely to "wait for the vibration" or "press the rough button" when that property is necessary to complete the task. Include an identifiable control or persistent state through another suitable channel. For screen interfaces, preserve semantics, focus behavior, and assistive technology support.
-
-A visible label is not a sufficient alternative for a blind person using a haptic cue. Sound alone is not sufficient for a deaf person. Design alternatives around the actual task and available senses rather than checking a count of channels.
+Use [Accessibility’s functional-needs model](accessibility.md#2-design-around-functional-needs), [alternative-input requirements](accessibility.md#9-support-keyboard-focus-and-alternative-input), and [semantic state](accessibility.md#8-make-structure-and-meaning-programmatic) to choose an equivalent route. A visual substitute alone cannot replace a tactile cue for someone who cannot see it.
 
 Standardized tactile information and learned tactile communication systems can carry rich meaning for trained users. Do not generalize the limits of casual phone vibration into a claim that touch cannot support complex information. Such systems require their own conventions, training, and specialist validation.
 
@@ -730,20 +734,7 @@ Keep intent, semantics, implementation, and verification distinct but connected.
 
 ### The haptic brief
 
-Record these decisions:
-
-| Field | Required content |
-| --- | --- |
-| Purpose and task | What the person needs to understand, control, or feel. |
-| Contact | Body site, grip, contact area, direction, duration, and expected movement. |
-| Context | Environment, use frequency, clothing or gloves, moisture, accessibility, attention. |
-| Intended character | Observable qualities and anchored references. |
-| Physical channel | Actual material, mechanics, vibration, force, thermal output, or implied texture. |
-| Meaning | The state or interpretation the experience should communicate. |
-| Constraints | Hardware, fabrication, power, acoustics, maintenance, comfort, safety, access. |
-| Alternatives | What happens when touch is absent, unwanted, or unavailable. |
-| Evidence | What has been proposed, built, measured, felt, or tested, and by whom. |
-| Acceptance | Task-specific pass conditions and remaining uncertainties. |
+Carry the [purpose and context brief](#1-establish-the-purpose-of-touch) into the handoff. Add the body site, grip, contact area and direction, exposure duration, actual physical channel, accepted reference sample or device build, and task-specific acceptance criteria. The specification below adds the implementation details; it does not require a second brief.
 
 ### Semantic event specification
 

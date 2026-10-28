@@ -1,7 +1,7 @@
 ---
 name: motion-design
 description: "Comprehensive motion and animation reference for perception, timing, spacing, easing, springs, gesture physics, choreography, expressive identity, transitions, patterns, accessibility, motion systems, implementation, and evaluation."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -36,9 +36,11 @@ Design that movement as part of the experience. An animation has an audience, a 
 
 Use this guide for interfaces, websites, identities, explanatory graphics, presentations, character accents, and spatial experiences. Product interaction supplies many examples because it exposes difficult constraints: unpredictable input, repetition, asynchronous results, interruption, and access. Linear storytelling permits different pacing and exaggeration. Keep those contexts distinct.
 
-**Requirements** protect meaning, operation, and access. **Defaults** are preferred choices with stated alternatives. Numerical presets are illustrative starting points, unless explicitly identified as a standard requirement. Neither a curve nor a spring value guarantees a particular feeling.
+## Use this reference
 
-[Composition](composition.md) owns spatial hierarchy and layout; [Accessibility](accessibility.md) covers complete access requirements. Coordinate visual movement with [Typography](typography.md), [Colour](colour.md), [Iconography](iconography.md), [Sound](sound.md), and [Haptics](haptics.md). This reference owns how those relationships develop through time, including the interaction behavior needed to make motion dependable.
+This guide owns temporal composition, timing, easing, springs, trajectories, choreography, and animation lifecycle. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI, start with [1–2](#1-understand-why-motion-matters), [7–13](#7-choose-duration-and-response), and [16–23](#16-apply-interaction-patterns); verify with [26–27](#26-work-through-complete-examples). Use [14–15](#14-create-feeling-and-expressive-identity) for expressive and narrative sequences. [Interaction](interaction.md) defines behavior and state truth; [Accessibility](accessibility.md) defines access and control requirements; [Composition](composition.md) defines spatial endpoints.
 
 ## Contents
 
@@ -603,37 +605,22 @@ For interactive vector or animation assets, verify supported effects and target 
 
 ## 16. Apply interaction patterns
 
-Use a pattern as a behavioral contract. Pair its visible treatment with input, focus, truth, and interruption rules.
+Read [Interaction](interaction.md#4-choose-controls-by-meaning) for control behavior, [focus lifecycle](interaction.md#6-design-focus-and-selection), [feedback](interaction.md#11-communicate-response-and-progress), and [asynchronous truth](interaction.md#12-keep-asynchronous-work-trustworthy). Animate that contract without redefining it.
 
-| Pattern | Recommended treatment | Required behavior and common traps |
+| Pattern | Motion decision | Constraint on the transition |
 | --- | --- | --- |
-| Press and release | Immediate state; optional small local deformation or tint | Commit at the intended activation event; support cancellation; keep hit area stable |
-| Hover | Restrained local feedback on capable pointers | Equivalent focus/activation cues; no indispensable hover-only content |
-| Focus | Immediate visible indication | Do not animate the ring so slowly that focus location is ambiguous |
-| Tooltip | Stable placement; brief appearance when useful | Support hover/focus requirements and dismissal; avoid traversal flicker; do not place interactive controls in a tooltip |
-| Popover or menu | Origin relates to trigger; short reveal or cut | Correct focus and expanded state; Escape; boundary repositioning; no delayed keyboard input |
-| Accordion | Reveal the owned region; optional measured expansion | Toggle semantics immediately; hidden controls leave focus order; handle content resizing |
-| Dialog or sheet | Clear surface and backdrop relationship | Modality, focus entry/return, close control, cancellation and reopening; backdrop does not replace close operation |
-| Navigation | Preserve hierarchy, landmarks, and back relationship | Update title, focus and location appropriately; do not replay route spectacle on every traversal |
-| Tabs | Immediate selection; optional local indicator movement | Selection and keyboard operation do not wait for indicator; keep panels and semantics synchronized |
-| Reorder | Item follows input; peers make space | Stable IDs, non-drag alternative, final order announcement where appropriate; avoid intersecting paths |
-| Add, copy, move | Indicate actual destination and distinguish operation | Persistent resulting state; source remains only when operation really copies |
-| Delete or dismiss | Short removal; optional closure of gap | Correct deletion/undo state; move focus sensibly; old callback cannot delete a restored item |
-| Loading | Truthful status, stable reserved layout | Preserve useful existing content; avoid endless blank skeletons; show error/cancel when appropriate |
-| Success | Clear persistent result, optional brief accent | Trigger from confirmed state or explicitly labeled optimistic state; no exaggerated reward for routine action |
-| Error | Local persistent explanation and correction path | Do not rely on shaking, red flashes, color, or sound alone; preserve input |
-| Notification | Controlled entrance in a stable region | Appropriate announcement; essential actions remain accessible; no repeated bounce |
-| Live update | Highlight the change locally, then settle | Offer update controls when required; preserve reading and selection; avoid constant full-list reflow |
+| Press, hover, focus | Immediate state; optional restrained local response | Keep the target stable and focus legible from its first frame. |
+| Popover, menu, dialog, sheet | Cut or short reveal from a meaningful origin | Entry must not delay operation; interrupted exit must reconcile correctly. |
+| Accordion | Optional expansion of the owned region | Recompute for content growth and keep the final layout valid without animation. |
+| Tabs | Immediate content change; optional local indicator movement | Selection must not wait for the indicator. |
+| Navigation | Connect meaningful source/destination anchors or use a cut | Do not imply shared identity between unrelated entities. |
+| Reorder | Direct tracking; peers make space | Reduce crossing paths; preserve the moving object's identity. |
+| Add, copy, move, remove | Explain the actual source and destination; optionally close a gap | Reversal and undo must retarget or replace presentation safely. |
+| Loading | Static placeholder by default; optional bounded activity | A shimmer or loop is activity, not measured progress. |
+| Success, error, notification | Optional local accent around a stable outcome | The message and recovery route remain after the movement ends. |
+| Live update | Local highlight followed by rest | Avoid continuous reflow and moving inspection targets. |
 
-### Handle asynchronous states as a family
-
-Design idle, pending, partial, success, empty, failure, retry, and canceled states together. A polished success transition with no failure path is incomplete. When optimistic feedback is appropriate, distinguish tentative local state from confirmed remote state, preserve a recovery path, and animate rollback without blaming the person.
-
-For skeletons, approximate final geometry so content arrival does not surprise the reader. Default to static placeholders; add subtle movement only when it serves the brief and controls/preferences are handled. A shimmer communicates activity, not measurable completion.
-
-### Keep disappearing information recoverable
-
-Do not make important information depend on catching a brief event. Store consequential notifications in a history or persistent region where appropriate. Essential confirmation, error details, and recovery controls need enough time and a stable place. A celebratory motion can end while the actual success message remains.
+Reserve final geometry where useful. Tune the presentation for the whole state family rather than polishing only the success transition. Keep state ownership and recovery in the interaction contract; motion owns the transition between its valid endpoints.
 
 ## 17. Design scrolling and environmental motion
 
@@ -663,11 +650,9 @@ Do not replace the system pointer or make a decorative follower obscure the targ
 
 ### Keep language readable
 
-Animate text as meaningful units: a heading, phrase, or caption. Letter-by-letter fragmentation can change reading rhythm, break shaping and ligatures, disrupt selection, or create a confusing accessibility tree. Use it only when the typographic performance is part of the intended content.
+Use [Typography’s shaping and language guidance](typography.md#22-compose-across-languages-and-scripts) and [Accessibility’s semantic requirements](accessibility.md#8-make-structure-and-meaning-programmatic) before fragmenting text.
 
-Keep the semantic string intact and prevent decorative copies from being announced twice. Preserve word spacing, line breaks, text selection, localization, bidirectional text, and font loading. A split-text wrapper that works in English may fail with connected scripts or an unexpected line wrap.
-
-Avoid scaling body text through long transitions. Move or clip a container, or separate the background's transformation from the final text layout. If two text states crossfade, limit overlap and keep a readable endpoint. Important labels should not pass through an unreadable blur just before they become actionable.
+Animate meaningful units such as a phrase or heading. Character-level choreography changes reading rhythm and needs a content reason. Avoid scaling body text through long transitions: move a container or separate the background transformation from final text layout. If text states crossfade, limit overlap and preserve readable endpoints. Do not blur an important label immediately before activation.
 
 ### Give symbols coherent topology
 
@@ -701,26 +686,9 @@ Absence of a reduced-motion preference does not mean someone welcomes intense mo
 
 ### Apply the right requirement
 
-The following WCAG 2.2 distinctions concern web content; use the full accessibility reference and actual project requirements for conformance decisions.
+Apply [Accessibility’s motion, automatic-content, flashing, and timing requirements](accessibility.md#16-control-motion-time-and-interruption), [semantic visibility](accessibility.md#hide-only-the-right-things), and [Interaction’s focus lifecycle](interaction.md#specify-the-focus-lifecycle). Reduced-motion presentation and pause/stop controls answer different requirements; implement the ones the effect needs.
 
-| Area | Requirement or convention |
-| --- | --- |
-| Automatically moving, blinking, or scrolling information | SC 2.2.2, Level A: if it starts automatically, lasts more than five seconds, and appears alongside other content, provide pause, stop, or hide unless essential |
-| Automatically updating information | SC 2.2.2, Level A: alongside other content, provide pause, stop, hide, or control of update frequency unless essential; this clause has no five-second exemption |
-| Flashing | SC 2.3.1, Level A: avoid more than three flashes in any one-second period unless below the specified general and red-flash thresholds; default here to avoiding flashing effects |
-| Interaction-triggered motion | SC 2.3.3, Level AAA: allow disabling motion animation unless essential; this guide adopts that behavior as a product convention even for an AA target |
-
-The five-second condition is not a comfort threshold or permission for arbitrary short movement. An essential exception is narrow; brand preference does not make a decorative effect essential. Reduced-motion handling does not substitute for pause/stop controls where required, flashing evaluation, keyboard access, or complete accessibility review.
-
-Provide an operable, labeled, persistent control for long autonomous motion. Pausing only while a pointer hovers does not give everyone dependable control. Do not restart a user-paused effect automatically because it reenters the viewport.
-
-### Preserve semantics and operation during motion
-
-An element at `opacity: 0` may still receive focus, clicks, and accessibility exposure. A transform does not change DOM order. A visual duplicate can create duplicate controls. Define focusability, hit testing, semantic visibility, and reading order explicitly at each state.
-
-When hiding a region that contains focus, first move focus to a sensible remaining target. Avoid moving focus merely because decorative content arrived. For a dialog, use a proper modal implementation with correct entry, containment, dismissal, and return behavior. A fading backdrop cannot provide those semantics.
-
-Include visible feedback for sound and haptic events, and text/programmatic alternatives for important visual-only changes. Reduced-motion mode must not replace motion-only information with sound-only information.
+During animation, opacity, geometry, hit testing, focusability, and semantic exposure can disagree. A transformed element keeps its document order; an invisible element may still be interactive. Reconcile these properties with the declared state at entry, interruption, exit, and immediate completion. Decorative clones must not become duplicate controls.
 
 ### Prefer targeted opt-in animation
 

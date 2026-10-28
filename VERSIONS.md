@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.19.0` |
+| Version | `0.20.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.19.0` requires components included in a push to be at least experimental and promotes tracked draft components to experimental for trial use. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.20.0` consolidates the aesthetic references around a shared framework and explicit domain ownership. The stack has not been released.
 
 ## Component versions
 
@@ -19,15 +19,16 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
-| Guideline | `guidelines/aesthetics/accessibility.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/colour.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/composition.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/haptics.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/iconography.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/interaction.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/motion.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/sound.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/typography.md` | `0.1.0` | `experimental` |
+| Reference | `guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/accessibility.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/colour.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/composition.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/haptics.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/iconography.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/interaction.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/motion.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/coding/python.md` | `0.1.0` | `experimental` |

@@ -1,7 +1,7 @@
 ---
 name: accessibility-best-practices
 description: "Comprehensive accessibility reference for inclusive product decisions, EU legal scoping, WCAG requirements, visual and interaction design, content, implementation, assistive technology, design systems, evaluation, and ongoing operations."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -25,13 +25,19 @@ type: reference
 status: experimental
 ---
 
-# Accessibility – Best Practices
+# Accessibility
 
 Accessibility lets people with disabilities perceive information, understand choices, operate controls, and complete tasks with the independence and privacy available to other people. It belongs to the whole service: its interface, content, technology, documents, communications, support, and connected providers.
 
 Use this reference when planning, designing, building, buying, reviewing, or maintaining digital products. It is written for designers, engineers, content authors, researchers, testers, and accountable product owners. Web applications provide the main implementation examples. Native software, documents, media, terminals, and spatial experiences need their own platform checks as described below.
 
 The default product target is **WCAG 2.2 Level AA, plus the stronger product conventions in this guide**. That target does not by itself establish legal compliance or meet every person's needs. Apply the actual legal and contractual requirements to the product and jurisdiction. The legal and standards snapshot in this document was checked on **27 October 2026**; recheck it before a compliance decision.
+
+## Use this reference
+
+This guide owns access requirements, conformance and legal scoping, semantics, assistive technology, equivalent access, and accessibility evaluation. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For a new UI, read [1–3](#1-understand-the-purpose-and-boundaries), [5–16](#5-write-an-accessibility-brief), and [21–23](#21-encode-accessibility-in-the-design-system). Use [4](#4-scope-european-legal-obligations) for EU legal scoping, [17–20](#17-provide-image-audio-and-video-equivalents) for the relevant media and platforms, and [26](#26-use-the-wcag-22-aaa-coverage-index) for criterion lookup. [Interaction](interaction.md) owns general behavior; [Typography](typography.md), [Composition](composition.md), [Colour](colour.md), and [Motion](motion.md) own their design techniques.
 
 ## Contents
 
@@ -62,8 +68,6 @@ The default product target is **WCAG 2.2 Level AA, plus the stronger product con
 25. [Work through a complete service example](#25-work-through-a-complete-service-example)
 26. [Use the WCAG 2.2 A/AA coverage index](#26-use-the-wcag-22-aaa-coverage-index)
 27. [Check delivery readiness](#27-check-delivery-readiness)
-
-For a new product, start with sections 1–5 and the critical journeys. For a component, use sections 8–14 and 21. For an existing product, establish the scope in section 22, then remediate through section 23. The coverage index is a lookup aid, not a replacement for the full criteria and their definitions.
 
 ## 1. Understand the purpose and boundaries
 
@@ -276,7 +280,7 @@ Use semantic roles such as text, muted text, border, focus, selected, warning an
 
 Apply actual exceptions: inactive controls, incidental/decorative text and logotypes have relevant text-contrast exceptions; unmodified user-agent controls and essential graphical presentations have scoped non-text exceptions. Do not classify a useful instruction as decoration. Disabled controls can be exempt from contrast criteria while still needing an understandable explanation of availability.
 
-The WCAG 2 ratio compares relative luminance: `(lighter + 0.05) / (darker + 0.05)`. Use an implementation of the specified color conversion and calculation. Do not substitute an HSL lightness difference, grayscale impression or APCA score. Do not round 4.49:1 up to a pass. Resolve compositing before measuring translucent content. For images and gradients, verify the least favorable relevant background; add a stable backing where the image cannot guarantee contrast.
+Measure using [Colour’s contrast calculation and compositing method](colour.md#calculate-srgb-contrast-correctly). Apply the thresholds above to the actual rendered pair, including the least favorable relevant region of a variable background.
 
 Nominal contrast does not establish full readability. Tiny or thin lettering, anti-aliasing, glare and display quality can weaken an otherwise passing design. Increase robustness where necessary. Test both light and dark appearances; automatic inversion is not a complete theme.
 
@@ -288,11 +292,9 @@ Default to underlined inline links. If links are distinguished from surrounding 
 
 ### Make controls and text legible
 
-Keep useful text as text. Use clear letterforms, realistic sizes and weights, adequate spacing and distinguishable characters. Prefer sentence case for labels and ordinary prose. Avoid long all-capital or italic passages and fully justified narrow columns. These are readability defaults, not universal WCAG prohibitions.
+Use [Typography’s font selection](typography.md#14-select-and-combine-typefaces), [paragraph composition](typography.md#15-compose-readable-paragraphs), and [role system](typography.md#18-build-a-typography-system) for readable type. Use [Iconography’s metaphor selection](iconography.md#3-choose-meanings-and-metaphors) for recognizable symbols and [Composition’s grouping](composition.md#4-use-perception-to-clarify-relationships) for spatial relationships. Those design choices support access; this guide defines the requirements they must satisfy.
 
-For ordinary web body text, start near `1rem`, then judge the font's actual size, script, density, audience and device. WCAG does not mandate a universal 16 px minimum. Labels, navigation, hints and errors need their own proof. See the [typography reference](typography.md) for font selection, composition and implementation details.
-
-Do not trade clear affordances for a sparse screenshot. Inputs need recognizable boundaries or another sufficient identifying treatment. Icon-only actions need meaningful names and discoverability; unfamiliar or consequential actions usually benefit from visible words. Keep content grouping and feedback near the task so they remain understandable under magnification.
+Check the composed result under magnification: labels, identifying control features, and feedback must remain usable together, rather than requiring a person to search distant regions of the screen.
 
 ## 7. Preserve scaling, reflow, and user preferences
 
@@ -378,7 +380,7 @@ Disable, remap, or restrict single-character shortcuts to focus on the relevant 
 
 ### Make focus a visible, meaningful state
 
-Keyboard focus marks the current interaction point. Selection marks an option's current state. They can differ. Keep both discernible, including when an unfocused control remains selected.
+Use [Interaction’s focus/selection distinction and lifecycle](interaction.md#6-design-focus-and-selection). The following requirements govern its accessible presentation.
 
 Under 2.4.7, AA, visible focus is required. Under 2.4.11, AA, author-created content must not entirely hide the newly focused control, subject to the criterion's conditions. The product default is stronger: **keep the focused control and its indicator fully visible** where practical. Fix sticky overlays and scroll behavior; do not settle for a one-pixel glimpse.
 
@@ -466,7 +468,7 @@ Separate validation errors from service failures. If the address service is unav
 
 Under 3.3.7, A, information already entered or supplied in the same process is populated or available to select when required again, except where re-entry is essential, required for security, or the information is no longer valid. A checkbox for “Use billing address as delivery address” can reduce effort. Do not silently reuse sensitive information in a different context.
 
-Break long tasks into meaningful steps when that improves comprehension. State progress and requirements, support Back without data loss, and provide review before submission. Avoid unnecessary steps that turn a short task into a navigation burden. Let people save and resume where interruption is likely; explain retention and session expiry.
+Use [Interaction’s commitment models](interaction.md#make-the-commit-model-explicit), [navigation](interaction.md#7-preserve-orientation-through-navigation), and [recovery](interaction.md#13-prevent-errors-and-support-recovery). Verify that the chosen model remains understandable and operable with the supported assistive technologies.
 
 Disabled submission can hide the reason a form cannot proceed. Default to an available submit action with clear validation, or provide explicit, accessible instructions and state when disabling is necessary. `aria-disabled` announces unavailability but does not stop events; native `disabled` changes keyboard and form behavior. Choose deliberately.
 
@@ -494,20 +496,7 @@ Explain sensitive session timeouts, preserve appropriate data, and let people ex
 
 ### Decide whether to move focus or announce
 
-A content update and a context change need different treatment. Avoid sending focus to every update; avoid leaving focus on an element that has disappeared. Define the behavior in the component or journey contract.
-
-| Event | Default behavior | Verify |
-| --- | --- | --- |
-| New application route representing a new page | Update the document title and place focus at the main heading or a suitable start point | User learns the new context; Back/Forward and restored state remain coherent. |
-| Inline disclosure opens | Keep focus on the trigger; expose expanded state | New content follows meaningfully and is reachable. |
-| Search or filter results update | Keep focus on the control; announce a concise result summary when useful | Avoid reading the entire result set or announcing on every keystroke. |
-| Modal dialog opens | Move focus inside and make the background inactive | Reading and keyboard navigation remain within the active task. |
-| An item is deleted | Move focus to a logical surviving item, action or heading | Announce the outcome and provide undo where supported. |
-| Background save completes | Keep focus; expose a short status message | Confirmation is available without interrupting typing. |
-| Submission fails | Follow the form's error-summary or field-focus pattern | Errors are understandable, persistent and connected to correction. |
-| Async operation fails | Keep task context; expose the failure and retry/help | Failure is distinguishable from ongoing progress and no data is silently lost. |
-
-These are defaults. A route that only changes a filter may not need the same focus movement as a new page. A browser's restored navigation state may be more useful than resetting focus. Document the intended outcome and verify it with the real framework and browser.
+Use [Interaction’s focus lifecycle](interaction.md#specify-the-focus-lifecycle) to choose the task-dependent destination. This guide owns how the resulting state is exposed to assistive technology. A status update and a new interaction context need different treatment; do not move focus solely to make an update noticeable.
 
 ### Use announcements sparingly
 
@@ -592,11 +581,11 @@ Different readers may need plain language, Easy Read material, symbols paired wi
 
 Do not claim plain language, a particular reading grade or a dyslexia font is a universal WCAG AA requirement. Some language and reading requirements are AAA; other legal instruments can impose additional obligations. Preserve technical precision while reducing unnecessary complexity.
 
-Make mistakes recoverable. Retain input, provide Back and Undo where useful, avoid unexpected defaults, and explain changed conditions. Use a calm, specific error such as “Your session expired. Sign in again to continue from your saved delivery details,” only when that recovery really exists. Do not blame the user for a system failure.
+Use [Interaction’s recovery contract](interaction.md#13-prevent-errors-and-support-recovery). Check that people can understand the explanation and operate the recovery with their supported access methods; an accurately announced error can still be cognitively inaccessible.
 
 ### Respect attention, autonomy, and distress
 
-Give users control over interruptions, animation and nonessential sound. Avoid false urgency, repeated nagging, hidden cancellation and manipulative consent. A person may need more time to decide without being pushed into an action.
+Apply [Interaction’s attention and informed-choice policy](interaction.md#14-protect-attention-and-informed-choice). Evaluate it for people who need additional processing time or experience distress from unexpected interruption.
 
 For sensitive services, consider whether reminders, on-screen messages or shared-device notifications could reveal private information. Let people choose safe contact methods and provide a private way to leave or resume when relevant. Do not infer a person's disability, diagnosis or competence from their behavior or accessibility settings.
 
@@ -606,32 +595,9 @@ Accessibility and privacy can reinforce each other: an independently usable form
 
 ### Make motion purposeful and optional
 
-Use motion to explain a transition or state when it helps. Avoid parallax, automatic camera travel, large zooming effects, repeated bouncing and moving backgrounds that compete with reading. Direct manipulation can still cause discomfort. Short duration alone does not make motion safe.
-
-Respect `prefers-reduced-motion` and the platform's equivalent. Provide a static or reduced-motion rendering with the same information and actions. Prefer starting with a stable experience and enabling nonessential motion only when preferences permit it. If the product offers a motion preference, make it usable before the effect and preserve it.
-
-```css
-/* Animation is optional; all information is visible in the base state. */
-.result {
-	opacity: 1;
-	transform: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.result--new {
-		animation: result-arrive 140ms ease-out;
-	}
-}
-
-@keyframes result-arrive {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-```
-
-This example does not address media playback or JavaScript-driven movement. Check every motion source. Do not rely on animation events to expose content or finish a transaction; the static path must work. Reduced motion does not necessarily mean zero fades, and some people prefer no transitions at all. Make choices appropriate to the audience.
-
 Under 2.3.3, AAA, nonessential motion animation triggered by interaction can be disabled. Adopt this as a product convention even when the formal target is AA. It is separate from the A requirements for automatic movement and flashing.
+
+Use [Motion’s equivalent reduced-motion presentation](motion.md#make-the-alternative-equivalent-in-meaning) and [targeted opt-in implementation](motion.md#prefer-targeted-opt-in-animation). Evaluate the complete task in that presentation: information, operation, and orientation must remain available. Check every motion source, including JavaScript and media.
 
 ### Provide control over automatic content
 

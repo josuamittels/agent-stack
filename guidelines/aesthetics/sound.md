@@ -1,7 +1,7 @@
 ---
 name: "sound-design"
 description: "Reference for understanding, composing, synthesising, shaping, implementing, and judging sound, including perception, emotion, musical structure, and audio for technology products."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -30,33 +30,39 @@ references:
   - "World Wide Web Consortium"
   - "International Telecommunication Union"
   - "MDN contributors"
-type: "reference"
+type: reference
 status: "experimental"
 ---
 
-# Sound Design
+# Sound design
 
 Sound gives events a material character, organises attention through time, and suggests relationships between bodies, places, actions, and feelings. Its meaning emerges from the signal, the listener, and the situation. A technically clean sound can be emotionally empty; a rough recording can be exactly right.
 
 Use this guide to reason about music, effects, ambience, voice, sonic identity, and interactive feedback. A good result fulfils its intended role with a coherent form, an appropriate demand on attention, and convincing behaviour on the playback system. Pleasantness, realism, novelty, and complexity are choices within that purpose.
 
+## Use this reference
+
+This guide owns auditory perception, acoustic character, musical structure, sound construction, sonic vocabulary, mixing, and playback. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI, start with [1](#1-frame-the-sound), [3](#3-understand-hearing), and [11–15](#11-design-product-sound-systems). Use [2](#2-understand-the-material) and [8–10](#8-construct-a-sound) when producing audio; [4–7](#4-design-timbre-and-tuning-together) for musical composition. [Interaction](interaction.md) owns the event and attention policy; [Haptics](haptics.md) owns tactile reinforcement; [Accessibility](accessibility.md) owns equivalent access and media requirements.
+
 ## Contents
 
-- [1. Frame the sound](#1-frame-the-sound)
-- [2. Understand the material](#2-understand-the-material)
-- [3. Understand hearing](#3-understand-hearing)
-- [4. Design timbre and tuning together](#4-design-timbre-and-tuning-together)
-- [5. Shape emotion and meaning](#5-shape-emotion-and-meaning)
-- [6. Use musical structure](#6-use-musical-structure)
-- [7. Compose and perform](#7-compose-and-perform)
-- [8. Construct a sound](#8-construct-a-sound)
-- [9. Record and transform](#9-record-and-transform)
-- [10. Mix space and perspective](#10-mix-space-and-perspective)
-- [11. Design product sound systems](#11-design-product-sound-systems)
-- [12. Implement reliable playback](#12-implement-reliable-playback)
-- [13. Specify and deliver](#13-specify-and-deliver)
-- [14. Work through concrete examples](#14-work-through-concrete-examples)
-- [15. Listen, diagnose, and decide](#15-listen-diagnose-and-decide)
+1. [Frame the sound](#1-frame-the-sound)
+2. [Understand the material](#2-understand-the-material)
+3. [Understand hearing](#3-understand-hearing)
+4. [Design timbre and tuning together](#4-design-timbre-and-tuning-together)
+5. [Shape emotion and meaning](#5-shape-emotion-and-meaning)
+6. [Use musical structure](#6-use-musical-structure)
+7. [Compose and perform](#7-compose-and-perform)
+8. [Construct a sound](#8-construct-a-sound)
+9. [Record and transform](#9-record-and-transform)
+10. [Mix space and perspective](#10-mix-space-and-perspective)
+11. [Design product sound systems](#11-design-product-sound-systems)
+12. [Implement reliable playback](#12-implement-reliable-playback)
+13. [Specify and deliver](#13-specify-and-deliver)
+14. [Work through concrete examples](#14-work-through-concrete-examples)
+15. [Listen, diagnose, and decide](#15-listen-diagnose-and-decide)
 
 ## 1. Frame the sound
 
@@ -389,15 +395,13 @@ Keep functional identity stable during variation. Small changes of performance o
 
 ### Respect the listener's context
 
-Provide visual or textual equivalents for consequential information, with appropriate assistive-technology exposure. Haptics can supplement feedback but are not universally available or perceivable. Do not make instructions depend solely on hearing a cue.
+Apply [Accessibility’s equivalent-media requirements](accessibility.md#17-provide-image-audio-and-video-equivalents) and [automatic-audio controls](accessibility.md#provide-control-over-automatic-content), with [Interaction’s attention policy](interaction.md#14-protect-attention-and-informed-choice). Use [Haptics](haptics.md#13-coordinate-touch-sight-and-sound) for tactile coordination.
 
-Offer discoverable control over nonessential audio, respect platform silence and interruption settings, and preserve independent control where needed. On web pages, automatically playing audio longer than three seconds requires a way to pause or stop it, or control its volume independently of system volume. Prefer intentional playback over merely satisfying that minimum.
-
-Consider hearing differences, sensory sensitivity, shared rooms, screen-reader speech, and private information revealed by audible events. Avoid conveying essential distinctions exclusively through high frequencies, stereo position, or colour in the fallback interface. A muted, unavailable, or blocked sound must not prevent the underlying task.
+Audition alongside screen-reader speech and realistic competing audio. High-frequency-only or stereo-only distinctions can vanish with hearing differences or a changed output route. Shared rooms and recognizable audible cues can expose private activity. Keep the same sonic role intelligible at low level, in mono, and through the product's supported listening conditions.
 
 ## 12. Implement reliable playback
 
-Trigger sounds from the right semantic event. Contact feedback may accompany a press; success follows confirmed success; a pending action needs its own state. Handle cancellation, retry, duplicate responses, and navigation explicitly.
+Bind playback to [Interaction’s feedback events](interaction.md#11-communicate-response-and-progress) and [asynchronous-state contract](interaction.md#12-keep-asynchronous-work-trustworthy). Keep audio-engine scheduling separate from application state.
 
 Preload and decode frequently needed assets before their moment of use. Schedule rhythmic events against the audio engine's clock rather than repeated UI timers. Account for output latency, including wireless routes; no one latency budget fits musical performance, ambient playback, and ordinary notifications.
 

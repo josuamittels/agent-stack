@@ -1,7 +1,7 @@
 ---
 name: iconography
 description: "Comprehensive iconography reference for metaphor selection, icon and family construction, optical correction, size and style variants, composition, accessible application, localization, semantic systems, vector implementation, production, testing, and governance."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -30,7 +30,11 @@ Design meaning, drawing, and application together. The family defines a visual l
 
 Use this reference to create an individual icon, build or extend a family, select a library, compose icons with content, and maintain a production system. Construction guidance concentrates on functional vector icons. Larger pictograms, app identities, dimensional artwork, signage, print, and motion have different constraints, covered where those differences change a decision.
 
-**Requirements** protect meaning, access, technical correctness, and applicable platform contracts. **Defaults** provide a starting point. Numerical aesthetic values are examples to test with the actual family, medium, audience, and size. When extending an established family, its documented grammar takes precedence over this guide's starter values.
+## Use this reference
+
+This guide owns symbol meaning, family selection and construction, optical correction, variants, and asset delivery. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI application, start with [1](#1-define-the-job-and-scope), [3–4](#3-choose-meanings-and-metaphors), [14–18](#14-compose-icons-with-text-and-layout), and [23](#23-implement-accessible-web-icons). Use [5–13](#5-define-the-visual-grammar) for drawing and family extension; [21–25](#21-build-the-semantic-and-token-system) for a maintained library. [Interaction](interaction.md) owns control behavior; [Colour](colour.md) owns themes; [Motion](motion.md) owns animation; [Accessibility](accessibility.md) owns semantics and access requirements.
 
 ## Contents
 
@@ -60,8 +64,6 @@ Use this reference to create an individual icon, build or extend a family, selec
 24. [Govern contributions and releases](#24-govern-contributions-and-releases)
 25. [Proof, test, and diagnose](#25-proof-test-and-diagnose)
 26. [Use the guide in a project](#26-use-the-guide-in-a-project)
-
-For a new family, begin with the brief and metaphor inventory, then build a varied pilot set before expanding coverage. For an extension, inspect the host family's sources and difficult examples before drawing. For product application, begin with meaning, composition, state, and accessibility. Use the diagnosis table when the visible symptom does not reveal its cause.
 
 ## 1. Define the job and scope
 
@@ -634,20 +636,7 @@ In cards and marketing sections, vary hierarchy through the content structure be
 
 ### Define the component before the glyph treatment
 
-An icon is not a button until a control supplies role, name, interaction, target, focus, and state. Use a button for an action and a link for navigation. A noninteractive status icon should not acquire button styling or keyboard focus.
-
-Specify default, hover where available, focus, pressed, selected, disabled, busy, success, and error behavior only where relevant to the component. These conditions are not interchangeable.
-
-| Condition | Meaning | Suitable visual treatment |
-| --- | --- | --- |
-| Hover | Pointer is over an available target | Surface or emphasis change without implying selection |
-| Focus | Keyboard or another focus mechanism locates the control | Visible indicator around the target |
-| Pressed feedback | An activation is occurring | Brief control response |
-| Toggled on | A persistent binary option is active | Fill, indicator, surface, or another consistent non-color cue |
-| Current destination | User is at this page or location | Navigation indicator and appropriate current-state semantics |
-| Disabled | Control cannot currently be activated | Distinct subdued treatment with correct semantics |
-| Busy | An operation is in progress | Stable layout and understandable progress feedback |
-| Error or warning | A condition needs attention | Shape and text that communicate the specific condition |
+Use [Interaction’s control choice](interaction.md#4-choose-controls-by-meaning) and [state model](interaction.md#3-model-states-and-transitions) before selecting glyph variants. The asset represents the component's state or action; it does not define a second behavior model.
 
 ### Distinguish state from the next action
 
@@ -665,27 +654,15 @@ Do not make every native control supply a custom selected icon if the platform a
 
 ### Handle unavailable and asynchronous actions
 
-A busy button should preserve its name and enough context to explain what is happening. If a spinner replaces its icon, avoid changing button width or implying the operation is complete. Provide appropriate status feedback when completion matters.
-
-A dim icon alone does not explain why an action is unavailable. Put essential constraints in accessible supporting text or the surrounding flow. Do not rely on a tooltip attached to a disabled element that cannot receive focus.
-
-For destructive actions, use clear text and the interaction safeguards appropriate to the task. A red trash glyph does not communicate scope, permanence, or which item will be removed.
+Use [Interaction’s feedback](interaction.md#11-communicate-response-and-progress) and [asynchronous-state contract](interaction.md#12-keep-asynchronous-work-trustworthy). For an icon exchange, reserve a stable asset slot so the component does not jump. Choose the pending and outcome glyphs from the existing family; do not use a decorative variant to imply an unconfirmed result.
 
 ## 16. Apply color, hierarchy, and themes
 
 ### Start with semantic color roles
 
-Default to monochrome functional icons that inherit the intended content color. Define roles such as primary, secondary, interactive, selected, success, warning, critical, disabled, and inverse. Assign roles through components and tokens.
+Use [Colour’s palette and semantic roles](colour.md#11-build-a-palette-that-supports-real-work) and [Accessibility’s multiple-cue requirements](accessibility.md#use-multiple-cues-for-meaning). Default functional icons to inheriting the component's content colour. Fix inconsistent apparent scale and weight before adding individual colours or containers.
 
-Do not color icons individually to make a mixed family appear coherent. Fix the underlying scale and weight first. Use accent color to support hierarchy, not to compensate for weak drawing or meaning.
-
-When an icon is paired with a label, start with comparable emphasis unless the task calls for a difference. A subdued supportive icon beside readable text can be appropriate. A high-emphasis icon should carry a corresponding informational or interactive role.
-
-### Preserve meaning without hue
-
-Use shape, position, label, pattern, or another visible distinction in addition to color when color carries information. A green dot and red dot cannot be the only available distinction between successful and failed jobs.
-
-Provide a monochrome fallback for a duotone or multicolor asset when a target context removes color. If layers become indistinguishable, redesign the fallback rather than flattening them indiscriminately.
+A duotone or multicolour family needs a deliberately drawn monochrome variant when its meaningful layers otherwise merge. Preserve the diagnostic silhouette and modifiers.
 
 ### Design both light and dark appearances
 
@@ -720,35 +697,13 @@ Avoid duplicate announcements from a button name, SVG title, and nearby text. De
 
 ### Apply contrast requirements accurately
 
-For web content targeting WCAG 2.2 AA, Success Criterion 1.4.11 requires at least 3:1 contrast against adjacent colors for visual information needed to identify user interface components and states, and for parts of graphical objects required to understand the content. Relevant exceptions include inactive components, unmodified user-agent appearances, and graphical presentations essential to the information.
+Use [Accessibility’s non-text contrast rules](accessibility.md#6-create-readable-visual-systems), [target and input requirements](accessibility.md#9-support-keyboard-focus-and-alternative-input), and [presentation adaptations](accessibility.md#respect-user-controlled-presentation). Measure the interactive element rather than the SVG artboard. The visible drawing and hit area are separate dimensions; preserve the family's apparent size within the component's target.
 
-The requirement does not mean every decorative layer or icon must pass independently. It also does not make low-contrast essential information acceptable because another decorative part passes. Evaluate the features required to identify the control or understand the graphic.
-
-Visible text labels follow text contrast requirements. Do not substitute the non-text threshold for ordinary small text. A project may adopt a stricter icon contrast standard for robustness.
-
-### Separate visible size from target size
-
-For WCAG 2.2 AA, Success Criterion 2.5.8 generally requires a target containing a 24 × 24 CSS-pixel square, with defined exceptions for spacing, equivalent controls, inline targets, user-agent controls, and essential presentation. For the spacing exception, a 24 CSS-pixel diameter circle centered on each undersized target's bounding box must not intersect another target or the corresponding circle of another undersized target.
-
-Treat this as a minimum with specific exceptions. Default to larger targets for frequent or touch-operated controls. A project can adopt 44–48 CSS-pixel targets as a practical starting policy while keeping native platform units and requirements separate. A 16- or 20-pixel visible icon can sit inside that larger target.
-
-Measure the actual interactive element, not the SVG's artboard or a screenshot of its container. Avoid overlapping invisible targets. Include adequate separation between destructive and routine actions.
-
-### Preserve interaction and adaptation
-
-Use semantic native controls with keyboard activation and visible focus. Place focus on the control rather than its internal SVG. Preserve a logical order and ensure indicators remain visible against surrounding surfaces and overlays.
-
-Test zoom, text enlargement, high contrast, forced colors, and screen-reader output. Do not lock the control to a height that clips enlarged labels or hide text at the breakpoint where users most need it. A scalable icon does not guarantee a scalable layout.
-
-Respect the user's color adaptation. Avoid globally setting `forced-color-adjust: none` to preserve brand colors. Borders or outlines may be necessary when shadows disappear. Test critical SVG fills, strokes, masks, selection, and focus in the target forced-color environment.
+Thin antialiased strokes can disappear despite nominal contrast. Proof diagnostic strokes, gaps, masks, and modifiers at actual output size and in forced colours; a scalable vector alone does not establish a robust symbol.
 
 ### Make tooltips supplemental and usable
 
-Show custom tooltips on keyboard focus as well as pointer hover where appropriate. For applicable hover/focus content, provide dismissal without moving focus, pointer access to the content, and persistence while it remains relevant, subject to the criterion's exceptions.
-
-Keep interactive content out of a simple tooltip. Use an appropriate popover or dialog when people need to act inside it. A native `title` attribute is insufficient as the only way to discover an action, and a tooltip does not replace a control's accessible name.
-
-Accessibility testing verifies more than a complete list of ARIA attributes. Listen to the actual accessible name, role, and state while operating the component. Confirm that its spoken meaning agrees with its visible behavior.
+Follow [Accessibility’s tooltip requirements](accessibility.md#tooltips-hover-content-and-touch) and [Interaction’s disclosure choice](interaction.md#8-choose-disclosure-and-modality). A tooltip cannot repair an uninterpretable metaphor; return to [meaning selection](#3-choose-meanings-and-metaphors) if the symbol repeatedly needs explanation.
 
 ## 18. Localize meaning and direction
 
@@ -842,25 +797,7 @@ For spatial interfaces, evaluate apparent angular size, distance, depth, contras
 
 ## 20. Animate with purpose
 
-### Give motion an informational role
-
-Animate to acknowledge an action, explain a transition, reveal progress, or preserve continuity. Repeated decorative motion beside reading content can compete with the task. Keep most routine icons stable.
-
-Define the trigger, changed property, duration, easing, origin, repetition, interruption, and final state. Choose the final static state before designing the transition. A successful animation should leave the same meaning clear when motion is reduced or absent.
-
-### Preserve structure through the transition
-
-For a toggle, a short outline-to-fill or modifier transition can reinforce change. For a refresh control, rotation can acknowledge activation, but do not imply completion until the operation actually finishes.
-
-Morph paths only when their correspondence is engineered and the intermediate forms remain acceptable. Equal endpoint counts alone do not guarantee a readable transformation. A short crossfade or a native symbol transition can be more stable when structures differ substantially.
-
-Keep optical centers and container sizes stable. Avoid scaling that changes the hit target or makes neighboring content jump. Test repeated activation, rapid reversal, cancellation, and loading that outlasts the expected duration.
-
-### Support reduced motion and status access
-
-Honor platform and web reduced-motion preferences. Use an immediate state change, restrained opacity transition, static progress indication, or text as appropriate. Preserve the information that motion was intended to convey.
-
-Do not use indefinite motion as the only indicator of a task's status. Provide an understandable name or message for meaningful progress, completion, or failure. Avoid announcing every animation frame or repeating a live-region message continuously.
+Use [Motion’s symbol-animation guidance](motion.md#give-symbols-coherent-topology), [interruption handling](motion.md#21-keep-state-correct-through-interruption), and [access alternatives](motion.md#19-provide-access-and-control). Supply the approved static variants from this family as endpoints. Reproof their apparent weight and alignment after integration; animation must not conceal an inconsistent endpoint drawing.
 
 ## 21. Build the semantic and token system
 
@@ -1280,29 +1217,15 @@ Record which browsers, devices, themes, sizes, locales, output formats, and assi
 
 ### Creating an individual icon
 
-1. Establish the meaning, label, use size, neighbors, and audience.
-2. Check for an existing asset or a clearer text treatment.
-3. Inspect the host family's grammar and nearest examples.
-4. Develop the silhouette and diagnostic features at the smallest use.
-5. Resolve curves, counters, junctions, optical scale, and center.
-6. Proof the delivered asset inside its actual component and states.
-7. Add metadata, direction policy, source, and approved export.
-
-An individual icon is complete when it communicates its intended meaning in context, fits its family, survives required output, and has a correct application contract. A clean source file alone is insufficient.
+Use the [meaning and family selection](#3-choose-meanings-and-metaphors), [construction](#5-define-the-visual-grammar), and [proof](#25-proof-test-and-diagnose) sections for the decisions involved. Deliver the canonical asset, use size, label strategy, direction policy, source, export, and application contract together.
 
 ### Creating a family
 
-Begin with an inventory of concepts and confusing neighbors. Define the visual direction and draft grammar. Build a varied pilot, prove its smallest use and hardest compositions, then revise the grammar before expanding the catalog.
-
-Expand by related concept and construction groups so reuse remains visible. Review each addition both within its group and among the whole family. Add optical masters, weights, modifiers, or styles only when a real use requires them.
-
-Deliver the sources, production formats, metadata, usage rules, proof, and maintenance process together. An asset folder without semantics and ownership is an incomplete system.
+Use [family selection and pilot development](#4-select-extend-or-create-a-family) before expanding the [construction grammar](#5-define-the-visual-grammar). Deliver [semantic metadata](#21-build-the-semantic-and-token-system), [production assets](#22-engineer-and-deliver-assets), and [contribution and release rules](#24-govern-contributions-and-releases) with the proof set.
 
 ### Applying icons in a product
 
-Inventory every icon role and map each one to a meaning, asset, label, component, target, state model, color, and direction policy. Remove icons that do not improve the task. Resolve repeated meanings and inconsistent metaphors before polishing alignment.
-
-Proof representative components with real content, supported themes, text adaptation, localization, and keyboard use. Verify exported and packaged assets match the design source. Keep native behavior where the platform supplies it correctly.
+Map each product meaning to the approved asset and variant, then use [component composition](#14-compose-icons-with-text-and-layout), [state](#15-design-interaction-and-state), [accessible application](#17-preserve-accessibility), and [localization](#18-localize-meaning-and-direction). Keep the map with the component contract so screens do not independently redefine the same symbol.
 
 ### Completion criteria
 

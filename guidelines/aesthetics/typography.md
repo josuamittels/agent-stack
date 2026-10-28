@@ -1,7 +1,7 @@
 ---
 name: typography
 description: "Comprehensive typography reference for letter construction, optical correction, spacing, family design, composition, font selection, semantic systems, accessible implementation, multilingual use, and production."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -30,7 +30,11 @@ Typography gives language a visible structure. Its smallest decisions concern th
 
 Use this reference to design letterforms, evaluate fonts, compose text, and build systems for print and digital use. The detailed construction guidance concerns Latin type. The principles of testing in context transfer widely, but Latin anatomy, proportions, case, spacing, and hierarchy do not describe every writing system.
 
-**Requirements** protect meaning, access, correct encoding, and delivery. **Defaults** provide a workable starting point. Numerical aesthetic ranges are hypotheses to test with the actual font, content, output, language, and audience. A deliberate exception needs a purpose and a proof, rather than an appeal to a universal rule.
+## Use this reference
+
+This guide owns letterforms, font selection and construction, text composition, shaping, typographic roles, and font delivery. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI, start with [1](#1-start-with-the-reading-task), then [14–22](#14-select-and-combine-typefaces), and [23](#23-proof-and-diagnose). Read [2–13](#2-understand-the-units-and-anatomy) when evaluating font internals or creating a typeface, rather than as a prerequisite for applying one. [Composition](composition.md) owns page layout; [Colour](colour.md) owns colour roles; [Accessibility](accessibility.md) owns access requirements.
 
 ## Contents
 
@@ -58,8 +62,6 @@ Use this reference to design letterforms, evaluate fonts, compose text, and buil
 22. [Compose across languages and scripts](#22-compose-across-languages-and-scripts)
 23. [Proof and diagnose](#23-proof-and-diagnose)
 24. [Use the guide in a project](#24-use-the-guide-in-a-project)
-
-For a font project, begin with sections 1 and 4, then use the construction, spacing, family, and engineering sections as a loop. For a publication, begin with sections 1 and 14, establish the body paragraph, and develop the page around it. For a product, begin with the reading tasks and real components, then specify roles, implementation, and accessibility. Use the diagnosis table when something looks wrong but its cause is unclear.
 
 ## 1. Start with the reading task
 
@@ -685,11 +687,9 @@ Keep visual style separate from document semantics. A small section heading rema
 
 ### Establish rhythm across the page
 
-Start with the paragraph's baseline distance and reading width, then derive margins, columns, gutters, heading spacing, lists, notes, and captions. A spacing scale can help maintain relationships. Do not force every line height onto a grid if the rounding makes text cramped or detached.
+Use [Composition’s spatial system](composition.md#16-build-a-spatial-system) for margins, columns, gutters, and section relationships. Typography supplies the paragraph's baseline distance and reading width.
 
-A baseline grid is particularly useful for aligned editorial columns and facing pages. It is a tool for coordination, not a reason to distort a quotation, table, equation, or script with different vertical needs. Use local exceptions deliberately and preserve clear hierarchy.
-
-Inspect a page at three distances. Close inspection reveals spacing and punctuation. Normal reading distance reveals legibility and flow. A reduced overview reveals hierarchy, density, and balance. None replaces the others.
+A baseline grid coordinates adjacent editorial columns and facing pages. Keep local exceptions for quotations, tables, equations, and scripts with different vertical needs; rounding every line height onto a shared grid can make text cramped or detached.
 
 ### Align visible forms as well as boxes
 
@@ -709,7 +709,7 @@ Expressive treatments such as distortion, rotation, overlap, outline, texture, o
 
 ### Editorial print and books
 
-Design a representative spread before completing the style sheet. Include ordinary prose, the longest heading, a note, a caption, a quotation, and any tables or illustrations. Choose trim, margins, binding allowance, column width, and type together. A perfect paragraph can still sit badly on a spread.
+Design a representative spread before completing the style sheet. Include ordinary prose, the longest heading, a note, a caption, a quotation, and any tables or illustrations. Use [Composition’s editorial layout guidance](composition.md#21-apply-composition-to-editorial-and-physical-formats) to place that specimen in the page or spread.
 
 Proof at physical size on representative stock. Ink spread can close counters and fill reliefs. Fine strokes can break, especially in small reversed text or on rough material. Use a text or grade variation where appropriate. A desktop print can reveal scale and rhythm but does not reproduce every press condition.
 
@@ -763,7 +763,7 @@ Email clients, office software, embedded web views, and presentation systems can
 
 Treat a wordmark as a fixed composition with its own optical spacing. Custom modifications can be justified there without changing the product's reading font. Test the mark at small size, reversed, in one color, and in the required reproduction processes. Preserve a readable brand name in surrounding text and accessible naming.
 
-Animated type needs a purpose, adequate reading time, stable essential information, and a reduced-motion alternative. Weight and width animation can change layout. Keep it out of tasks where movement interrupts reading or comparison. Avoid making an animation the only way to obtain a message.
+Use [Motion’s text-animation guidance](motion.md#keep-language-readable) for animated type. Typography supplies readable endpoints, shaping, and wrapping; weight and width changes can alter those endpoints and their layout.
 
 ## 18. Build a typography system
 
@@ -1048,17 +1048,9 @@ Use safe asset versioning and caching so a font update reaches users predictably
 
 ### Apply the relevant requirements accurately
 
-For web work targeting WCAG 2.2 AA, check text contrast, resizing, reflow, spacing adaptability, semantics, and access to the complete content. These checks are necessary parts of a broader accessibility review. Typography alone cannot establish whole-product conformance.
+Apply [Accessibility’s visual requirements](accessibility.md#6-create-readable-visual-systems), [scaling and spacing tests](accessibility.md#7-preserve-scaling-reflow-and-user-preferences), and [semantic structure](accessibility.md#8-make-structure-and-meaning-programmatic). Use [Colour’s calculation method](colour.md#calculate-srgb-contrast-correctly) when measuring pairs.
 
-| Area | Check |
-| --- | --- |
-| Contrast | Ordinary text generally needs at least 4.5:1. Large text generally needs 3:1. Large means at least 18 pt, approximately 24 CSS px, or 14 pt bold, approximately 18.67 CSS px. Apply the criterion's actual exceptions where relevant. |
-| Enlargement | Text can reach 200% without loss of content or function, subject to the criterion's scope. Check controls and labels too. |
-| Reflow | Ordinary vertically scrolling content works at a width equivalent to 320 CSS px without two-dimensional scrolling or loss. For horizontally scrolling content, test the corresponding 256 CSS-pixel height. Necessary two-dimensional content has scoped exceptions. |
-| Spacing overrides | For applicable markup and scripts, simultaneously set line height to 1.5 times font size, paragraph spacing to 2 times, letter spacing to 0.12 times, and word spacing to 0.16 times. Content and function remain available. These are override test values, not mandatory default styling. |
-| Meaning | Structure, order, labels, and distinctions remain available beyond visual size, weight, position, or color. |
-
-Do not round a failing contrast ratio upward. Test text against its actual background, including overlays, images, hover/focus content, and variable surfaces. Thin strokes can remain weak even when nominal foreground/background colors pass. Make the text more robust rather than treating the ratio as a complete readability verdict.
+Passing a foreground/background ratio does not establish readable glyphs. Inspect actual thin strokes, antialiasing, marks, and fallback rendering; choose a more robust cut or weight when necessary.
 
 ### Preserve adaptation
 
@@ -1076,9 +1068,7 @@ Keep reading order consistent with meaning. Do not use visual reordering or one-
 
 ### Keep color and weight in proportion
 
-Secondary information can be quieter without becoming faint. Light gray, small size, thin weight, and dense spacing compound. Do not apply all four to the same useful text.
-
-Dark mode requires its own proof. Bright text can appear heavier against a dark field, but automatically thinning it can damage legibility. Adjust actual colors and, when justified, a suitable grade or weight. Preserve hierarchy and contrast in both modes. Pure black and white are valid options when they fit the conditions; there is no universal requirement to soften them.
+Use [Colour’s appearance guidance](colour.md#14-adapt-to-appearance-and-environment) for foreground/background roles. Judge the type on those actual surfaces: a change of grade or cut may correct apparent stroke weight, while automatically thinning bright text can damage legibility. Reproof small text and fine strokes after either domain changes.
 
 ## 22. Compose across languages and scripts
 
@@ -1205,17 +1195,15 @@ Record actual results and limitations. A screenshot establishes one captured ren
 
 ### When designing a typeface
 
-Produce a brief, construction model, representative control set, spaced words, mixed-case paragraphs, and a coverage plan before expanding into a large family. Refine outlines and spacing together. Build styles from proven controls, then validate the exported font and its promised behavior.
-
-A useful handoff includes the intended roles and size range, language coverage, source and binary versions, supported features/axes, proof specimens, required notices, and known limitations. Explain where the font should not be used.
+Use the [font-project reading path](#use-this-reference), with [construction](#4-define-the-construction-system), [spacing](#11-space-and-kern-the-font), and [engineering](#13-engineer-and-release-a-usable-font) as an iterative loop. Handoff includes intended roles and sizes, coverage, source and binary versions, features/axes, proof specimens, notices, and known limitations.
 
 ### When composing a publication
 
-Choose the actual font cuts and figure policy, establish a readable paragraph, and build a representative spread. Define hierarchy, paragraph signals, captions, notes, and production behavior. Review complete pages after changes to font, size, measure, or content. Deliver the editable source and verified final output required by the project.
+Combine [paragraph composition](#15-compose-readable-paragraphs) with [Composition’s editorial layout](composition.md#21-apply-composition-to-editorial-and-physical-formats). Deliver the selected cuts, figure and punctuation policies, styles, editable source, and verified output.
 
 ### When building a product system
 
-Inventory reading tasks, prove the hardest content, define the smallest sufficient role set, and map it to each platform. Implement font delivery and fallbacks alongside the visual styles. Test user adaptation and localization before freezing component geometry. Keep examples, ownership, and migration rules with the specification.
+Deliver the [role contracts](#specify-a-complete-role-contract), [implementation](#19-implement-web-typography), [font-loading policy](#20-load-fonts-and-design-fallbacks), and representative proofs. Record platform and script differences, ownership, and migration rules in the same specification.
 
 ### Completion criteria
 

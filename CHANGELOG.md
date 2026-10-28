@@ -2,6 +2,16 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.20.0] - 2026-10-28
+
+### Added
+
+- Add a shared aesthetics framework with reading paths, decision priorities, domain ownership, and evidence guidance.
+
+### Changed
+
+- Refocus the nine aesthetic references on their distinct responsibilities and link their shared decisions through the framework.
+
 ## [0.19.0] - 2026-10-28
 
 ### Changed

@@ -1,7 +1,7 @@
 ---
 name: composition
 description: "Comprehensive composition, layout, and grid reference for spatial meaning, visual hierarchy, guidance, balance, rhythm, blank space, density, responsive systems, editorial design, interfaces, and production."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -29,9 +29,11 @@ Composition gives content a spatial argument. Position, scale, alignment, separa
 
 Use this reference to compose interfaces, websites, publications, presentations, posters, and visual identities, and to define systems that carry those compositions across formats. A grid coordinates placement; a spacing system coordinates distances; a layout applies those systems to particular content. **Composition** includes the judgment that makes the arrangement communicate. None of these tools chooses the message for you.
 
-**Requirements** protect meaning, access, and operation. **Defaults** provide workable starting points that permit a justified alternative. Numerical examples illustrate decisions; they are not universal aesthetic thresholds. A deliberate exception needs a reason and a proof in its intended conditions.
+## Use this reference
 
-Use [Typography](typography.md) for detailed text composition, [Colour](colour.md) for colour relationships, [Iconography](iconography.md) for symbol construction, and [Accessibility](accessibility.md) for complete access requirements. This guide owns the spatial relationships among those elements. It does not replace information architecture, content strategy, interaction design, or platform specifications.
+This guide owns spatial relationships: grouping, hierarchy, balance, space, grids, density, and layout adaptation. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI, read sections [2](#2-write-the-composition-brief), [5–10](#5-build-visual-hierarchy), [14–20](#14-construct-and-calculate-the-grid), and [22–24](#22-translate-design-intent-into-implementation). Use [21](#21-apply-composition-to-editorial-and-physical-formats) for physical and editorial production. [Interaction](interaction.md) defines behavior; [Typography](typography.md) defines text composition; [Accessibility](accessibility.md) defines access requirements.
 
 ## Contents
 
@@ -524,11 +526,9 @@ A grid field can hold a picture, text, a colour field, or intentional space. Let
 
 ### Make the text block part of the grid
 
-Set type, measure, leading, and paragraph rhythm together. For ordinary Latin prose, roughly 45–75 characters per line is a useful starting range; scripts, medium, reader needs, and content can require another measure. A `ch` value measures a font's zero-glyph advance, not an exact count of average characters.
+Use [Typography's paragraph conventions](typography.md#15-compose-readable-paragraphs) to establish the text block before allocating its grid span. Coordinate adjacent baselines through [typographic rhythm](typography.md#16-build-hierarchy-and-page-rhythm).
 
-A wide page can contain a bounded reading column, a wider figure, and a narrow note rail. Align their relationships without forcing all three to have the same width. Keep long-form text start-aligned by default; centering a whole article removes a dependable reading edge.
-
-Use a baseline grid where adjacent text columns need sustained coordination. On dynamic screens, local rhythm and first-baseline alignment may be enough. Multiline controls, scripts with different extents, equations, and enlarged text need room to grow. Do not force every line height into a fixed increment at the cost of reading comfort.
+A wide page can contain a bounded reading column, a wider figure, and a narrow note rail. Align their relationships without forcing all three to have the same width.
 
 ### Choose image relationships explicitly
 
@@ -622,29 +622,15 @@ Use safe-area information where system cutouts or gesture regions apply. Keep ba
 
 ### Make visual structure available beyond vision
 
-Use real headings, lists, labels, groups, and table relationships. Indentation, colour, size, or position alone cannot carry necessary structure. A correct reading sequence must be programmatically determinable when order affects meaning.
+Apply [semantic structure](accessibility.md#8-make-structure-and-meaning-programmatic) and [scaling, reflow, and user-preference requirements](accessibility.md#7-preserve-scaling-reflow-and-user-preferences). Use the owner's [focus and target requirements](accessibility.md#9-support-keyboard-focus-and-alternative-input) when allocating control space.
 
-Keep visual order, reading order, and keyboard focus order coherent. CSS placement, flex reversal, dense packing, and masonry arrangements can diverge from document order. Use them only when meaning and operation remain clear. Avoid positive tab indices as a patch for a poorly structured document.
-
-Essential instructions should name the object or action. “Choose the date in the booking section” is more dependable than “Use the box on the right.” Location can supplement a descriptive instruction.
-
-### Test adaptation requirements accurately
-
-For web work targeting WCAG 2.2 AA, verify these spatial consequences alongside the full accessibility reference:
-
-- Text can resize to 200% without loss of content or functionality, subject to the criterion's scope.
-- Normally vertically scrolling content reflows at a width equivalent to 320 CSS pixels without requiring two-dimensional scrolling. Normally horizontally scrolling content has the corresponding 256 CSS-pixel height condition. The exception applies to parts that require two-dimensional layout for use or meaning, not the entire page by association.
-- Applicable text survives simultaneous overrides to 1.5 times font size for line height, 2 times font size for paragraph spacing, `0.12em` letter spacing, and `0.16em` word spacing. These are tolerance tests, not mandatory authored styling. Apply script-specific scope correctly.
-- Keyboard focus remains visible and, under the AA minimum criterion, is not entirely hidden by author-created content. The product convention is to keep the focused control fully visible where practical.
-- Pointer targets satisfy the applicable minimum-size criterion and its actual exceptions. The WCAG 2.2 AA starting threshold is 24 × 24 CSS pixels; prefer more generous platform-appropriate targets for frequent or touch operation. Visible icon dimensions and target dimensions are different.
-
-Do not claim conformance from this list or a screenshot. Test actual content and functionality using the full criteria, relevant exceptions, and intended technologies. A local scroll area still needs readable content and usable operation within it.
+CSS placement, flex reversal, dense packing, and masonry can separate visual order from document order. Establish meaningful content groups before assigning tracks; verify the resulting visual, reading, and focus sequences. A local two-dimensional region needs its own usable geometry while the surrounding page reflows.
 
 ### Localize relationships as well as text
 
 Use logical start/end and inline/block relationships where they fit the platform. Adapt direction-sensitive navigation and sequence for right-to-left interfaces. Keep paragraphs aligned appropriately for their own script and language; mixed-language content needs deliberate treatment.
 
-Do not mirror every asset. Photographs, logos, numerals within a number, and many real-world symbols retain their form. A directional icon may reverse while a playback or physical-object symbol may not. Follow semantic meaning and platform conventions.
+Do not mirror every asset. Photographs, logos, numerals within a number, and many real-world symbols retain their form. Use [Iconography’s per-asset direction policy](iconography.md#18-localize-meaning-and-direction) for symbols.
 
 Test translated titles, long compound words, large numerals, diacritics, fallback fonts, and scripts with different vertical needs. Do not rely on a fixed expansion percentage as proof of fit. Avoid forced English line breaks and fixed label heights. A localized composition may need a different measure, scale, or crop while preserving the same task and identity.
 
@@ -652,7 +638,7 @@ Test translated titles, long compound words, large numerals, diacritics, fallbac
 
 ### Define foreground and background roles
 
-Layers establish priority and scope. A dialog interrupts a task; a popover is anchored to a control; a sticky toolbar remains available while content moves. Specify what each layer belongs to, what it obscures, and how people dismiss or leave it.
+Layers establish priority and scope. A dialog interrupts a task; a popover is anchored to a control; a sticky toolbar remains available while content moves. Specify what each layer belongs to and what it obscures. Use [Interaction’s disclosure and modality rules](interaction.md#8-choose-disclosure-and-modality) for behavior.
 
 Use a small, named layer system instead of arbitrary escalating stack values. Keep menus, tooltips, dialogs, notifications, and persistent navigation from competing for the same space. Their interaction and semantics need separate implementation rules; geometry alone does not make a modal accessible.
 
@@ -680,7 +666,7 @@ Reserve image and embed dimensions where known. Plan for font fallback, delayed 
 
 Let legitimate content growth occur; stability does not mean freezing every height. Prefer stable anchors and predictable insertion points. Keep a current selection, scroll context, and focused control understandable after updates.
 
-Animation can help explain a spatial change when it preserves orientation. It must not be the only way to understand the new state. Respect reduced-motion needs and avoid making essential content wait for a decorative entrance.
+For movement between spatial states, use [Motion’s transition structures](motion.md#12-choose-a-transition-structure) and [access alternatives](motion.md#19-provide-access-and-control).
 
 ## 20. Apply composition to interfaces
 

@@ -1,7 +1,7 @@
 ---
 name: interaction-design
 description: "Reference for UX/UI interaction decisions: task models, controls, input, focus, navigation, forms, feedback, asynchronous state, recovery, adaptation, specifications, and evaluation."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -21,9 +21,11 @@ Interaction design defines what people can do, how they discover and perform an 
 
 Use this guide when designing, specifying, implementing, or reviewing interfaces. It covers websites and applications, with web examples and explicit native-platform distinctions. Start from the task and its consequences; choose controls and visual treatment after the behavior is clear.
 
-**Requirements** protect task integrity, informed choice, and access. **Defaults** are preferred approaches with conditions for alternatives. Examples illustrate decisions; they are not universal prescriptions for a product, duration, or layout.
+## Use this reference
 
-[Composition](composition.md) owns spatial hierarchy; [Typography](typography.md), [Colour](colour.md), and [Iconography](iconography.md) own visual language. [Motion](motion.md), [Sound](sound.md), and [Haptics](haptics.md) explain how feedback is expressed. [Accessibility](accessibility.md) owns the complete access requirements and conformance guidance. This guide owns behavior across those layers.
+This guide owns task and object models, control choice, state transitions, focus lifecycle, navigation, commitment, recovery, and feedback events. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For a new flow, start with [task and state modeling](#1-define-the-task-and-interaction-model), then the relevant [control and input patterns](#4-choose-controls-by-meaning). Use [specification and evaluation](#16-specify-the-interaction-contract) to complete the contract. [Accessibility](accessibility.md) owns access requirements and semantics; the shared framework identifies the owners of spatial and sensory expression.
 
 ## Contents
 
@@ -45,8 +47,6 @@ Use this guide when designing, specifying, implementing, or reviewing interfaces
 16. [Specify the interaction contract](#16-specify-the-interaction-contract)
 17. [Work through a complete example](#17-work-through-a-complete-example)
 18. [Evaluate behavior in use](#18-evaluate-behavior-in-use)
-
-For a new flow, begin with sections 1–3. For a component, consult sections 4–6 and the relevant pattern. Use sections 16–18 to turn a design into a reviewable contract and verify its implementation.
 
 ## 1. Define the task and interaction model
 
@@ -110,7 +110,7 @@ Prefer a platform control that already expresses the required action. A custom c
 | Choose a bounded continuous quantity | Slider with readable value | Offer precise entry or step controls when accuracy matters. |
 | Edit structured or long content | Appropriate text field or editor | Preserve native selection, caret movement, clipboard, and undo behavior. |
 
-On the web, use native HTML before adding custom semantics. ARIA communicates roles and state; it does not implement interaction. Avoid nesting interactive controls inside other interactive controls. For a card with a destination and secondary actions, give each action a distinct target and accessible name.
+Apply [Accessibility’s native semantics and ARIA contract](accessibility.md#8-make-structure-and-meaning-programmatic). For a card with a destination and secondary actions, give each action a distinct target and accessible name.
 
 Distinguish unavailable from hidden. Hide irrelevant actions when their absence does not conceal an expected capability. Keep unavailable actions visible when they explain the product model, but provide the reason and remedy outside a hover-only tooltip. Apply a coherent policy for whether unavailable custom actions remain keyboard-discoverable; native disabled controls normally leave the tab order.
 
@@ -120,13 +120,13 @@ Design a complete route for each supported input method. Touch, pointer, keyboar
 
 For pointer and touch activation, default to completion on release with a way to abandon the action before it commits. Press feedback can appear earlier. Starting a dangerous operation on pointer-down removes an important opportunity to cancel. Preserve platform exceptions for tasks whose function depends on continuous down-state input, such as drawing.
 
-Make hit areas generous without overlap. For web touch interfaces, default to at least 44 × 44 CSS px where practical. This is a product convention; the WCAG 2.2 AA target-size criterion uses 24 × 24 CSS px with defined exceptions. Apply the relevant native platform's dimensions in its own units. Keep destructive and frequently used targets far enough apart to reduce accidental activation.
+Apply [Accessibility’s target-size and pointer requirements](accessibility.md#support-pointer-touch-speech-and-switches). Use [Composition](composition.md#16-build-a-spatial-system) to allocate hit areas and separation without overlap, especially between destructive and frequently used actions.
 
-Hover may reveal supplementary detail, but essential information and actions need touch and keyboard access. Hover/focus popovers should remain available while people inspect them, be dismissible where appropriate, and avoid covering the control they explain. A tooltip supplements a label; it does not replace one.
+Use [Accessibility’s hover/focus-content requirements](accessibility.md#tooltips-hover-content-and-touch) for tooltips. Choose [another disclosure pattern](#8-choose-disclosure-and-modality) when the content contains actions or belongs to the task rather than supplementary help.
 
-For dragging, show the picked-up object, valid destinations, insertion position, constraints, and result. Define cancellation and invalid-drop behavior. Keep scrolling and dragging distinguishable, and preserve system edge gestures. Provide a non-drag route, such as "Move to…" or position controls, for the same outcome.
+For dragging, show the picked-up object, valid destinations, insertion position, constraints, and result. Define cancellation and invalid-drop behavior. Keep scrolling and dragging distinguishable, and preserve system edge gestures. Choose the alternative route using [Accessibility’s single-pointer and keyboard requirements](accessibility.md#support-pointer-touch-speech-and-switches).
 
-Direct manipulation should track input without forcing people to wait for an ornamental transition. Preserve object identity and a predictable relationship between movement and effect. Specify snapping, bounds, inertia, and interruption with the motion guide. Custom gestures supplement visible actions and require evidence that their learning cost serves the task.
+Direct manipulation should track input without forcing people to wait for an ornamental transition. Preserve object identity and a predictable relationship between movement and effect. Specify [snapping, bounds, inertia, and interruption with Motion](motion.md#10-handle-gestures-inertia-and-constraints). Custom gestures supplement visible actions and require evidence that their learning cost serves the task.
 
 ## 6. Design focus and selection
 
@@ -134,19 +134,13 @@ Direct manipulation should track input without forcing people to wait for an orn
 
 Keyboard focus identifies where keyboard input operates within the active interaction context. Selection identifies chosen content or a chosen value. Hover identifies a pointer target; press indicates activation in progress. A selected item can remain selected while focus moves elsewhere.
 
-Give focus a distinct, persistent treatment whenever keyboard operation requires it. Keep the indicator and target visible through scrolling, sticky headers, overlays, zoom, and component clipping. Preserve selected, error, and expanded states at the same time. Do not remove an outline until a tested replacement exists. Follow the accessibility guide for contrast and indicator geometry.
-
-Use the platform's focus appearance by default in native software. On the web, preserve an effective browser indicator or supply a consistent `:focus-visible` treatment. Do not use color, enlargement, or animation as the only way to understand a critical state.
+Use [Accessibility’s focus visibility, contrast, and geometry requirements](accessibility.md#make-focus-a-visible-meaningful-state). Keep focus, selection, error, and expanded states distinguishable when they coexist; the interaction contract determines which states coexist and where input goes.
 
 ### Define travel through the interface
 
-For web interfaces, Tab and Shift+Tab generally move between controls and composite widgets. Arrow keys move within components that define that behavior, such as tablists, menus, or grids. Ordinary reading content does not need a tab stop. Avoid positive `tabindex`; align document order with the meaningful visual sequence.
+Choose an established component pattern before assigning keys. Apply [Accessibility’s keyboard conventions and composite-control requirements](accessibility.md#9-support-keyboard-focus-and-alternative-input); this guide owns the task-dependent focus destinations below.
 
-Choose an established component pattern before assigning keys. HTML buttons support Enter and Space; links ordinarily activate with Enter. Text fields retain text-editing keys. A visually dense table does not automatically need a spreadsheet-style grid model. Use a grid when cell-level interaction warrants its additional complexity.
-
-In a composite web widget, use its specified focus mechanism, such as a single moving tab stop or an active descendant while the container retains DOM focus. Expose the active item programmatically and keep it visible. Do not improvise a hybrid in which every item is tabbable but arrow keys unpredictably leave the widget.
-
-Allow selection to follow focus only when the component pattern supports it and the consequence is immediate, predictable, and inexpensive. Manual tab activation is preferable when changing panels starts slow loading. Exploring options must not send a message, navigate unexpectedly, or commit an irreversible change.
+Allow selection to follow focus only when the consequence is immediate, predictable, and inexpensive. Use manual tab activation when changing panels starts slow loading. Exploring options must not commit a consequential action.
 
 ### Specify the focus lifecycle
 
@@ -257,7 +251,7 @@ Choose indicator delays against measured response behavior to avoid flashing a l
 
 Status announcements should communicate meaningful changes without moving focus or flooding assistive technology. Use a transient toast for supplementary information, with persistent access to any essential action or result. An expiring message must not be the sole route to recovery.
 
-Motion should explain cause, continuity, or state. Sound and haptics can reinforce feedback, but essential meaning must survive silence, reduced motion, and unavailable hardware. Keep repeated everyday interactions economical in attention and time.
+Choose [Motion](motion.md#16-apply-interaction-patterns), [Sound](sound.md#11-design-product-sound-systems), or [Haptics](haptics.md#12-build-an-interaction-vocabulary) for sensory expression. Apply [Accessibility’s functional-needs model](accessibility.md#2-design-around-functional-needs) to preserve equivalent access.
 
 ## 12. Keep asynchronous work trustworthy
 

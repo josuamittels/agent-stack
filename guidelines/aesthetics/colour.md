@@ -1,7 +1,7 @@
 ---
 name: colour
 description: "Colour reference for perception, history and language, descriptive vocabulary, theory, models and formats, conversion, composition, palettes, meaning and psychology, accessibility, interface systems, visualisation, and colour-managed production."
-version: "0.1.0"
+version: "0.2.0"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
@@ -37,7 +37,11 @@ Colour is a perceptual experience produced by light, an observer, and a viewing 
 
 Use this guide when choosing, describing, combining, implementing, converting, or reviewing colour in identities, interfaces, publications, images, and physical production. It covers the concepts needed for dependable decisions without replacing a specialist colour-science, press, or accessibility assessment.
 
-**Requirements** protect information, access, and correct reproduction. **Defaults** provide a practical starting point. Harmony schemes, emotional associations, and numerical aesthetic ranges are proposals to test in context. A colour is not approved in isolation. Approve its role, neighbours, scale, state, and output conditions together.
+## Use this reference
+
+This guide owns colour perception, vocabulary, spaces, mixing, palette relationships, themes, data scales, calculation, and reproduction. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
+
+For UI, start with [1](#1-define-the-colour-task), [5–6](#5-describe-colour-precisely), [9–14](#9-combine-colours-deliberately), and [17–18](#17-implement-a-dependable-colour-system). Use [15](#15-encode-data-with-colour) for data; [7–8](#7-construct-and-mix-colours) for mixing and conversion; [16](#16-manage-colour-across-screens-and-materials) for managed production. Historical and language context in [3–4](#3-use-history-to-distinguish-different-problems) supports those specific questions. [Composition](composition.md) owns spatial emphasis; [Accessibility](accessibility.md) owns contrast obligations and equivalent access.
 
 ## Contents
 
@@ -443,19 +447,7 @@ Use cultural charts and self-selected association polls to identify questions fo
 
 ### Apply the correct threshold and scope
 
-For web work, use WCAG 2.2 Level AA as the default baseline. These ratios describe particular foreground/background relationships, not a general score for a palette.
-
-| Content | Baseline requirement | Scope |
-| --- | --- | --- |
-| Normal text and images of text | At least 4.5:1 at AA. | Includes placeholders and text shown on hover or focus when it is intended to be read. |
-| Large text | At least 3:1 at AA. | At least 18 pt regular or 14 pt bold, approximately 24 CSS px or 18.67 CSS px respectively. A heading is not automatically large text. |
-| Enhanced text contrast | At least 7:1 normal or 4.5:1 large at AAA. | A useful stronger target for demanding reading contexts. |
-| Required visual information identifying controls, states, and graphical objects | At least 3:1 against relevant adjacent colours at AA. | Applies to the information needed to identify or understand them. Not every decorative border or surface must meet 3:1. |
-| Keyboard focus | Visible focus at AA, with applicable non-text contrast requirements. | Do not remove the browser indicator without a dependable replacement. Focus visibility, contrast, and obscuring are separate checks. |
-
-Inactive controls, incidental text, and logotypes have specified contrast exceptions. Do not use an exception to make necessary instructions, a live placeholder, or secondary content unreadable. A lower hierarchy is not an inactive state.
-
-SC 2.4.13 Focus Appearance is AAA. It requires an indicator area at least equivalent to a 2 CSS px thick perimeter of the unfocused component, plus at least 3:1 change between the same pixels in focused and unfocused states, subject to its exceptions. Do not mislabel that whole requirement as AA. As a practical product default, provide an obvious focus outline with sufficient separation from both control and surrounding surface.
+Apply [Accessibility’s contrast thresholds and exceptions](accessibility.md#6-create-readable-visual-systems) and [focus requirements](accessibility.md#make-focus-a-visible-meaningful-state). This guide owns the colour calculation and rendered pair; Accessibility owns which relationship must pass which threshold. Approve pairs for their actual roles rather than assigning an accessibility score to an entire palette.
 
 ### Calculate sRGB contrast correctly
 
@@ -487,13 +479,11 @@ Wide-gamut colours require space-aware handling. Do not feed Display P3 channel 
 
 ### Make information survive a loss of hue
 
-Use labels, icons, shapes, patterns, line styles, position, or explicit state text alongside colour. Error fields need a message and an identifiable field. Positive and negative trends need signs or words. Selection needs a visible marker or another dependable distinction.
+Apply [Accessibility’s multiple-cue and link guidance](accessibility.md#use-multiple-cues-for-meaning). Choose redundant encodings with [Iconography](iconography.md#3-choose-meanings-and-metaphors) when symbols carry the distinction.
 
-Default inline links to a persistent underline. A colour-only link treatment needs additional conditions, including sufficient distinction from surrounding text and a non-colour cue on interaction. Passing text contrast against the page alone does not establish that a link is identifiable.
+Colour-vision differences include red/green, blue/yellow, and rarer forms with much less colour information. Simulate relevant deficiencies to find candidate palette collisions, then test functional distinctions. A simulator is an approximation; greyscale is not a complete substitute. Give dense charts or specialist tools customisation where fixed palettes cannot serve all users.
 
-Colour-vision differences include red/green, blue/yellow, and rarer forms with much less colour information. Simulate relevant deficiencies to find candidate collisions, then test functional distinctions. A simulator is an approximation, and greyscale is not a complete substitute. Give dense charts or specialist tools customisation where fixed palettes cannot serve all users.
-
-Avoid rapidly flashing colour changes, especially saturated red transitions. Flash safety depends on frequency, area, luminance, and colour thresholds. Use appropriate analysis for flashing content rather than assuming a small animation or a different hue is safe.
+For changing colour and flashing, apply [Accessibility’s stimulus requirements](accessibility.md#avoid-flashes-and-dangerous-stimuli).
 
 ## 14. Adapt to appearance and environment
 
