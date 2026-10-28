@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.23.1` |
+| Version | `0.24.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.23.1` consolidates the ACADEMICS and DATA map groups, adds planned data processes, removes the duplicate Aesthetics Framework node, and switches to hand-drawn rendering. It retains the `0.23.0` question-routing rules. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.24.0` adds experimental repository documentation generation through Create Docs, with basic Markdown and interactive Nextra modes, bundled setup resources, objective navigation checks, and updated discovery. The stack has not been released.
 
 ## Component versions
 
@@ -47,6 +47,8 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `skills/check-colour-contrast/SKILL.md` | `1.1.0` | `stable` |
 | Skill | `skills/compose-voice-profile/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/convert-colour/SKILL.md` | `1.1.0` | `stable` |
+| Skill | `skills/create-docs/SKILL.md` | `0.1.0` | `experimental` |
+| Reference | `skills/create-docs/references/nextra-docs.md` | `0.1.0` | `experimental` |
 | Skill | `skills/create-guidelines/SKILL.md` | `0.5.0` | `experimental` |
 | Skill | `skills/create-skill/SKILL.md` | `0.13.0` | `experimental` |
 | Discipline | `skills/mind-wandering/SKILL.md` | `0.2.0` | `experimental` |
@@ -60,7 +62,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Skill | `skills/research/SKILL.md` | `0.8.0` | `experimental` |
 | Skill | `skills/ship/SKILL.md` | `0.6.0` | `experimental` |
 | Discipline | `skills/show-me-your-work/SKILL.md` | `0.2.0` | `experimental` |
-| Router | `skills/skill-issue/SKILL.md` | `0.5.0` | `experimental` |
+| Router | `skills/skill-issue/SKILL.md` | `0.6.0` | `experimental` |
 | Discipline | `skills/spawn-evals/SKILL.md` | `0.9.0` | `experimental` |
 | Discipline | `skills/think-deeper/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/think-harder/SKILL.md` | `0.2.0` | `experimental` |

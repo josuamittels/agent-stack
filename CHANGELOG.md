@@ -4,6 +4,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ## [Unreleased]
 
+### Added
+
+- Add experimental `create-docs` to inspect repository structure, components, workflows, and states, then generate interlinked Markdown or a Nextra documentation site under `docs/`, with a required format choice and the shared documentation standard.
+
 ### Changed
 
 - Refresh the map by removing the duplicate Aesthetics Framework node, adding Visualise Data, Analyse Data, Cleanse Data, and Steal Data, combining Academics and Data, and switching to hand-drawn rendering.

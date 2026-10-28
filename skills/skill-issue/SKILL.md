@@ -1,7 +1,7 @@
 ---
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
-version: "0.5.0"
+version: "0.6.0"
 created: "2026-10-25"
 updated: "2026-10-28"
 author:
@@ -45,6 +45,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 | Intended outcome and example phrases | Route | Distinguish from |
 | --- | --- | --- |
 | Create or improve a reusable skill or explicitly requested discipline: "turn this workflow into a skill", "create a SKILL.md", "fix this skill's triggers", "author a discipline". | [create-skill](../create-skill/SKILL.md) | Carrying out the task itself. User-chosen naming applies; create objective checker packages only for distinct authored target skills with meaningful script-verifiable criteria, never for Create Skill itself. Omit evaluator references when none apply. |
+| Generate repository documentation: "document this repo", "create docs", "build a documentation site". | [create-docs](../create-docs/SKILL.md) | Requires a choice between interlinked Markdown and a Nextra site under the target repository’s `docs/`. Inspects components, interfaces, workflows, and states under the documentation guideline. Reusable standards belong to Create Guidelines; small prose edits use Natural Writing. |
 | Create or revise reusable standards: "write our accessibility guidelines", "document conventions", "repair the Mermaid reference", "define best practices". | [create-guidelines](../create-guidelines/SKILL.md) | Applying existing standards to one artifact. This routes to the authoring skill, never to a guideline file. |
 | Compose a reusable brand or author voice profile from mixed inputs: "create a voice profile", "derive tone from audience research and brand samples". | [compose-voice-profile](../compose-voice-profile/SKILL.md) | Synthesizes evidence into a profile; Natural Writing applies an established voice to prose, while Research produces a source-grounded report. |
 | Produce a source-grounded report: "research this question", "write a research report", "synthesize the literature", "compare evidence", "research with stricter journals". | [research](../research/SKILL.md) | Research Literature finds records and abstracts; Research appraises and synthesizes sources. Its objective checker can measure report and source counts, compare cited journal scores with the selected rules, and test article-link reachability when a package exists; it cannot establish findings accuracy. |

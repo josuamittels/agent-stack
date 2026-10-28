@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skill": "create-docs",
+  "checks": [
+    {
+      "id": "documentation-navigation",
+      "description": "Every inventoried documentation page is reachable from the landing page through rendered links; in basic mode every page also links back through the graph to the landing page.",
+      "handler": "check_navigation",
+      "mandatory": true,
+      "required_inputs": ["/constraints/mode/value", "/evidence/pages", "/evidence/landing_route", "/outputs"]
+    },
+    {
+      "id": "documented-page-fragments",
+      "description": "Every nonempty fragment on a rendered link to an inventoried documentation page names an ID or named anchor in that page's complete rendered HTML.",
+      "handler": "check_fragments",
+      "mandatory": true,
+      "required_inputs": ["/evidence/pages", "/evidence/landing_route", "/outputs"]
+    }
+  ]
+}
