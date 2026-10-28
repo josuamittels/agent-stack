@@ -6,6 +6,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Refresh the map by removing the duplicate Aesthetics Framework node, adding Visualise Data, Analyse Data, Cleanse Data, and Steal Data, combining Academics and Data, and switching to hand-drawn rendering.
 - Route task questions through Ask User Question, using Think Harder first when context or evidence may resolve the issue and skipping it for direct user gates.
 
 ## [0.22.0] - 2026-10-28

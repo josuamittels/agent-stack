@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.23.0` |
+| Version | `0.23.1` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.23.0` routes task questions through Ask User Question, using Think Harder first when context or evidence may resolve the issue and skipping it for direct user gates. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.23.1` consolidates the ACADEMICS and DATA map groups, adds planned data processes, removes the duplicate Aesthetics Framework node, and switches to hand-drawn rendering. It retains the `0.23.0` question-routing rules. The stack has not been released.
 
 ## Component versions
 
