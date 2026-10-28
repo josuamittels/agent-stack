@@ -238,6 +238,7 @@ flowchart LR
     release_agent_stack -.- git
     release_agent_stack -.- versioning
     release_agent_stack --> update_map
+    release_agent_stack --> create_docs
     update_map --> update_router
     show_me_your_work -.- decision_log_template
     prototype -.- tech_spec

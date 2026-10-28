@@ -1,0 +1,38 @@
+---
+title: "Update Router"
+---
+# Update Router
+
+> **Discipline** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Update Router to synchronize the skill catalog with available capability instructions and routing rules.
+
+## Workflow
+
+1. **Inventory capabilities.** Inspect substantive instruction files and their type metadata; exclude planned, empty, and non-capability resources.
+2. **Update the route catalog.** Describe each capability by its user outcome and distinguish it from nearby routes.
+3. **Check routing consistency.** Compare the catalog and root entry instructions with the actual source files and ensure no unavailable route is presented as usable.
+
+## Inputs
+
+Use the repository root, changed paths and types, authorized scope, and available map-update evidence. Resolve stack paths from the root and Markdown links from their containing file. Routine maintenance needs no preference interview.
+
+## Result
+
+Return changed or unchanged paths, added/changed/removed routes, map discrepancies, and remaining gaps. Report partial writes and which files need recovery; the helper writes files separately, not transactionally. Unchanged inputs should produce no changes.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/update-router/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/update-router/SKILL.md)
+
+Garry Tan, and OpenAI.

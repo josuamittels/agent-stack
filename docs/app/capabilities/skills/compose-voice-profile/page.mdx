@@ -1,0 +1,55 @@
+---
+title: "Compose Voice Profile"
+---
+
+import { Cards } from 'nextra/components'
+
+# Compose Voice Profile
+
+> **Skill** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Compose Voice Profile to create a reusable, evidence-backed voice guide for a brand or author.
+
+## Workflow
+
+1. **Set the profile goal.** Name the brand or author, audience, purpose, language and locale, intended users, current or aspirational direction, and where the finished profile should go.
+2. **Use the voice-profile template.** Fill the fields and tables in the [voice-profile template](https://github.com/josuamittels/agent-stack/blob/main/skills/compose-voice-profile/templates/voice-profile.md); keep its section order and mark unknown details instead of guessing.
+3. **Review the available evidence.** Separate direct instructions, approved brand guidance, writing samples, audience research, market evidence, and visual references. Keep current practice distinct from intended direction.
+4. **Synthesize the strategy.** Use [Think Deeper](/capabilities/disciplines/think-deeper) to reconcile audience fit, product promise, distinctiveness, language, and the evidence. Pass it the source inventory, constraints, conflicts, and uncertainties.
+5. **Write and review the profile.** Turn the supported strategy into practical voice, tone, structure, vocabulary, and channel guidance. Apply [Natural Writing](/capabilities/disciplines/natural-writing) and the relevant [language guide](/guidelines-and-references/guidelines/languages) before returning the completed Markdown.
+
+## Inputs
+
+Use your stated goal and any available details about:
+
+- **Brand or author:** identity, purpose, values, positioning, personality, and existing brand guidance.
+- **Product and topic:** offer, differentiators, claims, use cases, and subject matter to cover.
+- **Audience:** user research, audience preferences, needs, expertise, objections, and feedback.
+- **Market:** category conventions, competitors, alternatives, and credible research about points of difference.
+- **Place and language:** country or region, target language, locale, cultural context, spelling, terminology, and market variants.
+- **Expression:** channels, visual identity or references, current writing samples, admired examples, and explicit do/don't instructions.
+- **Deliverable:** profile purpose, intended users, output language, requested depth, and file destination if specified.
+
+## Result
+
+Receive a complete Markdown voice profile with the template sections filled, supporting evidence identified, and unknowns or conflicts made clear. The skill returns it in the requested path or in the conversation.
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) selects this skill when its scope matches your task.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/compose-voice-profile/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/compose-voice-profile/SKILL.md)
+
+<Cards>
+  <Cards.Card title="The anatomy of a brilliant brand voice" href="https://la-pope.medium.com/the-anatomy-of-a-brilliant-brand-voice-31cfd1d9b835">Use this article to identify the language and qualities that make a brand voice distinctive.</Cards.Card>
+  <Cards.Card title="Brand Voice: What It Is and How to Define It" href="https://www.semrush.com/blog/brand-voice/">Use this guide for a practical overview of voice attributes and a brand-voice template.</Cards.Card>
+  <Cards.Card title="Voice and tone" href="https://design.homeoffice.gov.uk/design-and-content/content/voice-and-tone">Use the UK Home Office guide to distinguish a consistent voice from context-specific tone.</Cards.Card>
+  <Cards.Card title="Creating your business brand" href="https://www.business.gov.uk/support/ideas-planning-strategy/creating-business-brand/">Use this government guide for brand positioning and audience context.</Cards.Card>
+</Cards>

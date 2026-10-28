@@ -1,0 +1,41 @@
+---
+title: "Create Docs"
+---
+# Create Docs
+
+> **Skill** · **experimental** · **v0.5.0** · updated 2026-10-28
+
+## Purpose
+
+Use Create Docs to investigate a repository and document what its users can do, how its components work, and how they fit together.
+
+## Workflow
+
+1. **Identify readers and outcomes.** Read repository guidance and the documentation standard, then identify the repository’s users and the outcomes they need.
+2. **Inspect the user-facing system.** Trace supported entry points, capabilities, interfaces, inputs, outputs, dependencies, and meaningful states to their source files.
+3. **Plan the pages.** Map each reader outcome and available component to a page. Organize around the product’s real resource types and omit unsupported future journeys.
+4. **Write the documentation.** Use direct reader-facing language. Give procedures a Workflow heading and an ordered list of concrete actions; explain important routes and handoffs with links to the relevant docs pages. In Nextra, put section headings and descriptive cards on the overview page, and keep category labels as sidebar groups when they only organize child pages.
+5. **Check the site.** Build the selected docs format, check navigation and links, and inspect representative rendered pages. Report the checks performed and any evidence gaps.
+
+## Inputs
+
+Require an accessible target repository and an explicit output mode, `basic` or `interactive`. Resolve a supplied path or repository reference first. Use the current checkout when it is clearly the target. Ask for the target if multiple repositories remain plausible. Clone a supplied remote only through available, authorized access.
+
+## Result
+
+Return the docs location and landing page, selected mode, end-user audience, covered components and outcomes, target revision, and verification results with precise limits. For capability repositories, report inventory coverage and distinguish available components from planned or excluded resources. For interactive output, include the working directory, resolved package versions or lockfile, and exact install, development, build, and start commands. Name remaining evidence gaps and the nonpublished authoring record. State whether reader validation occurred. Do not publish unless requested.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) selects this skill when its scope matches your task. Use [Natural Writing](/capabilities/disciplines/natural-writing) to polish the reader-facing prose, and [Ask User Question](/capabilities/disciplines/ask-user-question) when a consequential choice needs your input.
+
+
+## Version and changes
+
+Version **0.5.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/create-docs/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/create-docs/SKILL.md)
+
+The Nextra Project, Garrick Aden-Buie, Nuxt Content, Anthropic, and Google.

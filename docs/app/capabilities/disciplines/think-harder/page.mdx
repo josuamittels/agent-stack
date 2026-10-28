@@ -1,0 +1,38 @@
+---
+title: "Think Harder"
+---
+# Think Harder
+
+> **Discipline** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Think Harder to resolve ambiguity from the request, repository context, and available evidence before asking the user.
+
+## Workflow
+
+1. **Name the uncertainty.** Identify which unresolved choice could materially change the outcome.
+2. **Inspect the available context.** Review relevant instructions, evidence, precedents, and reasonable defaults.
+3. **Resolve or ask.** State the assumption when context settles the choice; otherwise route a focused question through [Ask User Question](/capabilities/disciplines/ask-user-question).
+
+## Inputs
+
+Use the caller's identity and current stage, original user outcome and exact framing, relevant chat history and prior answers, unresolved constraints, available artifacts, explicit permissions, and the guidelines already selected or triggered by the caller. Identify guideline paths and applicable sections when available. Reconstruct missing handoff context from accessible task materials before asking for it.
+
+## Result
+
+Return a concise brief using only the fields needed:
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/think-harder/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/think-harder/SKILL.md)
+
+Simon Corcos, Tw93, and Aravind.

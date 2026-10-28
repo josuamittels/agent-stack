@@ -1,0 +1,38 @@
+---
+title: "Show Me Your Work"
+---
+# Show Me Your Work
+
+> **Discipline** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Show Me Your Work to keep an evidence-linked decision log for a long-running, multi-phase, or unattended task.
+
+## Workflow
+
+1. **Set the record scope.** Capture the goal, constraints, checkpoints, and decisions that another person needs to follow the work.
+2. **Record evidence as work progresses.** Link important actions and results to their source or command output without recording private chain-of-thought or routine activity.
+3. **Hand off the current state.** Summarize decisions, completed work, open risks, and the next concrete step.
+
+## Inputs
+
+Use the requested outcome, task work directory, current log if one exists, decisions and checkpoints made so far, evidence artifacts, and the host's available conversation or transcript access. Do not assume a transcript path or scan unrelated conversation histories. If a prior run's identity or timestamp range cannot be established, mark that gap instead of inventing it.
+
+## Result
+
+For a logging run, return the log path, the main decisions and outcomes it captures, unresolved items, and the evidence audit result. For a review-only request, return the summary and specific evidence gaps. State whether independent review occurred; when it did, include the reviewer's model if known and list actionable flags with the relevant row timestamps. Keep the handoff concise and do not include private chain-of-thought.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/show-me-your-work/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/show-me-your-work/SKILL.md)
+
+Lauren Tan.

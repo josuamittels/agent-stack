@@ -1,7 +1,7 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.4.0"
+version: "0.5.0"
 created: "2026-10-26"
 updated: "2026-10-28"
 author:
@@ -28,7 +28,7 @@ Use only when Ship has confirmed both the root `AGENTS.md` marker `agent-stack:e
 
 ## Inputs
 
-Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition.
+Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition. Read [Create Docs](../create-docs/SKILL.md) for the required documentation handoff on every release.
 
 Read the [Git guide](../../guidelines/git/reference.md), [Versioning guide](../../guidelines/versioning/reference.md), current [`VERSIONS.md`](../../VERSIONS.md), `AGENTS.md`, `map.mmd`, and the affected capability instructions. Read [Update Map](../update-map/SKILL.md) and [Update Router](../update-router/SKILL.md) only when the affected capabilities require those updates.
 
@@ -71,9 +71,15 @@ If this release adds, removes, moves, or changes a skill or discipline’s depen
 
 For changes that do not affect capability discovery, do not edit the map or router. Preserve unrelated content and report any pre-existing discrepancies without silently expanding the release scope.
 
-### 5. Return the delivery route to Ship
+### 5. Update user documentation for every release
 
-Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, unresolved decisions, and delivery route:
+Invoke [Create Docs](../create-docs/SKILL.md) on every release, after the final release change set, version and inventory state, and any map or router updates are established, but before returning the candidate to Ship. Pass the exact release changes, affected components and workflows, authoritative source files, final component versions and statuses, removals or moves, and the current documentation site. Reuse the repository's existing docs mode and structure.
+
+Update pages, navigation, links, or cards to match changes people will experience when using Agent Stack. Run Create Docs even when the release appears internal-only; let its source review establish whether the user-facing documentation needs a change. Keep release, contribution, and maintenance procedures out of end-user docs unless they are part of the product users operate. Return the documentation paths and Create Docs verification results to Ship. Include those edits in the matching release change group; if they require a separate planned commit, apply the per-commit version and inventory rules to it too. Do not defer the documentation pass until after the release is delivered.
+
+### 6. Return the delivery route to Ship
+
+Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, unresolved decisions, and delivery route:
 
 Apply the component-status gate in step 3 before any push, including when the stack-level route permits a push. A draft component explicitly included in a requested shipment must be promoted to `experimental`; an unclear inclusion decision is a question for the user, not an assumption.
 

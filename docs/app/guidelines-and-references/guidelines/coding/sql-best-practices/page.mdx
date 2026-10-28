@@ -1,0 +1,30 @@
+---
+title: "Sql Best Practices"
+---
+# Sql Best Practices
+
+> **Reference** · **experimental** · **v0.1.0** · updated 2026-10-28
+
+## Overview
+
+House standards for SQL structure, naming, correctness, security, schema design, performance, and migrations. Use this guide when writing or reviewing SQL source, embedded queries, schemas, indexes, or migrations.
+
+## How to use this guide
+
+Write SQL so its data flow, assumptions, and effects are visible from the statement itself. Use explicit columns, named constraints, safe parameters, and measured query plans. Encode durable invariants in the schema. Keep each statement small enough to review, and follow the repository's engine, version, migration runner, formatter, and existing conventions wherever they define behavior.
+
+Use the topics below when you create or review work in this area. Follow your repository’s conventions where they are more specific.
+
+## Consumers
+
+No direct consumer is declared in the repository. Use this reference when your task needs its subject guidance.
+
+## Version and changes
+
+Version **0.1.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/guidelines/coding/sql.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/guidelines/coding/sql.md)
+
+Lauren Tan, Cursor, Supabase, and Everything Claude Code.

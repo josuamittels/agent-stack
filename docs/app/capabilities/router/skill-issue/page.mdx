@@ -1,0 +1,35 @@
+---
+title: "Skill Issue"
+---
+# Skill Issue
+
+> **Router** · **experimental** · **v0.6.0** · updated 2026-10-28
+
+## Purpose
+
+Use Skill Issue to route a task to the smallest available skill or discipline that fits its intended outcome.
+
+## Workflow
+
+1. **Read the intended outcome.** Use the request, task state, explicit capability choices, available artifacts, and repository instructions as routing evidence.
+2. **Check the available instructions.** Match the outcome to substantive instruction files and use their type metadata to distinguish skills from disciplines.
+3. **Invoke the best fit.** Honor explicit choices, load the selected instructions, and pass relevant context and constraints through the handoff.
+4. **Continue with the destination.** Let the selected capability own its workflow and dependencies; return to routing only if the goal changes or the destination is unavailable.
+
+## Inputs
+
+Use the request, current task state, explicit capability choices, available artifacts, constraints, and host capabilities. Resolve links from this file; resolve stack paths mentioned in instructions from the repository root.
+
+## Routing
+
+Use the [Skill Issue router](/capabilities/router/skill-issue) when you need to choose a capability. It checks the task outcome and available instructions, then hands work to the selected skill or discipline.
+
+## Version and changes
+
+Version **0.6.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/skill-issue/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/skill-issue/SKILL.md)
+
+Garry Tan, OpenAI, Jesse Vincent, and Cursor.

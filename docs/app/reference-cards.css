@@ -1,0 +1,8 @@
+.nextra-card {
+	padding: 1rem;
+}
+
+.nextra-card > span:last-child {
+	order: -1;
+	padding: 0;
+}

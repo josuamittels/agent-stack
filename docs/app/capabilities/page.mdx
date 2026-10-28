@@ -1,0 +1,50 @@
+---
+title: Capabilities
+asIndexPage: true
+---
+
+import { Cards } from 'nextra/components'
+
+# Capabilities
+
+Capabilities are reusable workflows and methods for completing tasks with Agent Stack. Skills produce a defined result; disciplines provide methods that can support different tasks; the router selects the best available capability for a request.
+
+## Skills
+
+<Cards>
+  <Cards.Card title="Compose Voice Profile" href="/capabilities/skills/compose-voice-profile">Create a voice guide from brand direction, writing samples, and audience evidence.</Cards.Card>
+  <Cards.Card title="Create Docs" href="/capabilities/skills/create-docs">Explain a repository's user-facing components, structure, and supported use.</Cards.Card>
+  <Cards.Card title="Create Guidelines" href="/capabilities/skills/create-guidelines">Create or revise a reusable standard for a subject area.</Cards.Card>
+  <Cards.Card title="Create Skill" href="/capabilities/skills/create-skill">Create a reusable skill or discipline, or improve an existing one.</Cards.Card>
+  <Cards.Card title="Research" href="/capabilities/skills/research">Produce a source-grounded report with a transparent method.</Cards.Card>
+  <Cards.Card title="Ship" href="/capabilities/skills/ship">Deliver an authorized repository change through its supported path.</Cards.Card>
+  <Cards.Card title="Translate" href="/capabilities/skills/translate">Translate or localize supplied content while preserving its meaning.</Cards.Card>
+</Cards>
+
+## Disciplines
+
+Use a discipline directly for a focused method or follow a skill's handoff when it calls for one.
+
+<Cards>
+  <Cards.Card title="Ask User Question" href="/capabilities/disciplines/ask-user-question">Prepare and interpret a concise question when a choice belongs to you.</Cards.Card>
+  <Cards.Card title="Browse Skills" href="/capabilities/disciplines/browse-skills">Find and compare public skill examples for a defined task.</Cards.Card>
+  <Cards.Card title="Check Colour Contrast" href="/capabilities/disciplines/check-colour-contrast">Compare a supplied foreground and background pair with a WCAG threshold.</Cards.Card>
+  <Cards.Card title="Convert Colour" href="/capabilities/disciplines/convert-colour">Convert a supplied colour between supported formats.</Cards.Card>
+  <Cards.Card title="Mind Wandering" href="/capabilities/disciplines/mind-wandering">Explore creative directions and return useful options to the task.</Cards.Card>
+  <Cards.Card title="Natural Writing" href="/capabilities/disciplines/natural-writing">Draft, edit, or translate prose for its intended readers.</Cards.Card>
+  <Cards.Card title="Pre Mortem" href="/capabilities/disciplines/pre-mortem">Find plausible failure paths in a concrete plan.</Cards.Card>
+  <Cards.Card title="Quit The Yap" href="/capabilities/disciplines/quit-the-yap">Make an in-chat answer concise while preserving its meaning.</Cards.Card>
+  <Cards.Card title="Release Agent Stack" href="/capabilities/disciplines/release-agent-stack">Apply Agent Stack's release rules after confirming repository identity.</Cards.Card>
+  <Cards.Card title="Research Literature" href="/capabilities/disciplines/research-literature">Search academic records and abstracts with requested filters.</Cards.Card>
+  <Cards.Card title="Show Me Your Work" href="/capabilities/disciplines/show-me-your-work">Keep an evidence-linked decision log for a long-running task.</Cards.Card>
+  <Cards.Card title="Spawn Evals" href="/capabilities/disciplines/spawn-evals">Prepare objective checks when a skill has script-verifiable requirements.</Cards.Card>
+  <Cards.Card title="Think Deeper" href="/capabilities/disciplines/think-deeper">Strengthen the evidence and methods for a substantive task.</Cards.Card>
+  <Cards.Card title="Think Harder" href="/capabilities/disciplines/think-harder">Resolve ambiguity from context before asking you to decide.</Cards.Card>
+  <Cards.Card title="Update Changelog" href="/capabilities/disciplines/update-changelog">Record verified, user-relevant changes in a project changelog.</Cards.Card>
+  <Cards.Card title="Update Map" href="/capabilities/disciplines/update-map">Keep the resource map aligned with actual capabilities and relationships.</Cards.Card>
+  <Cards.Card title="Update Router" href="/capabilities/disciplines/update-router">Keep the routing catalog aligned with available instruction files.</Cards.Card>
+</Cards>
+
+## Routing
+
+Use [Skill Issue](/capabilities/router/skill-issue) at the start of a task or when its intended outcome changes. It selects an available skill or discipline from the request and repository context. The repository's [agent instructions](https://github.com/josuamittels/agent-stack/blob/main/AGENTS.md) point to this router; if the host has no native invocation, read the selected local instructions in context.

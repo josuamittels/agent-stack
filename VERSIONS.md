@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.24.0` |
+| Version | `0.25.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.24.0` adds experimental repository documentation generation through Create Docs, with basic Markdown and interactive Nextra modes, bundled setup resources, objective navigation checks, and updated discovery. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.25.0` adds an end-user documentation site for the Agent Stack, improves Create Docs guidance and reference-card rendering, and runs Create Docs during every stack release. The stack has not been released.
 
 ## Component versions
 
@@ -47,15 +47,15 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `skills/check-colour-contrast/SKILL.md` | `1.1.0` | `stable` |
 | Skill | `skills/compose-voice-profile/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/convert-colour/SKILL.md` | `1.1.0` | `stable` |
-| Skill | `skills/create-docs/SKILL.md` | `0.1.0` | `experimental` |
-| Reference | `skills/create-docs/references/nextra-docs.md` | `0.1.0` | `experimental` |
+| Skill | `skills/create-docs/SKILL.md` | `0.5.0` | `experimental` |
+| Reference | `skills/create-docs/references/nextra-docs.md` | `0.2.0` | `experimental` |
 | Skill | `skills/create-guidelines/SKILL.md` | `0.5.0` | `experimental` |
 | Skill | `skills/create-skill/SKILL.md` | `0.13.0` | `experimental` |
 | Discipline | `skills/mind-wandering/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/natural-writing/SKILL.md` | `0.6.0` | `experimental` |
 | Discipline | `skills/pre-mortem/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/quit-the-yap/SKILL.md` | `0.3.0` | `experimental` |
-| Discipline | `skills/release-agent-stack/SKILL.md` | `0.4.0` | `experimental` |
+| Discipline | `skills/release-agent-stack/SKILL.md` | `0.5.0` | `experimental` |
 | Discipline | `skills/research-literature/SKILL.md` | `0.6.0` | `experimental` |
 | Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
 | Reference | `skills/research-literature/references/openalex-docs.md` | `0.2.0` | `experimental` |

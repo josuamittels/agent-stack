@@ -1,0 +1,34 @@
+---
+title: "Spawn Evals"
+---
+# Spawn Evals
+
+> **Discipline** · **experimental** · **v0.9.0** · updated 2026-10-28
+
+## Purpose
+
+Use Spawn Evals to prepare or run objective checks for a skill when its requirements can be verified from output or machine-readable evidence.
+
+## Workflow
+
+1. **Identify measurable requirements.** Keep checks to deterministic criteria; do not score quality, meaning, or model judgment.
+2. **Prepare or run the package.** Follow the target skill’s evaluation package and supply the required invocation record and evidence.
+3. **Report the result.** State which checks passed, failed, or remain unverified and name any unavailable evidence.
+
+## Inputs
+
+For package preparation, require the completed target skill, its intended uses, documented defaults and ranges, and the user's original requirements; Create Skill must first determine that at least one meaningful objective check is possible. For a live check, require the target skill, original request, resolved constraints, completed output files, evidence, and a unique invocation ID.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.9.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/spawn-evals/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/spawn-evals/SKILL.md)
+
+OpenAI.

@@ -1,0 +1,37 @@
+---
+title: "Check Colour Contrast"
+---
+# Check Colour Contrast
+
+> **Discipline** · **stable** · **v1.1.0** · updated 2026-10-28
+
+## Purpose
+
+Use Check Colour Contrast to calculate the contrast ratio for a supplied foreground and background colour pair.
+
+## Workflow
+
+1. **Provide the colour pair.** Supply both colour values and the relevant text or interface context.
+2. **Compare the ratio with the target.** Calculate the ratio and compare it with the requested WCAG threshold; report the result and its scope.
+
+## Inputs
+
+Provide opaque foreground and background colors, each with its format (`hex`, `rgb`, or `hsl`) and value.
+
+## Result
+
+Return the calculated ratio and pass/fail results for normal text, large text, and non-text UI/graphics.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **1.1.0**; status **stable**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/check-colour-contrast/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/check-colour-contrast/SKILL.md)
+
+World Wide Web Consortium.

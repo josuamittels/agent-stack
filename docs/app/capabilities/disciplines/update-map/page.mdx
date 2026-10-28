@@ -1,0 +1,36 @@
+---
+title: "Update Map"
+---
+# Update Map
+
+> **Discipline** · **experimental** · **v0.3.0** · updated 2026-10-28
+
+## Purpose
+
+Use Update Map to keep the agent-stack resource map accurate when capabilities or relationships change.
+
+## Workflow
+
+1. **Inspect the map and sources.** Compare existing nodes and edges with the substantive capability instructions and their declared relationships.
+2. **Update the graph.** Add, revise, or remove only relationships supported by those sources.
+3. **Check the rendered map.** Validate Mermaid syntax, links, and agreement between the map and actual resource availability.
+
+## Inputs
+
+Use the requested map change, repository root, current map, affected resources and their instructions, relevant caller handoffs, and the current file state. Resolve Markdown links from their containing file.
+
+## Result
+
+Return the map path, changed nodes and relationships, checks actually performed, and any remaining verification gap. When Release Agent Stack owns the release, return the finished map update to it; do not claim router maintenance unless that step was performed.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.3.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/update-map/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/update-map/SKILL.md)

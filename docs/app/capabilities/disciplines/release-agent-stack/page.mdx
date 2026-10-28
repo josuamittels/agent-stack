@@ -1,0 +1,38 @@
+---
+title: "Release Agent Stack"
+---
+# Release Agent Stack
+
+> **Discipline** · **experimental** · **v0.5.0** · updated 2026-10-28
+
+## Purpose
+
+Use Release Agent Stack through the stack’s release route to reconcile component versions, lifecycle status, and discovery after an authorized change.
+
+## Workflow
+
+1. **Confirm the repository identity.** Check the expected Agent Stack markers before applying stack-specific release rules.
+2. **Reconcile release state.** Compare component metadata, the coordinated version snapshot, changelog, and lifecycle conditions.
+3. **Refresh discovery as needed.** Update the map and routing catalog only when the released changes require it, then report the resulting state.
+4. **Update the user docs.** Run [Create Docs](/capabilities/skills/create-docs) on every release against the final change set. Update pages and navigation for user-facing changes; when a release appears internal-only, have Create Docs confirm whether any user docs need changes.
+
+## Inputs
+
+Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition.
+
+## Result
+
+Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, documentation changes and Create Docs verification results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.5.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/release-agent-stack/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/release-agent-stack/SKILL.md)
+- [Create Docs](/capabilities/skills/create-docs)

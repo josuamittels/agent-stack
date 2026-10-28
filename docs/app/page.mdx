@@ -1,0 +1,43 @@
+---
+title: Agent Stack
+---
+
+import { Cards } from 'nextra/components'
+
+# Agent Stack
+
+Agent Stack is a repository of reusable agent workflows, methods, and reference guidance. These docs explain what is available, how the pieces fit together, and where to find the canonical instructions.
+
+## Explore the stack
+
+<Cards>
+  <Cards.Card title="Capabilities" href="/capabilities">Find skills, reusable disciplines, and the task router.</Cards.Card>
+  <Cards.Card title="Guidelines & references" href="/guidelines-and-references">Browse domain guidance and supporting resources.</Cards.Card>
+  <Cards.Card title="Playbooks" href="/playbooks">Explore multi-stage journeys that combine capabilities; current outlines are labeled as such.</Cards.Card>
+</Cards>
+
+
+## How a task reaches a capability
+
+The repository's root `AGENTS.md` points an agent to the [Skill Issue router](/capabilities/router/skill-issue) at the start of a task or when its intended outcome changes. The router reads the request and available instruction files, then selects an applicable skill. If no native host invocation exists, the root instructions say to read and apply the local `SKILL.md` in context. Once selected, that capability owns its workflow and handoffs.
+
+Skills describe reusable workflows with a concrete outcome. Disciplines describe reusable methods that can support a skill or be selected for a focused task. Guidelines establish domain standards; they inform work but do not route tasks. Playbooks can connect several outcomes into a broader journey.
+
+## Repository map
+
+| Area | What it contains |
+| --- | --- |
+| `skills/` | Skills and disciplines. `type` in each front matter block determines which it is; instruction files establish availability. |
+| `guidelines/` | Reusable standards and references loaded by their consuming workflows. Some nested files are imported source material. |
+| `playbooks/` | Larger journeys assembled from capabilities. The current startup file is explicitly an outline. |
+| `sources/` | Research records and third-party examples; these are not discovered as capabilities. |
+| `evals/` | Objective checkers for selected skills where script-verifiable criteria exist. |
+| `agents/` | Reserved for future agent definitions; currently empty. |
+
+The [stack map](https://github.com/josuamittels/agent-stack/blob/main/map.mmd) visualizes resource relationships. Directory names and map nodes alone do not make a planned capability available: check its linked instruction file and lifecycle status.
+
+## Versions and recorded changes
+
+Each resource's own front matter is authoritative for its version and status. [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md) snapshots the coordinated stack and independently maintained components. [CHANGELOG.md](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) records notable stack changes; individual component pages link to their source history when no component-specific change log exists.
+
+The current coordinated stack snapshot is **0.24.0 (draft)**, recorded 2026-10-28. Component versions do not all move with the stack version. This inventory was read from the local working tree based at commit `78b98be` on 2026-10-28. The tree includes uncommitted edits; GitHub source links open `main` and may not yet show those edits.

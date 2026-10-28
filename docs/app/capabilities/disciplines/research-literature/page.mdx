@@ -1,0 +1,39 @@
+---
+title: "Research Literature"
+---
+# Research Literature
+
+> **Discipline** · **experimental** · **v0.6.0** · updated 2026-10-28
+
+## Purpose
+
+Use Research Literature to find academic works in OpenAlex and return source-linked records and abstracts.
+
+## Workflow
+
+1. **Frame the search.** Set the topic, search terms, inclusion rules, and requested result size.
+2. **Choose filters.** Resolve author, journal, date, work type, subject, access, and journal-selection filters to supported OpenAlex fields.
+3. **Retrieve and screen records.** Search OpenAlex, deduplicate results, and screen them against the stated criteria.
+4. **Return the evidence.** Provide source-linked records and abstracts with the search limits and selection mode visible.
+
+## Inputs
+
+Use the supplied topic or question and any stated inclusion and exclusion criteria. Accept optional filters for authors, journals, publication dates or years, work types, fields, language, open access, citation count, and result size. Preserve explicit query terms and constraints.
+
+## Result
+
+Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, observed result counts, retrieval mode, and screening or truncation notes. Identify the work as an OpenAlex search only when records were retrieved from its API or website. If neither route was available, state that OpenAlex discovery was not completed; do not label another provider's results as OpenAlex results.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.6.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/research-literature/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/SKILL.md)
+
+OpenAlex, Clarivate, and DORA.

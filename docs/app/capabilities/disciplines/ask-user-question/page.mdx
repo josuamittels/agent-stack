@@ -1,0 +1,38 @@
+---
+title: "Ask User Question"
+---
+# Ask User Question
+
+> **Discipline** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Ask User Question to prepare and interpret a concise question when a consequential user-owned choice is unresolved.
+
+## Workflow
+
+1. **Check what context already answers.** Read the request and relevant evidence; use [Think Harder](/capabilities/disciplines/think-harder) first when context may resolve the uncertainty.
+2. **Ask only for the missing decision.** Present clear, mutually exclusive choices when practical, explain their consequences briefly, and keep the user free to answer in their own words.
+3. **Apply the answer.** Carry the user’s preference into the owning workflow and preserve any approval boundary.
+
+## Inputs
+
+Use the original outcome, caller and current stage, unresolved gaps, evidence, prior answers, permissions, alternatives, and host question-tool limits. Reuse the caller's Think Harder findings; inspect accessible context before asking for facts it already contains.
+
+## Result
+
+Return answered question IDs, selected options or supplied facts, resulting constraints, and pending questions to the owning workflow. Preserve accepted scope cuts and their consequences in task state. Create a separate decision record only when the caller requires one. Check that each returned answer maps to the question actually asked; leave unresolved items explicit.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/ask-user-question/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/ask-user-question/SKILL.md)
+
+Garry Tan.

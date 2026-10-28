@@ -1,7 +1,7 @@
 ---
 name: nextra-docs
 description: "Local operational reference for generating a Nextra Docs Theme application under a target repository's docs directory."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-28"
 updated: "2026-10-28"
 author:
@@ -93,6 +93,8 @@ Use content components when they help readers:
 | `Callout` | A relevant caution or exception beside the affected action. | [Callout](https://nextra.site/docs/built-ins/callout) |
 | `Steps` | An ordered procedure whose headings mark distinct actions. | [Steps](https://nextra.site/docs/built-ins/steps) |
 | `Tabs` and `Tabs.Tab` | Genuine variants, with a complete usable procedure in each tab. | [Tabs](https://nextra.site/docs/built-ins/tabs) |
+
+Nextra renders a card's body before its title. In the docs app's shared stylesheet, give `.nextra-card` `padding: 1rem`, then give `.nextra-card > span:last-child` `order: -1` and `padding: 0`. This places every title above its description while keeping both aligned inside consistent card padding. Keep the title in the `title` prop and concise reader-facing copy in the body. Put version and lifecycle details on the linked component page, rather than repeating them in card descriptions. Do not repeat the title inside the body or scope the correction to individual pages.
 
 Import these components from `nextra/components` in the MDX page that uses them. For cards, supply `title` and `href` on `Cards.Card`. For tabs, supply matching `items` on `Tabs` and one `Tabs.Tab` per item. Do not create package-manager variants the target project does not support. Keep essential prerequisites visible outside collapsed or alternate content.
 

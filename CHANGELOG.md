@@ -7,9 +7,12 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 ### Added
 
 - Add experimental `create-docs` to inspect repository structure, components, workflows, and states, then generate interlinked Markdown or a Nextra documentation site under `docs/`, with a required format choice and the shared documentation standard.
+- Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
 
+- Run Create Docs during every Agent Stack release so user documentation reflects the released capabilities and changes.
+- Improve Create Docs guidance for user-focused prose, useful page navigation, workflows, references, and consistently formatted Nextra cards.
 - Refresh the map by removing the duplicate Aesthetics Framework node, adding Visualise Data, Analyse Data, Cleanse Data, and Steal Data, combining Academics and Data, and switching to hand-drawn rendering.
 - Route task questions through Ask User Question, using Think Harder first when context or evidence may resolve the issue and skipping it for direct user gates.
 

@@ -1,0 +1,40 @@
+---
+title: "Create Skill"
+---
+# Create Skill
+
+> **Skill** · **experimental** · **v0.13.0** · updated 2026-10-28
+
+## Purpose
+
+Use Create Skill to create a reusable skill or discipline, or to improve an identified capability with an approved change.
+
+## Workflow
+
+1. **Define the capability.** Settle its outcome, type, name, activation, inputs, boundaries, handoffs, resources, and observable completion conditions.
+2. **Compare and design.** Inspect relevant existing skills and source material, then use [Think Deeper](/capabilities/disciplines/think-deeper) to shape the reusable workflow. Use [Pre-Mortem](/capabilities/disciplines/pre-mortem) to find concrete gaps before writing.
+3. **Approve a revision.** For an existing skill, review the evidence, proposed behavior, affected files, and verification plan before implementation. A user’s approval of that proposal authorizes the scoped edits.
+4. **Write and connect the capability.** Use the stack’s [skill template](https://github.com/josuamittels/agent-stack/blob/main/skills/create-skill/templates/SKILL.md), author the instructions and needed resources, and link the capability to its real callers and references.
+5. **Complete the handoff.** Summarize the resulting workflow, relationships, checks, and gaps for the owning task. Stack discovery changes are coordinated by the release workflow.
+
+## Inputs
+
+For a new capability, require the intended outcome, its type (`skill` or `discipline`), and a precise name.
+
+## Result
+
+For a discipline, return the completed-work mirror, local verification results, and remaining gaps without an evaluation package. For a skill, return the completed-work mirror and either the applicable objective package with its measurable checks or the reason no objective package was created. Do not report a verdict on the authoring output. Explain how the workflow operates and connects to skills, disciplines, and guidelines. Link the local research record while it is retained. For an unapproved proposed edit, return the concrete proposal and approval question instead of a completion claim.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) selects this skill when its scope matches your task.
+
+## Version and changes
+
+Version **0.13.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/create-skill/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/create-skill/SKILL.md)
+
+OpenAI, Matt Pocock, Anthropic, Jesse Vincent, Daniel Miessler, Microsoft, Lauren Tan, and Affaan Mustafa.

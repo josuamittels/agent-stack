@@ -1,0 +1,38 @@
+---
+title: "Pre Mortem"
+---
+# Pre Mortem
+
+> **Discipline** · **experimental** · **v0.2.0** · updated 2026-10-28
+
+## Purpose
+
+Use Pre-Mortem to find plausible failure paths in a concrete plan while the owner can still change it.
+
+## Workflow
+
+1. **Set the plan and horizon.** Name the intended outcome, success condition, adjustable actions, and point at which failure will be judged.
+2. **Assume the plan failed.** Use the chosen horizon and generate distinct causal paths anchored in the actual plan.
+3. **Turn causes into changes.** Identify evidence or actions that could reduce the strongest failure paths, and leave the decision with the plan owner.
+
+## Inputs
+
+Use the plan, its owner, intended outcome, success condition, relevant time horizon, constraints, available records, and prior decisions. Recover details from the conversation and accessible files before asking for them. Distinguish known facts from assumptions.
+
+## Result
+
+Return:
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.2.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/pre-mortem/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/pre-mortem/SKILL.md)
+
+Gary Klein, Deborah J. Mitchell, J. Edward Russo, Nancy Pennington, Beth Veinott, and Sterling Wiggins.

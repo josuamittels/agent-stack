@@ -1,0 +1,38 @@
+---
+title: "Quit The Yap"
+---
+# Quit The Yap
+
+> **Discipline** · **experimental** · **v0.3.0** · updated 2026-10-28
+
+## Purpose
+
+Use Quit the Yap to make an in-chat answer concise while preserving the information needed to answer the request.
+
+## Workflow
+
+1. **Identify the answer.** Find the direct response and any necessary qualification or next action.
+2. **Remove what does not help.** Cut repetition, preamble, and details that do not change the reader’s understanding or decision.
+3. **Return the concise answer.** Keep the tone natural and the requested information intact.
+
+## Inputs
+
+Use your latest request, relevant conversation context, established facts, and the answer or action the caller needs to communicate. Before drafting, invoke [Natural Writing](/capabilities/disciplines/natural-writing) as the required writing method. Pass the answer's context and ask it to apply English Absolute style. Natural Writing selects and applies the English language guidance, including its Absolute style section; do not read the English guideline separately here.
+
+## Result
+
+Return the requested answer in the requested format. Keep it direct and complete. If a necessary fact is missing, state the specific gap and ask only for the information needed to continue.
+
+## Routing and related capabilities
+
+The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+
+## Version and changes
+
+Version **0.3.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/quit-the-yap/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/quit-the-yap/SKILL.md)
+
+softaworks, and refoundai.
