@@ -2,6 +2,7 @@
 name: "[name-slug]-voice-profile" # Replace with a lowercase, hyphenated name.
 description: "[description]" # Describe what the template produces and when to use it.
 version: "[version]" # X.Y.Z
+created: "[today]" # YYYY-MM-DD
 updated: "[today]" # YYYY-MM-DD
 author:
   - "[author name]"

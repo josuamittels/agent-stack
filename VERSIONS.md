@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.21.0` |
+| Version | `0.22.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.21.0` adds an experimental technical documentation reference for choosing, authoring, and maintaining project documentation. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.22.0` adds creation-date metadata before update dates across stack components and authoring templates. The stack has not been released.
 
 ## Component versions
 

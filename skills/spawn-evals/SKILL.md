@@ -2,6 +2,7 @@
 name: spawn-evals
 description: "Prepare and run deterministic, objective checks for completed skill outputs without qualitative assessment or agent delegation."
 version: "0.9.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

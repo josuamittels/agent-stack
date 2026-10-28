@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.22.0] - 2026-10-28
+
+### Added
+
+- Add `created` dates before `updated` dates in reusable metadata blocks; authoring templates provide a date placeholder.
+
 ## [0.21.0] - 2026-10-28
 
 ### Added

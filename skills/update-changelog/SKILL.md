@@ -2,6 +2,7 @@
 name: "update-changelog"
 description: "Create, update, or prepare a repository changelog from verified changes. Use when the user asks to record changes, maintain CHANGELOG.md, or prepare a changelog release section."
 version: "0.2.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

@@ -2,6 +2,7 @@
 name: "typescript-best-practices"
 description: "House standards for TypeScript code structure, type safety, naming, errors, async work, tests, and review. Consult when creating or changing .ts or .tsx files."
 version: "0.1.0"
+created: "2026-10-26"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

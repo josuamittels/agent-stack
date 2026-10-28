@@ -2,6 +2,7 @@
 name: "pre-mortem"
 description: "Find concrete failure paths in an adjustable, consequential plan before commitment by imagining it has failed and working backward."
 version: "0.1.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

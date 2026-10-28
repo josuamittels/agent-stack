@@ -2,6 +2,7 @@
 name: think-harder
 description: "Resolve missing information and ambiguity from task context, relevant caller guidelines, evidence, and reasonable defaults."
 version: "0.1.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

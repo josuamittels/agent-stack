@@ -2,6 +2,7 @@
 name: "quit-the-yap"
 description: "Write concise, direct in-chat answers in English Absolute style while preserving the details needed for meaning and action."
 version: "0.2.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

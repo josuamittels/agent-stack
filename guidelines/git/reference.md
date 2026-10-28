@@ -2,6 +2,7 @@
 name: "git-best-practices"
 description: "Reference for grouping file changes, ordering commits, writing commit messages, and using Git branches, worktrees, reviews, integration, and recovery. Consult when preparing or reviewing repository changes."
 version: "0.1.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

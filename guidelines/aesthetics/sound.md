@@ -2,6 +2,7 @@
 name: "sound-design"
 description: "Reference for understanding, composing, synthesising, shaping, implementing, and judging sound, including perception, emotion, musical structure, and audio for technology products."
 version: "0.2.0"
+created: "2026-10-27"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

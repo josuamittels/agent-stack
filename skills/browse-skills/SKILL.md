@@ -2,6 +2,7 @@
 name: browse-skills
 description: "Find and inspect related public skills for inspiration through GetEdge and original source repositories. Use when in need of comparable methods, skills, agent orchestration, conventions, or failure-handling approaches."
 version: "1.0.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

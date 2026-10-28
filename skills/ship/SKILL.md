@@ -2,6 +2,7 @@
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
 version: "0.5.0"
+created: "2026-10-26"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

@@ -2,6 +2,7 @@
 name: colour
 description: "Colour reference for perception, history and language, descriptive vocabulary, theory, models and formats, conversion, composition, palettes, meaning and psychology, accessibility, interface systems, visualisation, and colour-managed production."
 version: "0.2.0"
+created: "2026-10-27"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

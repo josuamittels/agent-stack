@@ -2,6 +2,7 @@
 name: aesthetics-framework
 description: "Shared design-reference framework: domain ownership, selective reading paths, decision priorities, and evidence for AI-assisted design across interfaces and other media."
 version: "0.1.0"
+created: "2026-10-28"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

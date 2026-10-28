@@ -2,6 +2,7 @@
 name: "french-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural French prose across general, academic, technical, direct, article, and narrative writing."
 version: "0.1.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

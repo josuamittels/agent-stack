@@ -2,6 +2,7 @@
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
 version: "0.2.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

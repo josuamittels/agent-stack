@@ -2,6 +2,7 @@
 name: update-map
 description: "Maintain the agent stack map as skills, disciplines, guidelines, templates, and their documented relationships change. Use for an explicit map update or during an authorized Agent Stack release."
 version: "0.2.0"
+created: "2026-10-27"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

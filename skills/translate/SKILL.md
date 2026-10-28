@@ -2,6 +2,7 @@
 name: translate
 description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
 version: "0.4.1"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

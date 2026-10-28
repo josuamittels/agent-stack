@@ -2,6 +2,7 @@
 name: create-guidelines
 description: "Create or revise reusable guideline documents. Use to define domain standards, conventions, tool usage, or best practices, or to repair a guideline defect found while evaluating a skill."
 version: "0.4.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

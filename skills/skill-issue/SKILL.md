@@ -2,6 +2,7 @@
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
 version: "0.4.0"
+created: "2026-10-25"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

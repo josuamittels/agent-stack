@@ -2,6 +2,7 @@
 name: "technical-documentation"
 description: "Standards for structuring, writing, verifying, and maintaining technical documentation for applications and software projects. Consult when assessing a repository, selecting documentation components, or creating and improving project docs."
 version: "0.1.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

@@ -2,6 +2,7 @@
 name: motion-design
 description: "Comprehensive motion and animation reference for perception, timing, spacing, easing, springs, gesture physics, choreography, expressive identity, transitions, patterns, accessibility, motion systems, implementation, and evaluation."
 version: "0.2.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

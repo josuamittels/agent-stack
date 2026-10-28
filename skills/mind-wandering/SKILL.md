@@ -2,6 +2,7 @@
 name: "mind-wandering"
 description: "Open creative possibilities through playful association, reframing, changes of representation, and deliberate return. Use to explore unfamiliar directions, escape fixation, or develop an unusual idea while preserving the task's intent."
 version: "0.1.1"
+created: "2026-10-27"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

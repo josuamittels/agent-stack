@@ -2,6 +2,7 @@
 name: "research"
 description: "Produce source-grounded, critically appraised academic research reports at a user-selected depth with lenient, default, or strict journal selection. Use for researching a question or synthesizing literature."
 version: "0.7.0"
+created: "2026-10-26"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

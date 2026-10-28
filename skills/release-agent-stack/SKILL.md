@@ -2,6 +2,7 @@
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
 version: "0.3.0"
+created: "2026-10-26"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

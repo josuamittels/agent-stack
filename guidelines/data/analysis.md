@@ -2,6 +2,7 @@
 name: "[name-slug]" # Replace with a lowercase, hyphenated skill name.
 description: "[description]" # Compact capability description and activation conditions.
 version: "[version]" # X.Y.Z
+created: "2026-10-24"
 updated: "[today]" # YYYY-MM-DD
 author:
   - "[author name]" # Example: Josua Mittelstaedt

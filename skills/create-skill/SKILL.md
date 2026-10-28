@@ -2,6 +2,7 @@
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria."
 version: "0.12.0"
+created: "2026-10-25"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"

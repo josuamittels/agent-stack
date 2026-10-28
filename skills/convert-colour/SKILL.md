@@ -2,6 +2,7 @@
 name: convert-colour
 description: "Convert a color value between hex, RGB, HSL, HSV, CMYK, Lab, LCH, and Display P3 with the standalone script."
 version: "1.0.0"
+created: "2026-10-27"
 updated: "2026-10-27"
 author:
   - "Josua Mittelstaedt"

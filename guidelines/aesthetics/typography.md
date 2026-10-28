@@ -2,6 +2,7 @@
 name: typography
 description: "Comprehensive typography reference for letter construction, optical correction, spacing, family design, composition, font selection, semantic systems, accessible implementation, multilingual use, and production."
 version: "0.2.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

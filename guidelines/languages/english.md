@@ -2,6 +2,7 @@
 name: "english-best-practices"
 description: "Reference for English-language writing conventions and examples. Consult when drafting or editing English content."
 version: "0.1.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"

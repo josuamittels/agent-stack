@@ -2,6 +2,7 @@
 name: interaction-design
 description: "Reference for UX/UI interaction decisions: task models, controls, input, focus, navigation, forms, feedback, asynchronous state, recovery, adaptation, specifications, and evaluation."
 version: "0.2.0"
+created: "2026-10-24"
 updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
