@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.20.0` |
+| Version | `0.21.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.20.0` consolidates the aesthetic references around a shared framework and explicit domain ownership. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.21.0` adds an experimental technical documentation reference for choosing, authoring, and maintaining project documentation. The stack has not been released.
 
 ## Component versions
 
@@ -30,6 +30,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
+| Reference | `guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/coding/python.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/sql.md` | `0.1.0` | `experimental` |

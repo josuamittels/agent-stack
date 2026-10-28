@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.21.0] - 2026-10-28
+
+### Added
+
+- Add an experimental reference for planning, structuring, authoring, verifying, and maintaining technical documentation.
+
 ## [0.20.0] - 2026-10-28
 
 ### Added
