@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.22.0` |
+| Version | `0.23.0` |
 | Status | `draft` |
 | Recorded | `2026-10-28` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.22.0` adds creation-date metadata before update dates across stack components and authoring templates. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.23.0` routes task questions through Ask User Question, using Think Harder first when context or evidence may resolve the issue and skipping it for direct user gates. The stack has not been released.
 
 ## Component versions
 
@@ -42,32 +42,32 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/languages/german.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/ask-user-question/SKILL.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/browse-skills/SKILL.md` | `1.0.0` | `experimental` |
-| Discipline | `skills/check-colour-contrast/SKILL.md` | `1.0.0` | `stable` |
-| Skill | `skills/compose-voice-profile/SKILL.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/convert-colour/SKILL.md` | `1.0.0` | `stable` |
-| Skill | `skills/create-guidelines/SKILL.md` | `0.4.0` | `experimental` |
-| Skill | `skills/create-skill/SKILL.md` | `0.12.0` | `experimental` |
-| Discipline | `skills/mind-wandering/SKILL.md` | `0.1.1` | `experimental` |
-| Discipline | `skills/natural-writing/SKILL.md` | `0.5.0` | `experimental` |
-| Discipline | `skills/pre-mortem/SKILL.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/quit-the-yap/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/release-agent-stack/SKILL.md` | `0.3.0` | `experimental` |
-| Discipline | `skills/research-literature/SKILL.md` | `0.5.0` | `experimental` |
+| Discipline | `skills/ask-user-question/SKILL.md` | `0.2.0` | `experimental` |
+| Discipline | `skills/browse-skills/SKILL.md` | `1.1.0` | `experimental` |
+| Discipline | `skills/check-colour-contrast/SKILL.md` | `1.1.0` | `stable` |
+| Skill | `skills/compose-voice-profile/SKILL.md` | `0.2.0` | `experimental` |
+| Discipline | `skills/convert-colour/SKILL.md` | `1.1.0` | `stable` |
+| Skill | `skills/create-guidelines/SKILL.md` | `0.5.0` | `experimental` |
+| Skill | `skills/create-skill/SKILL.md` | `0.13.0` | `experimental` |
+| Discipline | `skills/mind-wandering/SKILL.md` | `0.2.0` | `experimental` |
+| Discipline | `skills/natural-writing/SKILL.md` | `0.6.0` | `experimental` |
+| Discipline | `skills/pre-mortem/SKILL.md` | `0.2.0` | `experimental` |
+| Discipline | `skills/quit-the-yap/SKILL.md` | `0.3.0` | `experimental` |
+| Discipline | `skills/release-agent-stack/SKILL.md` | `0.4.0` | `experimental` |
+| Discipline | `skills/research-literature/SKILL.md` | `0.6.0` | `experimental` |
 | Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
 | Reference | `skills/research-literature/references/openalex-docs.md` | `0.2.0` | `experimental` |
-| Skill | `skills/research/SKILL.md` | `0.7.0` | `experimental` |
-| Skill | `skills/ship/SKILL.md` | `0.5.0` | `experimental` |
-| Discipline | `skills/show-me-your-work/SKILL.md` | `0.1.0` | `experimental` |
-| Router | `skills/skill-issue/SKILL.md` | `0.4.0` | `experimental` |
+| Skill | `skills/research/SKILL.md` | `0.8.0` | `experimental` |
+| Skill | `skills/ship/SKILL.md` | `0.6.0` | `experimental` |
+| Discipline | `skills/show-me-your-work/SKILL.md` | `0.2.0` | `experimental` |
+| Router | `skills/skill-issue/SKILL.md` | `0.5.0` | `experimental` |
 | Discipline | `skills/spawn-evals/SKILL.md` | `0.9.0` | `experimental` |
-| Discipline | `skills/think-deeper/SKILL.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/think-harder/SKILL.md` | `0.1.0` | `experimental` |
-| Skill | `skills/translate/SKILL.md` | `0.4.1` | `experimental` |
-| Discipline | `skills/update-changelog/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/update-map/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/update-router/SKILL.md` | `0.1.1` | `experimental` |
+| Discipline | `skills/think-deeper/SKILL.md` | `0.2.0` | `experimental` |
+| Discipline | `skills/think-harder/SKILL.md` | `0.2.0` | `experimental` |
+| Skill | `skills/translate/SKILL.md` | `0.5.0` | `experimental` |
+| Discipline | `skills/update-changelog/SKILL.md` | `0.3.0` | `experimental` |
+| Discipline | `skills/update-map/SKILL.md` | `0.3.0` | `experimental` |
+| Discipline | `skills/update-router/SKILL.md` | `0.2.0` | `experimental` |
 
 ## Versioning and maintenance
 

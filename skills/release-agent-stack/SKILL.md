@@ -1,7 +1,7 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.3.0"
+version: "0.4.0"
 created: "2026-10-26"
 updated: "2026-10-28"
 author:
@@ -34,7 +34,7 @@ Read the [Git guide](../../guidelines/git/reference.md), [Versioning guide](../.
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -63,7 +63,7 @@ For every planned commit, determine the component inventory state after that com
 
 Exclude templates, source copies, evaluation schemas, files without substantive version metadata, and placeholders such as `[version]`. Do not infer a component version from a directory name or a stack bump. Compare every inventory row with its source frontmatter and confirm no eligible artifact is missing or duplicated.
 
-Before preparing a push, review the exact delivery change set for new or changed independently versioned components. A component included in a push must not have `draft` status. When the user clearly asks to ship a draft component, change its frontmatter status to `experimental` and include that status in the inventory snapshot for the same commit. This promotion authorizes experimental use only; do not mark it stable. If it is unclear whether a draft component is meant to be included in the requested delivery, ask the user before publishing. Do not include an ambiguous draft in a push while waiting for an answer. Keep unrelated draft components out of the change set.
+Before preparing a push, review the exact delivery change set for new or changed independently versioned components. A component included in a push must not have `draft` status. When the user clearly asks to ship a draft component, change its frontmatter status to `experimental` and include that status in the inventory snapshot for the same commit. This promotion authorizes experimental use only; do not mark it stable. If context and repository evidence cannot establish whether a draft component belongs in the requested delivery, use [think-harder](../think-harder/SKILL.md), then route the remaining inclusion question through [ask-user-question](../ask-user-question/SKILL.md) before publishing. Do not include an ambiguous draft in a push while waiting for an answer. Keep unrelated draft components out of the change set.
 
 ### 4. Check capability discovery when needed
 

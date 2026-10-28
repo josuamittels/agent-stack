@@ -2,6 +2,12 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [Unreleased]
+
+### Changed
+
+- Route task questions through Ask User Question, using Think Harder first when context or evidence may resolve the issue and skipping it for direct user gates.
+
 ## [0.22.0] - 2026-10-28
 
 ### Added

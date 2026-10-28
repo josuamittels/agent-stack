@@ -1,7 +1,7 @@
 ---
 name: think-harder
 description: "Resolve missing information and ambiguity from task context, relevant caller guidelines, evidence, and reasonable defaults."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-25"
 updated: "2026-10-28"
 author:
@@ -36,7 +36,7 @@ This shared Inputs paragraph describes the caller's sequence. Inside Think Harde
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
+The caller invokes this discipline before [ask-user-question](../ask-user-question/SKILL.md) when a task question about ambiguity or missing information might be resolved from context, relevant guidance, evidence, or a reasonable default. Direct user gates, explicitly requested interviews, and facts or preferences only the user can supply skip this step. Return any remaining task question to the caller, which routes its preparation, delivery, and interpretation through Ask User Question. Never deliver a user question or invoke either discipline recursively.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 

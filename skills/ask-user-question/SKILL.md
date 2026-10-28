@@ -1,7 +1,7 @@
 ---
 name: ask-user-question
-description: "Ask clear decision questions with context, recommendations, tradeoffs, and effort estimates. Use for consequential gaps left unresolved by context and Think Harder, or questions required by the caller."
-version: "0.1.0"
+description: "Prepare, deliver, and interpret any task question for the user, including direct permission gates. Use Think Harder first only when context, evidence, or a reasonable default might resolve the gap."
+version: "0.2.0"
 created: "2026-10-25"
 updated: "2026-10-28"
 author:
@@ -18,7 +18,7 @@ Give the user enough information to choose without reconstructing the task. Keep
 
 ## Scope
 
-Use within the owning workflow for unresolved user decisions, missing facts, or required interview questions. The caller owns execution and approval requirements. Preserve established answers and authorizations; do not create approval checkpoints for routine implementation choices.
+Use whenever the owning workflow needs task input from the user, including unresolved decisions, missing facts, direct permission gates, or required interview questions. The caller owns execution and approval requirements. Preserve established answers and authorizations; do not create approval checkpoints for routine implementation choices.
 
 ### Boundaries
 
@@ -32,7 +32,7 @@ The shared procedure below describes the caller's sequence. Inside this discipli
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](SKILL.md) to inquire the missing information.
+Callers route every task question for the user through this discipline. They invoke [think-harder](../think-harder/SKILL.md) first when context, relevant guidance, evidence, or a reasonable default might resolve ambiguity; they skip it for direct user gates, explicitly requested interviews, and facts or preferences only the user can supply. Inside this discipline, apply the method directly and do not invoke Think Harder again for the same gap.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 

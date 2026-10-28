@@ -1,9 +1,9 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria."
-version: "0.12.0"
+version: "0.13.0"
 created: "2026-10-25"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -39,7 +39,7 @@ Creation does not authorize overwriting another skill, broad refactoring, host i
 
 For a new capability, require the intended outcome, its type (`skill` or `discipline`), and a precise name.
 
-If the name or type was not supplied, ask thoughtfully. Reasoning cannot choose either on the user's behalf. Use [ask-user-question](../ask-user-question/SKILL.md) to resolve a missing, invalid, or colliding name; do not silently rename or overwrite an existing capability. Check for a collision across all directories in `skills/`, regardless of their `type`, because skills and disciplines share one namespace. You may include suggestions to resolve the conflict in the request. From the name, derive a lowercase slug of letters, digits, and single hyphens, at most 64 characters, without leading or trailing hyphens.
+If the name or type was not supplied, use [ask-user-question](../ask-user-question/SKILL.md) to resolve the user-owned choice. If the issue is instead uncertainty about a supplied name, inspect existing files and apply Think Harder before asking. Never silently rename or overwrite an existing capability. Check for a collision across all directories in `skills/`, regardless of their `type`, because skills and disciplines share one namespace. You may include suggestions to resolve the conflict in the request. From the name, derive a lowercase slug of letters, digits, and single hyphens, at most 64 characters, without leading or trailing hyphens.
 
 For a capability modification, require an identifiable existing skill or discipline and the desired change or observed problem.
 
@@ -49,7 +49,7 @@ This requirement governs the authored instructions. The resulting skill's task a
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -118,7 +118,7 @@ Use this stack’s template rather than another creator’s initializer, and rep
 
 An authoring workflow prepares an objective package only for the distinct target skill it creates or edits, and only when that target has at least one meaningful, deterministic, task-specific condition that a script can verify from supplied output or evidence without judging meaning, quality, or correctness. `create-skill` is the authoring workflow, never an evaluation target: do not invoke Spawn Evals for `create-skill`, create or maintain `evals/create-skill/`, or evaluate the authoring workflow through Spawn Evals, including when revising `create-skill` itself. Generic checks such as “an output exists” do not qualify. For target skills with both qualitative goals and measurable requirements, package only the measurable requirements. If no meaningful objective check is possible, do not invoke Spawn Evals, create a package, or leave any Spawn Evals reference or runtime handoff in the target skill. Do not create an empty or placeholder rubric. In all cases, do not evaluate the authoring result. For Spawn Evals itself, preserve its bounded missing-input handling instead of adding shared clarification or delegation procedures. For a discipline, remove the template’s final runtime-check handoff; do not include evaluator references or create an `evals/<discipline-name>/` package. Verify discipline instructions and changed helpers with relevant local checks only. Disciplines neither invoke evaluations nor become evaluation targets.
 
-Fill the template's top-level metadata: the chosen slug, a compact capability and activation description, version `0.1.0`, current date as `YYYY-MM-DD`, type `skill` or `discipline`, and status `draft`. The author should be set as the person creating the request, so ask the user for clarification if their name is unknown. Format `author` and `references` as YAML block lists. List only meaningful source influences in `references`, ordered by contribution, using verified personal names in given-name/family-name order or verified publishing organizations when individual authorship is not established. Keep source URLs and attribution evidence in the research record; use `references: []` if there are no external influences.
+Fill the template's top-level metadata: the chosen slug, a compact capability and activation description, version `0.1.0`, current date as `YYYY-MM-DD`, type `skill` or `discipline`, and status `draft`. Set the author to the person creating the request; when their identity is unknown, ask through [ask-user-question](../ask-user-question/SKILL.md) because only the user can supply it. Format `author` and `references` as YAML block lists. List only meaningful source influences in `references`, ordered by contribution, using verified personal names in given-name/family-name order or verified publishing organizations when individual authorship is not established. Keep source URLs and attribution evidence in the research record; use `references: []` if there are no external influences.
 
 For an eligible target skill with at least one meaningful objective criterion, invoke [Spawn Evals](../spawn-evals/SKILL.md) after authoring to prepare a package containing a machine-readable rubric and executable checks for only those criteria. Pass the completed target instructions, intended uses, original requirements, and documented defaults and ranges. Package preparation validates the package structure only; it does not execute checks against the authoring result. On a later real invocation, the target skill supplies the structured invocation record to the checker. Do not use sub-agents, model judges, qualitative assessments, or synthetic cases. Never pass `create-skill` as the target to Spawn Evals. If no meaningful objective criterion is possible, skip Spawn Evals entirely, create no package, and remove the template's validation section and every Spawn Evals reference from the target skill. Disciplines do not get evaluation packages.
 

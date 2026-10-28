@@ -1,7 +1,7 @@
 ---
 name: "pre-mortem"
 description: "Find concrete failure paths in an adjustable, consequential plan before commitment by imagining it has failed and working backward."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-25"
 updated: "2026-10-28"
 author:
@@ -25,7 +25,7 @@ Find plausible ways a consequential plan could fail while its owner can still ch
 
 Use when the user asks for a pre-mortem, failure paths, or blind spots in a concrete plan before commitment. The plan needs a clear outcome and enough detail to analyze. Use another route for a vague idea, a factual question, editing feedback, or a decision whose relevant actions are already irreversible.
 
-Use [Think Harder](../think-harder/SKILL.md) to resolve ambiguity about the intended plan or constraints. Use [Ask User Question](../ask-user-question/SKILL.md) for consequential missing facts that context cannot resolve.
+Use [Think Harder](../think-harder/SKILL.md) to resolve ambiguity about the intended plan or constraints. Route every user-facing question through [Ask User Question](../ask-user-question/SKILL.md). Skip Think Harder for direct gates and for plan facts only its owner can supply.
 
 An AI pass can surface candidate risks. It cannot supply private team knowledge, tacit experience, or the candor and coordination benefits of a live session. When those affect the plan, treat this analysis as preparation for the people who know the work.
 
@@ -39,7 +39,7 @@ Use the plan, its owner, intended outcome, success condition, relevant time hori
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -49,7 +49,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 Summarize the proposed action, desired result, and the point at which success or failure will be judged. Continue when the plan is concrete and a consequential part remains adjustable. Ask only for missing details that could change the failure analysis.
 
-If no useful time horizon is available, ask for one. Do not invent a date and present it as the user's plan.
+If no useful time horizon is available, request it through [Ask User Question](../ask-user-question/SKILL.md); this is a plan fact only its owner can supply, so skip Think Harder. Do not invent a date and present it as the user's plan.
 
 ### 2. Set the failure premise
 

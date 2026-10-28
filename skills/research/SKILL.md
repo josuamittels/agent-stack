@@ -1,7 +1,7 @@
 ---
 name: "research"
 description: "Produce source-grounded, critically appraised academic research reports at a user-selected depth with lenient, default, or strict journal selection. Use for researching a question or synthesizing literature."
-version: "0.7.0"
+version: "0.8.0"
 created: "2026-10-26"
 updated: "2026-10-28"
 author:
@@ -35,7 +35,7 @@ Do not invent or alter research evidence, hide material counterevidence, or repr
 
 ## Inputs
 
-Use the topic or question, intended audience and use, requested deliverable or format, language, any supplied sources or constraints, and desired research depth. Ask only for a missing choice that would materially change what evidence can answer the question. Otherwise state a reasonable assumption and proceed.
+Use the topic or question, intended audience and use, requested deliverable or format, language, any supplied sources or constraints, and desired research depth. Ask through [ask-user-question](../ask-user-question/SKILL.md) only for a missing choice that would materially change what evidence can answer the question. First use [think-harder](../think-harder/SKILL.md) if context or evidence might resolve the choice; otherwise state a reasonable assumption and proceed.
 
 Accept a depth of **light**, **default**, or **thorough**. If the user gives a word count, source range, deadline, field, date range, geography, population, or source preference, honor it and note any resulting coverage limit. Default to **default** depth when no depth is specified.
 
@@ -59,7 +59,7 @@ The source and word ranges are default evaluation bounds when a user has not sup
 
 ### Default Procedures
 
-If you miss relevant information, first invoke [think-harder](../think-harder/SKILL.md), passing all unresolved constraints and all available context, including references and guidelines, over. If `think-harder` leaves one or more constraints unresolved, use [ask-user-question](../ask-user-question/SKILL.md) to inquire the missing information.
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
@@ -69,7 +69,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 Translate the topic into a bounded research question. Identify the phenomenon, population or material, context, time period, and relationship or claim at issue where they apply. Distinguish descriptive, explanatory, causal, comparative, interpretive, and predictive questions. Record research depth and journal selection separately, including numeric overrides, exceptions, and any assumptions that affect what counts as relevant evidence.
 
-If scope is too broad for the selected depth, choose a focused angle that preserves the user's intent and state it. Ask a concise question only when the answer would materially change the report and cannot be inferred.
+If scope is too broad for the selected depth, choose a focused angle that preserves the user's intent and state it. Route a concise question through [ask-user-question](../ask-user-question/SKILL.md) only when the answer would materially change the report and cannot be inferred; apply Think Harder first when more context or evidence could resolve it.
 
 ### 2. Choose and document a method
 
