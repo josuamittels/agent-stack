@@ -2,7 +2,7 @@
 name: "compose-voice-profile"
 description: "Compose a detailed, evidence-backed brand or author voice profile from user direction, research, guides, writing samples, visual references, and market context. Use when the user wants a reusable voice profile or tone-of-voice guide."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -15,7 +15,7 @@ references:
   - "UK Home Office"
   - "UK Department for Business, Innovation, Science and Trade"
 type: "skill"
-status: "draft"
+status: "experimental"
 ---
 
 # Compose Voice Profile

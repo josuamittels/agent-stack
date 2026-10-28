@@ -2,7 +2,7 @@
 name: "haptic-design"
 description: "Reference for designing and evaluating touch, tactile materials, physical controls, force feedback, vibration, and embodied experiences across digital products, objects, print, and spaces."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -27,7 +27,7 @@ references:
   - "Artiss"
   - "World Wide Web Consortium"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # Haptic design

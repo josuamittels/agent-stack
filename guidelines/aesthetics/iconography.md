@@ -2,7 +2,7 @@
 name: iconography
 description: "Comprehensive iconography reference for metaphor selection, icon and family construction, optical correction, size and style variants, composition, accessible application, localization, semantic systems, vector implementation, production, testing, and governance."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -19,7 +19,7 @@ references:
   - "Destina Gökoğlu"
   - "MDN contributors"
 type: reference
-status: draft
+status: experimental
 ---
 
 # Iconography

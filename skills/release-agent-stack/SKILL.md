@@ -1,13 +1,13 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.2.0"
-updated: "2026-10-27"
+version: "0.3.0"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references: []
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Release Agent Stack
@@ -58,9 +58,11 @@ For each planned commit, update the stack version and `Recorded` date in `VERSIO
 
 ### 3. Refresh the component inventory for each commit
 
-For every planned commit, determine the component inventory state after that commit's changes and refresh the `VERSIONS.md` table in that same commit. Read each independently versioned skill, discipline, and guideline under the corresponding top-level directories, including nested reference Markdown with valid substantive `version` and `status` frontmatter. Preserve each artifact’s own frontmatter as the source of truth. Refresh the table with its component kind, path, version, and status.
+For every planned commit, determine the component inventory state after that commit's changes and refresh the `VERSIONS.md` table in that same commit. Read each independently versioned skill, discipline, router, guideline, and reference under the corresponding top-level directories, including nested reference Markdown with valid substantive `version` and `status` frontmatter. Preserve each artifact’s own frontmatter as the source of truth. Refresh the table with its component kind, path, version, and status.
 
 Exclude templates, source copies, evaluation schemas, files without substantive version metadata, and placeholders such as `[version]`. Do not infer a component version from a directory name or a stack bump. Compare every inventory row with its source frontmatter and confirm no eligible artifact is missing or duplicated.
+
+Before preparing a push, review the exact delivery change set for new or changed independently versioned components. A component included in a push must not have `draft` status. When the user clearly asks to ship a draft component, change its frontmatter status to `experimental` and include that status in the inventory snapshot for the same commit. This promotion authorizes experimental use only; do not mark it stable. If it is unclear whether a draft component is meant to be included in the requested delivery, ask the user before publishing. Do not include an ambiguous draft in a push while waiting for an answer. Keep unrelated draft components out of the change set.
 
 ### 4. Check capability discovery when needed
 
@@ -71,6 +73,8 @@ For changes that do not affect capability discovery, do not edit the map or rout
 ### 5. Return the delivery route to Ship
 
 Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, unresolved decisions, and delivery route:
+
+Apply the component-status gate in step 3 before any push, including when the stack-level route permits a push. A draft component explicitly included in a requested shipment must be promoted to `experimental`; an unclear inclusion decision is a question for the user, not an assumption.
 
 | Stack lifecycle status | Delivery route |
 | --- | --- |

@@ -2,7 +2,7 @@
 name: "changelog-standard"
 description: "Standard for creating and maintaining clear, consistent project changelogs and release notes. Consult when adding, reviewing, or preparing changelog entries."
 version: "0.1.0"
-updated: "2026-10-25"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -10,7 +10,7 @@ references:
   - "GitHub"
   - "Tom Preston-Werner"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # Changelog Standard

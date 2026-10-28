@@ -2,6 +2,13 @@
 
 Notable changes to Agent Stack are recorded here. Versions follow the coordinated stack revisions in [VERSIONS.md](VERSIONS.md); dates are the dates those versions were recorded.
 
+## [0.19.0] - 2026-10-28
+
+### Changed
+
+- Require components included in a push to be at least experimental, promoting explicitly shipped drafts and asking when draft inclusion is unclear.
+- Promote all tracked draft skills, disciplines, routers, guides, and references to experimental for trial use.
+
 ## [0.18.0] - 2026-10-28
 
 ### Added

@@ -2,13 +2,13 @@
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
 version: "0.2.0"
-updated: "2026-10-26"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "OpenAlex"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # OpenAlex Search and Filter Reference

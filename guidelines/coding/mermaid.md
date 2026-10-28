@@ -2,7 +2,7 @@
 name: "mermaid-best-practices"
 description: "House standard for Mermaid resource maps and process flows: semantic shapes, shared styling, portable configuration, direct routing, and validation."
 version: "0.2.0"
-updated: "2026-10-24"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -10,7 +10,7 @@ references:
   - "International Organization for Standardization"
   - "Mermaid"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # Mermaid Diagrams – Best Practices

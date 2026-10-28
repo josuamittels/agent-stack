@@ -12,7 +12,7 @@ references:
   - "Talia Hartwell"
   - "Ramotion"
 type: reference
-status: draft
+status: experimental
 ---
 
 # Interaction design

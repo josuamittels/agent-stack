@@ -2,14 +2,14 @@
 name: "think-deeper"
 description: "Deepen a substantive, well-scoped task with professional methods, primary inputs, suitable tools, and an independent check without enlarging its goal."
 version: "0.1.0"
-updated: "2026-10-25"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Felix Rieseberg"
   - "SirRobinBlibs"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Think Deeper

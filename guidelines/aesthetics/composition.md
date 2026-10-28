@@ -2,7 +2,7 @@
 name: composition
 description: "Comprehensive composition, layout, and grid reference for spatial meaning, visual hierarchy, guidance, balance, rhythm, blank space, density, responsive systems, editorial design, interfaces, and production."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -20,7 +20,7 @@ references:
   - "Milica Mihajlija"
   - "Philip Walton"
 type: reference
-status: draft
+status: experimental
 ---
 
 # Composition

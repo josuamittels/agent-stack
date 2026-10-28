@@ -2,13 +2,13 @@
 name: ask-user-question
 description: "Ask clear decision questions with context, recommendations, tradeoffs, and effort estimates. Use for consequential gaps left unresolved by context and Think Harder, or questions required by the caller."
 version: "0.1.0"
-updated: "2026-10-25"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Garry Tan"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Ask User Question

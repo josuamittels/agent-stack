@@ -2,13 +2,13 @@
 name: "show-me-your-work"
 description: "Keep an evidence-linked decision log for long-running, multi-phase, or unattended work, then audit it before handoff."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Lauren Tan"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Show Me Your Work

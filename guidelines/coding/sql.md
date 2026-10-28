@@ -2,7 +2,7 @@
 name: "sql-best-practices"
 description: "House standards for SQL structure, naming, correctness, security, schema design, performance, and migrations. Consult when writing or reviewing SQL source, embedded queries, schemas, indexes, or migrations."
 version: "0.1.0"
-updated: "2026-10-26"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -11,7 +11,7 @@ references:
   - "Supabase"
   - "Everything Claude Code"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # SQL best practices

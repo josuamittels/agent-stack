@@ -2,7 +2,7 @@
 name: "dutch-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural Dutch prose across general, academic, technical, direct, article, and narrative writing."
 version: "0.1.0"
-updated: "2026-10-24"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -31,7 +31,7 @@ references:
   - "Marcus Fabius Quintilianus"
   - "Marcus Tullius Cicero"
 type: "reference"
-status: "draft"
+status: "experimental"
 ---
 
 # Dutch Prose Writing – Best Practices

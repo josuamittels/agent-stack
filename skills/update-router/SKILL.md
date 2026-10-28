@@ -2,14 +2,14 @@
 name: update-router
 description: "Synchronize skill-issue's route catalog and the root AGENTS.md entry section with the actual skills, disciplines, and stack map. Use after a capability is added, changed, moved, or removed, or when discovery instructions are stale."
 version: "0.1.1"
-updated: "2026-10-25"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Garry Tan"
   - "OpenAI"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Update Router

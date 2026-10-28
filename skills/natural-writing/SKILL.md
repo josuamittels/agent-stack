@@ -2,14 +2,14 @@
 name: natural-writing
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
 version: "0.5.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Affaan Mustafa"
   - "Matt Pocock"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Natural writing

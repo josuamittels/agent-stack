@@ -2,7 +2,7 @@
 name: colour
 description: "Colour reference for perception, history and language, descriptive vocabulary, theory, models and formats, conversion, composition, palettes, meaning and psychology, accessibility, interface systems, visualisation, and colour-managed production."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -28,7 +28,7 @@ references:
   - "Markus A. Maier"
   - "Pantone"
 type: reference
-status: draft
+status: experimental
 ---
 
 # Colour

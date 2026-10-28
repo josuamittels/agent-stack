@@ -2,14 +2,14 @@
 name: "quit-the-yap"
 description: "Write concise, direct in-chat answers in English Absolute style while preserving the details needed for meaning and action."
 version: "0.2.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
   - "softaworks"
   - "refoundai"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Quit the Yap

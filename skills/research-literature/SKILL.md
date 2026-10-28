@@ -2,7 +2,7 @@
 name: "research-literature"
 description: "Search OpenAlex for academic works with lenient, default, or strict journal-influence selection and other requested filters, and return source-linked records and abstracts."
 version: "0.5.0"
-updated: "2026-10-26"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -10,7 +10,7 @@ references:
   - "Clarivate"
   - "DORA"
 type: "discipline"
-status: "draft"
+status: "experimental"
 ---
 
 # Research Literature

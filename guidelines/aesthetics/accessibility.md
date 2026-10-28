@@ -2,7 +2,7 @@
 name: accessibility-best-practices
 description: "Comprehensive accessibility reference for inclusive product decisions, EU legal scoping, WCAG requirements, visual and interaction design, content, implementation, assistive technology, design systems, evaluation, and ongoing operations."
 version: "0.1.0"
-updated: "2026-10-27"
+updated: "2026-10-28"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -22,7 +22,7 @@ references:
   - "Emily Stevens"
   - "Soumitra Mishra"
 type: reference
-status: draft
+status: experimental
 ---
 
 # Accessibility – Best Practices
