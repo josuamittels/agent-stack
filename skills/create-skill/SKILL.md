@@ -1,9 +1,9 @@
 ---
 name: create-skill
 description: "Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria."
-version: "0.13.0"
+version: "0.14.0"
 created: "2026-10-25"
-updated: "2026-10-28"
+updated: "2026-10-30"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -77,6 +77,10 @@ Before changing instructions, check whether the failure came from incorrect exec
 If the evidence shows a guideline defect, invoke [create-guidelines](../create-guidelines/SKILL.md). Include the evidence, affected callers, approved scope, and the context needed to identify the coordinator and return the result. Resume any pending skill work when the result comes back. Do not start another handoff for the same issue if one is already active or completed.
 
 ### 2. Research comparable skills and web sources
+
+When the user supplies one specific source to improve an existing skill or discipline, read that source directly and use it to adjust the existing instructions within the requested scope. Skip Browse Skills and broader source discovery. Record the source, relevant findings, limits, and proposed changes in `sources/research_<skill-name>.md`, then continue to step 3. Local inspection of the target and its supporting instructions still applies. If the source is inaccessible or leaves an essential gap, report the limit rather than substituting a broader search. Broaden research only when the user requests it.
+
+For new capabilities and other revisions, use the research process below.
 
 Establish the research questions from the contract: which comparable workflows, decision rules, tools, handoffs, and failure-handling approaches could improve this capability?
 

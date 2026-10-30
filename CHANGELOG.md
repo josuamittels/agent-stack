@@ -11,6 +11,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Use a single supplied source directly when revising an existing skill or guideline, skipping Browse Skills and broader source discovery unless requested.
+
 - Run Create Docs during every Agent Stack release so user documentation reflects the released capabilities and changes.
 - Improve Create Docs guidance for user-focused prose, useful page navigation, workflows, references, and consistently formatted Nextra cards.
 - Refresh the map by removing the duplicate Aesthetics Framework node, adding Visualise Data, Analyse Data, Cleanse Data, and Steal Data, combining Academics and Data, and switching to hand-drawn rendering.
