@@ -47,7 +47,7 @@ If subagents are unavailable, perform the discipline in the current context.
 
 ### 1. Discover relevant candidates
 
-Start with `https://getedge.cc/explore/design/?q=<search+words>&sort=installs`. Encode the query as URL form data, joining spaces with `+`. Try the skill name or subject and meaningful capability, decision, or issue terms from the brief. Prioritize popular relevant candidates without treating install counts as proof of quality or fit.
+Start with `https://getedge.cc/explore/design/?q=<search+words>`. Encode the query as URL form data, joining spaces with `+`. Try the skill name or subject and meaningful capability, decision, or issue terms from the brief. Prioritize popular relevant candidates without treating install counts as proof of quality or fit.
 
 Inspect `div#browse > .cards > .card > .card-link` and follow relevant `href` values. On each detail page, follow the GitHub link inside `div#details`, then locate the actual skill in its original repository. These selectors are starting points: if the layout changed, inspect the current rendered page for the equivalent result cards and original-source links, and record the substitution. Do not guess repository paths from listing slugs.
 
