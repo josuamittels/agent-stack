@@ -1,12 +1,13 @@
 ---
 name: "german-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural German prose across general, academic, technical, direct, article, and narrative writing."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
+  - "Federico De Ponte"
   - "Lauren Tan"
   - "Leibniz-Institut für Deutsche Sprache"
   - "Dudenredaktion"
@@ -1056,6 +1057,8 @@ Organize literature around questions, findings, methods, theoretical positions, 
 
 Explain agreement, conflict, and dependence on measurement, population, design, or context. Distinguish an author's argument from an empirical result. Group references that support the same proposition and separate references that support different ones.
 
+Make citation scope explicit when a sentence or paragraph contains several claims. A source supporting a numerical estimate does not automatically support an adjoining causal explanation or recommendation. Place the reference beside the supported proposition, or split claims requiring different evidence. Wording such as "den Autoren zufolge" must have a clear referent; repeat the source where needed after moving to another study or the reviewer's interpretation. Preserve quotation locators and distinguish direct consultation of a source from attribution through another work.
+
 > Inventory: "Eine Studie untersuchte die Teilnahme. Eine weitere Studie befasste sich ebenfalls mit der Teilnahme. Eine dritte Studie diskutierte dasselbe Thema."
 >
 > Synthesis form: "Die Studien berichten übereinstimmend von einer sinkenden Teilnahme, erfassen jedoch unterschiedliche Zeiträume. Nur die Längsschnittstudie begleitet dieselben Personen über mehrere Jahre."
@@ -1094,6 +1097,8 @@ These are available forms, not mandatory outlines or word allocations. Use only 
 
 Describe what was actually done, measured, excluded, and observed. Specify relevant selection, recruitment, material, timing, instruments, missing data, and analytical choices. Do not fill unknown details with plausible conventions.
 
+In a review or research report, distinguish the writer's search, appraisal, and synthesis methods from the methods of included studies. Attribute recruitment, experiments, and analyses to the study that performed them. "In der einbezogenen Studie wurden Teilnehmende rekrutiert" identifies whose procedure is described; an unqualified "wir rekrutierten Teilnehmende" would incorrectly make it the review authors' procedure. Choose active or passive wording according to the context while keeping that ownership clear.
+
 Use "zufällig zugewiesen" only for actual random assignment. Distinguish a planned procedure from completed work and an observed practice from formal approval.
 
 Define constructs operationally where needed. A self-report of confidence is not direct measurement of competence. An interview account differs from observation of behavior. Name the distinction without dismissing a method appropriate to the question.
@@ -1131,6 +1136,8 @@ Do not append a generic limitations paragraph while leaving earlier claims overs
 Each sentence should establish a necessary fact, define a concept, explain a relationship, supply evidence, or delimit the argument. Avoid passages that merely assert the topic's importance.
 
 Use the same name for a construct, measure, group, or method. Rephrase repetition without replacing a defined term with a near-synonym.
+
+When polishing a research draft, preserve the ownership and strength of every claim. Smoother transitions must not turn a cited author's interpretation into the report's observation, merge propositions with different support, or detach a citation from its qualification. Preserve the reporting boundary carried by attribution phrases and indirect speech. A change between Konjunktiv and indicative must keep the source, degree of certainty, and intended stance clear; neither mood alone determines endorsement or doubt. Recheck materially rewritten numbers, quotations, and evidence claims against the inspected source.
 
 > Empty repetition: "Die Ergebnisse sind von großer Bedeutung. Diese bedeutsamen Befunde haben wichtige Implikationen."
 >

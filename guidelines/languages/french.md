@@ -1,12 +1,13 @@
 ---
 name: "french-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural French prose across general, academic, technical, direct, article, and narrative writing."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
+  - "Federico De Ponte"
   - "Lauren Tan"
   - "Office québécois de la langue française"
   - "Bureau de la traduction"
@@ -1268,6 +1269,8 @@ Organize around questions, findings, methods, theoretical positions, or disagree
 
 Explain convergence, conflict, and dependence on measurements, populations, settings, or designs. Distinguish an author's argument from an empirical finding. Group references supporting one proposition and separate those supporting materially different ones.
 
+Make citation scope explicit when a sentence or paragraph contains several claims. A source supporting a numerical estimate does not automatically support an adjoining causal explanation or recommendation. Place the reference beside the supported proposition, or split claims requiring different evidence. Wording such as "selon les auteurs" must identify which authors are meant; repeat the source where needed after moving to another study or the reviewer's interpretation. Preserve quotation locators and distinguish direct consultation of a source from attribution through another work.
+
 > Inventory: "Une étude examine la participation. Une autre étude analyse également la participation. Une troisième étude aborde le même sujet."
 >
 > Synthesis form: "Les études constatent toutes une baisse de la participation, mais couvrent des périodes différentes. Seule l'étude longitudinale suit les mêmes personnes sur plusieurs années."
@@ -1306,6 +1309,8 @@ These are available forms rather than mandatory outlines or word allocations. A 
 
 Describe what was actually done, measured, excluded, and observed. Specify relevant selection, recruitment, material, timing, instruments, missing data, and analytical choices. Do not fill unknown details with plausible conventions.
 
+In a review or research report, distinguish the writer's search, appraisal, and synthesis methods from the methods of included studies. Attribute recruitment, experiments, and analyses to the study that performed them. "Les auteurs de l'étude incluse ont recruté les participants" identifies whose procedure is described; an unqualified "nous avons recruté les participants" would incorrectly make it the review authors' procedure. Choose active or passive wording according to the context while keeping that ownership clear.
+
 Use "répartis aléatoirement" only for actual random assignment. Separate planned work from completed procedures and observed practice from formal approval.
 
 Define constructs operationally where needed. A self-report of confidence does not directly measure competence. An interview account differs from observing behavior. Name the distinction without dismissing a suitable method.
@@ -1343,6 +1348,8 @@ Do not append generic limitations while leaving the body overstated. Explain the
 Each sentence should establish a fact, define a concept, explain a relationship, supply evidence, or delimit the argument. Avoid statements merely announcing importance.
 
 Use the same name for a construct, measure, group, or method. Reduce repeated phrasing without substituting near-synonyms for defined terms.
+
+When polishing a research draft, preserve the ownership and strength of every claim. Smoother transitions must not turn a cited author's interpretation into the report's observation, merge propositions with different support, or detach a citation from its qualification. Preserve attribution carried by phrases such as "selon les auteurs" or "l'étude rapporte" when shortening or combining sentences. Keep the source and scope of reported speech clear when changing tense or mood. Recheck materially rewritten numbers, quotations, and evidence claims against the inspected source.
 
 > Empty repetition: "Les résultats sont importants. Ces observations majeures ont des implications considérables."
 >

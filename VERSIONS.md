@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.27.0` |
+| Version | `0.28.0` |
 | Status | `draft` |
 | Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.27.0` formalizes staged Research reports, multi-database literature discovery, verified-source qualification and deep citation expansion. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.28.0` extends academic citation, review-method and polishing guidance to Dutch, French and German, with language-specific attribution examples. The stack has not been released.
 
 ## Component versions
 
@@ -36,10 +36,10 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
 | Reference | `guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/git/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/languages/dutch.md` | `0.1.0` | `experimental` |
+| Guideline | `guidelines/languages/dutch.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/languages/english.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/languages/french.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/languages/german.md` | `0.1.0` | `experimental` |
+| Guideline | `guidelines/languages/french.md` | `0.2.0` | `experimental` |
+| Guideline | `guidelines/languages/german.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
 | Discipline | `skills/ask-user-question/SKILL.md` | `0.2.0` | `experimental` |

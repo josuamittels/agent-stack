@@ -1,12 +1,13 @@
 ---
 name: "dutch-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural Dutch prose across general, academic, technical, direct, article, and narrative writing."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
+  - "Federico De Ponte"
   - "Lauren Tan"
   - "Taalunie"
   - "Instituut voor de Nederlandse Taal"
@@ -1247,6 +1248,8 @@ Organize around questions, findings, methods, theoretical positions, or disagree
 
 Explain convergence, conflict, and dependence on measurement, population, design, or context. Distinguish an author's argument from an empirical result. Group references for the same proposition and separate references supporting different ones.
 
+Make citation scope explicit when a sentence or paragraph contains several claims. A source supporting a numerical estimate does not automatically support an adjoining causal explanation or recommendation. Place the reference beside the supported proposition, or split claims requiring different evidence. Wording such as "volgens de auteurs" must have a clear referent; repeat the source where needed after moving to another study or the reviewer's interpretation. Preserve quotation locators and distinguish direct consultation of a source from attribution through another work.
+
 > Inventory: "Een studie onderzocht de deelname. Een andere studie bekeek eveneens de deelname. Een derde studie besprak hetzelfde onderwerp."
 >
 > Synthesis form: "De studies melden allemaal een dalende deelname, maar bestrijken verschillende perioden. Alleen de longitudinale studie volgt dezelfde personen gedurende meerdere jaren."
@@ -1285,6 +1288,8 @@ These are available forms, not mandatory outlines or word allocations. Use the d
 
 Describe what was actually done, measured, excluded, and observed. Specify relevant selection, recruitment, material, timing, instruments, missing data, and analytical choices. Do not fill unknown details with plausible conventions.
 
+In a review or research report, distinguish the writer's search, appraisal, and synthesis methods from the methods of included studies. Attribute recruitment, experiments, and analyses to the study that performed them. "In de geïncludeerde studie werden deelnemers geworven" identifies whose procedure is described; an unqualified "wij wierven deelnemers" would incorrectly make it the review authors' procedure. Choose active or passive wording according to the context while keeping that ownership clear.
+
 Use "willekeurig toegewezen" only for actual random assignment. Separate a plan from a completed procedure and observed practice from formal approval.
 
 Define constructs operationally where needed. A confidence self-report is not direct measurement of competence. An interview account differs from observing behavior. Name the distinction without dismissing a suitable method.
@@ -1322,6 +1327,8 @@ Do not append a generic limitations section while leaving earlier assertions ove
 Each sentence should establish a fact, define a concept, explain a relationship, provide evidence, or delimit the argument. Avoid assertions that merely announce importance.
 
 Use a consistent name for a construct, measure, group, or method. Reduce repeated wording without substituting near-synonyms for defined terms.
+
+When polishing a research draft, preserve the ownership and strength of every claim. Smoother transitions must not turn a cited author's interpretation into the report's observation, merge propositions with different support, or detach a citation from its qualification. Preserve attribution carried by phrases such as "volgens de auteurs" or "de studie rapporteert" when shortening or combining sentences. Recheck materially rewritten numbers, quotations, and evidence claims against the inspected source.
 
 > Empty repetition: "De resultaten zijn belangrijk. Deze belangrijke bevindingen hebben belangrijke implicaties."
 >
