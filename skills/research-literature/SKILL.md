@@ -1,7 +1,7 @@
 ---
 name: "research-literature"
 description: "Search journal-filtered scholarly databases, cross-reference work identities and citation links, and return source-linked records, abstracts, and a caller-ready search receipt."
-version: "0.13.0"
+version: "0.14.0"
 created: "2026-10-25"
 updated: "2026-10-31"
 author:
@@ -24,13 +24,13 @@ status: "experimental"
 
 ## Scope
 
-Use this discipline to find academic works across suitable scholarly databases for a research topic, question, or set of search terms. Use OpenAlex, Crossref, Semantic Scholar, and field-specific databases according to their coverage, journal-filtering support, and available access. Prefer open APIs. Use sources without usable journal restrictions for verification only while the journal filter is active, except exact-record retrieval for the deep-only overlapping-reference exception below.
+Use this discipline to find academic works across suitable scholarly databases for a research topic, question, or set of search terms. Use OpenAlex, Crossref, Semantic Scholar, and relevant field-specific databases according to their coverage and journal-filtering support. Attempt the core providers independently so one provider's outage does not end discovery. Prefer open APIs. Use sources without usable journal restrictions for verification only while the journal filter is active, except exact-record retrieval for the deep-only overlapping-reference exception below.
 
 This discipline returns bibliographic records, abstracts, search details, verification notes, and links to available full text. When used by another workflow, it supplies a traceable source pool for that caller to read and appraise. It does not read and appraise full papers, synthesize findings, assess study quality, or draft a literature review.
 
 ### Boundaries
 
-Search eligible providers for records and abstracts, and cross-reference bibliographic identities across databases. Return available full-text links without reading or evaluating whole papers. Do not infer missing metadata, peer-review status, journal reliability, or research conclusions. Do not treat journal classes, impact metrics, citation counts, or search ranking as substitutes for evaluating an individual study.
+Search eligible scholarly providers for records and abstracts, and cross-reference bibliographic identities across databases. Never use a general web search engine or general web-search results to discover, supplement, or replace scholarly database results. If a provider API is unavailable, try only that provider's own search website when it can enforce the active journal restrictions; otherwise record that discovery route as unavailable and continue through every other applicable eligible database. Return available full-text links without reading or evaluating whole papers. Do not infer missing metadata, peer-review status, journal reliability, or research conclusions. Do not treat journal classes, impact metrics, citation counts, or search ranking as substitutes for evaluating an individual study.
 
 ## Inputs
 
@@ -84,17 +84,17 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 Identify the main concepts, population or setting, and outcome or relationship in the topic where applicable. Build a short concept list with relevant synonyms, spelling variants, and closely related terms. Prepare a few focused searches that cover those terms. Do not force a clinical or other field-specific framework onto a topic that does not fit it.
 
-Choose search angles that serve the question, such as foundations, current work, methods, applications, or limitations. For an interdisciplinary question, cover the relevant domains with distinct queries. Resolve seed references in an appropriate scholarly database and use their verified terminology to refine queries. Seek reviews, foundational work, recent studies, or alternative perspectives when relevant and permitted by the criteria. Do not impose quotas, default date windows, language restrictions, or citation thresholds to create that range.
+Choose search angles that serve the question, such as foundations, current work, methods, applications, or limitations. For an interdisciplinary question, cover the relevant domains with distinct queries. Resolve seed references in an appropriate scholarly database and use their verified terminology to refine queries. Seek reviews, foundational work, recent studies, or alternative perspectives when relevant and permitted by the criteria. Do not impose quotas, default date windows, language restrictions, or citation thresholds to create that range. Do not use a general web search engine to find candidate works, even if all scholarly providers are unavailable; report discovery as incomplete instead.
 
 Keep the user's exact search string when supplied. Record the selected journal preset or override, query text, and filters used for every request. Use separate queries for distinct concepts when one long Boolean query would become difficult to inspect or exceed the selected provider's request limits.
 
 ### 2. Select providers and resolve filters
 
-Build the eligible journal set once from the CSV, preserving the selected preset, category restrictions, and qualifying rows. Attempt discovery through OpenAlex, Crossref and Semantic Scholar where each offers a usable journal or venue restriction. Add PubMed for biomedical questions. Use the database reference to translate that eligible set into each provider's native journal identifiers or filters. Use Google Scholar only as supplementary website discovery when its publication restriction can enforce the selected journals. Record each provider's role as discovery, verification only, or unavailable.
+Build the eligible journal set once from the CSV, preserving the selected preset, category restrictions, and qualifying rows. For every run, attempt discovery independently through OpenAlex, Crossref, and Semantic Scholar; do not stop after one provider fails, returns zero matches, or supplies an adequate-looking pool. Also attempt PubMed for biomedical questions and any other relevant field-specific database with a usable journal restriction. Use the database reference to translate that eligible set into each provider's native journal identifiers or filters. Google Scholar may be used as a supplementary scholarly index only when its publication restriction can enforce the selected journals; it is not a general web-search fallback. Record each provider's role as discovery, verification only, or unavailable, with the observed outcome and reason.
 
 While the journal filter is active, a discovery route must restrict the request to eligible journals before retrieving topic results. If a provider or chosen endpoint lacks that capability, use it only to verify already discovered candidates, identifiers, versions or citation relationships. Do not replace the restriction with an unfiltered topic search followed by CSV filtering. arXiv normally serves verification and version lookup because it does not offer an equivalent publishing-journal restriction. Known overlapping backward-reference targets in deep research may use exact-record retrieval under step 6's journal exception; this never permits unfiltered topic discovery. Any requested non-journal discovery requires explicit scope and suitable provider controls; do not treat it as an automatic bypass of the user's journal rule. An explicit request to disable the journal filter permits broader provider discovery.
 
-Prefer an available open API over a website. Use authorized existing credentials or an OpenAlex key supplied through the setup below. When an API is unavailable, a provider website may substitute only if its visible controls can preserve the required restrictions. A blocked provider does not stop useful work through other eligible providers. Record successful zero results separately from failed, blocked, rate-limited or authentication-required routes. Do not install clients, create accounts, obtain other credentials, purchase access or bypass restrictions.
+Prefer an available open API over that provider's website. Use authorized existing credentials or an OpenAlex key supplied through the setup below. If an API request fails, classify the failure, follow only the documented bounded remedy, and try that provider's own website only when its visible controls can preserve the required restrictions. Regardless of that outcome, continue through every other applicable eligible database. Never switch to a general web search engine. Record successful zero results separately from failed, blocked, rate-limited, and authentication-required routes; zero results from one provider do not stand in for attempts at the others. Do not install clients, create accounts, obtain other credentials, purchase access or bypass restrictions.
 
 #### Configure the optional OpenAlex key
 

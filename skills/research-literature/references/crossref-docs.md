@@ -1,7 +1,7 @@
 ---
 name: "crossref-docs"
 description: "Operational reference for journal-restricted Crossref searches, filters, pagination, DOI lookups, and deposited references."
-version: "0.2.1"
+version: "0.3.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -69,7 +69,7 @@ For a DOI-less seed, use `/works?query.bibliographic=<known citation>&rows=5`, i
 
 For 400, check parameter names, encoding and the documented filter values. For 429, honor Retry-After and back off. Retry a transient 5xx at most twice with backoff. Stop the route on persistent failures and report it separately from zero results. Record observed rate-limit headers rather than assuming a fixed throughput.
 
-If the API is blocked, open [Crossref Metadata Search](https://search.crossref.org/). Enter topic or citation terms and inspect matching records. Use it for discovery only if the visible controls enforce the eligible journal restriction. Otherwise use it for known-record verification and continue discovery elsewhere. Do not treat a general web search as a Crossref query.
+If the API is blocked, try [Crossref Metadata Search](https://search.crossref.org/) only if its visible controls enforce the eligible journal restriction. If not, mark Crossref unavailable for topic discovery, continue through OpenAlex, Semantic Scholar, and all other applicable scholarly providers, and use Crossref only for exact-record verification. Never substitute general web search or web-search results for Crossref discovery.
 
 ## Official fallback documentation
 

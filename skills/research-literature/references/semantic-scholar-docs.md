@@ -1,7 +1,7 @@
 ---
 name: "semantic-scholar-docs"
 description: "Operational reference for Semantic Scholar search syntax, venue filters, pagination, identity lookups, and citation endpoints."
-version: "0.2.1"
+version: "0.3.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -74,7 +74,7 @@ Missing abstracts can reflect licensing limits even when the website displays te
 
 For 400, check fields against the chosen endpoint and check query/filter syntax. For 404 on an exact lookup, record no match in this database. For 429, honor Retry-After, retry at most twice with increasing delay, then stop the route. Treat transport/5xx failures as unresolved after bounded retries.
 
-If API access remains unavailable, open [Semantic Scholar](https://www.semanticscholar.org/), search the topic and apply the visible publication venue filter to an eligible journal before inspecting results. If no usable venue control is exposed, use exact DOI/title searches only for verification. Preserve visible counts and limitations; do not claim API pagination from website results.
+If API access remains unavailable, try [Semantic Scholar](https://www.semanticscholar.org/), search the topic and apply the visible publication venue filter to an eligible journal before inspecting results. If no usable venue control is exposed, mark Semantic Scholar unavailable for topic discovery and use exact DOI/title searches only for verification. Continue through OpenAlex, Crossref, and every other applicable scholarly provider. Never substitute a general web search or web-search results. Preserve visible counts and limitations; do not claim API pagination from website results.
 
 ## Official fallback documentation
 

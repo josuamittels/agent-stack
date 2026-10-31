@@ -1,7 +1,7 @@
 ---
 name: "databases"
 description: "Provider selection, journal-restricted search procedures, and bibliographic cross-referencing for Research Literature."
-version: "0.3.0"
+version: "0.4.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -20,7 +20,13 @@ status: "experimental"
 
 # Literature databases and cross-reference routes
 
-Read this guide before selecting providers. It defines which request to run and which focused reference to load. Read only the reference for a provider actually used. Those references contain routine syntax, filters, pagination, response fields and identity/citation lookups. Consult their official fallback links only for missing behavior, request errors or observed changes. Last checked 2026-10-30.
+Read this guide before selecting providers. It defines which request to run and which focused reference to load. Read only the reference for a provider actually used. Those references contain routine syntax, filters, pagination, response fields and identity/citation lookups. Consult their official documentation only for missing behavior, request errors or observed changes. Last checked 2026-10-30.
+
+## Attempt all applicable scholarly providers
+
+Attempt OpenAlex, Crossref, and Semantic Scholar independently for every topic-discovery run, using a journal-restricted query in each provider that supports it. Do not stop when one provider fails, returns zero matches, or the combined pool appears sufficient. Add PubMed for biomedical topics and relevant field-specific databases when their venue controls can enforce the active journal rule. Record each attempt, including a successful zero-result response, separately from a failed or blocked request. A provider outage is not evidence of no results and does not excuse skipping the remaining providers.
+
+When a provider API is unavailable, use only that provider's own website if visible controls preserve the journal restriction. If the provider website cannot enforce the restriction, mark its discovery route unavailable and continue with the other eligible providers. Never use a general web search engine or its results as a fallback for scholarly discovery. If every applicable scholarly route is unavailable, return incomplete discovery with the exact provider failures; do not present an empty pool as evidence that no literature exists.
 
 ## Prepare the journal restrictions
 
@@ -90,9 +96,9 @@ Load [Google Scholar browser search steps](google-scholar-search.md) when supple
 
 ## Handle access and retrieval outcomes
 
-Use OpenAlex, Crossref and Semantic Scholar for core discovery where the journal-restricted API route is available. Add PubMed for biomedical topics and Scholar only when its supplementary role is useful. arXiv remains verification-only under active journal filtering. Honor a caller's explicit provider restrictions. Explain omitted relevant providers.
+Attempt OpenAlex, Crossref, and Semantic Scholar for core discovery on every run. Add PubMed for biomedical topics and other relevant field-specific providers when available. Google Scholar is supplementary scholarly-index discovery only when its visible publication control can enforce the active journal rule; arXiv remains verification-only under active journal filtering. Honor a caller's explicit provider restrictions. Explain any provider that is inapplicable or cannot be used, and record the actual attempt and outcome for each applicable provider.
 
-Use authorized existing credentials or an OpenAlex key supplied through [the skill's optional-key setup](../SKILL.md#configure-the-optional-openalex-key). Do not create accounts, obtain other keys, install clients, purchase access or bypass restrictions. On 400, apply the selected reference's parameter correction. On 429 or transient failures, follow its bounded backoff. A successful response with zero results differs from an access failure. Record failed, blocked, rate-limited and authentication-required routes without calling them empty searches. A generic web-search result mentioning a database is not a database search.
+Use authorized existing credentials or an OpenAlex key supplied through [the skill's optional-key setup](../SKILL.md#configure-the-optional-openalex-key). Do not create accounts, obtain other keys, install clients, purchase access or bypass restrictions. On 400, apply the selected reference's parameter correction. On 429 or transient failures, follow its bounded backoff. A successful response with zero results differs from an access failure. Record failed, blocked, rate-limited, and authentication-required routes without calling them empty searches. Never use general web search to replace a scholarly provider or supplement its results.
 
 Preserve provider-native identifiers, dates, names, types and abstracts beside normalized fields. Keep query IDs and field provenance. Do not carry query syntax, journal IDs, filters or page controls between providers. Missing required metadata remains unresolved, not assumed to pass. Preserve the existing caller inventory and search-receipt contract.
 

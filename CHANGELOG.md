@@ -16,6 +16,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Require Research Literature to attempt core scholarly providers independently, preserve journal restrictions during provider outages, and report unavailable discovery without substituting general web search.
+
 - Extend academic guidance for Dutch, French and German with explicit citation scope, separation of review methods from included-study methods, and preservation of attribution and evidential strength during polishing. Add native-language examples and German indirect-speech guidance.
 
 - **Breaking:** Rename research depths to Quick, Normal (default) and Deep, with source targets of 8–12, 16–24 and 32–64; Quick targets 800–1,600 words and Deep 6,000 or more. Discovery now requires a current qualification receipt before final handoff.

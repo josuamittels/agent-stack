@@ -3,7 +3,7 @@ title: "Research Literature"
 ---
 # Research Literature
 
-> **Discipline** · **experimental** · **v0.13.0** · updated 2026-10-31
+> **Discipline** · **experimental** · **v0.14.0** · updated 2026-10-31
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Use Research Literature to find journal-filtered academic works across scholarly
 ## Workflow
 
 1. **Resolve the search contract.** Record the question, depth, source targets, journal rules and other inclusion criteria. Preserve each supplied paper, citation or author under a request ID.
-2. **Search eligible databases.** Use documented journal-restricted queries in OpenAlex, Crossref, Semantic Scholar or PubMed as coverage and access permit. Use publication-filtered Google Scholar as a supplementary route. Providers without usable journal restrictions, including arXiv, support identity or version verification while the filter is active.
+2. **Search eligible databases.** Attempt OpenAlex, Crossref and Semantic Scholar independently with journal-restricted queries. Add PubMed for biomedical topics and other relevant field-specific databases where their controls preserve the journal rule. Continue through the remaining providers after a failure or zero results. Use publication-filtered Google Scholar as a supplementary route. Providers without usable journal restrictions, including arXiv, support identity or version verification while the filter is active.
 3. **Resolve identities and verify records.** Deduplicate confirmed identities and compare dated retrieved metadata against a second scholarly database or the primary publisher. A reachable link alone does not verify a source.
 4. **Expand references in deep mode.** Freeze qualified initial works, retrieve their available reference lists and screen overlapping references first. Expand one hop only; record unavailable lists, unresolved identities and truncation.
 5. **Apply the final qualification gate.** Check required fields, identity verification, relevance, journal eligibility, discovery annotations and supplied-input outcomes. Exclude failed or unresolved records from the qualifying count and generate the readable list from the qualified inventory.
@@ -42,6 +42,12 @@ Receive the qualified inventory, a standardized Markdown list, separate unresolv
 
 The [offline gate CLI](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/qualification-gate.md) also works independently of Research's writing workflow. Caller-requested intermediate pool handoffs defer the final count check until the combined source pool is ready.
 
+## Provider failures
+
+If a provider API fails, its own website can substitute only when visible controls preserve the active journal restriction. Otherwise, record the route as unavailable for discovery and continue with the other eligible providers. General web-search engines and their results cannot replace or supplement scholarly discovery.
+
+Distinguish a successful search with zero matches from blocked, failed, rate-limited or authentication-required requests. If all applicable routes are unavailable, the result is incomplete discovery; it does not establish that no literature exists.
+
 ## OpenAlex API key
 
 Research Literature checks `OPENALEX_API_KEY` in the process environment first, then in `skills/research-literature/references/.env`. If both are empty, choose whether to supply a key and save it for future searches or research without a key. Basic metadata searches support keyless access; some operations require a key.
@@ -50,7 +56,7 @@ To configure the file yourself, copy `.env.example` to `.env` in the skill's `re
 
 ## Version and changes
 
-Version **0.13.0**; status **experimental**. This revision adds optional OpenAlex key storage and an explicit choice to research without a key. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.14.0**; status **experimental**. This revision requires independent attempts across the core scholarly providers and preserves journal restrictions during provider outages, without substituting general web search. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

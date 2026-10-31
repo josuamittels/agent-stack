@@ -1,7 +1,7 @@
 ---
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
-version: "0.5.0"
+version: "0.6.0"
 created: "2026-10-25"
 updated: "2026-10-31"
 author:
@@ -23,7 +23,7 @@ Use this reference for routine literature searches through the OpenAlex API. Rea
 - Basic metadata requests work without a key. A free API key is required to follow cursor pagination after its first page. Follow [the skill's optional-key setup](../SKILL.md#configure-the-optional-openalex-key): check `OPENALEX_API_KEY` in the process environment and `references/.env`, then ask for a key to save or a choice to research without one when both are empty. Use the HTTP client's `api_key` parameter for authenticated requests. Redact that parameter from recorded URLs and errors; never expose the key.
 - Pass request parameters through an HTTP client's parameter map so it encodes spaces, quotes, `|`, and other reserved characters.
 
-OpenAlex also provides a website search for locating works and their OpenAlex IDs. Use the website as a fallback only when an available API route cannot reach the API. The website may not expose the API's filters, result totals, fields, or pagination; report those limits rather than inferring API behavior from the visible records. A web-search result that points to an OpenAlex page is not, by itself, a search performed in OpenAlex.
+OpenAlex also provides its own website search for locating works and OpenAlex IDs. Use it only after the API route is unavailable, and only for discovery when its visible controls can enforce the active journal restrictions. If those controls cannot preserve the restriction, mark OpenAlex unavailable for discovery; continue with Crossref, Semantic Scholar, and every other applicable scholarly provider. Never substitute a general web search or web-search results. The OpenAlex website may not expose the API's filters, result totals, fields, or pagination; report those limits rather than inferring API behavior from visible records.
 - OpenAlex returns its curated core works corpus by default. State when the `corpus` parameter was changed, because `corpus=all` includes a larger expansion set and changes result counts.
 
 ## Search modes
