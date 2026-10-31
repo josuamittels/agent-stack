@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.30.0` |
+| Version | `0.32.0` |
 | Status | `draft` |
 | Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.30.0` requires independent scholarly-provider attempts and journal-preserving outage handling without general web-search substitution. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. The stack has not been released.
 
 ## Component versions
 
@@ -19,73 +19,73 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
-| Guideline | `guidelines/aesthetics/accessibility.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/colour.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/composition.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/haptics.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/iconography.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/interaction.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/motion.md` | `0.2.0` | `experimental` |
-| Reference | `guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/coding/python.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/coding/sql.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
-| Reference | `guidelines/docs/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/git/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/languages/dutch.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/languages/english.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/languages/french.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/languages/german.md` | `0.2.0` | `experimental` |
-| Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
-| Discipline | `skills/ask-user-question/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/browse-skills/SKILL.md` | `1.1.0` | `experimental` |
-| Discipline | `skills/check-colour-contrast/SKILL.md` | `1.1.0` | `stable` |
-| Skill | `skills/compose-voice-profile/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/convert-colour/SKILL.md` | `1.1.0` | `stable` |
-| Skill | `skills/create-docs/SKILL.md` | `0.5.0` | `experimental` |
-| Reference | `skills/create-docs/references/nextra-docs.md` | `0.2.0` | `experimental` |
-| Skill | `skills/create-guidelines/SKILL.md` | `0.6.0` | `experimental` |
-| Skill | `skills/create-skill/SKILL.md` | `0.14.0` | `experimental` |
-| Discipline | `skills/mind-wandering/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/natural-writing/SKILL.md` | `0.6.0` | `experimental` |
-| Discipline | `skills/pre-mortem/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/quit-the-yap/SKILL.md` | `0.3.0` | `experimental` |
-| Discipline | `skills/release-agent-stack/SKILL.md` | `0.5.0` | `experimental` |
-| Discipline | `skills/research-literature/SKILL.md` | `0.14.0` | `experimental` |
-| Reference | `skills/research-literature/references/arxiv-docs.md` | `0.2.1` | `experimental` |
-| Reference | `skills/research-literature/references/crossref-docs.md` | `0.3.0` | `experimental` |
-| Reference | `skills/research-literature/references/databases.md` | `0.4.0` | `experimental` |
-| Reference | `skills/research-literature/references/google-scholar-search.md` | `0.2.1` | `experimental` |
-| Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
-| Reference | `skills/research-literature/references/openalex-docs.md` | `0.6.0` | `experimental` |
-| Reference | `skills/research-literature/references/pubmed-docs.md` | `0.2.1` | `experimental` |
-| Reference | `skills/research-literature/references/qualification-gate.md` | `0.1.0` | `experimental` |
-| Reference | `skills/research-literature/references/secondary-discovery.md` | `0.1.2` | `experimental` |
-| Reference | `skills/research-literature/references/semantic-scholar-docs.md` | `0.3.0` | `experimental` |
-| Skill | `skills/research/SKILL.md` | `0.13.0` | `experimental` |
-| Reference | `skills/research/references/artifacts.md` | `0.3.2` | `experimental` |
-| Reference | `skills/research/references/cli.md` | `0.3.2` | `experimental` |
-| Reference | `skills/research/references/csl/README.md` | `0.1.0` | `experimental` |
-| Reference | `skills/research/references/export.md` | `0.1.0` | `experimental` |
-| Reference | `skills/research/references/workflow.md` | `0.3.2` | `experimental` |
-| Skill | `skills/ship/SKILL.md` | `0.6.0` | `experimental` |
-| Discipline | `skills/show-me-your-work/SKILL.md` | `0.2.0` | `experimental` |
-| Router | `skills/skill-issue/SKILL.md` | `0.6.0` | `experimental` |
-| Discipline | `skills/spawn-evals/SKILL.md` | `0.9.0` | `experimental` |
-| Discipline | `skills/think-deeper/SKILL.md` | `0.2.0` | `experimental` |
-| Discipline | `skills/think-harder/SKILL.md` | `0.2.0` | `experimental` |
-| Skill | `skills/translate/SKILL.md` | `0.5.0` | `experimental` |
-| Discipline | `skills/update-changelog/SKILL.md` | `0.3.0` | `experimental` |
-| Discipline | `skills/update-map/SKILL.md` | `0.3.0` | `experimental` |
-| Discipline | `skills/update-router/SKILL.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/accessibility.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/colour.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/composition.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/haptics.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/iconography.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/interaction.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/motion.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/coding/python.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/coding/sql.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/docs/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/git/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/languages/dutch.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/languages/english.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/languages/french.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/languages/german.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
+| Discipline | `src/skills/ask-user-question/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/browse-skills/SKILL.md.tmpl` | `1.1.0` | `experimental` |
+| Discipline | `src/skills/check-colour-contrast/SKILL.md.tmpl` | `1.1.0` | `stable` |
+| Skill | `src/skills/compose-voice-profile/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/convert-colour/SKILL.md.tmpl` | `1.1.0` | `stable` |
+| Reference | `src/skills/create-docs/references/nextra-docs.md` | `0.2.0` | `experimental` |
+| Skill | `src/skills/create-docs/SKILL.md.tmpl` | `0.5.0` | `experimental` |
+| Skill | `src/skills/create-guidelines/SKILL.md.tmpl` | `0.6.0` | `experimental` |
+| Skill | `src/skills/create-skill/SKILL.md.tmpl` | `0.14.0` | `experimental` |
+| Discipline | `src/skills/mind-wandering/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/natural-writing/SKILL.md.tmpl` | `0.6.0` | `experimental` |
+| Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
+| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.5.2` | `experimental` |
+| Reference | `src/skills/research-literature/references/arxiv-docs.md` | `0.2.1` | `experimental` |
+| Reference | `src/skills/research-literature/references/crossref-docs.md` | `0.3.0` | `experimental` |
+| Reference | `src/skills/research-literature/references/databases.md` | `0.4.0` | `experimental` |
+| Reference | `src/skills/research-literature/references/google-scholar-search.md` | `0.2.1` | `experimental` |
+| Reference | `src/skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
+| Reference | `src/skills/research-literature/references/openalex-docs.md` | `0.6.1` | `experimental` |
+| Reference | `src/skills/research-literature/references/pubmed-docs.md` | `0.2.1` | `experimental` |
+| Reference | `src/skills/research-literature/references/qualification-gate.md` | `0.1.0` | `experimental` |
+| Reference | `src/skills/research-literature/references/secondary-discovery.md` | `0.1.2` | `experimental` |
+| Reference | `src/skills/research-literature/references/semantic-scholar-docs.md` | `0.3.0` | `experimental` |
+| Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `0.14.1` | `experimental` |
+| Reference | `src/skills/research/references/artifacts.md` | `0.3.2` | `experimental` |
+| Reference | `src/skills/research/references/cli.md` | `0.3.2` | `experimental` |
+| Reference | `src/skills/research/references/csl/README.md` | `0.1.0` | `experimental` |
+| Reference | `src/skills/research/references/export.md` | `0.1.0` | `experimental` |
+| Reference | `src/skills/research/references/workflow.md` | `0.3.2` | `experimental` |
+| Skill | `src/skills/research/SKILL.md.tmpl` | `0.13.0` | `experimental` |
+| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.6.1` | `experimental` |
+| Discipline | `src/skills/show-me-your-work/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Router | `src/skills/skill-issue/SKILL.md.tmpl` | `0.6.2` | `experimental` |
+| Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `0.9.1` | `experimental` |
+| Discipline | `src/skills/think-deeper/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/think-harder/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Skill | `src/skills/translate/SKILL.md.tmpl` | `0.5.0` | `experimental` |
+| Discipline | `src/skills/update-changelog/SKILL.md.tmpl` | `0.3.0` | `experimental` |
+| Discipline | `src/skills/update-map/SKILL.md.tmpl` | `0.3.0` | `experimental` |
+| Discipline | `src/skills/update-router/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 
 ## Versioning and maintenance
 
-The stack follows the repository's [versioning policy](guidelines/versioning/reference.md) and uses `MAJOR.MINOR.PATCH`. While the stack is at `0.y.z`, use patch increments for compatible corrections and minor increments for additions or breaking changes. The highest compatibility impact in a coordinated release determines the stack increment.
+The stack follows the repository's [versioning policy](src/guidelines/versioning/reference.md) and uses `MAJOR.MINOR.PATCH`. While the stack is at `0.y.z`, use patch increments for compatible corrections and minor increments for additions or breaking changes. The highest compatibility impact in a coordinated release determines the stack increment.
 
 Component versions remain independently maintained according to their own contracts. Do not bump every component just because the stack version changes. Before a coordinated release, review the changes, confirm component versions have been updated where needed, refresh this inventory from frontmatter, and verify the stack version against the release tag if one is created. Use an ISO `YYYY-MM-DD` date for a release; keep the date as `Not released` until the stack is actually released. Record detailed change history in a changelog if one is introduced.

@@ -1,0 +1,23 @@
+{
+  "name": "mento-agent-stack-build",
+  "private": true,
+  "version": "0.32.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-skills.mjs build",
+    "build:preview": "node scripts/build-skills.mjs preview",
+    "check:generated": "node scripts/build-skills.mjs check-generated",
+    "check:packages": "node scripts/build-skills.mjs check",
+    "package": "node scripts/build-skills.mjs package",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "remark-parse": "11.0.0",
+    "unified": "11.0.5",
+    "yaml": "2.8.1",
+    "fflate": "0.8.2"
+  }
+}

@@ -1,0 +1,34 @@
+---
+title: Installation & updates
+---
+
+# Installation & updates
+
+Agent Stack is draft and unpublished. Stable publication requires a stack version of at least 1.0, stable public skills, and stable required dependencies. Local previews do not promote lifecycle status.
+
+## Local preview
+
+From the repository, run `npm ci --ignore-scripts` followed by `npm run build:preview -- --skill translate`. Install from the generated absolute `dist/preview/skills` path into a disposable project with the standard skills CLI.
+
+## Stable installation
+
+After a stable release, choose one skill or the complete public set:
+
+```sh
+npx skills add josuamittels/agent-stack --skill translate -a codex
+npx skills add josuamittels/agent-stack --skill '*' -a claude-code
+```
+
+Use `-g` for user-wide availability. Each skill carries its required helper snapshots and guidelines; separately installed helpers remain independently invocable. Installation does not modify your project's agent instructions.
+
+## Updates
+
+Use `npx skills check`, `npx skills update translate`, or `npx skills update` with the appropriate installation scope. Remove a skill with `npx skills remove translate`. To obtain newly added skills, rerun the full-set installation command. Use a release-tag GitHub tree URL to pin or roll back to an existing version.
+
+## Plugins and configuration
+
+Generated distributions contain full and individual plugins for Claude Code and supported OpenAI local clients. ChatGPT workspace/plugin installation is separate from installing a Codex skill through a terminal command. Client support and workspace policy determine availability.
+
+Save configuration outside packages using `AGENT_STACK_CONFIG_DIR` and writable evaluation history using `AGENT_STACK_STATE_DIR`. Updates replace packaged files without replacing these external directories.
+
+See the [complete installation and distribution guide](https://github.com/josuamittels/agent-stack/blob/main/docs/distribution.md) and [generated candidate commands](https://github.com/josuamittels/agent-stack/blob/main/docs/installation.generated.md) for host paths, dependency lists, native plugin setup, and maintenance.

@@ -40,7 +40,7 @@ Supply a question and optionally papers, citations, authors, date ranges, work t
 
 Receive the qualified inventory, a standardized Markdown list, separate unresolved or disqualified records with reasons, and a verification receipt. The handoff records actual searches, provider provenance, eligibility decisions, supplied-input outcomes, reference coverage, count status and whether the single top-up was used. Raw retrieval records remain preserved. Verification establishes bibliographic identity; it does not establish study quality or claim support.
 
-The [offline gate CLI](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/qualification-gate.md) also works independently of Research's writing workflow. Caller-requested intermediate pool handoffs defer the final count check until the combined source pool is ready.
+The [offline gate CLI](https://github.com/josuamittels/agent-stack/blob/main/src/skills/research-literature/references/qualification-gate.md) also works independently of Research's writing workflow. Caller-requested intermediate pool handoffs defer the final count check until the combined source pool is ready.
 
 ## Provider failures
 
@@ -50,17 +50,17 @@ Distinguish a successful search with zero matches from blocked, failed, rate-lim
 
 ## OpenAlex API key
 
-Research Literature checks `OPENALEX_API_KEY` in the process environment first, then in `skills/research-literature/references/.env`. If both are empty, choose whether to supply a key and save it for future searches or research without a key. Basic metadata searches support keyless access; some operations require a key.
+Research Literature checks `OPENALEX_API_KEY` in the process environment first, then in the external `research-literature.env` under `AGENT_STACK_CONFIG_DIR`, otherwise `$XDG_CONFIG_HOME/agent-stack`, otherwise `~/.config/agent-stack`. If both are empty, choose whether to supply a key and save it for future searches or research without a key. Basic metadata searches support keyless access; some operations require a key.
 
-To configure the file yourself, copy `.env.example` to `.env` in the skill's `references/` directory if `.env` does not exist, then set `OPENALEX_API_KEY`. The skill can also save a key you supply. The local `.env` is ignored by Git; keep real keys out of the tracked template. Search receipts and diagnostic URLs redact the key.
+Save optional configuration outside the checkout and installed skill, with owner-only permissions. Keep the tracked `.env.example` blank. Existing legacy source `.env` files are preserved by migration but are no longer read automatically. Search receipts and diagnostic URLs redact the key.
 
 ## Version and changes
 
-Version **0.14.0**; status **experimental**. This revision requires independent attempts across the core scholarly providers and preserves journal restrictions during provider outages, without substituting general web search. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.14.1**; status **experimental**. This revision requires independent attempts across the core scholarly providers and preserves journal restrictions during provider outages, without substituting general web search. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
-- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/SKILL.md)
-- [Database routes and provider guides](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/databases.md)
-- [Journal selection](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/journal-selection.md)
-- [Secondary discovery records and rules](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/secondary-discovery.md)
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/research-literature/SKILL.md.tmpl)
+- [Database routes and provider guides](https://github.com/josuamittels/agent-stack/blob/main/src/skills/research-literature/references/databases.md)
+- [Journal selection](https://github.com/josuamittels/agent-stack/blob/main/src/skills/research-literature/references/journal-selection.md)
+- [Secondary discovery records and rules](https://github.com/josuamittels/agent-stack/blob/main/src/skills/research-literature/references/secondary-discovery.md)

@@ -20,6 +20,8 @@ Use Release Agent Stack through the stack’s release route to reconcile compone
 
 Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition.
 
+After this handoff, Ship rebuilds the Agent Stack and runs the final required checks before committing. Release Agent Stack prepares the state; Ship executes the build and Git delivery.
+
 ## Result
 
 Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, documentation changes and Create Docs verification results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run.
@@ -30,9 +32,9 @@ The [Skill Issue router](/capabilities/router/skill-issue) can select this disci
 
 ## Version and changes
 
-Version **0.5.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/release-agent-stack/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.5.2**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/release-agent-stack/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
-- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/release-agent-stack/SKILL.md)
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/release-agent-stack/SKILL.md.tmpl)
 - [Create Docs](/capabilities/skills/create-docs)

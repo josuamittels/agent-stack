@@ -1,0 +1,698 @@
+schema_version: 1
+repository: josuamittels/agent-stack
+runtime:
+  - runtime/paths.py
+skills:
+  ask-user-question:
+    visibility: public
+    required:
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/ask-user-question/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  browse-skills:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/browse-skills/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  check-colour-contrast:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/check-colour-contrast/scripts/check-colour-contrast.mjs
+      - skills/check-colour-contrast/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  compose-voice-profile:
+    visibility: public
+    required:
+      - ask-user-question
+      - natural-writing
+      - research
+      - spawn-evals
+      - think-deeper
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/compose-voice-profile/SKILL.md.tmpl
+      - skills/compose-voice-profile/templates/voice-profile.md
+    resources:
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
+    evaluations:
+      - compose-voice-profile
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  convert-colour:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/convert-colour/scripts/convert-colour.mjs
+      - skills/convert-colour/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  create-docs:
+    visibility: public
+    required:
+      - ask-user-question
+      - create-guidelines
+      - natural-writing
+      - spawn-evals
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/create-docs/references/nextra-docs.md
+      - skills/create-docs/references/verification-evidence.md
+      - skills/create-docs/SKILL.md.tmpl
+      - skills/create-docs/templates/nextra/.gitignore
+      - skills/create-docs/templates/nextra/app/layout.jsx
+      - skills/create-docs/templates/nextra/docs.config.js
+      - skills/create-docs/templates/nextra/mdx-components.js
+      - skills/create-docs/templates/nextra/next.config.mjs
+      - skills/create-docs/templates/nextra/package.json
+    resources:
+      - guidelines/coding/mermaid.md
+      - guidelines/docs/reference.md
+      - guidelines/languages/english.md
+    evaluations:
+      - create-docs
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  create-guidelines:
+    visibility: public
+    required:
+      - ask-user-question
+      - browse-skills
+      - create-skill
+      - natural-writing
+      - pre-mortem
+      - think-deeper
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/create-guidelines/references/repair-handoffs.md
+      - skills/create-guidelines/SKILL.md.tmpl
+      - skills/create-guidelines/templates/reference.md
+    resources:
+      - guidelines/versioning/reference.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  create-skill:
+    visibility: public
+    required:
+      - ask-user-question
+      - browse-skills
+      - create-guidelines
+      - natural-writing
+      - pre-mortem
+      - spawn-evals
+      - think-deeper
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/create-skill/references/authoring.md
+      - skills/create-skill/SKILL.md.tmpl
+      - skills/create-skill/templates/SKILL.md.tmpl
+    resources:
+      - guidelines/languages/english.md
+      - guidelines/versioning/reference.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  mind-wandering:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-deeper
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/mind-wandering/references/agent-translation-human-creativity-techniques.md
+      - skills/mind-wandering/references/analogies-and-prompts.md
+      - skills/mind-wandering/references/attention-and-mind-wandering-creativity.md
+      - skills/mind-wandering/references/changing-representations.md
+      - skills/mind-wandering/references/creative-moves.md
+      - skills/mind-wandering/references/generation-and-evaluation-research.md
+      - skills/mind-wandering/references/measuring-creativity.md
+      - skills/mind-wandering/references/research-incubation.md
+      - skills/mind-wandering/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  natural-writing:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/natural-writing/SKILL.md.tmpl
+    resources:
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  pre-mortem:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/pre-mortem/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  quit-the-yap:
+    visibility: public
+    required:
+      - ask-user-question
+      - natural-writing
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/quit-the-yap/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  release-agent-stack:
+    visibility: internal
+    required:
+      - ask-user-question
+      - create-docs
+      - ship
+      - think-harder
+      - update-map
+      - update-router
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/release-agent-stack/SKILL.md.tmpl
+    resources:
+      - guidelines/git/reference.md
+      - guidelines/versioning/reference.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  research:
+    visibility: public
+    required:
+      - ask-user-question
+      - natural-writing
+      - research-literature
+      - spawn-evals
+      - think-deeper
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/research/references/artifacts.md
+      - skills/research/references/cli.md
+      - skills/research/references/csl/apa.csl
+      - skills/research/references/csl/README.md
+      - skills/research/references/export.md
+      - skills/research/references/workflow.md
+      - skills/research/scripts/complete.py
+      - skills/research/scripts/research_common.py
+      - skills/research/scripts/research_project.py
+      - skills/research/scripts/research_references.py
+      - skills/research/scripts/research_render.py
+      - skills/research/scripts/research.py
+      - skills/research/SKILL.md.tmpl
+      - skills/research/templates/appraisal.json
+      - skills/research/templates/appraisals.json
+      - skills/research/templates/brief.json
+      - skills/research/templates/citation-candidates.json
+      - skills/research/templates/claim.json
+      - skills/research/templates/claims.json
+      - skills/research/templates/finding.json
+      - skills/research/templates/issue.json
+      - skills/research/templates/manifest.json
+      - skills/research/templates/reference.json
+      - skills/research/templates/review.json
+      - skills/research/templates/secondary-discovery.json
+      - skills/research/templates/section.md
+      - skills/research/templates/source-gate.json
+      - skills/research/templates/source.json
+      - skills/research/templates/sources.json
+      - skills/research/templates/structures.json
+    resources: []
+    evaluations:
+      - research
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Python >=3.10
+      - Pandoc for file exports
+      - host-bundled LibreOffice for PDF
+      - pypdf for PDF objective verification
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  research-literature:
+    visibility: public
+    required:
+      - ask-user-question
+      - research
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/research-literature/references/.env.example
+      - skills/research-literature/references/arxiv-docs.md
+      - skills/research-literature/references/crossref-docs.md
+      - skills/research-literature/references/databases.md
+      - skills/research-literature/references/google-scholar-search.md
+      - skills/research-literature/references/journal-selection.md
+      - skills/research-literature/references/journals.csv
+      - skills/research-literature/references/openalex-docs.md
+      - skills/research-literature/references/pubmed-docs.md
+      - skills/research-literature/references/qualification-gate.md
+      - skills/research-literature/references/secondary-discovery.md
+      - skills/research-literature/references/semantic-scholar-docs.md
+      - skills/research-literature/scripts/literature_common.py
+      - skills/research-literature/scripts/literature_gate.py
+      - skills/research-literature/scripts/literature_shared.py
+      - skills/research-literature/scripts/verify_sources.py
+      - skills/research-literature/SKILL.md.tmpl
+      - skills/research-literature/templates/contract.json
+      - skills/research-literature/templates/relevance.json
+      - skills/research-literature/templates/search-pass.json
+      - skills/research-literature/templates/search-query.json
+      - skills/research-literature/templates/verification-record.json
+      - skills/research-literature/templates/verification.json
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Python >=3.10
+      - web/API access for retrieval
+      - optional OPENALEX_API_KEY
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  ship:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - update-changelog
+    conditional:
+      - release-agent-stack
+    optional: []
+    routes: []
+    files:
+      - skills/ship/SKILL.md.tmpl
+    resources:
+      - guidelines/changelog/reference.md
+      - guidelines/git/reference.md
+      - guidelines/versioning/reference.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  show-me-your-work:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/show-me-your-work/SKILL.md.tmpl
+      - skills/show-me-your-work/templates/decision-log-template.tsv
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  skill-issue:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes:
+      - ask-user-question
+      - browse-skills
+      - check-colour-contrast
+      - compose-voice-profile
+      - convert-colour
+      - create-docs
+      - create-guidelines
+      - create-skill
+      - mind-wandering
+      - natural-writing
+      - pre-mortem
+      - quit-the-yap
+      - research
+      - research-literature
+      - ship
+      - show-me-your-work
+      - spawn-evals
+      - think-deeper
+      - think-harder
+      - translate
+      - update-changelog
+    files:
+      - skills/skill-issue/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  spawn-evals:
+    visibility: public
+    required: []
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/spawn-evals/references/package-setup.md
+      - skills/spawn-evals/references/runner.md
+      - skills/spawn-evals/scripts/checklib.py
+      - skills/spawn-evals/scripts/runner.py
+      - skills/spawn-evals/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  think-deeper:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/think-deeper/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  think-harder:
+    visibility: public
+    required:
+      - ask-user-question
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/think-harder/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  translate:
+    visibility: public
+    required:
+      - ask-user-question
+      - natural-writing
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/translate/SKILL.md.tmpl
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  update-changelog:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/update-changelog/SKILL.md.tmpl
+    resources:
+      - guidelines/changelog/reference.md
+      - guidelines/git/reference.md
+      - guidelines/versioning/reference.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  update-map:
+    visibility: internal
+    required:
+      - ask-user-question
+      - release-agent-stack
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/update-map/SKILL.md.tmpl
+    resources:
+      - guidelines/coding/mermaid.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  update-router:
+    visibility: internal
+    required:
+      - ask-user-question
+      - skill-issue
+      - think-harder
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/update-router/scripts/sections.mjs
+      - skills/update-router/SKILL.md.tmpl
+      - skills/update-router/templates/AGENTS.md
+      - skills/update-router/templates/router.md
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+project_files:
+  - VERSIONS.md
+  - AGENTS.md
+  - map.mmd
+python_packages:
+  - pypdf

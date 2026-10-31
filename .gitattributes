@@ -1,2 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep source bytes and generated package hashes consistent across checkouts.
+* text=auto eol=lf

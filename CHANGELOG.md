@@ -6,6 +6,9 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
+- Add CI package checks and a manually triggered stable-release artifact workflow. Public distribution requires a stable stack and stable dependency closures; experimental previews remain local.
+
 - Add optional OpenAlex API key storage for Research Literature, with a tracked blank environment template and a choice to supply a key or research without one.
 
 - Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
@@ -15,6 +18,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- **Breaking:** Move editable skills, guidelines, and objective packages into `src/`; edit `src/skills/*/SKILL.md.tmpl` and rebuild instead of editing generated root `skills/`. See [the migration and distribution guide](docs/distribution.md).
+- Keep credentials and evaluation history outside installed packages so updates preserve user configuration and state.
+- Require Ship to rebuild Agent Stack after metadata, discovery, and documentation updates, then check and commit generated output with its matching sources.
 
 - Require Research Literature to attempt core scholarly providers independently, preserve journal restrictions during provider outages, and report unavailable discovery without substituting general web search.
 

@@ -1,0 +1,46 @@
+name: Publish stable packages
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing stable release tag, such as v1.0.0
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  publish:
+    environment: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm ci --ignore-scripts
+      - name: Verify stable tag and release record
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: node scripts/verify-release.mjs
+      - run: npm run check:generated
+      - run: npm run check:packages
+      - run: npm test
+      - run: npm run package
+      - name: Verify artifact checksums
+        run: cd dist/release && sha256sum --check SHA256SUMS
+      - name: Attach artifacts to the existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          gh release view "$RELEASE_TAG"
+          gh release upload "$RELEASE_TAG" dist/release/archives/*.zip dist/release/agent-stack-distribution.zip dist/release/SHA256SUMS

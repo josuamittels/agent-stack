@@ -11,3 +11,17 @@ sources/*
 
 # Cross-target evaluation dispatch budgets.
 /evals/.local/
+
+# Build dependencies, generated previews, and local user state.
+/node_modules/
+/dist/
+/.local/
+/src/skills/research-literature/references/.env
+/src/evals/*/runs.jsonl
+/src/evals/*/.local/
+/src/evals/.local/
+
+# Documentation build output.
+/.next/
+/docs/.next/
+/docs/public/_pagefind/

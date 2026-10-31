@@ -3,7 +3,7 @@ title: "Ship"
 ---
 # Ship
 
-> **Skill** · **experimental** · **v0.6.0** · updated 2026-10-28
+> **Skill** · **experimental** · **v0.6.1** · updated 2026-10-28
 
 ## Purpose
 
@@ -14,6 +14,9 @@ Use Ship to prepare and deliver an authorized repository change through the targ
 1. **Check the repository release rules.** Read its contribution, check, and release instructions before choosing a delivery route.
 2. **Review the change.** Inspect the working tree and relevant checks, resolve issues in scope, and keep unrelated changes intact.
 3. **Deliver through the requested path.** Prepare the authorized commit, branch, or pull request using the repository’s conventions and report its resulting state.
+
+For Agent Stack, Ship first applies Release Agent Stack’s metadata, discovery, and documentation updates, then runs `npm run build` and the final required checks before each commit. Generated packages and installation documentation belong to the matching commit. Build failure stops delivery; this step does not promote statuses or publish artifacts.
+
 
 ## Inputs
 
@@ -29,10 +32,10 @@ The [Skill Issue router](/capabilities/router/skill-issue) selects this skill wh
 
 ## Version and changes
 
-Version **0.6.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/ship/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.6.1**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/ship/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
-- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/ship/SKILL.md)
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/ship/SKILL.md.tmpl)
 
 Garry Tan, Peter Steinberger, Git, GitHub, and GitLab.
