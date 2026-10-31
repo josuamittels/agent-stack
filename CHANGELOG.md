@@ -4,6 +4,11 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ## [Unreleased]
 
+### Changed
+
+- Promote Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts.
+- Set the coordinated stack lifecycle to experimental at 0.34.0; stable publication remains gated on a stable stack at 1.0.0 or later.
+
 ### Added
 
 - Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
@@ -18,6 +23,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- Have Release Agent Stack generate individual and full-stack preview archives, plugins, catalogs, and checksums during every ship operation; generate stable release packages when lifecycle gates permit. Keep upload and publication separate.
 
 - **Breaking:** Move editable skills, guidelines, and objective packages into `src/`; edit `src/skills/*/SKILL.md.tmpl` and rebuild instead of editing generated root `skills/`. See [the migration and distribution guide](docs/distribution.md).
 - Keep credentials and evaluation history outside installed packages so updates preserve user configuration and state.

@@ -1,27 +1,21 @@
 {
   "schema_version": 1,
-  "stack_version": "0.32.0",
+  "stack_version": "0.34.0",
   "channel": "stable",
-  "skills": [],
+  "skills": [
+    "ask-user-question",
+    "check-colour-contrast",
+    "convert-colour",
+    "natural-writing",
+    "think-deeper",
+    "think-harder",
+    "translate"
+  ],
   "blocked": {
-    "ask-user-question": [
-      "skill ask-user-question: experimental",
-      "skill think-harder: experimental"
-    ],
     "browse-skills": [
-      "skill ask-user-question: experimental",
-      "skill browse-skills: experimental",
-      "skill think-harder: experimental"
-    ],
-    "check-colour-contrast": [
-      "skill ask-user-question: experimental",
-      "skill think-harder: experimental"
+      "skill browse-skills: experimental"
     ],
     "compose-voice-profile": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource skills/research-literature/references/arxiv-docs.md: experimental",
       "resource skills/research-literature/references/crossref-docs.md: experimental",
       "resource skills/research-literature/references/databases.md: experimental",
@@ -37,106 +31,46 @@
       "resource skills/research/references/csl/README.md: experimental",
       "resource skills/research/references/export.md: experimental",
       "resource skills/research/references/workflow.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill compose-voice-profile: experimental",
-      "skill natural-writing: experimental",
-      "skill research-literature: experimental",
-      "skill research: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
-    ],
-    "convert-colour": [
-      "skill ask-user-question: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "create-docs": [
       "resource guidelines/coding/mermaid.md: experimental",
       "resource guidelines/docs/reference.md: experimental",
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource guidelines/versioning/reference.md: experimental",
       "resource skills/create-docs/references/nextra-docs.md: experimental",
-      "skill ask-user-question: experimental",
       "skill browse-skills: experimental",
       "skill create-docs: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill natural-writing: experimental",
       "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "create-guidelines": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource guidelines/versioning/reference.md: experimental",
-      "skill ask-user-question: experimental",
       "skill browse-skills: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill natural-writing: experimental",
       "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "create-skill": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource guidelines/versioning/reference.md: experimental",
-      "skill ask-user-question: experimental",
       "skill browse-skills: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill natural-writing: experimental",
       "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "mind-wandering": [
-      "skill ask-user-question: experimental",
-      "skill mind-wandering: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
-    ],
-    "natural-writing": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill natural-writing: experimental",
-      "skill think-harder: experimental"
+      "skill mind-wandering: experimental"
     ],
     "pre-mortem": [
-      "skill ask-user-question: experimental",
-      "skill pre-mortem: experimental",
-      "skill think-harder: experimental"
+      "skill pre-mortem: experimental"
     ],
     "quit-the-yap": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill natural-writing: experimental",
-      "skill quit-the-yap: experimental",
-      "skill think-harder: experimental"
+      "skill quit-the-yap: experimental"
     ],
     "research": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource skills/research-literature/references/arxiv-docs.md: experimental",
       "resource skills/research-literature/references/crossref-docs.md: experimental",
       "resource skills/research-literature/references/databases.md: experimental",
@@ -152,19 +86,9 @@
       "resource skills/research/references/csl/README.md: experimental",
       "resource skills/research/references/export.md: experimental",
       "resource skills/research/references/workflow.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill natural-writing: experimental",
-      "skill research-literature: experimental",
-      "skill research: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "research-literature": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource skills/research-literature/references/arxiv-docs.md: experimental",
       "resource skills/research-literature/references/crossref-docs.md: experimental",
       "resource skills/research-literature/references/databases.md: experimental",
@@ -180,80 +104,41 @@
       "resource skills/research/references/csl/README.md: experimental",
       "resource skills/research/references/export.md: experimental",
       "resource skills/research/references/workflow.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill natural-writing: experimental",
-      "skill research-literature: experimental",
-      "skill research: experimental",
-      "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
+      "skill spawn-evals: experimental"
     ],
     "ship": [
       "resource guidelines/changelog/reference.md: experimental",
       "resource guidelines/coding/mermaid.md: experimental",
       "resource guidelines/docs/reference.md: experimental",
       "resource guidelines/git/reference.md: experimental",
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
       "resource guidelines/versioning/reference.md: experimental",
       "resource skills/create-docs/references/nextra-docs.md: experimental",
-      "skill ask-user-question: experimental",
       "skill browse-skills: experimental",
       "skill create-docs: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill natural-writing: experimental",
       "skill pre-mortem: experimental",
       "skill release-agent-stack: experimental",
       "skill ship: experimental",
       "skill skill-issue: experimental",
       "skill spawn-evals: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental",
       "skill update-changelog: experimental",
       "skill update-map: experimental",
       "skill update-router: experimental"
     ],
     "show-me-your-work": [
-      "skill ask-user-question: experimental",
-      "skill show-me-your-work: experimental",
-      "skill think-harder: experimental"
+      "skill show-me-your-work: experimental"
     ],
     "skill-issue": [
-      "skill ask-user-question: experimental",
-      "skill skill-issue: experimental",
-      "skill think-harder: experimental"
+      "skill skill-issue: experimental"
     ],
     "spawn-evals": [
       "skill spawn-evals: experimental"
-    ],
-    "think-deeper": [
-      "skill ask-user-question: experimental",
-      "skill think-deeper: experimental",
-      "skill think-harder: experimental"
-    ],
-    "think-harder": [
-      "skill ask-user-question: experimental",
-      "skill think-harder: experimental"
-    ],
-    "translate": [
-      "resource guidelines/languages/dutch.md: experimental",
-      "resource guidelines/languages/english.md: experimental",
-      "resource guidelines/languages/french.md: experimental",
-      "resource guidelines/languages/german.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill natural-writing: experimental",
-      "skill think-harder: experimental",
-      "skill translate: experimental"
     ],
     "update-changelog": [
       "resource guidelines/changelog/reference.md: experimental",
       "resource guidelines/git/reference.md: experimental",
       "resource guidelines/versioning/reference.md: experimental",
-      "skill ask-user-question: experimental",
-      "skill think-harder: experimental",
       "skill update-changelog: experimental"
     ]
   }

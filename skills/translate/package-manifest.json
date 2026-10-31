@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "ec96d03a308d296f8d5ace8a9a077b5e872cb79d6d7a880e277d33c67be5f973",
+  "name": "translate",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.34.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "natural-writing",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "translate",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+    "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+    "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+    "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/natural-writing/SKILL.md.tmpl": "79967e9df4e5114a367ceb9c3acbc44589f987c193fa263ccee6ceeee5ba0384",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/translate/SKILL.md.tmpl": "d27aeb271b80174296ba345ea1a784c6bc5a7d4dffa608e405e5d8a8be4143fb"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/dutch.md": {
+      "sha256": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/english.md": {
+      "sha256": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/french.md": {
+      "sha256": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/german.md": {
+      "sha256": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/natural-writing/instructions.md": {
+      "sha256": "c8e91c9d1ff13c24b9bea236acd4751865e6fd277b62addb9a44704cedd37a49",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/translate/instructions.md": {
+      "sha256": "e044cb42099bec535a3709cbd329b8c4c936a288934cd34ba1d4050cb15d6892",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "89d8fd5289a18092df396faf079d574d15d274035d4cf936d494a90ad1064530",
+      "mode": 420
+    }
+  }
+}

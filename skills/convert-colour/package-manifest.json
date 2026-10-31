@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "ec96d03a308d296f8d5ace8a9a077b5e872cb79d6d7a880e277d33c67be5f973",
+  "name": "convert-colour",
+  "version": "1.1.0",
+  "status": "stable",
+  "stack_version": "0.34.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "convert-colour",
+      "version": "1.1.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/convert-colour/SKILL.md.tmpl": "31699e4167a7377fa2c19950bd77942fb73793e1c9ba16410d42ff0d4b4a69d8",
+    "src/skills/convert-colour/scripts/convert-colour.mjs": "f94149b65ef0cb53e0e11fdc4f5d56f5ed42f268611307e00b957afcdaf6f4d2",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/convert-colour/instructions.md": {
+      "sha256": "817e7a563f1bbb5b042d25bdcd28a24182b8376da37d1aa8f01f5b038b88358c",
+      "mode": 420
+    },
+    "references/_stack/skills/convert-colour/scripts/convert-colour.mjs": {
+      "sha256": "f94149b65ef0cb53e0e11fdc4f5d56f5ed42f268611307e00b957afcdaf6f4d2",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "e8b22eb6ec68c1a1485ae033b35be76ede5da9d4c1aca4b30d3ff6b53620f92c",
+      "mode": 420
+    }
+  }
+}

@@ -20,7 +20,9 @@ Use Release Agent Stack through the stack’s release route to reconcile compone
 
 Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition.
 
-After this handoff, Ship rebuilds the Agent Stack and runs the final required checks before committing. Release Agent Stack prepares the state; Ship executes the build and Git delivery.
+5. **Build the packages.** Run the stable build and full preview build to generate self-contained skills, individual and full-stack archives, native plugins, marketplace catalogs, and checksums. Stable stacks at version 1.0 or later also generate release packages. Verify checksums before handing the candidate to Ship.
+
+Ship reviews the package-build evidence and runs the final required checks before committing. Artifacts stay local until a separately authorized publication.
 
 ## Result
 
@@ -32,7 +34,7 @@ The [Skill Issue router](/capabilities/router/skill-issue) can select this disci
 
 ## Version and changes
 
-Version **0.5.2**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/release-agent-stack/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.6.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/release-agent-stack/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

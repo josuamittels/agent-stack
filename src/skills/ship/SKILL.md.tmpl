@@ -1,7 +1,7 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.6.1"
+version: "0.7.0"
 created: "2026-10-26"
 updated: "2026-10-31"
 author:
@@ -88,7 +88,9 @@ For an Agent Stack release, each planned non-empty commit is a separate stack re
 
 When the Agent Stack identity checks pass, now invoke [Release Agent Stack](../release-agent-stack/SKILL.md.tmpl) with the ordered commit plan, exact paths or hunks for each group, current release metadata, and Git state. Apply its sequential version decisions and inventory snapshot to each matching commit. Record each planned commit's resulting stack version before staging.
 
-For each planned Agent Stack commit, after its source changes, version and inventory state, map/router updates, and user documentation are settled, run `npm run build` from the confirmed repository root. This generates the eligible stable packages and installation documentation even while the stack is draft; an empty eligible catalog is valid. Review and include the resulting `skills/` and `docs/installation.generated.md` changes in that same commit group. Then run the required checks discovered in step 4, including `npm run check:generated` and `npm run check:packages`, against the rebuilt candidate before staging or committing. If a subsequent source, catalog, version, or documentation change affects generated output, rebuild and rerun affected checks before the commit. Stop before committing or pushing if the build or a required check fails or cannot run. Do not substitute `build:preview` for the stable build, run `npm run package`, change lifecycle status, or publish artifacts as part of this automatic build. Other repositories continue to use their own declared build procedure.
+For each planned Agent Stack commit, have Release Agent Stack finish its package-build step after the matching source changes, version and inventory state, map/router updates, and user documentation are settled. It runs `npm run build` and the full `npm run build:preview`, then runs `npm run package` only when stack status is `stable` and the version is at least `1.0.0`. This produces individual and full-stack ZIPs, native plugin packages, marketplace catalogs, and checksums locally. Draft and experimental stacks receive preview packages without lifecycle promotion. An empty stable catalog is valid for development builds but blocks stable release packaging.
+
+Review the returned build evidence and output paths. Include generated `skills/` and `docs/installation.generated.md` changes in the matching commit; leave ignored `dist/` artifacts local. Verify each generated distribution's `SHA256SUMS` against its archive bytes. Then run the required checks discovered in step 4, including `npm run check:generated` and `npm run check:packages`, against the packaged candidate before staging or committing. Do not rerun completed package builds when the returned evidence covers the unchanged candidate. If source, catalog, version, or documentation changes affect generated output, repeat the package-build step and affected checks before committing. Stop before committing or pushing if a required build, package, checksum, or check fails or cannot run. Building packages does not authorize an upload, tag, GitHub Release, marketplace submission, or lifecycle change. Other repositories continue to use their own declared build procedure.
 
 Use the project’s commit format. If none exists, default to `type(scope): description` with optional scope, as described in the Git guide. Report each created commit and its included paths.
 

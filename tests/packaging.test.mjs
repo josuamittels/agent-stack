@@ -10,7 +10,6 @@ import {
   ROOT,
   load,
   closure,
-  blockers,
   buildSkill,
   buildCatalog,
   validateSkill,
@@ -219,15 +218,10 @@ test("packages exclude secrets, development files and nested discovery entries",
   }
 });
 test("stable gates include transitive dependencies and do not change lifecycle status", () => {
-  assert.throws(() => releaseGate(ctx), /Publication blocked/);
-  assert.throws(() => buildSkill(ctx, "translate"), /unstable dependency/);
-  assert.deepEqual(buildCatalog(ctx).eligible, []);
-  assert.ok(
-    blockers(ctx, "check-colour-contrast").some((x) =>
-      x.includes("think-harder"),
-    ),
-  );
-  assert.equal(ctx.status, "draft");
+  assert.throws(() => releaseGate(ctx), /experimental; stable >=1\.0\.0 required/);
+  assert.doesNotThrow(() => buildSkill(ctx, "translate"));
+  assert.ok(buildCatalog(ctx).eligible.includes("translate"));
+  assert.equal(ctx.status, "experimental");
 });
 test("unknown dependencies, missing assets, escaping paths and unsafe examples fail", (t) => {
   const root = fixture(t),
@@ -398,7 +392,7 @@ test("publication succeeds only for a nonempty stable release and rejects tamper
   let v = fs.readFileSync(path.join(root, "VERSIONS.md"), "utf8");
   v = v
     .replace("| Version | `" + ctx.version + "`", "| Version | `1.0.0`")
-    .replace("| Status | `draft`", "| Status | `stable`");
+    .replace(/\| Status \| `(?:draft|experimental)`/, "| Status | `stable`");
   fs.writeFileSync(path.join(root, "VERSIONS.md"), v);
   main(["build"], root);
   main(["package"], root);

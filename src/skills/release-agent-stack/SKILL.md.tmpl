@@ -1,7 +1,7 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.5.2"
+version: "0.6.0"
 created: "2026-10-26"
 updated: "2026-10-31"
 author:
@@ -77,9 +77,30 @@ Invoke [Create Docs](../create-docs/SKILL.md.tmpl) on every release, after the f
 
 Update pages, navigation, links, or cards to match changes people will experience when using Agent Stack. Run Create Docs even when the release appears internal-only; let its source review establish whether the user-facing documentation needs a change. Keep release, contribution, and maintenance procedures out of end-user docs unless they are part of the product users operate. Return the documentation paths and Create Docs verification results to Ship. Include those edits in the matching release change group; if they require a separate planned commit, apply the per-commit version and inventory rules to it too. Do not defer the documentation pass until after the release is delivered.
 
-### 6. Return the delivery route to Ship
+### 6. Build the skill packages
 
-Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, unresolved decisions, and delivery route:
+After the matching commit candidate's source, release metadata, discovery, and documentation updates are settled, run these commands from the confirmed repository root, in order:
+
+```sh
+npm run build
+npm run build:preview
+```
+
+Run the full preview build without `--skill`, so it includes every public candidate. The stable build refreshes committed `skills/` and installation documentation; the preview build creates self-contained skill folders, individual and full-stack ZIPs, native plugin packages, marketplace catalogs, and `SHA256SUMS` under `dist/preview/distribution/`. Preview output stays local and ignored by Git. An empty stable catalog does not prevent preview packaging.
+
+When stack status is `stable` and its version is at least `1.0.0`, also run:
+
+```sh
+npm run package
+```
+
+This creates the eligible stable distribution under `dist/release/`. Preserve its stable-dependency, freshness, and nonempty-catalog gates. Draft, experimental, and deprecated stacks receive local preview artifacts without running stable release packaging or changing lifecycle status.
+
+Verify every checksum entry in each distribution produced by this step against the actual archive bytes. Record the exact commands, results, candidate version, preview and release output paths, and archive counts. Stop and return the failure to Ship if any required build, package, or checksum verification fails or is unavailable. Repeat this step if subsequent candidate changes affect generated output. Never upload, tag, publish, or create a Git commit as part of package generation.
+
+### 7. Return the delivery route to Ship
+
+Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, package-build commands and outcomes, output paths and checksum verification, unresolved decisions, and delivery route:
 
 Apply the component-status gate in step 3 before any push, including when the stack-level route permits a push. A draft component explicitly included in a requested shipment must be promoted to `experimental`; an unclear inclusion decision is a question for the user, not an assumption.
 
@@ -92,8 +113,8 @@ Treat any unknown or unsupported status as a blocker. Do not derive lifecycle st
 
 ## Output
 
-Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run. Hand the final per-commit source, metadata, discovery, and documentation state back to Ship before its mandatory `npm run build` and final checks. Ship owns executing the build and reviewing generated output; this discipline must not claim those checks passed before Ship runs them.
+Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run. Return the completed package-build evidence with the final per-commit candidate to Ship. Ship reviews generated output and executes the final required checks before committing; report package generation separately from those pending checks.
 
 ## Distribution readiness
 
-The build catalog is `src/catalog.yaml`. Public packages require stable skill and required/conditional dependency closures, including versioned guidance. `npm run package` additionally requires stack status stable at version 1.0 or later and a nonempty public catalog. Draft and experimental work may be previewed locally under `dist/preview/` without promotion. Publication, tags, and marketplace submission remain separately authorized actions. Generated copies are not independent version inventory entries.
+The build catalog is `src/catalog.yaml`. Public packages require stable skill and required/conditional dependency closures, including versioned guidance. `npm run package` additionally requires stack status stable at version 1.0 or later and a nonempty public catalog. Every Agent Stack ship operation builds full local preview packages under `dist/preview/`; eligible stable operations additionally build `dist/release/`. Neither operation publishes the packages or promotes lifecycle status. Publication, tags, and marketplace submission remain separately authorized actions. Generated copies are not independent version inventory entries.

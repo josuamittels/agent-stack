@@ -1,7 +1,7 @@
 ---
 name: "german-best-practices"
 description: "Comprehensive conventions and examples for clear, idiomatic, natural German prose across general, academic, technical, direct, article, and narrative writing."
-version: "0.2.0"
+version: "1.0.0"
 created: "2026-10-24"
 updated: "2026-10-31"
 author:
@@ -45,7 +45,7 @@ references:
   - "Marcus Fabius Quintilianus"
   - "Marcus Tullius Cicero"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # German Prose Writing – Best Practices

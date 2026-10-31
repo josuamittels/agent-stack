@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.32.0` |
-| Status | `draft` |
+| Version | `0.34.0` |
+| Status | `experimental` |
 | Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. The stack has not been released.
 
 ## Component versions
 
@@ -36,26 +36,26 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/git/reference.md` | `0.1.0` | `experimental` |
-| Reference | `src/guidelines/languages/dutch.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/languages/english.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/languages/french.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/languages/german.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/languages/dutch.md` | `1.0.0` | `stable` |
+| Reference | `src/guidelines/languages/english.md` | `1.0.0` | `stable` |
+| Reference | `src/guidelines/languages/french.md` | `1.0.0` | `stable` |
+| Reference | `src/guidelines/languages/german.md` | `1.0.0` | `stable` |
 | Reference | `src/guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
-| Discipline | `src/skills/ask-user-question/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Discipline | `src/skills/ask-user-question/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/browse-skills/SKILL.md.tmpl` | `1.1.0` | `experimental` |
 | Discipline | `src/skills/check-colour-contrast/SKILL.md.tmpl` | `1.1.0` | `stable` |
-| Skill | `src/skills/compose-voice-profile/SKILL.md.tmpl` | `0.2.0` | `experimental` |
+| Skill | `src/skills/compose-voice-profile/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/convert-colour/SKILL.md.tmpl` | `1.1.0` | `stable` |
 | Reference | `src/skills/create-docs/references/nextra-docs.md` | `0.2.0` | `experimental` |
 | Skill | `src/skills/create-docs/SKILL.md.tmpl` | `0.5.0` | `experimental` |
 | Skill | `src/skills/create-guidelines/SKILL.md.tmpl` | `0.6.0` | `experimental` |
 | Skill | `src/skills/create-skill/SKILL.md.tmpl` | `0.14.0` | `experimental` |
 | Discipline | `src/skills/mind-wandering/SKILL.md.tmpl` | `0.2.0` | `experimental` |
-| Discipline | `src/skills/natural-writing/SKILL.md.tmpl` | `0.6.0` | `experimental` |
+| Discipline | `src/skills/natural-writing/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
-| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.5.2` | `experimental` |
+| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.6.0` | `experimental` |
 | Reference | `src/skills/research-literature/references/arxiv-docs.md` | `0.2.1` | `experimental` |
 | Reference | `src/skills/research-literature/references/crossref-docs.md` | `0.3.0` | `experimental` |
 | Reference | `src/skills/research-literature/references/databases.md` | `0.4.0` | `experimental` |
@@ -66,20 +66,20 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/skills/research-literature/references/qualification-gate.md` | `0.1.0` | `experimental` |
 | Reference | `src/skills/research-literature/references/secondary-discovery.md` | `0.1.2` | `experimental` |
 | Reference | `src/skills/research-literature/references/semantic-scholar-docs.md` | `0.3.0` | `experimental` |
-| Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `0.14.1` | `experimental` |
+| Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Reference | `src/skills/research/references/artifacts.md` | `0.3.2` | `experimental` |
 | Reference | `src/skills/research/references/cli.md` | `0.3.2` | `experimental` |
 | Reference | `src/skills/research/references/csl/README.md` | `0.1.0` | `experimental` |
 | Reference | `src/skills/research/references/export.md` | `0.1.0` | `experimental` |
 | Reference | `src/skills/research/references/workflow.md` | `0.3.2` | `experimental` |
-| Skill | `src/skills/research/SKILL.md.tmpl` | `0.13.0` | `experimental` |
-| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.6.1` | `experimental` |
+| Skill | `src/skills/research/SKILL.md.tmpl` | `1.0.0` | `stable` |
+| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.7.0` | `experimental` |
 | Discipline | `src/skills/show-me-your-work/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Router | `src/skills/skill-issue/SKILL.md.tmpl` | `0.6.2` | `experimental` |
 | Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `0.9.1` | `experimental` |
-| Discipline | `src/skills/think-deeper/SKILL.md.tmpl` | `0.2.0` | `experimental` |
-| Discipline | `src/skills/think-harder/SKILL.md.tmpl` | `0.2.0` | `experimental` |
-| Skill | `src/skills/translate/SKILL.md.tmpl` | `0.5.0` | `experimental` |
+| Discipline | `src/skills/think-deeper/SKILL.md.tmpl` | `1.0.0` | `stable` |
+| Discipline | `src/skills/think-harder/SKILL.md.tmpl` | `1.0.0` | `stable` |
+| Skill | `src/skills/translate/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/update-changelog/SKILL.md.tmpl` | `0.3.0` | `experimental` |
 | Discipline | `src/skills/update-map/SKILL.md.tmpl` | `0.3.0` | `experimental` |
 | Discipline | `src/skills/update-router/SKILL.md.tmpl` | `0.2.0` | `experimental` |

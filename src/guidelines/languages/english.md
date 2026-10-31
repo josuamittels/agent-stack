@@ -1,9 +1,9 @@
 ---
 name: "english-best-practices"
 description: "Reference for English-language writing conventions and examples. Consult when drafting or editing English content."
-version: "0.2.0"
+version: "1.0.0"
 created: "2026-10-24"
-updated: "2026-10-30"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -29,7 +29,7 @@ references:
   - "Quintilian"
   - "Cicero"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # English Prose Writing – Best Practices

@@ -11,7 +11,7 @@ Use `-g` for a user-wide installation. Project scope is the default.
 
 ## ask-user-question
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Prepare, deliver, and interpret any task question for the user, including direct permission gates. Use Think Harder first only when context, evidence, or a reasonable default might resolve the gap.
 
@@ -35,7 +35,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## check-colour-contrast
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Calculate the WCAG contrast ratio for two opaque hex, RGB, or HSL colors and interpret the result.
 
@@ -59,7 +59,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## convert-colour
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Convert a color value between hex, RGB, HSL, HSV, CMYK, Lab, LCH, and Display P3 with the standalone script.
 
@@ -119,7 +119,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## natural-writing
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing.
 
@@ -227,7 +227,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## think-deeper
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Deepen a substantive, well-scoped task with professional methods, primary inputs, suitable tools, and an independent check without enlarging its goal.
 
@@ -239,7 +239,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## think-harder
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Resolve missing information and ambiguity from task context, relevant caller guidelines, evidence, and reasonable defaults.
 
@@ -251,7 +251,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## translate
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims.
 
