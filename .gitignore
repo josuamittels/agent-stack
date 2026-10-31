@@ -6,5 +6,8 @@ sources/*
 /evals/*/.local/
 **/__pycache__/
 
+# Local OpenAlex credentials; keep the blank example tracked.
+/skills/research-literature/references/.env
+
 # Cross-target evaluation dispatch budgets.
 /evals/.local/

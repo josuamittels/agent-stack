@@ -3,7 +3,7 @@ title: "Research Literature"
 ---
 # Research Literature
 
-> **Discipline** · **experimental** · **v0.12.0** · updated 2026-10-31
+> **Discipline** · **experimental** · **v0.13.0** · updated 2026-10-31
 
 ## Purpose
 
@@ -42,9 +42,15 @@ Receive the qualified inventory, a standardized Markdown list, separate unresolv
 
 The [offline gate CLI](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/qualification-gate.md) also works independently of Research's writing workflow. Caller-requested intermediate pool handoffs defer the final count check until the combined source pool is ready.
 
+## OpenAlex API key
+
+Research Literature checks `OPENALEX_API_KEY` in the process environment first, then in `skills/research-literature/references/.env`. If both are empty, choose whether to supply a key and save it for future searches or research without a key. Basic metadata searches support keyless access; some operations require a key.
+
+To configure the file yourself, copy `.env.example` to `.env` in the skill's `references/` directory if `.env` does not exist, then set `OPENALEX_API_KEY`. The skill can also save a key you supply. The local `.env` is ignored by Git; keep real keys out of the tracked template. Search receipts and diagnostic URLs redact the key.
+
 ## Version and changes
 
-Version **0.12.0**; status **experimental**. This revision adds database-specific search guides, cross-record verification, requested-input accounting, deep citation expansion and mandatory final qualification. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.13.0**; status **experimental**. This revision adds optional OpenAlex key storage and an explicit choice to research without a key. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

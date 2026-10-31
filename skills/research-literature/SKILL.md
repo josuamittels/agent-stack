@@ -1,7 +1,7 @@
 ---
 name: "research-literature"
 description: "Search journal-filtered scholarly databases, cross-reference work identities and citation links, and return source-linked records, abstracts, and a caller-ready search receipt."
-version: "0.12.0"
+version: "0.13.0"
 created: "2026-10-25"
 updated: "2026-10-31"
 author:
@@ -94,7 +94,17 @@ Build the eligible journal set once from the CSV, preserving the selected preset
 
 While the journal filter is active, a discovery route must restrict the request to eligible journals before retrieving topic results. If a provider or chosen endpoint lacks that capability, use it only to verify already discovered candidates, identifiers, versions or citation relationships. Do not replace the restriction with an unfiltered topic search followed by CSV filtering. arXiv normally serves verification and version lookup because it does not offer an equivalent publishing-journal restriction. Known overlapping backward-reference targets in deep research may use exact-record retrieval under step 6's journal exception; this never permits unfiltered topic discovery. Any requested non-journal discovery requires explicit scope and suitable provider controls; do not treat it as an automatic bypass of the user's journal rule. An explicit request to disable the journal filter permits broader provider discovery.
 
-Prefer an available open API over a website. Use authorized existing credentials only where needed. When an API is unavailable, a provider website may substitute only if its visible controls can preserve the required restrictions. A blocked provider does not stop useful work through other eligible providers. Record successful zero results separately from failed, blocked, rate-limited or authentication-required routes. Do not install clients, obtain credentials, purchase access or bypass restrictions.
+Prefer an available open API over a website. Use authorized existing credentials or an OpenAlex key supplied through the setup below. When an API is unavailable, a provider website may substitute only if its visible controls can preserve the required restrictions. A blocked provider does not stop useful work through other eligible providers. Record successful zero results separately from failed, blocked, rate-limited or authentication-required routes. Do not install clients, create accounts, obtain other credentials, purchase access or bypass restrictions.
+
+#### Configure the optional OpenAlex key
+
+Before the first OpenAlex request, check `OPENALEX_API_KEY` in the process environment, then in this skill's `references/.env`. Use the first nonempty value after trimming surrounding whitespace and optional matching quotes. Resolve these paths relative to this skill, not the caller's working directory. Read the file as environment data; do not execute or source it as shell code.
+
+If neither location supplies a key, use [Ask User Question](../ask-user-question/SKILL.md) to offer two choices: provide an OpenAlex API key and save it locally for future searches, or research without a key. Explain that basic metadata searches work without one, while some operations require authentication. The user may enter the key directly in `references/.env` instead of sending it in chat. Wait for the choice before OpenAlex retrieval; continue independent provider work while waiting. Do not infer a choice from silence. Reuse an explicit keyless choice across staged calls in the same research task. If no user interaction is possible, report the pending choice to the caller and continue other providers.
+
+When the user supplies a key for storage, create `references/.env` from [the environment template](references/.env.example) if the file is absent. Set `OPENALEX_API_KEY` in the existing file otherwise, preserving unrelated settings and comments. Save only the supplied value, with valid dotenv quoting, without shell interpolation. Restrict the file to owner read/write access where supported. Confirm that Git ignores it before writing a secret; do not modify the template with a real key. If storage is unavailable, report that the key was not saved and never claim future reuse is configured.
+
+Pass the selected key through the HTTP client's `api_key` parameter only to `https://api.openalex.org`. Omit the parameter for keyless research. Never print the key, dump the environment file, or include credentials in search receipts, saved request URLs, logs, or reports; redact `api_key` from diagnostic URLs. Existing environment keys need no local copy. Record only whether requests used a key. If authentication rejects a key, report the failure without exposing or deleting it and offer replacement or keyless research once; a key cannot repair a DNS or transport failure.
 
 #### OpenAlex filters and access
 

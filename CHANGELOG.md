@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add optional OpenAlex API key storage for Research Literature, with a tracked blank environment template and a choice to supply a key or research without one.
+
 - Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
 - Add multi-database literature discovery, supplied-paper and author accounting, deep backward-citation discovery, and a mandatory verification and journal-eligibility gate with one targeted top-up pass.
 

@@ -1,7 +1,7 @@
 ---
 name: "databases"
 description: "Provider selection, journal-restricted search procedures, and bibliographic cross-referencing for Research Literature."
-version: "0.2.2"
+version: "0.3.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -92,7 +92,7 @@ Load [Google Scholar browser search steps](google-scholar-search.md) when supple
 
 Use OpenAlex, Crossref and Semantic Scholar for core discovery where the journal-restricted API route is available. Add PubMed for biomedical topics and Scholar only when its supplementary role is useful. arXiv remains verification-only under active journal filtering. Honor a caller's explicit provider restrictions. Explain omitted relevant providers.
 
-Use authorized existing credentials only. Do not obtain keys, install clients, purchase access or bypass restrictions. On 400, apply the selected reference's parameter correction. On 429 or transient failures, follow its bounded backoff. A successful response with zero results differs from an access failure. Record failed, blocked, rate-limited and authentication-required routes without calling them empty searches. A generic web-search result mentioning a database is not a database search.
+Use authorized existing credentials or an OpenAlex key supplied through [the skill's optional-key setup](../SKILL.md#configure-the-optional-openalex-key). Do not create accounts, obtain other keys, install clients, purchase access or bypass restrictions. On 400, apply the selected reference's parameter correction. On 429 or transient failures, follow its bounded backoff. A successful response with zero results differs from an access failure. Record failed, blocked, rate-limited and authentication-required routes without calling them empty searches. A generic web-search result mentioning a database is not a database search.
 
 Preserve provider-native identifiers, dates, names, types and abstracts beside normalized fields. Keep query IDs and field provenance. Do not carry query syntax, journal IDs, filters or page controls between providers. Missing required metadata remains unresolved, not assumed to pass. Preserve the existing caller inventory and search-receipt contract.
 
