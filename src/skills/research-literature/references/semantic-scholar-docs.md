@@ -1,7 +1,7 @@
 ---
 name: "semantic-scholar-docs"
 description: "Operational reference for Semantic Scholar search syntax, venue filters, pagination, identity lookups, and citation endpoints."
-version: "0.3.0"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "Allen Institute for AI"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Semantic Scholar search and lookup reference

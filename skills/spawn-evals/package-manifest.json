@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "ec96d03a308d296f8d5ace8a9a077b5e872cb79d6d7a880e277d33c67be5f973",
+  "name": "spawn-evals",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.35.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "spawn-evals",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
+    "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
+    "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
+    "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+    "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/instructions.md": {
+      "sha256": "926c03507e38e2d91ba720992cbe22229a5c19069eea944cea51b434ee23903a",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/package-setup.md": {
+      "sha256": "d8035003e8e092d712595f0abcb10a2f2c7ac684c3869cb08d8ec93961d65406",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/runner.md": {
+      "sha256": "88f161aa98092aecff43e82cc59356f63bec8b5893a2837df67f1c9fccb8c885",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/checklib.py": {
+      "sha256": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/runner.py": {
+      "sha256": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "e3860aaf3d561a6dc29313d073b5c58f79d13456a0ebfd68be0b631e5ae5e4ad",
+      "mode": 420
+    }
+  }
+}

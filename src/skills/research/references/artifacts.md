@@ -1,7 +1,7 @@
 ---
 name: "research-artifacts"
 description: "Required project artifacts, JSON record fields, provenance, and completion states for repeatable Research runs."
-version: "0.3.2"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -10,7 +10,7 @@ references:
   - "Federico De Ponte"
   - "Pandoc"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Research artifact contracts

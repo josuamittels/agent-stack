@@ -1,7 +1,7 @@
 ---
 name: "databases"
 description: "Provider selection, journal-restricted search procedures, and bibliographic cross-referencing for Research Literature."
-version: "0.4.0"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -15,7 +15,7 @@ references:
   - "arXiv"
   - "Google Scholar"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Literature databases and cross-reference routes

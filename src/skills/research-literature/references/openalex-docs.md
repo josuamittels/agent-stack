@@ -1,7 +1,7 @@
 ---
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
-version: "0.6.1"
+version: "1.0.0"
 created: "2026-10-25"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "OpenAlex"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # OpenAlex Search and Filter Reference

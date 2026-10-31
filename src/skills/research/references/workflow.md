@@ -1,7 +1,7 @@
 ---
 name: "research-workflow"
 description: "Fixed document structures, phase completion requirements, and Research handoff ownership."
-version: "0.3.2"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "Federico De Ponte"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Research workflow and handoffs

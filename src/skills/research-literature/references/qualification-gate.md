@@ -1,7 +1,7 @@
 ---
 name: "qualification-gate"
 description: "Mandatory final source qualification, fixed inventory/list format, independent identity observations, journal screening, and one-top-up receipts."
-version: "0.1.0"
+version: "1.0.0"
 created: "2026-10-31"
 updated: "2026-10-31"
 author:
@@ -11,7 +11,7 @@ references:
   - "Crossref"
   - "Allen Institute for AI"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Final source qualification gate

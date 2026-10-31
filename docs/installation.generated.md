@@ -47,7 +47,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## compose-voice-profile
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Compose a detailed, evidence-backed brand or author voice profile from user direction, research, guides, writing samples, visual references, and market context. Use when the user wants a reusable voice profile or tone-of-voice guide.
 
@@ -155,7 +155,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## research
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Produce source-grounded research reports and literature reviews through repeatable stages, journal-filtered discovery, academic writing, deterministic citations, and Markdown, LaTeX, PDF or Word export.
 
@@ -167,7 +167,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## research-literature
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Search journal-filtered scholarly databases, cross-reference work identities and citation links, and return source-linked records, abstracts, and a caller-ready search receipt.
 
@@ -215,7 +215,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## spawn-evals
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Prepare and run deterministic, objective checks for completed skill outputs without qualitative assessment or agent delegation.
 

@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.34.0` |
+| Version | `0.35.0` |
 | Status | `experimental` |
 | Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature dependency references to stable 1.0.0 so the three research workflows have stable dependency closures. The stack has not been released.
 
 ## Component versions
 
@@ -56,27 +56,27 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
 | Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.6.0` | `experimental` |
-| Reference | `src/skills/research-literature/references/arxiv-docs.md` | `0.2.1` | `experimental` |
-| Reference | `src/skills/research-literature/references/crossref-docs.md` | `0.3.0` | `experimental` |
-| Reference | `src/skills/research-literature/references/databases.md` | `0.4.0` | `experimental` |
-| Reference | `src/skills/research-literature/references/google-scholar-search.md` | `0.2.1` | `experimental` |
-| Reference | `src/skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
-| Reference | `src/skills/research-literature/references/openalex-docs.md` | `0.6.1` | `experimental` |
-| Reference | `src/skills/research-literature/references/pubmed-docs.md` | `0.2.1` | `experimental` |
-| Reference | `src/skills/research-literature/references/qualification-gate.md` | `0.1.0` | `experimental` |
-| Reference | `src/skills/research-literature/references/secondary-discovery.md` | `0.1.2` | `experimental` |
-| Reference | `src/skills/research-literature/references/semantic-scholar-docs.md` | `0.3.0` | `experimental` |
+| Reference | `src/skills/research-literature/references/arxiv-docs.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/crossref-docs.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/databases.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/google-scholar-search.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/journal-selection.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/openalex-docs.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/pubmed-docs.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/qualification-gate.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/secondary-discovery.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research-literature/references/semantic-scholar-docs.md` | `1.0.0` | `stable` |
 | Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `1.0.0` | `stable` |
-| Reference | `src/skills/research/references/artifacts.md` | `0.3.2` | `experimental` |
-| Reference | `src/skills/research/references/cli.md` | `0.3.2` | `experimental` |
-| Reference | `src/skills/research/references/csl/README.md` | `0.1.0` | `experimental` |
-| Reference | `src/skills/research/references/export.md` | `0.1.0` | `experimental` |
-| Reference | `src/skills/research/references/workflow.md` | `0.3.2` | `experimental` |
+| Reference | `src/skills/research/references/artifacts.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research/references/cli.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research/references/csl/README.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research/references/export.md` | `1.0.0` | `stable` |
+| Reference | `src/skills/research/references/workflow.md` | `1.0.0` | `stable` |
 | Skill | `src/skills/research/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Skill | `src/skills/ship/SKILL.md.tmpl` | `0.7.0` | `experimental` |
 | Discipline | `src/skills/show-me-your-work/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Router | `src/skills/skill-issue/SKILL.md.tmpl` | `0.6.2` | `experimental` |
-| Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `0.9.1` | `experimental` |
+| Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/think-deeper/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/think-harder/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Skill | `src/skills/translate/SKILL.md.tmpl` | `1.0.0` | `stable` |

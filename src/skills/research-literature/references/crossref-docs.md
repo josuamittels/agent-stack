@@ -1,7 +1,7 @@
 ---
 name: "crossref-docs"
 description: "Operational reference for journal-restricted Crossref searches, filters, pagination, DOI lookups, and deposited references."
-version: "0.3.0"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "Crossref"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Crossref search and lookup reference

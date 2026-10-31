@@ -1,16 +1,16 @@
 ---
 name: "research-export"
 description: "Deterministic Research export commands, portable content requirements, dependencies, and Word/PDF visual verification."
-version: "0.1.0"
+version: "1.0.0"
 created: "2026-10-30"
-updated: "2026-10-30"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Pandoc"
   - "The Document Foundation"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Research export requirements

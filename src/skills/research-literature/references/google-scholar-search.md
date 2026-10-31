@@ -1,7 +1,7 @@
 ---
 name: "google-scholar-search"
 description: "Browser reference for journal-restricted Google Scholar searches, citation checks, version links, and access limits."
-version: "0.2.1"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "Google Scholar"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Google Scholar website search reference

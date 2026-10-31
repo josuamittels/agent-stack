@@ -1,9 +1,9 @@
 ---
 name: "journal-selection"
 description: "Evidence and CSV calibration behind Research Literature's journal-influence presets."
-version: "0.2.0"
+version: "1.0.0"
 created: "2026-10-26"
-updated: "2026-10-28"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -11,7 +11,7 @@ references:
   - "Elsevier"
   - "DORA"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Journal-selection rationale

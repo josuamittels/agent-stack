@@ -1,9 +1,9 @@
 ---
 name: "research-csl-attribution"
 description: "Pinned APA 7 citation-style provenance, attribution, and license for offline Research citation rendering."
-version: "0.1.0"
+version: "1.0.0"
 created: "2026-10-30"
-updated: "2026-10-30"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -11,7 +11,7 @@ references:
   - "Brenton M. Wiernik"
   - "Andrew Dunning"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # APA 7 style attribution

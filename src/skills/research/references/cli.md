@@ -1,7 +1,7 @@
 ---
 name: "research-cli"
 description: "Offline CLI inputs, outputs, dependency checks, replacement rules, and phase validation commands for Research."
-version: "0.3.2"
+version: "1.0.0"
 created: "2026-10-30"
 updated: "2026-10-31"
 author:
@@ -9,7 +9,7 @@ author:
 references:
   - "Pandoc"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Research CLI operations

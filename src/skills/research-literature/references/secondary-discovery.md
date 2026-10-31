@@ -1,7 +1,7 @@
 ---
 name: "secondary-discovery"
 description: "Deep-only backward-reference retrieval, overlap ranking, journal exceptions, and caller handoff."
-version: "0.1.2"
+version: "1.0.0"
 created: "2026-10-31"
 updated: "2026-10-31"
 author:
@@ -12,7 +12,7 @@ references:
   - "Allen Institute for AI"
   - "National Library of Medicine"
 type: "reference"
-status: "experimental"
+status: "stable"
 ---
 
 # Deep secondary discovery

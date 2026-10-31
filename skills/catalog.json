@@ -1,12 +1,16 @@
 {
   "schema_version": 1,
-  "stack_version": "0.34.0",
+  "stack_version": "0.35.0",
   "channel": "stable",
   "skills": [
     "ask-user-question",
     "check-colour-contrast",
+    "compose-voice-profile",
     "convert-colour",
     "natural-writing",
+    "research",
+    "research-literature",
+    "spawn-evals",
     "think-deeper",
     "think-harder",
     "translate"
@@ -14,24 +18,6 @@
   "blocked": {
     "browse-skills": [
       "skill browse-skills: experimental"
-    ],
-    "compose-voice-profile": [
-      "resource skills/research-literature/references/arxiv-docs.md: experimental",
-      "resource skills/research-literature/references/crossref-docs.md: experimental",
-      "resource skills/research-literature/references/databases.md: experimental",
-      "resource skills/research-literature/references/google-scholar-search.md: experimental",
-      "resource skills/research-literature/references/journal-selection.md: experimental",
-      "resource skills/research-literature/references/openalex-docs.md: experimental",
-      "resource skills/research-literature/references/pubmed-docs.md: experimental",
-      "resource skills/research-literature/references/qualification-gate.md: experimental",
-      "resource skills/research-literature/references/secondary-discovery.md: experimental",
-      "resource skills/research-literature/references/semantic-scholar-docs.md: experimental",
-      "resource skills/research/references/artifacts.md: experimental",
-      "resource skills/research/references/cli.md: experimental",
-      "resource skills/research/references/csl/README.md: experimental",
-      "resource skills/research/references/export.md: experimental",
-      "resource skills/research/references/workflow.md: experimental",
-      "skill spawn-evals: experimental"
     ],
     "create-docs": [
       "resource guidelines/coding/mermaid.md: experimental",
@@ -42,24 +28,21 @@
       "skill create-docs: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental"
+      "skill pre-mortem: experimental"
     ],
     "create-guidelines": [
       "resource guidelines/versioning/reference.md: experimental",
       "skill browse-skills: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental"
+      "skill pre-mortem: experimental"
     ],
     "create-skill": [
       "resource guidelines/versioning/reference.md: experimental",
       "skill browse-skills: experimental",
       "skill create-guidelines: experimental",
       "skill create-skill: experimental",
-      "skill pre-mortem: experimental",
-      "skill spawn-evals: experimental"
+      "skill pre-mortem: experimental"
     ],
     "mind-wandering": [
       "skill mind-wandering: experimental"
@@ -69,42 +52,6 @@
     ],
     "quit-the-yap": [
       "skill quit-the-yap: experimental"
-    ],
-    "research": [
-      "resource skills/research-literature/references/arxiv-docs.md: experimental",
-      "resource skills/research-literature/references/crossref-docs.md: experimental",
-      "resource skills/research-literature/references/databases.md: experimental",
-      "resource skills/research-literature/references/google-scholar-search.md: experimental",
-      "resource skills/research-literature/references/journal-selection.md: experimental",
-      "resource skills/research-literature/references/openalex-docs.md: experimental",
-      "resource skills/research-literature/references/pubmed-docs.md: experimental",
-      "resource skills/research-literature/references/qualification-gate.md: experimental",
-      "resource skills/research-literature/references/secondary-discovery.md: experimental",
-      "resource skills/research-literature/references/semantic-scholar-docs.md: experimental",
-      "resource skills/research/references/artifacts.md: experimental",
-      "resource skills/research/references/cli.md: experimental",
-      "resource skills/research/references/csl/README.md: experimental",
-      "resource skills/research/references/export.md: experimental",
-      "resource skills/research/references/workflow.md: experimental",
-      "skill spawn-evals: experimental"
-    ],
-    "research-literature": [
-      "resource skills/research-literature/references/arxiv-docs.md: experimental",
-      "resource skills/research-literature/references/crossref-docs.md: experimental",
-      "resource skills/research-literature/references/databases.md: experimental",
-      "resource skills/research-literature/references/google-scholar-search.md: experimental",
-      "resource skills/research-literature/references/journal-selection.md: experimental",
-      "resource skills/research-literature/references/openalex-docs.md: experimental",
-      "resource skills/research-literature/references/pubmed-docs.md: experimental",
-      "resource skills/research-literature/references/qualification-gate.md: experimental",
-      "resource skills/research-literature/references/secondary-discovery.md: experimental",
-      "resource skills/research-literature/references/semantic-scholar-docs.md: experimental",
-      "resource skills/research/references/artifacts.md: experimental",
-      "resource skills/research/references/cli.md: experimental",
-      "resource skills/research/references/csl/README.md: experimental",
-      "resource skills/research/references/export.md: experimental",
-      "resource skills/research/references/workflow.md: experimental",
-      "skill spawn-evals: experimental"
     ],
     "ship": [
       "resource guidelines/changelog/reference.md: experimental",
@@ -121,7 +68,6 @@
       "skill release-agent-stack: experimental",
       "skill ship: experimental",
       "skill skill-issue: experimental",
-      "skill spawn-evals: experimental",
       "skill update-changelog: experimental",
       "skill update-map: experimental",
       "skill update-router: experimental"
@@ -131,9 +77,6 @@
     ],
     "skill-issue": [
       "skill skill-issue: experimental"
-    ],
-    "spawn-evals": [
-      "skill spawn-evals: experimental"
     ],
     "update-changelog": [
       "resource guidelines/changelog/reference.md: experimental",

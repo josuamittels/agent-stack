@@ -9,7 +9,7 @@ license: MIT
 metadata:
   version: 1.0.0
   status: stable
-  stack-version: 0.34.0
+  stack-version: 0.35.0
   distribution: stable
 ---
 
