@@ -4,7 +4,7 @@
   "name": "check-colour-contrast",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.35.0",
+  "stack_version": "0.36.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "e7fcc3a862a9d6622acf883489391ba86b85a8aadc995901d15a3e8b7025578e",
+      "sha256": "7cb63c1e931b3503372263069888a2c3227b745bde4d494f1f369d1c1295f380",
       "mode": 420
     }
   }

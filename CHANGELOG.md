@@ -6,6 +6,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Expand the README with an entrepreneur-focused overview, a catalog of current skill candidates, and local preview installation instructions.
 - Promote Spawn Evals and all 15 versioned Research and Research Literature reference dependencies to stable 1.0.0 so Compose Voice Profile, Research, and Research Literature have stable dependency closures.
 - Promote Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts.
 - Set the coordinated stack lifecycle to experimental at 0.34.0; stable publication remains gated on a stable stack at 1.0.0 or later.

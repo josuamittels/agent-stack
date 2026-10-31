@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.35.0` |
+| Version | `0.36.0` |
 | Status | `experimental` |
 | Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature dependency references to stable 1.0.0 so the three research workflows have stable dependency closures. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature dependency references to stable 1.0.0 so the three research workflows have stable dependency closures. `0.36.0` reframes the root README for entrepreneurs, documents the current candidate catalog, and explains local preview installation and stack structure. The stack has not been released.
 
 ## Component versions
 

@@ -4,7 +4,7 @@
   "name": "ask-user-question",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.35.0",
+  "stack_version": "0.36.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -41,7 +41,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "453ee8f7ff99833e17a8e0951997fedc0fd4b86ce50b3d1464f11d0f413fa98c",
+      "sha256": "a1a523eb935d6ef6cb7db97464ccd6e33aad171c239f2153831c3770f78a5925",
       "mode": 420
     }
   }

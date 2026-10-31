@@ -4,7 +4,7 @@
   "name": "natural-writing",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.35.0",
+  "stack_version": "0.36.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -71,7 +71,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "4d0597bacd698c6f51bd324dc7119405266ec426802308d4ea60a332599cca03",
+      "sha256": "bc188651706627f99f0f4681202d828b660d12d62b94e23508e74a8267e05a91",
       "mode": 420
     }
   }
