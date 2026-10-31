@@ -1,0 +1,39 @@
+{
+  "source_id": null,
+  "title": null,
+  "publication_type": null,
+  "authors": [],
+  "year": null,
+  "doi": null,
+  "journal_title": null,
+  "issns": [],
+  "article_url": null,
+  "abstract": null,
+  "provenance": [],
+  "journal_eligibility": null,
+  "verification": {
+    "status": "not_checked",
+    "records": []
+  },
+  "csl": {},
+  "discovery_level": "initial",
+  "identifiers": {},
+  "canonical_id": null,
+  "identity_evidence": [],
+  "reference_list": {
+    "status": "pending",
+    "retrievals": [],
+    "references": [],
+    "limits": []
+  },
+  "secondary_discovery": null,
+  "search_pass": "initial",
+  "relevance": {
+    "status": "pending",
+    "basis": null,
+    "reason": null,
+    "criteria_status": "pending",
+    "criteria_evidence": {}
+  },
+  "open_access_url": null
+}

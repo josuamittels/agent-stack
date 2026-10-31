@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "depth": "normal",
+  "source_target": {
+    "min": 16,
+    "max": 24,
+    "source": "skill_default"
+  },
+  "constraints": {},
+  "criteria": {},
+  "source_requests": [],
+  "search_passes": []
+}

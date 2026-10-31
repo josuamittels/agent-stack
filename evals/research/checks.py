@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 import re
 import sys
+import json
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -175,7 +176,10 @@ def _journal_type(source):
     value = source.get("publication_type")
     if not isinstance(value, str) or not value.strip():
         return None
-    return value.strip().casefold().replace("-", "_").replace(" ", "_")
+    normalized = value.strip().casefold().replace("-", "_").replace(" ", "_")
+    if source.get("journal_filter_applicable") is True or isinstance(source.get("csl"), dict) and source["csl"].get("type") == "article-journal":
+        return "review" if normalized == "review" else "journal_article"
+    return normalized
 
 
 def _title_key(value):
@@ -186,6 +190,64 @@ def _load_journal_rows():
     path = ROOT / "skills" / "research-literature" / "references" / "journals.csv"
     with path.open(encoding="utf-8-sig", newline="") as source:
         return list(csv.DictReader(source))
+
+
+def _expansion_evidence(context):
+    """Use the full frozen initial pool, never the cited-only inventory to count overlaps."""
+    project = _project_evidence(context)
+    if project is None:
+        raise ValueError("project_dir is required for citation expansion evidence")
+    sys.path.insert(0, str(ROOT / "skills/research/scripts"))
+    from research_common import load
+    from research_references import validate_expansion
+    from research_project import accept_literature_gate
+    brief = load(project / "brief.json")
+    gate = accept_literature_gate(project, brief)
+    if gate["output_paths"]["inventory"] != str((project / "sources.json").resolve()):
+        raise ValueError("Gate inventory path differs from Research's canonical pool")
+    brief = load(project / "brief.json")
+    sources = load(project / "sources.json")["sources"]
+    raw = load(project / "retrieved-sources.json")["sources"]
+    path = project / "qualified-expansion.json"
+    exemptions = validate_expansion(brief, sources, load(path) if path.exists() else None, raw_sources=raw)
+    actual = {s["source_id"]: s for s in sources}
+    for source in context.get("evidence", {}).get("sources", []):
+        if actual.get(source.get("source_id")) != source:
+            raise ValueError("Cited source differs from the current full project inventory")
+    return exemptions
+
+
+def check_literature_gate(context):
+    evidence = ["/evidence/project_dir", "/evidence/sources"]
+    project = _project_evidence(context)
+    if project is None:
+        return _result("unverified", "literature gate", "gate evidence", None,
+                       "current, handoff-ready source qualification receipt", evidence)
+    try:
+        _expansion_evidence(context)
+        from literature_common import load
+        receipt = load(project / "source-gate.json")
+        return _result("pass", "literature gate", "verified qualifying source pool",
+                       {"qualified_count": receipt["qualified_count"], "action": receipt["action"], "shortfall": receipt["shortfall"]},
+                       "qualified inventory and list match current inputs; any shortfall follows one top-up", evidence)
+    except Exception as error:
+        return _result("fail", "literature gate", "qualification/receipt consistency", str(error),
+                       "current verified, journal-compliant inventory and bounded retry history", evidence)
+
+
+def check_citation_expansion(context):
+    evidence = ["/evidence/project_dir", "/evidence/sources"]
+    if _project_evidence(context) is None:
+        return _result("unverified", "citation expansion", "project evidence", None,
+                       "full initial-pool citation graph and discovery depth", evidence)
+    try:
+        exemptions = _expansion_evidence(context)
+        return _result("pass", "citation expansion", "frozen one-hop discovery",
+                       {"overlap_exempt_source_ids": sorted(exemptions)},
+                       "deep-only expansion with traced additions and distinct initial citing works", evidence)
+    except Exception as error:
+        return _result("fail", "citation expansion", "graph consistency", str(error),
+                       "current, complete or explicitly partial citation expansion evidence", evidence)
 
 
 def check_journal_selection(context):
@@ -233,6 +295,17 @@ def check_journal_selection(context):
         issns = item.get("issns", [])
         if not isinstance(source_id, str) or not source_id:
             results.append({"status": "unverified", "source_index": index, "reason": "source_id missing"})
+            continue
+        if isinstance(item.get("secondary_discovery"), dict) and item["secondary_discovery"].get("journal_filter") == "overlap_exempt":
+            try:
+                exemption = _expansion_evidence(context).get(source_id)
+                if exemption is None:
+                    raise ValueError("No qualifying overlap exemption in frozen graph")
+                results.append({"status": "pass", "source_id": source_id,
+                                "reason": "deep backward-reference overlap exception",
+                                "citing_source_ids": exemption["citing_source_ids"]})
+            except Exception as error:
+                results.append({"status": "fail", "source_id": source_id, "reason": str(error)})
             continue
         if source_id in exceptions:
             results.append({"status": "pass", "source_id": source_id, "reason": "explicit request exception"})
@@ -321,3 +394,128 @@ def check_article_links(context):
     return _result(status, "article link reachability", "cited journal article URLs", results,
                    "all journal article and review URLs resolve with HTTP 2xx or 3xx",
                    ["/evidence/sources"])
+
+
+def _project_evidence(context):
+    """Read current helper artifacts; missing old-style invocation evidence stays unverified."""
+    value = context.get("evidence", {}).get("project_dir")
+    if not isinstance(value, str) or not value:
+        return None
+    return Path(value)
+
+
+def check_citation_inventory(context):
+    evidence = ["/evidence/project_dir", "/evidence/sources", "/outputs/report"]
+    project = _project_evidence(context)
+    if project is None:
+        return _result("unverified", "citation consistency", "project artifacts", None,
+                       "current Research project evidence", evidence)
+    sys.path.insert(0, str(ROOT / "skills/research/scripts"))
+    try:
+        from research_common import citation_ids, file_hash, load, parse_markdown, walk
+        from research_render import bibliography, citation_key
+        sources = load(project / "sources.json")["sources"]
+        receipt = load(project / "citation-receipt.json")
+        actual_keys = citation_ids(parse_markdown((project / "draft.md").read_text(encoding="utf-8")))
+        cited = context.get("evidence", {}).get("sources")
+        if not isinstance(cited, list) or not isinstance(context.get("outputs", {}).get("report"), str):
+            return _result("unverified", "citation consistency", "cited inventory/report", None,
+                           "cited source records and full report text", evidence)
+        key_map = {s["source_id"]: citation_key(s["source_id"]) for s in sources}
+        expected_ids = [s["source_id"] for s in sources if key_map[s["source_id"]] in actual_keys]
+        compiled = (project / "report.md").read_text(encoding="utf-8")
+        report_ast = parse_markdown(compiled)
+        reference_keys = [n["c"][0][0][4:] for n in walk(report_ast)
+                          if n.get("t") == "Div" and n["c"][0][0].startswith("ref-")]
+        valid = (len(sources) == len(key_map) and bool(actual_keys)
+                 and set(actual_keys) <= set(key_map.values())
+                 and receipt.get("key_map") == key_map
+                 and receipt.get("cited_keys") == actual_keys
+                 and receipt.get("cited_source_ids") == expected_ids
+                 and sorted(s["source_id"] for s in cited) == sorted(expected_ids)
+                 and len(reference_keys) == len(actual_keys) and set(reference_keys) == set(actual_keys)
+                 and receipt.get("draft_sha256") == file_hash(project / "draft.md")
+                 and receipt.get("sources_sha256") == file_hash(project / "sources.json")
+                 and receipt.get("report_sha256") == file_hash(project / "report.md")
+                 and context["outputs"]["report"] == compiled
+                 and load(project / "bibliography.json") == bibliography(sources)
+                 and load(project / "cited-sources.json") == cited)
+        return _result("pass" if valid else "fail", "citation consistency", "manuscript, bibliography and cited inventory",
+                       {"cited_keys": actual_keys, "cited_source_ids": expected_ids, "reference_keys": reference_keys},
+                       "one current bibliographic entry per cited key, matching inventory and hashes", evidence)
+    except Exception as error:
+        return _result("unverified", "citation consistency", "artifact parsing/dependency", type(error).__name__,
+                       "readable current artifacts and available Pandoc", evidence)
+
+
+def check_requested_formats(context):
+    evidence = ["/constraints/requested_formats", "/evidence/project_dir", "/evidence/exports"]
+    formats, provenance = _constraint(context, "requested_formats")
+    project = _project_evidence(context)
+    exports = context.get("evidence", {}).get("exports")
+    if project is None or provenance is None or not isinstance(formats, list) or not formats or not isinstance(exports, list):
+        return _result("unverified", "requested formats", "format constraints/conversion receipts", None,
+                       "requested_formats with provenance and current project/export evidence", evidence)
+    if any(f not in {"chat", "md", "latex", "pdf", "docx"} for f in formats):
+        return _result("fail", "requested formats", "supported formats", formats,
+                       "chat, md, latex, pdf, docx", evidence)
+    sys.path.insert(0, str(ROOT / "skills/research/scripts"))
+    results = []
+    try:
+        from research_common import file_hash, headers, load, parse_markdown, walk
+        from research_render import docx_signature
+        report = project / "report.md"
+        ast = parse_markdown(report.read_text(encoding="utf-8"))
+        counts = {kind: sum(n.get("t") == kind for n in walk(ast)) for kind in ["Table", "Math", "Image"]}
+        for fmt in formats:
+            if fmt in {"chat", "md"}:
+                results.append({"format": fmt, "status": "pass" if context.get("outputs", {}).get("report") == report.read_text(encoding="utf-8") else "fail"})
+                continue
+            found = [e for e in exports if e.get("format") == fmt]
+            if not found:
+                results.append({"format": fmt, "status": "unverified", "reason": "conversion receipt missing"})
+                continue
+            item = found[-1]
+            path = Path(item["output"])
+            if not path.is_file():
+                results.append({"format": fmt, "status": "unverified", "reason": "output inaccessible"})
+                continue
+            valid = (item.get("input_sha256") == file_hash(report)
+                     and item.get("output_sha256") == file_hash(path) and item.get("features") == counts)
+            for asset in item.get("asset_inputs", []):
+                asset_path = Path(asset["path"])
+                valid = valid and asset_path.is_file() and file_hash(asset_path) == asset["sha256"]
+            if fmt == "docx":
+                signature = docx_signature(path)
+                valid = valid and signature["tables"] >= counts["Table"] and signature["math"] >= counts["Math"]
+                valid = valid and signature["images"] >= counts["Image"]
+                valid = valid and all(h in signature["text"] for h in headers(ast))
+            elif fmt == "pdf":
+                valid = valid and path.read_bytes().startswith(b"%PDF-") and item.get("backend") == "pandoc-docx+libreoffice"
+                try:
+                    from pypdf import PdfReader
+                except ImportError:
+                    results.append({"format": fmt, "status": "unverified", "reason": "pypdf unavailable for PDF page/text inspection"})
+                    continue
+                pdf = PdfReader(path)
+                text = " ".join(" ".join((p.extract_text() or "").split()) for p in pdf.pages)
+                # Some subset fonts expose corrupt text mappings despite correct visible glyphs.
+                # Page/text presence is mechanical; layout/content fidelity still needs the recorded visual review.
+                valid = valid and bool(pdf.pages) and bool(text.strip())
+            else:
+                text = path.read_text(encoding="utf-8")
+                valid = valid and "\\begin{document}" in text and "\\end{document}" in text
+                for asset in item.get("asset_outputs", []):
+                    asset_path = Path(asset["path"])
+                    valid = valid and asset_path.is_file() and file_hash(asset_path) == asset["sha256"]
+            state = "pass" if valid else "fail"
+            if valid and fmt in {"pdf", "docx"} and not (item.get("visual_review") == "complete" and item.get("visual_review_evidence")):
+                state = "unverified"
+            results.append({"format": fmt, "status": state})
+    except Exception as error:
+        return _result("unverified", "requested formats", "artifact inspection", type(error).__name__,
+                       "readable current conversions and dependencies", evidence)
+    statuses = [r["status"] for r in results]
+    status = "fail" if "fail" in statuses else "unverified" if "unverified" in statuses else "pass"
+    return _result(status, "requested formats", "report-to-export consistency", results,
+                   "requested formats preserve current report revision and supported structures; binary layout review recorded", evidence)

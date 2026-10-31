@@ -3,37 +3,52 @@ title: "Research Literature"
 ---
 # Research Literature
 
-> **Discipline** · **experimental** · **v0.6.0** · updated 2026-10-28
+> **Discipline** · **experimental** · **v0.12.0** · updated 2026-10-31
 
 ## Purpose
 
-Use Research Literature to find academic works in OpenAlex and return source-linked records and abstracts.
+Use Research Literature to find journal-filtered academic works across scholarly databases and return verified bibliographic records, available abstracts and a consistent source list. Use [Research](/capabilities/skills/research) to appraise papers, synthesize evidence and write a report.
 
 ## Workflow
 
-1. **Frame the search.** Set the topic, search terms, inclusion rules, and requested result size.
-2. **Choose filters.** Resolve author, journal, date, work type, subject, access, and journal-selection filters to supported OpenAlex fields.
-3. **Retrieve and screen records.** Search OpenAlex, deduplicate results, and screen them against the stated criteria.
-4. **Return the evidence.** Provide source-linked records and abstracts with the search limits and selection mode visible.
+1. **Resolve the search contract.** Record the question, depth, source targets, journal rules and other inclusion criteria. Preserve each supplied paper, citation or author under a request ID.
+2. **Search eligible databases.** Use documented journal-restricted queries in OpenAlex, Crossref, Semantic Scholar or PubMed as coverage and access permit. Use publication-filtered Google Scholar as a supplementary route. Providers without usable journal restrictions, including arXiv, support identity or version verification while the filter is active.
+3. **Resolve identities and verify records.** Deduplicate confirmed identities and compare dated retrieved metadata against a second scholarly database or the primary publisher. A reachable link alone does not verify a source.
+4. **Expand references in deep mode.** Freeze qualified initial works, retrieve their available reference lists and screen overlapping references first. Expand one hop only; record unavailable lists, unresolved identities and truncation.
+5. **Apply the final qualification gate.** Check required fields, identity verification, relevance, journal eligibility, discovery annotations and supplied-input outcomes. Exclude failed or unresolved records from the qualifying count and generate the readable list from the qualified inventory.
+6. **Top up once if necessary.** If the qualified count is below the minimum, perform one targeted search pass and rerun the gate. Return the qualifying remainder with an honest shortfall if still below target. Do not relax criteria or add unhelpful works to fill a quota.
 
-## Inputs
+## Depth and source targets
 
-Use the supplied topic or question and any stated inclusion and exclusion criteria. Accept optional filters for authors, journals, publication dates or years, work types, fields, language, open access, citation count, and result size. Preserve explicit query terms and constraints.
+| Depth | Default qualified-source target | Citation expansion |
+| --- | --- | --- |
+| Quick | 8–12 | None |
+| Normal, the default | 16–24 | None |
+| Deep | 32–64 | One backward-reference round |
 
-## Result
+Aim exploration at the upper bound; the lower bound is sufficient when further searches yield no helpful qualifying work. Explicit requested counts take precedence. Discovery-pool counts and the number eventually cited in a report are separate requirements.
 
-Return a concise, source-linked list of relevant academic works with abstracts where available and DOI, OpenAlex, and open-access links. Include the exact searches, journal-selection receipt, observed result counts, retrieval mode, and screening or truncation notes. Identify the work as an OpenAlex search only when records were retrieved from its API or website. If neither route was available, state that OpenAlex discovery was not completed; do not label another provider's results as OpenAlex results.
+## Journal selection
 
-## Routing and related capabilities
+Journal selection remains independent of depth. The CSV-backed presets accept either metric at its threshold: Lenient uses article influence 1 or percentile 60; Default uses 2.5 or 80; Strict uses 5 or 90. Explicit request rules take precedence.
 
-The [Skill Issue router](/capabilities/router/skill-issue) can select this discipline for a focused task. Skills also hand off to disciplines when their workflows need a reusable method; follow the links in each skill’s Workflow section.
+In deep mode, a relevant reference cited by at least two distinct qualified initial works may bypass the journal filter. The recorded resolved citation edges must support that exception. References cited by only one initial work still need ordinary journal eligibility. Other inclusion rules remain in force. Secondary discovery level describes how a work was found, not its study type or quality. New additions and top-up results never become expansion seeds.
+
+## Inputs and results
+
+Supply a question and optionally papers, citations, authors, date ranges, work types, language, access requirements, journal constraints or result targets. Exact works receive an explicit outcome; author suggestions trigger targeted searches without silently restricting the whole search to those authors.
+
+Receive the qualified inventory, a standardized Markdown list, separate unresolved or disqualified records with reasons, and a verification receipt. The handoff records actual searches, provider provenance, eligibility decisions, supplied-input outcomes, reference coverage, count status and whether the single top-up was used. Raw retrieval records remain preserved. Verification establishes bibliographic identity; it does not establish study quality or claim support.
+
+The [offline gate CLI](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/qualification-gate.md) also works independently of Research's writing workflow. Caller-requested intermediate pool handoffs defer the final count check until the combined source pool is ready.
 
 ## Version and changes
 
-Version **0.6.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/research-literature/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.12.0**; status **experimental**. This revision adds database-specific search guides, cross-record verification, requested-input accounting, deep citation expansion and mandatory final qualification. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
 - [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/SKILL.md)
-
-OpenAlex, Clarivate, and DORA.
+- [Database routes and provider guides](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/databases.md)
+- [Journal selection](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/journal-selection.md)
+- [Secondary discovery records and rules](https://github.com/josuamittels/agent-stack/blob/main/skills/research-literature/references/secondary-discovery.md)

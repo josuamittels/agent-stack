@@ -26,7 +26,7 @@
     },
     {
       "id": "journal-selection-thresholds",
-      "description": "Each cited journal article or review qualifies under the resolved journal score thresholds, except a source explicitly exempted by the request.",
+      "description": "Each cited journal article/review qualifies under the journal rule, an explicit request exception, or a validated deep-only backward-reference overlap exception.",
       "handler": "check_journal_selection",
       "mandatory": true,
       "required_inputs": [
@@ -46,6 +46,48 @@
       "handler": "check_article_links",
       "mandatory": true,
       "required_inputs": [
+        "/evidence/sources"
+      ]
+    },
+    {
+      "id": "citation-inventory-consistency",
+      "description": "Current manuscript citation keys, compiled bibliography and supplied cited-source inventory agree exactly, with matching input/output hashes.",
+      "handler": "check_citation_inventory",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/project_dir",
+        "/evidence/sources",
+        "/outputs/report"
+      ]
+    },
+    {
+      "id": "requested-format-consistency",
+      "description": "Requested output formats correspond to the current compiled report and preserve supported document structures, with binary visual-review evidence recorded.",
+      "handler": "check_requested_formats",
+      "mandatory": true,
+      "required_inputs": [
+        "/constraints/requested_formats",
+        "/evidence/project_dir",
+        "/evidence/exports"
+      ]
+    },
+    {
+      "id": "citation-expansion-consistency",
+      "description": "Secondary discovery is deep-only and one-hop, with frozen initial-pool citation evidence and journal exceptions limited to overlaps from at least two distinct initial works. Mechanical consistency does not establish research quality.",
+      "handler": "check_citation_expansion",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/project_dir",
+        "/evidence/sources"
+      ]
+    },
+    {
+      "id": "literature-gate-consistency",
+      "description": "The discovered pool and rendered source list match a current qualification receipt, with second-record identity verification, journal compliance and at most one shortfall top-up. Discovery counts remain distinct from manuscript citation counts.",
+      "handler": "check_literature_gate",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/project_dir",
         "/evidence/sources"
       ]
     }

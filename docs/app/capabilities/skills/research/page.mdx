@@ -3,38 +3,48 @@ title: "Research"
 ---
 # Research
 
-> **Skill** · **experimental** · **v0.8.0** · updated 2026-10-28
+> **Skill** · **experimental** · **v0.13.0** · updated 2026-10-31
 
 ## Purpose
 
-Use Research to produce a source-grounded, critically appraised research report at the depth and format you request.
+Use Research to produce an appraised research report or literature review with traceable evidence, citations and repeatable working artifacts.
 
 ## Workflow
 
-1. **Set the research question and depth.** Clarify the question, audience, intended use, scope, and depth so the evidence can answer the actual decision.
-2. **Choose and document a method.** Select suitable sources, search and screening rules, and an appraisal approach; record limits and assumptions.
-3. **Find and appraise evidence.** Search, screen, deduplicate, read, and assess sources against the chosen method. Use [Research Literature](/capabilities/disciplines/research-literature) for academic record searches when useful.
-4. **Build the synthesis.** Compare findings, evidence quality, uncertainty, and disagreement before drafting conclusions.
-5. **Write and check the report.** Present a traceable answer for the requested audience and format, then verify source links and the report’s objective requirements where applicable.
+1. **Set the brief.** Record the question, scope, audience, language, depth, journal rules, citation style and requested outputs in a persistent project directory.
+2. **Discover and qualify sources.** Use [Research Literature](/capabilities/disciplines/research-literature) for scholarly discovery and verification. Account for supplied papers and authors; add planned primary or official sources before the final qualification gate. Deep research also checks references from qualified initial papers.
+3. **Appraise and structure the evidence.** Inspect sources, record findings and limitations with locators, map supporting and contrary evidence to claims, and assign sections and word budgets.
+4. **Draft the prescribed sections.** Use [Natural Writing](/capabilities/disciplines/natural-writing) with section purposes, source and claim assignments, citation keys, terminology and neighboring context. Resolve missing support before accepting prose.
+5. **Assemble, review and polish.** Assemble sections into the canonical draft, review argument and citation support, and polish academic prose while preserving evidence and qualifications. Refresh the summary and title against the finished body. Allow at most two substantive repair passes; report remaining blockers.
+6. **Compile and deliver.** Format citations with Pandoc, generate the cited-source inventory, export requested formats and complete the objective checks. Chat delivery uses the compiled Markdown without another writing pass.
 
-## Inputs
+## Choose depth and document type
 
-Use the topic or question, intended audience and use, requested deliverable or format, language, any supplied sources or constraints, and desired research depth. Ask through [ask-user-question](/capabilities/disciplines/ask-user-question) only for a missing choice that would materially change what evidence can answer the question. First use [think-harder](/capabilities/disciplines/think-harder) if context or evidence might resolve the choice; otherwise state a reasonable assumption and proceed.
+| Depth | Cited sources | Body words | Discovery |
+| --- | --- | --- | --- |
+| Quick | 8–12 | 800–1,600 | Initial searches and verification |
+| Normal, the default | 16–24 | 2,000–4,000 | Initial searches and verification |
+| Deep | 32–64 | 6,000 or more | Initial searches plus one backward-citation round |
 
-## Result
+Explicit requirements override these defaults. Source targets never justify padding or weakening eligibility. Journal selection is a separate choice and defaults to the Default preset.
 
-Return the requested report in the requested format or save it to the requested location. If neither is specified, deliver the report in the conversation. Include a concise methods note, in-text citations and a reference list, the selected depth and journal selection, and the objective evaluation result with failed or unverified checks. For a material access or search limit, identify what was inaccessible and how it affects the conclusion. Do not expose internal chain-of-thought; present the research decisions, evidence, and reasoning needed to audit the report.
+Choose **research report** for an executive summary, question and scope, search and selection methods, findings and evidence synthesis, discussion and implications, limitations and unresolved questions, conclusion, and references. Choose **literature review** for a summary, review question and scope, search and selection methods, evidence overview, thematic synthesis, disagreements and evidence gaps, interpretation and limitations, conclusion, and references. Topic-specific subsections belong inside these fixed structures.
 
-## Routing and related capabilities
+## Inputs and outputs
 
-The [Skill Issue router](/capabilities/router/skill-issue) selects this skill when its scope matches your task.
+Provide a question and optionally an audience, scope, depth, journal rules, papers, citations, authors, language, style and output formats. Supplied works receive explicit inclusion, exclusion or unresolved outcomes; author suggestions receive targeted searches. They remain subject to eligibility and verification rules.
+
+The default is a research report in chat with APA 7 citations. Request Markdown, editable LaTeX, Word or PDF when needed. Pandoc is required for citation compilation and conversion; PDF uses the documented bundled LibreOffice route through Word. Other citation styles require a local CSL file. The offline helpers make no network or model calls. Read the [CLI and dependency guide](https://github.com/josuamittels/agent-stack/blob/main/skills/research/references/cli.md) before running commands.
+
+Working artifacts persist for repeatability. Only requested outputs and relevant limitations are delivered. Bibliographic verification and mechanical checks do not establish scientific correctness; Research retains responsibility for appraisal and claim support.
 
 ## Version and changes
 
-Version **0.8.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/skills/research/SKILL.md). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.13.0**; status **experimental**. This revision formalizes staged reports, multiple export formats, supplied-source accounting, deep citation discovery and the final literature qualification gate. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [version inventory](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
 - [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/skills/research/SKILL.md)
-
-PRISMA, Cochrane, Joanna Briggs Institute, and ALLEA.
+- [Workflow contracts](https://github.com/josuamittels/agent-stack/blob/main/skills/research/references/workflow.md)
+- [Artifact fields and templates](https://github.com/josuamittels/agent-stack/blob/main/skills/research/references/artifacts.md)
+- [Export requirements and limitations](https://github.com/josuamittels/agent-stack/blob/main/skills/research/references/export.md)

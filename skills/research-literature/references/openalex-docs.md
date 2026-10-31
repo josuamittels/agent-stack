@@ -1,9 +1,9 @@
 ---
 name: "openalex-docs"
 description: "Operational reference for searching and filtering OpenAlex works and interpreting returned records."
-version: "0.2.0"
+version: "0.4.1"
 created: "2026-10-25"
-updated: "2026-10-28"
+updated: "2026-10-31"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -85,6 +85,16 @@ OpenAlex represents abstracts in `abstract_inverted_index`, a mapping from each 
 
 Use `best_oa_location` or `open_access.oa_url` to return an available open-access landing page or PDF link. Include the location's version and license when available. `content_urls` are OpenAlex-hosted download URLs and require an API key to fetch. Return these only as links when useful. This discipline does not download or read full papers.
 
+## Identity lookup and citation links
+
+For a known OpenAlex work ID, request `GET /works/<work-id>`. For a known DOI, request `GET /works` with `filter=doi:<bare-doi>` or its DOI URL. Inspect returned identifiers, title, authors, dates and locations before counting a confirmation. OpenAlex can group several DOI-bearing versions into one work, so a DOI match does not imply identical manuscript versions. Preserve the relevant location/version metadata.
+
+For backward links, retrieve the seed work with `referenced_works` included in `select` when field selection is used. That array holds OpenAlex IDs. Fetch target records individually or in batches with `filter=openalex:<work-id>|<work-id>` and `per_page=100`, within the OR and URL limits.
+
+For forward links, query `GET /works` with `filter=cites:<seed-work-id>`, adding `primary_location.source.id:<eligible-source-id>` and other inclusion constraints for discovery. Page using the same rules as topic retrieval. The returned work cites the seed, so the edge points from the returned work to the seed. A backward edge points from the seed to each referenced target.
+
+Apply journal restrictions before including singleton citation-linked candidates. The [deep secondary-round overlap exception](secondary-discovery.md) permits exact-record retrieval and inclusion of relevant targets cited by at least two distinct initial works without that restriction. It does not permit unfiltered topic searches. For singleton backward targets, intersect the known IDs with eligible source IDs in the retrieval filter when using the route for discovery. For overlapping known targets covered by that exception, use exact/batch identity retrieval instead. Keep verification-only edge checks separate. Missing or short reference lists reflect incomplete indexing and matching, not necessarily the bibliography printed in the paper. Citation counts and links do not establish support for a claim. These identity/citation instructions were checked against official documentation on 2026-10-30.
+
 ## Error handling
 
 If a request fails, inspect the HTTP status and message before changing it. For `400`, check field names, values, query encoding, and URL length. For `401` or `403`, check whether the chosen endpoint or cursor page requires authentication. For `301`, follow the redirect to the merged entity. For `404`, verify the identifier. For `429`, slow down or stop if the available budget is exhausted; do not retry in a tight loop. Retry transient `500` responses with bounded backoff.
@@ -101,6 +111,7 @@ When the failure points to an undocumented or changed parameter, open the releva
 - [Paging](https://help.openalex.org/api/paging/) — page and cursor rules, maximum page size, and key requirement for cursor continuation.
 - [Select Fields](https://help.openalex.org/api/selecting-fields/) — top-level `select` behavior and limitations.
 - [Work attributes](https://help.openalex.org/data/works/attributes/) — work fields, abstract representation, open-access locations, and full-text URLs.
+- [Citation relationships](https://help.openalex.org/data/works/citations/) — reference-list matching and coverage limits.
 - [Authorships](https://help.openalex.org/data/authorships/) — author identity and authorship-list limits.
 - [Locations](https://help.openalex.org/data/locations/) — versions and source details for work locations.
 - [Error handling](https://help.openalex.org/api/errors/) — status codes, common failures, and retry guidance.

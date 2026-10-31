@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.26.0` |
+| Version | `0.27.0` |
 | Status | `draft` |
-| Recorded | `2026-10-30` |
+| Recorded | `2026-10-31` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.26.0` lets revisions to existing skills and guidelines use one supplied source directly, skipping Browse Skills and broader source discovery. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.27.0` formalizes staged Research reports, multi-database literature discovery, verified-source qualification and deep citation expansion. The stack has not been released.
 
 ## Component versions
 
@@ -19,7 +19,6 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
-| Reference | `guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/accessibility.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/colour.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/composition.md` | `0.2.0` | `experimental` |
@@ -27,17 +26,18 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Guideline | `guidelines/aesthetics/iconography.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/interaction.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/motion.md` | `0.2.0` | `experimental` |
+| Reference | `guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
-| Reference | `guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/coding/python.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/sql.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
+| Reference | `guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/git/reference.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/languages/dutch.md` | `0.1.0` | `experimental` |
-| Guideline | `guidelines/languages/english.md` | `0.1.0` | `experimental` |
+| Guideline | `guidelines/languages/english.md` | `0.2.0` | `experimental` |
 | Guideline | `guidelines/languages/french.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/languages/german.md` | `0.1.0` | `experimental` |
 | Guideline | `guidelines/versioning/reference.md` | `0.1.0` | `experimental` |
@@ -56,10 +56,23 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `skills/pre-mortem/SKILL.md` | `0.2.0` | `experimental` |
 | Discipline | `skills/quit-the-yap/SKILL.md` | `0.3.0` | `experimental` |
 | Discipline | `skills/release-agent-stack/SKILL.md` | `0.5.0` | `experimental` |
-| Discipline | `skills/research-literature/SKILL.md` | `0.6.0` | `experimental` |
+| Discipline | `skills/research-literature/SKILL.md` | `0.12.0` | `experimental` |
+| Reference | `skills/research-literature/references/arxiv-docs.md` | `0.2.1` | `experimental` |
+| Reference | `skills/research-literature/references/crossref-docs.md` | `0.2.1` | `experimental` |
+| Reference | `skills/research-literature/references/databases.md` | `0.2.2` | `experimental` |
+| Reference | `skills/research-literature/references/google-scholar-search.md` | `0.2.1` | `experimental` |
 | Reference | `skills/research-literature/references/journal-selection.md` | `0.2.0` | `experimental` |
-| Reference | `skills/research-literature/references/openalex-docs.md` | `0.2.0` | `experimental` |
-| Skill | `skills/research/SKILL.md` | `0.8.0` | `experimental` |
+| Reference | `skills/research-literature/references/openalex-docs.md` | `0.4.1` | `experimental` |
+| Reference | `skills/research-literature/references/pubmed-docs.md` | `0.2.1` | `experimental` |
+| Reference | `skills/research-literature/references/qualification-gate.md` | `0.1.0` | `experimental` |
+| Reference | `skills/research-literature/references/secondary-discovery.md` | `0.1.2` | `experimental` |
+| Reference | `skills/research-literature/references/semantic-scholar-docs.md` | `0.2.1` | `experimental` |
+| Skill | `skills/research/SKILL.md` | `0.13.0` | `experimental` |
+| Reference | `skills/research/references/artifacts.md` | `0.3.2` | `experimental` |
+| Reference | `skills/research/references/cli.md` | `0.3.2` | `experimental` |
+| Reference | `skills/research/references/csl/README.md` | `0.1.0` | `experimental` |
+| Reference | `skills/research/references/export.md` | `0.1.0` | `experimental` |
+| Reference | `skills/research/references/workflow.md` | `0.3.2` | `experimental` |
 | Skill | `skills/ship/SKILL.md` | `0.6.0` | `experimental` |
 | Discipline | `skills/show-me-your-work/SKILL.md` | `0.2.0` | `experimental` |
 | Router | `skills/skill-issue/SKILL.md` | `0.6.0` | `experimental` |

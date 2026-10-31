@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "document_type": null,
+  "topic": null,
+  "request": null,
+  "question": null,
+  "scope": null,
+  "audience": null,
+  "field": null,
+  "language": "en",
+  "depth": "normal",
+  "citation_style": "apa",
+  "formats": [
+    "chat"
+  ],
+  "terminology": {},
+  "constraints": {},
+  "method": null,
+  "outside_check": {
+    "planned": null,
+    "observed": null
+  },
+  "assumptions": [],
+  "source_requests": []
+}

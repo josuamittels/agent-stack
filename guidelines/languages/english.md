@@ -1,13 +1,14 @@
 ---
 name: "english-best-practices"
 description: "Reference for English-language writing conventions and examples. Consult when drafting or editing English content."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-10-30"
 author:
   - "Josua Mittelstaedt"
 references:
   - "Aerospace, Security and Defence Industries Association of Europe"
+  - "Federico De Ponte"
   - "Lauren Tan"
   - "Daniel Miessler"
   - "Cheng-I Wu"
@@ -696,6 +697,8 @@ Organize a literature review around the questions, theoretical positions, findin
 
 State the claim each source contributes. Explain where findings converge, conflict, or depend on different measurements, populations, settings, or designs. Distinguish a scholar's argument from an empirical result. Group citations when they support the same proposition, and separate them when they support materially different ones.
 
+Make the scope of a citation clear when a sentence or paragraph contains several claims. A source supporting one numerical estimate does not automatically support the adjoining causal explanation or recommendation. Place the citation beside the supported proposition, or split the passage when its claims require different evidence. Preserve quotation locators and the distinction between primary and indirect attribution when combining passages.
+
 > Inventory: "One study examined attendance. Another study examined attendance. A third study discussed attendance."
 >
 > Synthesis form: "The studies agree that attendance declined, but they measure different periods. Only the longitudinal study follows the same pupils over time."
@@ -732,7 +735,7 @@ These are available forms, not mandatory outlines. Use only the sections and amo
 
 #### Methods and findings in concrete terms
 
-Describe what was actually done and observed. Specify relevant selection, recruitment, material, timing, instruments, exclusions, missing data, and analytical choices without filling unknown details with plausible conventions. Use "randomly assigned" only for actual random assignment. Do not turn an intention into a completed procedure or an observed practice into a formally approved one.
+Describe what was actually done and observed. Specify relevant selection, recruitment, material, timing, instruments, exclusions, missing data, and analytical choices without filling unknown details with plausible conventions. In a review or research report, distinguish the writer's search, appraisal and synthesis methods from the methods of included studies. Attribute a source study's recruitment, experiment or analysis to that study rather than implying the report's author performed it. Use "randomly assigned" only for actual random assignment. Do not turn an intention into a completed procedure or an observed practice into a formally approved one.
 
 Define a construct through the measure or evidence used to represent it where that distinction matters. A self-report scale of confidence does not directly measure competence, and an interview account of behavior differs from observation of that behavior. Name the distinction without dismissing a method that suits the question.
 
@@ -769,6 +772,8 @@ Place qualifications where they affect the claim. Avoid strings of "perhaps," "p
 Avoid trivial observations that merely announce the importance of the topic. Each sentence should establish a necessary fact, define a concept, explain a relation, supply evidence, or delimit the argument.
 
 Use a consistent name for a construct, measure, group, or method. Reduce unnecessary repeated phrasing without substituting a near-synonym for a defined term.
+
+When polishing a research draft, preserve the ownership and strength of every claim. Smoother transitions must not turn a cited author's interpretation into the report's observation, merge differently supported propositions, or detach a citation from its qualification. Recheck materially rewritten numbers, quotations and evidence claims against the inspected source.
 
 > Repetitive: "The findings are important. These important findings have important implications."
 >

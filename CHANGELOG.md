@@ -6,10 +6,16 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
+- Add multi-database literature discovery, supplied-paper and author accounting, deep backward-citation discovery, and a mandatory verification and journal-eligibility gate with one targeted top-up pass.
+
 - Add experimental `create-docs` to inspect repository structure, components, workflows, and states, then generate interlinked Markdown or a Nextra documentation site under `docs/`, with a required format choice and the shared documentation standard.
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- **Breaking:** Rename research depths to Quick, Normal (default) and Deep, with source targets of 8–12, 16–24 and 32–64; Quick targets 800–1,600 words and Deep 6,000 or more. Discovery now requires a current qualification receipt before final handoff.
+- Clarify academic methods and citation scope in English guidance; align objective checks, user documentation, map and routing with the staged workflow.
 
 - Use a single supplied source directly when revising an existing skill or guideline, skipping Browse Skills and broader source discovery unless requested.
 
