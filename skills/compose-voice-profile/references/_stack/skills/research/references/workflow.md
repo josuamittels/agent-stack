@@ -42,18 +42,18 @@ Use the configured report language in prose. Required top-level headings remain 
 | Discovery | Brief and Research Literature's criteria | For deep depth, freeze initial sources, retrieve reference lists, rank overlaps, screen one backward hop and record additions/limits in citation-candidates.json. Other depths do no automatic expansion. Final Literature qualification gate is handoff-ready, including after one top-up if still short. Raw records, generated qualified list and exclusions remain separate. Actual source records and search receipt retained, with one searched and explained outcome per optional `brief.source_requests` entry. Eligible requested papers enter appraisal; exclusions, unresolved author identities and access gaps stay explicit. Inadequate evidence returns to discovery or a bounded-limit report. |
 | Evidence | Retrieved sources and accessible texts | Appraisals carry inspection basis and locators; claims point to actual findings and counterevidence. Unsupported claims return to appraisal/discovery or are removed. |
 | Outline | Claims, appraisals, fixed template | Every section has a purpose, assigned sources/claims, word budget and context. Citation keys have been generated before prose uses them. |
-| Draft | Brief, section outline, evidence excerpts and keys | Natural Writing returns the assigned section with its heading intact. New source needs return to Research, never to invented citations. |
+| Draft | Brief, section outline, evidence excerpts and keys | Write returns the assigned section with its heading intact. New source needs return to Research, never to invented citations. |
 | Assembly | Manifest and complete section files | Script creates draft.md in manifest order. Structural failures return to section drafting. |
 | Review | Current canonical draft, claims and source locators | Both review templates describe actual checks and issues. Critical/major issues require repair; at most two substantive repair passes. |
-| Polish | Canonical draft, review findings, protected evidence | Natural Writing improves prose; Research rechecks material changes and refreshes summary/title. Review hashes must describe the latest draft. |
+| Polish | Canonical draft, review findings, protected evidence | Write improves prose; Research rechecks material changes and refreshes summary/title. Review hashes must describe the latest draft. |
 | Compile | Settled draft, source inventory, local style | Citation keys resolve; generated bibliography contains cited works. Script outputs are hash-linked to input revisions. |
 | Export | Compiled report and requested formats | Converter receipts plus actual files. Word/PDF require rendered page inspection. Missing tools/content-loss errors block that format, not honest delivery of available requested outputs. |
 
 Run the CLI's phase validator at these boundaries. A successful validation confirms required artifact relationships, not that research or review judgments are true. Do not manufacture a completed check to satisfy a validator.
 
-## Natural Writing handoff
+## Write handoff
 
-Supply the original question, document type, language, audience, field, citation style and depth. For each section additionally supply its fixed heading/purpose, word budget, source and claim assignments, inspected evidence with locators and limitations, citation-key map, terminology, neighboring context and unresolved restrictions. Natural Writing selects and applies the language reference, including Academic style for English. It returns prose, not new study facts or a separately evaluated artifact.
+Supply the original question, document type, language, audience, field, citation style and depth. For each section additionally supply its fixed heading/purpose, word budget, source and claim assignments, inspected evidence with locators and limitations, citation-key map, terminology, neighboring context and unresolved restrictions. Write selects and applies the language reference, including Academic style for English. It returns prose, not new study facts or a separately evaluated artifact.
 
 For polish, supply the whole canonical draft and review findings. Treat citation keys, attribution, numbers, quotations and claim qualifications as protected evidence. After changes, Research checks support and refreshes review records against the new draft hash. English prose rules remain authoritative in the English guideline instead of being duplicated here.
 

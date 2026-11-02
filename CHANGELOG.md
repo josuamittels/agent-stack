@@ -6,9 +6,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- **Breaking:** Rename the Write discipline identifier from `natural-writing` to `write`. Update direct selections, dependency declarations, and authored references to use `write`. See the [Write migration guidance](docs/app/capabilities/disciplines/write/page.mdx).
 - Expand the README with an entrepreneur-focused overview, a catalog of current skill candidates, and local preview installation instructions.
 - Promote Spawn Evals and all 15 versioned Research and Research Literature reference dependencies to stable 1.0.0 so Compose Voice Profile, Research, and Research Literature have stable dependency closures.
-- Promote Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts.
+- Promote Translate, Write, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts.
 - Set the coordinated stack lifecycle to experimental at 0.34.0; stable publication remains gated on a stable stack at 1.0.0 or later.
 
 ### Added
@@ -214,7 +215,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
-- Provide reusable workflows for natural writing, translation, skill authoring, academic research, source inspection, and portable shipping.
+- Provide reusable workflows for writing, translation, skill authoring, academic research, source inspection, and portable shipping.
 - Add shared disciplines for clarification, decision-making, pre-mortems, changelog maintenance, resource-map upkeep, research-literature discovery, and objective skill checks.
 - Establish English, Dutch, French, and German writing guidance, coding references, Git practices, Mermaid conventions, changelog standards, and versioning guidance.
 - Add the stack map, routing catalog, reusable templates, and lifecycle inventory that help maintainers discover and coordinate the stack's capabilities.

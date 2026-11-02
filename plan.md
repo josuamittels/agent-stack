@@ -32,7 +32,7 @@
 	- no comments in code
 - git-release
 	- commit naming convention,…
-- natural-writing
+- write
 	- prose text output quality, writing style, unslop,…
 	- translation/transliteration support for DE, FR, NL, ES
 - storytelling

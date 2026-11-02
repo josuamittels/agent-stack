@@ -1,9 +1,9 @@
 ---
-name: natural-writing
+name: write
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "1.0.0"
+version: "2.0.0"
 created: "2026-10-24"
-updated: "2026-10-31"
+updated: "2026-11-02"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -13,7 +13,7 @@ type: "discipline"
 status: "stable"
 ---
 
-# Natural writing
+# Write
 
 Produce clear, natural prose suited to its reader, purpose, and medium. Apply this base layer alongside specialized skills for the requested artifact. Keep detailed writing rules in the language references.
 

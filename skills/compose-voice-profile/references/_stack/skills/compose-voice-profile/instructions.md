@@ -137,7 +137,7 @@ Review the draft against the template and the original request:
 - The requested language and locale are respected.
 - No template prompts or unresolved placeholders remain.
 
-Apply [Natural Writing](../natural-writing/instructions.md) to the profile's prose while keeping this skill responsible for the analysis and template structure. For the objective evaluator, include the complete output and the absolute path to the template in `evidence.template_path`. If the profile is returned only in the conversation, write a temporary UTF-8 copy for the evaluator and remove that temporary file after the check.
+Apply [Write](../write/instructions.md) to the profile's prose while keeping this skill responsible for the analysis and template structure. For the objective evaluator, include the complete output and the absolute path to the template in `evidence.template_path`. If the profile is returned only in the conversation, write a temporary UTF-8 copy for the evaluator and remove that temporary file after the check.
 
 Return the completed Markdown in the conversation unless the user requested a file. If they specify a path, create the completed profile there without modifying the source template. Summarize the source basis and any material limits briefly outside the profile.
 

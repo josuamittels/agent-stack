@@ -70,7 +70,7 @@ skills:
     visibility: public
     required:
       - ask-user-question
-      - natural-writing
+      - write
       - research
       - spawn-evals
       - think-deeper
@@ -124,7 +124,7 @@ skills:
     required:
       - ask-user-question
       - create-guidelines
-      - natural-writing
+      - write
       - spawn-evals
       - think-harder
     conditional: []
@@ -161,7 +161,7 @@ skills:
       - ask-user-question
       - browse-skills
       - create-skill
-      - natural-writing
+      - write
       - pre-mortem
       - think-deeper
       - think-harder
@@ -190,7 +190,7 @@ skills:
       - ask-user-question
       - browse-skills
       - create-guidelines
-      - natural-writing
+      - write
       - pre-mortem
       - spawn-evals
       - think-deeper
@@ -245,7 +245,7 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
-  natural-writing:
+  write:
     visibility: public
     required:
       - ask-user-question
@@ -254,7 +254,7 @@ skills:
     optional: []
     routes: []
     files:
-      - skills/natural-writing/SKILL.md.tmpl
+      - skills/write/SKILL.md.tmpl
     resources:
       - guidelines/languages/dutch.md
       - guidelines/languages/english.md
@@ -295,7 +295,7 @@ skills:
     visibility: public
     required:
       - ask-user-question
-      - natural-writing
+      - write
       - think-harder
     conditional: []
     optional: []
@@ -344,7 +344,7 @@ skills:
     visibility: public
     required:
       - ask-user-question
-      - natural-writing
+      - write
       - research-literature
       - spawn-evals
       - think-deeper
@@ -507,7 +507,7 @@ skills:
       - create-guidelines
       - create-skill
       - mind-wandering
-      - natural-writing
+      - write
       - pre-mortem
       - quit-the-yap
       - research
@@ -600,7 +600,7 @@ skills:
     visibility: public
     required:
       - ask-user-question
-      - natural-writing
+      - write
       - think-harder
     conditional: []
     optional: []

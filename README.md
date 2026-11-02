@@ -44,7 +44,7 @@ There are **22 public-catalog candidates** today. They cover reusable ways to th
 
 | Skill | Use it to |
 | --- | --- |
-| [Natural Writing](src/skills/natural-writing/SKILL.md.tmpl) | Write or edit clear human-facing prose while preserving intent and voice. |
+| [Write](src/skills/write/SKILL.md.tmpl) | Write or edit clear human-facing prose while preserving intent and voice. |
 | [Translate](src/skills/translate/SKILL.md.tmpl) | Translate or localize supplied text with attention to natural phrasing and audience. |
 | [Compose Voice Profile](src/skills/compose-voice-profile/SKILL.md.tmpl) | Turn writing samples, research, and direction into an evidence-backed voice profile. |
 | [Convert Colour](src/skills/convert-colour/SKILL.md.tmpl) | Convert color values across common digital and print color spaces. |
@@ -146,7 +146,7 @@ To change a capability, edit its source under `src/`, update its catalog entry i
 
 ## Availability and release status
 
-Agent Stack is currently **experimental, version 0.36.0, and unpublished**. Although 22 skills are public-catalog candidates, the stack-wide release gate has not been met. The build does not promote draft skills to stable, and the source repository is not the public skills catalog.
+Agent Stack is currently **experimental, version 0.37.0, and unpublished**. Although 22 skills are public-catalog candidates, the stack-wide release gate has not been met. The build does not promote draft skills to stable, and the source repository is not the public skills catalog.
 
 Local previews are available now. Public skills.sh installs and download counts will become meaningful after publication. Some candidate skills are themselves still experimental and may be excluded from the first stable release. Check the generated [candidate catalog](docs/installation.generated.md) and [version inventory](VERSIONS.md) for current component status.
 

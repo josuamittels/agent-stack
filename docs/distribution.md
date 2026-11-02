@@ -2,7 +2,7 @@
 
 ## Current availability
 
-Agent Stack is draft and unpublished. `src/catalog.yaml` declares 22 public candidates and three internal maintenance capabilities. Public eligibility requires each candidate and its bundled dependencies and versioned guidance to be stable. A stable skill with experimental question helpers is therefore blocked too.
+Agent Stack is experimental at version 0.37.0 and unpublished. `src/catalog.yaml` declares 22 public candidates and three internal maintenance capabilities. Public eligibility requires each candidate and its bundled dependencies and versioned guidance to be stable. A stable skill with experimental question helpers is therefore blocked too.
 
 The stack itself must be stable at version 1.0 or later before release archives can be published. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
 
@@ -65,7 +65,7 @@ For an eventual stable catalog:
 npx skills add josuamittels/agent-stack --skill translate -a codex
 
 # Selected skills and independently invocable helpers
-npx skills add josuamittels/agent-stack --skill translate natural-writing ask-user-question think-harder -a codex
+npx skills add josuamittels/agent-stack --skill translate write ask-user-question think-harder -a codex
 
 # Full current set for a chosen host
 npx skills add josuamittels/agent-stack --skill '*' -a claude-code

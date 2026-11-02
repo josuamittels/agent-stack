@@ -51,9 +51,9 @@ Status: eligible stable candidate.
 
 Compose a detailed, evidence-backed brand or author voice profile from user direction, research, guides, writing samples, visual references, and market context. Use when the user wants a reusable voice profile or tone-of-voice guide.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question compose-voice-profile natural-writing research research-literature spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question compose-voice-profile research research-literature spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, natural-writing, research, research-literature, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, research, research-literature, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
@@ -75,9 +75,9 @@ Status: blocked for public release (see skills/catalog.json).
 
 Create evidence-grounded documentation in root/docs for people who use a repository's product or resources. Explain its structure, components, and supported use; do not default to contributor or maintainer manuals.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-docs create-guidelines create-skill natural-writing pre-mortem spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-docs create-guidelines create-skill pre-mortem spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, browse-skills, create-guidelines, create-skill, natural-writing, pre-mortem, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, browse-skills, create-guidelines, create-skill, pre-mortem, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -87,9 +87,9 @@ Status: blocked for public release (see skills/catalog.json).
 
 Create or revise reusable guideline documents. Use to define domain standards, conventions, tool usage, or best practices, or to repair a guideline defect found while evaluating a skill.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-guidelines create-skill natural-writing pre-mortem spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-guidelines create-skill pre-mortem spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, browse-skills, create-skill, natural-writing, pre-mortem, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, browse-skills, create-skill, pre-mortem, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -99,9 +99,9 @@ Status: blocked for public release (see skills/catalog.json).
 
 Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-guidelines create-skill natural-writing pre-mortem spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-guidelines create-skill pre-mortem spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, browse-skills, create-guidelines, natural-writing, pre-mortem, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, browse-skills, create-guidelines, pre-mortem, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -114,18 +114,6 @@ Open creative possibilities through playful association, reframing, changes of r
 `npx skills add josuamittels/agent-stack --skill ask-user-question mind-wandering think-deeper think-harder -a codex`
 
 Bundled dependencies: ask-user-question, think-deeper, think-harder.
-
-Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
-
-## natural-writing
-
-Status: eligible stable candidate.
-
-Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing.
-
-`npx skills add josuamittels/agent-stack --skill ask-user-question natural-writing think-harder -a codex`
-
-Bundled dependencies: ask-user-question, think-harder.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -147,9 +135,9 @@ Status: blocked for public release (see skills/catalog.json).
 
 Write concise, direct in-chat answers in English Absolute style while preserving the details needed for meaning and action.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question natural-writing quit-the-yap think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question quit-the-yap think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, natural-writing, think-harder.
+Bundled dependencies: ask-user-question, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -159,9 +147,9 @@ Status: eligible stable candidate.
 
 Produce source-grounded research reports and literature reviews through repeatable stages, journal-filtered discovery, academic writing, deterministic citations, and Markdown, LaTeX, PDF or Word export.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question natural-writing research research-literature spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question research research-literature spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, natural-writing, research-literature, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, research-literature, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
@@ -171,9 +159,9 @@ Status: eligible stable candidate.
 
 Search journal-filtered scholarly databases, cross-reference work identities and citation links, and return source-linked records, abstracts, and a caller-ready search receipt.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question natural-writing research research-literature spawn-evals think-deeper think-harder -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question research research-literature spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, natural-writing, research, spawn-evals, think-deeper, think-harder.
+Bundled dependencies: ask-user-question, research, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
@@ -183,9 +171,9 @@ Status: blocked for public release (see skills/catalog.json).
 
 Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-docs create-guidelines create-skill natural-writing pre-mortem ship skill-issue spawn-evals think-deeper think-harder update-changelog -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question browse-skills create-docs create-guidelines create-skill pre-mortem ship skill-issue spawn-evals think-deeper think-harder update-changelog write -a codex`
 
-Bundled dependencies: ask-user-question, browse-skills, create-docs, create-guidelines, create-skill, natural-writing, pre-mortem, release-agent-stack, skill-issue, spawn-evals, think-deeper, think-harder, update-changelog, update-map, update-router.
+Bundled dependencies: ask-user-question, browse-skills, create-docs, create-guidelines, create-skill, pre-mortem, release-agent-stack, skill-issue, spawn-evals, think-deeper, think-harder, update-changelog, update-map, update-router, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -255,9 +243,9 @@ Status: eligible stable candidate.
 
 Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question natural-writing think-harder translate -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question think-harder translate write -a codex`
 
-Bundled dependencies: ask-user-question, natural-writing, think-harder.
+Bundled dependencies: ask-user-question, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
@@ -268,6 +256,18 @@ Status: blocked for public release (see skills/catalog.json).
 Create, update, or prepare a repository changelog from verified changes. Use when the user asks to record changes, maintain CHANGELOG.md, or prepare a changelog release section.
 
 `npx skills add josuamittels/agent-stack --skill ask-user-question think-harder update-changelog -a codex`
+
+Bundled dependencies: ask-user-question, think-harder.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
+
+## write
+
+Status: eligible stable candidate.
+
+Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question think-harder write -a codex`
 
 Bundled dependencies: ask-user-question, think-harder.
 

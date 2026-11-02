@@ -88,7 +88,7 @@ In a skill-stack resource map, assign each skill to one meaningful domain sectio
 
 Preserve the user's grouping and level of detail. Do not introduce nested sections, split Guidelines into separate sections, or move resources into new categories merely to improve routing. Resolve layout problems within the agreed structure, and explain a remaining limitation when the renderer cannot satisfy it.
 
-Use `---` for organization or membership connections and `-->` for a directed dependency, invocation, or process transition. In resource maps, dependency arrows must be supported by explicit source references or verified handoffs. Represent a reference through an intermediary as a chain: Translate points to Natural Writing, and Natural Writing points to its language guidelines. Topical similarity does not establish a direct dependency.
+Use `---` for organization or membership connections and `-->` for a directed dependency, invocation, or process transition. In resource maps, dependency arrows must be supported by explicit source references or verified handoffs. Represent a reference through an intermediary as a chain: Translate points to Write, and Write points to its language guidelines. Topical similarity does not establish a direct dependency.
 
 Keep resource-map connections unlabeled by default. Add a label only when it supplies necessary meaning or the user requests it. In process flows, label decision branches with their outcomes, such as Yes and No. Use `-.->` for an optional or exceptional relationship only when a visible label or legend defines that meaning. Preserve requests for resources to remain unconnected.
 
@@ -148,7 +148,7 @@ flowchart LR
 
     subgraph writing_skills [Writing Skills]
         translate(["Translate"])
-        natural_writing(["Natural Writing"])
+        write(["Write"])
     end
 
     subgraph admin_skills [Admin Skills]
@@ -173,8 +173,8 @@ flowchart LR
 
     stack --- writing_skills
     stack --- admin_skills
-    translate --> natural_writing
-    natural_writing --> english
+    translate --> write
+    write --> english
     create_skill --> templates
     templates --> skill_template
     templates --> reference_template
@@ -184,7 +184,7 @@ flowchart LR
     classDef task fill:#FFE99A,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef reference fill:#EFF4FA,stroke:#002B3D,color:#002B3D,stroke-width:1.5px
     classDef section rx:8px,ry:8px
-    class stack,translate,natural_writing,create_skill entry
+    class stack,translate,write,create_skill entry
     class think_harder,ask_user_question task
     class english,templates,skill_template,reference_template,router_template reference
     class writing_skills,admin_skills,disciplines,guidelines,template_files section

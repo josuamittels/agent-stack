@@ -97,7 +97,7 @@ flowchart LR
     has_objective_criteria --> spawn_evals
     create_skill --> has_objective_criteria
     subgraph discipline_map [DISCIPLINES]
-        natural_writing["Natural Writing"]
+        write["Write"]
         spawn_evals{{Spawn Evals}}
         ask_user_question{{Ask User Question}}
         think_harder{{Think Harder}}
@@ -131,7 +131,7 @@ flowchart LR
 
     research --> research_literature
     research --> think_deeper
-    research --> natural_writing
+    research --> write
     research_literature -.- erim_journals
     research_literature -.- openalex_docs
     research_literature -.- journal_selection
@@ -211,7 +211,7 @@ flowchart LR
     compose_voice_profile -.- voice_profile_template
     update_router -.- agents_template
     update_router -.- router_template
-    admin_skills --> natural_writing
+    admin_skills --> write
     admin_skills --> research_web
     admin_skills --> browse_skills
     admin_skills --> think_deeper
@@ -221,16 +221,16 @@ flowchart LR
     update_changelog -.- versioning
     update_changelog -.- git
     docs -.- create_docs
-    create_docs --> natural_writing
+    create_docs --> write
     create_docs -.- mermaid
     create_docs -.- nextra_docs
     create_docs -.- nextra_starter
-    quit_the_yap --> natural_writing
-    writing_skills --> natural_writing
-    natural_writing -.- english
-    natural_writing -.- dutch
-    natural_writing -.- french
-    natural_writing -.- german
+    quit_the_yap --> write
+    writing_skills --> write
+    write -.- english
+    write -.- dutch
+    write -.- french
+    write -.- german
     design_shotgun -.- wireframes
     design_system -.- design_system_guide
     design_skills -.- aesthetics
@@ -274,7 +274,7 @@ flowchart LR
     class has_objective_criteria decision
     class stack entry
     class create_guidelines,research,translate,compose_voice_profile,create_skill,create_docs,ship skill
-    class natural_writing method
+    class write method
     class analyse_ads,analyse_data,audit_accessibility,audit_ux,brand_discovery,business_plan,cleanse_data,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,visualise_data,brainstorm,fresh_eyes planned
     class english,german,dutch,french,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,decision_log_template,interaction document;
     class tech_spec,product_pitch,design_system_guide planned

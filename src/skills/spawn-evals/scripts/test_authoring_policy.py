@@ -13,8 +13,8 @@ class AuthoringPolicyTests(unittest.TestCase):
         cls.package_setup = (
             ROOT / "skills/spawn-evals/references/package-setup.md"
         ).read_text(encoding="utf-8")
-        cls.natural_writing = (
-            ROOT / "skills/natural-writing/SKILL.md"
+        cls.write = (
+            ROOT / "skills/write/SKILL.md"
         ).read_text(encoding="utf-8")
         cls.translate = (ROOT / "skills/translate/SKILL.md").read_text(encoding="utf-8")
 
@@ -31,7 +31,7 @@ class AuthoringPolicyTests(unittest.TestCase):
         self.assertIn("If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill", self.template)
 
     def test_qualitative_writing_and_translation_skills_have_no_evaluator_mentions(self):
-        for skill in (self.natural_writing, self.translate):
+        for skill in (self.write, self.translate):
             lowered = skill.casefold()
             self.assertNotIn("spawn evals", lowered)
             self.assertNotIn("spawn-evals", lowered)

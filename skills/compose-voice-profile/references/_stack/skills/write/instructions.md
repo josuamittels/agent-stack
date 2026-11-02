@@ -1,9 +1,9 @@
 ---
-name: natural-writing
+name: write
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "1.0.0"
+version: "2.0.0"
 created: "2026-10-24"
-updated: "2026-10-31"
+updated: "2026-11-02"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -13,7 +13,7 @@ type: "discipline"
 status: "stable"
 ---
 
-# Natural writing
+# Write
 
 Produce clear, natural prose suited to its reader, purpose, and medium. Apply this base layer alongside specialized skills for the requested artifact. Keep detailed writing rules in the language references.
 
@@ -31,7 +31,7 @@ Apply this sequence before the clarification instructions below.
 
 ### Default Procedures
 
-When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md.tmpl) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/instructions.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/instructions.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
 
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 

@@ -90,9 +90,9 @@ test("translate is self-contained, with a finite cyclic dependency closure", (t)
   writePackage(packageDir, out);
   assert.deepEqual(closure(ctx, "translate"), [
     "ask-user-question",
-    "natural-writing",
     "think-harder",
     "translate",
+    "write",
   ]);
   validateSkill(out, "translate", { preview: true });
   assert.deepEqual(
@@ -111,17 +111,17 @@ test("translate is self-contained, with a finite cyclic dependency closure", (t)
       ),
     );
   writePackage(
-    path.join(root, ".agents/skills/natural-writing"),
-    buildSkill(ctx, "natural-writing", { preview: true }),
+    path.join(root, ".agents/skills/write"),
+    buildSkill(ctx, "write", { preview: true }),
   );
   assert.ok(
-    fs.existsSync(path.join(root, ".agents/skills/natural-writing/SKILL.md")),
+    fs.existsSync(path.join(root, ".agents/skills/write/SKILL.md")),
   );
   assert.ok(
     !out
       .get("references/_stack/skills/translate/instructions.md")
       .bytes.toString()
-      .includes("../natural-writing/SKILL.md"),
+      .includes("../write/SKILL.md"),
   );
 });
 test("packaged color helpers run from an unrelated working directory", (t) => {
@@ -253,7 +253,7 @@ test("undeclared Markdown and Python runtime dependencies fail", (t) => {
     file = path.join(root, "src/catalog.yaml"),
     c = parse(fs.readFileSync(file, "utf8"));
   c.skills.translate.required = c.skills.translate.required.filter(
-    (n) => n !== "natural-writing",
+    (n) => n !== "write",
   );
   fs.writeFileSync(file, stringify(c));
   assert.throws(
@@ -367,7 +367,7 @@ test("archives and both native plugin manifests use the same isolated packages",
   );
   assert.ok(archive["SKILL.md"]);
   assert.ok(
-    archive["references/_stack/skills/natural-writing/instructions.md"],
+    archive["references/_stack/skills/write/instructions.md"],
   );
   assert.deepEqual(
     out.get(`archives/translate-${ctx.version}.zip`).bytes,

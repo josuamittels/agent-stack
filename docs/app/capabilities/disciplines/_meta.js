@@ -4,7 +4,7 @@ export default {
 	"check-colour-contrast": "Check Colour Contrast",
 	"convert-colour": "Convert Colour",
 	"mind-wandering": "Mind Wandering",
-	"natural-writing": "Natural Writing",
+	"write": "Write",
 	"pre-mortem": "Pre Mortem",
 	"quit-the-yap": "Quit The Yap",
 	"release-agent-stack": "Release Agent Stack",

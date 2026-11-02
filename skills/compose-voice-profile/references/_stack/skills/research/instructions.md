@@ -19,7 +19,7 @@ status: "stable"
 
 # Research
 
-Produce a source-grounded research report or literature review through a fixed, caller-run process. Research Literature owns scholarly discovery. Research owns reading, appraisal, synthesis and acceptance. Natural Writing owns drafting and polishing prose. Offline scripts own scaffolding, assembly, citation formatting and conversion; they never call a model or a network service.
+Produce a source-grounded research report or literature review through a fixed, caller-run process. Research Literature owns scholarly discovery. Research owns reading, appraisal, synthesis and acceptance. Write owns drafting and polishing prose. Offline scripts own scaffolding, assembly, citation formatting and conversion; they never call a model or a network service.
 
 ## Scope
 
@@ -43,7 +43,7 @@ Accept **lenient**, **default**, or **strict** journal selection independently o
 
 The journal filter governs journal articles and reviews. Continue to use suitable primary records, official sources, books, and grey literature according to the question and stated inclusion criteria. Label their discovery separately. Journal eligibility does not establish individual study quality or replace the appraisal below.
 
-Invoke [Natural Writing](../natural-writing/instructions.md) as a writing helper with an academic writing focus. Pass the report language, audience, field, citation style, format, and depth; it owns language guidance and returns here without a separate evaluation. Use the field's established reporting guidance when the report type calls for it; consult a reporting checklist as a reporting aid, not proof that the underlying research was systematic or complete.
+Invoke [Write](../write/instructions.md) as a writing helper with an academic writing focus. Pass the report language, audience, field, citation style, format, and depth; it owns language guidance and returns here without a separate evaluation. Use the field's established reporting guidance when the report type calls for it; consult a reporting checklist as a reporting aid, not proof that the underlying research was systematic or complete.
 
 ### Depth choices
 
@@ -117,9 +117,9 @@ Complete outline.json's prescribed sections without changing their IDs, order or
 
 Run `citations --prepare` to create bibliography.json and citation-keys.json from verified source metadata. Use those keys rather than constructing citation strings or guessing author-date disambiguation. The key builder preserves literal author names and supports DOI-less records. Run `validate --phase outline` before drafting.
 
-### 5. Draft prescribed sections with Natural Writing
+### 5. Draft prescribed sections with Write
 
-For each section, invoke [Natural Writing](../natural-writing/instructions.md) in the current context. Pass the brief, document type, output language, academic style, section purpose, source/claim assignments, actual appraisal excerpts and locators, citation-key map, required terminology, word budget, neighboring context and unresolved restrictions. It owns loading the language guidance and returns prose to Research without a separate evaluation.
+For each section, invoke [Write](../write/instructions.md) in the current context. Pass the brief, document type, output language, academic style, section purpose, source/claim assignments, actual appraisal excerpts and locators, citation-key map, required terminology, word budget, neighboring context and unresolved restrictions. It owns loading the language guidance and returns prose to Research without a separate evaluation.
 
 Write only to the assigned numbered section file while drafting. Preserve its required heading and use Pandoc citation keys at the supported claim, including checked locators and groups where appropriate. Use `[@MISSING]` for unresolved source support in a working draft; it blocks citation compilation and must be resolved or removed. Keep generated references out of hand-written prose. Findings, methods and locators must come from actual inspected evidence, not from a source title or assumed study design.
 
@@ -135,7 +135,7 @@ Apply at most two substantive repair passes. Resolve critical/major issues withi
 
 ### 7. Polish without changing evidence
 
-Invoke Natural Writing for the canonical draft with the settled outline, academic language guidance, review findings, terminology, citation map and protected numbers/qualifications. Improve coherence, paragraph development and transitions while preserving evidence and attribution. Refresh the summary and title against the finished body. Do not add unsupported results or strengthen novelty or causal claims during polishing.
+Invoke Write for the canonical draft with the settled outline, academic language guidance, review findings, terminology, citation map and protected numbers/qualifications. Improve coherence, paragraph development and transitions while preserving evidence and attribution. Refresh the summary and title against the finished body. Do not add unsupported results or strengthen novelty or causal claims during polishing.
 
 Recheck every materially changed claim, number, quotation and citation. Complete both review records against the current draft SHA-256 and record the outside check's actual result. The validator rejects stale review hashes and unresolved blockers. Run `validate --phase review` before compilation.
 
@@ -185,7 +185,7 @@ python "$AGENT_STACK_ROOT/skills/research/scripts/complete.py" --record /private
 
 The configured package may check report length and source count against the resolved bounds, compare cited journal identities and scores with the selected preset, and test article-link reachability. A reachable link does not establish the identity or findings of the linked article. Use the wrapper's structured result as the evaluation record: distinguish a completed check, an unverified check, a top-level invocation error, and a missing package. A checker exception is not evidence that the package is missing. Network-blocked link checks should remain unverified; do not call links broken when the environment could not reach them. If no package exists, report NOT PASSED — UNVERIFIED and still deliver the completed report with that status; do not create a package during the invocation.
 
-Do not evaluate nested Natural Writing output separately. Include the concise objective result with the report. Never describe the mechanical checks as proof that research findings are correct.
+Do not evaluate nested Write output separately. Include the concise objective result with the report. Never describe the mechanical checks as proof that research findings are correct.
 
 ## Output
 

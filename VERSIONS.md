@@ -6,12 +6,12 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.36.0` |
+| Version | `0.37.0` |
 | Status | `experimental` |
-| Recorded | `2026-10-31` |
+| Recorded | `2026-11-02` |
 | Release date | Not released |
 
-The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Natural Writing, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature dependency references to stable 1.0.0 so the three research workflows have stable dependency closures. `0.36.0` reframes the root README for entrepreneurs, documents the current candidate catalog, and explains local preview installation and stack structure. The stack has not been released.
+The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Write, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature dependency references to stable 1.0.0 so the three research workflows have stable dependency closures. `0.36.0` reframes the root README for entrepreneurs, documents the current candidate catalog, and explains local preview installation and stack structure. `0.37.0` renames the Write discipline identifier from `natural-writing` to `write`, a breaking change for direct selections, dependency declarations, and references. The stack has not been released.
 
 ## Component versions
 
@@ -52,7 +52,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Skill | `src/skills/create-guidelines/SKILL.md.tmpl` | `0.6.0` | `experimental` |
 | Skill | `src/skills/create-skill/SKILL.md.tmpl` | `0.14.0` | `experimental` |
 | Discipline | `src/skills/mind-wandering/SKILL.md.tmpl` | `0.2.0` | `experimental` |
-| Discipline | `src/skills/natural-writing/SKILL.md.tmpl` | `1.0.0` | `stable` |
+| Discipline | `src/skills/write/SKILL.md.tmpl` | `2.0.0` | `stable` |
 | Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
 | Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.6.0` | `experimental` |

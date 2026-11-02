@@ -1,19 +1,14 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "ec96d03a308d296f8d5ace8a9a077b5e872cb79d6d7a880e277d33c67be5f973",
+  "catalog_sha256": "b3bf08bb79701c9edcca08de94fe14c6777b6b4cf7e6758e915d01da05322c25",
   "name": "research-literature",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.36.0",
+  "stack_version": "0.37.0",
   "channel": "stable",
   "dependencies": [
     {
       "name": "ask-user-question",
-      "version": "1.0.0",
-      "status": "stable"
-    },
-    {
-      "name": "natural-writing",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -41,6 +36,11 @@
       "name": "think-harder",
       "version": "1.0.0",
       "status": "stable"
+    },
+    {
+      "name": "write",
+      "version": "2.0.0",
+      "status": "stable"
     }
   ],
   "source_sha256": {
@@ -52,7 +52,6 @@
     "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/natural-writing/SKILL.md.tmpl": "79967e9df4e5114a367ceb9c3acbc44589f987c193fa263ccee6ceeee5ba0384",
     "src/skills/research-literature/SKILL.md.tmpl": "c299d8f75dbf4e987c029fc4b6e779a882cd176611e9ad91a9d3c8e91e851292",
     "src/skills/research-literature/references/.env.example": "e973e52684c7651711814ebd24f05a84e6e32b2a88881c72162e1d10a2e50fe1",
     "src/skills/research-literature/references/arxiv-docs.md": "968303b774b7bf436c35dd3fd2239bd8bb0545cefd35b6e76860459a0a06d90e",
@@ -76,13 +75,13 @@
     "src/skills/research-literature/templates/search-query.json": "2b5f50bb689a401c383bd603585c8a26da257a3e1cb9c09022eb1199f18953c0",
     "src/skills/research-literature/templates/verification-record.json": "46c98f662a30ba62ca96c55aceb593c5348390e79a71a73e4fbc12077dec2452",
     "src/skills/research-literature/templates/verification.json": "55a0204ab3d5aa3ac1dac5c08d99114c991669875efc6a3a741dd5f3ee24d725",
-    "src/skills/research/SKILL.md.tmpl": "d474827f8e58ff9d7abc1b2f15828b63116ba6074fc1289b03b18242073b931d",
+    "src/skills/research/SKILL.md.tmpl": "7018626346a09b8a83b8b223cc26961141f8278552ba5f684a04c20808db1221",
     "src/skills/research/references/artifacts.md": "471f1ac6f6ba63ad04dea3d7137a2a1bcb107c55b93d4aba22fd3199c2d2cedf",
     "src/skills/research/references/cli.md": "c5767f994c752c439d5fa90fbc83f1c7efaf1e17d923e83beafcfdb3ba05ff6d",
     "src/skills/research/references/csl/README.md": "d7cd4d9ff92b95d7ca89ac4e461cb81f39d1bece470312e817c6434910ad2bbd",
     "src/skills/research/references/csl/apa.csl": "3917def5fc951b104d64216c3373096042368b9704ba269ca83c14ebaba889fc",
     "src/skills/research/references/export.md": "1064fea3c8c62a59db41fa5a1c3705a59e6936c5f5ba24bb7f582f0628700e8a",
-    "src/skills/research/references/workflow.md": "66be8e5d8ec5cb19dfd324e6cb54df381343d385b415957f7dfb0911e88a8fd5",
+    "src/skills/research/references/workflow.md": "6cb72f62584c803c2994c21688717e6c2b7be9187a9d6ceef6570961f94df4b2",
     "src/skills/research/scripts/complete.py": "b9897ebd5aa65e159d2f88b50160ce0f2ad29bbfbf059617090513d51bfe623d",
     "src/skills/research/scripts/research.py": "72caf57243f07ab6679e480a150154b4c40cb147598c5f65f484b7a3e3b0dd3c",
     "src/skills/research/scripts/research_common.py": "fb6dfdf9d419be0407b04c3b2636200bfd3c3fa8aafa8d1024471d3c1356b854",
@@ -112,7 +111,8 @@
     "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
     "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
     "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
-    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
   },
   "files": {
     "LICENSE": {
@@ -149,10 +149,6 @@
     },
     "references/_stack/skills/ask-user-question/instructions.md": {
       "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
-      "mode": 420
-    },
-    "references/_stack/skills/natural-writing/instructions.md": {
-      "sha256": "c8e91c9d1ff13c24b9bea236acd4751865e6fd277b62addb9a44704cedd37a49",
       "mode": 420
     },
     "references/_stack/skills/research-literature/instructions.md": {
@@ -248,7 +244,7 @@
       "mode": 420
     },
     "references/_stack/skills/research/instructions.md": {
-      "sha256": "fda74cb7e5b2b7b66e6433afd75b951e1911e313b350568159bd56e88038baaa",
+      "sha256": "dbd377e233067f1b7cf28bd4425450285e220f275af59451c62b354b2be3d1c5",
       "mode": 420
     },
     "references/_stack/skills/research/references/artifacts.md": {
@@ -272,7 +268,7 @@
       "mode": 420
     },
     "references/_stack/skills/research/references/workflow.md": {
-      "sha256": "66be8e5d8ec5cb19dfd324e6cb54df381343d385b415957f7dfb0911e88a8fd5",
+      "sha256": "6cb72f62584c803c2994c21688717e6c2b7be9187a9d6ceef6570961f94df4b2",
       "mode": 420
     },
     "references/_stack/skills/research/scripts/complete.py": {
@@ -395,8 +391,12 @@
       "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
       "mode": 420
     },
+    "references/_stack/skills/write/instructions.md": {
+      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "mode": 420
+    },
     "SKILL.md": {
-      "sha256": "dd842a27484a2fc129fcd9ed76e2f0680175d8b34bc27bea75f4f02c162de53e",
+      "sha256": "307658b8ed0b046d464a72ebc54d214d05a92e464523dfd8e60b91b00aba2598",
       "mode": 420
     }
   }
