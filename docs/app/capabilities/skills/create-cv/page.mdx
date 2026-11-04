@@ -18,6 +18,10 @@ Create evidence-grounded CV content for a particular role and export it as an A4
 4. **Generate and inspect the files.** The bundled script creates `CV.docx`, `CV.pdf`, extracted text, page renders, and a machine-readable report under the selected output folder. It checks font embedding, section order, and experience pagination; inspect each rendered page before treating the PDF as final.
 5. **Approve delivery.** A local draft does not require content approval. Before copying a final version elsewhere, approve the exact content and supply a new destination path. The skill does not submit a CV or contact an employer.
 
+## Reuse an approved staple
+
+In a career workspace, the skill reads the root `AGENTS.md` and compares the target with approved CVs under `staples/`. It checks each `MATCH.md` and the CV evidence against the role requirements. If a staple fits, it returns that CV without regenerating it. If the target needs materially different evidence or positioning, the skill creates a role-specific CV. A company name alone does not establish fit.
+
 ## Layout and requirements
 
 The PDF uses a single A4 column, a fixed six-section order, EB Garamond typography, visible contact links, and simple selectable text. Experience bullets use concrete actions and supported outcomes. See the [CV layout specification](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/references/cv-layout.md) for typography and spacing details.

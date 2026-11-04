@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "[Candidate Name]",
+    "location": "[City, Country]",
+    "portfolio": {
+      "label": "Portfolio",
+      "url": "https://example.com/portfolio"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "url": "https://example.com/profile"
+    },
+    "phone": {
+      "label": "[Phone]",
+      "url": "tel:+12025550100"
+    },
+    "email": {
+      "label": "candidate@example.com",
+      "url": "mailto:candidate@example.com"
+    }
+  },
+  "education": [
+    {
+      "institution": "[Example University]",
+      "degree": "[Master’s Degree]",
+      "location": "[Country]",
+      "dates": "20XX – 20XX",
+      "details": [
+        "GPA: X/10",
+        "Notable Courses: [Course 1], [Course 2]"
+      ]
+    },
+    {
+      "institution": "[Example Institute]",
+      "degree": "[Exchange Semester]",
+      "location": "[Country]",
+      "dates": "MMM – MMM 20XX",
+      "details": [
+        "GPA: X/10 (X/4)",
+        "Notable Courses: [Course 1], [Course 2]"
+      ]
+    }
+  ],
+  "language_policy": {
+    "allowed_labels": [
+      "native",
+      "fluent",
+      "prof. working",
+      "lim. working",
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "C1",
+      "C2",
+      "basic"
+    ],
+    "languages": [
+      {
+        "name": "[Language A]",
+        "level": "native"
+      },
+      {
+        "name": "[Language B]",
+        "level": "fluent"
+      },
+      {
+        "name": "[Language C]",
+        "level": "basic"
+      }
+    ]
+  },
+  "interests": [
+    "[Interest 1]",
+    "[Interest 2]",
+    "[Interest 3]"
+  ],
+  "blocked_cv_terms": [
+    "Final GPA",
+    "final GPA",
+    "mother tongue",
+    "professional working proficiency",
+    "limited working proficiency",
+    "approximately B2"
+  ]
+}

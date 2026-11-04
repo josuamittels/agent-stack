@@ -3,6 +3,7 @@ export default {
 	"compose-voice-profile": "Compose Voice Profile",
 	"create-cv": "Create CV",
 	"draft-cover-letter": "Draft Cover Letter",
+	"setup-career-stack": "Setup Career Stack",
 	"create-docs": "Create Docs",
 	"create-guidelines": "Create Guidelines",
 	"create-skill": "Create Skill",

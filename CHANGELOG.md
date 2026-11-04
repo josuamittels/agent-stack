@@ -8,9 +8,11 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 - Add stable Create CV to draft evidence-grounded, role-tailored CV content and generate a validated EB Garamond PDF.
 - Add stable Draft Cover Letter, with role-specific chat and PDF output, a bundled application-letter voice profile, and a self-contained PDF generator.
+- Add stable Setup Career Stack to initialize a career workspace, build role-family CV staples, and route future application work through project instructions.
 
 ### Changed
 
+- Rename the bundled letter voice guide to Professional Voice Profile and prioritize a project's personalized profile for later letters.
 - Require explicit user authorization before Ship creates a Git branch; Ship now uses the current or an appropriate existing branch by default.
 - **Breaking:** Rename the Write discipline identifier from `natural-writing` to `write`. Update direct selections, dependency declarations, and authored references to use `write`. See the [Write migration guidance](docs/app/capabilities/disciplines/write/page.mdx).
 - Expand the README with an entrepreneur-focused overview, a catalog of current skill candidates, and local preview installation instructions.

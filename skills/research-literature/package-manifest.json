@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f8592e58fa1b69296c38e0de69dfc5cafda4ef6d71ca2627d403ac3dd77be8ef",
+  "catalog_sha256": "e94fdb0bc400f5333b83ec3f71cafc0b48585cb73a76a5fedbbf0544d2a49412",
   "name": "research-literature",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.40.0",
+  "stack_version": "0.42.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "b826299720ca12b0e7659c8ec60061429133829ecd5172baff243568bcd353fc",
+      "sha256": "5aa415d43ed366205e5cbaa06e1c6792be89f7edaeb6f7fa88dcdd8ba85151ad",
       "mode": 420
     }
   }

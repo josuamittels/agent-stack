@@ -1,7 +1,7 @@
 ---
-name: "cover-letter-voice-profile"
+name: "professional-voice-profile"
 description: "A standalone voice guide for professional job application and motivation letters."
-version: "1.0.0"
+version: "1.0.1"
 created: "2026-11-04"
 updated: "2026-11-04"
 author:
@@ -10,7 +10,7 @@ type: "voice-profile"
 status: "stable"
 ---
 
-# Professional Application Letters – Voice Profile
+# Professional Voice Profile
 
 ## Profile Details
 

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "review_type": null,
+  "status": "pending",
+  "draft_sha256": null,
+  "inputs_sha256": {},
+  "repair_passes": 0,
+  "checks": {},
+  "issues": []
+}

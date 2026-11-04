@@ -81,6 +81,18 @@ Bundled dependencies: ask-user-question, think-harder.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
+## create-cv
+
+Status: eligible stable candidate.
+
+Create evidence-backed, role-tailored CV content and a PDF in a defined EB Garamond layout from a professional career profile and target.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question create-cv spawn-evals think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, spawn-evals, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export.
+
 ## create-docs
 
 Status: blocked for public release (see skills/catalog.json).
@@ -188,6 +200,18 @@ Search journal-filtered scholarly databases, cross-reference work identities and
 Bundled dependencies: ask-user-question, research, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
+
+## setup-career-stack
+
+Status: eligible stable candidate.
+
+Initialize a project workspace for managing job applications, career context, reusable CVs, and application materials. Use when setting up a fresh career application system or organizing a new job-search project.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question compose-career-profile compose-voice-profile create-cv draft-cover-letter research research-literature setup-career-stack spawn-evals think-deeper think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, create-cv, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export; ReportLab for PDF generation; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY; Python >=3.10 for CV generation and PDF export; CV-generation tools and dependencies documented by Create CV.
 
 ## ship
 

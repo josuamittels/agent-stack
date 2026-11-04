@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "skill": "create-cv",
+  "checks": [
+    {
+      "id": "cv-layout-fonts",
+      "description": "The build report confirms successful validation and only embedded EB Garamond PDF fonts.",
+      "handler": "check_cv_layout_fonts",
+      "mandatory": true,
+      "required_inputs": ["/evidence/cv_validation"]
+    },
+    {
+      "id": "intact-experience-blocks",
+      "description": "The build report confirms that experience entries remain intact on one page.",
+      "handler": "check_intact_experience_blocks",
+      "mandatory": true,
+      "required_inputs": ["/evidence/cv_validation"]
+    },
+    {
+      "id": "cv-section-order",
+      "description": "Extracted PDF headings appear in the defined six-section order.",
+      "handler": "check_cv_section_order",
+      "mandatory": true,
+      "required_inputs": ["/evidence/section_headings"]
+    }
+  ]
+}

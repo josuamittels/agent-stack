@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f8592e58fa1b69296c38e0de69dfc5cafda4ef6d71ca2627d403ac3dd77be8ef",
+  "catalog_sha256": "e94fdb0bc400f5333b83ec3f71cafc0b48585cb73a76a5fedbbf0544d2a49412",
   "name": "draft-cover-letter",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "stable",
-  "stack_version": "0.40.0",
+  "stack_version": "0.42.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "draft-cover-letter",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "status": "stable"
     },
     {
@@ -73,11 +73,11 @@
     "src/skills/compose-career-profile/templates/career-profile.md": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
     "src/skills/compose-voice-profile/SKILL.md.tmpl": "8949ddfe363f7ae708a44336a1f460a7be80bfdf8b89e9b7a4a5659175aa6b9e",
     "src/skills/compose-voice-profile/templates/voice-profile.md": "2211ebb15774e1036a37aa9094394235af8656de077af30e1897973eaa1b6951",
-    "src/skills/draft-cover-letter/SKILL.md.tmpl": "83dccfec3950d9197c8ca929277637b98c3085c593744136a0f74d24433ee60b",
-    "src/skills/draft-cover-letter/references/cover-letter-voice-profile.md": "7753ec7ab064ed328406280b1ca3cc9b247a21a4486860a135f3e5237bb75ceb",
+    "src/skills/draft-cover-letter/SKILL.md.tmpl": "1106b80167121e08c95b5f4a4a671853664ba506745bf3c976e4767a021ef3b3",
     "src/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
     "src/skills/draft-cover-letter/references/fonts/OFL-1.1.txt": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
     "src/skills/draft-cover-letter/references/pdf-layout.md": "eb81827ccd9becbcbdea817402f1c3a0dae40ba8989a4bfb4d6d1b64d0c098ab",
+    "src/skills/draft-cover-letter/references/professional-voice-profile.md": "977cd98a9b23200890df9c7bdb4b4ecdee146d8e4fda34e6211bc48670c9a79e",
     "src/skills/draft-cover-letter/requirements.txt": "36ce2357b6cea4381d9c63cfcce0785c2df9104d48d9960c68ed578b51e9483a",
     "src/skills/draft-cover-letter/scripts/generate_cover_letter_pdf.py": "0051269cd0e8bda1aa55d6b4a647543588093580dfed22011a275f531f3f8891",
     "src/skills/draft-cover-letter/templates/letter-pdf-input.example.json": "b9354c4735c6917eb6af012c1c68309c7de057f53e2ebdaa8cd54435c70f962d",
@@ -205,11 +205,7 @@
       "mode": 420
     },
     "references/_stack/skills/draft-cover-letter/instructions.md": {
-      "sha256": "7fb4ab595ff5e8c880147816a63f4237277a08c5276896da660c24676a14a7f8",
-      "mode": 420
-    },
-    "references/_stack/skills/draft-cover-letter/references/cover-letter-voice-profile.md": {
-      "sha256": "7753ec7ab064ed328406280b1ca3cc9b247a21a4486860a135f3e5237bb75ceb",
+      "sha256": "21d4d877210a5f84b1890596ead1a3b725941374d9037c2b0600a3e2efa16c12",
       "mode": 420
     },
     "references/_stack/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": {
@@ -222,6 +218,10 @@
     },
     "references/_stack/skills/draft-cover-letter/references/pdf-layout.md": {
       "sha256": "eb81827ccd9becbcbdea817402f1c3a0dae40ba8989a4bfb4d6d1b64d0c098ab",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/references/professional-voice-profile.md": {
+      "sha256": "977cd98a9b23200890df9c7bdb4b4ecdee146d8e4fda34e6211bc48670c9a79e",
       "mode": 420
     },
     "references/_stack/skills/draft-cover-letter/requirements.txt": {
@@ -481,7 +481,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "57030ad09d0c734d256f98d3b9bfea0a6fab012b4f3c6b78d2f2a8e8b1734931",
+      "sha256": "c879ecfd389015e7e5dcddd83a079810dcd88f23c05db75c9817c01868e52d57",
       "mode": 420
     }
   }

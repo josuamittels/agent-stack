@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skill": "setup-career-stack",
+  "checks": [
+    {
+      "id": "workspace-structure",
+      "description": "The selected project root contains applications, references, and staples directories and a root AGENTS.md file.",
+      "handler": "check_workspace_structure",
+      "mandatory": true,
+      "required_inputs": ["/evidence/project_root"]
+    },
+    {
+      "id": "career-routing-instructions",
+      "description": "The generated AGENTS.md names the career profile, CV, and cover letter workflows, routes requests without requiring a named skill, and defines staple matching and project-level voice-profile priority.",
+      "handler": "check_career_routing_instructions",
+      "mandatory": true,
+      "required_inputs": ["/outputs/AGENTS.md"]
+    }
+  ]
+}

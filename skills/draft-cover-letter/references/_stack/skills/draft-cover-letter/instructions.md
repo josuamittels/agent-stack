@@ -1,7 +1,7 @@
 ---
 name: "draft-cover-letter"
 description: "Draft or revise a role-specific cover letter from a career profile and job details, in chat or as a designed PDF."
-version: "1.0.0"
+version: "1.2.0"
 created: "2026-11-04"
 updated: "2026-11-04"
 author:
@@ -13,13 +13,13 @@ status: "stable"
 
 # Draft Cover Letter
 
-Create a truthful, role-specific cover letter using the candidate's career profile, the job description, the cover-letter voice profile, and any supplied company information. Return copy-ready text in chat or create a PDF when requested.
+Create a truthful, role-specific cover letter using the candidate's career profile, the job description, the professional voice profile, and any supplied company information. Return copy-ready text in chat or create a PDF when requested.
 
 ## Scope
 
 Use when a user wants to draft or revise a cover letter or motivation letter for a specific role. The user may provide a career profile, job description, company information, language, recipient, length limit, output format, and feedback.
 
-This skill owns the letter's evidence selection, structure, drafting, revision, and optional PDF generation. For a reusable career profile, use [Compose Career Profile](../compose-career-profile/instructions.md). For prose, use [Write](../write/instructions.md) as the required authoring helper. For a fresh or substantially changed writing voice profile, use [Compose Voice Profile](../compose-voice-profile/instructions.md); this skill applies the existing [cover-letter-voice-profile.md](references/cover-letter-voice-profile.md).
+This skill owns the letter's evidence selection, structure, drafting, revision, and optional PDF generation. For a reusable career profile, use [Compose Career Profile](../compose-career-profile/instructions.md). For prose, use [Write](../write/instructions.md) as the required authoring helper. For a fresh or substantially changed writing voice profile, use [Compose Voice Profile](../compose-voice-profile/instructions.md). In a career workspace, apply the personalized `references/professional-voice-profile.md` when present; otherwise use this skill's bundled reference.
 
 ### Boundaries
 
@@ -37,7 +37,7 @@ Use the supplied or accessible:
 - career profile with verified experience, education, skills, motivations, and development goals;
 - company notes, personal connection, referral, product experience, or other context the user wants considered;
 - output language, recipient and address style, word or character limit, and whether to return text in chat or a PDF;
-- current feedback and any relevant persistent letter feedback available in the Application System.
+- current feedback and any relevant persistent letter feedback available in the Application System or career workspace.
 
 Require a usable career profile. Prefer a Compose Career Profile result supplied in the conversation or at a user-identified path. If the user asks to use their Application System and it is available, use its personal-context files as the profile source: read `01_Personal_Context/MASTER_PROFILE.md` and the relevant parts of `MOTIVATIONS_VALUES.md`, `PERSONALITY_WORKING_STYLE.md`, `EXPERIENCE_LIBRARY.md`, `PROJECT_LIBRARY.md`, `ACHIEVEMENT_LIBRARY.md`, `SKILLS_EDUCATION_LANGUAGES.md`, `EVIDENCE_INDEX.md`, and `OPEN_QUESTIONS.md`. Select only the sources needed for this role. If no usable profile or personal context is available, ask the user to provide it before drafting; do not substitute generic assumptions.
 
@@ -55,7 +55,7 @@ Read [`references/pdf-layout.md`](references/pdf-layout.md) and use the bundled 
 
 The Application System quality checklist contains an older two-body-paragraph rule. Follow the user's requested high-level-fit, experience, and motivation sequence below where that rule conflicts; continue to apply the checklist's factual, language, length, and presentation checks.
 
-Read the complete [cover-letter voice profile](references/cover-letter-voice-profile.md) before drafting and before applying style feedback. If the file is unavailable, ask the user to provide it or create one before proceeding.
+When working in a career application project with a root `AGENTS.md`, read it and check for `references/professional-voice-profile.md`. Read that project-level profile before drafting and before applying style feedback; it is personalized and takes priority over the bundled profile. If it is absent, read the complete bundled [professional voice profile](references/professional-voice-profile.md). If neither is available, ask the user to provide one or create one before proceeding.
 
 ### Default Procedures
 
@@ -137,14 +137,13 @@ If ReportLab is missing, explain that the user must install the dependency from 
 
 ### 7. Apply feedback and improve the voice profile
 
-When the user gives feedback, revise the complete letter promptly. Apply the feedback to the current letter even when it is specific to one employer or role.
+When the user gives feedback after a generated letter, revise the complete letter promptly. Apply the feedback to the current letter even when it is specific to one employer or role.
 
-Then decide what should persist:
-
-- When feedback changes reusable writing guidance, invoke [Compose Voice Profile](../compose-voice-profile/instructions.md) through the host's supported mechanism. If no separate skill invocation is available, read and apply its workflow directly. Pass `references/cover-letter-voice-profile.md`, the complete current profile, the user's feedback, the current letter as a writing sample, the applicable role or language scope, and the requirement to keep the profile standalone. Ask it to update the existing profile in place, preserving its structure and unrelated guidance.
-- Add general preferences as stable guidance. Add language-specific or role-family feedback with an explicit scope. Do not promote one-application wording or employer-specific content into general guidance unless the user asks for that preference to persist.
-- After the profile update, reread it and make a final pass over the revised letter so the letter reflects both the immediate feedback and the updated reusable guidance.
-- For a one-application choice, factual correction, or employer-specific preference, apply it to the current letter and keep it out of the general voice profile unless the user asks for it to persist.
+- In a career workspace, always create or update `references/professional-voice-profile.md` after letter feedback. Invoke [Compose Voice Profile](../compose-voice-profile/instructions.md) through the host's supported mechanism; if that mechanism is unavailable, read and apply its workflow directly. Use the existing project-level profile as the base. If it does not exist, start from the bundled profile and save the personalized result at the project path. Pass the feedback, current letter as a writing sample, applicable role or language scope, and the requirement to preserve unrelated guidance and keep the profile standalone.
+- Record feedback at the narrowest useful scope. A one-application preference must be clearly labeled as application-specific; language or role-family guidance must name its scope. Do not turn scoped feedback into a universal preference.
+- Do not store factual corrections, employer details, application history, or source documents in the voice profile. Route factual career updates to the career context instead.
+- After saving the profile, reread it and make a final pass over the revised letter so it reflects both the immediate feedback and the updated guidance.
+- Outside a career workspace, apply feedback to the current letter. Update this skill's bundled reference only when the user explicitly asks to change the shared profile.
 
 Keep the voice profile standalone within this skill's references. Record writing behavior, not the candidate's private facts, application history, employer details, or source documents. Preserve unrelated profile guidance and describe the feedback at the narrowest scope that remains useful.
 

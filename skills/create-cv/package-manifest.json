@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "e94fdb0bc400f5333b83ec3f71cafc0b48585cb73a76a5fedbbf0544d2a49412",
+  "name": "create-cv",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.42.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "create-cv",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "spawn-evals",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "write",
+      "version": "2.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/evals/create-cv/checks.py": "663f80d52c44179b454f386ff17434f25ee92ae5fcd5bed53774ea6120391c74",
+    "src/evals/create-cv/rubric.json": "c95b4c9a05ce979fc4d5fde22a45cc522bd3bf25e601752e19a130c6a398767c",
+    "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+    "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+    "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+    "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/create-cv/SKILL.md.tmpl": "9badec5140e09b7fbba15c90dbbc030734b0f02c945dbe72c2cb10c5fd138d33",
+    "src/skills/create-cv/assets/fonts/EBGaramond-Bold.ttf": "866e341ee9f340fff1a07a9e1fc791ff935e35159c74243d31e02bcad70b9cec",
+    "src/skills/create-cv/assets/fonts/EBGaramond-BoldItalic.ttf": "0c0d1b700cef954d3704795e7959f70df02e979027a7e560a3967840bcd85acf",
+    "src/skills/create-cv/assets/fonts/EBGaramond-Regular.ttf": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
+    "src/skills/create-cv/assets/fonts/EBGaramond-RegularItalic.ttf": "9515294db76bc9367c180e1b154b647e0c0d82671acc56004e5764cbf54f39a7",
+    "src/skills/create-cv/assets/fonts/OFL-1.1.txt": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
+    "src/skills/create-cv/references/ats-guidelines.md": "56085617a39ebaed3f67d765959d8aedf1803b1b08fd67e58e8ecec3902d6ee0",
+    "src/skills/create-cv/references/cv-guidelines.md": "d482c60a36ccc614278f495723d0d9da8eaef49a7aa42920b2938a25dd35cd24",
+    "src/skills/create-cv/references/cv-layout.md": "4228023367ba957f82b2e1a1e76c8017fc14a282f6c3e4f62b9eecb7d033782c",
+    "src/skills/create-cv/references/export-and-qa.md": "29345b7f43e2c8ef2f10da71714b5af7b43ae27d3b38b519556c728540d787d1",
+    "src/skills/create-cv/references/font-usage.md": "8ad611d5c144505f68bd7740faa4c1a2c7135d7a53674cffe71d6834619bb99a",
+    "src/skills/create-cv/references/role-relevance.md": "a7d4d50294b5ca0e13cb704f542b808d3af17cc4b43a163d716655b0c89585ab",
+    "src/skills/create-cv/references/source-of-truth.md": "b3be1d2f4109f3ec52eb432f40c21bc51d323be83d5ccfaa0669d281e8240dba",
+    "src/skills/create-cv/scripts/build_cv.py": "007c6c481a48ea413ea970e54b34be4b8c57c8f5329b2cfac7bb3b5ccc7fde6d",
+    "src/skills/create-cv/scripts/cv_support.py": "efc3ac87927b5efeb703b76fa6aed0161351dafe54ea83b4b1b5d8e8ca629022",
+    "src/skills/create-cv/scripts/generate_cv_pdf.py": "27bff8d745d011fdf958efbf253226308b7c989f1b8629d939ebe39385169bfa",
+    "src/skills/create-cv/scripts/requirements.txt": "53d2c2c8bfeaf28048c54da33873a3e51e92f31cbd2f8f642fafc3fdd2bee9db",
+    "src/skills/create-cv/templates/cv-content.example.json": "b6b50db626604c68986e07ad075ad05c0f16045b417de47dac0b8f5b1aa18218",
+    "src/skills/create-cv/templates/cv-profile.example.json": "228d6223a35d49f847b24c2d2f24de5f662d9e317be3403f672dc0340123b171",
+    "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
+    "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
+    "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
+    "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+    "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/evals/create-cv/checks.py": {
+      "sha256": "663f80d52c44179b454f386ff17434f25ee92ae5fcd5bed53774ea6120391c74",
+      "mode": 420
+    },
+    "references/_stack/evals/create-cv/rubric.json": {
+      "sha256": "c95b4c9a05ce979fc4d5fde22a45cc522bd3bf25e601752e19a130c6a398767c",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/dutch.md": {
+      "sha256": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/english.md": {
+      "sha256": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/french.md": {
+      "sha256": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/german.md": {
+      "sha256": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/assets/fonts/EBGaramond-Bold.ttf": {
+      "sha256": "866e341ee9f340fff1a07a9e1fc791ff935e35159c74243d31e02bcad70b9cec",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/assets/fonts/EBGaramond-BoldItalic.ttf": {
+      "sha256": "0c0d1b700cef954d3704795e7959f70df02e979027a7e560a3967840bcd85acf",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/assets/fonts/EBGaramond-Regular.ttf": {
+      "sha256": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/assets/fonts/EBGaramond-RegularItalic.ttf": {
+      "sha256": "9515294db76bc9367c180e1b154b647e0c0d82671acc56004e5764cbf54f39a7",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/assets/fonts/OFL-1.1.txt": {
+      "sha256": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/instructions.md": {
+      "sha256": "21a5ef94cfb8b75b805129f99f77db8a3b987e4849c7cc6800d0a8a214c01192",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/ats-guidelines.md": {
+      "sha256": "56085617a39ebaed3f67d765959d8aedf1803b1b08fd67e58e8ecec3902d6ee0",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/cv-guidelines.md": {
+      "sha256": "d482c60a36ccc614278f495723d0d9da8eaef49a7aa42920b2938a25dd35cd24",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/cv-layout.md": {
+      "sha256": "4228023367ba957f82b2e1a1e76c8017fc14a282f6c3e4f62b9eecb7d033782c",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/export-and-qa.md": {
+      "sha256": "29345b7f43e2c8ef2f10da71714b5af7b43ae27d3b38b519556c728540d787d1",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/font-usage.md": {
+      "sha256": "8ad611d5c144505f68bd7740faa4c1a2c7135d7a53674cffe71d6834619bb99a",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/role-relevance.md": {
+      "sha256": "a7d4d50294b5ca0e13cb704f542b808d3af17cc4b43a163d716655b0c89585ab",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/references/source-of-truth.md": {
+      "sha256": "b3be1d2f4109f3ec52eb432f40c21bc51d323be83d5ccfaa0669d281e8240dba",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/scripts/build_cv.py": {
+      "sha256": "007c6c481a48ea413ea970e54b34be4b8c57c8f5329b2cfac7bb3b5ccc7fde6d",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/scripts/cv_support.py": {
+      "sha256": "efc3ac87927b5efeb703b76fa6aed0161351dafe54ea83b4b1b5d8e8ca629022",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/scripts/generate_cv_pdf.py": {
+      "sha256": "27bff8d745d011fdf958efbf253226308b7c989f1b8629d939ebe39385169bfa",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/scripts/requirements.txt": {
+      "sha256": "53d2c2c8bfeaf28048c54da33873a3e51e92f31cbd2f8f642fafc3fdd2bee9db",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/templates/cv-content.example.json": {
+      "sha256": "b6b50db626604c68986e07ad075ad05c0f16045b417de47dac0b8f5b1aa18218",
+      "mode": 420
+    },
+    "references/_stack/skills/create-cv/templates/cv-profile.example.json": {
+      "sha256": "228d6223a35d49f847b24c2d2f24de5f662d9e317be3403f672dc0340123b171",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/instructions.md": {
+      "sha256": "926c03507e38e2d91ba720992cbe22229a5c19069eea944cea51b434ee23903a",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/package-setup.md": {
+      "sha256": "d8035003e8e092d712595f0abcb10a2f2c7ac684c3869cb08d8ec93961d65406",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/runner.md": {
+      "sha256": "88f161aa98092aecff43e82cc59356f63bec8b5893a2837df67f1c9fccb8c885",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/checklib.py": {
+      "sha256": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/runner.py": {
+      "sha256": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/write/instructions.md": {
+      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "9722e830252cfdb0411d0006e53b626b46f603858474a00fea9948e5ca6edb6b",
+      "mode": 420
+    }
+  }
+}

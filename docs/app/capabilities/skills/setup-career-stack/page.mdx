@@ -1,0 +1,40 @@
+---
+title: "Setup Career Stack"
+---
+
+# Setup Career Stack
+
+> **Skill** · **stable** · **v1.0.0** · updated 2026-11-04
+
+## Purpose
+
+Set up a dedicated project for organizing job applications, durable career context, reusable CVs, and optional motivation letters. The project root receives an `AGENTS.md` that routes later career requests to the right workflow without requiring you to name a skill.
+
+## Workflow
+
+1. **Choose a fresh project folder.** The skill creates `applications/`, `references/`, `staples/`, and the root `AGENTS.md`. It preserves existing files rather than overwriting them.
+2. **Build career context.** [Compose Career Profile](/capabilities/skills/compose-career-profile) gathers your source material and reflections, then saves the profile to `references/career-context.md`.
+3. **Share target roles.** Describe the kinds of roles you are aiming for and provide as many useful links and full job descriptions as you can, across different titles and companies. Company profiles help when available. These examples show which roles can share a CV and which need distinct positioning. Links are helpful but not required.
+4. **Create staple CVs.** The skill groups similar targets and prepares one approved staple CV for each materially distinct role family. [Create CV](/capabilities/skills/create-cv) checks each CV against the role evidence and produces its PDF and review files.
+5. **Manage applications.** Each application gets a numbered folder under `applications/`. Later requests compare the target with approved staples; the workflow reuses a fitting CV or creates a tailored one. Request a letter when needed through [Draft Cover Letter](/capabilities/skills/draft-cover-letter).
+6. **Keep letter feedback.** In a career workspace, letter feedback updates `references/professional-voice-profile.md`. That project profile takes priority over the bundled profile in future letters.
+
+## Workspace
+
+| Location | Contents |
+| --- | --- |
+| `applications/<company>_<job>_<runningnumber>/` | Approved `CV.pdf` and, when requested, `Motivation_Letter.pdf`. |
+| `references/career-context.md` | Reusable career profile and source of truth for career evidence. |
+| `references/professional-voice-profile.md` | Optional customized letter voice profile. |
+| `staples/<role-family>/` | Approved CV PDF, `MATCH.md`, editable source, and QA files. |
+
+The workflow does not submit, email, or upload applications. A generated draft is not a final approved staple; approve exact CV content before placing it in an application folder.
+
+## Version and changes
+
+Version **1.0.0**; status **stable**. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md) for the stack inventory.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-career-stack/SKILL.md.tmpl)
+- [Project `AGENTS.md` template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-career-stack/templates/AGENTS.md)

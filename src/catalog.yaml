@@ -151,7 +151,7 @@ skills:
     routes: []
     files:
       - skills/draft-cover-letter/SKILL.md.tmpl
-      - skills/draft-cover-letter/references/cover-letter-voice-profile.md
+      - skills/draft-cover-letter/references/professional-voice-profile.md
       - skills/draft-cover-letter/references/pdf-layout.md
       - skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf
       - skills/draft-cover-letter/references/fonts/OFL-1.1.txt
@@ -172,6 +172,35 @@ skills:
       - Node.js >=22.20 for JavaScript helpers when present
       - Python >=3.10 for Python helpers when present
       - ReportLab for PDF generation
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
+  setup-career-stack:
+    visibility: public
+    required:
+      - ask-user-question
+      - compose-career-profile
+      - create-cv
+      - draft-cover-letter
+      - spawn-evals
+      - think-harder
+    conditional:
+      - compose-voice-profile
+    optional: []
+    routes: []
+    files:
+      - skills/setup-career-stack/SKILL.md.tmpl
+      - skills/setup-career-stack/templates/AGENTS.md
+    resources: []
+    evaluations:
+      - setup-career-stack
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for CV generation and PDF export
+      - CV-generation tools and dependencies documented by Create CV
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
   compose-voice-profile:
@@ -803,5 +832,8 @@ project_files:
   - AGENTS.md
   - map.mmd
 python_packages:
+  - docx
+  - PIL
   - pypdf
+  - pypdfium2
   - reportlab

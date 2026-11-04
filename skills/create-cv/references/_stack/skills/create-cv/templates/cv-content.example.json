@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "document": {
+    "company": "[Company]",
+    "role": "[Role]",
+    "max_pages": null
+  },
+  "professional_experience": [
+    {
+      "employer": "[Employer]",
+      "role": "[Official role title]",
+      "dates": "MMM YYYY – MMM YYYY",
+      "descriptor": "[Optional company descriptor]",
+      "bullets": [
+        "[Role-relevant evidence bullet]",
+        "[Second evidence bullet]"
+      ]
+    }
+  ],
+  "personal_experience": [
+    {
+      "title": "[Capability-based title]",
+      "dates": "since MMM YYYY",
+      "bullets": [
+        "[One project or independent-work bullet]"
+      ]
+    }
+  ],
+  "hard_skills": [
+    {
+      "label": "[Skill family]",
+      "details": "[Related tools; purpose and output]"
+    }
+  ]
+}
