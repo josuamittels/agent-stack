@@ -6,6 +6,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add stable Create CV to draft evidence-grounded, role-tailored CV content and generate a validated EB Garamond PDF.
 - Add stable Draft Cover Letter, with role-specific chat and PDF output, a bundled application-letter voice profile, and a self-contained PDF generator.
 
 ### Changed

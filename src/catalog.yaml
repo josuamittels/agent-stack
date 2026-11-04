@@ -89,6 +89,55 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  create-cv:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+      - spawn-evals
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/create-cv/SKILL.md.tmpl
+      - skills/create-cv/assets/fonts/EBGaramond-Bold.ttf
+      - skills/create-cv/assets/fonts/EBGaramond-BoldItalic.ttf
+      - skills/create-cv/assets/fonts/EBGaramond-Regular.ttf
+      - skills/create-cv/assets/fonts/EBGaramond-RegularItalic.ttf
+      - skills/create-cv/assets/fonts/OFL-1.1.txt
+      - skills/create-cv/references/ats-guidelines.md
+      - skills/create-cv/references/cv-guidelines.md
+      - skills/create-cv/references/cv-layout.md
+      - skills/create-cv/references/export-and-qa.md
+      - skills/create-cv/references/font-usage.md
+      - skills/create-cv/references/role-relevance.md
+      - skills/create-cv/references/source-of-truth.md
+      - skills/create-cv/scripts/build_cv.py
+      - skills/create-cv/scripts/cv_support.py
+      - skills/create-cv/scripts/generate_cv_pdf.py
+      - skills/create-cv/scripts/requirements.txt
+      - skills/create-cv/templates/cv-content.example.json
+      - skills/create-cv/templates/cv-profile.example.json
+    resources:
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
+    evaluations:
+      - create-cv
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10
+      - python-docx, Pillow, pypdf, and pypdfium2
+      - LibreOffice or soffice for PDF export
+    fallback: If Python dependencies or LibreOffice are unavailable, return the
+      content draft, explain why PDF generation could not run, and do not
+      substitute another font or generator.
   draft-cover-letter:
     visibility: public
     required:

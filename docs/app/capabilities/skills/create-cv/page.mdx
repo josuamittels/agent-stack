@@ -1,0 +1,47 @@
+---
+title: "Create CV"
+---
+
+# Create CV
+
+> **Skill** · **stable** · **v1.0.0** · updated 2026-11-04
+
+## Purpose
+
+Create evidence-grounded CV content for a particular role and export it as an A4 PDF using the bundled EB Garamond layout. The skill returns a readable content draft, an editable DOCX, a PDF, and validation artifacts.
+
+## Workflow
+
+1. **Provide career context and a target.** Supply a professional career profile context file or its contents, plus a job description, vacancy, role, company, or positioning brief. A full job description is useful but not required when the target is otherwise clear.
+2. **Map role needs to evidence.** The skill identifies selection criteria and maps them to supported experience, education, projects, and skills. It preserves source qualifiers and leaves conflicts or unsupported claims out.
+3. **Review the CV content.** The CV uses six sections in this order: Education, Professional Experience, Personal Experience, Hard Skills, Personal Interests, and Language Proficiency. It does not add an opening summary or a separate competencies section.
+4. **Generate and inspect the files.** The bundled script creates `CV.docx`, `CV.pdf`, extracted text, page renders, and a machine-readable report under the selected output folder. It checks font embedding, section order, and experience pagination; inspect each rendered page before treating the PDF as final.
+5. **Approve delivery.** A local draft does not require content approval. Before copying a final version elsewhere, approve the exact content and supply a new destination path. The skill does not submit a CV or contact an employer.
+
+## Layout and requirements
+
+The PDF uses a single A4 column, a fixed six-section order, EB Garamond typography, visible contact links, and simple selectable text. Experience bullets use concrete actions and supported outcomes. See the [CV layout specification](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/references/cv-layout.md) for typography and spacing details.
+
+PDF generation requires Python 3.10 or later, `python-docx`, Pillow, `pypdf`, `pypdfium2`, and LibreOffice (`soffice`). The four EB Garamond font faces and their [SIL Open Font License 1.1](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/assets/fonts/OFL-1.1.txt) are bundled with the skill.
+
+Example command from the skill package:
+
+```bash
+python skills/create-cv/scripts/generate_cv_pdf.py \
+  --content "/path/to/cv-content.json" \
+  --profile "/path/to/cv-profile.json" \
+  --output-root "/path/to/cv-output"
+```
+
+The profile and content JSON templates contain mock data and placeholders. Replace them with verified, role-specific content before generation. The generator refuses to overwrite existing `CV.docx` or `CV.pdf` files.
+
+## Version and changes
+
+Version **1.0.0**; status **stable**. This is the first stable release. Changes appear in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/create-cv/SKILL.md.tmpl). The coordinated stack version and component inventory are in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/SKILL.md.tmpl)
+- [CV content template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/templates/cv-content.example.json)
+- [CV profile template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/templates/cv-profile.example.json)
+- [PDF export and quality checks](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/references/export-and-qa.md)
