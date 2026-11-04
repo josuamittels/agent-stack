@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "b3bf08bb79701c9edcca08de94fe14c6777b6b4cf7e6758e915d01da05322c25",
+  "catalog_sha256": "82b6947c582b24648906022056e0fac0be9074b3a4ac7d64b038bcfa8a712eac",
   "name": "compose-voice-profile",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.37.0",
+  "stack_version": "0.38.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -421,7 +421,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "9a1a8bc9714f900e94457e8b10538278d8b6a3b3f148ff27f79bcadb311fc922",
+      "sha256": "d5d5215d65a362a9cf73ec58a2724a6cc8bcc754cd7666100d7bcbe29203a752",
       "mode": 420
     }
   }

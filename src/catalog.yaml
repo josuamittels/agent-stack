@@ -66,6 +66,29 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  compose-career-profile:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/compose-career-profile/SKILL.md.tmpl
+      - skills/compose-career-profile/templates/career-profile.md
+    resources: []
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
   compose-voice-profile:
     visibility: public
     required:

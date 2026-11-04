@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "b3bf08bb79701c9edcca08de94fe14c6777b6b4cf7e6758e915d01da05322c25",
+  "catalog_sha256": "82b6947c582b24648906022056e0fac0be9074b3a4ac7d64b038bcfa8a712eac",
   "name": "convert-colour",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.37.0",
+  "stack_version": "0.38.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "be3028b2af1f72a910b61659433afca95003b72b97aa4ecba1d91fcf823e7b9a",
+      "sha256": "49cee69ba8c02e99889e7b4d5651c44e58404b9b40dbd22d49f25d3bef1e7f47",
       "mode": 420
     }
   }

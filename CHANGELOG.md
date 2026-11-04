@@ -14,6 +14,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add stable Compose Career Profile to build a detailed, reusable career context profile from source documents and staged interview answers.
 - Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
 - Add CI package checks and a manually triggered stable-release artifact workflow. Public distribution requires a stable stack and stable dependency closures; experimental previews remain local.
 

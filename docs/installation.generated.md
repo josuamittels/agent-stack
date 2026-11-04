@@ -45,6 +45,18 @@ Bundled dependencies: ask-user-question, think-harder.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
+## compose-career-profile
+
+Status: eligible stable candidate.
+
+Build a detailed, evidence-grounded career profile from a person's documents and staged interview answers. Use as reusable context for applications and career materials.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question compose-career-profile think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
+
 ## compose-voice-profile
 
 Status: eligible stable candidate.

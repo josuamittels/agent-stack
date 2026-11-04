@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "82b6947c582b24648906022056e0fac0be9074b3a4ac7d64b038bcfa8a712eac",
+  "name": "compose-career-profile",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.38.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "compose-career-profile",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "write",
+      "version": "2.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+    "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+    "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+    "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/compose-career-profile/SKILL.md.tmpl": "b56e917c159ce38f352886efe9f46256859f4ce14921f33af8fd868c5d192df2",
+    "src/skills/compose-career-profile/templates/career-profile.md": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/dutch.md": {
+      "sha256": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/english.md": {
+      "sha256": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/french.md": {
+      "sha256": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/german.md": {
+      "sha256": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-career-profile/instructions.md": {
+      "sha256": "7e5b45c4a325c14b3ca0cf3c64f66261cfb43350b6e92bf4590b2f6990d03561",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-career-profile/templates/career-profile.md": {
+      "sha256": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/write/instructions.md": {
+      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "f6eba56ec892bee7ed03fcb5a1eb18c0050088dfd038e3429dbe5bd9dacc9001",
+      "mode": 420
+    }
+  }
+}
