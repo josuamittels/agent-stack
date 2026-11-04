@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "skill": "draft-cover-letter",
+  "checks": [
+    {
+      "id": "application-job-description-archive",
+      "description": "For a specific Setup Career Stack application with a full job description, job.md is saved in that numbered applications folder and preserves the posting text without added content.",
+      "handler": "check_job_description_archive",
+      "mandatory": true,
+      "required_inputs": ["/evidence/job_description_archive"]
+    }
+  ]
+}

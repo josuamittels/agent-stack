@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "e94fdb0bc400f5333b83ec3f71cafc0b48585cb73a76a5fedbbf0544d2a49412",
+  "catalog_sha256": "0d3ab1990362993551121438d2d77ddb0b33c14462181f7f832e9035acc911f3",
   "name": "draft-cover-letter",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "status": "stable",
-  "stack_version": "0.42.0",
+  "stack_version": "0.43.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "draft-cover-letter",
-      "version": "1.2.0",
+      "version": "1.4.0",
       "status": "stable"
     },
     {
@@ -61,6 +61,8 @@
   "source_sha256": {
     "src/evals/compose-voice-profile/checks.py": "0f3d2bfeb14acd6bb0211ee11e55ed89eabbbe81a20cac3431ae64e07f5759ca",
     "src/evals/compose-voice-profile/rubric.json": "4296c1220b1d776beeca59af805a5bc0fc2370bc62cf66d37cc67f0dbad878e5",
+    "src/evals/draft-cover-letter/checks.py": "af321847b3c451c9a3c70765878b91a83ff88166652a1977b3b4a07dec77232e",
+    "src/evals/draft-cover-letter/rubric.json": "37c39ba5b8b79413252114e5b75bd0f7140b6aa790cf4765b6ddbf90d94f7cd1",
     "src/evals/research/checks.py": "9785d3da829530b9b436cf9b560e0ec035d146b8ddb83370ba6dbdb3d020b6e0",
     "src/evals/research/rubric.json": "cfc009305a525037972893867e5b7d3b05524d77cd54427db52b8c21270c1fec",
     "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
@@ -73,7 +75,7 @@
     "src/skills/compose-career-profile/templates/career-profile.md": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
     "src/skills/compose-voice-profile/SKILL.md.tmpl": "8949ddfe363f7ae708a44336a1f460a7be80bfdf8b89e9b7a4a5659175aa6b9e",
     "src/skills/compose-voice-profile/templates/voice-profile.md": "2211ebb15774e1036a37aa9094394235af8656de077af30e1897973eaa1b6951",
-    "src/skills/draft-cover-letter/SKILL.md.tmpl": "1106b80167121e08c95b5f4a4a671853664ba506745bf3c976e4767a021ef3b3",
+    "src/skills/draft-cover-letter/SKILL.md.tmpl": "03f429e103fd60f504d95851496044af602a799b9fd05a77b317806c14fb20bb",
     "src/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
     "src/skills/draft-cover-letter/references/fonts/OFL-1.1.txt": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
     "src/skills/draft-cover-letter/references/pdf-layout.md": "eb81827ccd9becbcbdea817402f1c3a0dae40ba8989a4bfb4d6d1b64d0c098ab",
@@ -156,6 +158,14 @@
       "sha256": "4296c1220b1d776beeca59af805a5bc0fc2370bc62cf66d37cc67f0dbad878e5",
       "mode": 420
     },
+    "references/_stack/evals/draft-cover-letter/checks.py": {
+      "sha256": "af321847b3c451c9a3c70765878b91a83ff88166652a1977b3b4a07dec77232e",
+      "mode": 420
+    },
+    "references/_stack/evals/draft-cover-letter/rubric.json": {
+      "sha256": "37c39ba5b8b79413252114e5b75bd0f7140b6aa790cf4765b6ddbf90d94f7cd1",
+      "mode": 420
+    },
     "references/_stack/evals/research/checks.py": {
       "sha256": "9785d3da829530b9b436cf9b560e0ec035d146b8ddb83370ba6dbdb3d020b6e0",
       "mode": 420
@@ -205,7 +215,7 @@
       "mode": 420
     },
     "references/_stack/skills/draft-cover-letter/instructions.md": {
-      "sha256": "21d4d877210a5f84b1890596ead1a3b725941374d9037c2b0600a3e2efa16c12",
+      "sha256": "17ff89bd03027762c5ffdc785d97e50e257d3739273efe0338a4e1e0ccbce534",
       "mode": 420
     },
     "references/_stack/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": {
@@ -481,7 +491,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "c879ecfd389015e7e5dcddd83a079810dcd88f23c05db75c9817c01868e52d57",
+      "sha256": "1f1bb42e8d8d7250635164edaf0e5680c7a49d7a3c38b4cc7ec5713d8887617b",
       "mode": 420
     }
   }

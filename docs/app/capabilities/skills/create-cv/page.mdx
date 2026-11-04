@@ -4,7 +4,7 @@ title: "Create CV"
 
 # Create CV
 
-> **Skill** · **stable** · **v1.0.0** · updated 2026-11-04
+> **Skill** · **stable** · **v1.1.0** · updated 2026-11-05
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Create evidence-grounded CV content for a particular role and export it as an A4
 
 ## Workflow
 
-1. **Provide career context and a target.** Supply a professional career profile context file or its contents, plus a job description, vacancy, role, company, or positioning brief. A full job description is useful but not required when the target is otherwise clear.
+1. **Provide career context and a target.** Supply a professional career profile context file or its contents, plus a job description, vacancy, role, company, or positioning brief. A full job description is useful but not required when the target is otherwise clear. In a Setup Career Stack workspace, the supplied description is saved as `job.md` in the numbered application folder.
 2. **Map role needs to evidence.** The skill identifies selection criteria and maps them to supported experience, education, projects, and skills. It preserves source qualifiers and leaves conflicts or unsupported claims out.
 3. **Review the CV content.** The CV uses six sections in this order: Education, Professional Experience, Personal Experience, Hard Skills, Personal Interests, and Language Proficiency. It does not add an opening summary or a separate competencies section.
 4. **Generate and inspect the files.** The bundled script creates `CV.docx`, `CV.pdf`, extracted text, page renders, and a machine-readable report under the selected output folder. It checks font embedding, section order, and experience pagination; inspect each rendered page before treating the PDF as final.
@@ -41,7 +41,7 @@ The profile and content JSON templates contain mock data and placeholders. Repla
 
 ## Version and changes
 
-Version **1.0.0**; status **stable**. This is the first stable release. Changes appear in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/create-cv/SKILL.md.tmpl). The coordinated stack version and component inventory are in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **1.1.0**; status **stable**. In career workspaces, the supplied job description is archived as `job.md` in its application folder. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

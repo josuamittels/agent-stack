@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skill": "answer-interview",
+  "checks": [
+    {
+      "id": "answer-within-requested-limit",
+      "description": "The copy-ready answer is at or below the explicit maximum word or character limit.",
+      "handler": "check_answer_within_limit",
+      "mandatory": true,
+      "required_inputs": ["/constraints", "/evidence/answer_text"]
+    },
+    {
+      "id": "reported-count-matches-answer",
+      "description": "The reported word or character count equals the count of the copy-ready answer text.",
+      "handler": "check_reported_count",
+      "mandatory": true,
+      "required_inputs": ["/evidence/answer_text", "/evidence/reported_counts"]
+    }
+  ]
+}

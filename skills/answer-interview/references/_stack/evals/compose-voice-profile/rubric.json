@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "skill": "compose-voice-profile",
+  "checks": [
+    {
+      "id": "template-heading-coverage",
+      "description": "The completed profile contains every second- and third-level heading from the supplied voice-profile template in the same order.",
+      "handler": "check_template_heading_coverage",
+      "mandatory": true,
+      "required_inputs": [
+        "/outputs/main",
+        "/evidence/template_path"
+      ]
+    },
+    {
+      "id": "template-prompt-resolution",
+      "description": "The completed profile contains none of the bracketed fill-in prompts from the supplied voice-profile template.",
+      "handler": "check_template_prompt_resolution",
+      "mandatory": true,
+      "required_inputs": [
+        "/outputs/main",
+        "/evidence/template_path"
+      ]
+    }
+  ]
+}

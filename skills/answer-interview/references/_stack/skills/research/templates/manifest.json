@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "document_type": null,
+  "sections": [],
+  "artifacts": [
+    "brief.json",
+    "sources.json",
+    "appraisals.json",
+    "claims.json",
+    "outline.json",
+    "argument-review.json",
+    "citation-review.json",
+    "exports.json",
+    "citation-candidates.json",
+    "retrieved-sources.json",
+    "literature-contract.json",
+    "source-gate.json"
+  ],
+  "generated": [
+    "draft.md",
+    "bibliography.json",
+    "citation-keys.json",
+    "report.md",
+    "cited-sources.json",
+    "citation-receipt.json",
+    "exports.json",
+    "sources.md",
+    "excluded-sources.json",
+    "qualified-expansion.json",
+    "source-gate.initial.json",
+    "gate-input.initial.json",
+    "source-gate.top_up.json",
+    "gate-input.top_up.json",
+    "anchor-sources.json",
+    "anchor-gate.json",
+    "pool-sources.json",
+    "pool-gate.json"
+  ]
+}

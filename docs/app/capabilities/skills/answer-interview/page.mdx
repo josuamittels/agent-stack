@@ -1,0 +1,29 @@
+---
+title: "Answer Interview"
+---
+
+# Answer Interview
+
+> **Skill** · **stable** · **v1.0.0** · updated 2026-11-05
+
+## Purpose
+
+Write concise, authentic answers to job application, screening, and interview questions. The skill uses career evidence and the job description to select relevant details, then returns a copy-ready answer in chat.
+
+## Workflow
+
+1. **Provide the question and constraints.** Share the exact prompt, job description, desired language, and any word or character limit. In a Setup Career Stack workspace, the skill reads the career context and the archived `job.md` for that application.
+2. **Ground the response.** The skill selects supported experience that answers each part of the prompt. It preserves the candidate's actual contribution and leaves unsupported claims out.
+3. **Draft and fit the limit.** The answer starts with the point, uses a relevant example where useful, and stays short and natural. When a limit is supplied, the final answer includes a checked word or character count.
+4. **Apply feedback.** Feedback that should guide later answers updates the workspace's application-answer voice profile. The project version takes priority over the bundled [Professional Application Answer Voice Profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/answer-interview/references/professional-voice-profile.md).
+
+The skill does not submit answers or fill out an application. If important evidence is missing, it asks a focused question or leaves that claim out.
+
+## Version and changes
+
+Version **1.0.0**; status **stable**. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md) for the stack inventory.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/answer-interview/SKILL.md.tmpl)
+- [Professional Application Answer Voice Profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/answer-interview/references/professional-voice-profile.md)

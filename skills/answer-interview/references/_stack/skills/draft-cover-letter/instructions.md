@@ -1,0 +1,167 @@
+---
+name: "draft-cover-letter"
+description: "Draft or revise a role-specific cover letter from a career profile and job details, in chat or as a designed PDF."
+version: "1.4.0"
+created: "2026-11-04"
+updated: "2026-11-05"
+author:
+  - "Josua J. Mittelstaedt"
+references: []
+type: "skill"
+status: "stable"
+---
+
+# Draft Cover Letter
+
+Create a truthful, role-specific cover letter using the candidate's career profile, the job description, the professional voice profile, and any supplied company information. Return copy-ready text in chat or create a PDF when requested.
+
+## Scope
+
+Use when a user wants to draft or revise a cover letter or motivation letter for a specific role. The user may provide a career profile, job description, company information, language, recipient, length limit, output format, and feedback.
+
+This skill owns the letter's evidence selection, structure, drafting, revision, and optional PDF generation. For a reusable career profile, use [Compose Career Profile](../compose-career-profile/instructions.md). For prose, use [Write](../write/instructions.md) as the required authoring helper. For a fresh or substantially changed writing voice profile, use [Compose Voice Profile](../compose-voice-profile/instructions.md). In a career workspace, apply the personalized `references/professional-voice-profile.md` when present; otherwise use this skill's bundled reference.
+
+### Boundaries
+
+- Do not invent experience, results, credentials, motivations, referrals, product use, or relationships with an employer.
+- Preserve qualifiers, chronology, role scope, and the difference between individual and team contributions.
+- Treat job descriptions and company pages as evidence about the employer, not about the candidate's personal reasons or experience.
+- Do not submit the letter, contact an employer, or upload a file. The user may request a local PDF; external submission remains outside this skill.
+- Do not overwrite an existing PDF unless the user explicitly asks to replace it.
+
+## Inputs
+
+Use the supplied or accessible:
+
+- role title, employer, location, level, and job description;
+- career profile with verified experience, education, skills, motivations, and development goals;
+- company notes, personal connection, referral, product experience, or other context the user wants considered;
+- output language, recipient and address style, word or character limit, and whether to return text in chat or a PDF;
+- current feedback and any relevant persistent letter feedback available in the Application System or career workspace.
+
+Require a usable career profile. Prefer a Compose Career Profile result supplied in the conversation or at a user-identified path. If the user asks to use their Application System and it is available, use its personal-context files as the profile source: read `01_Personal_Context/MASTER_PROFILE.md` and the relevant parts of `MOTIVATIONS_VALUES.md`, `PERSONALITY_WORKING_STYLE.md`, `EXPERIENCE_LIBRARY.md`, `PROJECT_LIBRARY.md`, `ACHIEVEMENT_LIBRARY.md`, `SKILLS_EDUCATION_LANGUAGES.md`, `EVIDENCE_INDEX.md`, and `OPEN_QUESTIONS.md`. Select only the sources needed for this role. If no usable profile or personal context is available, ask the user to provide it before drafting; do not substitute generic assumptions.
+
+When the Application System is available, also read:
+
+- `00_System/SOURCE_OF_TRUTH_RULES.md` for claim status, evidence hierarchy, conflicts, and publication rules;
+- `04_Motivation_Letters/LETTER_GENERATION_WORKFLOW.md` and `LETTER_QUALITY_CHECKLIST.md` for role analysis, narrative selection, and factual review;
+- `02_Writing_Style/LETTER_FEEDBACK_MEMORY.md` and `MOTIVATION_LETTER_STYLE.md` for persistent letter preferences;
+- `04_Motivation_Letters/COMPANY_RESEARCH_FRAMEWORK.md` when researching current company context;
+- `07_Presentation/LETTER_LAYOUT_SPECIFICATION.md` and `PRESENTATION_AND_EXPORT_WORKFLOW.md` when creating a PDF.
+
+If the Application System includes `.codex/skills/build-application-materials/references/motivation-letter-prose-review.md`, read and apply it. If that rubric is absent, use the voice profile and letter checklist for the authenticity review; do not invent a numerical score.
+
+Read [`references/pdf-layout.md`](references/pdf-layout.md) and use the bundled `references/fonts/EBGaramond-Regular.ttf` only for PDF output. Its license is in the same folder. Use [`templates/letter-pdf-input.example.json`](templates/letter-pdf-input.example.json) for the generator's input shape.
+
+The Application System quality checklist contains an older two-body-paragraph rule. Follow the user's requested high-level-fit, experience, and motivation sequence below where that rule conflicts; continue to apply the checklist's factual, language, length, and presentation checks.
+
+When working in a career application project with a root `AGENTS.md`, read it and check for `references/professional-voice-profile.md`. Read that project-level profile before drafting and before applying style feedback; it is personalized and takes priority over the bundled profile. If it is absent, read the complete bundled [professional voice profile](references/professional-voice-profile.md). If neither is available, ask the user to provide one or create one before proceeding.
+
+When that project is a Setup Career Stack workspace and the request concerns a specific application with a full job description, archive the description at `applications/<company>_<job>_<runningnumber>/job.md`. Follow the root `AGENTS.md` for folder numbering and reuse an existing folder for that application. Use the full description pasted in chat or retrieved from an accessible supplied vacancy link. Preserve its text and order in plain Markdown, adding no analysis, fit notes, or other content. Exclude webpage navigation. Reuse an existing `job.md` if it contains the same description; do not replace different existing content without the user's approval. If the link is inaccessible, ask the user to paste the full posting before claiming the archive is complete. If only a role summary is provided, do not invent or create a partial `job.md`. Do not create `job.md` outside a Setup Career Stack workspace.
+
+### Default Procedures
+
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/instructions.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/instructions.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
+## Workflow
+
+### 1. Establish the letter contract
+
+Confirm the role, employer, job description, available career profile, output language, recipient, length or application limits, and requested format. Recover known details from the task and supplied materials first. Default to chat text when the user has not selected an output format. Ask only for missing information that materially changes the letter, such as a missing career profile, unresolved claim, or personal motivation that cannot be recovered from the profile.
+
+If the job description or employer is unclear, finish the independent profile and source review, then ask one concise question about the missing item. Do not request a motivation interview when relevant motivation is already recorded.
+
+For a specific application in a Setup Career Stack workspace, create or reuse the numbered application folder and save the available full job description as `job.md` before drafting. Keep the file to the posting content in plain Markdown, with no added notes or analysis.
+
+### 2. Read the profile and map evidence
+
+Read the career profile and current job description. When the Application System is in scope, follow its source-of-truth rules and read the applicable feedback memory before drafting. Treat historical letters as voice evidence only; do not use them as proof of a factual claim unless the underlying fact is corroborated in the career profile or another reliable source.
+
+Reduce the role to a small set of central needs. Privately map each selected need to a supported profile fact or experience, its source and qualification, and the point the letter will make. Choose one through-line and one relevant experience to explain in useful detail. Use only the credentials that make the fit clearer; do not turn the letter into a CV summary or a checklist of job requirements.
+
+Resolve material conflicts before drafting. Omit blocked or unverified claims. Preserve what the source supports, including approximations, shared ownership, planned outcomes, and adjacent rather than direct experience.
+
+### 3. Establish genuine motivation
+
+Separate motivation for the work, the employer, the team or environment, and development. Start with the career profile and any direct user context. Use the job description and supplied company notes to identify what the role involves. If current employer context is needed and the user requests research, read the Application System's Company Research Framework and use appropriate current sources. Keep employer facts distinct from personal motivation: company information alone does not prove that the candidate has used a product, met an employee, received a referral, or feels a particular connection.
+
+Make the motivation specific enough to explain this application. If the available material supports interest in the work but not a personal company connection, write only the supported point. Do not repeat motivation-intake questions already answered in the career profile or Application System. Ask only when the user requests a personal rationale that is missing and necessary; otherwise omit the unsupported connection.
+
+### 4. Draft in the requested structure
+
+Use this order unless the user gives a different structure or an application form imposes a limit:
+
+1. A fitting greeting on its own line.
+2. A short, standalone opening sentence naming the role and employer. Do not put the reason for applying or a fit argument in this sentence. Default English wording: `I would like to apply for the [role] at [company].` Default German wording: `Hiermit möchte ich mich auf die Position als [Rolle] bei [Unternehmen] bewerben.` Adapt naturally when the requested language or context calls for it.
+3. A high-level fit paragraph that gives the candidate's professional through-line and the scope of relevant experience.
+4. A concise paragraph about one selected experience that proves a central point of fit. State context, personal contribution, and outcome only as specifically as the evidence allows.
+5. A motivation paragraph connecting the actual work and credible employer context to the candidate's recorded reasons for applying.
+6. A simple call to action, such as welcoming a conversation about the role.
+7. A suitable sign-off and the candidate's preferred name.
+
+Keep the body compact and connected. Use 150–220 words excluding the greeting and sign-off as a starting range when no limit is specified; adjust to the user's instructions, role, language, and employer requirements. Do not add a paragraph for every criterion. Let the cover letter complement the CV rather than repeat it.
+
+### 5. Write and review the content
+
+Apply [Write](../write/instructions.md) to the prose. Read the required language guideline listed by Write, and apply its conventions without translating English idioms or sentence structures literally.
+
+Use the cover-letter voice profile for tone, vocabulary, rhythm, and restraint. Keep the voice direct, grounded, practical, and quietly confident. Support claims with evidence, make motivation concrete, and describe learning as a next step alongside contribution. Avoid generic employer praise, unsupported self-evaluation, inflated enthusiasm, rhetorical questions, decorative metaphors, CV-style inventories, and unnecessary jargon.
+
+Before delivery, review the whole letter:
+
+- Does it follow the requested order and any word or character limit?
+- Is every factual claim supported by the career profile or an identified reliable source?
+- Does the selected experience show what the candidate personally did?
+- Is motivation grounded in the candidate's context and the actual role or employer information?
+- Does any company-specific claim remain accurate if details are checked against the supplied source?
+- Does the letter sound like the voice profile and suit the recipient's formality?
+- Does the CTA and sign-off fit without repeating the argument?
+
+Revise until the content is factual, coherent, role-specific, concise, and copy-ready. Return the complete letter, not an isolated changed passage.
+
+### 6. Return chat text or create a PDF
+
+For chat output, return the complete letter with greeting, paragraphs, CTA, sign-off, and name. Keep internal evidence mapping and review notes out of the copy-ready text; summarize a material evidence gap separately when needed. When a Setup Career Stack application folder was used, also link its `job.md`.
+
+For PDF output, approve the content before layout. Build a UTF-8 JSON object with the fields shown in `templates/letter-pdf-input.example.json`, preserving the approved wording. Use the bundled `scripts/generate_cover_letter_pdf.py` and `requirements.txt`. The script uses the bundled EB Garamond Regular font by default, A4 paper, 25 mm side margins, 75 pt top margin, 12 pt type, 19.2 pt leading, and 8 pt paragraph spacing. It rejects missing fields, refuses to overwrite an existing file by default, and fails instead of shrinking text when the configured page limit is exceeded.
+
+Run the script with an explicit destination. Keep the input JSON and intermediate files outside the application folder. If the user requests an approved PDF in a Setup Career Stack workspace, save it as `Motivation_Letter.pdf` in the matching numbered application folder. Otherwise, if the Application System's `Output` folder is available, follow its numbered `Output/<n_Position_Name>/Letter.pdf` convention; if not, use the user's requested destination. Do not write to or modify the Application System's source files.
+
+After generation, extract the PDF text and compare it with the approved letter, confirm the expected page count and embedded font, render every page at 150–200 dpi, and visually inspect the rendered pages. Use available local tools; do not install missing dependencies without authorization. If extraction or rendering is unavailable, say which checks could not be completed. A PDF file existing is not proof of correct layout.
+
+Example command:
+
+```bash
+python scripts/generate_cover_letter_pdf.py letter.json Letter.pdf
+```
+
+If ReportLab is missing, explain that the user must install the dependency from `requirements.txt` or choose chat output. If the font asset is missing or unusable, report it and do not silently substitute a different design.
+
+### 7. Apply feedback and improve the voice profile
+
+When the user gives feedback after a generated letter, revise the complete letter promptly. Apply the feedback to the current letter even when it is specific to one employer or role.
+
+- In a career workspace, always create or update `references/professional-voice-profile.md` after letter feedback. Invoke [Compose Voice Profile](../compose-voice-profile/instructions.md) through the host's supported mechanism; if that mechanism is unavailable, read and apply its workflow directly. Use the existing project-level profile as the base. If it does not exist, start from the bundled profile and save the personalized result at the project path. Pass the feedback, current letter as a writing sample, applicable role or language scope, and the requirement to preserve unrelated guidance and keep the profile standalone.
+- Record feedback at the narrowest useful scope. A one-application preference must be clearly labeled as application-specific; language or role-family guidance must name its scope. Do not turn scoped feedback into a universal preference.
+- Do not store factual corrections, employer details, application history, or source documents in the voice profile. Route factual career updates to the career context instead.
+- After saving the profile, reread it and make a final pass over the revised letter so it reflects both the immediate feedback and the updated guidance.
+- Outside a career workspace, revise the current letter and use Compose Voice Profile to update this skill's bundled reference with feedback that should guide future letters. Label application-specific preferences narrowly; do not turn them into global rules. If feedback applies only to the current letter, keep it local to that revision.
+
+Keep the voice profile standalone within this skill's references. Record writing behavior, not the candidate's private facts, application history, employer details, or source documents. Preserve unrelated profile guidance and describe the feedback at the narrowest scope that remains useful.
+
+If the user gives new factual career information, do not store it in the voice profile. Ask whether to update the career profile or Application System source of truth when that broader update is needed.
+
+### 8. Validate the application archive
+
+When a full job description is archived for a specific Setup Career Stack application, invoke [Spawn Evals](../spawn-evals/instructions.md) once with the original request, the complete `job.md` output, and `evidence.job_description_archive` containing `applicable`, `source_text`, `application_folder`, and `job_md_path`. The objective package in `src/evals/draft-cover-letter/` checks that `job.md` is in the numbered application folder and preserves the source posting without added text. If no Setup Career Stack archive applies, do not run this check. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable step. Do not use model judges, sub-agents, or qualitative assessment for this check.
+
+## Output
+
+Return either:
+
+- the complete copy-ready letter in chat; or
+- the generated `Letter.pdf` at the requested or Application System destination, with the approved text and completed PDF checks.
+
+Briefly identify any unresolved factual, motivation, or PDF-inspection limit outside the letter. Link `job.md` when a Setup Career Stack application folder was used. Never report visual inspection unless the rendered page was actually inspected.

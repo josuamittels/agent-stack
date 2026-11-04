@@ -32,7 +32,7 @@ def check_workspace_structure(context):
 
 def check_career_routing_instructions(context):
     evidence = ["/outputs/AGENTS.md"]
-    expected = "AGENTS.md routes to compose-career-profile, create-cv, and draft-cover-letter, supports unnamed-skill requests, matches staples, and gives project-level letter voice priority"
+    expected = "AGENTS.md routes application questions to answer-interview, archives full job descriptions as job.md in application folders, supports unnamed-skill requests, matches staples, and prioritizes project voice profiles"
     content = context.get("outputs", {}).get("AGENTS.md")
     if not isinstance(content, str) or not content.strip():
         return _result("unverified", "career routing instructions", "complete AGENTS.md is unavailable", expected, evidence)
@@ -41,9 +41,11 @@ def check_career_routing_instructions(context):
         "compose-career-profile": "compose-career-profile" in text,
         "create-cv": "create-cv" in text,
         "draft-cover-letter": "draft-cover-letter" in text,
+        "answer-interview": "answer-interview" in text,
         "automatic routing": "does not name a skill" in text or "without requiring a named skill" in text,
         "staple matching": "match" in text and "staple" in text,
         "project voice priority": "takes priority over the bundled profile" in text,
+        "job description archive": "job.md" in text and "job description" in text and "application folder" in text,
     }
     missing = [name for name, present in required.items() if not present]
     return _result("fail" if missing else "pass", "career routing instructions",

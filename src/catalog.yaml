@@ -138,6 +138,38 @@ skills:
     fallback: If Python dependencies or LibreOffice are unavailable, return the
       content draft, explain why PDF generation could not run, and do not
       substitute another font or generator.
+  answer-interview:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+    conditional:
+      - compose-career-profile
+      - compose-voice-profile
+      - spawn-evals
+      - draft-cover-letter
+    optional: []
+    routes: []
+    files:
+      - skills/answer-interview/SKILL.md.tmpl
+      - skills/answer-interview/references/professional-voice-profile.md
+    resources:
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
+    evaluations:
+      - answer-interview
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
   draft-cover-letter:
     visibility: public
     required:
@@ -147,6 +179,7 @@ skills:
     conditional:
       - compose-career-profile
       - compose-voice-profile
+      - spawn-evals
     optional: []
     routes: []
     files:
@@ -163,7 +196,8 @@ skills:
       - guidelines/languages/english.md
       - guidelines/languages/french.md
       - guidelines/languages/german.md
-    evaluations: []
+    evaluations:
+      - draft-cover-letter
     hosts:
       - codex
       - claude-code
@@ -181,6 +215,7 @@ skills:
       - compose-career-profile
       - create-cv
       - draft-cover-letter
+      - answer-interview
       - spawn-evals
       - think-harder
     conditional:

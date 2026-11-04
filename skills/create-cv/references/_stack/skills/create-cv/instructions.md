@@ -1,9 +1,9 @@
 ---
 name: "create-cv"
 description: "Create evidence-backed, role-tailored CV content and a PDF in a defined EB Garamond layout from a professional career profile and target."
-version: "1.0.0"
+version: "1.1.0"
 created: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-05"
 author:
   - "Josua Mittelstaedt"
 references: []
@@ -17,7 +17,7 @@ Create a role-relevant, evidence-backed CV from a supplied professional career p
 
 ## Scope
 
-Use for a new or revised, tailored CV when the user supplies a professional career profile context file (or its contents) and a target. A target can be a job description, vacancy, company and role, role family, or explicit positioning brief. The job description is useful but not required when another target gives enough direction. In a project with a root `AGENTS.md` and `staples/`, follow its career-workspace routing and compare approved staples before creating new content. For a request that only selects or reuses an existing CV without drafting new content, use that existing CV workflow instead.
+Use for a new or revised, tailored CV when the user supplies a professional career profile context file (or its contents) and a target. A target can be a job description, vacancy, company and role, role family, or explicit positioning brief. The job description is useful but not required when another target gives enough direction. In a project with a root `AGENTS.md` and `staples/`, follow its career-workspace routing and compare approved staples before creating new content. When the project is a Setup Career Stack workspace and the request concerns a specific application with a full job description, archive that description as `job.md` in the application's numbered folder, even if a matching staple CV is reused. For a request that only selects or reuses an existing CV without drafting new content, use that existing CV workflow instead unless it includes a specific application with a full job description to archive.
 
 ### Boundaries
 
@@ -33,6 +33,8 @@ Use for a new or revised, tailored CV when the user supplies a professional care
 Require a professional career profile context file or supplied profile text, and a target. First check task attachments and conversation context for the profile file; accept a local path or pasted content as well. When working in a career application project, read its root `AGENTS.md` and prefer `references/career-context.md` as the profile. Ask for a missing required input only after checking available context. Preserve any requested language, page limit, role title, or output path; otherwise use the defaults below.
 
 When the project has approved CVs under `staples/`, read their `MATCH.md` files and inspect any plausible staple against the target's requirements and the CV's actual evidence. Reuse a staple only when its match criteria and evidence fit the target without a material positioning or content change. If it fits, return it as the selected CV; when a final application copy is requested, follow the project's `AGENTS.md` naming and approval rules. If no staple fits or a material change is needed, continue with this skill to create a new target-specific CV. Do not use company name or industry alone as proof of fit, and do not silently edit a staple.
+
+When working in a Setup Career Stack workspace, archive a supplied full job description for a specific application at `applications/<company>_<job>_<runningnumber>/job.md`. Follow the root `AGENTS.md` for folder numbering and reuse an existing folder for that same application. A job description may come from pasted text or an accessible user-supplied vacancy link. Preserve the posting's content and order, formatting it as plain Markdown headings, lists, and paragraphs. Include only the job description itself; omit site navigation, agent analysis, fit notes, and other added material. If a `job.md` already exists, reuse it when it contains the same description; do not replace different existing content without the user's approval. If the link is inaccessible, ask the user to paste the full posting before claiming the archive is complete. If only a role summary is available, do not invent a description or create a partial `job.md`. Outside a Setup Career Stack workspace, do not create this archive file.
 
 The package is self-contained. Its templates, fonts, references, and scripts are listed below with their purpose. Use only these bundled resources at runtime.
 
@@ -79,6 +81,8 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 Read the supplied career profile and target. If the workspace `AGENTS.md` applies, follow its application workflow. Identify the role, company (if known), output language, target audience, and explicit constraints. Use the profile as the source for career evidence and fixed CV fields. Create a task-specific `cv-profile.json` from `templates/cv-profile.example.json`, filling only verified identity, contact, education, language, and interest data. Leave the mock template unchanged. If a required fixed field is missing or conflicted, ask or omit it; do not export placeholders. Do not resolve a factual conflict by choosing the more impressive version.
 
+If this is a specific application in a Setup Career Stack workspace and the full job description is available, create or reuse the correctly numbered application folder and save the posting as `job.md` before drafting or selecting the CV. Preserve the posting's complete text in plain Markdown without adding commentary. Keep working CV files and QA artifacts in the appropriate working folder, not in the application folder.
+
 Before drafting, compare relevant staples with the target when available. Record why a staple does or does not fit based on its match notes and evidence in the CV. Reuse a fitting staple without regenerating near-duplicate content. Continue the full generation workflow only when a new tailored CV is needed.
 
 If no full job description is supplied, derive fit only from the stated target. Label assumptions and limit the job-fit assessment to evidence available in that target.
@@ -118,7 +122,7 @@ Show the user the content draft or a compact, complete text preview and retain `
 
 ### 4. Generate the CV PDF with the bundled script
 
-Use a user-selected output folder and set `document.max_pages` to `null` unless the user explicitly sets a limit. The generator names the files `CV.docx` and `CV.pdf`. Keep `cv-profile.json`, `cv-content.json`, and generated files together. Check the selected output folder before generation; do not overwrite an existing CV artifact.
+Use a user-selected working output folder and set `document.max_pages` to `null` unless the user explicitly sets a limit. The generator names the files `CV.docx` and `CV.pdf`. Keep `cv-profile.json`, `cv-content.json`, and generated files together. In a Setup Career Stack workspace, keep these working files and QA artifacts outside the application folder, which may contain `job.md` before the CV is approved. Check the selected output folder before generation; do not overwrite an existing CV artifact.
 
 Run the bundled entrypoint; it preflights bundled fonts, references, templates, scripts, Python modules, and the PDF export tool, then invokes the bundled build script. That script is the layout authority. Do not hand-build or restyle the PDF.
 
@@ -130,7 +134,7 @@ python /path/to/create-cv/scripts/generate_cv_pdf.py --content "/path/to/cv-outp
 
 The script requires the populated CV profile explicitly and does not copy a delivery version by default. It creates `CV.docx`, `CV.pdf`, and QA artifacts in `qa/` under the output root. It rejects the bundled mock profile while any placeholders remain.
 
-After the user approves the exact content and requests a delivery copy, specify a new destination file with `--copy-to`, for example:
+After the user approves the exact content and requests a delivery copy, specify a new destination file with `--copy-to`. In a Setup Career Stack workspace, use the matching numbered application folder and name the approved final copy `CV.pdf`. Keep draft and working files outside that folder. For example:
 
 ```bash
 python /path/to/create-cv/scripts/generate_cv_pdf.py --content "/path/to/cv-output/cv-content.json" --profile "/path/to/cv-output/cv-profile.json" --output-root "/path/to/cv-output" --copy-to "/path/to/delivery/CV.pdf"
@@ -148,8 +152,8 @@ After validation, compare the final rendered CV with the target. Save `qa/job-fi
 
 ### 6. Validate implementation
 
-When invoked as a helper, return to the owning workflow without separate evaluation. For a skill with meaningful, deterministic, task-specific checks, invoke [Spawn Evals](../spawn-evals/instructions.md) once with a structured invocation record containing the original request, resolved constraints and their source, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `src/evals/create-cv/` defines only those checks. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
+When invoked as a helper, return to the owning workflow without separate evaluation. For each run, include `evidence.job_description_archive` with `applicable`, `source_text`, `application_folder`, and `job_md_path`; set `applicable` to false when no Setup Career Stack application archive is required. When applicable, include the complete `job.md` under `output_files.job_md`. Invoke [Spawn Evals](../spawn-evals/instructions.md) once with the original request, resolved constraints and their sources, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `src/evals/create-cv/` checks CV structure, PDF evidence, and, when applicable, that the numbered application folder's `job.md` preserves the supplied posting without added text. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
 
 ## Output
 
-Return the content draft and links to `cv-profile.json`, `cv-content.json`, `CV.docx`, and `CV.pdf`. If you reused a staple, link the selected staple and its `MATCH.md` instead, state why its existing evidence fits, and do not imply that you generated new files. When a delivery copy was approved, also link that file. Include the job-fit assessment, a concise strengths/gaps summary, unresolved facts or verification limits, page count, and whether PDF validation and visual inspection completed. Do not expose internal evidence tags in the CV.
+Return the content draft and links to `cv-profile.json`, `cv-content.json`, `CV.docx`, and `CV.pdf`. If you reused a staple, link the selected staple and its `MATCH.md` instead, state why its existing evidence fits, and do not imply that you generated new files. When a Setup Career Stack application folder was used, also link its `job.md`. When a delivery copy was approved, link that file too. Include the job-fit assessment, a concise strengths/gaps summary, unresolved facts or verification limits, page count, and whether PDF validation and visual inspection completed. Do not expose internal evidence tags in the CV.

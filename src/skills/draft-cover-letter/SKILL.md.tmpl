@@ -1,9 +1,9 @@
 ---
 name: "draft-cover-letter"
 description: "Draft or revise a role-specific cover letter from a career profile and job details, in chat or as a designed PDF."
-version: "1.2.0"
+version: "1.4.0"
 created: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-05"
 author:
   - "Josua J. Mittelstaedt"
 references: []
@@ -57,6 +57,8 @@ The Application System quality checklist contains an older two-body-paragraph ru
 
 When working in a career application project with a root `AGENTS.md`, read it and check for `references/professional-voice-profile.md`. Read that project-level profile before drafting and before applying style feedback; it is personalized and takes priority over the bundled profile. If it is absent, read the complete bundled [professional voice profile](references/professional-voice-profile.md). If neither is available, ask the user to provide one or create one before proceeding.
 
+When that project is a Setup Career Stack workspace and the request concerns a specific application with a full job description, archive the description at `applications/<company>_<job>_<runningnumber>/job.md`. Follow the root `AGENTS.md` for folder numbering and reuse an existing folder for that application. Use the full description pasted in chat or retrieved from an accessible supplied vacancy link. Preserve its text and order in plain Markdown, adding no analysis, fit notes, or other content. Exclude webpage navigation. Reuse an existing `job.md` if it contains the same description; do not replace different existing content without the user's approval. If the link is inaccessible, ask the user to paste the full posting before claiming the archive is complete. If only a role summary is provided, do not invent or create a partial `job.md`. Do not create `job.md` outside a Setup Career Stack workspace.
+
 ### Default Procedures
 
 When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md.tmpl) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
@@ -70,6 +72,8 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 Confirm the role, employer, job description, available career profile, output language, recipient, length or application limits, and requested format. Recover known details from the task and supplied materials first. Default to chat text when the user has not selected an output format. Ask only for missing information that materially changes the letter, such as a missing career profile, unresolved claim, or personal motivation that cannot be recovered from the profile.
 
 If the job description or employer is unclear, finish the independent profile and source review, then ask one concise question about the missing item. Do not request a motivation interview when relevant motivation is already recorded.
+
+For a specific application in a Setup Career Stack workspace, create or reuse the numbered application folder and save the available full job description as `job.md` before drafting. Keep the file to the posting content in plain Markdown, with no added notes or analysis.
 
 ### 2. Read the profile and map evidence
 
@@ -119,11 +123,11 @@ Revise until the content is factual, coherent, role-specific, concise, and copy-
 
 ### 6. Return chat text or create a PDF
 
-For chat output, return the complete letter with greeting, paragraphs, CTA, sign-off, and name. Keep internal evidence mapping and review notes out of the copy-ready text; summarize a material evidence gap separately when needed.
+For chat output, return the complete letter with greeting, paragraphs, CTA, sign-off, and name. Keep internal evidence mapping and review notes out of the copy-ready text; summarize a material evidence gap separately when needed. When a Setup Career Stack application folder was used, also link its `job.md`.
 
 For PDF output, approve the content before layout. Build a UTF-8 JSON object with the fields shown in `templates/letter-pdf-input.example.json`, preserving the approved wording. Use the bundled `scripts/generate_cover_letter_pdf.py` and `requirements.txt`. The script uses the bundled EB Garamond Regular font by default, A4 paper, 25 mm side margins, 75 pt top margin, 12 pt type, 19.2 pt leading, and 8 pt paragraph spacing. It rejects missing fields, refuses to overwrite an existing file by default, and fails instead of shrinking text when the configured page limit is exceeded.
 
-Run the script with an explicit destination. If the user requests a PDF and the Application System's `Output` folder is available, follow its numbered `Output/<n_Position_Name>/Letter.pdf` convention. Otherwise use the user's requested destination. Do not write to or modify the Application System's source files.
+Run the script with an explicit destination. Keep the input JSON and intermediate files outside the application folder. If the user requests an approved PDF in a Setup Career Stack workspace, save it as `Motivation_Letter.pdf` in the matching numbered application folder. Otherwise, if the Application System's `Output` folder is available, follow its numbered `Output/<n_Position_Name>/Letter.pdf` convention; if not, use the user's requested destination. Do not write to or modify the Application System's source files.
 
 After generation, extract the PDF text and compare it with the approved letter, confirm the expected page count and embedded font, render every page at 150–200 dpi, and visually inspect the rendered pages. Use available local tools; do not install missing dependencies without authorization. If extraction or rendering is unavailable, say which checks could not be completed. A PDF file existing is not proof of correct layout.
 
@@ -143,11 +147,15 @@ When the user gives feedback after a generated letter, revise the complete lette
 - Record feedback at the narrowest useful scope. A one-application preference must be clearly labeled as application-specific; language or role-family guidance must name its scope. Do not turn scoped feedback into a universal preference.
 - Do not store factual corrections, employer details, application history, or source documents in the voice profile. Route factual career updates to the career context instead.
 - After saving the profile, reread it and make a final pass over the revised letter so it reflects both the immediate feedback and the updated guidance.
-- Outside a career workspace, apply feedback to the current letter. Update this skill's bundled reference only when the user explicitly asks to change the shared profile.
+- Outside a career workspace, revise the current letter and use Compose Voice Profile to update this skill's bundled reference with feedback that should guide future letters. Label application-specific preferences narrowly; do not turn them into global rules. If feedback applies only to the current letter, keep it local to that revision.
 
 Keep the voice profile standalone within this skill's references. Record writing behavior, not the candidate's private facts, application history, employer details, or source documents. Preserve unrelated profile guidance and describe the feedback at the narrowest scope that remains useful.
 
 If the user gives new factual career information, do not store it in the voice profile. Ask whether to update the career profile or Application System source of truth when that broader update is needed.
+
+### 8. Validate the application archive
+
+When a full job description is archived for a specific Setup Career Stack application, invoke [Spawn Evals](../spawn-evals/SKILL.md.tmpl) once with the original request, the complete `job.md` output, and `evidence.job_description_archive` containing `applicable`, `source_text`, `application_folder`, and `job_md_path`. The objective package in `src/evals/draft-cover-letter/` checks that `job.md` is in the numbered application folder and preserves the source posting without added text. If no Setup Career Stack archive applies, do not run this check. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable step. Do not use model judges, sub-agents, or qualitative assessment for this check.
 
 ## Output
 
@@ -156,4 +164,4 @@ Return either:
 - the complete copy-ready letter in chat; or
 - the generated `Letter.pdf` at the requested or Application System destination, with the approved text and completed PDF checks.
 
-Briefly identify any unresolved factual, motivation, or PDF-inspection limit outside the letter. Never report visual inspection unless the rendered page was actually inspected.
+Briefly identify any unresolved factual, motivation, or PDF-inspection limit outside the letter. Link `job.md` when a Setup Career Stack application folder was used. Never report visual inspection unless the rendered page was actually inspected.

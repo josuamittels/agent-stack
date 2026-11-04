@@ -11,7 +11,7 @@
     },
     {
       "id": "career-routing-instructions",
-      "description": "The generated AGENTS.md names the career profile, CV, and cover letter workflows, routes requests without requiring a named skill, and defines staple matching and project-level voice-profile priority.",
+      "description": "The generated AGENTS.md routes application questions to Answer Interview, archives full job descriptions as job.md in application folders, names the career workflows, supports unnamed-skill requests, matches staples, and prioritizes project voice profiles.",
       "handler": "check_career_routing_instructions",
       "mandatory": true,
       "required_inputs": ["/outputs/AGENTS.md"]

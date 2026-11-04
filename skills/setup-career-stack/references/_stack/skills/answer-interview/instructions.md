@@ -1,0 +1,114 @@
+---
+name: "answer-interview"
+description: "Draft concise, evidence-backed answers to job application and interview questions from career context and a target job description, respecting exact word or character limits."
+version: "1.0.0"
+created: "2026-11-04"
+updated: "2026-11-05"
+author:
+  - "Josua J. Mittelstaedt"
+references: []
+type: "skill"
+status: "stable"
+---
+
+# Answer Interview
+
+Draft short, authentic, role-specific answers to questions in a job application or interview. Use the candidate's career evidence and the target job description, answer the prompt directly, and keep the final text within any stated word or character limit. Return copy-ready text in chat.
+
+## Scope
+
+Use when the user asks for an answer to a specific application-form, screening, or interview question. The user may supply a question, job description, career profile, company context, output language, length limit, examples, and feedback. Handle one question or a set of related questions; return a separate answer for each question.
+
+For a cover or motivation letter, use [Draft Cover Letter](../draft-cover-letter/instructions.md). For reusable career facts, use [Compose Career Profile](../compose-career-profile/instructions.md). For prose, use [Write](../write/instructions.md) as the required authoring helper. For feedback that changes reusable writing guidance, use [Compose Voice Profile](../compose-voice-profile/instructions.md).
+
+### Boundaries
+
+- Do not invent experience, skills, results, credentials, motivation, product use, or relationships. Preserve source qualifiers, dates, ownership, and uncertainty.
+- Treat a job description as evidence about the role, not proof of the candidate's experience or personal reasons for applying.
+- Do not submit answers, contact an employer, or fill out an application.
+- Keep evidence mapping and source notes out of the copy-ready answer. Briefly state a material evidence gap separately when it affects what can be answered.
+
+## Inputs
+
+Use the supplied or accessible:
+
+- exact question and all sub-questions;
+- target role and job description, or the relevant role details;
+- career profile, experience examples, skills, motivations, and any application-specific context;
+- required language and maximum or target word/character count;
+- relevant feedback and persistent answer voice guidance.
+
+Require the exact question. Prefer a usable career profile or verified evidence source. If the user asks to use a career application workspace and it is available, follow its source-of-truth rules and read its career context, answer framework, story bank, and application-answer style guide. For the Mento Application System, use `01_Personal_Context/` as the evidence source and read `00_System/SOURCE_OF_TRUTH_RULES.md`, `05_Application_Questions/ANSWER_FRAMEWORK.md`, `05_Application_Questions/STORY_BANK.md`, `05_Application_Questions/QUESTION_ARCHETYPES.md`, and `02_Writing_Style/APPLICATION_ANSWER_STYLE.md` as relevant. Read `01_Personal_Context/OPEN_QUESTIONS.md` for conflicts. Select only the material needed for the prompt.
+
+If no usable evidence or career context is available, ask for the missing source before making factual claims. If the question or target role is absent, ask for it. Do not ask for information already available in the conversation or an identified workspace.
+
+Before drafting, read the required language guidance listed in [Write](../write/instructions.md). Read this skill's complete [professional voice profile](references/professional-voice-profile.md) for directness, evidence, restraint, and authenticity; adapt its letter-specific structure to the question format. When a career workspace contains a personalized application-answer voice profile or answer style guide, read it too and give that version priority over the bundled reference.
+
+### Default Procedures
+
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/instructions.md) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/instructions.md) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
+## Workflow
+
+### 1. Set the answer contract
+
+Capture the exact question, every requested sub-part, target role, employer, language, and any word or character limit. Recover these from the conversation and workspace first. If the user says "letters" or gives a portal limit without defining the unit, treat it as a character limit including spaces and punctuation; ask only if the portal's counting rule is known to differ and would change the answer. Default to one compact paragraph in chat. If the question asks for multiple independent examples, answer each part clearly without forcing them into one story.
+
+### 2. Select evidence for the prompt
+
+Reduce the job description to the requirements relevant to the question. Match each required part of the question to the smallest set of supported career facts or examples that answer it. Prefer one strong evidence thread over a list. For experience questions, retrieve the closest story from the experience or story library; use the most relevant example, not automatically the largest achievement.
+
+Resolve conflicts using the workspace's source-of-truth rules. Keep the distinction between individual and team contribution, measured and unmeasured outcomes, direct and adjacent experience, and current and planned work. Omit blocked claims. The job description can clarify what to emphasize, but cannot establish the candidate's experience, motivation, or company connection.
+
+If a required part lacks evidence, finish the supported parts and ask one focused question about the gap, or omit the unsupported claim when the question can still be answered usefully. Do not fill a gap with a plausible story.
+
+### 3. Choose the answer shape and draft
+
+Choose a structure that answers this question type, not a fixed template:
+
+- Motivation: specific work or employer reason, supported personal context, and credible contribution.
+- Fit: answer the fit claim, explain the practical approach to the employer's work, and ground it in relevant experience.
+- Impact or challenge: context, problem, personal action, supported result, and relevance or learning.
+- Leadership: team or constraint, working approach, action, outcome, and reflection.
+- Failure: ownership, what happened, correction, and changed behavior.
+- Technical: plain-language explanation, practical example, and an honest boundary where useful.
+- Values: the value, a concrete decision, its trade-off, and the result.
+
+Apply [Write](../write/instructions.md) and the required language guideline. Keep the voice composed, specific, and quietly confident. Start with the answer, use concrete verbs, and let evidence carry the claim. Keep the answer short, natural, and to the point. Remove throat-clearing, generic praise, empty traits, repeated question wording, CV recitation, unsupported superlatives, and conclusions that restate the answer. Do not make every answer sound like a polished pitch; preserve a candid, personal register suited to the prompt.
+
+### 4. Fit the length limit
+
+Draft the complete thought first, then remove background the reader does not need. Preserve the answer to every requested part, the candidate's actual contribution, and any necessary qualification while compressing.
+
+For an explicit character limit, count the final outward-facing answer only, including spaces and punctuation. Do not count the separate count label. Keep the answer at or below the limit and report the exact count as `Characters: n / limit` on a separate line. Count the final Unicode text consistently, including paragraph breaks if any. For a word limit, count the final answer and report `Words: n / limit`. If both limits apply, meet and report both. Do not claim a portal-specific count if its counting behavior is unknown. For a target range, stay inside the range; when no length is supplied, prefer one compact paragraph of roughly 75–150 words only when the question needs a developed example, and use less when it does not.
+
+### 5. Review and return the answer
+
+Check that the answer:
+
+- responds to the actual question and every required sub-part;
+- uses only supported career facts and preserves their scope;
+- connects to the job description only where relevant;
+- sounds natural, specific, and like the candidate's professional voice;
+- stays within the requested limit, with the final count checked after the last edit.
+
+Return the complete copy-ready answer in chat, followed by the exact word or character count when a limit applies. Keep evidence tags, analysis, and voice notes out of the answer. Mention only material evidence gaps or counting assumptions that the user needs to know.
+
+### 6. Learn from feedback
+
+Revise the current answer promptly. Use [Compose Voice Profile](../compose-voice-profile/instructions.md) to interpret feedback that should influence future application answers. Pass the feedback, the current answer as a writing sample, the language and role scope, the existing voice guidance, and the instruction to preserve unrelated guidance and keep the profile standalone.
+
+- In an identified career workspace, update its application-answer style or personalized answer voice profile. Prefer that updated project version for later answers. Use the workspace's established file when available; otherwise save `references/application-answer-voice-profile.md` and add its location to the workspace routing instructions when those instructions are in scope.
+- When no career workspace exists, update this skill's bundled `references/professional-voice-profile.md` with reusable feedback through Compose Voice Profile. Keep application-specific feedback scoped and labeled; do not turn one-off instructions into global rules.
+- Do not store career facts, employer details, application history, or source documents in a voice profile. Route factual corrections to the career context source of truth.
+- After updating a profile, reread it and revise the current answer against both the immediate feedback and the saved guidance.
+
+### 7. Validate implementation
+
+When invoked as a helper, return to the owning workflow without separate evaluation. For an answer with an explicit length limit, invoke [Spawn Evals](../spawn-evals/instructions.md) once with a structured invocation record containing the original request, resolved limit or limits and their sources, complete UTF-8 output, and `evidence.answer_text` plus `evidence.reported_counts` (a map from `characters` or `words` to the reported integer count). Its objective package in `src/evals/answer-interview/` checks that the answer stays within every supplied maximum and that each reported count matches. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If the answer has no explicit length limit, do not run the package.
+
+## Output
+
+Return a complete, copy-ready answer in chat. For a set of questions, label each answer with its question and give each answer's exact count when a limit applies. Keep count notes outside the text the user will paste. Identify any material evidence gap or ambiguity in the count separately. Do not submit the answer or claim that an employer portal accepts it.

@@ -6,12 +6,22 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add stable Answer Interview for concise, evidence-grounded application and interview answers that respect word or character limits.
 - Add stable Create CV to draft evidence-grounded, role-tailored CV content and generate a validated EB Garamond PDF.
 - Add stable Draft Cover Letter, with role-specific chat and PDF output, a bundled application-letter voice profile, and a self-contained PDF generator.
 - Add stable Setup Career Stack to initialize a career workspace, build role-family CV staples, and route future application work through project instructions.
+- Add stable Compose Career Profile to build a detailed, reusable career context profile from source documents and staged interview answers.
+- Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
+- Add CI package checks and a manually triggered stable-release artifact workflow. Public distribution requires a stable stack and stable dependency closures; experimental previews remain local.
+- Add optional OpenAlex API key storage for Research Literature, with a tracked blank environment template and a choice to supply a key or research without one.
+- Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
+- Add multi-database literature discovery, supplied-paper and author accounting, deep backward-citation discovery, and a mandatory verification and journal-eligibility gate with one targeted top-up pass.
+- Add experimental `create-docs` to inspect repository structure, components, workflows, and states, then generate interlinked Markdown or a Nextra documentation site under `docs/`, with a required format choice and the shared documentation standard.
+- Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
 
+- Route career application questions through Answer Interview and retain each supplied job description as `job.md` in its application folder.
 - Rename the bundled letter voice guide to Professional Voice Profile and prioritize a project's personalized profile for later letters.
 - Require explicit user authorization before Ship creates a Git branch; Ship now uses the current or an appropriate existing branch by default.
 - **Breaking:** Rename the Write discipline identifier from `natural-writing` to `write`. Update direct selections, dependency declarations, and authored references to use `write`. See the [Write migration guidance](docs/app/capabilities/disciplines/write/page.mdx).
@@ -19,38 +29,15 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Promote Spawn Evals and all 15 versioned Research and Research Literature reference dependencies to stable 1.0.0 so Compose Voice Profile, Research, and Research Literature have stable dependency closures.
 - Promote Translate, Write, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts.
 - Set the coordinated stack lifecycle to experimental at 0.34.0; stable publication remains gated on a stable stack at 1.0.0 or later.
-
-### Added
-
-- Add stable Compose Career Profile to build a detailed, reusable career context profile from source documents and staged interview answers.
-- Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
-- Add CI package checks and a manually triggered stable-release artifact workflow. Public distribution requires a stable stack and stable dependency closures; experimental previews remain local.
-
-- Add optional OpenAlex API key storage for Research Literature, with a tracked blank environment template and a choice to supply a key or research without one.
-
-- Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
-- Add multi-database literature discovery, supplied-paper and author accounting, deep backward-citation discovery, and a mandatory verification and journal-eligibility gate with one targeted top-up pass.
-
-- Add experimental `create-docs` to inspect repository structure, components, workflows, and states, then generate interlinked Markdown or a Nextra documentation site under `docs/`, with a required format choice and the shared documentation standard.
-- Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
-
-### Changed
-
 - Have Release Agent Stack generate individual and full-stack preview archives, plugins, catalogs, and checksums during every ship operation; generate stable release packages when lifecycle gates permit. Keep upload and publication separate.
-
 - **Breaking:** Move editable skills, guidelines, and objective packages into `src/`; edit `src/skills/*/SKILL.md.tmpl` and rebuild instead of editing generated root `skills/`. See [the migration and distribution guide](docs/distribution.md).
 - Keep credentials and evaluation history outside installed packages so updates preserve user configuration and state.
 - Require Ship to rebuild Agent Stack after metadata, discovery, and documentation updates, then check and commit generated output with its matching sources.
-
 - Require Research Literature to attempt core scholarly providers independently, preserve journal restrictions during provider outages, and report unavailable discovery without substituting general web search.
-
 - Extend academic guidance for Dutch, French and German with explicit citation scope, separation of review methods from included-study methods, and preservation of attribution and evidential strength during polishing. Add native-language examples and German indirect-speech guidance.
-
 - **Breaking:** Rename research depths to Quick, Normal (default) and Deep, with source targets of 8–12, 16–24 and 32–64; Quick targets 800–1,600 words and Deep 6,000 or more. Discovery now requires a current qualification receipt before final handoff.
 - Clarify academic methods and citation scope in English guidance; align objective checks, user documentation, map and routing with the staged workflow.
-
 - Use a single supplied source directly when revising an existing skill or guideline, skipping Browse Skills and broader source discovery unless requested.
-
 - Run Create Docs during every Agent Stack release so user documentation reflects the released capabilities and changes.
 - Improve Create Docs guidance for user-focused prose, useful page navigation, workflows, references, and consistently formatted Nextra cards.
 - Refresh the map by removing the duplicate Aesthetics Framework node, adding Visualise Data, Analyse Data, Cleanse Data, and Steal Data, combining Academics and Data, and switching to hand-drawn rendering.

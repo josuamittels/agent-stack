@@ -9,6 +9,18 @@ npx skills add josuamittels/agent-stack --skill '*' -a claude-code
 
 Use `-g` for a user-wide installation. Project scope is the default.
 
+## answer-interview
+
+Status: eligible stable candidate.
+
+Draft concise, evidence-backed answers to job application and interview questions from career context and a target job description, respecting exact word or character limits.
+
+`npx skills add josuamittels/agent-stack --skill answer-interview ask-user-question compose-career-profile compose-voice-profile draft-cover-letter research research-literature spawn-evals think-deeper think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab for PDF generation; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
+
 ## ask-user-question
 
 Status: eligible stable candidate.
@@ -207,9 +219,9 @@ Status: eligible stable candidate.
 
 Initialize a project workspace for managing job applications, career context, reusable CVs, and application materials. Use when setting up a fresh career application system or organizing a new job-search project.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question compose-career-profile compose-voice-profile create-cv draft-cover-letter research research-literature setup-career-stack spawn-evals think-deeper think-harder write -a codex`
+`npx skills add josuamittels/agent-stack --skill answer-interview ask-user-question compose-career-profile compose-voice-profile create-cv draft-cover-letter research research-literature setup-career-stack spawn-evals think-deeper think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, create-cv, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
+Bundled dependencies: answer-interview, ask-user-question, compose-career-profile, compose-voice-profile, create-cv, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export; ReportLab for PDF generation; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY; Python >=3.10 for CV generation and PDF export; CV-generation tools and dependencies documented by Create CV.
 

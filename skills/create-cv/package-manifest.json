@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "e94fdb0bc400f5333b83ec3f71cafc0b48585cb73a76a5fedbbf0544d2a49412",
+  "catalog_sha256": "0d3ab1990362993551121438d2d77ddb0b33c14462181f7f832e9035acc911f3",
   "name": "create-cv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.42.0",
+  "stack_version": "0.43.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "name": "create-cv",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -34,15 +34,15 @@
     }
   ],
   "source_sha256": {
-    "src/evals/create-cv/checks.py": "663f80d52c44179b454f386ff17434f25ee92ae5fcd5bed53774ea6120391c74",
-    "src/evals/create-cv/rubric.json": "c95b4c9a05ce979fc4d5fde22a45cc522bd3bf25e601752e19a130c6a398767c",
+    "src/evals/create-cv/checks.py": "e71aa37fb541f43335e7076ad7faf09deda7cdae6a721ff10708de77a869f621",
+    "src/evals/create-cv/rubric.json": "2b68252b8ca3cb1551e4bd57801efa258044b5e198b26c8049adb74070c20356",
     "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
     "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
     "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
     "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/create-cv/SKILL.md.tmpl": "9badec5140e09b7fbba15c90dbbc030734b0f02c945dbe72c2cb10c5fd138d33",
+    "src/skills/create-cv/SKILL.md.tmpl": "1d753851141252f1d1990174e73d92c449ab2f955500a0eaa444bbd1fef3841c",
     "src/skills/create-cv/assets/fonts/EBGaramond-Bold.ttf": "866e341ee9f340fff1a07a9e1fc791ff935e35159c74243d31e02bcad70b9cec",
     "src/skills/create-cv/assets/fonts/EBGaramond-BoldItalic.ttf": "0c0d1b700cef954d3704795e7959f70df02e979027a7e560a3967840bcd85acf",
     "src/skills/create-cv/assets/fonts/EBGaramond-Regular.ttf": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
@@ -75,11 +75,11 @@
       "mode": 420
     },
     "references/_stack/evals/create-cv/checks.py": {
-      "sha256": "663f80d52c44179b454f386ff17434f25ee92ae5fcd5bed53774ea6120391c74",
+      "sha256": "e71aa37fb541f43335e7076ad7faf09deda7cdae6a721ff10708de77a869f621",
       "mode": 420
     },
     "references/_stack/evals/create-cv/rubric.json": {
-      "sha256": "c95b4c9a05ce979fc4d5fde22a45cc522bd3bf25e601752e19a130c6a398767c",
+      "sha256": "2b68252b8ca3cb1551e4bd57801efa258044b5e198b26c8049adb74070c20356",
       "mode": 420
     },
     "references/_stack/guidelines/languages/dutch.md": {
@@ -127,7 +127,7 @@
       "mode": 420
     },
     "references/_stack/skills/create-cv/instructions.md": {
-      "sha256": "21a5ef94cfb8b75b805129f99f77db8a3b987e4849c7cc6800d0a8a214c01192",
+      "sha256": "be0a91783f24e572e8618af0b5c8a3e1cdacc39bf634766220a0e7ad487ba539",
       "mode": 420
     },
     "references/_stack/skills/create-cv/references/ats-guidelines.md": {
@@ -211,7 +211,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "9722e830252cfdb0411d0006e53b626b46f603858474a00fea9948e5ca6edb6b",
+      "sha256": "0ad98d0c64ee5dc667a79c0b0711aa0867315a399c876317e7156dc5a52e9ae6",
       "mode": 420
     }
   }

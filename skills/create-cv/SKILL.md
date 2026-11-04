@@ -4,9 +4,9 @@ description: Create evidence-backed, role-tailored CV content and a PDF in a
   defined EB Garamond layout from a professional career profile and target.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   status: stable
-  stack-version: 0.42.0
+  stack-version: 0.43.0
   distribution: stable
 ---
 
