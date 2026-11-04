@@ -4,6 +4,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ## [Unreleased]
 
+### Added
+
+- Add stable Draft Cover Letter, with role-specific chat and PDF output, a bundled application-letter voice profile, and a self-contained PDF generator.
+
 ### Changed
 
 - Require explicit user authorization before Ship creates a Git branch; Ship now uses the current or an appropriate existing branch by default.

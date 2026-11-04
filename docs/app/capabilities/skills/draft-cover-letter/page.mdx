@@ -1,0 +1,33 @@
+---
+title: "Draft Cover Letter"
+---
+
+# Draft Cover Letter
+
+> **Skill** · **stable** · **v1.0.0** · updated 2026-11-04
+
+## Purpose
+
+Draft or revise a role-specific cover or motivation letter using a career profile, position details, and the [cover-letter voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/cover-letter-voice-profile.md). Return copy-ready text in chat or create a PDF with the bundled layout and font.
+
+## Workflow
+
+1. **Provide role context.** Share the role and employer, job description, and any relevant company information. Supply a usable career profile or identify the Application System as the source when it is available.
+2. **Ground the evidence.** The skill selects a small number of role needs and maps them to supported career facts. It keeps employer information separate from personal motivation and leaves unsupported claims out.
+3. **Draft the letter.** The default sequence is greeting, short role-and-employer opening, high-level fit, one relevant experience, motivation, call to action, and sign-off. The user can request another structure or set a length limit.
+4. **Choose the result.** Get the complete letter in chat by default, or request a PDF. For PDF output, the skill preserves approved wording and uses the packaged A4 layout and EB Garamond font.
+5. **Give feedback.** The skill revises the full letter. When feedback should change reusable voice guidance, it calls [Compose Voice Profile](/capabilities/skills/compose-voice-profile) to update the bundled profile and then makes a final pass over the letter.
+
+## Inputs and limits
+
+Provide the job description and a career profile with relevant experience and motivation. The skill does not invent experience, results, credentials, referrals, product use, relationships, or reasons for applying. It does not submit an application or contact an employer. PDF output requires Python and ReportLab; the font license is bundled with the font.
+
+## Version and changes
+
+Version **1.0.0**; status **stable**. This is the first stable release. Changes appear in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/draft-cover-letter/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/SKILL.md.tmpl)
+- [PDF layout reference](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/pdf-layout.md)
+- [Cover-letter voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/cover-letter-voice-profile.md)

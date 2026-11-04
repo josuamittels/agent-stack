@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stack_version": "0.39.1",
+  "stack_version": "0.40.0",
   "channel": "stable",
   "skills": [
     "ask-user-question",
@@ -8,6 +8,7 @@
     "compose-career-profile",
     "compose-voice-profile",
     "convert-colour",
+    "draft-cover-letter",
     "research",
     "research-literature",
     "spawn-evals",

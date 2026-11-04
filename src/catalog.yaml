@@ -89,6 +89,42 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  draft-cover-letter:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+    conditional:
+      - compose-career-profile
+      - compose-voice-profile
+    optional: []
+    routes: []
+    files:
+      - skills/draft-cover-letter/SKILL.md.tmpl
+      - skills/draft-cover-letter/references/cover-letter-voice-profile.md
+      - skills/draft-cover-letter/references/pdf-layout.md
+      - skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf
+      - skills/draft-cover-letter/references/fonts/OFL-1.1.txt
+      - skills/draft-cover-letter/scripts/generate_cover_letter_pdf.py
+      - skills/draft-cover-letter/templates/letter-pdf-input.example.json
+      - skills/draft-cover-letter/requirements.txt
+    resources:
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+      - ReportLab for PDF generation
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable required tools.
   compose-voice-profile:
     visibility: public
     required:
@@ -719,3 +755,4 @@ project_files:
   - map.mmd
 python_packages:
   - pypdf
+  - reportlab

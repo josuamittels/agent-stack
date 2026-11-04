@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "f8592e58fa1b69296c38e0de69dfc5cafda4ef6d71ca2627d403ac3dd77be8ef",
+  "name": "draft-cover-letter",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.40.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "compose-career-profile",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "compose-voice-profile",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "draft-cover-letter",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "research",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "research-literature",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "spawn-evals",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-deeper",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "write",
+      "version": "2.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/evals/compose-voice-profile/checks.py": "0f3d2bfeb14acd6bb0211ee11e55ed89eabbbe81a20cac3431ae64e07f5759ca",
+    "src/evals/compose-voice-profile/rubric.json": "4296c1220b1d776beeca59af805a5bc0fc2370bc62cf66d37cc67f0dbad878e5",
+    "src/evals/research/checks.py": "9785d3da829530b9b436cf9b560e0ec035d146b8ddb83370ba6dbdb3d020b6e0",
+    "src/evals/research/rubric.json": "cfc009305a525037972893867e5b7d3b05524d77cd54427db52b8c21270c1fec",
+    "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+    "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+    "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+    "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/compose-career-profile/SKILL.md.tmpl": "b56e917c159ce38f352886efe9f46256859f4ce14921f33af8fd868c5d192df2",
+    "src/skills/compose-career-profile/templates/career-profile.md": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
+    "src/skills/compose-voice-profile/SKILL.md.tmpl": "8949ddfe363f7ae708a44336a1f460a7be80bfdf8b89e9b7a4a5659175aa6b9e",
+    "src/skills/compose-voice-profile/templates/voice-profile.md": "2211ebb15774e1036a37aa9094394235af8656de077af30e1897973eaa1b6951",
+    "src/skills/draft-cover-letter/SKILL.md.tmpl": "83dccfec3950d9197c8ca929277637b98c3085c593744136a0f74d24433ee60b",
+    "src/skills/draft-cover-letter/references/cover-letter-voice-profile.md": "7753ec7ab064ed328406280b1ca3cc9b247a21a4486860a135f3e5237bb75ceb",
+    "src/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
+    "src/skills/draft-cover-letter/references/fonts/OFL-1.1.txt": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
+    "src/skills/draft-cover-letter/references/pdf-layout.md": "eb81827ccd9becbcbdea817402f1c3a0dae40ba8989a4bfb4d6d1b64d0c098ab",
+    "src/skills/draft-cover-letter/requirements.txt": "36ce2357b6cea4381d9c63cfcce0785c2df9104d48d9960c68ed578b51e9483a",
+    "src/skills/draft-cover-letter/scripts/generate_cover_letter_pdf.py": "0051269cd0e8bda1aa55d6b4a647543588093580dfed22011a275f531f3f8891",
+    "src/skills/draft-cover-letter/templates/letter-pdf-input.example.json": "b9354c4735c6917eb6af012c1c68309c7de057f53e2ebdaa8cd54435c70f962d",
+    "src/skills/research-literature/SKILL.md.tmpl": "c299d8f75dbf4e987c029fc4b6e779a882cd176611e9ad91a9d3c8e91e851292",
+    "src/skills/research-literature/references/.env.example": "e973e52684c7651711814ebd24f05a84e6e32b2a88881c72162e1d10a2e50fe1",
+    "src/skills/research-literature/references/arxiv-docs.md": "968303b774b7bf436c35dd3fd2239bd8bb0545cefd35b6e76860459a0a06d90e",
+    "src/skills/research-literature/references/crossref-docs.md": "2528e2f611d925eab195728ebfc3ebba68017f4fa18af90b07223a6e258ef714",
+    "src/skills/research-literature/references/databases.md": "19f9d8c628e27b8041d7570dd8d577c3340179d20d4acac99a0b283ff88233dd",
+    "src/skills/research-literature/references/google-scholar-search.md": "4ceca7364c50e0dda80c599bc71318b940af656e290553f6714057b86fd74e13",
+    "src/skills/research-literature/references/journal-selection.md": "e5cc87ca2c32bae530946b24a949c37af31719a00b20442a899e9a2e0fd804c2",
+    "src/skills/research-literature/references/journals.csv": "af3e9e96ffe1466b45001f911c37b39f2cf61760b69cf514f417455d0018233f",
+    "src/skills/research-literature/references/openalex-docs.md": "f2b32acfaffbd643a5b5ebf4035dc83d6b4370334aa48eeabade63e46cc31b82",
+    "src/skills/research-literature/references/pubmed-docs.md": "c739c88b6dfc4ec17862b8b1871833f406ef4f4e12d079c79a7ed4cd3ac833f0",
+    "src/skills/research-literature/references/qualification-gate.md": "77c10fef4699c129bafa13bc95f8c79e7e0e6e30f939d2b48d20d973a611d07f",
+    "src/skills/research-literature/references/secondary-discovery.md": "071cbc2d760337a08f1cb014a7002a2399acb3ab8a9375df5cf7478545e79b72",
+    "src/skills/research-literature/references/semantic-scholar-docs.md": "d2fd2e9146a6e9ff2f5cf8cb6ee22ae539152d62339eb756d8ba6d6755c59a74",
+    "src/skills/research-literature/scripts/literature_common.py": "e31f7344ef12bb1e8c2fdc8ef862528d90ae4befec588496992d6b77f96571f2",
+    "src/skills/research-literature/scripts/literature_gate.py": "b3fc949c4de17afc68468dc7d87ad13c89db7843eedbdeb86247031cc049ff53",
+    "src/skills/research-literature/scripts/literature_shared.py": "504ba0529a91ae363c0730de877b6c5038900c369c3c8ac895920cecff3ce940",
+    "src/skills/research-literature/scripts/verify_sources.py": "bcf03baa6e2a4a2317b0c0cdb24708bade21b3f1522c180c2ecb98964f135a09",
+    "src/skills/research-literature/templates/contract.json": "bbc14a99ad9f30c3aee45283635bac5c8ab3857ee14861f5e80c95331ca97a4c",
+    "src/skills/research-literature/templates/relevance.json": "348fc750784d27cf7da59b9a28327d25389cb8e6fed165696b634665fbddd8cc",
+    "src/skills/research-literature/templates/search-pass.json": "79839ba56c1107840de755fcbdd6a42ac308a741a57a1cfe1d5652016f1eaf48",
+    "src/skills/research-literature/templates/search-query.json": "2b5f50bb689a401c383bd603585c8a26da257a3e1cb9c09022eb1199f18953c0",
+    "src/skills/research-literature/templates/verification-record.json": "46c98f662a30ba62ca96c55aceb593c5348390e79a71a73e4fbc12077dec2452",
+    "src/skills/research-literature/templates/verification.json": "55a0204ab3d5aa3ac1dac5c08d99114c991669875efc6a3a741dd5f3ee24d725",
+    "src/skills/research/SKILL.md.tmpl": "7018626346a09b8a83b8b223cc26961141f8278552ba5f684a04c20808db1221",
+    "src/skills/research/references/artifacts.md": "471f1ac6f6ba63ad04dea3d7137a2a1bcb107c55b93d4aba22fd3199c2d2cedf",
+    "src/skills/research/references/cli.md": "c5767f994c752c439d5fa90fbc83f1c7efaf1e17d923e83beafcfdb3ba05ff6d",
+    "src/skills/research/references/csl/README.md": "d7cd4d9ff92b95d7ca89ac4e461cb81f39d1bece470312e817c6434910ad2bbd",
+    "src/skills/research/references/csl/apa.csl": "3917def5fc951b104d64216c3373096042368b9704ba269ca83c14ebaba889fc",
+    "src/skills/research/references/export.md": "1064fea3c8c62a59db41fa5a1c3705a59e6936c5f5ba24bb7f582f0628700e8a",
+    "src/skills/research/references/workflow.md": "6cb72f62584c803c2994c21688717e6c2b7be9187a9d6ceef6570961f94df4b2",
+    "src/skills/research/scripts/complete.py": "b9897ebd5aa65e159d2f88b50160ce0f2ad29bbfbf059617090513d51bfe623d",
+    "src/skills/research/scripts/research.py": "72caf57243f07ab6679e480a150154b4c40cb147598c5f65f484b7a3e3b0dd3c",
+    "src/skills/research/scripts/research_common.py": "fb6dfdf9d419be0407b04c3b2636200bfd3c3fa8aafa8d1024471d3c1356b854",
+    "src/skills/research/scripts/research_project.py": "f3a2499fa71fdda17aa1afbddc392039f45322b12fffb5455ba22ca708c08a5e",
+    "src/skills/research/scripts/research_references.py": "e9ab53bdbfc27f97673d3d3eb2349d966e6b8ad80af443be7a2d59f504f0de37",
+    "src/skills/research/scripts/research_render.py": "8e2fd01614633cafe5c81be619676d77eab7897af5415348680feb4adab806a7",
+    "src/skills/research/templates/appraisal.json": "c96cca5d37826c5757dba939955c594b1a39245bb1e4d9defb550a9805ff0b7e",
+    "src/skills/research/templates/appraisals.json": "4b4a09732b73134f3a4a45a4763ea4529263626aaa248b63cecb92b2d0efd529",
+    "src/skills/research/templates/brief.json": "7774a3cfb05e5ec84aa3e9cdf7bf62142fd0dd3accbfc98c875a98c84eb9620e",
+    "src/skills/research/templates/citation-candidates.json": "3a9b9907141208aeb2bb84ac8fc53b0cd089e3c7eec1e40a717678395eaa6b6c",
+    "src/skills/research/templates/claim.json": "7965a1c52421c0dfee92a818381059e6bc5317740e880a8974c36fbcd1c8ad8b",
+    "src/skills/research/templates/claims.json": "172eebb76867100353a036b4cb34db20f890a9fd7e17746838dd49d04424c868",
+    "src/skills/research/templates/finding.json": "8cc4cc937e8f6bd910128b3ea47f183c20c610567d8f22d9047987755dde088c",
+    "src/skills/research/templates/issue.json": "9477e0e267bf2581a475a3b6769aac7a13c096b6abacb1467dad9657f95770d1",
+    "src/skills/research/templates/manifest.json": "3740945fc6ef6339b646a37c8988944351dd9cc58df38d75f77465703b0a4535",
+    "src/skills/research/templates/reference.json": "61e8e30744909d81cf77f77c6430b5c0b0e31a4e5440a2b8890d03d105c77b8c",
+    "src/skills/research/templates/review.json": "fb70c47018b207c5b012a685c40120b9b1c03552ae8711ea5b35b972eeb064cb",
+    "src/skills/research/templates/secondary-discovery.json": "bdb8b3cac4b1d2262f8a5a425943cfd90bff391b8efba0d4b1ddd9195287d81b",
+    "src/skills/research/templates/section.md": "163f31ed1fb43c195abca944b985d9613e6faceec5cbbbec43d66c943fc50d5a",
+    "src/skills/research/templates/source-gate.json": "1af62ebe0117064e2dfe125b066a86797150a81786e9efdc84c115074454f665",
+    "src/skills/research/templates/source.json": "1da2eb9069f4fc2b609b491010f8cfa43d6b62f86ff2adaccecfba80b8205b08",
+    "src/skills/research/templates/sources.json": "a01aab5354d2ab17d1d7f7ac1e939dde4631897ffc0ced08ec149c018fe78a07",
+    "src/skills/research/templates/structures.json": "c3840a7738c0d3743afdf555f82319cf98424ae319da8d60ff787bdc1bbd7ca1",
+    "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
+    "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
+    "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
+    "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+    "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+    "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/evals/compose-voice-profile/checks.py": {
+      "sha256": "0f3d2bfeb14acd6bb0211ee11e55ed89eabbbe81a20cac3431ae64e07f5759ca",
+      "mode": 420
+    },
+    "references/_stack/evals/compose-voice-profile/rubric.json": {
+      "sha256": "4296c1220b1d776beeca59af805a5bc0fc2370bc62cf66d37cc67f0dbad878e5",
+      "mode": 420
+    },
+    "references/_stack/evals/research/checks.py": {
+      "sha256": "9785d3da829530b9b436cf9b560e0ec035d146b8ddb83370ba6dbdb3d020b6e0",
+      "mode": 420
+    },
+    "references/_stack/evals/research/rubric.json": {
+      "sha256": "cfc009305a525037972893867e5b7d3b05524d77cd54427db52b8c21270c1fec",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/dutch.md": {
+      "sha256": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/english.md": {
+      "sha256": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/french.md": {
+      "sha256": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/german.md": {
+      "sha256": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-career-profile/instructions.md": {
+      "sha256": "7e5b45c4a325c14b3ca0cf3c64f66261cfb43350b6e92bf4590b2f6990d03561",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-career-profile/templates/career-profile.md": {
+      "sha256": "a57b3651add6d95e03a8474d0f92cfa55fcfab9a6d860f7bfb0bc15d365d33fb",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-voice-profile/instructions.md": {
+      "sha256": "8a90eec27e828b344d15ec37e4302c754e0cd5e16734c7fa501be1bd5ee2990c",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-voice-profile/templates/voice-profile.md": {
+      "sha256": "2211ebb15774e1036a37aa9094394235af8656de077af30e1897973eaa1b6951",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/instructions.md": {
+      "sha256": "7fb4ab595ff5e8c880147816a63f4237277a08c5276896da660c24676a14a7f8",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/references/cover-letter-voice-profile.md": {
+      "sha256": "7753ec7ab064ed328406280b1ca3cc9b247a21a4486860a135f3e5237bb75ceb",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf": {
+      "sha256": "b72cf02004e52d749f960b6c8c2ea06ca6670e1262be3b9b13a25a2f313ce9ce",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/references/fonts/OFL-1.1.txt": {
+      "sha256": "56ede4051bbbb62daa5a9219b26640d326b132e8587c031f18b6aaa1bba6931e",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/references/pdf-layout.md": {
+      "sha256": "eb81827ccd9becbcbdea817402f1c3a0dae40ba8989a4bfb4d6d1b64d0c098ab",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/requirements.txt": {
+      "sha256": "36ce2357b6cea4381d9c63cfcce0785c2df9104d48d9960c68ed578b51e9483a",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/scripts/generate_cover_letter_pdf.py": {
+      "sha256": "0051269cd0e8bda1aa55d6b4a647543588093580dfed22011a275f531f3f8891",
+      "mode": 420
+    },
+    "references/_stack/skills/draft-cover-letter/templates/letter-pdf-input.example.json": {
+      "sha256": "b9354c4735c6917eb6af012c1c68309c7de057f53e2ebdaa8cd54435c70f962d",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/instructions.md": {
+      "sha256": "b576920368365bc86f3e984c3a6d718fefcddeadc186642c0b94cc324cac0b8a",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/.env.example": {
+      "sha256": "e973e52684c7651711814ebd24f05a84e6e32b2a88881c72162e1d10a2e50fe1",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/arxiv-docs.md": {
+      "sha256": "968303b774b7bf436c35dd3fd2239bd8bb0545cefd35b6e76860459a0a06d90e",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/crossref-docs.md": {
+      "sha256": "2528e2f611d925eab195728ebfc3ebba68017f4fa18af90b07223a6e258ef714",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/databases.md": {
+      "sha256": "acb8b48ba319cfd874ba933879bebd7e32748a384bd67b6f10cff6602f1dfee2",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/google-scholar-search.md": {
+      "sha256": "4ceca7364c50e0dda80c599bc71318b940af656e290553f6714057b86fd74e13",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/journal-selection.md": {
+      "sha256": "95cd335643110869af1a6e6a39c03022b080567a29e1f14f7c1d137a3445a6ef",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/journals.csv": {
+      "sha256": "af3e9e96ffe1466b45001f911c37b39f2cf61760b69cf514f417455d0018233f",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/openalex-docs.md": {
+      "sha256": "cdb4f0811e5248cda88be0406bf53b6b43581c66ff496447f22dbb734df3be31",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/pubmed-docs.md": {
+      "sha256": "c739c88b6dfc4ec17862b8b1871833f406ef4f4e12d079c79a7ed4cd3ac833f0",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/qualification-gate.md": {
+      "sha256": "0a3efb2f17bb2aa51dd1f2aca932165f2f031168212e9cf7ed1eac71865813b3",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/secondary-discovery.md": {
+      "sha256": "071cbc2d760337a08f1cb014a7002a2399acb3ab8a9375df5cf7478545e79b72",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/references/semantic-scholar-docs.md": {
+      "sha256": "d2fd2e9146a6e9ff2f5cf8cb6ee22ae539152d62339eb756d8ba6d6755c59a74",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/scripts/literature_common.py": {
+      "sha256": "e31f7344ef12bb1e8c2fdc8ef862528d90ae4befec588496992d6b77f96571f2",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/scripts/literature_gate.py": {
+      "sha256": "b3fc949c4de17afc68468dc7d87ad13c89db7843eedbdeb86247031cc049ff53",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/scripts/literature_shared.py": {
+      "sha256": "504ba0529a91ae363c0730de877b6c5038900c369c3c8ac895920cecff3ce940",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/scripts/verify_sources.py": {
+      "sha256": "bcf03baa6e2a4a2317b0c0cdb24708bade21b3f1522c180c2ecb98964f135a09",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/contract.json": {
+      "sha256": "bbc14a99ad9f30c3aee45283635bac5c8ab3857ee14861f5e80c95331ca97a4c",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/relevance.json": {
+      "sha256": "348fc750784d27cf7da59b9a28327d25389cb8e6fed165696b634665fbddd8cc",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/search-pass.json": {
+      "sha256": "79839ba56c1107840de755fcbdd6a42ac308a741a57a1cfe1d5652016f1eaf48",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/search-query.json": {
+      "sha256": "2b5f50bb689a401c383bd603585c8a26da257a3e1cb9c09022eb1199f18953c0",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/verification-record.json": {
+      "sha256": "46c98f662a30ba62ca96c55aceb593c5348390e79a71a73e4fbc12077dec2452",
+      "mode": 420
+    },
+    "references/_stack/skills/research-literature/templates/verification.json": {
+      "sha256": "55a0204ab3d5aa3ac1dac5c08d99114c991669875efc6a3a741dd5f3ee24d725",
+      "mode": 420
+    },
+    "references/_stack/skills/research/instructions.md": {
+      "sha256": "dbd377e233067f1b7cf28bd4425450285e220f275af59451c62b354b2be3d1c5",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/artifacts.md": {
+      "sha256": "471f1ac6f6ba63ad04dea3d7137a2a1bcb107c55b93d4aba22fd3199c2d2cedf",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/cli.md": {
+      "sha256": "4206df00461e2ad4ea98f17f6fd66cb7ea89913f14f908fefc702fc31cbdff6a",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/csl/apa.csl": {
+      "sha256": "3917def5fc951b104d64216c3373096042368b9704ba269ca83c14ebaba889fc",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/csl/README.md": {
+      "sha256": "d7cd4d9ff92b95d7ca89ac4e461cb81f39d1bece470312e817c6434910ad2bbd",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/export.md": {
+      "sha256": "f5dafa86f7dedd23d32c8593d8a4d44e7ff46eabf7b92f5f259b024fb62360db",
+      "mode": 420
+    },
+    "references/_stack/skills/research/references/workflow.md": {
+      "sha256": "6cb72f62584c803c2994c21688717e6c2b7be9187a9d6ceef6570961f94df4b2",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/complete.py": {
+      "sha256": "b9897ebd5aa65e159d2f88b50160ce0f2ad29bbfbf059617090513d51bfe623d",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/research_common.py": {
+      "sha256": "fb6dfdf9d419be0407b04c3b2636200bfd3c3fa8aafa8d1024471d3c1356b854",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/research_project.py": {
+      "sha256": "f3a2499fa71fdda17aa1afbddc392039f45322b12fffb5455ba22ca708c08a5e",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/research_references.py": {
+      "sha256": "e9ab53bdbfc27f97673d3d3eb2349d966e6b8ad80af443be7a2d59f504f0de37",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/research_render.py": {
+      "sha256": "8e2fd01614633cafe5c81be619676d77eab7897af5415348680feb4adab806a7",
+      "mode": 420
+    },
+    "references/_stack/skills/research/scripts/research.py": {
+      "sha256": "72caf57243f07ab6679e480a150154b4c40cb147598c5f65f484b7a3e3b0dd3c",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/appraisal.json": {
+      "sha256": "c96cca5d37826c5757dba939955c594b1a39245bb1e4d9defb550a9805ff0b7e",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/appraisals.json": {
+      "sha256": "4b4a09732b73134f3a4a45a4763ea4529263626aaa248b63cecb92b2d0efd529",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/brief.json": {
+      "sha256": "7774a3cfb05e5ec84aa3e9cdf7bf62142fd0dd3accbfc98c875a98c84eb9620e",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/citation-candidates.json": {
+      "sha256": "3a9b9907141208aeb2bb84ac8fc53b0cd089e3c7eec1e40a717678395eaa6b6c",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/claim.json": {
+      "sha256": "7965a1c52421c0dfee92a818381059e6bc5317740e880a8974c36fbcd1c8ad8b",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/claims.json": {
+      "sha256": "172eebb76867100353a036b4cb34db20f890a9fd7e17746838dd49d04424c868",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/finding.json": {
+      "sha256": "8cc4cc937e8f6bd910128b3ea47f183c20c610567d8f22d9047987755dde088c",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/issue.json": {
+      "sha256": "9477e0e267bf2581a475a3b6769aac7a13c096b6abacb1467dad9657f95770d1",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/manifest.json": {
+      "sha256": "3740945fc6ef6339b646a37c8988944351dd9cc58df38d75f77465703b0a4535",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/reference.json": {
+      "sha256": "61e8e30744909d81cf77f77c6430b5c0b0e31a4e5440a2b8890d03d105c77b8c",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/review.json": {
+      "sha256": "fb70c47018b207c5b012a685c40120b9b1c03552ae8711ea5b35b972eeb064cb",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/secondary-discovery.json": {
+      "sha256": "bdb8b3cac4b1d2262f8a5a425943cfd90bff391b8efba0d4b1ddd9195287d81b",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/section.md": {
+      "sha256": "163f31ed1fb43c195abca944b985d9613e6faceec5cbbbec43d66c943fc50d5a",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/source-gate.json": {
+      "sha256": "1af62ebe0117064e2dfe125b066a86797150a81786e9efdc84c115074454f665",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/source.json": {
+      "sha256": "1da2eb9069f4fc2b609b491010f8cfa43d6b62f86ff2adaccecfba80b8205b08",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/sources.json": {
+      "sha256": "a01aab5354d2ab17d1d7f7ac1e939dde4631897ffc0ced08ec149c018fe78a07",
+      "mode": 420
+    },
+    "references/_stack/skills/research/templates/structures.json": {
+      "sha256": "c3840a7738c0d3743afdf555f82319cf98424ae319da8d60ff787bdc1bbd7ca1",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/instructions.md": {
+      "sha256": "926c03507e38e2d91ba720992cbe22229a5c19069eea944cea51b434ee23903a",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/package-setup.md": {
+      "sha256": "d8035003e8e092d712595f0abcb10a2f2c7ac684c3869cb08d8ec93961d65406",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/runner.md": {
+      "sha256": "88f161aa98092aecff43e82cc59356f63bec8b5893a2837df67f1c9fccb8c885",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/checklib.py": {
+      "sha256": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/runner.py": {
+      "sha256": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+      "mode": 420
+    },
+    "references/_stack/skills/think-deeper/instructions.md": {
+      "sha256": "94c9be353df6cc148730136f23aa360f0441616697217fea9923120e155b24e2",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/write/instructions.md": {
+      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "57030ad09d0c734d256f98d3b9bfea0a6fab012b4f3c6b78d2f2a8e8b1734931",
+      "mode": 420
+    }
+  }
+}

@@ -117,6 +117,18 @@ Bundled dependencies: ask-user-question, browse-skills, create-guidelines, pre-m
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
+## draft-cover-letter
+
+Status: eligible stable candidate.
+
+Draft or revise a role-specific cover letter from a career profile and job details, in chat or as a designed PDF.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question compose-career-profile compose-voice-profile draft-cover-letter research research-literature spawn-evals think-deeper think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, research, research-literature, spawn-evals, think-deeper, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab for PDF generation; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
+
 ## mind-wandering
 
 Status: blocked for public release (see skills/catalog.json).

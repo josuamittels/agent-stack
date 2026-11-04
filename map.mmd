@@ -46,6 +46,8 @@ flowchart LR
       subgraph career_skills [CAREER]
           compose_career_profile["Compose Career Profile"]
           career_profile_template@{ shape: tag-doc, label: "Career Profile Template" }
+          draft_cover_letter["Draft Cover Letter"]
+          cover_letter_voice_profile@{ shape: doc, label: "Cover Letter Voice Profile" }
       end
 
       subgraph academics_data_skills [ACADEMICS & DATA]
@@ -217,6 +219,9 @@ flowchart LR
     create_guidelines -.- reference_template
     compose_voice_profile -.- voice_profile_template
     compose_career_profile -.- career_profile_template
+    draft_cover_letter -.- cover_letter_voice_profile
+    draft_cover_letter --> compose_career_profile
+    draft_cover_letter --> compose_voice_profile
     update_router -.- agents_template
     update_router -.- router_template
     admin_skills --> write
@@ -282,10 +287,10 @@ flowchart LR
     class skill_issue,missing_information decision
     class has_objective_criteria decision
     class stack entry
-    class create_guidelines,research,translate,compose_voice_profile,compose_career_profile,create_skill,create_docs,ship skill
+    class create_guidelines,research,translate,compose_voice_profile,compose_career_profile,draft_cover_letter,create_skill,create_docs,ship skill
     class write method
     class analyse_ads,analyse_data,audit_accessibility,audit_ux,brand_discovery,business_plan,cleanse_data,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,visualise_data,brainstorm,fresh_eyes planned
-    class english,german,dutch,french,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,decision_log_template,interaction document;
+    class english,german,dutch,french,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,cover_letter_voice_profile,decision_log_template,interaction document;
     class tech_spec,product_pitch,design_system_guide planned
     class docs,nextra_docs,nextra_starter document
     class design_guides,product_biz_guides,coding_guides,tech_guides,skills,guidelines,admin_skills,language_guides,academics_data_skills,design_skills,marketing_skills,product_skills,writing_skills,career_skills,video_skills,engineering_skills,discipline_map,guide_map,research_guides section

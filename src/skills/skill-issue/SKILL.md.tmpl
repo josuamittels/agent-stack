@@ -1,7 +1,7 @@
 ---
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
-version: "0.6.2"
+version: "0.6.3"
 created: "2026-10-25"
 updated: "2026-10-31"
 author:
@@ -49,6 +49,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 | Create or revise reusable standards: "write our accessibility guidelines", "document conventions", "repair the Mermaid reference", "define best practices". | [create-guidelines](../create-guidelines/SKILL.md.tmpl) | Applying existing standards to one artifact. This routes to the authoring skill, never to a guideline file. |
 | Compose reusable career context from documents and a staged interview: "create a career profile", "build my application context", "help with career applications". | [compose-career-profile](../compose-career-profile/SKILL.md.tmpl) | Builds a reusable, evidence-grounded career profile. For a brand or author voice guide, use Compose Voice Profile. |
 | Compose a reusable brand or author voice profile from mixed inputs: "create a voice profile", "derive tone from audience research and brand samples". | [compose-voice-profile](../compose-voice-profile/SKILL.md.tmpl) | Synthesizes evidence into a profile; Write applies an established voice to prose, while Research produces a source-grounded report. |
+| Draft or revise a role-specific application or motivation letter: "write a cover letter", "draft an application letter", "make a cover letter PDF". | [draft-cover-letter](../draft-cover-letter/SKILL.md.tmpl) | Uses a career profile and the bundled cover-letter voice profile; returns copy-ready chat text or a designed PDF. For a reusable career profile, use Compose Career Profile. |
 | Produce a source-grounded report: "research this question", "write a research report", "synthesize the literature", "compare evidence", "research with stricter journals". | [research](../research/SKILL.md.tmpl) | Research runs a staged research report or literature review, using Research Literature for qualified discovery and Write for prose. Supports quick, normal and deep depth, supplied papers/authors, and chat, Markdown, LaTeX, Word or PDF output. Mechanical checks do not establish scientific correctness. |
 | Translate or localize supplied text: "translate into Dutch", "make a German version", "localize these strings", "adapt this for French readers", requested transcreation or transliteration. | [translate](../translate/SKILL.md.tmpl) | Drafting original text in another language. Translate owns its required handoff to Write. |
 | Ship changes in a repository: "ship it", "release this", "push to main", "create or update a PR/MR". | [ship](../ship/SKILL.md.tmpl) | Follow the target repository's release, checks, and Git rules. Agent Stack's `VERSIONS.md` and lifecycle gate apply only after its identity markers match. A changelog-only task routes to Update Changelog. |
