@@ -6,6 +6,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Require explicit user authorization before Ship creates a Git branch; Ship now uses the current or an appropriate existing branch by default.
 - **Breaking:** Rename the Write discipline identifier from `natural-writing` to `write`. Update direct selections, dependency declarations, and authored references to use `write`. See the [Write migration guidance](docs/app/capabilities/disciplines/write/page.mdx).
 - Expand the README with an entrepreneur-focused overview, a catalog of current skill candidates, and local preview installation instructions.
 - Promote Spawn Evals and all 15 versioned Research and Research Literature reference dependencies to stable 1.0.0 so Compose Voice Profile, Research, and Research Literature have stable dependency closures.

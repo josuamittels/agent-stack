@@ -1,9 +1,9 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.7.0"
+version: "0.8.0"
 created: "2026-10-26"
-updated: "2026-10-31"
+updated: "2026-11-04"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -80,7 +80,7 @@ After creating or updating a hosted request, inspect its checks on the latest he
 
 ### 5. Prepare and review commits
 
-Use a topic branch for a review request. Reuse the appropriate working branch when it is already established. For direct integration-branch pushes, verify the exact branch and repository policy before proceeding. If the checkout is on the target branch and the requested work needs review, create a topic branch only when doing so preserves the current work safely; otherwise stop and report the blocker.
+Do not create a Git branch unless the user explicitly asks for one. Work on the current branch when it is safe and repository policy permits it. If the requested delivery requires a new branch and the user has not asked for one, stop before creating it and ask for explicit authorization. Reuse an appropriate existing branch when its target is clear and it contains no unrelated changes. For direct integration-branch pushes, verify the exact branch and repository policy before proceeding.
 
 Before staging, make a short ordered commit plan whenever the change set has multiple themes. Give each group one purpose, list its paths or hunks, include the companion changes it needs, and order groups by dependency. Keep a move with its required reference updates, a feature with its route and supporting docs, and tests with the behavior they verify. Put independently reviewable outcomes in separate commits; do not hide them in one omnibus commit or split one coherent outcome across arbitrary file-type commits. One commit is appropriate when the whole change set serves one purpose.
 

@@ -4,7 +4,7 @@
   "name": "compose-voice-profile",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.38.0",
+  "stack_version": "0.39.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -421,7 +421,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "d5d5215d65a362a9cf73ec58a2724a6cc8bcc754cd7666100d7bcbe29203a752",
+      "sha256": "ccd7d118676345d7e4d578d9b715d4c86662898b3dc1558e12f09ef5fa0c8e7c",
       "mode": 420
     }
   }

@@ -4,7 +4,7 @@
   "name": "think-harder",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.38.0",
+  "stack_version": "0.39.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -41,7 +41,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "05aa8cfdc30af2866b4fd58bc49764bcd17935ec0c41c0bf7d289bb7eee58f42",
+      "sha256": "7936d3e4db637f356847d907a927b828bd54d905413b38d61eb799875e796acb",
       "mode": 420
     }
   }
