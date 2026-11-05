@@ -12,6 +12,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from cv_support import require_working_directory
+
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 ASSET_ROOT = SKILL_ROOT / "assets"
@@ -53,15 +55,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Candidate-specific fixed identity, education, interests, and languages JSON",
     )
     parser.add_argument("--output-root", type=Path, help="Folder for CV.docx, CV.pdf, and qa/ outputs; defaults to the content folder")
-    parser.add_argument("--copy-to", type=Path, help="Optional new destination file for the validated PDF, for example /path/to/delivery/CV.pdf")
     parser.add_argument("--preflight-only", action="store_true", help="Check bundled resources and dependencies without generating files")
     return parser
 
 
-def preflight(content_path: Path, profile_path: Path, output_root: Path, copy_to: Path | None) -> tuple[dict, list[str]]:
+def preflight(content_path: Path, profile_path: Path, output_root: Path) -> tuple[dict, list[str]]:
+    output_root = require_working_directory(output_root)
     content = content_path.expanduser().resolve()
     profile = profile_path.expanduser().resolve()
-    destination = copy_to.expanduser().resolve() if copy_to else None
     font_dir = ASSET_ROOT / "fonts"
     build_script = SCRIPT_ROOT / "build_cv.py"
     support = SCRIPT_ROOT / "cv_support.py"
@@ -87,16 +88,11 @@ def preflight(content_path: Path, profile_path: Path, output_root: Path, copy_to
     missing = [str(path) for path in required_files if not path.is_file()]
     if missing:
         raise FileNotFoundError("Required standalone CV resources are missing:\n- " + "\n- ".join(missing))
+    if content.parent != output_root.resolve() or profile.parent != output_root.resolve():
+        raise ValueError("Keep cv-content.json and cv-profile.json in the working output folder for reproducible QA and delivery")
     existing_outputs = [output_root / name for name in ("CV.docx", "CV.pdf") if (output_root / name).exists()]
     if existing_outputs:
         raise FileExistsError("Refusing to overwrite existing CV output: " + ", ".join(path.name for path in existing_outputs))
-    if destination and destination.exists():
-        raise FileExistsError(f"Refusing to overwrite an existing destination file: {destination}")
-    if destination and destination.suffix.lower() != ".pdf":
-        raise ValueError("The copy destination must end in .pdf")
-    if destination and destination == (output_root / "CV.pdf").resolve():
-        raise ValueError("The copy destination must be separate from the generated CV.pdf")
-
     try:
         content_data = json.loads(content.read_text(encoding="utf-8"))
         profile_data = json.loads(profile.read_text(encoding="utf-8"))
@@ -144,7 +140,7 @@ def preflight(content_path: Path, profile_path: Path, output_root: Path, copy_to
         "font_license": f"assets/fonts/{FONT_LICENSE}",
         "pdf_exporter_available": True,
         "python_modules": list(REQUIRED_MODULES),
-        "copy_requested": destination is not None,
+
     }
     return report, [str(build_script), str(profile)]
 
@@ -152,9 +148,9 @@ def preflight(content_path: Path, profile_path: Path, output_root: Path, copy_to
 def main() -> int:
     args = build_parser().parse_args()
     content = args.content.expanduser().resolve()
-    output_root = (args.output_root.expanduser().resolve() if args.output_root else content.parent)
+    output_root = (args.output_root.expanduser().absolute() if args.output_root else args.content.expanduser().absolute().parent)
     try:
-        report, build_args = preflight(content, args.profile, output_root, args.copy_to)
+        report, build_args = preflight(content, args.profile, output_root)
     except (FileExistsError, FileNotFoundError, RuntimeError, ValueError) as exc:
         print(f"Preflight failed: {exc}", file=sys.stderr)
         return 2
@@ -178,15 +174,6 @@ def main() -> int:
     if completed.returncode:
         return completed.returncode
 
-    if args.copy_to:
-        destination = args.copy_to.expanduser().resolve()
-        source = output_root / "CV.pdf"
-        if not source.is_file():
-            print(f"Validated PDF was not created: {source}", file=sys.stderr)
-            return 2
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, destination)
-        print(f"Copied PDF: {destination.name}")
     return 0
 
 

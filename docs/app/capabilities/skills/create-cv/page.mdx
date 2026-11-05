@@ -4,7 +4,7 @@ title: "Create CV"
 
 # Create CV
 
-> **Skill** · **stable** · **v1.1.0** · updated 2026-11-05
+> **Skill** · **stable** · **v2.0.1** · updated 2026-11-05
 
 ## Purpose
 
@@ -14,9 +14,9 @@ Create evidence-grounded CV content for a particular role and export it as an A4
 
 1. **Provide career context and a target.** Supply a professional career profile context file or its contents, plus a job description, vacancy, role, company, or positioning brief. A full job description is useful but not required when the target is otherwise clear. In a Setup Career Stack workspace, the supplied description is saved as `job.md` in the numbered application folder.
 2. **Map role needs to evidence.** The skill identifies selection criteria and maps them to supported experience, education, projects, and skills. It preserves source qualifiers and leaves conflicts or unsupported claims out.
-3. **Review the CV content.** The CV uses six sections in this order: Education, Professional Experience, Personal Experience, Hard Skills, Personal Interests, and Language Proficiency. It does not add an opening summary or a separate competencies section.
-4. **Generate and inspect the files.** The bundled script creates `CV.docx`, `CV.pdf`, extracted text, page renders, and a machine-readable report under the selected output folder. It checks font embedding, section order, and experience pagination; inspect each rendered page before treating the PDF as final.
-5. **Approve delivery.** A local draft does not require content approval. Before copying a final version elsewhere, approve the exact content and supply a new destination path. The skill does not submit a CV or contact an employer.
+3. **Review the CV content.** Education, experience, skills, interests, and languages are included when supported by the supplied content; empty sections are omitted. Do not add an opening summary or separate competencies section.
+4. **Generate and inspect the files.** The bundled script creates `CV.docx`, `CV.pdf`, extracted text, page renders, and a machine-readable report under the selected working folder. Keep QA outside final application folders. Inspect each rendered page before treating the PDF as final.
+5. **Approve delivery.** After inspecting and approving the exact content, copy only the reviewed PDF to the requested final destination. Do not regenerate during delivery. The skill does not submit a CV or contact an employer.
 
 ## Reuse an approved staple
 
@@ -24,7 +24,7 @@ In a career workspace, the skill reads the root `AGENTS.md` and compares the tar
 
 ## Layout and requirements
 
-The PDF uses a single A4 column, a fixed six-section order, EB Garamond typography, visible contact links, and simple selectable text. Experience bullets use concrete actions and supported outcomes. See the [CV layout specification](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/references/cv-layout.md) for typography and spacing details.
+The PDF uses an A4 column, EB Garamond typography, visible contact links, and selectable text. Experience bullets use concrete actions and supported outcomes. See the [CV layout specification](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/references/cv-layout.md) for typography and spacing details.
 
 PDF generation requires Python 3.10 or later, `python-docx`, Pillow, `pypdf`, `pypdfium2`, and LibreOffice (`soffice`). The four EB Garamond font faces and their [SIL Open Font License 1.1](https://github.com/josuamittels/agent-stack/blob/main/src/skills/create-cv/assets/fonts/OFL-1.1.txt) are bundled with the skill.
 
@@ -37,11 +37,11 @@ python skills/create-cv/scripts/generate_cv_pdf.py \
   --output-root "/path/to/cv-output"
 ```
 
-The profile and content JSON templates contain mock data and placeholders. Replace them with verified, role-specific content before generation. The generator refuses to overwrite existing `CV.docx` or `CV.pdf` files.
+The profile and content JSON templates contain mock data and placeholders. Replace them with verified, role-specific content before generation. Run generation and QA in a working folder, such as `work/<application>/revision-1/`, never inside `applications/`. The generator refuses to overwrite existing `CV.docx` or `CV.pdf` files.
 
 ## Version and changes
 
-Version **1.1.0**; status **stable**. In career workspaces, the supplied job description is archived as `job.md` in its application folder. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **2.0.1**; status **stable**. In career workspaces, the supplied job description is archived as `job.md` in its application folder, while draft and QA files stay in working storage. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

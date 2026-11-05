@@ -1,6 +1,6 @@
 # Cover Letter PDF Layout
 
-Use this reference when the user requests PDF output. It records the Application System's letter design tokens and the bundled font asset.
+Use this reference when the user requests PDF output. It defines the bundled letter layout and font asset.
 
 ## Page and type
 

@@ -7,28 +7,38 @@
       "description": "The build report confirms successful validation and only embedded EB Garamond PDF fonts.",
       "handler": "check_cv_layout_fonts",
       "mandatory": true,
-      "required_inputs": ["/evidence/cv_validation"]
+      "required_inputs": [
+        "/evidence/cv_validation"
+      ]
     },
     {
       "id": "intact-experience-blocks",
       "description": "The build report confirms that experience entries remain intact on one page.",
       "handler": "check_intact_experience_blocks",
       "mandatory": true,
-      "required_inputs": ["/evidence/cv_validation"]
+      "required_inputs": [
+        "/evidence/cv_validation"
+      ]
     },
     {
       "id": "cv-section-order",
-      "description": "Extracted PDF headings appear in the defined six-section order.",
+      "description": "The build headings match populated sections in source order and output language.",
       "handler": "check_cv_section_order",
       "mandatory": true,
-      "required_inputs": ["/evidence/section_headings"]
+      "required_inputs": [
+        "/evidence/cv_validation",
+        "/evidence/cv_profile",
+        "/evidence/cv_content"
+      ]
     },
     {
       "id": "application-job-description-archive",
       "description": "For a specific Setup Career Stack application with a full job description, job.md is saved in that numbered applications folder and preserves the posting text without added content.",
       "handler": "check_job_description_archive",
       "mandatory": true,
-      "required_inputs": ["/evidence/job_description_archive"]
+      "required_inputs": [
+        "/evidence/job_description_archive"
+      ]
     }
   ]
 }

@@ -39,6 +39,9 @@ from cv_support import (
     file_hash,
     read_json,
     validate_inputs,
+    require_working_directory,
+    section_labels,
+    active_sections,
 )
 
 
@@ -383,6 +386,7 @@ def add_block_separator(document: Document) -> None:
 
 
 def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -> None:
+    require_working_directory(output.parent)
     document = Document()
     section = document.sections[0]
     section.page_width = Cm(21.0)
@@ -395,6 +399,7 @@ def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -
     section.footer_distance = Cm(0)
     configure_styles(document)
 
+    labels = section_labels(content)
     identity = profile["identity"]
     metadata = content["document"]
     document.core_properties.title = (
@@ -411,32 +416,34 @@ def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -
     set_run_font(name_run, 18, bold=True)
     set_keep(name, keep_next=True)
 
-    contact = document.add_paragraph()
-    contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    contact.paragraph_format.space_after = Pt(9)
-    contact.paragraph_format.line_spacing = 1.0
-    location = contact.add_run(identity["location"])
-    set_run_font(location, 10.5)
-    for key in ("portfolio", "linkedin", "phone", "email"):
-        add_contact_separator(contact)
-        item = identity[key]
-        add_hyperlink(contact, item["label"], item["url"])
-    set_keep(contact, keep_next=True)
+    contacts = [identity[key] for key in ("portfolio", "linkedin", "phone", "email") if identity.get(key)]
+    if identity.get("location") or contacts:
+        contact = document.add_paragraph()
+        contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        contact.paragraph_format.space_after = Pt(9)
+        contact.paragraph_format.line_spacing = 1.0
+        if identity.get("location"):
+            set_run_font(contact.add_run(identity["location"]), 10.5)
+        for index, item in enumerate(contacts):
+            if identity.get("location") or index:
+                add_contact_separator(contact)
+            add_hyperlink(contact, item["label"], item["url"])
+        set_keep(contact, keep_next=True)
 
     bullet_num_id = create_bullet_numbering(document)
 
-    for index, education in enumerate(profile["education"]):
+    for index, education in enumerate(profile.get("education", [])):
         block = add_unbreakable_block(document)
         if index == 0:
-            add_section(block, "Education")
+            add_section(block, labels["education"])
         add_entry_heading(
             block,
             education["institution"],
             education["dates"],
-            education["location"],
+            education.get("location", ""),
         )
         add_secondary(block, education["degree"])
-        details = education["details"]
+        details = education.get("details", [])
         for detail_index, detail in enumerate(details):
             add_bullet(
                 block,
@@ -447,10 +454,10 @@ def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -
         finish_block(block)
         add_block_separator(document)
 
-    for index, entry in enumerate(content["professional_experience"]):
+    for index, entry in enumerate(content.get("professional_experience", [])):
         block = add_unbreakable_block(document)
         if index == 0:
-            add_section(block, "Professional Experience")
+            add_section(block, labels["professional_experience"])
         add_entry_heading(block, entry["employer"], entry["dates"], role=entry["role"])
         if entry.get("descriptor"):
             add_descriptor(block, entry["descriptor"])
@@ -465,10 +472,10 @@ def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -
         finish_block(block)
         add_block_separator(document)
 
-    for index, entry in enumerate(content["personal_experience"]):
+    for index, entry in enumerate(content.get("personal_experience", [])):
         block = add_unbreakable_block(document)
         if index == 0:
-            add_section(block, "Personal Experience")
+            add_section(block, labels["personal_experience"])
         add_entry_heading(block, entry["title"], entry["dates"])
         bullets = entry["bullets"]
         for bullet_index, bullet in enumerate(bullets):
@@ -481,19 +488,17 @@ def build_docx(profile: dict[str, Any], content: dict[str, Any], output: Path) -
         finish_block(block)
         add_block_separator(document)
 
-    add_section(document, "Hard Skills")
-    for skill in content["hard_skills"]:
-        add_skill_bullet(document, skill["label"], skill["details"], bullet_num_id)
-
-    add_section(document, "Personal Interests")
-    add_bullet(document, ", ".join(profile["interests"]), bullet_num_id)
-
-    add_section(document, "Language Proficiency")
-    languages = [
-        f"{item['name']} ({item['level']})"
-        for item in profile["language_policy"]["languages"]
-    ]
-    add_bullet(document, ", ".join(languages), bullet_num_id)
+    if content.get("hard_skills"):
+        add_section(document, labels["hard_skills"])
+        for skill in content["hard_skills"]:
+            add_skill_bullet(document, skill["label"], skill["details"], bullet_num_id)
+    if profile.get("interests"):
+        add_section(document, labels["interests"])
+        add_bullet(document, ", ".join(profile["interests"]), bullet_num_id)
+    languages = [f"{item['name']} ({item['level']})" for item in profile.get("language_policy", {}).get("languages", [])]
+    if languages:
+        add_section(document, labels["languages"])
+        add_bullet(document, ", ".join(languages), bullet_num_id)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     document.save(output)
@@ -624,6 +629,7 @@ def verify_pdf(
     content_path: Path,
     profile_path: Path,
 ) -> dict[str, Any]:
+    require_working_directory(qa_dir)
     qa_dir.mkdir(parents=True, exist_ok=True)
     for stale in qa_dir.glob("page-*.png"):
         stale.unlink()
@@ -672,28 +678,22 @@ def verify_pdf(
         errors.append("Unembedded CV PDF fonts: " + ", ".join(sorted(unembedded)))
 
     required_text = [profile["identity"]["name"]]
-    for education in profile["education"]:
-        required_text.extend(education["details"])
+    for education in profile.get("education", []):
+        required_text.extend(education.get("details", []))
     normalized_extracted = normalize_text(extracted)
     for required in required_text:
         if normalize_text(required) not in normalized_extracted:
             errors.append(f"Required text missing from CV PDF: `{required}`")
-    for interest in profile["interests"]:
+    for interest in profile.get("interests", []):
         if interest not in extracted:
             errors.append(f"Canonical interest missing from CV PDF: `{interest}`")
-    for language in profile["language_policy"]["languages"]:
+    for language in profile.get("language_policy", {}).get("languages", []):
         label = f"{language['name']} ({language['level']})"
         if label not in extracted:
             errors.append(f"Canonical language missing from CV PDF: `{label}`")
 
-    headings = (
-        "EDUCATION",
-        "PROFESSIONAL EXPERIENCE",
-        "PERSONAL EXPERIENCE",
-        "HARD SKILLS",
-        "PERSONAL INTERESTS",
-        "LANGUAGE PROFICIENCY",
-    )
+    labels = section_labels(content)
+    headings = active_sections(profile, content)
     positions = [extracted.find(heading) for heading in headings]
     if any(position < 0 for position in positions) or positions != sorted(positions):
         errors.append("CV PDF headings are missing or out of ATS reading order")
@@ -701,8 +701,8 @@ def verify_pdf(
     normalized_pages = [normalize_text(text) for text in page_texts]
     entry_pages: dict[str, list[int]] = {}
     for section_name, entries in (
-        ("PROFESSIONAL EXPERIENCE", content["professional_experience"]),
-        ("PERSONAL EXPERIENCE", content["personal_experience"]),
+        (labels["professional_experience"].upper(), content.get("professional_experience", [])),
+        (labels["personal_experience"].upper(), content.get("personal_experience", [])),
     ):
         for index, entry in enumerate(entries):
             required_text = [
@@ -738,6 +738,8 @@ def verify_pdf(
     report = {
         "ok": not errors,
         "layout": "cv",
+        "section_headings": headings,
+        "section_labels": labels,
         "page_count": len(reader.pages),
         "max_pages": max_pages,
         "pdf": pdf_path.name,
@@ -781,7 +783,7 @@ def main() -> None:
     args = parse_args()
     content_path = args.content.resolve()
     profile_path = args.profile.resolve()
-    output_root = (args.output_root or content_path.parent).resolve()
+    output_root = require_working_directory(args.output_root or args.content.expanduser().absolute().parent)
     profile = read_json(profile_path)
     content = read_json(content_path)
     validate_inputs(profile, content)
@@ -789,6 +791,9 @@ def main() -> None:
     docx_path = output_root / f"{CV_STEM}.docx"
     pdf_path = output_root / f"{CV_STEM}.pdf"
     qa_dir = output_root / "qa"
+
+    if docx_path.exists() or pdf_path.exists():
+        raise FileExistsError("Choose a fresh working revision folder; existing CV artifacts are preserved")
 
     with tempfile.TemporaryDirectory(prefix="cv-build-") as temp_name:
         temp_docx = Path(temp_name) / f"{CV_STEM}.docx"

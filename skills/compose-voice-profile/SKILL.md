@@ -6,9 +6,9 @@ description: Compose a detailed, evidence-backed brand or author voice profile
   tone-of-voice guide.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   status: stable
-  stack-version: 0.43.0
+  stack-version: 0.44.0
   distribution: stable
 ---
 

@@ -4,7 +4,7 @@
   "checks": [
     {
       "id": "workspace-structure",
-      "description": "The selected project root contains applications, references, and staples directories and a root AGENTS.md file.",
+      "description": "The selected project root contains applications, references, staples, and work directories and a root AGENTS.md file.",
       "handler": "check_workspace_structure",
       "mandatory": true,
       "required_inputs": ["/evidence/project_root"]

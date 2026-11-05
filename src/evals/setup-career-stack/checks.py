@@ -16,12 +16,12 @@ def _result(status, aspect, observed, expected, evidence):
 
 def check_workspace_structure(context):
     evidence = ["/evidence/project_root"]
-    expected = "project root contains applications/, references/, staples/, and AGENTS.md"
+    expected = "project root contains applications/, references/, staples/, work/, and AGENTS.md"
     root = context.get("evidence", {}).get("project_root")
     if not isinstance(root, str) or not root.strip():
         return _result("unverified", "workspace structure", "project_root is unavailable", expected, evidence)
     path = Path(root).expanduser()
-    required = ["applications", "references", "staples"]
+    required = ["applications", "references", "staples", "work"]
     missing_dirs = [name for name in required if not (path / name).is_dir()]
     agents_exists = (path / "AGENTS.md").is_file()
     status = "fail" if missing_dirs or not agents_exists else "pass"
@@ -44,7 +44,9 @@ def check_career_routing_instructions(context):
         "answer-interview": "answer-interview" in text,
         "automatic routing": "does not name a skill" in text or "without requiring a named skill" in text,
         "staple matching": "match" in text and "staple" in text,
-        "project voice priority": "takes priority over the bundled profile" in text,
+        "project voice priority": "takes priority over the bundled profile" in text and "both skills" in text,
+        "persistent numbering": "applications.json" in text,
+        "working revisions": "work/" in text,
         "job description archive": "job.md" in text and "job description" in text and "application folder" in text,
     }
     missing = [name for name, present in required.items() if not present]

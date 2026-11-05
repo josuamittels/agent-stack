@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "0d3ab1990362993551121438d2d77ddb0b33c14462181f7f832e9035acc911f3",
+  "catalog_sha256": "a68ca46c2afd282c1624d763d37bf6bc2ad51f83132c0866b96f772191d7e747",
   "name": "compose-voice-profile",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.43.0",
+  "stack_version": "0.44.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "name": "compose-voice-profile",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -59,7 +59,8 @@
     "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/compose-voice-profile/SKILL.md.tmpl": "8949ddfe363f7ae708a44336a1f460a7be80bfdf8b89e9b7a4a5659175aa6b9e",
+    "src/skills/compose-voice-profile/SKILL.md.tmpl": "089c366be60c48ffeec61539f942c8d3f2b5096299bd49865714270c04b692d0",
+    "src/skills/compose-voice-profile/references/professional-voice-profile.md": "f59259bf9ce86d58350131a1d50871a18ea12342c40d7854e4c3271d39c2f16c",
     "src/skills/compose-voice-profile/templates/voice-profile.md": "2211ebb15774e1036a37aa9094394235af8656de077af30e1897973eaa1b6951",
     "src/skills/research-literature/SKILL.md.tmpl": "c299d8f75dbf4e987c029fc4b6e779a882cd176611e9ad91a9d3c8e91e851292",
     "src/skills/research-literature/references/.env.example": "e973e52684c7651711814ebd24f05a84e6e32b2a88881c72162e1d10a2e50fe1",
@@ -169,7 +170,11 @@
       "mode": 420
     },
     "references/_stack/skills/compose-voice-profile/instructions.md": {
-      "sha256": "8a90eec27e828b344d15ec37e4302c754e0cd5e16734c7fa501be1bd5ee2990c",
+      "sha256": "cefd8c4b62dcc9de7cd8f59da5e5ea6b526ccbe45fde956fba8ae8a7927f344c",
+      "mode": 420
+    },
+    "references/_stack/skills/compose-voice-profile/references/professional-voice-profile.md": {
+      "sha256": "f59259bf9ce86d58350131a1d50871a18ea12342c40d7854e4c3271d39c2f16c",
       "mode": 420
     },
     "references/_stack/skills/compose-voice-profile/templates/voice-profile.md": {
@@ -421,7 +426,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "7e029ff8fc4d8722e6ecbac7557dfcd536986c4be11b41e2352ca96b1fa1698f",
+      "sha256": "e1eebbc91b23e279c0243ff835a7a9334b3a6966f3c091050af2d61b8f94b372",
       "mode": 420
     }
   }

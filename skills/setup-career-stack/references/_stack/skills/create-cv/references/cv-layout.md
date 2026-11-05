@@ -6,7 +6,7 @@ This document defines the CV page design and content presentation used by the `c
 
 - A4 portrait, one column, approximately 18-19 mm side margins.
 - Centred name and contact line on page 1 only.
-- Section order remains Education, Professional Experience, Personal Experience, Hard Skills, Personal Interests, Language Proficiency.
+- Populated sections retain this order: Education, Professional Experience, Personal Experience, Hard Skills, Personal Interests, Language Proficiency. Omit absent sections. Localize labels through `document.language` or explicit `document.section_labels`.
 - Section headings are uppercase EB Garamond Bold with the same 1.75 pt black underline throughout this layout.
 - Institution/employer/title is bold on the left; education countries follow institution names in grey after a comma; do not add city metadata unless it is part of the official institution name; the date range is italic and right-aligned on the same line.
 - Degree appears in italic on the following line. Professional roles sit beside the employer, separated by a comma with no preceding space, on the dated title line and must not wrap.
@@ -30,7 +30,7 @@ This document defines the CV page design and content presentation used by the `c
 
 - Use real numbering and explicit tab stops; no text boxes, icons, ratings, columns, or layout-only floating objects.
 - Use `GPA` without modifiers.
-- Render home degrees and exchange semesters as separate education entries. Each entry places its grey country directly after the institution name with a comma and receives its own degree/exchange label, dates, `GPA: …` bullet, and `Notable Courses: …` bullet; add `Activities: …` after courses where supplied. Honours stay on the applicable GPA line.
+- Render home degrees and exchange semesters as separate education entries. Place the country after the institution only when supplied. Keep degree and dates; GPA, courses, and activities are optional supporting details. Localize their labels to the output language. Do not invent missing grades or courses. Honours stay on the applicable GPA line.
 - Keep canonical language and interest lines unchanged from the populated CV profile.
 - Use one `cv-content.json`; formatting must not create a second content source.
 - The standalone PDF may contain only embedded EB Garamond faces.
@@ -42,3 +42,7 @@ This document defines the CV page design and content presentation used by the `c
 - Optional delivery file: `CV.pdf` at the user-approved destination.
 - QA: `qa/`.
 - Deliver the CV only; do not append recommendations.
+
+## Proficiency labels
+
+Use `native`, `fluent`, `prof. working`, `lim. working`, `A1`, `A2`, `B1`, `B2`, `C1`, `C2`, or `basic` only when supported. These fixed labels remain consistent with the profile; surrounding headings and prose follow the requested language.

@@ -4,17 +4,32 @@
   "checks": [
     {
       "id": "answer-within-requested-limit",
-      "description": "The copy-ready answer is at or below the explicit maximum word or character limit.",
+      "description": "Every answer meets its requested minimum and maximum bounds.",
       "handler": "check_answer_within_limit",
       "mandatory": true,
-      "required_inputs": ["/constraints", "/evidence/answer_text"]
+      "required_inputs": [
+        "/evidence",
+        "/constraints"
+      ]
     },
     {
       "id": "reported-count-matches-answer",
-      "description": "The reported word or character count equals the count of the copy-ready answer text.",
+      "description": "Every applicable unit has a reported count matching its final answer.",
       "handler": "check_reported_count",
       "mandatory": true,
-      "required_inputs": ["/evidence/answer_text", "/evidence/reported_counts"]
+      "required_inputs": [
+        "/evidence",
+        "/constraints"
+      ]
+    },
+    {
+      "id": "application-job-description-archive",
+      "description": "The actual archived posting equals source and supplied output at the numbered path.",
+      "handler": "check_job_description_archive",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/job_description_archive"
+      ]
     }
   ]
 }

@@ -1,17 +1,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-import re
-
-
-EXPECTED_SECTIONS = [
-    "EDUCATION",
-    "PROFESSIONAL EXPERIENCE",
-    "PERSONAL EXPERIENCE",
-    "HARD SKILLS",
-    "PERSONAL INTERESTS",
-    "LANGUAGE PROFICIENCY",
-]
 
 
 def _result(status: str, step: str, aspect: str, observed, expected, evidence: list[str]):
@@ -61,47 +50,30 @@ def check_intact_experience_blocks(record):
 
 
 def check_cv_section_order(record):
-    headings = record.get("evidence", {}).get("section_headings")
-    pointer = "/evidence/section_headings"
-    if not isinstance(headings, list) or not all(isinstance(value, str) for value in headings):
-        return _result("unverified", "PDF text extraction", "CV section order", headings, EXPECTED_SECTIONS, [pointer])
-    observed = [value.strip().upper() for value in headings]
-    return _result("pass" if observed == EXPECTED_SECTIONS else "fail", "PDF text extraction", "CV section order", observed, EXPECTED_SECTIONS, [pointer])
-
-
-def _markdown_text(text):
-    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
-    text = re.sub(r"(?m)^\s{0,3}#{1,6}\s*", "", text)
-    text = re.sub(r"(?m)^\s*(?:[-*+•]\s+|\d+[.)]\s+)", "", text)
-    text = re.sub(r"(?m)^\s*>\s?", "", text)
-    text = re.sub(r"(?m)^\s*-{3,}\s*$", "", text)
-    text = re.sub(r"(?<!\\)[*_`~]+", "", text)
-    return " ".join(text.split())
+    import sys
+    scripts = Path(__file__).resolve().parents[2] / "skills" / "create-cv" / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    from cv_support import active_sections, validate_inputs
+    evidence = record.get("evidence", {})
+    headings = evidence.get("cv_validation", {}).get("section_headings")
+    profile, content = evidence.get("cv_profile"), evidence.get("cv_content")
+    pointers = ["/evidence/cv_validation/section_headings", "/evidence/cv_profile", "/evidence/cv_content"]
+    if not isinstance(profile, dict) or not isinstance(content, dict) or not isinstance(headings, list):
+        return _result("unverified", "PDF text extraction", "CV section order", headings, "profile, content and localized build headings", pointers)
+    try:
+        validate_inputs(profile, content)
+        expected = active_sections(profile, content)
+    except (ValueError, TypeError, KeyError, AttributeError) as exc:
+        return _result("unverified", "PDF text extraction", "CV section order", str(exc), "valid CV source inputs", pointers)
+    return _result("pass" if headings == expected else "fail", "PDF text extraction", "CV section order", headings, expected, pointers)
 
 
 def check_job_description_archive(record):
-    evidence_path = "/evidence/job_description_archive"
-    item = record.get("evidence", {}).get("job_description_archive")
-    if not isinstance(item, dict):
-        return _result("unverified", "Application archive", "job.md", item, "machine-readable archive status and source text", [evidence_path])
-    if item.get("applicable") is False:
-        return _result("not_applicable", "Application archive", "job.md", False, "specific Setup Career Stack application with a full job description", [evidence_path + "/applicable"])
-    if item.get("applicable") is not True:
-        return _result("unverified", "Application archive", "job.md", item.get("applicable"), "applicable=true or false", [evidence_path + "/applicable"])
-
-    source = item.get("source_text")
-    application_folder = item.get("application_folder")
-    job_path = item.get("job_md_path")
-    job_md = record.get("outputs", {}).get("job_md")
-    pointers = [evidence_path + "/source_text", evidence_path + "/application_folder", evidence_path + "/job_md_path", "/outputs/job_md"]
-    if not all(isinstance(value, str) and value.strip() for value in (source, application_folder, job_path, job_md)):
-        return _result("unverified", "Application archive", "job.md", {"source_text_available": bool(source), "application_folder": application_folder, "job_md_path": job_path, "job_md_available": bool(job_md)}, "complete source posting, numbered application path, and saved job.md output", pointers)
-
-    folder = Path(application_folder)
-    expected_job_path = folder / "job.md"
-    in_applications = folder.parent.name == "applications" and bool(re.search(r"_\d{3,}$", folder.name))
-    path_matches = Path(job_path) == expected_job_path and in_applications
-    source_matches = _markdown_text(source) == _markdown_text(job_md)
-    observed = {"path_matches": path_matches, "source_matches": source_matches, "application_folder": application_folder, "job_md_path": job_path}
-    expected = "job_md_path equals <applications>/<numbered-job-folder>/job.md and job.md preserves all source text without added wording"
-    return _result("pass" if path_matches and source_matches else "fail", "Application archive", "job.md", observed, expected, pointers)
+    import sys
+    from pathlib import Path
+    scripts = Path(__file__).resolve().parents[2] / "skills" / "compose-career-profile" / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    from career_workspace import archive_result
+    return archive_result(record)

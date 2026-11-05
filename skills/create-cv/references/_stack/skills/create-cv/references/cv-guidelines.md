@@ -44,7 +44,7 @@ Avoid packing an entire project into one line. Use one problem-solving bullet an
 - No first person, pronouns, periods are optional but must be consistent.
 - Target 18-28 words; maximum two rendered lines.
 - Keep one principal action per bullet.
-- Use British English consistently.
+- Use British English by default for English output; follow the requested language and locale otherwise.
 
 ## Seniority and ownership
 
@@ -59,7 +59,7 @@ Choose the exact verb:
 
 ## Section order
 
-Use the defined section order: name/contact, education, professional experience, personal experience, hard skills, personal interests, and language proficiency. Do not add an opening profile.
+Use the defined section order: name/contact, education, professional experience, personal experience, hard skills, personal interests, and language proficiency. Omit empty sections. Do not add an opening profile.
 
 ## Entry order
 

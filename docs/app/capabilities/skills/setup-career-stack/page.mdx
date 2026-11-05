@@ -4,7 +4,7 @@ title: "Setup Career Stack"
 
 # Setup Career Stack
 
-> **Skill** · **stable** · **v1.2.0** · updated 2026-11-05
+> **Skill** · **stable** · **v2.0.1** · updated 2026-11-05
 
 ## Purpose
 
@@ -12,12 +12,12 @@ Set up a dedicated project for organizing job applications, durable career conte
 
 ## Workflow
 
-1. **Choose a fresh project folder.** The skill creates `applications/`, `references/`, `staples/`, and the root `AGENTS.md`. It preserves existing files rather than overwriting them.
+1. **Choose a project folder.** The skill creates `applications/`, `references/`, `staples/`, `work/`, and the root `AGENTS.md`. It preserves existing files rather than overwriting them.
 2. **Build career context.** [Compose Career Profile](/capabilities/skills/compose-career-profile) gathers your source material and reflections, then saves the profile to `references/career-context.md`.
 3. **Share target roles.** Describe the kinds of roles you are aiming for and provide as many useful links and full job descriptions as you can, across different titles and companies. Company profiles help when available. These examples show which roles can share a CV and which need distinct positioning. Links are helpful but not required.
 4. **Create staple CVs.** The skill groups similar targets and prepares one approved staple CV for each materially distinct role family. [Create CV](/capabilities/skills/create-cv) checks each CV against the role evidence and produces its PDF and review files.
 5. **Manage applications.** Each application gets a numbered folder under `applications/`, with the supplied job description saved as `job.md`. Later requests compare the target with approved staples; the workflow reuses a fitting CV or creates a tailored one. Request a letter through [Draft Cover Letter](/capabilities/skills/draft-cover-letter), or route application and interview questions through [Answer Interview](/capabilities/skills/answer-interview).
-6. **Keep writing feedback.** Letter feedback updates `references/professional-voice-profile.md`; answer feedback updates the application-answer voice profile. Each project profile takes priority over its bundled reference in later work.
+6. **Keep writing feedback.** Reusable letter and answer feedback updates the same `references/professional-voice-profile.md`. Both skills read it, with channel-specific guidance kept in separate sections. Existing split profiles are reconciled while preserving the originals.
 
 ## Workspace
 
@@ -25,16 +25,17 @@ Set up a dedicated project for organizing job applications, durable career conte
 | --- | --- |
 | `applications/<company>_<job>_<runningnumber>/` | Approved `CV.pdf` and, when requested, `Motivation_Letter.pdf`. |
 | `applications/<company>_<job>_<runningnumber>/job.md` | Plain Markdown copy of the supplied job description for context and future reference. |
+| `work/<application-folder>/<revision>/` | Working CV and letter drafts, input files, validation reports, and QA page renders. |
 | `references/career-context.md` | Reusable career profile and source of truth for career evidence. |
-| `references/professional-voice-profile.md` | Optional customized letter voice profile. |
-| `references/application-answer-voice-profile.md` | Optional customized voice guidance for application and interview answers. |
+| `references/professional-voice-profile.md` | Optional shared letter and answer voice profile. |
+| `references/applications.json` | Application IDs and numbering registry used to allocate folders consistently. |
 | `staples/<role-family>/` | Approved CV PDF, `MATCH.md`, editable source, and QA files. |
 
-The workflow does not submit, email, or upload applications. A generated draft is not a final approved staple; approve exact CV content before placing it in an application folder.
+Keep drafts and QA out of application folders: they contain only `job.md`, the approved `CV.pdf`, and an optional approved `Motivation_Letter.pdf`. The bundled workspace helper rejects generation and QA paths in application folders and copies only the reviewed PDF for delivery. The workflow does not submit, email, or upload applications. A generated draft is not a final approved staple; approve exact CV content before placing it in an application folder.
 
 ## Version and changes
 
-Version **1.0.0**; status **stable**. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md) for the stack inventory.
+Version **2.0.1**; status **stable**. See the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md) for the stack inventory.
 
 ## References
 

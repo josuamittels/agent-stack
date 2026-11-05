@@ -1,15 +1,5 @@
-# Evidence and source-of-truth rules
+# CV evidence rules
 
-Use the most specific and recent non-conflicted evidence. Prefer, in order:
+Before selecting content, read the shared [career evidence and sharing rules](../../compose-career-profile/references/evidence-and-sharing.md). They define precedence, conflicts, private information, and external-use restrictions for all career deliverables.
 
-1. A user-confirmed correction.
-2. Direct documentary evidence supplied for the profile.
-3. Third-party evidence for observed behaviour or named work.
-4. The supplied professional profile context.
-5. Inference from repeated evidence, for positioning only.
-
-A higher-ranked source does not erase a lower-ranked contradiction. Ask when a conflict materially affects the CV. Keep unresolved or explicitly conflicted claims out of outward-facing content.
-
-Preserve the exact meaning and qualifiers of every claim. Do not strengthen scope, causality, seniority, proficiency, ownership, or results. Do not add a number to make a bullet sound stronger. For unmeasured outcomes, name the concrete output or operational change. Use estimates, plans, and forecasts as such.
-
-Treat inferred traits or positioning as framing, never as factual achievements. Do not expose date of birth or private information unless the user explicitly requests it and the target requires it.
+Use only verified, externally permitted facts in the task-specific CV profile and content. Omit unavailable contact fields, academic grades, courses, and empty sections. Do not convert a missing field into a claim or a placeholder. Preserve estimates and the original scope of responsibility.

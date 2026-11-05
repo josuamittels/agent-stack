@@ -100,6 +100,13 @@ function sourceFile(root, relative) {
   }
   return file;
 }
+const careerOwners = new Set(["compose-career-profile", "compose-voice-profile", "create-cv", "answer-interview", "draft-cover-letter", "setup-career-stack"]);
+function validateCareerResource(name, file, absolute) {
+  if (!careerOwners.has(name) || !/\.(?:md(?:\.tmpl)?|py|json)$/.test(file)) return;
+  const text = fs.readFileSync(absolute, "utf8");
+  const legacy = /Mento Application System|the Application System|Application System\'s|01_Personal_Context|00_System\/|02_Writing_Style|04_Motivation_Letters|05_Application_Questions|07_Presentation|build-application-materials|about[-_]me\.md|\/Users\/[^\s]+|\/home\/[^\s]+/i;
+  if (text.includes("Application System") || legacy.test(text)) fail(`${name}: private or legacy career dependency in ${file}`);
+}
 export function load(root = ROOT) {
   const catalog = parse(
     fs.readFileSync(path.join(root, "src/catalog.yaml"), "utf8"),
@@ -149,7 +156,7 @@ export function load(root = ROOT) {
     for (const file of item.files) {
       if (!file.startsWith(`skills/${name}/`))
         fail(`${name}: owned file outside skill`);
-      sourceFile(root, file);
+      validateCareerResource(name, file, sourceFile(root, file));
     }
     for (const file of item.resources) {
       if (!file.startsWith("guidelines/"))

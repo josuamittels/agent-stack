@@ -7,7 +7,18 @@
       "description": "For a specific Setup Career Stack application with a full job description, job.md is saved in that numbered applications folder and preserves the posting text without added content.",
       "handler": "check_job_description_archive",
       "mandatory": true,
-      "required_inputs": ["/evidence/job_description_archive"]
+      "required_inputs": [
+        "/evidence/job_description_archive"
+      ]
+    },
+    {
+      "id": "letter-pdf-content-layout",
+      "description": "Requested PDF has a current successful text, font, page and geometry report bound to its PDF and input hashes.",
+      "handler": "check_letter_pdf",
+      "mandatory": true,
+      "required_inputs": [
+        "/evidence/letter_pdf_qa"
+      ]
     }
   ]
 }

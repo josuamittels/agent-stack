@@ -5,9 +5,9 @@ description: Initialize a project workspace for managing job applications,
   fresh career application system or organizing a new job-search project.
 license: MIT
 metadata:
-  version: 1.2.0
+  version: 2.0.1
   status: stable
-  stack-version: 0.43.0
+  stack-version: 0.44.0
   distribution: stable
 ---
 

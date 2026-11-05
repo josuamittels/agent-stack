@@ -3,7 +3,8 @@
   "document": {
     "company": "[Company]",
     "role": "[Role]",
-    "max_pages": null
+    "max_pages": null,
+    "language": "en"
   },
   "professional_experience": [
     {

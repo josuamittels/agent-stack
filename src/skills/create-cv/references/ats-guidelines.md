@@ -41,7 +41,7 @@ After PDF export:
 
 - Use `GPA` for every academic average, without modifiers.
 - Use only `native`, `fluent`, `prof. working`, `lim. working`, `A1`, `A2`, `B1`, `B2`, `C1`, `C2`, or `basic` for language proficiency.
-- Keep the canonical language and interest lines identical to the selected bundled CV profile.
+- Keep the canonical language and interest lines identical to the populated task-specific CV profile.
 - Generate DOCX/PDF through the bundled build script so layout, fonts, and reading-order validation stay consistent.
 
 ## Content checks ATS cannot perform

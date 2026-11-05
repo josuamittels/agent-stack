@@ -4,30 +4,31 @@ title: "Draft Cover Letter"
 
 # Draft Cover Letter
 
-> **Skill** · **stable** · **v1.4.0** · updated 2026-11-05
+> **Skill** · **stable** · **v2.0.1** · updated 2026-11-05
 
 ## Purpose
 
-Draft or revise a role-specific cover or motivation letter using a career profile, position details, and the [professional voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/professional-voice-profile.md). Return copy-ready text in chat or create a PDF with the bundled layout and font.
+Draft or revise a role-specific cover or motivation letter using a career profile, position details, and the shared [professional voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/compose-voice-profile/references/professional-voice-profile.md), which is also used by Answer Interview. Return copy-ready text in chat or create a PDF with the bundled layout and font.
 
 ## Workflow
 
-1. **Provide role context.** Share the role and employer, job description, and any relevant company information. In a Setup Career Stack workspace, the supplied job description is saved as `job.md` in the numbered application folder. The skill reads `references/career-context.md`; otherwise supply a usable career profile or identify the Application System as the source when available.
+1. **Provide role context.** Share the role and employer, job description, and relevant company information. In a Setup Career Stack workspace, the supplied job description is saved as `job.md` in the numbered application folder. Supply the career profile or use `references/career-context.md` in that workspace.
 2. **Ground the evidence.** The skill selects a small number of role needs and maps them to supported career facts. It keeps employer information separate from personal motivation and leaves unsupported claims out.
 3. **Draft the letter.** The default sequence is greeting, short role-and-employer opening, high-level fit, one relevant experience, motivation, call to action, and sign-off. The user can request another structure or set a length limit.
-4. **Choose the result.** Get the complete letter in chat by default, or request a PDF. For PDF output, the skill preserves approved wording and uses the packaged A4 layout and EB Garamond font.
-5. **Give feedback.** The skill revises the full letter and saves scoped voice guidance to `references/professional-voice-profile.md` in a career workspace. That personalized profile takes priority over the bundled profile in later letters.
+4. **Choose the result.** Get the complete letter in chat by default, or request a PDF. For PDF output, the skill preserves approved wording, uses the packaged A4 layout and EB Garamond font, then checks text, page size, embedded font, and page renders.
+5. **Give feedback.** The skill revises the full letter. Reusable voice preferences go in `references/professional-voice-profile.md` in a career workspace and are shared with Answer Interview; letter-only guidance stays scoped to letters.
 
 ## Inputs and limits
 
-Provide the job description and a career profile with relevant experience and motivation. The skill does not invent experience, results, credentials, referrals, product use, relationships, or reasons for applying. It does not submit an application or contact an employer. PDF output requires Python and ReportLab; the font license is bundled with the font.
+Provide the job description and a career profile with relevant experience and motivation. Keep PDF drafts and QA renders in a working folder, never inside `applications/`; deliver only the reviewed PDF there. The skill does not invent experience, results, credentials, referrals, product use, relationships, or reasons for applying. It does not submit an application or contact an employer. PDF output and verification require Python, ReportLab, pypdf, and pypdfium2; the font license is bundled with the font.
 
 ## Version and changes
 
-Version **1.4.0**; status **stable**. Career-workspace letters archive the supplied job description as `job.md` in the application folder. Changes appear in the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/draft-cover-letter/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **2.0.1**; status **stable**. Career-workspace letters archive the supplied job description as `job.md` in the application folder. Changes appear in the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 
 - [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/SKILL.md.tmpl)
 - [PDF layout reference](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/pdf-layout.md)
-- [Professional voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/references/professional-voice-profile.md)
+- [Shared professional voice profile](https://github.com/josuamittels/agent-stack/blob/main/src/skills/compose-voice-profile/references/professional-voice-profile.md)
+- [PDF verification script](https://github.com/josuamittels/agent-stack/blob/main/src/skills/draft-cover-letter/scripts/verify_letter_pdf.py)

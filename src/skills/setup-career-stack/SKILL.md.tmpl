@@ -1,7 +1,7 @@
 ---
 name: "setup-career-stack"
 description: "Initialize a project workspace for managing job applications, career context, reusable CVs, and application materials. Use when setting up a fresh career application system or organizing a new job-search project."
-version: "1.2.0"
+version: "2.0.1"
 created: "2026-11-04"
 updated: "2026-11-05"
 author:
@@ -26,7 +26,7 @@ For an individual career profile, use [Compose Career Profile](../compose-career
 - Work only in the fresh folder or project selected by the user. If the destination already contains meaningful files or an existing `AGENTS.md`, inspect them and preserve them; do not overwrite or restructure without an explicit request.
 - Use the stack's career skills through the host's supported invocation when available. If no separate invocation mechanism is available, read and apply their instructions directly; do not claim a separate skill ran.
 - Do not submit applications, send messages, or upload application materials.
-- Keep each application folder limited to `job.md`, the approved final CV PDF, and an optional approved final motivation-letter PDF. Keep editable source and QA files in the corresponding staple folder or a temporary working directory, not in the application folder.
+- Keep each application folder limited to `job.md`, the approved final CV PDF, and an optional approved final motivation-letter PDF. Keep editable source and QA files in the corresponding staple folder or durable application working directory, not in the application folder.
 - Never copy a staple or generated CV into an application folder as a final deliverable until the user approves that CV's exact content. Preserve the Create CV approval and delivery rules.
 - Do not fabricate career facts, role preferences, or evidence. Keep the career context as the source of truth.
 
@@ -41,9 +41,12 @@ AGENTS.md
 applications/
 references/
 staples/
+work/
 ```
 
-Store the durable career context at `references/career-context.md`. Store a personalized letter voice profile at `references/professional-voice-profile.md` and a personalized application-answer voice profile at `references/application-answer-voice-profile.md` only when each is created or updated from the user's feedback. Each staple CV gets its own subfolder under `staples/`, containing the approved `CV.pdf`, its role-family match notes, and the Create CV source and QA files needed for later review or revision.
+Store career context at `references/career-context.md`. Both letter and answer skills share optional personalized guidance at `references/professional-voice-profile.md`, created from reusable feedback. Store persistent application identity and numbering in `references/applications.json`. Keep tailored working revisions under `work/<application-folder>/`; each staple keeps its own source and QA files beside its approved `CV.pdf` and `MATCH.md`.
+
+Read [workspace operations](../compose-career-profile/references/workspace.md) before creating folders or application artifacts. It owns the helper commands and their behavior. Read the [shared professional voice](../compose-voice-profile/references/professional-voice-profile.md) for feedback persistence and migration from older split profiles. Do not create a personalized profile without evidence.
 
 ### Default Procedures
 
@@ -55,9 +58,9 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 ### 1. Select and prepare the project root
 
-Use the folder or project the user selected. If no destination is explicit, use the current fresh project folder only when it is clearly the intended destination. Create `applications/`, `references/`, and `staples/`. Do not replace existing files. Copy the [`AGENTS.md` template](templates/AGENTS.md) to the project root as `AGENTS.md`. If the project has a known name, use it in the heading; preserve the routing rules.
+Use the folder or project the user selected. If no destination is explicit, use the current fresh project folder only when it is clearly the intended destination. Use the shared workspace helper’s `init` command with the selected root and this skill’s [`AGENTS.md` template](templates/AGENTS.md). It creates `applications/`, `references/`, `staples/`, and `work/`, preserving existing files. If the project has a known name, use it in the heading; preserve the routing rules.
 
-Check that the root instructions and all three directories exist. Treat the template as a reusable scaffold: the delivered project file must not contain unresolved square-bracket placeholders.
+Check that the root instructions and all four directories exist. Treat the template as a reusable scaffold: the delivered project file must not contain unresolved square-bracket placeholders.
 
 ### 2. Create the career context
 
@@ -81,9 +84,9 @@ If needed details or approval are pending for a family, record that family as pe
 
 ### 5. Confirm the workspace and operating rules
 
-Verify the project root contains `AGENTS.md`, `applications/`, `references/`, and `staples/`; confirm the career context path; and list each created or pending staple with its match-note path. Confirm the root instructions route every candidate-written employer question in application forms, screening questionnaires, and interviews to Answer Interview, including questions bundled with broader application requests. Also confirm each specific application folder can hold the plain-Markdown `job.md` alongside approved final files, and that the instructions explain application numbering, staple selection, fresh CVs, optional letters, and persistent writing feedback.
+Verify the project root contains `AGENTS.md`, `applications/`, `references/`, `staples/`, and `work/`; confirm the career context path; and list each created or pending staple with its match-note path. Confirm the root instructions route every candidate-written employer question in application forms, screening questionnaires, and interviews to Answer Interview, including questions bundled with broader application requests. Also confirm each specific application folder can hold the plain-Markdown `job.md` alongside approved final files, and that the instructions explain application numbering, staple selection, fresh CVs, optional letters, and persistent writing feedback.
 
-Do not make a test application or invent a sample CV. Do not create a starter voice profile from no evidence; the bundled Draft Cover Letter profile remains the fallback until the user gives reusable feedback.
+Do not make a test application or invent a sample CV. Do not create a starter voice profile from no evidence; the shared professional voice remains the fallback until the user gives reusable feedback.
 
 ### 6. Validate implementation
 
@@ -91,4 +94,4 @@ When invoked as a helper, return to the owning workflow without separate evaluat
 
 ## Output
 
-Return the project path and links to its root `AGENTS.md`, `references/career-context.md`, the three directories, and each completed staple CV and `MATCH.md`. State which role families were merged or split, identify any pending profile or staple work, and confirm the application-folder naming and letter-feedback rules. Clearly distinguish a generated draft from a user-approved staple. Do not claim an approval that was not given.
+Return the project path and links to its root `AGENTS.md`, `references/career-context.md`, the four directories, and each completed staple CV and `MATCH.md`. State which role families were merged or split, identify any pending profile or staple work, and confirm the application-folder naming and letter-feedback rules. Clearly distinguish a generated draft from a user-approved staple. Do not claim an approval that was not given.

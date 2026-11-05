@@ -19,7 +19,7 @@ Draft concise, evidence-backed answers to job application and interview question
 
 Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
 
-Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab for PDF generation; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab, pypdf and pypdfium2 for PDF generation and QA; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
 ## ask-user-question
 
@@ -99,9 +99,9 @@ Status: eligible stable candidate.
 
 Create evidence-backed, role-tailored CV content and a PDF in a defined EB Garamond layout from a professional career profile and target.
 
-`npx skills add josuamittels/agent-stack --skill ask-user-question create-cv spawn-evals think-harder write -a codex`
+`npx skills add josuamittels/agent-stack --skill ask-user-question compose-career-profile create-cv spawn-evals think-harder write -a codex`
 
-Bundled dependencies: ask-user-question, spawn-evals, think-harder, write.
+Bundled dependencies: ask-user-question, compose-career-profile, spawn-evals, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export.
 
@@ -151,7 +151,7 @@ Draft or revise a role-specific cover letter from a career profile and job detai
 
 Bundled dependencies: ask-user-question, compose-career-profile, compose-voice-profile, research, research-literature, spawn-evals, think-deeper, think-harder, write.
 
-Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab for PDF generation; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; ReportLab, pypdf and pypdfium2 for PDF generation and QA; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
 ## mind-wandering
 
@@ -223,7 +223,7 @@ Initialize a project workspace for managing job applications, career context, re
 
 Bundled dependencies: answer-interview, ask-user-question, compose-career-profile, compose-voice-profile, create-cv, draft-cover-letter, research, research-literature, spawn-evals, think-deeper, think-harder, write.
 
-Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export; ReportLab for PDF generation; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY; Python >=3.10 for CV generation and PDF export; CV-generation tools and dependencies documented by Create CV.
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; python-docx, Pillow, pypdf, and pypdfium2; LibreOffice or soffice for PDF export; ReportLab, pypdf and pypdfium2 for PDF generation and QA; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY; Python >=3.10 for CV generation and PDF export; CV-generation tools and dependencies documented by Create CV.
 
 ## ship
 

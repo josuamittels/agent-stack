@@ -78,6 +78,9 @@ skills:
     files:
       - skills/compose-career-profile/SKILL.md.tmpl
       - skills/compose-career-profile/templates/career-profile.md
+      - skills/compose-career-profile/references/evidence-and-sharing.md
+      - skills/compose-career-profile/references/workspace.md
+      - skills/compose-career-profile/scripts/career_workspace.py
     resources: []
     evaluations: []
     hosts:
@@ -96,7 +99,8 @@ skills:
       - think-harder
       - write
       - spawn-evals
-    conditional: []
+    conditional:
+      - compose-career-profile
     optional: []
     routes: []
     files:
@@ -144,16 +148,16 @@ skills:
       - ask-user-question
       - think-harder
       - write
+      - compose-voice-profile
     conditional:
       - compose-career-profile
-      - compose-voice-profile
       - spawn-evals
       - draft-cover-letter
     optional: []
     routes: []
     files:
       - skills/answer-interview/SKILL.md.tmpl
-      - skills/answer-interview/references/professional-voice-profile.md
+      - skills/answer-interview/scripts/count_answer.py
     resources:
       - guidelines/languages/dutch.md
       - guidelines/languages/english.md
@@ -176,21 +180,21 @@ skills:
       - ask-user-question
       - think-harder
       - write
+      - compose-voice-profile
     conditional:
       - compose-career-profile
-      - compose-voice-profile
       - spawn-evals
     optional: []
     routes: []
     files:
       - skills/draft-cover-letter/SKILL.md.tmpl
-      - skills/draft-cover-letter/references/professional-voice-profile.md
       - skills/draft-cover-letter/references/pdf-layout.md
       - skills/draft-cover-letter/references/fonts/EBGaramond-Regular.ttf
       - skills/draft-cover-letter/references/fonts/OFL-1.1.txt
       - skills/draft-cover-letter/scripts/generate_cover_letter_pdf.py
       - skills/draft-cover-letter/templates/letter-pdf-input.example.json
       - skills/draft-cover-letter/requirements.txt
+      - skills/draft-cover-letter/scripts/verify_letter_pdf.py
     resources:
       - guidelines/languages/dutch.md
       - guidelines/languages/english.md
@@ -205,7 +209,7 @@ skills:
     requirements:
       - Node.js >=22.20 for JavaScript helpers when present
       - Python >=3.10 for Python helpers when present
-      - ReportLab for PDF generation
+      - ReportLab, pypdf and pypdfium2 for PDF generation and QA
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
   setup-career-stack:
@@ -218,8 +222,8 @@ skills:
       - answer-interview
       - spawn-evals
       - think-harder
-    conditional:
       - compose-voice-profile
+    conditional: []
     optional: []
     routes: []
     files:
@@ -243,16 +247,17 @@ skills:
     required:
       - ask-user-question
       - write
-      - research
       - spawn-evals
       - think-deeper
       - think-harder
-    conditional: []
+    conditional:
+      - research
     optional: []
     routes: []
     files:
       - skills/compose-voice-profile/SKILL.md.tmpl
       - skills/compose-voice-profile/templates/voice-profile.md
+      - skills/compose-voice-profile/references/professional-voice-profile.md
     resources:
       - guidelines/languages/dutch.md
       - guidelines/languages/english.md

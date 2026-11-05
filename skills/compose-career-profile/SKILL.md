@@ -5,9 +5,9 @@ description: Build a detailed, evidence-grounded career profile from a person's
   applications and career materials.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.1.1
   status: stable
-  stack-version: 0.43.0
+  stack-version: 0.44.0
   distribution: stable
 ---
 

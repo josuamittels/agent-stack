@@ -8,7 +8,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 - Add stable Answer Interview for concise, evidence-grounded application and interview answers that respect word or character limits.
 - Add stable Create CV to draft evidence-grounded, role-tailored CV content and generate a validated EB Garamond PDF.
-- Add stable Draft Cover Letter, with role-specific chat and PDF output, a bundled application-letter voice profile, and a self-contained PDF generator.
+- Add stable Draft Cover Letter, with role-specific chat and PDF output, the shared career-writing voice profile, and self-contained PDF generation and verification.
 - Add stable Setup Career Stack to initialize a career workspace, build role-family CV staples, and route future application work through project instructions.
 - Add stable Compose Career Profile to build a detailed, reusable career context profile from source documents and staged interview answers.
 - Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
@@ -21,8 +21,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Use one shared, user-owned voice profile for interview answers and letters, with channel-specific guidance kept in each workflow.
+- Keep CV and letter drafts, validation reports, and rendered QA pages in working storage; deliver only the reviewed PDF to an application folder.
+- Bundle career workspace operations and deterministic answer and letter PDF checks so career skills are self-contained.
 - Route career application questions through Answer Interview and retain each supplied job description as `job.md` in its application folder.
-- Rename the bundled letter voice guide to Professional Voice Profile and prioritize a project's personalized profile for later letters.
 - Require explicit user authorization before Ship creates a Git branch; Ship now uses the current or an appropriate existing branch by default.
 - **Breaking:** Rename the Write discipline identifier from `natural-writing` to `write`. Update direct selections, dependency declarations, and authored references to use `write`. See the [Write migration guidance](docs/app/capabilities/disciplines/write/page.mdx).
 - Expand the README with an entrepreneur-focused overview, a catalog of current skill candidates, and local preview installation instructions.

@@ -1,9 +1,9 @@
 ---
 name: "compose-voice-profile"
 description: "Compose a detailed, evidence-backed brand or author voice profile from user direction, research, guides, writing samples, visual references, and market context. Use when the user wants a reusable voice profile or tone-of-voice guide."
-version: "1.0.0"
+version: "1.1.0"
 created: "2026-10-27"
-updated: "2026-10-31"
+updated: "2026-11-05"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -34,7 +34,7 @@ This skill composes the profile. It does not write a campaign, publish copy, run
 - Do not invent product facts, audience preferences, market conditions, cultural norms, brand values, or examples.
 - Distinguish what the brand currently does from the voice the user wants it to adopt.
 - Treat visual references as context, not direct evidence of verbal style or audience demographics. Label interpretations and seek corroboration in the brief, brand guide, or audience evidence.
-- Do not adopt ECC defaults, another brand's distinctive traits, or a general style framework as this brand's voice without support from the user or evidence.
+- Do not adopt another brand's distinctive traits or a general style framework as this brand's voice without support from the user or evidence.
 - Preserve legal, safety, accessibility, and product-claim limits supplied by the user or authoritative brand materials. Flag conflicts; do not quietly remove a constraint.
 - Read the template as input. Never overwrite `templates/voice-profile.md` when producing a profile.
 
@@ -52,9 +52,9 @@ Use the user's stated goal and any available details about:
 
 These inputs are optional. Use materials the user supplies or clearly identifies as relevant. Do not scan unrelated private files, collect more examples by default, or conduct broad market research unless the user asks for it. When a referenced source is unavailable, record that limit and proceed with the remaining evidence when possible.
 
-Read [`templates/voice-profile.md`](templates/voice-profile.md) before drafting; it supplies the required headings, tables, fields, and front matter. If local copies of ECC’s brand-voice skill and voice-profile schema are available in `sources/ECC/`, use their evidence-led extraction and conflict-reporting methods when analyzing writing samples or current voice. Those source copies may be absent; in that case, apply the evidence inventory, sample analysis, and conflict checks in this skill directly. Do not claim to have consulted unavailable materials, and do not import ECC-specific defaults or hard bans as universal rules.
+For a new or substantially redefined profile, read [`templates/voice-profile.md`](templates/voice-profile.md) and use the full workflow. For a focused preference update, use the update mode below. Keep installed templates and bundled defaults immutable; save personalized profiles only in a supplied workspace or user-selected destination.
 
-Before composing the profile, read the language guideline for the requested output language when available. Start with [English](../../guidelines/languages/english.md), [Dutch](../../guidelines/languages/dutch.md), [German](../../guidelines/languages/german.md), or [French](../../guidelines/languages/french.md). Keep the template's section headings in their original order and fill its content in the requested language unless the user asks to localize the headings too. When no matching guideline exists, use English guidance for transferable writing principles and preserve the requested language.
+For the full workflow, read the language guideline for the requested output language when available. Start with [English](../../guidelines/languages/english.md), [Dutch](../../guidelines/languages/dutch.md), [German](../../guidelines/languages/german.md), or [French](../../guidelines/languages/french.md). In the full workflow, keep the template's section headings in their original order and fill its content in the requested language unless the user asks to localize the headings too. When no matching guideline exists, use English guidance for transferable writing principles and preserve the requested language.
 
 ### Default Procedures
 
@@ -63,6 +63,14 @@ When task input is needed from the user, route the question through [ask-user-qu
 If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
 
 ## Workflow
+
+### Focused update mode
+
+Use this branch when a caller supplies an existing profile and bounded writing feedback. Read the existing guidance, feedback, and relevant sample. Update only the affected writing behavior, preserve unrelated guidance, and label language, channel, or role scope. Keep one-application preferences in the current revision rather than global guidance. Distinguish preferences from factual corrections and keep private samples out of the saved profile.
+
+For career writing, both Draft Cover Letter and Answer Interview use one workspace `references/professional-voice-profile.md`. Use the [shared professional voice](references/professional-voice-profile.md) as a neutral starting point when that file does not exist. Reconcile older split profiles under explicit channel sections and preserve the originals. Follow current user instructions when they resolve a conflict; record other consequential conflicts without inventing a preference. Without a user-owned destination, apply feedback in conversation only.
+
+Apply [Write](../write/SKILL.md.tmpl) to the changed prose. This branch preserves the existing profile structure. Do not run market research, Think Deeper, full template expansion, or template evaluation for a bounded update. Return the revised guidance and briefly identify its scope. Use the full workflow below only when the user requests a new or substantially redefined voice.
 
 ### 1. Establish the profile contract
 
@@ -88,7 +96,7 @@ Use source material in the workspace only when the user supplied it or clearly i
 
 ### 3. Analyze the inputs without conflating them
 
-For real writing samples, identify patterns that recur across representative examples. Examine rhythm, compression, capitalization, parentheticals, questions, claims, transitions, vocabulary, preferred moves, and patterns to avoid, using ECC’s workflow when its local source is available. Note sample date, channel, authorship, and whether it represents the voice the user wants.
+For real writing samples, identify patterns that recur across representative examples. Examine rhythm, compression, capitalization, parentheticals, questions, claims, transitions, vocabulary, preferred moves, and patterns to avoid, using the evidence inventory and pattern analysis in this skill. Note sample date, channel, authorship, and whether it represents the voice the user wants.
 
 For strategy and research inputs, identify the product promise, audience needs, preferred language, market conventions, and meaningful points of distinction. Treat audience preferences as evidence only for the population and context actually studied. Treat performance metrics as signals; do not claim a writing choice caused results without evidence.
 
@@ -147,11 +155,12 @@ When invoked as a helper, return to the owning workflow without separate evaluat
 
 ## Output
 
-Return a completed Markdown voice profile based on [`templates/voice-profile.md`](templates/voice-profile.md), with its template sections filled, metadata resolved, source evidence identified, and unknowns or conflicts labeled. Use the requested output path when supplied; otherwise provide the complete profile in the response. Include a short note on the sources used, the current-versus-intended voice basis, and material confidence limits. Do not return only analysis, a list of adjectives, or an empty scaffold.
+For a focused update, return the updated profile in its existing structure and briefly identify the changed scope. Do not expand it into the full template.
+
+For the full workflow, return a completed Markdown voice profile based on [`templates/voice-profile.md`](templates/voice-profile.md), with its template sections filled, metadata resolved, source evidence identified, and unknowns or conflicts labeled. Use the requested output path when supplied; otherwise provide the complete profile in the response. Include a short note on the sources used, the current-versus-intended voice basis, and material confidence limits. Do not return only analysis, a list of adjectives, or an empty scaffold.
 
 ## References
 
-- Optional local reference: ECC’s brand-voice skill and voice-profile schema under `sources/ECC/`, when present in the working repository.
 - Lauren Pope, [“The anatomy of a brilliant brand voice”](https://la-pope.medium.com/the-anatomy-of-a-brilliant-brand-voice-31cfd1d9b835): personality, tone, rhythm, vocabulary, audience fit, and readable guidance.
 - Ankit Vora, [“Brand Voice: What It Is and How to Define It (+ Template)”](https://www.semrush.com/blog/brand-voice/): audience research, current-asset review, and actionable voice charts.
 - UK Home Office, [“Voice and tone”](https://design.homeoffice.gov.uk/design-and-content/content/voice-and-tone): stable voice and context-specific tone expressed as practical behavior.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a cover-letter PDF using the Application System letter design."""
+"""Generate a cover-letter PDF using the bundled EB Garamond layout."""
 
 from __future__ import annotations
 
@@ -11,6 +11,14 @@ import sys
 import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
+
+
+def require_working_directory(path):
+    scripts = Path(__file__).resolve().parents[2] / "compose-career-profile" / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    from career_workspace import require_working_directory as check
+    return check(path)
 
 
 REQUIRED_FIELDS = (
@@ -31,7 +39,7 @@ class PageLimitError(RuntimeError):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate an A4 cover-letter PDF in the Application System style."
+        description="Generate an A4 cover-letter PDF in the bundled EB Garamond layout."
     )
     parser.add_argument("input_json", type=Path, help="UTF-8 JSON with the required letter fields")
     parser.add_argument("output_pdf", type=Path, help="Destination PDF path")
@@ -54,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def read_letter(path: Path) -> dict[str, str]:
+def read_letter(path: Path) -> dict[str, str | list[str]]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
@@ -62,16 +70,22 @@ def read_letter(path: Path) -> dict[str, str]:
     if not isinstance(data, dict):
         raise ValueError("Input JSON must be an object containing the letter fields.")
 
-    missing = [field for field in REQUIRED_FIELDS if field not in data]
+    fields = ("greeting", "sign_off", "name") if "paragraphs" in data else REQUIRED_FIELDS
+    missing = [field for field in fields if field not in data]
     if missing:
         raise ValueError("Missing required field(s): " + ", ".join(missing))
 
-    letter: dict[str, str] = {}
-    for field in REQUIRED_FIELDS:
+    letter: dict[str, str | list[str]] = {}
+    for field in fields:
         value = data[field]
         if not isinstance(value, str) or not value.strip():
             raise ValueError(f"Field '{field}' must be a non-empty string.")
         letter[field] = value.strip()
+    if "paragraphs" in data:
+        paragraphs = data["paragraphs"]
+        if not isinstance(paragraphs, list) or not paragraphs or not all(isinstance(x, str) and x.strip() for x in paragraphs):
+            raise ValueError("paragraphs must be a non-empty string list")
+        letter["paragraphs"] = [x.strip() for x in paragraphs]
     return letter
 
 
@@ -87,6 +101,7 @@ def make_canvas_class(max_pages: int):
         def __init__(self, *args, **kwargs):
             self.page_limit = max_pages
             self.pages_written = 0
+            kwargs.setdefault("initialFontName", "EBGaramond")
             super().__init__(*args, **kwargs)
 
         def showPage(self):
@@ -101,7 +116,8 @@ def make_canvas_class(max_pages: int):
     return PageLimitedCanvas
 
 
-def create_pdf(letter: dict[str, str], output_path: Path, font_path: Path, max_pages: int) -> None:
+def create_pdf(letter: dict[str, str | list[str]], output_path: Path, font_path: Path, max_pages: int) -> None:
+    require_working_directory(output_path.parent)
     try:
         from reportlab.lib.colors import black
         from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
@@ -148,18 +164,10 @@ def create_pdf(letter: dict[str, str], output_path: Path, font_path: Path, max_p
         author=letter["name"],
         allowSplitting=1,
     )
-    story = [
-        Paragraph(paragraph_markup(letter["greeting"]), left),
-        Spacer(1, 8),
-        Paragraph(paragraph_markup(letter["opening"]), body),
-        Paragraph(paragraph_markup(letter["high_level_content"]), body),
-        Paragraph(paragraph_markup(letter["experience"]), body),
-        Paragraph(paragraph_markup(letter["motivation"]), body),
-        Paragraph(paragraph_markup(letter["call_to_action"]), body),
-        Spacer(1, 4),
-        Paragraph(paragraph_markup(letter["sign_off"]), left),
-        Paragraph(paragraph_markup(letter["name"]), left),
-    ]
+    paragraphs = letter.get("paragraphs") or [letter[key] for key in ("opening", "high_level_content", "experience", "motivation", "call_to_action")]
+    story = [Paragraph(paragraph_markup(letter["greeting"]), left), Spacer(1, 8)]
+    story.extend(Paragraph(paragraph_markup(text), body) for text in paragraphs)
+    story.extend([Spacer(1, 4), Paragraph(paragraph_markup(letter["sign_off"]), left), Paragraph(paragraph_markup(letter["name"]), left)])
 
     canvas_class = make_canvas_class(max_pages)
     document.build(story, canvasmaker=canvas_class)
@@ -186,6 +194,7 @@ def main() -> int:
         return 2
 
     try:
+        require_working_directory(args.output_pdf.expanduser().absolute().parent)
         letter = read_letter(args.input_json.expanduser())
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.NamedTemporaryFile(

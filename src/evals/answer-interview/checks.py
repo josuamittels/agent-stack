@@ -1,69 +1,80 @@
-from __future__ import annotations
+"""Mechanical answer bounds, complete count reporting, and archive verification."""
+from pathlib import Path
+import sys
+scripts = Path(__file__).resolve().parents[2] / "skills" / "answer-interview" / "scripts"
+if str(scripts) not in sys.path:
+    sys.path.insert(0, str(scripts))
+from count_answer import bounds, counts
 
 
-def _result(status, step, aspect, observed, expected, evidence):
-    return {
-        "status": status,
-        "step": step,
-        "aspect": aspect,
-        "observed": observed,
-        "expected": expected,
-        "evidence": evidence,
-    }
+def _result(status, aspect, observed, expected):
+    return {"status": status, "step": "Answer length", "aspect": aspect, "observed": observed, "expected": expected, "evidence": ["/evidence", "/constraints"]}
 
 
-def _count(text, unit):
-    if unit == "characters":
-        return len(text)
-    if unit == "words":
-        return len(text.split())
-    return None
-
-
-def _active_limits(constraints):
-    limits = []
-    for key, unit in (("max_characters", "characters"), ("max_words", "words")):
-        item = constraints.get(key)
-        if item is None:
-            continue
-        if not isinstance(item, dict) or not isinstance(item.get("value"), int) or isinstance(item.get("value"), bool) or item["value"] < 0:
-            return None
-        limits.append((unit, item["value"]))
-    return limits
+def _answers(record):
+    evidence = record.get("evidence", {})
+    if "answers" in evidence:
+        values = evidence["answers"]
+        if not isinstance(values, list) or not values:
+            raise ValueError("answers must be a non-empty list")
+    else:
+        values = [{"id": "answer", "text": evidence.get("answer_text"), "constraints": record.get("constraints", {}), "reported_counts": evidence.get("reported_counts")}]
+    ids = set()
+    for value in values:
+        if not isinstance(value, dict) or not isinstance(value.get("id"), str) or not value["id"].strip() or value["id"] in ids:
+            raise ValueError("Each answer needs a distinct id")
+        ids.add(value["id"])
+        if not isinstance(value.get("text"), str) or not isinstance(value.get("constraints"), dict):
+            raise ValueError("Each answer needs text and resolved constraints")
+    return values
 
 
 def check_answer_within_limit(record):
-    evidence = record.get("evidence", {})
-    text = evidence.get("answer_text")
-    constraints = record.get("constraints", {})
-    limits = _active_limits(constraints)
-    pointers = ["/constraints", "/evidence/answer_text"]
-
-    if not isinstance(text, str):
-        return _result("unverified", "Length check", "answer limit", text, "copy-ready answer text", ["/evidence/answer_text"])
-    if limits is None:
-        return _result("unverified", "Length check", "answer limit", constraints, "valid non-negative max_characters or max_words values", ["/constraints"])
-    if not limits:
-        return _result("not_applicable", "Length check", "answer limit", None, "an explicit maximum length", ["/constraints"])
-
-    observed = {unit: _count(text, unit) for unit, _ in limits}
-    failed = [(unit, limit, observed[unit]) for unit, limit in limits if observed[unit] > limit]
-    expected = {limit_unit: limit for limit_unit, limit in limits}
-    return _result("fail" if failed else "pass", "Length check", "answer limit", {"counts": observed, "exceeded": failed}, expected, pointers)
+    try:
+        answers = _answers(record)
+        observations, failures, applicable = [], [], False
+        for answer in answers:
+            limits = bounds(answer["constraints"])
+            actual = counts(answer["text"])
+            applicable = applicable or bool(limits)
+            bad = [unit for unit, (low, high) in limits.items() if actual[unit] < low or (high is not None and actual[unit] > high)]
+            observations.append({"id": answer["id"], "counts": actual, "bounds": limits, "violations": bad})
+            failures.extend(bad)
+        return _result("fail" if failures else "pass" if applicable else "not_applicable", "answer bounds", observations, "each answer meets every requested minimum and maximum")
+    except (ValueError, TypeError, AttributeError) as exc:
+        return _result("unverified", "answer bounds", str(exc), "complete answer records and valid bounds")
 
 
 def check_reported_count(record):
-    evidence = record.get("evidence", {})
-    text = evidence.get("answer_text")
-    reported = evidence.get("reported_counts")
-    pointers = ["/evidence/answer_text", "/evidence/reported_counts"]
+    try:
+        answers = _answers(record)
+        observations, applicable, failed, missing = [], False, False, False
+        for answer in answers:
+            limits = bounds(answer["constraints"])
+            if not limits:
+                continue
+            applicable = True
+            reported = answer.get("reported_counts")
+            if not isinstance(reported, dict) or any(unit not in reported for unit in limits):
+                missing = True
+                observations.append({"id": answer["id"], "missing_required_counts": sorted(limits.keys() - (reported or {}).keys()) if isinstance(reported, dict) else sorted(limits)})
+                continue
+            actual = counts(answer["text"])
+            for unit in reported:
+                if unit not in actual or type(reported[unit]) is not int:
+                    missing = True
+                elif reported[unit] != actual[unit]:
+                    failed = True
+            observations.append({"id": answer["id"], "actual": actual, "reported": reported})
+        return _result("fail" if failed else "unverified" if missing else "pass" if applicable else "not_applicable", "reported counts", observations, "every applicable count is present and matches final text")
+    except (ValueError, TypeError, AttributeError) as exc:
+        return _result("unverified", "reported counts", str(exc), "complete answer records and bounds")
 
-    if not isinstance(text, str) or not isinstance(reported, dict) or not reported:
-        return _result("unverified", "Length check", "reported count", reported, "answer text and a non-empty map of reported counts", pointers)
-    observed = {}
-    for unit, value in reported.items():
-        if unit not in {"characters", "words"} or not isinstance(value, int) or isinstance(value, bool):
-            return _result("unverified", "Length check", "reported count", reported, "integer counts keyed by characters or words", pointers)
-        observed[unit] = _count(text, unit)
-    failed = {unit: {"reported": value, "actual": observed[unit]} for unit, value in reported.items() if value != observed[unit]}
-    return _result("fail" if failed else "pass", "Length check", "reported count", {"reported": reported, "actual": observed, "mismatches": failed}, observed, pointers)
+def check_job_description_archive(record):
+    import sys
+    from pathlib import Path
+    scripts = Path(__file__).resolve().parents[2] / "skills" / "compose-career-profile" / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    from career_workspace import archive_result
+    return archive_result(record)

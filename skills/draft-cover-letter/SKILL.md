@@ -4,9 +4,9 @@ description: Draft or revise a role-specific cover letter from a career profile
   and job details, in chat or as a designed PDF.
 license: MIT
 metadata:
-  version: 1.4.0
+  version: 2.0.1
   status: stable
-  stack-version: 0.43.0
+  stack-version: 0.44.0
   distribution: stable
 ---
 

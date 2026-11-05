@@ -138,6 +138,6 @@ Repeat for each relevant role, project, freelance engagement, volunteer role, or
 ## Sharing and Claim Boundaries
 
 - **Approved for external use:** [Facts / materials explicitly approved or safe for intended use]
-- **Private or excluded details:** [Details not to share or not relevant to this profile's purpose]
+- **Private or excluded details:** [Categories or source identifiers excluded from sharing; do not reproduce the excluded details]
 - **Claims requiring fresh confirmation:** [Dates, figures, current status, formal credentials, or attribution]
 - **Attribution and uncertainty guidance:** [How later skills should present team results, estimates, self-assessments, and inferences]
