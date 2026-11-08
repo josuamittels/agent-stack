@@ -1,155 +1,132 @@
-<div align="center">
-
 # Agent Stack
 
-### Serious leverage for people building things with limited AI capacity.
-
-Focused skills for the work around a venture: research, decisions, product and design quality, writing, delivery, and the systems that make good work repeatable.
-
-[![skills.sh installs](https://skills.sh/b/josuamittels/agent-stack)](https://skills.sh/josuamittels/agent-stack)
-![Release status: draft](https://img.shields.io/badge/release-draft-orange)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-[Explore the skills](#whats-in-the-stack) · [Install a preview](#install) · [How the stack is organized](#how-its-organized) · [Why we made it](#why-we-made-it)
-
-</div>
-
----
-
-You have a product to shape, a market to understand, customers to reach, and a business to build. Your AI budget is finite. Finding a trustworthy skill for each job takes time, and long instructions can spend your context before the real work starts.
-
-**Agent Stack is a curated set of practical agent skills for that reality.** Each one gives an agent the process, judgment, and supporting material needed for a specific kind of work, without asking it to load an entire operating manual first.
-
-The aim is simple: **higher-quality work per unit of attention, time, and tokens.**
-
-> Agent Stack is in draft and has not been published. The skills.sh badge is included for the eventual public listing; public installs are not available yet. You can build and install local previews today.
-
-## What’s in the stack
-
-There are **22 public-catalog candidates** today. They cover reusable ways to think, research, write, create, and ship. The catalog is broad, but it is not a finished set of turnkey startup playbooks: the skills are focused building blocks you can use on their own or combine into a longer workflow.
-
-### Find the signal and make better decisions
-
-| Skill | Use it to |
-| --- | --- |
-| [Research](src/skills/research/SKILL.md.tmpl) | Produce source-grounded research reports and literature reviews, with staged workflows, citations, and export options. |
-| [Research Literature](src/skills/research-literature/SKILL.md.tmpl) | Search scholarly sources, verify work identities, and return records and abstracts with a search receipt. |
-| [Think Harder](src/skills/think-harder/SKILL.md.tmpl) | Resolve uncertainty from context and evidence before asking you to decide. |
-| [Think Deeper](src/skills/think-deeper/SKILL.md.tmpl) | Strengthen the methods, evidence, and checks behind a settled task. |
-| [Pre-mortem](src/skills/pre-mortem/SKILL.md.tmpl) | Find plausible ways a consequential plan could fail before you commit to it. |
-| [Ask User Question](src/skills/ask-user-question/SKILL.md.tmpl) | Prepare a focused question when a decision depends on information only you can provide. |
-| [Mind Wandering](src/skills/mind-wandering/SKILL.md.tmpl) | Explore fresh angles when the obvious approaches are not enough. |
-
-### Make the work clear, distinctive, and well crafted
-
-| Skill | Use it to |
-| --- | --- |
-| [Write](src/skills/write/SKILL.md.tmpl) | Write or edit clear human-facing prose while preserving intent and voice. |
-| [Translate](src/skills/translate/SKILL.md.tmpl) | Translate or localize supplied text with attention to natural phrasing and audience. |
-| [Compose Voice Profile](src/skills/compose-voice-profile/SKILL.md.tmpl) | Turn writing samples, research, and direction into an evidence-backed voice profile. |
-| [Convert Colour](src/skills/convert-colour/SKILL.md.tmpl) | Convert color values across common digital and print color spaces. |
-| [Check Colour Contrast](src/skills/check-colour-contrast/SKILL.md.tmpl) | Calculate contrast for two colors and interpret the result against accessibility thresholds. |
-
-Visual quality matters across the whole product, not just in a final polish pass. The source tree also contains developing guidance for accessibility, composition, color, typography, iconography, interaction, motion, sound, haptics, and wireframes. These design references are not all part of installable packages yet; see [release status](#availability-and-release-status).
-
-### Build repeatable ways of working
-
-| Skill | Use it to |
-| --- | --- |
-| [Create Docs](src/skills/create-docs/SKILL.md.tmpl) | Create evidence-grounded product and repository documentation. |
-| [Create Guidelines](src/skills/create-guidelines/SKILL.md.tmpl) | Define or repair reusable standards and working conventions. |
-| [Create Skill](src/skills/create-skill/SKILL.md.tmpl) | Turn a proven workflow into a reusable skill, with objective checks when they fit. |
-| [Spawn Evals](src/skills/spawn-evals/SKILL.md.tmpl) | Prepare and run deterministic checks for outputs with criteria a script can verify. |
-| [Show Me Your Work](src/skills/show-me-your-work/SKILL.md.tmpl) | Keep an evidence-linked decision log for long or multi-stage work. |
-
-### Find, route, and deliver the work
-
-| Skill | Use it to |
-| --- | --- |
-| [Browse Skills](src/skills/browse-skills/SKILL.md.tmpl) | Inspect comparable public skills for methods and inspiration. |
-| [Skill Issue](src/skills/skill-issue/SKILL.md.tmpl) | Route a request to a suitable stack capability. |
-| [Ship](src/skills/ship/SKILL.md.tmpl) | Carry a reviewed change through the target repository’s release and Git workflow. |
-| [Update Changelog](src/skills/update-changelog/SKILL.md.tmpl) | Record a release’s changes in its changelog. |
-| [Quit the Yap](src/skills/quit-the-yap/SKILL.md.tmpl) | Make an in-chat answer concise without losing details needed to act. |
-
-Some skills are small disciplines that support many workflows; others own a larger task from intake through delivery. Required dependencies are bundled with each package, so you do not need to install a separate helper set for every skill.
+Reusable agent skills for career applications, research, writing, decisions, and development. Each skill provides a focused workflow with its required instructions, templates, and resources bundled.
 
 ## Install
 
-### Install a local preview
-
-The public catalog is not released yet. To try a skill, build a preview and install it into a disposable project. This requires Node.js 22.20 or later and Python 3.10 or later.
+Agent Stack is experimental. Install all skills from GitHub:
 
 ```sh
-npm ci --ignore-scripts
-npm run build:preview
-npx skills add /absolute/path/to/agent-stack/dist/preview/skills --skill research -a codex
-```
-
-Replace `research` with a candidate name from the tables above. The preview build packages the selected skill’s required instructions and resources together. To install the complete preview set, use `--skill '*'`:
-
-```sh
-npx skills add /absolute/path/to/agent-stack/dist/preview/skills --skill '*' -a codex
-```
-
-The examples use Codex. The generated preview distribution also includes plugin packages for supported local plugin clients. See [distribution details](docs/distribution.md) for Claude Code, ChatGPT, updates, and package behavior.
-
-### Install from the public catalog
-
-Once Agent Stack and the selected skills pass their release gates, install a single skill or the full catalog with the standard skills CLI:
-
-```sh
-# One skill
-npx skills add josuamittels/agent-stack --skill research -a codex
-
-# The current complete public set
+# Codex
 npx skills add josuamittels/agent-stack --skill '*' -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill '*' -a claude-code
 ```
 
-These are future commands, not currently available installs. Omit `-g` for project installation; add it for user-wide installation. The public catalog will include only stable skills with stable dependency closures.
+Run these commands from your project folder. Choose the command for Codex or Claude Code. Add `-g` for user-wide installation. See [distribution and installation](docs/distribution.md) for other hosts, plugins, updates, and external tool requirements.
 
-## Why we made it
+## Career
 
-We wanted strong agent workflows without needing a large model budget or a dedicated AI team. The best individual skills are hard to find, hard to compare, and often buried inside stacks with very different assumptions. Meanwhile, a long generic prompt can consume the very context needed to do the task well.
+Create convincing CVs, authentic, personal cover letters, and application answers tailored to specific jobs and grounded in your actual experience. Keep your career information and application materials in one place, so each new application builds on a consistent, accurate account of what you offer.
 
-We studied agent stacks including gstack, ECC, pstack, LifeOS, and other skill libraries. We looked at how they organize skills, route work, handle dependencies, and guide an agent through a task. Agent Stack brings those lessons together as **condensed, usable expertise**: enough instruction to do the work carefully, with deeper references and helper procedures available when the task calls for them.
+1. **Set up your workspace**. Ask your agent to use [/setup-career-stack](src/skills/setup-career-stack/SKILL.md.tmpl) in a fresh project folder.
+2. **Build your profile**. Share your career materials and target roles to establish your career profile and generate reusable CVs.
+3. **Tailor each application**. Provide a job description to tailor your CV with [/create-cv](src/skills/create-cv/SKILL.md.tmpl), draft a cover letter with [/draft-cover-letter](src/skills/draft-cover-letter/SKILL.md.tmpl), and prepare application form answers with [/answer-interview](src/skills/answer-interview/SKILL.md.tmpl).
 
-That matters for entrepreneurs because the work rarely stays in one lane. One day you need to test an idea; the next you need to understand a market, shape an experience, write for a specific audience, or turn a repeated process into a system. A focused skill gives the agent a better starting point and keeps you in charge of the decisions that are yours to make.
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill setup-career-stack compose-career-profile create-cv draft-cover-letter answer-interview -a codex
 
-The direction is a connected set of playbooks that can support the journey from zero to one, then help turn proven work into repeatable operations. The current catalog lays the groundwork with research, judgment, communication, craft, and delivery capabilities; it will grow as complete venture workflows are designed and proven.
+# Claude Code
+npx skills add josuamittels/agent-stack --skill setup-career-stack compose-career-profile create-cv draft-cover-letter answer-interview -a claude-code
+```
 
-## Why this approach works
+## Research
 
-- **The task gets the context it needs.** A focused workflow avoids loading unrelated material into every request.
-- **Quality is part of the method.** Research skills keep claims connected to sources; design guidance treats accessibility and craft as product requirements; writing guidance accounts for voice, audience, and language.
-- **You can start small and combine workflows.** Install one capability for a specific job, or build a larger sequence around your project.
-- **Repeatable work becomes reusable.** Skills, templates, scripts, and references can encode a process so you do not have to rediscover it each time.
-- **The package brings its dependencies.** Required helper instructions and guidance travel with the skill, reducing setup and version drift.
-- **You stay in control.** Skills guide the agent’s process; they do not replace your judgment, approve decisions, or silently change your project setup.
+Get a clear, evidence-backed answer to a question, with sources you can inspect and limitations you can assess. Use the research workflow for a report or literature review, or [/research-literature](src/skills/research-literature/SKILL.md.tmpl) to find relevant scholarly sources.
 
-## How it’s organized
+1. **Frame the question**. Ask your agent to use [/research](src/skills/research/SKILL.md.tmpl), sharing your question and any starting sources.
+2. **Set the scope**. Choose quick, normal, or deep research and your preferred output format.
+3. **Review the evidence**. Read the synthesis alongside its sources, uncertainties, and evidence gaps.
 
-Agent Stack has a small, explicit source of truth and generated packages for installation.
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill research research-literature -a codex
 
-| Location | What it contains |
-| --- | --- |
-| [`src/skills/`](src/skills/) | Canonical skill and discipline instructions, scripts, references, and templates. |
-| [`src/guidelines/`](src/guidelines/) | Shared standards, including language, design, coding, and documentation guidance. |
-| [`src/catalog.yaml`](src/catalog.yaml) | The public candidates, their dependencies, required files, resources, and supported hosts. |
-| [`skills/`](skills/) | Generated stable packages. Do not edit these directly. |
-| [`dist/preview/`](dist/preview/) | Local preview packages generated for development. This directory is ignored by Git. |
-| [`docs/`](docs/) | Distribution, installation, lifecycle, and maintainer documentation. |
+# Claude Code
+npx skills add josuamittels/agent-stack --skill research research-literature -a claude-code
+```
 
-Each capability has one primary instruction file. A **skill** owns a substantial workflow; a **discipline** provides a focused method that other workflows can call. The catalog declares which instructions and resources belong in each package. The build follows those dependencies and bundles the needed material into a self-contained install.
+## Writing
 
-To change a capability, edit its source under `src/`, update its catalog entry if the package contents change, then rebuild. Generated `skills/` output is for released packages, not authoring.
+Make your writing clear, natural, and suited to its audience while preserving your meaning and voice. Develop a consistent style across your work, or adapt existing text for another language and readership.
 
-## Availability and release status
+1. **Share the context**. Provide a brief or draft, the intended audience, and the language.
+2. **Choose the task**. Ask for [/write](src/skills/write/SKILL.md.tmpl), [/translate](src/skills/translate/SKILL.md.tmpl), or [/compose-voice-profile](src/skills/compose-voice-profile/SKILL.md.tmpl).
+3. **Refine the result**. Give feedback on the wording and tone, or use [/quit-the-yap](src/skills/quit-the-yap/SKILL.md.tmpl) for concise chat answers.
 
-Agent Stack is currently **experimental, version 0.37.0, and unpublished**. Although 22 skills are public-catalog candidates, the stack-wide release gate has not been met. The build does not promote draft skills to stable, and the source repository is not the public skills catalog.
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill write translate compose-voice-profile quit-the-yap -a codex
 
-Local previews are available now. Public skills.sh installs and download counts will become meaningful after publication. Some candidate skills are themselves still experimental and may be excluded from the first stable release. Check the generated [candidate catalog](docs/installation.generated.md) and [version inventory](VERSIONS.md) for current component status.
+# Claude Code
+npx skills add josuamittels/agent-stack --skill write translate compose-voice-profile quit-the-yap -a claude-code
+```
 
-## License
+## Thinking and decisions
 
-Agent Stack is licensed under the [MIT License](LICENSE).
+Work through uncertainty, challenge assumptions, and find options you may have overlooked. These methods help you sharpen an approach or identify weaknesses in a plan before committing time and resources.
+
+1. **Describe the decision**. Share the task or plan, its constraints, and what remains uncertain.
+2. **Sharpen the approach**. Use [/think-harder](src/skills/think-harder/SKILL.md.tmpl) to resolve ambiguity or [/think-deeper](src/skills/think-deeper/SKILL.md.tmpl) to strengthen methods and evidence.
+3. **Explore and challenge**. Use [/mind-wandering](src/skills/mind-wandering/SKILL.md.tmpl) for fresh angles or [/pre-mortem](src/skills/pre-mortem/SKILL.md.tmpl) to examine possible failures.
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill think-harder think-deeper mind-wandering pre-mortem ask-user-question -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill think-harder think-deeper mind-wandering pre-mortem ask-user-question -a claude-code
+```
+
+## Colour
+
+Get colour values in the format your project needs and assess whether text has enough contrast against its background. Use the results to make informed colour choices for digital and print work.
+
+1. **Convert a value**. Give [/convert-colour](src/skills/convert-colour/SKILL.md.tmpl) a colour value and the target format.
+2. **Check a pair**. Give [/check-colour-contrast](src/skills/check-colour-contrast/SKILL.md.tmpl) foreground and background colours to assess them against accessibility thresholds.
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill convert-colour check-colour-contrast -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill convert-colour check-colour-contrast -a claude-code
+```
+
+## Reusable workflows
+
+Make useful project knowledge and proven ways of working easier to share and repeat. Capture them as documentation, standards, or agent skills, with checks and decision records where they help maintain quality.
+
+1. **Choose what to capture**. Share the repository, process, or standards you want to make reusable.
+2. **Create the resource**. Ask for [/create-docs](src/skills/create-docs/SKILL.md.tmpl), [/create-guidelines](src/skills/create-guidelines/SKILL.md.tmpl), or [/create-skill](src/skills/create-skill/SKILL.md.tmpl).
+3. **Support future use**. Use [/spawn-evals](src/skills/spawn-evals/SKILL.md.tmpl) for script-verifiable skill checks or [/show-me-your-work](src/skills/show-me-your-work/SKILL.md.tmpl) to keep a decision log.
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill create-docs create-guidelines create-skill spawn-evals show-me-your-work -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill create-docs create-guidelines create-skill spawn-evals show-me-your-work -a claude-code
+```
+
+## Discovery and delivery
+
+Find a suitable skill for the work at hand and deliver repository changes through an established release process. Keep changes documented and follow the project's own Git and release rules.
+
+1. **Find a capability**. Use [/skill-issue](src/skills/skill-issue/SKILL.md.tmpl) to select a stack capability or [/browse-skills](src/skills/browse-skills/SKILL.md.tmpl) to inspect public examples.
+2. **Record the changes**. Use [/update-changelog](src/skills/update-changelog/SKILL.md.tmpl) to document what changed.
+3. **Deliver the work**. Ask for [/ship](src/skills/ship/SKILL.md.tmpl) when ready to commit, open a pull request, or release under the repository's rules.
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill skill-issue browse-skills update-changelog ship -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill skill-issue browse-skills update-changelog ship -a claude-code
+```
+
+## Reference
+
+[Stack map](map.mmd) · [Skill catalog](src/catalog.yaml) · [Distribution and maintenance](docs/distribution.md) · [MIT license](LICENSE)

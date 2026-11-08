@@ -4,7 +4,7 @@
   "name": "write",
   "version": "2.0.0",
   "status": "stable",
-  "stack_version": "0.44.0",
+  "stack_version": "0.44.1",
   "channel": "stable",
   "dependencies": [
     {
@@ -71,7 +71,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "2519cd422418fff92840001bfded3a8d727a113340077e8cad9dd3022d5eee5d",
+      "sha256": "d560b69865f76f12f0ea6c750b516fc3a7879cba6a7cd96e33c9778b29365742",
       "mode": 420
     }
   }

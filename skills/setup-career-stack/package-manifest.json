@@ -4,7 +4,7 @@
   "name": "setup-career-stack",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.44.0",
+  "stack_version": "0.44.1",
   "channel": "stable",
   "dependencies": [
     {
@@ -671,7 +671,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "aad01f1cdc03838382d3579544ec12247015aaa1ff628ca59bab9c0c0ab6b2eb",
+      "sha256": "369d82397d80c561efed1b4b3becdf73264426e03a39ae52b072717ada8746a2",
       "mode": 420
     }
   }

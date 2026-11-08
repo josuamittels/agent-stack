@@ -21,6 +21,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Shorten the README into consistent capability descriptions, numbered quick starts, and GitHub installation commands for both Codex and Claude Code.
+
 - Use one shared, user-owned voice profile for interview answers and letters, with channel-specific guidance kept in each workflow.
 - Keep CV and letter drafts, validation reports, and rendered QA pages in working storage; deliver only the reviewed PDF to an application folder.
 - Bundle career workspace operations and deterministic answer and letter PDF checks so career skills are self-contained.

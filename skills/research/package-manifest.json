@@ -4,7 +4,7 @@
   "name": "research",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.44.0",
+  "stack_version": "0.44.1",
   "channel": "stable",
   "dependencies": [
     {
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "da2c3e56a6a7990a1f75898e16e5c0dae83cc96e6718994317af0a315b2886e9",
+      "sha256": "0886af1570ee53e7949149249cea7aeea72b2c0feaa08036a5713d8417de2366",
       "mode": 420
     }
   }

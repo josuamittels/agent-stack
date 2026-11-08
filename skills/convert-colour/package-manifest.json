@@ -4,7 +4,7 @@
   "name": "convert-colour",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.44.0",
+  "stack_version": "0.44.1",
   "channel": "stable",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "df270589bf904c67179b3be1fd0bbc422a9a16abd242246a1c7d91814069bf23",
+      "sha256": "14701e74eea31f156e4982805e64cb360810bd3963283409051ed009841ecd76",
       "mode": 420
     }
   }

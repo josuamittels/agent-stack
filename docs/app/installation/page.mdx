@@ -4,22 +4,37 @@ title: Installation & updates
 
 # Installation & updates
 
-Agent Stack is experimental at version 0.37.0 and unpublished. Stable publication requires a stack version of at least 1.0, stable public skills, and stable required dependencies. Local previews do not promote lifecycle status.
+Install Agent Stack skills from GitHub for Codex or Claude Code. The stack is experimental; individual skills have their own lifecycle status.
 
-## Local preview
+## Install skills
 
-From the repository, run `npm ci --ignore-scripts` followed by `npm run build:preview -- --skill translate`. Install from the generated absolute `dist/preview/skills` path into a disposable project with the standard skills CLI.
-
-## Stable installation
-
-After a stable release, choose one skill or the complete public set:
+Run the command for your host from the project where you want to use the skills:
 
 ```sh
-npx skills add josuamittels/agent-stack --skill translate -a codex
+# Codex
+npx skills add josuamittels/agent-stack --skill '*' -a codex
+
+# Claude Code
 npx skills add josuamittels/agent-stack --skill '*' -a claude-code
 ```
 
-Use `-g` for user-wide availability. Each skill carries its required helper snapshots and guidelines; separately installed helpers remain independently invocable. Installation does not modify your project's agent instructions.
+Replace `'*'` with one or more skill names to select a smaller set. Add `-g` for user-wide availability. Each skill carries its required helper snapshots and guidelines; separately installed helpers remain independently invocable. Installation does not modify your project's agent instructions.
+
+Find capability groups and their quick starts in the [repository README](https://github.com/josuamittels/agent-stack/blob/main/README.md), or explore the [capabilities](/capabilities) for detailed workflows.
+
+## Local preview
+
+To try source changes, run `npm ci --ignore-scripts` followed by `npm run build:preview` from a clone of the repository. Replace `/absolute/path/to/agent-stack` below with your clone's location and run the command from your target project:
+
+```sh
+# Codex
+npx skills add /absolute/path/to/agent-stack/dist/preview/skills --skill '*' -a codex
+
+# Claude Code
+npx skills add /absolute/path/to/agent-stack/dist/preview/skills --skill '*' -a claude-code
+```
+
+Preview builds include experimental candidates without changing their lifecycle status.
 
 ## Updates
 
