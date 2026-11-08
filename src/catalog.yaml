@@ -212,6 +212,34 @@ skills:
       - ReportLab, pypdf and pypdfium2 for PDF generation and QA
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  setup-agent-stack:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - skill-issue
+      - spawn-evals
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/setup-agent-stack/SKILL.md.tmpl
+      - skills/setup-agent-stack/scripts/setup.mjs
+      - skills/setup-agent-stack/templates/global-routing.md
+      - skills/setup-agent-stack/references/hosts.md
+    resources: []
+    evaluations:
+      - setup-agent-stack
+    hosts:
+      - codex
+      - claude-code
+    requirements:
+      - Node.js >=22.20
+      - Python >=3.10 for objective checks
+      - Installed public skill-issue entry for the selected host
+      - Write access to the selected host's global instruction file
+    fallback: Report missing installed skills or a denied global write; do not
+      install prerequisites or silently change scope.
   setup-career-stack:
     visibility: public
     required:
@@ -675,6 +703,7 @@ skills:
     conditional: []
     optional: []
     routes:
+      - setup-agent-stack
       - ask-user-question
       - browse-skills
       - check-colour-contrast

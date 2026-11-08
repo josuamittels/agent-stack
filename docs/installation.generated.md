@@ -213,6 +213,18 @@ Bundled dependencies: ask-user-question, research, spawn-evals, think-deeper, th
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Python >=3.10; Pandoc for file exports; host-bundled LibreOffice for PDF; pypdf for PDF objective verification; web/API access for retrieval; optional OPENALEX_API_KEY.
 
+## setup-agent-stack
+
+Status: eligible stable candidate.
+
+Configure global Codex or Claude Code instructions to route tasks through installed Agent Stack skills. Use after installation to enable automatic routing or refresh its existing setup.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question setup-agent-stack skill-issue spawn-evals think-harder -a codex`
+
+Bundled dependencies: ask-user-question, skill-issue, spawn-evals, think-harder.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Node.js >=22.20; Python >=3.10 for objective checks; Installed public skill-issue entry for the selected host; Write access to the selected host's global instruction file.
+
 ## setup-career-stack
 
 Status: eligible stable candidate.
@@ -251,7 +263,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## skill-issue
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible stable candidate.
 
 Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits.
 

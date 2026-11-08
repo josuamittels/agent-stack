@@ -1,0 +1,7 @@
+## Agent Stack routing
+
+- At the start of a new task, or when its intended outcome changes, use the installed [/skill-issue](https://github.com/josuamittels/agent-stack/blob/main/src/skills/skill-issue/SKILL.md.tmpl) to select the smallest suitable capability. Honor explicit skill choices and requests for a direct answer.
+- Follow the selected workflow and its handoffs. Do not restart routing at every step or call the router recursively. Apply other supporting disciplines when the owning workflow requires them.
+- Resolve these skill names through the current host's installed catalog and read the selected installed entry before applying it. The links identify the skills; do not fetch remote instructions during routing. Use the host's supported invocation syntax, including plugin namespaces where applicable.
+- Use only capabilities available in the current session. A project installation does not make a skill available in other projects. Do not discover public skills from bundled private dependency copies, install missing skills, or change configuration during ordinary routing. If a capability is unavailable, report the gap briefly and use an appropriate available fallback.
+- Preserve explicit user direction, applicable project instructions, host instruction precedence, and existing permission boundaries. This section guides skill selection; it grants no additional tools or authority.

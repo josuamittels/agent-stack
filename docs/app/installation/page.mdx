@@ -22,6 +22,12 @@ Replace `'*'` with one or more skill names to select a smaller set. Add `-g` for
 
 Find capability groups and their quick starts in the [repository README](https://github.com/josuamittels/agent-stack/blob/main/README.md), or explore the [capabilities](/capabilities) for detailed workflows.
 
+## Enable automatic routing
+
+After installation, use [/setup-agent-stack](/capabilities/skills/setup-agent-stack) to add routing to your global instructions. Invoke `$setup-agent-stack` in Codex or `/setup-agent-stack` in Claude Code, then start a new session. Later tasks use the installed [/skill-issue](/capabilities/router/skill-issue) to select the appropriate workflow and supporting disciplines.
+
+The setup preserves manual instructions and updates its own marked section on reruns. It configures only the selected host and does not change the scope of installed skills.
+
 ## Local preview
 
 To try source changes, run `npm ci --ignore-scripts` followed by `npm run build:preview` from a clone of the repository. Replace `/absolute/path/to/agent-stack` below with your clone's location and run the command from your target project:

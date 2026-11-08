@@ -1,9 +1,9 @@
 ---
 name: skill-issue
 description: "Route an agent-stack request to an available skill, or a discipline for a small task or capability gap. Use at the start of a new task, when the requested outcome changes, or when deciding which stack capability fits."
-version: "0.7.0"
+version: "1.0.0"
 created: "2026-10-25"
-updated: "2026-11-05"
+updated: "2026-11-08"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -12,7 +12,7 @@ references:
   - "Jesse Vincent"
   - "Cursor"
 type: "router"
-status: "experimental"
+status: "stable"
 ---
 
 # Skill Issue
@@ -52,6 +52,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 | Compose a reusable brand or author voice profile from mixed inputs: "create a voice profile", "derive tone from audience research and brand samples". | [compose-voice-profile](../compose-voice-profile/SKILL.md.tmpl) | Synthesizes evidence into a profile; Write applies an established voice to prose, while Research produces a source-grounded report. |
 | Create or select a role-targeted CV: "make my CV for this role", "tailor my CV to this vacancy", "generate a CV PDF". | [create-cv](../create-cv/SKILL.md.tmpl) | Compares approved staple CVs with the target, reuses a fitting one, or creates a new tailored CV and validated EB Garamond PDF. For a complete career application workspace, use Setup Career Stack. |
 | Draft or revise a role-specific application or motivation letter: "write a cover letter", "draft an application letter", "make a cover letter PDF". | [draft-cover-letter](../draft-cover-letter/SKILL.md.tmpl) | Uses career context and the same shared career voice profile as Answer Interview; returns copy-ready text or a verified PDF while keeping QA in working storage. For a reusable career profile, use Compose Career Profile. |
+| Configure global skill routing after installation: "set up agent stack", "enable automatic skill routing", "configure global AGENTS.md or CLAUDE.md". | [/setup-agent-stack](../setup-agent-stack/SKILL.md.tmpl) | Preserves global instructions and adds an idempotent routing section for the selected host. Requires the installed router; does not install skills, maintain this repository's routing catalog, or initialize a career workspace. |
 | Set up a career application workspace: "organize my job search", "set up a career applications project", "create a system for job applications". | [setup-career-stack](../setup-career-stack/SKILL.md.tmpl) | Creates applications, references, staples, and working folders with routing instructions; builds career context and prepares staple CVs for distinct role families. For a profile alone, use Compose Career Profile. |
 | Produce a source-grounded report: "research this question", "write a research report", "synthesize the literature", "compare evidence", "research with stricter journals". | [research](../research/SKILL.md.tmpl) | Research runs a staged research report or literature review, using Research Literature for qualified discovery and Write for prose. Supports quick, normal and deep depth, supplied papers/authors, and chat, Markdown, LaTeX, Word or PDF output. Mechanical checks do not establish scientific correctness. |
 | Translate or localize supplied text: "translate into Dutch", "make a German version", "localize these strings", "adapt this for French readers", requested transcreation or transliteration. | [translate](../translate/SKILL.md.tmpl) | Drafting original text in another language. Translate owns its required handoff to Write. |
@@ -83,7 +84,7 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
-Answer Interview, Create CV, Draft Cover Letter, and Setup Career Stack are available as substantive skills with bundled resources and objective-check packages. Setup Career Stack initializes a career application workspace and routes application-form and interview questions to Answer Interview.
+Setup Agent Stack is stable and configures automatic routing in global Codex or Claude Code instructions after installation. Answer Interview, Create CV, Draft Cover Letter, and Setup Career Stack are available as substantive skills with bundled resources and objective-check packages. Setup Career Stack initializes a career application workspace and routes application-form and interview questions to Answer Interview.
 
 Write, Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Show Me Your Work, Think Deeper, Think Harder, and Update Changelog have usable instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Maintainer discovery reads canonical `src/skills/`, never generated root `skills/` or `dist/`. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 

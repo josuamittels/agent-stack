@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add stable [/setup-agent-stack](src/skills/setup-agent-stack/SKILL.md.tmpl) to configure global Codex or Claude Code routing after installation, preserving manual instructions with backups and repeatable updates.
+
 - Add stable Answer Interview for concise, evidence-grounded application and interview answers that respect word or character limits.
 - Add stable Create CV to draft evidence-grounded, role-tailored CV content and generate a validated EB Garamond PDF.
 - Add stable Draft Cover Letter, with role-specific chat and PDF output, the shared career-writing voice profile, and self-contained PDF generation and verification.
@@ -20,6 +22,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- Promote [/skill-issue](src/skills/skill-issue/SKILL.md.tmpl) to stable 1.0.0 and expose global setup through the router, map, installation guide, and generated packages.
 
 - Shorten the README into consistent capability descriptions, numbered quick starts, and GitHub installation commands for both Codex and Claude Code.
 

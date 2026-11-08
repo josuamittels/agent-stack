@@ -77,6 +77,9 @@ flowchart LR
       end
 
       subgraph engineering_skills [ENGINEERING]
+          setup_agent_stack["Setup Agent Stack"]
+          global_routing_template@{ shape: tag-doc, label: "Global Routing Template" }
+          host_targets@{ shape: doc, label: "Global Instruction Targets" }
           prototype["Prototype"]
           create_docs["Create Docs"]
           nextra_docs@{ shape: doc, label: "Nextra Documentation" }
@@ -111,6 +114,9 @@ flowchart LR
     draft_cover_letter --> has_objective_criteria
     answer_interview --> has_objective_criteria
     setup_career_stack --> has_objective_criteria
+    setup_agent_stack -.- global_routing_template
+    setup_agent_stack -.- host_targets
+    setup_agent_stack -.- skill_issue
     career_skills --> write
     career_skills --> ask_user_question
     setup_career_stack --> compose_career_profile
@@ -312,10 +318,10 @@ flowchart LR
     class skill_issue,missing_information decision
     class has_objective_criteria decision
     class stack entry
-    class create_guidelines,research,translate,compose_voice_profile,compose_career_profile,answer_interview,create_cv,draft_cover_letter,setup_career_stack,create_skill,create_docs,ship skill
+    class setup_agent_stack,create_guidelines,research,translate,compose_voice_profile,compose_career_profile,answer_interview,create_cv,draft_cover_letter,setup_career_stack,create_skill,create_docs,ship skill
     class write method
     class analyse_ads,analyse_data,audit_accessibility,audit_ux,brand_discovery,business_plan,cleanse_data,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,visualise_data,brainstorm,fresh_eyes planned
-    class english,german,dutch,french,cv_layout,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,career_workspace_agents,professional_voice_profile,decision_log_template,interaction document;
+    class global_routing_template,host_targets,english,german,dutch,french,cv_layout,typography,composition,colour,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,career_workspace_agents,professional_voice_profile,decision_log_template,interaction document;
     class tech_spec,product_pitch,design_system_guide planned
     class docs,nextra_docs,nextra_starter document
     class design_guides,product_biz_guides,coding_guides,tech_guides,skills,guidelines,admin_skills,language_guides,career_guides,academics_data_skills,design_skills,marketing_skills,product_skills,writing_skills,career_skills,video_skills,engineering_skills,discipline_map,guide_map,research_guides section

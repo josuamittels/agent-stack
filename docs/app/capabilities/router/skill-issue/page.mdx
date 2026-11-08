@@ -3,11 +3,11 @@ title: "Skill Issue"
 ---
 # Skill Issue
 
-> **Router** · **experimental** · **v0.7.0** · updated 2026-11-05
+> **Router** · **stable** · **v1.0.0** · updated 2026-11-08
 
 ## Purpose
 
-Use Skill Issue to route a task to the smallest available skill or discipline that fits its intended outcome.
+Use [/skill-issue](https://github.com/josuamittels/agent-stack/blob/main/src/skills/skill-issue/SKILL.md.tmpl) to route a task to the smallest available skill or discipline that fits its intended outcome.
 
 ## Workflow
 
@@ -15,6 +15,8 @@ Use Skill Issue to route a task to the smallest available skill or discipline th
 2. **Check the available instructions.** Match the outcome to substantive instruction files and use their type metadata to distinguish skills from disciplines.
 3. **Invoke the best fit.** Honor explicit choices, load the selected instructions, and pass relevant context and constraints through the handoff.
 4. **Continue with the destination.** Let the selected capability own its workflow and dependencies; return to routing only if the goal changes or the destination is unavailable.
+
+Use [/setup-agent-stack](/capabilities/skills/setup-agent-stack) after installation to enable this routing through your global host instructions.
 
 ## Inputs
 
@@ -26,7 +28,7 @@ Use the [Skill Issue router](/capabilities/router/skill-issue) when you need to 
 
 ## Version and changes
 
-Version **0.7.0**; status **experimental**. Skill Issue now routes application-form and interview questions to Answer Interview. Changes are recorded in the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and inventory in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **1.0.0**; status **stable**. The router now includes global Agent Stack setup and is available as an independently installed stable package. Changes are recorded in the [Agent Stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) and inventory in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

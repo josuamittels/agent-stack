@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "3431d229f3834efc19c4ad916e3f2963f047f68632344594bd018077921bbceb",
+  "name": "setup-agent-stack",
+  "version": "1.0.0",
+  "status": "stable",
+  "stack_version": "0.45.0",
+  "channel": "stable",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "setup-agent-stack",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "skill-issue",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "spawn-evals",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/evals/setup-agent-stack/checks.py": "9ee0ba836ac9505e75a51c96c80d6f78d08d2a89d838585502f963459b550d14",
+    "src/evals/setup-agent-stack/rubric.json": "18b9fa3ba0fcb369aab00bd6ebaf60e284f14b5c02336ca188b0a29a81216e27",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/setup-agent-stack/SKILL.md.tmpl": "8faba018f4acfebcfd6f456d6dd7924a75ce8d6daa6579683503973f4b1e5a0b",
+    "src/skills/setup-agent-stack/references/hosts.md": "ffce05f9d2f8637dac3fc3603087adb0dddadeefa89b0cff4311fe548b948df6",
+    "src/skills/setup-agent-stack/scripts/setup.mjs": "5f125f9bb2d86f1a331bbe5c6c735b77a5a15762aef7740528f087f0dba7ed1a",
+    "src/skills/setup-agent-stack/templates/global-routing.md": "446e2f1fb5b66c88695a27b78f23f79e1f26c1658fd12c1cbd6a5e4e01d04208",
+    "src/skills/skill-issue/SKILL.md.tmpl": "5e1b8cb9ec7607df8ee4266c71c96115127a28e1ad33aa75ab4cdfbabea3c5cc",
+    "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
+    "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
+    "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
+    "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+    "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/evals/setup-agent-stack/checks.py": {
+      "sha256": "9ee0ba836ac9505e75a51c96c80d6f78d08d2a89d838585502f963459b550d14",
+      "mode": 420
+    },
+    "references/_stack/evals/setup-agent-stack/rubric.json": {
+      "sha256": "18b9fa3ba0fcb369aab00bd6ebaf60e284f14b5c02336ca188b0a29a81216e27",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/setup-agent-stack/instructions.md": {
+      "sha256": "f0e1b5a7b0f4806d432c1e834e041b63d44b5b04a52c1467ee16100042ecc415",
+      "mode": 420
+    },
+    "references/_stack/skills/setup-agent-stack/references/hosts.md": {
+      "sha256": "ffce05f9d2f8637dac3fc3603087adb0dddadeefa89b0cff4311fe548b948df6",
+      "mode": 420
+    },
+    "references/_stack/skills/setup-agent-stack/scripts/setup.mjs": {
+      "sha256": "5f125f9bb2d86f1a331bbe5c6c735b77a5a15762aef7740528f087f0dba7ed1a",
+      "mode": 420
+    },
+    "references/_stack/skills/setup-agent-stack/templates/global-routing.md": {
+      "sha256": "446e2f1fb5b66c88695a27b78f23f79e1f26c1658fd12c1cbd6a5e4e01d04208",
+      "mode": 420
+    },
+    "references/_stack/skills/skill-issue/instructions.md": {
+      "sha256": "9b3a74f3afab37a89123fd82658932096a37b3f2bc57267ac30220db48f4dc52",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/instructions.md": {
+      "sha256": "926c03507e38e2d91ba720992cbe22229a5c19069eea944cea51b434ee23903a",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/package-setup.md": {
+      "sha256": "d8035003e8e092d712595f0abcb10a2f2c7ac684c3869cb08d8ec93961d65406",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/runner.md": {
+      "sha256": "88f161aa98092aecff43e82cc59356f63bec8b5893a2837df67f1c9fccb8c885",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/checklib.py": {
+      "sha256": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/runner.py": {
+      "sha256": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "150170c4226908ffbc948592a2df6300ce619851ac16b61bb54703ee89baed08",
+      "mode": 420
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stack_version": "0.44.1",
+  "stack_version": "0.45.0",
   "channel": "stable",
   "skills": [
     "answer-interview",
@@ -13,7 +13,9 @@
     "draft-cover-letter",
     "research",
     "research-literature",
+    "setup-agent-stack",
     "setup-career-stack",
+    "skill-issue",
     "spawn-evals",
     "think-deeper",
     "think-harder",
@@ -72,16 +74,12 @@
       "skill pre-mortem: experimental",
       "skill release-agent-stack: experimental",
       "skill ship: experimental",
-      "skill skill-issue: experimental",
       "skill update-changelog: experimental",
       "skill update-map: experimental",
       "skill update-router: experimental"
     ],
     "show-me-your-work": [
       "skill show-me-your-work: experimental"
-    ],
-    "skill-issue": [
-      "skill skill-issue: experimental"
     ],
     "update-changelog": [
       "resource guidelines/changelog/reference.md: experimental",

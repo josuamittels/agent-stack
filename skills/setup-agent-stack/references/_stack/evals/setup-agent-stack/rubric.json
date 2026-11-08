@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skill": "setup-agent-stack",
+  "checks": [
+    {
+      "id": "routing-section",
+      "description": "The applied instruction file contains exactly one complete managed routing section matching the bundled routing policy, with no duplicate markers.",
+      "handler": "check_routing_section",
+      "mandatory": true,
+      "required_inputs": ["/outputs/instructions", "/evidence/setup"]
+    },
+    {
+      "id": "manual-content-preserved",
+      "description": "The final file matches the apply receipt and preserves the captured byte lengths and SHA-256 digests of all manual content before and after the owned section.",
+      "handler": "check_manual_content",
+      "mandatory": true,
+      "required_inputs": ["/outputs/instructions", "/evidence/setup"]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 export default {
+	"setup-agent-stack": "Setup Agent Stack",
 	"compose-career-profile": "Compose Career Profile",
 	"compose-voice-profile": "Compose Voice Profile",
 	"answer-interview": "Answer Interview",

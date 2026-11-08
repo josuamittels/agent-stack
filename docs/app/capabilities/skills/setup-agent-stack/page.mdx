@@ -1,0 +1,55 @@
+---
+title: Setup Agent Stack
+---
+
+# Setup Agent Stack
+
+> **Skill** · **stable** · **v1.0.0** · updated 2026-11-08
+
+## Purpose
+
+Let your agent select suitable skills as you describe the work. [/setup-agent-stack](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-agent-stack/SKILL.md.tmpl) adds a compact routing section to your global Codex or Claude Code instructions, so you can use Agent Stack without naming a skill for every task.
+
+The section delegates selection to the installed [/skill-issue](/capabilities/router/skill-issue). The router chooses an appropriate workflow and supporting disciplines; the selected workflow owns its handoffs.
+
+## Before you start
+
+Install Agent Stack for the host you want to configure. The installed public router must be available in that host's skill catalog. Use project scope for skills you need in one project or add `-g` for availability across projects:
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill '*' -a codex -g
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill '*' -a claude-code -g
+```
+
+Global instructions do not make project-scoped skills available elsewhere. The agent checks the current session's installed skills before choosing a route.
+
+## Workflow
+
+1. **Start setup**. Invoke `$setup-agent-stack` in Codex or `/setup-agent-stack` in Claude Code. The current host is the default; name another host explicitly if that is the one you want to configure.
+2. **Inspect the target**. The skill checks the installed router and previews the section in the active global instruction file. Existing manual instructions remain in place.
+3. **Apply the section**. Setup creates or updates its marked section and backs up an existing file before changing it. Repeating setup updates the same section rather than appending duplicates.
+4. **Load the instructions**. Start a new session. Ask Codex which instruction sources it loaded, or inspect `/memory` in Claude Code.
+
+## What changes
+
+| Host | Global instruction file |
+| --- | --- |
+| Codex | `AGENTS.md` under `CODEX_HOME`, normally `~/.codex`. A nonempty `AGENTS.override.md` takes precedence. |
+| Claude Code | `CLAUDE.md` under `CLAUDE_CONFIG_DIR`, normally `~/.claude`. Verify loaded sources for a custom profile. |
+
+Setup configures only the selected host. It does not install skills or change project instructions. It stops if the router is missing, managed markers are malformed, the instruction file is a symlink, or a conflicting manual rule needs your decision. If the file changes after preview, setup requires a fresh preview before writing.
+
+The result reports the target path, whether the section was created, appended, updated, or already current, and any backup path. File checks verify the saved configuration; they do not guarantee how a future agent follows it.
+
+## Version and changes
+
+Version **1.0.0**; status **stable**. Introduced in stack revision **0.45.0** alongside the stable router. See the [changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-agent-stack/SKILL.md.tmpl)
+- [Global routing template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-agent-stack/templates/global-routing.md)
+- [Host paths and discovery](https://github.com/josuamittels/agent-stack/blob/main/src/skills/setup-agent-stack/references/hosts.md)

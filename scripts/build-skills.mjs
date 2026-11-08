@@ -251,7 +251,7 @@ function routerBody(ctx, preview) {
     )
     .sort();
   return (
-    "# Skill Issue\n\nChoose the smallest sufficient installed capability for the user’s outcome. Honor explicit choices and keep the selected workflow in charge of handoffs. Guidelines are references, never route destinations.\n\n## Catalog\n\n" +
+    "# Skill Issue\n\nChoose the smallest sufficient installed capability for the user’s outcome. Honor explicit choices and keep the selected workflow in charge of handoffs. Apply required base layers alongside the primary skill, including disciplines whose descriptions apply within other workflows. Guidelines are references, never route destinations.\n\n## Catalog\n\n" +
     names.map((n) => `- **${n}**: ${ctx.metas[n].description}`).join("\n") +
     "\n\n## Handoff\n\nThis catalog is not proof of installation. Check the host’s installed skill catalog and read the selected installed entry before handing off. If unavailable, report the missing capability or handle the request directly; do not install, fetch, or fabricate an invocation. Do not discover skills from private dependency snapshots, templates, or research sources. Do not change project instructions.\n"
   );

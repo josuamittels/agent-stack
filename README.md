@@ -16,6 +16,8 @@ npx skills add josuamittels/agent-stack --skill '*' -a claude-code
 
 Run these commands from your project folder. Choose the command for Codex or Claude Code. Add `-g` for user-wide installation. See [distribution and installation](docs/distribution.md) for other hosts, plugins, updates, and external tool requirements.
 
+After installation, use [/setup-agent-stack](src/skills/setup-agent-stack/SKILL.md.tmpl) to enable automatic routing in your global instructions. Invoke it as `$setup-agent-stack` in Codex or `/setup-agent-stack` in Claude Code, then start a new session. Your agent selects relevant skills through [/skill-issue](src/skills/skill-issue/SKILL.md.tmpl). Project installs apply where those skills are available; use `-g` to make them available across projects.
+
 ## Career
 
 Create convincing CVs, authentic, personal cover letters, and application answers tailored to specific jobs and grounded in your actual experience. Keep your career information and application materials in one place, so each new application builds on a consistent, accurate account of what you offer.
@@ -121,10 +123,10 @@ Find a suitable skill for the work at hand and deliver repository changes throug
 
 ```sh
 # Codex
-npx skills add josuamittels/agent-stack --skill skill-issue browse-skills update-changelog ship -a codex
+npx skills add josuamittels/agent-stack --skill setup-agent-stack skill-issue browse-skills update-changelog ship -a codex
 
 # Claude Code
-npx skills add josuamittels/agent-stack --skill skill-issue browse-skills update-changelog ship -a claude-code
+npx skills add josuamittels/agent-stack --skill setup-agent-stack skill-issue browse-skills update-changelog ship -a claude-code
 ```
 
 ## Reference
