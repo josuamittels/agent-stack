@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "3431d229f3834efc19c4ad916e3f2963f047f68632344594bd018077921bbceb",
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
   "name": "skill-issue",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.45.0",
+  "stack_version": "0.46.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "baa39c70333b66a922f703e9e9eddb3fd3a162f786693b2dc77fb08a14bdb023",
+      "sha256": "ae13e1ff38c9fe1b798dda26df62d828917d761d0bc08664e10b7972523ee4b8",
       "mode": 420
     }
   }

@@ -1,9 +1,9 @@
 ---
 name: interaction-design
 description: "Reference for UX/UI interaction decisions: task models, controls, input, focus, navigation, forms, feedback, asynchronous state, recovery, adaptation, specifications, and evaluation."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -27,6 +27,8 @@ Use this guide when designing, specifying, implementing, or reviewing interfaces
 This guide owns task and object models, control choice, state transitions, focus lifecycle, navigation, commitment, recovery, and feedback events. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
 
 For a new flow, start with [task and state modeling](#1-define-the-task-and-interaction-model), then the relevant [control and input patterns](#4-choose-controls-by-meaning). Use [specification and evaluation](#16-specify-the-interaction-contract) to complete the contract. [Accessibility](accessibility.md) owns access requirements and semantics; the shared framework identifies the owners of spatial and sensory expression.
+
+For interactive charts, maps, and diagrams, [Infographics](infographics.md#15-adapt-and-interact-without-losing-meaning) owns the represented relationships and what must survive filtering, selection, and zoom. Interaction owns the controls, state transitions, focus, and recovery. Keep the visual and equivalent views on the same filter and data state.
 
 ## Contents
 

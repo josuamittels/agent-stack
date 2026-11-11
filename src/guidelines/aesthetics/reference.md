@@ -1,9 +1,9 @@
 ---
 name: aesthetics-framework
 description: "Shared design-reference framework: domain ownership, selective reading paths, decision priorities, and evidence for AI-assisted design across interfaces and other media."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-10-28"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references: []
@@ -20,6 +20,7 @@ Use these references to make informed design decisions. Each guide owns one doma
 | Reference | Owns | Consult when |
 | --- | --- | --- |
 | [Interaction](interaction.md) | Task and object models, control choice, state transitions, focus lifecycle, navigation, commitment, recovery, and feedback events | Deciding what a person can do and what the system promises in response. |
+| [Infographics](infographics.md) | Visual explanation, chart and diagram selection, encoding, scales, uncertainty, geographic maps, route schematics, and truthful abstraction | Deciding how established information becomes marks and relationships that people can interpret. |
 | [Composition](composition.md) | Spatial hierarchy, grouping, balance, negative space, density, grids, layout adaptation, and spatial stability | Deciding where things belong and how their relationships survive different formats. |
 | [Typography](typography.md) | Letterforms, font selection and engineering, text composition, typographic roles, shaping, and font delivery | Deciding how language looks, reads, wraps, and renders. |
 | [Colour](colour.md) | Colour perception, vocabulary, spaces, mixing, palettes, themes, data scales, colour calculation, and reproduction | Deciding how colour relationships communicate and survive delivery. |
@@ -30,6 +31,8 @@ Use these references to make informed design decisions. Each guide owns one doma
 | [Accessibility](accessibility.md) | Access requirements, conformance and legal scoping, semantics, assistive technology, equivalent access, and accessibility evaluation | Establishing constraints and verifying that the whole task remains available. |
 
 The owner contains the explanation, conditions, exceptions, and detailed examples. Another guide links to it at the relevant decision. Domain-specific consequences stay with their domain: typography explains why glyphs collide; composition explains why a container clips; accessibility defines the adaptation requirement. This division prevents competing versions of the same rule.
+
+For visual explanations, start with [Infographics](infographics.md): it defines representation, encoding, scales, and the limits of abstraction. Use Composition for the surrounding layout, Colour for palettes, and Typography for text treatment. For interactive charts and maps, add Interaction and the relevant Accessibility sections. Statistical validity remains with the analytical owner; visual design does not establish it.
 
 ## Read selectively and follow dependencies
 

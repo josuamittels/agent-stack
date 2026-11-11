@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "3431d229f3834efc19c4ad916e3f2963f047f68632344594bd018077921bbceb",
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
   "name": "compose-career-profile",
   "version": "1.1.1",
   "status": "stable",
-  "stack_version": "0.45.0",
+  "stack_version": "0.46.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -101,7 +101,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "f5f95ba692f61885f0638c34e9ada213d6d1bfff8b0ea7624e2317f0f1eb8bcf",
+      "sha256": "7cfd5935346fdef14066c8156a83c953f69e1ff53a8e9cbd1d46e58af4da3882",
       "mode": 420
     }
   }

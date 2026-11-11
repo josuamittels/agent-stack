@@ -1,9 +1,9 @@
 ---
 name: iconography
 description: "Comprehensive iconography reference for metaphor selection, icon and family construction, optical correction, size and style variants, composition, accessible application, localization, semantic systems, vector implementation, production, testing, and governance."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-27"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -36,6 +36,8 @@ Use this reference to create an individual icon, build or extend a family, selec
 This guide owns symbol meaning, family selection and construction, optical correction, variants, and asset delivery. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
 
 For UI application, start with [1](#1-define-the-job-and-scope), [3–4](#3-choose-meanings-and-metaphors), [14–18](#14-compose-icons-with-text-and-layout), and [23](#23-implement-accessible-web-icons). Use [5–13](#5-define-the-visual-grammar) for drawing and family extension; [21–25](#21-build-the-semantic-and-token-system) for a maintained library. [Interaction](interaction.md) owns control behavior; [Colour](colour.md) owns themes; [Motion](motion.md) owns animation; [Accessibility](accessibility.md) owns semantics and access requirements.
+
+For pictorial quantities, route symbols, and explanatory diagrams, [Infographics](infographics.md) owns the data mapping and relationship grammar. Iconography owns the construction and recognition of each symbol. Do not apply optical size corrections to a quantitative mark when they change its encoded amount; use an unscaled symbol beside a separate measurement instead.
 
 ## Contents
 

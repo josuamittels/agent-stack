@@ -1,9 +1,9 @@
 ---
 name: accessibility-best-practices
 description: "Comprehensive accessibility reference for inclusive product decisions, EU legal scoping, WCAG requirements, visual and interaction design, content, implementation, assistive technology, design systems, evaluation, and ongoing operations."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -663,6 +663,8 @@ Provide labeled, keyboard-operable play/pause, volume, captions, description and
 Allow users to find transcripts and accessible versions near the media. Preserve alternatives in downloads, embedded variants and published recordings. If a live event is recorded, evaluate the recording as prerecorded content for its later publication rather than assuming live provision settles it.
 
 ## 18. Make data and complex workspaces accessible
+
+[Infographics](infographics.md) owns representation, scales, topology, and explanatory content for charts, maps, and diagrams. This section owns their access requirements and equivalent tasks. Establish the intended comparison or route before deciding whether a table, structured explanation, or alternate interaction preserves it.
 
 ### Preserve relationships in tables
 

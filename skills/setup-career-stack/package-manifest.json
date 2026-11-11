@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "3431d229f3834efc19c4ad916e3f2963f047f68632344594bd018077921bbceb",
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
   "name": "setup-career-stack",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.45.0",
+  "stack_version": "0.46.0",
   "channel": "stable",
   "dependencies": [
     {
@@ -671,7 +671,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "66cf0a359c8f96d1ca4edde7c548d3cea1d5c1830cde7d3eacc77ea8d0cac912",
+      "sha256": "4e200acd78d5e2cfc355586f107929fe9f15e7644d2bd4aa3ec84c9fa1f79613",
       "mode": 420
     }
   }

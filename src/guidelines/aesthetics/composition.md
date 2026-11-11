@@ -1,9 +1,9 @@
 ---
 name: composition
 description: "Comprehensive composition, layout, and grid reference for spatial meaning, visual hierarchy, guidance, balance, rhythm, blank space, density, responsive systems, editorial design, interfaces, and production."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-27"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -35,6 +35,8 @@ Use this reference to compose interfaces, websites, publications, presentations,
 This guide owns spatial relationships: grouping, hierarchy, balance, space, grids, density, and layout adaptation. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
 
 For UI, read sections [2](#2-write-the-composition-brief), [5–10](#5-build-visual-hierarchy), [14–20](#14-construct-and-calculate-the-grid), and [22–24](#22-translate-design-intent-into-implementation). Use [21](#21-apply-composition-to-editorial-and-physical-formats) for physical and editorial production. [Interaction](interaction.md) defines behavior; [Typography](typography.md) defines text composition; [Accessibility](accessibility.md) defines access requirements.
+
+For charts, maps, and explanatory diagrams, [Infographics](infographics.md) owns representation, quantitative scales, topology, and truthful abstraction. Composition arranges the surrounding page and the graphic's regions; preserve measured positions, shared baselines, and meaningful connections when applying a grid or adapting the layout.
 
 ## Contents
 

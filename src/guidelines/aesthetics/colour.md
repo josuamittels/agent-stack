@@ -1,9 +1,9 @@
 ---
 name: colour
 description: "Colour reference for perception, history and language, descriptive vocabulary, theory, models and formats, conversion, composition, palettes, meaning and psychology, accessibility, interface systems, visualisation, and colour-managed production."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-27"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -511,6 +511,8 @@ Review on representative devices in daylight and dim surroundings. Automatic whi
 Do not claim identical appearance across all devices. Set an achievable target of consistent interpretation, adequate contrast, and acceptable reproduction within defined conditions.
 
 ## 15. Encode data with colour
+
+[Infographics](infographics.md) owns representation and encoding: which relationship the chart or map asserts, which variable colour denotes, and what its scale means. This section owns the palette's perceptual behaviour and reproduction. Define the data meaning before constructing the colour scale.
 
 Choose the scale from the data relationship, then choose hues.
 

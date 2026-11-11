@@ -378,7 +378,34 @@ skills:
       - skills/create-guidelines/SKILL.md.tmpl
       - skills/create-guidelines/templates/reference.md
     resources:
+      - guidelines/aesthetics/accessibility.md
+      - guidelines/aesthetics/colour.md
+      - guidelines/aesthetics/composition.md
+      - guidelines/aesthetics/haptics.md
+      - guidelines/aesthetics/iconography.md
+      - guidelines/aesthetics/infographics.md
+      - guidelines/aesthetics/interaction.md
+      - guidelines/aesthetics/motion.md
+      - guidelines/aesthetics/reference.md
+      - guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md
+      - guidelines/aesthetics/references/composition/grid-structures.svg
+      - guidelines/aesthetics/references/composition/space-relationships.svg
+      - guidelines/aesthetics/references/iconography/construction.svg
+      - guidelines/aesthetics/sound.md
+      - guidelines/aesthetics/typography.md
+      - guidelines/changelog/reference.md
+      - guidelines/coding/mermaid.md
+      - guidelines/coding/python.md
+      - guidelines/coding/sql.md
+      - guidelines/coding/typescript.md
+      - guidelines/docs/reference.md
+      - guidelines/git/reference.md
+      - guidelines/languages/dutch.md
+      - guidelines/languages/english.md
+      - guidelines/languages/french.md
+      - guidelines/languages/german.md
       - guidelines/versioning/reference.md
+      - guidelines/wireframes/reference.md
     evaluations: []
     hosts:
       - codex

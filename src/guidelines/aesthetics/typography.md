@@ -1,9 +1,9 @@
 ---
 name: typography
 description: "Comprehensive typography reference for letter construction, optical correction, spacing, family design, composition, font selection, semantic systems, accessible implementation, multilingual use, and production."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -36,6 +36,8 @@ Use this reference to design letterforms, evaluate fonts, compose text, and buil
 This guide owns letterforms, font selection and construction, text composition, shaping, typographic roles, and font delivery. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
 
 For UI, start with [1](#1-start-with-the-reading-task), then [14–22](#14-select-and-combine-typefaces), and [23](#23-proof-and-diagnose). Read [2–13](#2-understand-the-units-and-anatomy) when evaluating font internals or creating a typeface, rather than as a prerequisite for applying one. [Composition](composition.md) owns page layout; [Colour](colour.md) owns colour roles; [Accessibility](accessibility.md) owns access requirements.
+
+For chart labels, legends, annotations, and map text, [Infographics](infographics.md#12-integrate-words-and-graphics) defines the information readers need and its relationship to marks. Typography owns how that text is set and rendered; keep units, signs, and labels legible without changing encoded geometry to make space.
 
 ## Contents
 

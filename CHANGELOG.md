@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add the experimental [Infographics guide](src/guidelines/aesthetics/infographics.md) for charts, diagrams, geographic maps, and metro schematics, with explicit domain boundaries and links from related aesthetic guides.
+
 - Add stable [/setup-agent-stack](src/skills/setup-agent-stack/SKILL.md.tmpl) to configure global Codex or Claude Code routing after installation, preserving manual instructions with backups and repeatable updates.
 
 - Add stable Answer Interview for concise, evidence-grounded application and interview answers that respect word or character limits.

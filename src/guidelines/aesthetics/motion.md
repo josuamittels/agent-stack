@@ -1,9 +1,9 @@
 ---
 name: motion-design
 description: "Comprehensive motion and animation reference for perception, timing, spacing, easing, springs, gesture physics, choreography, expressive identity, transitions, patterns, accessibility, motion systems, implementation, and evaluation."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -42,6 +42,8 @@ Use this guide for interfaces, websites, identities, explanatory graphics, prese
 This guide owns temporal composition, timing, easing, springs, trajectories, choreography, and animation lifecycle. Apply the shared [framework](reference.md) for decision priorities, requirements language, and evidence.
 
 For UI, start with [1–2](#1-understand-why-motion-matters), [7–13](#7-choose-duration-and-response), and [16–23](#16-apply-interaction-patterns); verify with [26–27](#26-work-through-complete-examples). Use [14–15](#14-create-feeling-and-expressive-identity) for expressive and narrative sequences. [Interaction](interaction.md) defines behavior and state truth; [Accessibility](accessibility.md) defines access and control requirements; [Composition](composition.md) defines spatial endpoints.
+
+For animated charts, maps, and explanatory diagrams, [Infographics](infographics.md#15-adapt-and-interact-without-losing-meaning) owns data mapping, object identity, and the meaning of a changing scale. Motion owns how the transition unfolds. Expressive overshoot or morphing must not make a measured value or network connection appear different from the underlying information.
 
 ## Contents
 

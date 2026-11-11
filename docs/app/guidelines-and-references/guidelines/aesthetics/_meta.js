@@ -5,6 +5,7 @@ export default {
 	"composition": "Composition",
 	"haptic-design": "Haptic Design",
 	"iconography": "Iconography",
+	"infographics": "Infographics",
 	"interaction-design": "Interaction Design",
 	"motion-design": "Motion Design",
 	"sound-design": "Sound Design",

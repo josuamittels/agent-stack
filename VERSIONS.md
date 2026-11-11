@@ -6,9 +6,9 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.45.0` |
+| Version | `0.46.0` |
 | Status | `experimental` |
-| Recorded | `2026-11-08` |
+| Recorded | `2026-11-11` |
 | Release date | Not released |
 
 The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Write, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature reference dependencies to stable 1.0.0 so the three research workflows have stable dependency closures. `0.36.0` reframes the README for entrepreneurs, documents the current candidate catalog, and explains local preview installation and stack structure. `0.37.0` renames the Write discipline identifier from `natural-writing` to `write`, a breaking change for direct selections, dependency declarations, and references. `0.38.0` adds the stable Compose Career Profile skill and reusable template. `0.39.0` changes Ship to require explicit user authorization before it creates a Git branch. `0.39.1` makes preview catalog validation derive its package count from eligible entries. `0.40.0` adds stable Draft Cover Letter and its stable voice-profile reference. `0.41.0` adds stable Create CV with an EB Garamond PDF generator. `0.42.0` adds the stable Setup Career Stack workflow and updates career application routing and personalized letter-voice guidance. `0.43.0` adds stable Answer Interview and its voice profile, routes career application questions through it, and archives supplied job descriptions in career application folders. `0.44.0` gives career workflows one shared voice profile, self-contained workspace operations and review helpers, and keeps draft and QA artifacts outside final application folders. The stack has not been released. 0.44.1 shortens the README into consistent capability quick starts and documents GitHub installation for Codex and Claude Code. 0.45.0 adds stable Setup Agent Stack for global host routing and promotes its required Skill Issue router to stable 1.0.0.
@@ -19,18 +19,19 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 
 | Component | Path | Version | Status |
 | --- | --- | --- | --- |
-| Reference | `src/guidelines/aesthetics/accessibility.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/colour.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/composition.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/accessibility.md` | `0.3.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/colour.md` | `0.3.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/composition.md` | `0.3.0` | `experimental` |
 | Reference | `src/guidelines/aesthetics/haptics.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/iconography.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/interaction.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/motion.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/reference.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/iconography.md` | `0.3.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/infographics.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/interaction.md` | `0.3.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/motion.md` | `0.3.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/reference.md` | `0.2.0` | `experimental` |
 | Reference | `src/guidelines/aesthetics/sound.md` | `0.2.0` | `experimental` |
-| Reference | `src/guidelines/aesthetics/typography.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/aesthetics/typography.md` | `0.3.0` | `experimental` |
 | Reference | `src/guidelines/changelog/reference.md` | `0.1.0` | `experimental` |
-| Reference | `src/guidelines/coding/mermaid.md` | `0.2.0` | `experimental` |
+| Reference | `src/guidelines/coding/mermaid.md` | `0.3.0` | `experimental` |
 | Reference | `src/guidelines/coding/python.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/coding/sql.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/coding/typescript.md` | `0.1.0` | `experimental` |

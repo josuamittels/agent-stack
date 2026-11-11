@@ -1,9 +1,9 @@
 ---
 name: "mermaid-best-practices"
 description: "House standard for Mermaid resource maps and process flows: semantic shapes, shared styling, portable configuration, direct routing, and validation."
-version: "0.2.0"
+version: "0.3.0"
 created: "2026-10-24"
-updated: "2026-10-28"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -19,6 +19,8 @@ status: "experimental"
 Create diagrams whose shapes explain each resource's role, whose groups explain its place, and whose connections are easy to trace. Use this standard for new diagrams and revisions. Follow explicit user requirements when they change the appearance, grouping, or scope.
 
 ## Purpose and diagram selection
+
+[Infographics](../aesthetics/infographics.md#9-explain-processes-networks-and-mechanisms) owns visual explanation, abstraction, and the meaning of nodes and connections. This guide owns Mermaid notation, configuration, and house rendering conventions. Select the relationship to explain before applying these implementation defaults.
 
 Establish what the diagram explains before choosing its notation. A resource map shows available capabilities, reference material, and their relationships. A process flow shows actions, decisions, and outcomes over time. Both can use Mermaid flowchart syntax, but their nodes and connections have different jobs.
 

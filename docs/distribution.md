@@ -2,7 +2,7 @@
 
 ## Current availability
 
-Agent Stack is available on GitHub and remains experimental at version 0.45.0. `src/catalog.yaml` declares 28 public candidates and three internal maintenance capabilities. Public eligibility requires each candidate and its bundled dependencies and versioned guidance to be stable. A stable skill with experimental question helpers is therefore blocked too.
+Agent Stack is available on GitHub and remains experimental at version 0.46.0. `src/catalog.yaml` declares 28 public candidates and three internal maintenance capabilities. Public eligibility requires each candidate and its bundled dependencies and versioned guidance to be stable. A stable skill with experimental question helpers is therefore blocked too.
 
 The stack itself must be stable at version 1.0 or later before release archives can be published. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
 
