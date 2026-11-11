@@ -16,7 +16,7 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add stable Setup Career Stack to initialize a career workspace, build role-family CV staples, and route future application work through project instructions.
 - Add stable Compose Career Profile to build a detailed, reusable career context profile from source documents and staged interview answers.
 - Add self-contained skill packages with an explicit dependency catalog, deterministic individual/full archives, native plugin manifests, and generated installation instructions.
-- Add CI package checks and a manually triggered stable-release artifact workflow. Public distribution requires a stable stack and stable dependency closures; experimental previews remain local.
+- Add CI package checks and a manually triggered release-artifact workflow. Public distribution includes experimental and stable components with non-draft dependency closures; local previews may also include drafts.
 - Add optional OpenAlex API key storage for Research Literature, with a tracked blank environment template and a choice to supply a key or research without one.
 - Add repeatable Research report and literature-review projects with fixed evidence, outline and review artifacts, offline helpers, APA 7 citations, and Markdown, LaTeX, Word and PDF exports.
 - Add multi-database literature discovery, supplied-paper and author accounting, deep backward-citation discovery, and a mandatory verification and journal-eligibility gate with one targeted top-up pass.
@@ -24,6 +24,9 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- Include experimental and stable skills and guides in shipping without promoting their lifecycle status. Exclude drafts and consumers with draft dependencies; allow experimental stack release packages at 0.y.z.
+- **Breaking:** Generated package manifests now use channel `release` instead of `stable`. Update external channel checks; each component’s lifecycle remains available in `status`.
 
 - Promote [/skill-issue](src/skills/skill-issue/SKILL.md.tmpl) to stable 1.0.0 and expose global setup through the router, map, installation guide, and generated packages.
 

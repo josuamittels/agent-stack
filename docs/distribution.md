@@ -2,9 +2,9 @@
 
 ## Current availability
 
-Agent Stack is available on GitHub and remains experimental at version 0.46.0. `src/catalog.yaml` declares 28 public candidates and three internal maintenance capabilities. Public eligibility requires each candidate and its bundled dependencies and versioned guidance to be stable. A stable skill with experimental question helpers is therefore blocked too.
+Agent Stack is available on GitHub and remains experimental at version 0.47.0. `src/catalog.yaml` declares 28 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
 
-The stack itself must be stable at version 1.0 or later before release archives can be published. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
+The stack itself must be non-draft before release archives can be prepared for publication. Experimental stacks may ship at 0.y.z; stable stacks require version 1.0 or later. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
 
 ## Source and generated files
 
@@ -16,13 +16,13 @@ The stack itself must be stable at version 1.0 or later before release archives 
 | `src/runtime/` | Portable configuration/state path helpers. |
 | `src/catalog.yaml` | Explicit dependency, resource, visibility, and host declarations. |
 | `scripts/` | Build, validation, and release machinery. |
-| `skills/` | Committed generated stable packages and eligibility report. |
+| `skills/` | Committed generated shipping packages and eligibility report. |
 | `dist/preview/` | Ignored preview skills, plugin trees, catalogs, and archives. |
-| `dist/release/` | Ignored stable release artifacts, created only after release gates pass. |
+| `dist/release/` | Ignored release artifacts, created only after release gates pass. |
 
 Canonical entry points use `SKILL.md.tmpl`, including the authoring scaffold. Only generated packages contain installable `SKILL.md` entries. This prevents the skills CLI’s recursive fallback from discovering unbuilt source workflows when the public catalog is empty.
 
-Edit sources, then run `npm run build`. Commit source edits, generated stable output, generated installation documentation, and the matching version inventory together. Generated private copies are never independent component inventory entries.
+Edit sources, then run `npm run build`. Commit source edits, generated shipping output, generated installation documentation, and the matching version inventory together. Generated private copies are never independent component inventory entries.
 
 ## Build and check
 
@@ -38,19 +38,21 @@ npm test
 npm run package
 ```
 
-`build` emits only eligible stable candidates; an empty development catalog is valid. Read `skills/catalog.json` for precise blockers. `build:preview` packages experimental candidates locally. Selecting a preview skill replaces the previous preview catalog; run the full preview build to restore all candidates.
+`build` emits eligible experimental and stable candidates with non-draft dependency closures; an empty development catalog is valid. Read `skills/catalog.json` for precise blockers. `build:preview` also permits drafts for local inspection; previews are not shipped. Selecting a preview skill replaces the previous preview catalog; run the full preview build to restore all candidates.
 
-`check:generated` computes expected output in memory without updating tracked files. `check:packages` checks current stable files against source-generated expectations and their manifests. `package` refuses a draft/experimental stack, versions below 1.0, an empty catalog, or stale stable output.
+`check:generated` computes expected output in memory without updating tracked files. `check:packages` checks current shipping files against source-generated expectations and their manifests. `package` refuses a draft stack, a stable stack below version 1.0, an empty shipping catalog, or stale generated output. It permits experimental stacks without promoting their status.
 
 The generator stages an entire replacement tree. It refuses unowned output directories and never cleans outside its designated generated directories. Do not store personal files inside generated output.
 
 ## Declare a package
 
-Every canonical skill needs one catalog entry. Keep its `files` list explicit, including required scripts, data, templates, and owned references. Add shared guideline files under `resources`; add an objective package slug under `evaluations` only when required by that workflow.
+Every canonical skill needs one catalog entry. Keep its `files` list explicit, including required scripts, data, templates, and owned references. Add shared guideline files under `resources`; Create Guidelines declares the complete distributable guide set and its linked assets so the full stack includes guides even when no other workflow consumes them. Keep new experimental or stable guides in that declaration, with drafts excluded. Add an objective package slug under `evaluations` only when required by that workflow.
 
 `required` and `conditional` dependencies are bundled transitively. Cycles are collected once; they do not authorize recursive execution. `optional` handoffs and router `routes` are discovery relationships, not installation dependencies. Repository-level `project_files` are references to files in the caller’s target project; the generator never substitutes a snapshot of this repository's release record. Declared third-party Python imports appear in `python_packages` and their consuming skill’s requirements.
 
 Adding a new source file does not automatically publish it. Missing declarations, unresolved local links, local imports outside the selected closure, symlinks, path escapes, unsafe credential examples, and prohibited files fail the build. Templates retain their contents, with discovery-sensitive filenames changed in the distribution.
+
+Shipping manifests use channel `release`; local previews use `preview`. Component lifecycle is recorded separately in `status`. Consumers that previously matched channel `stable` must accept `release` instead.
 
 Each package has one public `SKILL.md`. Its complete instructions and dependency instructions live under `references/_stack/skills/*/instructions.md`. Scripts retain the mirrored source layout so their sibling imports and resource paths work outside this repository. Set `AGENT_STACK_ROOT` to the installed package’s absolute `references/_stack` directory before executing its command examples. Resolve helper paths from that location; the target project remains a separate location.
 
@@ -128,12 +130,12 @@ For reproducible installation or rollback, use the full GitHub tree URL containi
 
 Updating installed skills does not mean installing new skills added to the catalog. To refresh the complete current set, rerun the full-set installation command. Do not install the same catalog through multiple managers at the same scope; choose one update owner.
 
-## Stable release procedure
+## Release procedure
 
-1. Stabilize each intended public component, its required/conditional dependencies, and versioned guidance through their own review. Confirm redistribution provenance for bundled third-party assets; preserve the CSL attribution file and embedded license. Do not automatically promote statuses to make a build pass.
+1. Confirm that each intended public component, its required/conditional dependencies, and versioned guidance is experimental or stable. Exclude drafts; retain deprecated components only for compatibility. Confirm redistribution provenance for bundled third-party assets; preserve the CSL attribution file and embedded license. Do not automatically promote statuses to make a build pass.
 2. Use the existing Ship/Release Agent Stack procedure to prepare the version, canonical inventory, changelog, map/router changes, and documentation. Every substantive planned commit retains its own stack version/inventory update. The build and packaging commands do not create commits.
-3. Through Release Agent Stack, Ship runs `npm run build` and the full `npm run build:preview` after metadata, discovery, and documentation updates. This generates individual and full-stack preview archives, plugins, catalogs, and checksums even for draft local commits. For stable stacks at version 1.0 or later, it also runs `npm run package` to generate the eligible stable distribution. Verify archive checksums, then run final checks before committing. Commit generated `skills/` and installation documentation with their sources; keep `dist/` artifacts local. A failed required build, package, checksum, or check stops delivery. Uploading and publication require separate authorization. Review `skills/catalog.json` for eligibility blockers.
-4. In a separately authorized release, establish the stable version and actual release date, create the matching `v<version>` tag and GitHub release, then run the manual **Publish stable packages** workflow against that tag.
-5. The workflow verifies the checked-out tag, stable release record, clean tree, generated files, tests, and checksums before attaching artifacts. It does not create tags, promote statuses, submit marketplaces, or overwrite existing assets.
+3. Through Release Agent Stack, Ship runs `npm run build` and the full `npm run build:preview` after metadata, discovery, and documentation updates. This generates individual and full-stack preview archives, plugins, catalogs, and checksums even for draft local commits. For non-draft stacks, it also runs `npm run package` to generate the shipping distribution; stable stacks require version 1.0 or later. Verify archive checksums, then run final checks before committing. Commit generated `skills/` and installation documentation with their sources; keep `dist/` artifacts local. A failed required build, package, checksum, or check stops delivery. Uploading and publication require separate authorization. Review `skills/catalog.json` for eligibility blockers.
+4. In a separately authorized release, establish the version and actual release date, create the matching `v<version>` tag and GitHub release, then run the manual **Publish packages** workflow against that tag.
+5. The workflow verifies the checked-out tag, release record, clean tree, generated files, tests, and checksums before attaching artifacts. It does not create tags, promote statuses, submit marketplaces, or overwrite existing assets.
 
 skills.sh discovers repository skills through installs recorded by its CLI; creating a hosted skills.sh pack is optional. After an actual public release, verify discovery and installation telemetry through the service. See the [skills.sh FAQ](https://www.skills.sh/docs/faq).

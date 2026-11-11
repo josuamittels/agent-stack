@@ -4,8 +4,8 @@
   "name": "research-literature",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "e012e577b633b5b49abf094d44e1c3883b1b6c1828e67933de72938367e4ae4e",
+      "sha256": "3905e5d10cca21f369d4bfcb4def4b9e16e1f3cb128c3c1a94f19af6dc62d743",
       "mode": 420
     }
   }

@@ -8,8 +8,8 @@ license: MIT
 metadata:
   version: 1.0.0
   status: stable
-  stack-version: 0.46.0
-  distribution: stable
+  stack-version: 0.47.0
+  distribution: release
 ---
 
 # translate

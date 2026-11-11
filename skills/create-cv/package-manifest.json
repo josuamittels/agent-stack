@@ -4,8 +4,8 @@
   "name": "create-cv",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -241,7 +241,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "532c0c8089935586e24558f238652a2eb9df3852e6bf2eecefc5c9afc1d71670",
+      "sha256": "cd83177d01c2193405ef10b79164a692a3f328cd6239234770818b4a2039e52f",
       "mode": 420
     }
   }

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "name": "pre-mortem",
+  "version": "0.2.0",
+  "status": "experimental",
+  "stack_version": "0.47.0",
+  "channel": "release",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "pre-mortem",
+      "version": "0.2.0",
+      "status": "experimental"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/pre-mortem/SKILL.md.tmpl": "8d9b42b2417c1f00f361443d03a4b7765ba59cf59bd0262db8a5901e2e42eb24",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/pre-mortem/instructions.md": {
+      "sha256": "1df008a53ce9227acb43f0b0e165cba37ed0b471f72ce9413c1b1f9770ec410f",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "99473f975cbbd5d8d4716ec4ebc3775e6c059a8ca6ce477fc64f33b1c7b65e8d",
+      "mode": 420
+    }
+  }
+}

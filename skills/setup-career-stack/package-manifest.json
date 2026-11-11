@@ -4,8 +4,8 @@
   "name": "setup-career-stack",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "answer-interview",
@@ -671,7 +671,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "4e200acd78d5e2cfc355586f107929fe9f15e7644d2bd4aa3ec84c9fa1f79613",
+      "sha256": "013996a1dee9c4c27f8d35418db48536b6d7d7600e2d5b5ef03223726a6ddb6f",
       "mode": 420
     }
   }

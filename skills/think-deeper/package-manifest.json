@@ -4,8 +4,8 @@
   "name": "think-deeper",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "83e393ecbaa658427b19a1b09a2737b5a1276bfc9955b0ecf3a0e9d5cd273b6e",
+      "sha256": "a5e10cf66ea4f2a09cb62fcf30e5719afe36a02293829d2688bb8aeb4db201e4",
       "mode": 420
     }
   }

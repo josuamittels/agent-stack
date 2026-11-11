@@ -4,8 +4,8 @@
   "name": "convert-colour",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "b3585262674c0dd5a8857766a49e0d4e1359819c88df7dcecc9e412f7367f1bf",
+      "sha256": "f68a13ac273765a9f756e209e9df8ce6c8cbcbf80039b3e89734717cb1231d7e",
       "mode": 420
     }
   }

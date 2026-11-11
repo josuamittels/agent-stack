@@ -16,6 +16,7 @@ export const ROOT = path.resolve(
 const parser = unified().use(remarkParse);
 const MARKER = ".agent-stack-generated.json";
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const distributable = (status) => ["experimental", "stable", "deprecated"].includes(status);
 const semver = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 const hash = (data) => crypto.createHash("sha256").update(data).digest("hex");
 const json = (value) => JSON.stringify(value, null, 2) + "\n";
@@ -218,7 +219,7 @@ function resourceSet(ctx, name) {
 export function blockers(ctx, name) {
   const out = [];
   for (const id of closure(ctx, name))
-    if (ctx.metas[id].status !== "stable")
+    if (!distributable(ctx.metas[id].status))
       out.push(`skill ${id}: ${ctx.metas[id].status}`);
   for (const file of resourceSet(ctx, name).filter(
     (f) => f.endsWith(".md") && !f.includes("/templates/"),
@@ -226,7 +227,7 @@ export function blockers(ctx, name) {
     const text = fs.readFileSync(sourceFile(ctx.root, file), "utf8");
     if (!text.startsWith("---\n")) continue;
     const m = frontmatter(text, file).metadata;
-    if (m.version && m.status && m.status !== "stable")
+    if (m.status && !distributable(m.status))
       out.push(`resource ${file}: ${m.status}`);
   }
   return [...new Set(out)].sort();
@@ -252,7 +253,7 @@ function routerBody(ctx, preview) {
     .sort();
   return (
     "# Skill Issue\n\nChoose the smallest sufficient installed capability for the user’s outcome. Honor explicit choices and keep the selected workflow in charge of handoffs. Apply required base layers alongside the primary skill, including disciplines whose descriptions apply within other workflows. Guidelines are references, never route destinations.\n\n## Catalog\n\n" +
-    names.map((n) => `- **${n}**: ${ctx.metas[n].description}`).join("\n") +
+    names.map((n) => `- **${n}** (${ctx.metas[n].status}): ${ctx.metas[n].description}`).join("\n") +
     "\n\n## Handoff\n\nThis catalog is not proof of installation. Check the host’s installed skill catalog and read the selected installed entry before handing off. If unavailable, report the missing capability or handle the request directly; do not install, fetch, or fabricate an invocation. Do not discover skills from private dependency snapshots, templates, or research sources. Do not change project instructions.\n"
   );
 }
@@ -375,7 +376,7 @@ export function buildSkill(ctx, name, { preview = false } = {}) {
     fail(`Internal skill is not installable: ${name}`);
   const blocked = blockers(ctx, name);
   if (!preview && blocked.length)
-    fail(`${name}: unstable dependency closure: ${blocked.join("; ")}`);
+    fail(`${name}: unshippable dependency closure: ${blocked.join("; ")}`);
   const sources = resourceSet(ctx, name);
   validateRuntime(ctx, sources);
   const mapping = new Map(sources.map((f) => [f, destination(f)]));
@@ -404,7 +405,7 @@ export function buildSkill(ctx, name, { preview = false } = {}) {
       version: meta.version,
       status: meta.status,
       "stack-version": ctx.version,
-      distribution: preview ? "preview" : "stable",
+      distribution: preview ? "preview" : "release",
     },
   };
   const warning = preview ? "\nThis is an unpublished local preview.\n" : "";
@@ -431,7 +432,7 @@ export function buildSkill(ctx, name, { preview = false } = {}) {
     version: meta.version,
     status: meta.status,
     stack_version: ctx.version,
-    channel: preview ? "preview" : "stable",
+    channel: preview ? "preview" : "release",
     dependencies: closure(ctx, name).map((id) => ({
       name: id,
       version: ctx.metas[id].version,
@@ -461,10 +462,11 @@ export function validateSkill(out, name, { preview = false } = {}) {
     fail(`${name}: manifest file set mismatch`);
   if (
     !preview &&
-    (manifest.channel !== "stable" ||
-      manifest.dependencies.some((d) => d.status !== "stable"))
+    (manifest.channel !== "release" ||
+      !distributable(manifest.status) ||
+      manifest.dependencies.some((d) => !distributable(d.status)))
   )
-    fail(`${name}: unstable package`);
+    fail(`${name}: unshippable package`);
   for (const [f, v] of out) {
     inside("/package", f);
     if (prohibited(f)) fail(`Excluded packaged file: ${f}`);
@@ -478,7 +480,10 @@ export function validateSkill(out, name, { preview = false } = {}) {
       fail(`Private skill exposed to discovery: ${f}`);
     if (!f.endsWith(".md") || f.includes("/templates/")) continue;
     const text = v.bytes.toString("utf8");
-    const body = text.startsWith("---\n") ? frontmatter(text, f).body : text;
+    const parsed = text.startsWith("---\n") ? frontmatter(text, f) : { body: text };
+    if (!preview && parsed.metadata?.status && !distributable(parsed.metadata.status))
+      fail(`${name}: unshippable resource ${f}: ${parsed.metadata.status}`);
+    const body = parsed.body;
     for (const node of links(body)) {
       const url = node.url;
       if (!url || /^(?:[a-z][\w+.-]*:|#|\/\/)/i.test(url)) continue;
@@ -526,7 +531,7 @@ function same(a, b) {
 }
 function installDocs(ctx, names) {
   return (
-    "# Generated installation reference\n\nGenerated from `src/catalog.yaml`. Commands target the eventual stable catalog; local previews use paths under `dist/preview/skills`.\n\n```sh\nnpx skills add " +
+    "# Generated installation reference\n\nGenerated from `src/catalog.yaml`. Commands target the experimental and stable shipping catalog; local previews use paths under `dist/preview/skills`.\n\n```sh\nnpx skills add " +
     ctx.catalog.repository +
     " --skill '*' -a codex\nnpx skills add " +
     ctx.catalog.repository +
@@ -534,7 +539,7 @@ function installDocs(ctx, names) {
     names
       .map(
         (n) =>
-          `## ${n}\n\nStatus: ${blockers(ctx, n).length ? "blocked for public release (see skills/catalog.json)" : "eligible stable candidate"}.\n\n${ctx.metas[n].description}\n\n\`npx skills add ${ctx.catalog.repository} --skill ${closure(
+          `## ${n}\n\nStatus: ${blockers(ctx, n).length ? "blocked for public release (see skills/catalog.json)" : `eligible ${ctx.metas[n].status} candidate`}.\n\n${ctx.metas[n].description}\n\n\`npx skills add ${ctx.catalog.repository} --skill ${closure(
             ctx,
             n,
           )
@@ -565,7 +570,7 @@ export function buildCatalog(ctx, { preview = false, skill } = {}) {
   add(
     out,
     "README.md",
-    "# Generated public skills\n\nEdit canonical files in `src/`; run `npm run build`. Only stable candidates with stable required dependencies appear here.\n",
+    "# Generated public skills\n\nEdit canonical files in `src/`; run `npm run build`. Experimental and stable candidates and their non-draft dependency closures appear here. Deprecated components remain available for compatibility; drafts are excluded.\n",
   );
   add(
     out,
@@ -573,7 +578,7 @@ export function buildCatalog(ctx, { preview = false, skill } = {}) {
     json({
       schema_version: 1,
       owner: "agent-stack",
-      channel: preview ? "preview" : "stable",
+      channel: preview ? "preview" : "release",
     }),
   );
   add(
@@ -582,7 +587,7 @@ export function buildCatalog(ctx, { preview = false, skill } = {}) {
     json({
       schema_version: 1,
       stack_version: ctx.version,
-      channel: preview ? "preview" : "stable",
+      channel: preview ? "preview" : "release",
       skills: eligible,
       blocked: Object.fromEntries(
         selected
@@ -636,9 +641,9 @@ function replaceOwned(dest, map, { check = false } = {}) {
   }
 }
 export function releaseGate(ctx) {
-  if (ctx.status !== "stable" || Number(ctx.version.split(".")[0]) < 1)
+  if (!distributable(ctx.status) || (ctx.status === "stable" && Number(ctx.version.split(".")[0]) < 1))
     fail(
-      `Publication blocked: stack ${ctx.version} is ${ctx.status}; stable >=1.0.0 required`,
+      `Publication blocked: stack ${ctx.version} is ${ctx.status}; non-draft status required; stable stacks require >=1.0.0`,
     );
 }
 function zip(map) {
@@ -743,7 +748,7 @@ export function artifacts(ctx, names, { preview = false } = {}) {
     json({
       schema_version: 1,
       owner: "agent-stack",
-      channel: preview ? "preview" : "stable",
+      channel: preview ? "preview" : "release",
     }),
   );
   return out;
@@ -774,7 +779,7 @@ export function main(argv = process.argv.slice(2), root = ROOT) {
   const result = buildCatalog(ctx, { preview, skill: opts.skill });
   if (command === "package") {
     if (!result.eligible.length)
-      fail("Publication blocked: empty stable catalog");
+      fail("Publication blocked: empty shipping catalog");
     replaceOwned(path.join(root, "skills"), result.out, { check: true });
     replaceOwned(
       path.join(root, "dist/release"),

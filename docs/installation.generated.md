@@ -1,6 +1,6 @@
 # Generated installation reference
 
-Generated from `src/catalog.yaml`. Commands target the eventual stable catalog; local previews use paths under `dist/preview/skills`.
+Generated from `src/catalog.yaml`. Commands target the experimental and stable shipping catalog; local previews use paths under `dist/preview/skills`.
 
 ```sh
 npx skills add josuamittels/agent-stack --skill '*' -a codex
@@ -35,7 +35,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## browse-skills
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Find and inspect related public skills for inspiration through GetEdge and original source repositories. Use when in need of comparable methods, skills, agent orchestration, conventions, or failure-handling approaches.
 
@@ -107,7 +107,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## create-docs
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Create evidence-grounded documentation in root/docs for people who use a repository's product or resources. Explain its structure, components, and supported use; do not default to contributor or maintainer manuals.
 
@@ -119,7 +119,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## create-guidelines
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Create or revise reusable guideline documents. Use to define domain standards, conventions, tool usage, or best practices, or to repair a guideline defect found while evaluating a skill.
 
@@ -131,7 +131,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## create-skill
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Create new skills and disciplines, or propose and implement approved improvements to existing ones in the agent stack. Prepare objective checks only when a skill has meaningful script-verifiable criteria.
 
@@ -155,7 +155,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## mind-wandering
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Open creative possibilities through playful association, reframing, changes of representation, and deliberate return. Use to explore unfamiliar directions, escape fixation, or develop an unusual idea while preserving the task's intent.
 
@@ -167,7 +167,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## pre-mortem
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Find concrete failure paths in an adjustable, consequential plan before commitment by imagining it has failed and working backward.
 
@@ -179,7 +179,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## quit-the-yap
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Write concise, direct in-chat answers in English Absolute style while preserving the details needed for meaning and action.
 
@@ -239,7 +239,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## ship
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request.
 
@@ -251,7 +251,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## show-me-your-work
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Keep an evidence-linked decision log for long-running, multi-phase, or unattended work, then audit it before handoff.
 
@@ -323,7 +323,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 ## update-changelog
 
-Status: blocked for public release (see skills/catalog.json).
+Status: eligible experimental candidate.
 
 Create, update, or prepare a repository changelog from verified changes. Use when the user asks to record changes, maintain CHANGELOG.md, or prepare a changelog release section.
 

@@ -4,8 +4,8 @@
   "name": "think-harder",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -41,7 +41,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "088576284865cd93923a81d26a4ade46cb9105493015e66f20060dd3142caff6",
+      "sha256": "ea84115223740de5137c9ce16a80161e77abdc5b723f0a0b15daa8874bf8cb6e",
       "mode": 420
     }
   }

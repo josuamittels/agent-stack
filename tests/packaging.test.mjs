@@ -10,6 +10,7 @@ import {
   ROOT,
   load,
   closure,
+  blockers,
   buildSkill,
   buildCatalog,
   validateSkill,
@@ -217,8 +218,13 @@ test("packages exclude secrets, development files and nested discovery entries",
     );
   }
 });
-test("stable gates include transitive dependencies and do not change lifecycle status", () => {
-  assert.throws(() => releaseGate(ctx), /experimental; stable >=1\.0\.0 required/);
+test("release gates permit experimental stacks without promoting lifecycle status", () => {
+  assert.doesNotThrow(() => releaseGate(ctx));
+  assert.throws(() => releaseGate({ ...ctx, status: "draft" }), /non-draft status required/);
+  assert.throws(() => releaseGate({ ...ctx, status: "unknown" }), /non-draft status required/);
+  assert.throws(() => releaseGate({ ...ctx, status: "stable", version: "0.9.0" }), /stable stacks require >=1\.0\.0/);
+  assert.doesNotThrow(() => releaseGate({ ...ctx, status: "stable", version: "1.0.0" }));
+  assert.doesNotThrow(() => releaseGate({ ...ctx, status: "deprecated" }));
   assert.doesNotThrow(() => buildSkill(ctx, "translate"));
   assert.ok(buildCatalog(ctx).eligible.includes("translate"));
   assert.equal(ctx.status, "experimental");
@@ -387,7 +393,7 @@ test("public router excludes internal capabilities and checks installed availabi
   );
   assert.match(text, /not proof of installation/);
 });
-test("publication succeeds only for a nonempty stable release and rejects tampered packages", (t) => {
+test("packaging succeeds for a nonempty stable release and rejects tampered packages", (t) => {
   const root = stableFixture(t);
   let v = fs.readFileSync(path.join(root, "VERSIONS.md"), "utf8");
   v = v
@@ -486,4 +492,79 @@ test("archive bytes are independent of the builder timezone", () => {
     { TZ: "America/Los_Angeles" },
   );
   assert.equal(utc, pacific);
+});
+
+
+test("shipping includes experimental skills and guides with their lifecycle labels intact", () => {
+  const out = buildSkill(ctx, "create-guidelines");
+  const manifest = JSON.parse(out.get("package-manifest.json").bytes);
+  assert.equal(manifest.status, "experimental");
+  assert.equal(manifest.channel, "release");
+  assert.ok(manifest.dependencies.some(d => d.status === "experimental"));
+  const guide = out.get("references/_stack/guidelines/aesthetics/infographics.md");
+  assert.ok(guide, "the full guide set must include infographics");
+  assert.equal(parse(guide.bytes.toString().split("---")[1]).status, "experimental");
+  const inspectGuides = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const file = path.join(dir, entry.name);
+      if (entry.isDirectory()) { inspectGuides(file); continue; }
+      if (!file.endsWith(".md")) continue;
+      const header = fs.readFileSync(file, "utf8").match(/^---\n([\s\S]*?)\n---/);
+      if (!header) continue;
+      const meta = parse(header[1]);
+      if (!/^\d+\.\d+\.\d+$/.test(meta.version) || !["experimental", "stable", "deprecated"].includes(meta.status)) continue;
+      const relative = path.relative(path.join(ROOT, "src"), file).split(path.sep).join("/");
+      assert.ok(out.has(`references/_stack/${relative}`), `Missing distributable guide: ${relative}`);
+    }
+  };
+  inspectGuides(path.join(ROOT, "src/guidelines"));
+  assert.ok(!out.has("references/_stack/guidelines/data/analysis.md"));
+  assert.ok(!out.has("references/_stack/guidelines/data/visualisation.md"));
+  const router = buildSkill(ctx, "skill-issue").get("references/_stack/skills/skill-issue/instructions.md").bytes.toString();
+  assert.match(router, /\*\*create-guidelines\*\*/);
+  validateSkill(out, "create-guidelines");
+});
+
+test("draft skills and transitive draft dependencies are excluded from shipping but available in previews", (t) => {
+  const root = fixture(t);
+  const helper = path.join(root, "src/skills/think-harder/SKILL.md.tmpl");
+  fs.writeFileSync(helper, fs.readFileSync(helper, "utf8").replace('status: "stable"', 'status: "draft"'));
+  const c = load(root);
+  assert.ok(blockers(c, "translate").includes("skill think-harder: draft"));
+  assert.ok(!buildCatalog(c).eligible.includes("translate"));
+  assert.throws(() => buildSkill(c, "translate"), /unshippable dependency closure/);
+  assert.doesNotThrow(() => buildSkill(c, "translate", { preview: true }));
+  assert.equal(c.metas["think-harder"].status, "draft");
+});
+
+test("draft guidance blocks its consumers and package validation rejects draft resources", (t) => {
+  const root = fixture(t);
+  const guide = path.join(root, "src/guidelines/aesthetics/infographics.md");
+  fs.writeFileSync(guide, fs.readFileSync(guide, "utf8").replace('status: experimental', 'status: draft'));
+  const c = load(root);
+  assert.ok(blockers(c, "create-guidelines").includes("resource guidelines/aesthetics/infographics.md: draft"));
+  assert.throws(() => buildSkill(c, "create-guidelines"), /infographics.md: draft/);
+  const preview = buildSkill(c, "create-guidelines", { preview: true });
+  const manifest = JSON.parse(preview.get("package-manifest.json").bytes);
+  // Keep digests valid and turn the preview into a purported shipping package.
+  // Its draft guide must still be rejected independently of catalog selection.
+  manifest.channel = "release";
+  preview.get("package-manifest.json").bytes = Buffer.from(JSON.stringify(manifest));
+  assert.throws(() => validateSkill(preview, "create-guidelines"), /unshippable resource.*infographics.md: draft/);
+});
+
+test("experimental release packages are generated locally and an empty shipping catalog is rejected", (t) => {
+  const root = stableFixture(t);
+  main(["build"], root);
+  main(["package"], root);
+  const catalog = JSON.parse(fs.readFileSync(path.join(root, "skills/catalog.json")));
+  assert.equal(catalog.channel, "release");
+  assert.ok(fs.existsSync(path.join(root, "dist/release/agent-stack-distribution.zip")));
+  assert.equal(load(root).status, "experimental");
+  const file = path.join(root, "src/catalog.yaml");
+  const c = parse(fs.readFileSync(file, "utf8"));
+  for (const entry of Object.values(c.skills)) entry.visibility = "internal";
+  fs.writeFileSync(file, stringify(c));
+  main(["build"], root);
+  assert.throws(() => main(["package"], root), /empty shipping catalog/);
 });

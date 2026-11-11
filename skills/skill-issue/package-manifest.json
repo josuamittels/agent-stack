@@ -4,8 +4,8 @@
   "name": "skill-issue",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -43,7 +43,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "9b3a74f3afab37a89123fd82658932096a37b3f2bc57267ac30220db48f4dc52",
+      "sha256": "ab8be01f87e93aed0114979032e22c23fe617f5757e28cb2b76cf4f1af3257c5",
       "mode": 420
     },
     "references/_stack/skills/think-harder/instructions.md": {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ae13e1ff38c9fe1b798dda26df62d828917d761d0bc08664e10b7972523ee4b8",
+      "sha256": "fe7e8abf1ad335cf433c6ddc5d09419b8c2992a2d953b0c03bc02fa206dbf702",
       "mode": 420
     }
   }

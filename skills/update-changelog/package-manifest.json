@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "name": "update-changelog",
+  "version": "0.3.0",
+  "status": "experimental",
+  "stack_version": "0.47.0",
+  "channel": "release",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "update-changelog",
+      "version": "0.3.0",
+      "status": "experimental"
+    }
+  ],
+  "source_sha256": {
+    "src/guidelines/changelog/reference.md": "c7fee9a580459c563c88a31f0b7f82b4a0750eb9f3830d122a30c5dc1e529ad6",
+    "src/guidelines/git/reference.md": "21e842c8d30793d0f7d444d73563e572f779fd62d6cb45f27c1660dfbd0d16d5",
+    "src/guidelines/versioning/reference.md": "4e76c4eaa71c379a57ca1598227e2ffba316d06e527315b7dc0d3f8b62a88f67",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/update-changelog/SKILL.md.tmpl": "43e8ef4b135404031c6db2a2c1022404bb3828013731698ca476d75b6acbe862"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/guidelines/changelog/reference.md": {
+      "sha256": "c7fee9a580459c563c88a31f0b7f82b4a0750eb9f3830d122a30c5dc1e529ad6",
+      "mode": 420
+    },
+    "references/_stack/guidelines/git/reference.md": {
+      "sha256": "21e842c8d30793d0f7d444d73563e572f779fd62d6cb45f27c1660dfbd0d16d5",
+      "mode": 420
+    },
+    "references/_stack/guidelines/versioning/reference.md": {
+      "sha256": "4e76c4eaa71c379a57ca1598227e2ffba316d06e527315b7dc0d3f8b62a88f67",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/update-changelog/instructions.md": {
+      "sha256": "92552d9d9dd532acef0d72198d6136ad4368a5241d8b56447263dbeb34b5e8bb",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "971c9f79217654d73cf7a6a8f154b717ec3024490311edea1feb7f942e189957",
+      "mode": 420
+    }
+  }
+}

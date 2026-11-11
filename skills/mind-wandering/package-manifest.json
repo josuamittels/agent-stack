@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "name": "mind-wandering",
+  "version": "0.2.0",
+  "status": "experimental",
+  "stack_version": "0.47.0",
+  "channel": "release",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "mind-wandering",
+      "version": "0.2.0",
+      "status": "experimental"
+    },
+    {
+      "name": "think-deeper",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/mind-wandering/SKILL.md.tmpl": "481648bbb118eaa0641996b09988d8820e20a58d0def00676a36f239b9155aa0",
+    "src/skills/mind-wandering/references/agent-translation-human-creativity-techniques.md": "2f52476f9a6f0564a88cc01b3917d5248650b70ac0d3f51205dc8d23566203bc",
+    "src/skills/mind-wandering/references/analogies-and-prompts.md": "19abb3a1557268a3a48638813fdc9600f0aab6a198e0ad2398436600230a271f",
+    "src/skills/mind-wandering/references/attention-and-mind-wandering-creativity.md": "1654e222b338d2e5b63e57fe50db7a7322e745fbab784b3ad6b91970d48f8058",
+    "src/skills/mind-wandering/references/changing-representations.md": "5ff23452f5793f62f3d94f06797b3daedb30cae20d5558c5ebb1149f01118884",
+    "src/skills/mind-wandering/references/creative-moves.md": "324d94dbaad047828a9ac34a0e4aff39f1310b0399c7a612d0bc87732f4cd012",
+    "src/skills/mind-wandering/references/generation-and-evaluation-research.md": "b8e7c1dfc831e6333a5a083f1b94813292d36f8952357074c061f33cbbca8a3f",
+    "src/skills/mind-wandering/references/measuring-creativity.md": "16b609160b6eb851194d074fedb6f18e9d9cffc3618cbfe0baed1a0968409074",
+    "src/skills/mind-wandering/references/research-incubation.md": "0173515d567219704de892cc22b3f07b42b2d62fdd733b16d715d53c46d16e18",
+    "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/instructions.md": {
+      "sha256": "6202f29e71fc67d9b9a47a04be6579f40f469fc69be76e665a2c573b8462b812",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/agent-translation-human-creativity-techniques.md": {
+      "sha256": "2f52476f9a6f0564a88cc01b3917d5248650b70ac0d3f51205dc8d23566203bc",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/analogies-and-prompts.md": {
+      "sha256": "19abb3a1557268a3a48638813fdc9600f0aab6a198e0ad2398436600230a271f",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/attention-and-mind-wandering-creativity.md": {
+      "sha256": "1654e222b338d2e5b63e57fe50db7a7322e745fbab784b3ad6b91970d48f8058",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/changing-representations.md": {
+      "sha256": "5ff23452f5793f62f3d94f06797b3daedb30cae20d5558c5ebb1149f01118884",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/creative-moves.md": {
+      "sha256": "324d94dbaad047828a9ac34a0e4aff39f1310b0399c7a612d0bc87732f4cd012",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/generation-and-evaluation-research.md": {
+      "sha256": "b8e7c1dfc831e6333a5a083f1b94813292d36f8952357074c061f33cbbca8a3f",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/measuring-creativity.md": {
+      "sha256": "16b609160b6eb851194d074fedb6f18e9d9cffc3618cbfe0baed1a0968409074",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/research-incubation.md": {
+      "sha256": "0173515d567219704de892cc22b3f07b42b2d62fdd733b16d715d53c46d16e18",
+      "mode": 420
+    },
+    "references/_stack/skills/think-deeper/instructions.md": {
+      "sha256": "94c9be353df6cc148730136f23aa360f0441616697217fea9923120e155b24e2",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "055d50177720ac022763995728b952585f3716bfcbdd636f671089baa332f504",
+      "mode": 420
+    }
+  }
+}

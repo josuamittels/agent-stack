@@ -7,8 +7,8 @@ license: MIT
 metadata:
   version: 2.0.1
   status: stable
-  stack-version: 0.46.0
-  distribution: stable
+  stack-version: 0.47.0
+  distribution: release
 ---
 
 # answer-interview

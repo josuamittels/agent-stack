@@ -4,8 +4,8 @@
   "name": "translate",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -81,7 +81,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ff58e8e55f1033113861b85350abcc97d8bae2b44df59cc6299a09c99c8c6cc4",
+      "sha256": "4c17286011f71248246176803a7b3143b78c55e978d9c409a09a2dfceb00ded5",
       "mode": 420
     }
   }

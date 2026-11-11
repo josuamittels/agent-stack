@@ -4,8 +4,8 @@
   "name": "compose-voice-profile",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -426,7 +426,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "4aa9f3a203364db05098192f6c0fa0f940ec221378a4083385692f0a0245702f",
+      "sha256": "fb11531c676147618e5f84d49ae969594140ff69a18934bd70a04867dc4d579d",
       "mode": 420
     }
   }

@@ -4,8 +4,8 @@
   "name": "check-colour-contrast",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "3678a2e34270e06ec05a558255ba35b529c62151fcb6e47aaa1e3fc47de60d5c",
+      "sha256": "2e47b521455f354aaa6d5a8b7eccf336b379979c0271d21fc4320a803e02f2d5",
       "mode": 420
     }
   }

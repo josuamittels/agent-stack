@@ -4,7 +4,7 @@ Reusable agent skills for career applications, research, writing, decisions, and
 
 ## Install
 
-Agent Stack is experimental. Install all skills from GitHub:
+Agent Stack includes experimental and stable skills and guides. Drafts are excluded from shipping. Install all available skills from GitHub:
 
 ```sh
 # Codex

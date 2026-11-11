@@ -1,9 +1,9 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.6.0"
+version: "0.7.0"
 created: "2026-10-26"
-updated: "2026-10-31"
+updated: "2026-11-11"
 author:
   - "Josua Mittelstaedt"
 references: []
@@ -63,7 +63,7 @@ For every planned commit, determine the component inventory state after that com
 
 Exclude generated root `skills/`, `dist/`, templates, research source copies, evaluation schemas, files without substantive version metadata, and placeholders such as `[version]`. Do not infer a component version from a directory name or a stack bump. Compare every inventory row with its source frontmatter and confirm no eligible artifact is missing or duplicated.
 
-Before preparing a push, review the exact delivery change set for new or changed independently versioned components. A component included in a push must not have `draft` status. When the user clearly asks to ship a draft component, change its frontmatter status to `experimental` and include that status in the inventory snapshot for the same commit. This promotion authorizes experimental use only; do not mark it stable. If context and repository evidence cannot establish whether a draft component belongs in the requested delivery, use [think-harder](../think-harder/SKILL.md.tmpl), then route the remaining inclusion question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) before publishing. Do not include an ambiguous draft in a push while waiting for an answer. Keep unrelated draft components out of the change set.
+Before preparing a push, review the exact delivery change set for new or changed independently versioned components. Include experimental and stable components without changing their lifecycle labels. Retain deprecated components only for compatibility and preserve their deprecation information. Exclude draft components from shipped packages and from the requested delivery change set; do not promote a draft merely to make a package pass. A draft required or conditional dependency, including versioned guidance, blocks its consumer until the dependency is explicitly promoted or removed from that consumer's contract. Source-only authoring scaffolds and owned templates are not independently shipped capabilities. Keep unrelated changes out of the delivery.
 
 ### 4. Check capability discovery when needed
 
@@ -86,15 +86,15 @@ npm run build
 npm run build:preview
 ```
 
-Run the full preview build without `--skill`, so it includes every public candidate. The stable build refreshes committed `skills/` and installation documentation; the preview build creates self-contained skill folders, individual and full-stack ZIPs, native plugin packages, marketplace catalogs, and `SHA256SUMS` under `dist/preview/distribution/`. Preview output stays local and ignored by Git. An empty stable catalog does not prevent preview packaging.
+Run the full preview build without `--skill`, so it includes every public candidate. The shipping build refreshes committed `skills/` and installation documentation with eligible experimental and stable components; the preview build creates self-contained skill folders, individual and full-stack ZIPs, native plugin packages, marketplace catalogs, and `SHA256SUMS` under `dist/preview/distribution/`. Preview output stays local and ignored by Git. Local previews may include drafts and are not the shipping catalog. An empty shipping catalog does not prevent preview packaging.
 
-When stack status is `stable` and its version is at least `1.0.0`, also run:
+When stack status is `experimental`, `stable`, or `deprecated`, also run the command below. A stable stack still requires version `1.0.0` or later; an experimental stack may ship at `0.y.z`.
 
 ```sh
 npm run package
 ```
 
-This creates the eligible stable distribution under `dist/release/`. Preserve its stable-dependency, freshness, and nonempty-catalog gates. Draft, experimental, and deprecated stacks receive local preview artifacts without running stable release packaging or changing lifecycle status.
+This creates the eligible shipping distribution under `dist/release/`. Preserve its non-draft dependency, freshness, and nonempty-catalog gates. A draft stack receives local preview artifacts only. Package generation preserves stack and component lifecycle labels; an experimental release does not imply a stable contract.
 
 Verify every checksum entry in each distribution produced by this step against the actual archive bytes. Record the exact commands, results, candidate version, preview and release output paths, and archive counts. Stop and return the failure to Ship if any required build, package, or checksum verification fails or is unavailable. Repeat this step if subsequent candidate changes affect generated output. Never upload, tag, publish, or create a Git commit as part of package generation.
 
@@ -102,12 +102,12 @@ Verify every checksum entry in each distribution produced by this step against t
 
 Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, package-build commands and outcomes, output paths and checksum verification, unresolved decisions, and delivery route:
 
-Apply the component-status gate in step 3 before any push, including when the stack-level route permits a push. A draft component explicitly included in a requested shipment must be promoted to `experimental`; an unclear inclusion decision is a question for the user, not an assumption.
+Apply the component-status gate in step 3 before any push. Draft components remain excluded; promotion requires an explicit lifecycle decision.
 
 | Stack lifecycle status | Delivery route |
 | --- | --- |
-| `draft` or `experimental` | Local commits only. No push or PR/MR. |
-| `stable` or `deprecated` | Push a topic branch and create or update a PR/MR. Ship stops before merge, tag, or publication. |
+| `draft` | Local commits only. No push or PR/MR. |
+| `experimental`, `stable`, or `deprecated` | Push a topic branch and create or update a PR/MR. Ship stops before merge, tag, or publication. |
 
 Treat any unknown or unsupported status as a blocker. Do not derive lifecycle status from the numeric version.
 
@@ -117,4 +117,4 @@ Return the identity check, current and proposed versions, status, exact `VERSION
 
 ## Distribution readiness
 
-The build catalog is `src/catalog.yaml`. Public packages require stable skill and required/conditional dependency closures, including versioned guidance. `npm run package` additionally requires stack status stable at version 1.0 or later and a nonempty public catalog. Every Agent Stack ship operation builds full local preview packages under `dist/preview/`; eligible stable operations additionally build `dist/release/`. Neither operation publishes the packages or promotes lifecycle status. Publication, tags, and marketplace submission remain separately authorized actions. Generated copies are not independent version inventory entries.
+The build catalog is `src/catalog.yaml`. Public packages include experimental and stable skills with non-draft required/conditional dependency closures, including versioned guidance; deprecated components remain available for compatibility. Drafts are excluded. `npm run package` requires a non-draft stack and a nonempty shipping catalog; stable stacks additionally require version 1.0 or later. Every Agent Stack ship operation builds full local preview packages under `dist/preview/`; non-draft operations additionally build `dist/release/`. Neither operation publishes the packages or promotes lifecycle status. Publication, tags, and marketplace submission remain separately authorized actions. Generated copies are not independent version inventory entries.

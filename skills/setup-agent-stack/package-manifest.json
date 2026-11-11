@@ -4,8 +4,8 @@
   "name": "setup-agent-stack",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -88,7 +88,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "9b3a74f3afab37a89123fd82658932096a37b3f2bc57267ac30220db48f4dc52",
+      "sha256": "ab8be01f87e93aed0114979032e22c23fe617f5757e28cb2b76cf4f1af3257c5",
       "mode": 420
     },
     "references/_stack/skills/spawn-evals/instructions.md": {
@@ -116,7 +116,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8cbfbefe47352267cc28e565a494aa3dcea85cb31e3b25a970a5dec1cfb4738f",
+      "sha256": "ef44b21ff559599e7c50d5e3c18f2caf06db2454a7edee1e345fc212a3eecd2a",
       "mode": 420
     }
   }

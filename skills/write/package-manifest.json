@@ -4,8 +4,8 @@
   "name": "write",
   "version": "2.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -71,7 +71,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8c90c75ea4927fe9bb35a3525c7e9d36d6dc10160d52bdf995fdf9523fdc5a8c",
+      "sha256": "32c3f6ed7b9ab71a7261cc4abeffc99a709c41d271aabb7822d51b0fb68b71d1",
       "mode": 420
     }
   }

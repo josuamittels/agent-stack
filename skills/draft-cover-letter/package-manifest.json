@@ -4,8 +4,8 @@
   "name": "draft-cover-letter",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -511,7 +511,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ae5a09120dab015b9a739ca44837eb7b99bd105dddd0319470b798c49040afb4",
+      "sha256": "6f408fbe6d2ece1fc347aa180f66ca9388bcbcb131a0ecf2c0eb4aab51e0bcd8",
       "mode": 420
     }
   }

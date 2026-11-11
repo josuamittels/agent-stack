@@ -4,8 +4,8 @@
   "name": "research",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.46.0",
-  "channel": "stable",
+  "stack_version": "0.47.0",
+  "channel": "release",
   "dependencies": [
     {
       "name": "ask-user-question",
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "1bf3c1e7274331827504074fa7206c8eac909d143fedc8e4c60b6e67ebccba2d",
+      "sha256": "3ff72936d35243c7ab60b6fe8f7386588338745e230ea5ec2325a728ec2b5a68",
       "mode": 420
     }
   }

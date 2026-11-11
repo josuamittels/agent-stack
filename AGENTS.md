@@ -11,7 +11,7 @@ At the start of a new task, or when its intended outcome changes, read [skill-is
 
 | Location | Role |
 | --- | --- |
-| `skills/` | Generated stable public packages; never edit directly. |
+| `skills/` | Generated experimental and stable public packages; drafts excluded; never edit directly. |
 | `src/catalog.yaml` | Public candidates, dependencies, and resource declarations. |
 | `scripts/` | Build and packaging tools. |
 | `dist/` | Ignored local previews and release artifacts. |

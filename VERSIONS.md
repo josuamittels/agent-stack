@@ -6,12 +6,14 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.46.0` |
+| Version | `0.47.0` |
 | Status | `experimental` |
 | Recorded | `2026-11-11` |
 | Release date | Not released |
 
 The stack version describes the compatibility of the skills, disciplines, and guidelines adopted together. It does not replace their individual versions or imply that draft components are approved or stable. `0.32.0` separates canonical `src/` authoring from generated self-contained distributions, introduces stable-only dependency gates, and moves runtime state outside installed packages. It also requires Ship to rebuild Agent Stack after release preparation and check the generated candidate before each commit. This is a breaking source-path migration; public packages remain unavailable until their lifecycle gates pass. `0.33.0` requires Release Agent Stack to build full local preview packages for every ship operation and eligible stable release packages before handoff. `0.34.0` promotes Translate, Write, Compose Voice Profile, Think Deeper, Think Harder, Ask User Question, Research, Research Literature, and the Dutch, English, French, and German language guides to stable 1.0.0 contracts. `0.35.0` promotes Spawn Evals and the versioned Research and Research Literature reference dependencies to stable 1.0.0 so the three research workflows have stable dependency closures. `0.36.0` reframes the README for entrepreneurs, documents the current candidate catalog, and explains local preview installation and stack structure. `0.37.0` renames the Write discipline identifier from `natural-writing` to `write`, a breaking change for direct selections, dependency declarations, and references. `0.38.0` adds the stable Compose Career Profile skill and reusable template. `0.39.0` changes Ship to require explicit user authorization before it creates a Git branch. `0.39.1` makes preview catalog validation derive its package count from eligible entries. `0.40.0` adds stable Draft Cover Letter and its stable voice-profile reference. `0.41.0` adds stable Create CV with an EB Garamond PDF generator. `0.42.0` adds the stable Setup Career Stack workflow and updates career application routing and personalized letter-voice guidance. `0.43.0` adds stable Answer Interview and its voice profile, routes career application questions through it, and archives supplied job descriptions in career application folders. `0.44.0` gives career workflows one shared voice profile, self-contained workspace operations and review helpers, and keeps draft and QA artifacts outside final application folders. The stack has not been released. 0.44.1 shortens the README into consistent capability quick starts and documents GitHub installation for Codex and Claude Code. 0.45.0 adds stable Setup Agent Stack for global host routing and promotes its required Skill Issue router to stable 1.0.0.
+
+Shipping includes experimental and stable components with non-draft required and conditional dependencies, including guidance. Drafts are excluded. Experimental stacks may produce release packages at `0.y.z`; stable stacks require `1.0.0` or later. Inclusion preserves each component’s lifecycle status.
 
 ## Component versions
 
@@ -60,7 +62,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `src/skills/mind-wandering/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
-| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.6.0` | `experimental` |
+| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.7.0` | `experimental` |
 | Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Reference | `src/skills/research-literature/references/arxiv-docs.md` | `1.0.0` | `stable` |
 | Reference | `src/skills/research-literature/references/crossref-docs.md` | `1.0.0` | `stable` |
@@ -80,7 +82,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/skills/research/references/workflow.md` | `1.0.0` | `stable` |
 | Skill | `src/skills/setup-agent-stack/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Skill | `src/skills/setup-career-stack/SKILL.md.tmpl` | `2.0.1` | `stable` |
-| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.8.0` | `experimental` |
+| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.9.0` | `experimental` |
 | Discipline | `src/skills/show-me-your-work/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Router | `src/skills/skill-issue/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `1.0.0` | `stable` |
