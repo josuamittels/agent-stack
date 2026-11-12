@@ -4,7 +4,7 @@
   "name": "create-cv",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.49.1",
+  "stack_version": "0.49.2",
   "channel": "release",
   "dependencies": [
     {
@@ -241,7 +241,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "1d2b7d70be8ddf5af0f03d8dcc8386f4849fac4d130e9af594ff599d9e689a4d",
+      "sha256": "90efcaadad6b16ff155bea15fa8bf8aed2df2ced05cbe3bcb2b61dc512d4563b",
       "mode": 420
     }
   }

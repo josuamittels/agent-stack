@@ -4,7 +4,7 @@
   "name": "mind-wandering",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.49.1",
+  "stack_version": "0.49.2",
   "channel": "release",
   "dependencies": [
     {
@@ -101,7 +101,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "59cd3d9fec9302033c20979b49dc4b989e91054981438f2df2cb66f157b11038",
+      "sha256": "c767e988acba76966feca3253044c6c08ac63d71e93c8d6741a1a54427c0482c",
       "mode": 420
     }
   }

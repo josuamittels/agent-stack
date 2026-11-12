@@ -4,7 +4,7 @@
   "name": "create-guidelines",
   "version": "0.6.0",
   "status": "experimental",
-  "stack_version": "0.49.1",
+  "stack_version": "0.49.2",
   "channel": "release",
   "dependencies": [
     {
@@ -291,7 +291,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "29949cd40cf2f9e91cb220acb2b3088afc071867d35d1f00adbfca0c15048ef1",
+      "sha256": "a4c5b53467ecdc5227686d170fc2ddc6d225cadac757f3e9786720332c09a131",
       "mode": 420
     }
   }

@@ -4,7 +4,7 @@
   "name": "audit-accessibility",
   "version": "0.1.1",
   "status": "experimental",
-  "stack_version": "0.49.1",
+  "stack_version": "0.49.2",
   "channel": "release",
   "dependencies": [
     {
@@ -226,7 +226,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "b5d59cb259b17290d179a8d4285834ab4bb221a1365dc076672d651ce50e3541",
+      "sha256": "6f810c87c2dbf4c42ebe1604741885fdf5f43e068834ac9d8ecb30e5e05386ce",
       "mode": 420
     }
   }

@@ -29,6 +29,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Give the stack map an explicit white background for consistent display.
+
 - Clarify the experimental design, UX, and accessibility audits for hierarchy, consistency, and appropriate language. UX now explicitly compares feature placement and behavior with evidenced user expectations; report prompts require concrete examples, corrections, and verification.
 
 - Link the hosted documentation, installation guide, and capability catalog from the README and GitHub repository website field.
