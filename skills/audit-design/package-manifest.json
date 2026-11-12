@@ -4,7 +4,7 @@
   "name": "audit-design",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -366,7 +366,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "80af3b0ade4fcd40329c0f6d1291291f8c7b732673229178a63b3ccb4c127361",
+      "sha256": "cbd0a8410e32000b1769f4f9c9a0fb49ae35685b86ab4ed5d46a84cbc24ce074",
       "mode": 420
     }
   }

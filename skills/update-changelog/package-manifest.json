@@ -4,7 +4,7 @@
   "name": "update-changelog",
   "version": "0.3.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -66,7 +66,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "dc0956368709a106275bd2c0c7a752c268e62c70008063b5c7113dc4d48c28b7",
+      "sha256": "02cd712329cd946c7ee8425298d6df1605691d8483422cd9b3b471da6905a76b",
       "mode": 420
     }
   }

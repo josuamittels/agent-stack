@@ -4,7 +4,7 @@
   "name": "browse-skills",
   "version": "1.1.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ab609e79351d81dc6085b988668fac5a470fce22541ba0cebd3faa92637c7e58",
+      "sha256": "1ab53a50912c760e478a91505bef1ece3e3cf53b8424eef5d4736f2cf45bfa50",
       "mode": 420
     }
   }

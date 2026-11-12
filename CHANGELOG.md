@@ -27,6 +27,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Link the hosted documentation, installation guide, and capability catalog from the README and GitHub repository website field.
+
 - Include experimental and stable skills and guides in shipping without promoting their lifecycle status. Exclude drafts and consumers with draft dependencies; allow experimental stack release packages at 0.y.z.
 - **Breaking:** Generated package manifests now use channel `release` instead of `stable`. Update external channel checks; each component’s lifecycle remains available in `status`.
 

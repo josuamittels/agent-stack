@@ -4,7 +4,7 @@
   "name": "show-me-your-work",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "c3b59df60b157559e0501f4c007aa59a4d57b2948b593507177e2332b6c1ec32",
+      "sha256": "172d93de4c9730e4fd31e49787a1fff0574d5394b20d19b69e0f7a8cab2470e2",
       "mode": 420
     }
   }

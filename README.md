@@ -2,6 +2,8 @@
 
 Reusable agent skills for career applications, research, writing, design reviews, decisions, and development. Each skill provides a focused workflow with its required instructions, templates, and resources bundled.
 
+[Documentation](https://agents.mittels.org) · [Installation guide](https://agents.mittels.org/installation/) · [Skill catalog](https://agents.mittels.org/capabilities/)
+
 ## Install
 
 Agent Stack includes experimental and stable skills and guides. Drafts are excluded from shipping. Install all available skills from GitHub:
@@ -147,4 +149,4 @@ npx skills add josuamittels/agent-stack --skill setup-agent-stack skill-issue br
 
 ## Reference
 
-[Stack map](map.mmd) · [Skill catalog](src/catalog.yaml) · [Distribution and maintenance](docs/distribution.md) · [MIT license](LICENSE)
+[Documentation](https://agents.mittels.org) · [Stack map](map.mmd) · [Skill catalog](src/catalog.yaml) · [Distribution and maintenance](docs/distribution.md) · [MIT license](LICENSE)

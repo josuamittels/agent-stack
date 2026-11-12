@@ -1,8 +1,10 @@
 # Distribution and maintenance
 
+Read the [hosted documentation](https://agents.mittels.org) for capability guides, references, and [installation instructions](https://agents.mittels.org/installation/).
+
 ## Current availability
 
-Agent Stack is available on GitHub and remains experimental at version 0.47.0. `src/catalog.yaml` declares 28 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
+Agent Stack is available on GitHub and remains experimental at version 0.48.1. `src/catalog.yaml` declares 31 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
 
 The stack itself must be non-draft before release archives can be prepared for publication. Experimental stacks may ship at 0.y.z; stable stacks require version 1.0 or later. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
 

@@ -4,7 +4,7 @@
   "name": "draft-cover-letter",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -511,7 +511,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "5ca73921685f43b602099611990f1ffeaad0a14c495ff1558028ca162b6e5262",
+      "sha256": "c5afc102cca55bc746803f79b900bd45e09137881c9ef35f67d2069f145924a5",
       "mode": 420
     }
   }

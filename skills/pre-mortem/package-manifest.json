@@ -4,7 +4,7 @@
   "name": "pre-mortem",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "3c0d57351fa1004d81b346cecd3e5e0f42c7788efd9513b004dd4d50e8e5d59a",
+      "sha256": "05718d120b51ad834d96118dbd5ec8f9e443c679f9fc65d2e4738634b23e43fe",
       "mode": 420
     }
   }

@@ -4,7 +4,7 @@
   "name": "quit-the-yap",
   "version": "0.3.0",
   "status": "experimental",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -81,7 +81,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8802f7a717340f48197aba3bd368187e2e21c24eefdcf7a0b0988e3d4ded495c",
+      "sha256": "2015678e679eca46187514e8c3e6afa958124e53558403119ca85226b04eb153",
       "mode": 420
     }
   }

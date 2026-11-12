@@ -6,7 +6,7 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.48.0` |
+| Version | `0.48.1` |
 | Status | `experimental` |
 | Recorded | `2026-11-12` |
 | Release date | Not released |

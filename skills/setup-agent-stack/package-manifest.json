@@ -4,7 +4,7 @@
   "name": "setup-agent-stack",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.48.0",
+  "stack_version": "0.48.1",
   "channel": "release",
   "dependencies": [
     {
@@ -116,7 +116,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "a9bd4d000331038f90852d1f6f9da9e7280101aa1c217eb1fbf333277dfa91d2",
+      "sha256": "dc9e6455078613ee8ddc74ffb514aab781d32cddde21c289eadf8b217f1e7d85",
       "mode": 420
     }
   }
