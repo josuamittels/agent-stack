@@ -69,6 +69,9 @@ flowchart LR
       end
 
       subgraph design_skills [DESIGN]
+          audit_design["Audit Design"]
+          accessibility_report@{ shape: tag-doc, label: "Accessibility Report Template" }
+          ux_report@{ shape: tag-doc, label: "UX Report Template" }
           audit_accessibility["Audit Accessibility"]
           brand_discovery["Brand Discovery"]
           audit_ux["Audit UX"]
@@ -105,7 +108,6 @@ flowchart LR
     writing_skills --> has_objective_criteria
     academics_data_skills --> has_objective_criteria
     product_skills --> has_objective_criteria
-    design_skills --> has_objective_criteria
     engineering_skills --> has_objective_criteria
     marketing_skills --> has_objective_criteria
     has_objective_criteria --> spawn_evals
@@ -278,6 +280,15 @@ flowchart LR
     write -.- german
     design_shotgun -.- wireframes
     design_system -.- design_system_guide
+    audit_design --> audit_ux
+    audit_ux --> audit_accessibility
+    audit_accessibility --> check_colour_contrast
+    audit_accessibility --> has_objective_criteria
+    audit_accessibility -.- accessibility_report
+    audit_ux -.- ux_report
+    audit_design --> write
+    audit_ux --> write
+    audit_accessibility --> write
     design_skills -.- aesthetics
     image_tools -.- aesthetics
     video_tools -.- aesthetics
@@ -320,10 +331,10 @@ flowchart LR
     class skill_issue,missing_information decision
     class has_objective_criteria decision
     class stack entry
-    class setup_agent_stack,create_guidelines,research,translate,compose_voice_profile,compose_career_profile,answer_interview,create_cv,draft_cover_letter,setup_career_stack,create_skill,create_docs,ship skill
+    class audit_design,audit_ux,audit_accessibility,setup_agent_stack,create_guidelines,research,translate,compose_voice_profile,compose_career_profile,answer_interview,create_cv,draft_cover_letter,setup_career_stack,create_skill,create_docs,ship skill
     class write method
-    class analyse_ads,analyse_data,audit_accessibility,audit_ux,brand_discovery,business_plan,cleanse_data,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,visualise_data,brainstorm,fresh_eyes planned
-    class global_routing_template,host_targets,english,german,dutch,french,cv_layout,typography,composition,colour,infographics,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,career_workspace_agents,professional_voice_profile,decision_log_template,interaction document;
+    class analyse_ads,analyse_data,brand_discovery,business_plan,cleanse_data,create_image_ads,design_shotgun,design_system,investor_deck,launch_ads,market_research,polish_video,product_video,prototype,steal,research_web,scrape_web,manage_ads,image_tools,video_tools,visualise_data,brainstorm,fresh_eyes planned
+    class accessibility_report,ux_report,global_routing_template,host_targets,english,german,dutch,french,cv_layout,typography,composition,colour,infographics,iconography,accessibility,sound,haptics,wireframes,motion,python,ts,sql,mermaid,changelog,git,versioning,openalex_docs,research_resources,literature_qualification,journal_selection,aesthetics,erim_journals,skill_template,reference_template,router_template,agents_template,voice_profile_template,career_profile_template,career_workspace_agents,professional_voice_profile,decision_log_template,interaction document;
     class tech_spec,product_pitch,design_system_guide planned
     class docs,nextra_docs,nextra_starter document
     class design_guides,product_biz_guides,coding_guides,tech_guides,skills,guidelines,admin_skills,language_guides,career_guides,academics_data_skills,design_skills,marketing_skills,product_skills,writing_skills,career_skills,video_skills,engineering_skills,discipline_map,guide_map,research_guides section

@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add experimental [Audit Design](src/skills/audit-design/SKILL.md.tmpl), [Audit UX](src/skills/audit-ux/SKILL.md.tmpl), and [Audit Accessibility](src/skills/audit-accessibility/SKILL.md.tmpl). Review supplied artifacts with a layered aesthetic, task, and access assessment; receive linked reports, evidence limits, and one prioritized action plan.
+
 - Add the experimental [Infographics guide](src/guidelines/aesthetics/infographics.md) for charts, diagrams, geographic maps, and metro schematics, with explicit domain boundaries and links from related aesthetic guides.
 
 - Add stable [/setup-agent-stack](src/skills/setup-agent-stack/SKILL.md.tmpl) to configure global Codex or Claude Code routing after installation, preserving manual instructions with backups and repeatable updates.

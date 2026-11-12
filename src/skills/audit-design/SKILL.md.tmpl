@@ -1,0 +1,136 @@
+---
+name: "audit-design"
+description: "Coordinate a design audit through Audit UX and its accessibility sub-audit, then add a deep aesthetic critique of intent, composition, coherence, craft, expression, and restraint. Return linked reports and one prioritized improvement plan for the supplied design."
+version: "0.2.0"
+created: "2026-11-12"
+updated: "2026-11-12"
+author:
+  - "Josua Mittelstaedt"
+references:
+  - "Amir Mušić"
+  - "Checklist Design"
+  - "OpenAI"
+  - "Anthropic"
+  - "Aurora Harley"
+  - "Kate Moran"
+  - "Design Council"
+  - "World Wide Web Consortium"
+type: "skill"
+status: "experimental"
+---
+
+# Audit design
+
+Coordinate a layered design review. Invoke Audit UX, which owns the accessibility sub-audit, then evaluate the design's aesthetic logic and execution. Return a flexible critique and one coherent action plan that preserves character while addressing usability and access.
+
+## Scope
+
+Use for a supplied screenshot, mockup, design file, prototype, working interface, document, slide, poster, identity application, or related artifact. Review one design or a related family at the requested scope. Support requests such as "audit this design", "make this more coherent", or "tell me how to improve this layout" when the outcome is assessment and recommendations.
+
+This skill owns coordination, the aesthetic layer, and synthesis. [Audit UX](../audit-ux/SKILL.md.tmpl) owns user/job/task assessment and calls Audit Accessibility. The added aesthetic layer examines expressive quality beyond usable operation and technical access. Creating reusable standards belongs to [Create Guidelines](../create-guidelines/SKILL.md.tmpl). Creation and implementation remain with the workflow handling that artifact.
+
+### Boundaries
+
+An audit-only request authorizes inspection and reporting. Do not edit the design, replace its brand direction, publish changes, contact users, or trigger consequential live actions. If implementation is also requested, return the review as that owning workflow's change brief.
+
+Review available evidence and preserve its limits. Aesthetic appeal does not establish usability, conversion, user preference, legal compliance, or accessibility. A critique can be reasoned and useful without being an objective verdict on beauty. Do not invent audience reactions, competitors, measured performance, or universal taste rules.
+
+## Inputs
+
+Require an identifiable design and a way to inspect the form its audience receives. Use available purpose, audience/jobs, primary message, medium/platform, intended character, brand guidance, design system, references, constraints, and scope. Reuse supplied context and answers across the review chain. Label inferences and ask only about consequential unresolved intent or context. Customer questions needed for user-fit judgments belong to Audit UX's intake; do not repeat them after its return.
+
+Read the [aesthetics framework](../../guidelines/aesthetics/reference.md) before selecting domain guidance. It owns decision precedence, selective reading, and evidence. Follow the applicable sections and their decision-specific dependencies. Missing essential guidance or evidence limits the assessment; disclose the gap.
+
+### Default Procedures
+
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md.tmpl) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
+## Workflow
+
+### 1. Establish the shared review frame
+
+Identify the artifact/version, relevant pages/screens/regions, viewing conditions, intended purpose and character, and scope. Separate the stated direction from an inferred one. Brand references establish context, not permission to copy or replace the design. For a large artifact, disclose sampling and unreviewed areas.
+
+Inspect actual rendered material. Open local images with an image-viewing tool. Inspect document/design renders alongside structure when available, and actual views for working interfaces. Source can explain a visual cause but does not establish rendering. If only a verbal description or source is available, request visual evidence and limit conclusions accordingly.
+
+Record what the evidence supports. A static image supports visible appearance, not hidden states, behavior, semantics, adaptation, motion, sound, or haptics. A crop does not prove unseen content is absent. Use evidence locators and retain supplied version/state information for the helpers.
+
+Choose a fresh parent output directory at the requested destination, otherwise under a writable project path `audits/design/<artifact-slug>/<unique-run>/`. Reserve its `report.md` for the parent critique, with `ux/` for the UX report and `ux/accessibility/` for the nested accessibility outputs. Preserve previous reports. If persistent storage is unavailable, retain separately labeled outputs and state the saving limitation.
+
+### 2. Invoke Audit UX and receive its accessibility review
+
+Invoke [Audit UX](../audit-ux/SKILL.md.tmpl) once for the scoped review through the host's supported mechanism, or read and apply its workflow in the current context when no native invocation is available. Pass the original request, exact artifact/version, reviewed units and evidence, purpose/audience/jobs, platform/medium/delivery, intended character, supplied requirements, scope/permissions, known assumptions, and unresolved questions. Set its output destination to the parent's `ux/` directory.
+
+Audit UX performs its own required Audit Accessibility handoff. Do not separately invoke Audit Accessibility, repeat contrast checks as another technical audit, or replace either helper with a summary of its instructions. Reuse the evidence and answers they return. Follow their clarification requirements and wait before making dependent customer-fit judgments; independent aesthetic inspection can continue while a question is pending.
+
+Expect the UX report plus the nested accessibility report/register, findings and action IDs, reviewed scope, unresolved context, and evidence limits. Inspect their returned results and actual paths. Preserve criterion outcomes, severity rationale, and unknowns. A passing colour pair or a high descriptive score does not cancel a barrier. Neither helper report replaces the aesthetic evaluation.
+
+If a required helper cannot run or returns incomplete scope, identify the exact dependency/gap and continue independent work. Mark the parent assessment partial until the required results return or the user changes scope. Do not claim that the full chain ran from a checklist, planned invocation, or report link alone.
+
+### 3. Select aesthetic guidance and define the thesis
+
+Use the framework's reading paths. Read each applicable guide's "Use this reference" section and relevant passages, following dependencies for the current decision. Record which guidance applies and why. Domain rules remain in their owners:
+
+- [Composition](../../guidelines/aesthetics/composition.md), [Typography](../../guidelines/aesthetics/typography.md), and [Colour](../../guidelines/aesthetics/colour.md) for spatial, textual, and colour relationships.
+- [Iconography](../../guidelines/aesthetics/iconography.md) for symbol meaning/family grammar and optical craft. Use composition, colour, and medium guidance for imagery, cropping, and art direction.
+- [Infographics](../../guidelines/aesthetics/infographics.md) for visual explanations. Preserve truthful encoding and equivalents; aesthetic critique does not validate underlying analysis.
+- [Motion](../../guidelines/aesthetics/motion.md), [Sound](../../guidelines/aesthetics/sound.md), and [Haptics](../../guidelines/aesthetics/haptics.md) when those channels exist in the supplied experience and can be inspected. Use relevant nested platform guidance for Apple work and verify changing specifications when needed.
+
+Consume behavior/access constraints from the helpers and read their owning guideline passages when needed to resolve a cross-layer conflict. Do not duplicate the helper audits. Apply requirements within their scope and treat aesthetic defaults, examples, and ratios as starting points.
+
+Write a short aesthetic thesis: what currently gives this design its character, what it appears to be trying to communicate, and where its choices reinforce or weaken that direction. Tie adjectives to visible mechanisms. For example, explain which scale, spacing, image or type relationships create a restrained or energetic effect. Distinguish the brief's intent from the reviewer's interpretation and actual audience evidence.
+
+### 4. Evaluate the whole, the details, and their relationships
+
+First inspect the overall impression, dominant message, attention structure, perceived weight, density, rhythm, and character. Then examine normal viewing size and close details. Finally return to the whole and compare recurring roles across the family. Use the following lenses selectively rather than producing a fixed scorecard:
+
+| Lens | Review focus |
+| --- | --- |
+| Intent and character | Do the expressive choices support the purpose, subject, audience context, and intended emotional tone? Explain perceived effects without claiming a tested audience response. |
+| Composition and attention | How do hierarchy, proportion, balance, tension, grouping, sequence, rhythm and negative space work together? Does their structure serve the intended emphasis? |
+| Visual coherence | Do type roles, colour relationships, imagery, symbols, shapes and details share a recognizable logic? Distinguish meaningful variation from accidental inconsistency. |
+| Craft | Where do alignment, optical balance, spacing, cropping, edges, type setting, rendering or delivery weaken an otherwise strong idea? Distinguish an execution fault from deliberate roughness. |
+| Expression and distinction | Does the treatment have an appropriate, specific identity? Compare against the actual brief, brand or supplied references. Distinction means authored fit, not novelty or unsupported claims about competitors. |
+| Restraint and emphasis | Which decisions strengthen the concept and which compete, repeat or distract? Restraint can mean a clearer expressive hierarchy within a rich design; it does not require minimalism. |
+
+Develop the decisive relationships rather than listing every cosmetic detail. Explain the chain from visible detail to perceptual effect, then fit with intent and a practical response. Name the guideline principle and why it applies. A mismatch may span domains: an image crop, heading scale and accent colour can compete for the same emphasis. Trace repeated symptoms to a shared cause where supported.
+
+Preserve successful asymmetry, tension, density, eclecticism and intentional exceptions when they serve the work. Do not homogenize the design into a preferred style. Include relevant sizes, states, themes, languages or real-size proofs when available. Mark uninspected conditions. Use measurements to settle measurable claims, with source and conditions, while keeping estimates and proposed values distinct. Never infer exact design units or font metrics from scaled screenshots.
+
+### 5. Develop aesthetic recommendations
+
+Give each substantive aesthetic finding a stable ID, identifiable location/evidence, relevant guideline or brief, observed condition, interpreted effect, concrete response and intended result. State whether the basis is a requirement, contextual default, execution issue, or subjective preference. Explain uncertainty and consequential tradeoffs.
+
+Classify the proposed action independently of priority:
+
+- **Correction:** repair a supported execution problem, such as an accidental crop, collision, or spacing inconsistency. Explain why it appears unintended.
+- **Refinement:** strengthen the established direction by adjusting relationships, roles or execution. Explain what character and successful choices remain.
+- **Exploration:** try an optional alternative where several viable directions or unresolved art-direction choices matter. State the hypothesis, benefits, costs and comparison needed. Do not present it as a required repair.
+
+Recommend the smallest change that addresses the cause. A larger recomposition can be justified when local adjustments cannot resolve it. Label proposed values as trials with units/conditions. Avoid vague "add polish" instructions and unsupported preferences disguised as rules.
+
+Use annotated details, comparative crops, contact sheets, or small visual studies when they clarify the argument and are within the requested scope and available tools. Otherwise recommend the specific comparison to make. Keep examples distinct from implemented changes. A comparison can help choose between aesthetic alternatives without proving user preference or task success.
+
+Give each recommendation a suitable recheck: an inspectable relationship, a side-by-side comparison against stated intent, a proof under delivery conditions, or audience evidence where a claim depends on audience response. Do not assign an overall beauty score or average the layers into one number.
+
+### 6. Reconcile the layers and write one action plan
+
+Combine aesthetic recommendations with the returned UX/accessibility findings. Use qualified references such as `design:D1`, `ux:<returned ID>`, and `accessibility:<returned ID>` to preserve provenance. Consolidate a shared cause into one action linked to all affected findings, while retaining distinct consequences and statuses. Do not silently normalize helper severity scales or downgrade required corrections because the result looks attractive.
+
+Resolve conflicts using the original evidence and owning guidance. Preserve truthful information, access and task integrity while looking for a treatment that retains character. For a brand colour that cannot support functional text, consider retaining it in expressive roles alongside a verified functional treatment. If a proposed simplification damages the design's defining character, consider a more focused change. Return consequential unresolved tradeoffs as open decisions with their effects, not as contradictory instructions.
+
+Order actions by confirmed access/task blockage and serious consequences, then shared structure/hierarchy and aesthetic impact on the stated intent, followed by local craft. Put urgent verification beside the decision it affects. Keep corrections, refinements and optional explorations distinguishable. Each action names affected areas, source IDs, the proposed change, intended result, dependencies and a fitting recheck. Effort estimates are provisional unless supported by project context.
+
+### 7. Return a flexible critique and linked reports
+
+Apply [Write](../write/SKILL.md.tmpl). Save the parent `report.md` as an argument shaped to the design/problem, not a rigid category template. Cover the aesthetic thesis, strengths/defining choices to preserve, developed critiques with evidence, prioritized changes and useful alternatives, and the integrated action plan. Include scope, assumptions, selected guidance and important limits wherever they help the reader assess the argument. Depth follows the actual problems; no quota of findings or sections is required.
+
+Link the actual UX and accessibility report/register paths from the parent report. State the scope and completion of each layer. Before delivery, check evidence traceability, compatibility of proposed changes, coverage of retained actions, and unresolved questions. Do not present a partial helper chain or an unresolved dependent judgment as a complete review.
+
+## Output
+
+Return the parent design critique and integrated action plan, the UX report, and the nested accessibility report/register. In chat, link these artifacts and summarize the highest-impact changes and material limits. If saving is unavailable, return clearly separated contents and disclose what could not be persisted.
+
+The parent critique uses a flexible structure, without a dedicated report template or numerical beauty score. Aesthetic recommendations remain reasoned judgments; helper evidence and criterion outcomes retain their own meaning. When acting as a helper, return the bundle to the owning workflow with unresolved context and limits intact. Stop at recommendations unless implementation was separately requested.

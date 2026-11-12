@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
   "name": "create-cv",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.47.0",
+  "stack_version": "0.48.0",
   "channel": "release",
   "dependencies": [
     {
@@ -241,7 +241,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "cd83177d01c2193405ef10b79164a692a3f328cd6239234770818b4a2039e52f",
+      "sha256": "b0921564171970a36d86bb655a8e2fdf42860198b1c0e765ebe6fb181d9ed299",
       "mode": 420
     }
   }

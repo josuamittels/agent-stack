@@ -1,0 +1,105 @@
+---
+name: "audit-ux"
+description: "Audit how well a supplied design, interface, or information artifact serves its users' jobs, needs, expectations, and tasks. Clarify unresolved customer context, include an accessibility sub-audit, and fill a modular UX report with evidence, prioritized improvements, and validation actions."
+version: "0.1.0"
+created: "2026-11-12"
+updated: "2026-11-12"
+author:
+  - "Josua Mittelstaedt"
+references:
+  - "Jakob Nielsen"
+  - "Kim Flaherty"
+  - "Government Digital Service"
+type: "skill"
+status: "experimental"
+---
+
+# Audit UX
+
+Assess whether the supplied experience helps its intended users achieve the right outcomes with understandable actions, appropriate effort, dependable feedback, and control. Return a task-centered UX report and an integrated improvement plan, including a required accessibility sub-audit.
+
+## Scope
+
+Use for usability and user-need reviews of existing designs, interfaces, prototypes, flows, publications, infographics, and other information artifacts. Cover usefulness and fit as well as operation: can this person achieve their job, does the experience fit their context and expectations, and where does it introduce unnecessary difficulty?
+
+Inspect the requested artifact and scope. A narrow review remains narrow. Static content can serve a job such as understanding, comparing, deciding, or following instructions without having interactive controls. This workflow owns assessment and recommendations, not design creation or implementation.
+
+### Boundaries
+
+An audit request authorizes inspection and reporting. It does not authorize implementation, publication, contacting customers, commissioning research, or consequential actions in a live service. Use safe test states and record uninspectable steps. Propose user research when needed, without claiming that it ran.
+
+A model walkthrough predicts possible difficulty. It does not establish actual comprehension, preference, satisfaction, task success, conversion, or product-market fit. Preserve the distinction between observed design facts, supplied user evidence, and interpretation. Do not invent personas, research participants, quotations, behavioral metrics, or customer motivations.
+
+## Inputs
+
+Require an identifiable artifact and sufficient visual or interactive access to inspect it. Use customer/user information already evident from the app, supplied brief, relevant project material, or prior answers. Establish the user role, job and desired outcome, context, prior experience, needs and constraints, expectations, platform/domain conventions, and relevant tasks. These are assessment inputs, not a questionnaire to repeat when already answered.
+
+Read the [aesthetics framework](../../guidelines/aesthetics/reference.md) and [review lenses](references/review-lenses.md) before choosing principles and report modules. For interfaces, read [Interaction](../../guidelines/aesthetics/interaction.md), starting with task modeling and evaluation, then relevant behavior sections. Follow its dependencies for the actual decisions. For information artifacts, use the relevant Composition, Typography, or Infographics guidance through the framework. Technical accessibility assessment belongs to the mandatory helper in step 4.
+
+### Default Procedures
+
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md.tmpl) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
+## Workflow
+
+### 1. Establish who is trying to achieve what
+
+Inspect the artifact and available context first. Separate the end user from buyer, administrator, operator, and other stakeholders where their jobs differ. For each materially different user/task, record the starting situation, desired result, success condition, context and stakes, and the source of that understanding. Include existing workarounds, familiarity, frequency, access needs, language, device/environment, and constraints when they change the assessment. Keep business goals distinct from users' outcomes.
+
+Treat a product's apparent purpose as evidence of design intent, not proof of actual customer needs. Mark defensible inferences. Ask through [Ask User Question](../ask-user-question/SKILL.md.tmpl) when the primary user, job, success condition, important need, or expected convention remains unresolved and would change the audit. Apply the shared clarification sequence. Ask about the real situation and desired result rather than requesting a fictional persona. Batch closely related missing facts and explain which judgments depend on the answers.
+
+Wait for answers before making dependent user-fit judgments. Continue independent artifact inspection and accessibility work where scope is clear. Silence does not resolve a question. If the user explicitly requests a provisional review, retain the open question and state the assumption and how a different answer could change the recommendation. Otherwise return an incomplete assessment when necessary rather than manufacture customer context.
+
+### 2. Define tasks, evidence, and review scope
+
+Identify the artifact/version, reviewed screens/pages/regions, state/sequence, supported context, and available evidence type. Open rendered material with appropriate tools. Source code or a textual description can explain intent but cannot prove the rendered experience. Mark unreadable, missing, or cropped material as a gap. State sampling and avoid generalizing one inspected screen to an entire service.
+
+Define representative tasks in outcome language, with IDs, user/context, trigger, starting information, observable completion, and relevant failure/recovery paths. Prioritize the user's stated tasks. Use expert and first-use scenarios when both matter. State which paths are supplied, observed, or inferred. Include downstream/offline/provider handoffs when they are essential to the job and within scope. Ask if materially competing task priorities cannot be settled from context.
+
+Read the applicable review lenses and select the report modules. Explain which principles apply to each task or information need. Use conventions relevant to the actual platform, domain, and user experience. Name the comparison and explain a departure's cost or benefit rather than treating a familiar pattern as universally required.
+
+### 3. Walk the experience and assess usability
+
+For each task, inspect entry, orientation, decisions, action, feedback, completion, and relevant interruption/recovery. At each step examine whether the intended person can understand the local goal, find the action or information, anticipate its effect, and recognize progress toward the larger outcome. For static artifacts, follow the reading/comparison/decision sequence instead of inventing a click path.
+
+Assess both first-use learnability and repeat-use efficiency. Check task/need fit, information scent, language and conceptual model, choice and memory burden, consistency/conventions, feedback/state, control, error prevention/recovery, continuity, help, and informed choice where applicable. Use the lenses as diagnostic questions, not a quota of faults. Fewer clicks, more engagement, or visual simplicity do not by themselves establish better UX.
+
+Record exact locations/states and evidence IDs. Keep the observed condition separate from the predicted user consequence and the principle supporting the interpretation. A screenshot may show an ambiguous label; it cannot demonstrate that people hesitated or abandoned the task. If actual user research, support records, or analytics are supplied, preserve their population, method, timeframe, and limits. Treat correlations and individual anecdotes at their supported strength.
+
+Use the lens reference's qualitative outcomes and evidence labels. Preserve strengths and deliberate choices that serve the task. If an uncertain recommendation depends on a particular user belief or convention, identify the question or observation needed to resolve it.
+
+### 4. Invoke Audit Accessibility
+
+Invoke [Audit Accessibility](../audit-accessibility/SKILL.md.tmpl) as a required helper for the reviewed artifact before final synthesis. Use the host's supported skill mechanism when available. Otherwise read and apply that linked workflow in the current context. Merely mentioning accessibility or copying its checklist is not the handoff.
+
+Pass the original outcome, artifact/version and inspected evidence, medium/platform/delivery, user and task context, known access needs, in-scope pages/states/processes, available environments, relevant standards supplied by the user, permissions, and unresolved questions. Set its output destination to an `accessibility/` subfolder inside this audit's output directory so its report does not overwrite the UX report.
+
+Expect its filled `report.md`, `audit.json`, criterion outcomes, findings/actions, and evidence limits. It runs as a helper and returns without separate evaluation according to its own workflow. For static or incomplete evidence, let it report the appropriate unknowns. Do not require a full interactive test as a prerequisite to reviewing a poster or screenshot.
+
+Bring returned barriers into the relevant UX tasks and action plan with links to the accessibility report and stable criterion/finding IDs. Preserve its statuses, severity rationale, scores, scope, and unknowns. Consolidate repeated causes without double-counting findings or averaging accessibility into a UX score. Resolve conflicts by checking the original evidence and owning guidance. Do not silently change a criterion outcome to fit a preferred design recommendation.
+
+If the helper is unavailable or cannot finish, record the precise dependency or untested scope and continue independent UX work. Do not represent an unperformed handoff as complete. Label the overall report partial until this required component is returned or the user explicitly changes scope.
+
+### 5. Synthesize findings and improvements
+
+For each material finding, identify its ID, affected user/job/task/step, location/state, evidence, applicable principle or convention, observed problem, likely consequence, severity, proposed change, and verification. Distinguish confirmed behavior defects, inspection-based usability concerns, improvement opportunities, and questions requiring user evidence. Use the severity anchors in the review reference without inventing frequency or prevalence.
+
+Prefer changes that resolve the demonstrated cause and preserve useful behavior. Explain consequential alternatives and tradeoffs. Order actions by essential outcome blockage, harm/error/recovery, breadth supported by evidence, and dependencies. Effort may inform sequencing but does not lower user impact. Avoid unsupported uplift estimates or recommending manipulative patterns to improve business metrics.
+
+Separate repairs, design explorations, and verification/research actions. Give each a concrete completion condition. When user evidence is needed, propose the relevant participants/task, neutral test scenario, observation or measure, and what result would challenge the recommendation. Suggest targets only with a documented basis; do not turn an invented target into an acceptance requirement.
+
+### 6. Fill and return the modular UX report
+
+Read and copy [templates/report.md](templates/report.md) for every invocation. Save a fresh `report.md` at the requested destination, otherwise under a writable project output path `audits/ux/<artifact-slug>/<unique-run>/`. Preserve older reports. Keep the accessibility helper's artifacts in the subfolder specified above. If saving is unavailable, return filled Markdown and disclose the limitation.
+
+Retain the common sections and only applicable modules, combining or adding sections for mixed and unanticipated formats. Remove authoring notes and placeholder rows. Apply [Write](../write/SKILL.md.tmpl) for the requested language and reader. Link the actual accessibility outputs, not their reusable templates.
+
+Before delivery, trace findings to user/tasks and evidence, check task/scope coverage, remove unsupported behavior claims, reconcile the accessibility handoff, and ensure the action list covers retained findings and material unknowns. Resolve customer questions before dependent conclusions or clearly mark a user-authorized provisional assessment. Do not declare usability validated from this inspection. Use an overall numeric UX score only when the user requests a defined rubric; keep judgments and evidence coverage explicit.
+
+## Output
+
+Return the filled UX `report.md`, links to the accessibility sub-audit's report/register, a short list of highest-impact actions, and material open questions or coverage limits. The report explains whom the design serves, which jobs/tasks were assessed, where it supports or obstructs those outcomes, the principles and evidence behind recommendations, what to preserve, and how to verify improvement.
+
+When acting as a helper, return these artifacts, unresolved context, and assessment limits to the owning workflow. Stop at recommendations unless implementation was separately requested.

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
   "name": "write",
   "version": "2.0.0",
   "status": "stable",
-  "stack_version": "0.47.0",
+  "stack_version": "0.48.0",
   "channel": "release",
   "dependencies": [
     {
@@ -71,7 +71,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "32c3f6ed7b9ab71a7261cc4abeffc99a709c41d271aabb7822d51b0fb68b71d1",
+      "sha256": "4f0515d435ff02b7e2fa6191d1a41e1d0c71fcb070219594872ed4b5f4166647",
       "mode": 420
     }
   }

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
   "name": "setup-agent-stack",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.47.0",
+  "stack_version": "0.48.0",
   "channel": "release",
   "dependencies": [
     {
@@ -42,7 +42,7 @@
     "src/skills/setup-agent-stack/references/hosts.md": "ffce05f9d2f8637dac3fc3603087adb0dddadeefa89b0cff4311fe548b948df6",
     "src/skills/setup-agent-stack/scripts/setup.mjs": "5f125f9bb2d86f1a331bbe5c6c735b77a5a15762aef7740528f087f0dba7ed1a",
     "src/skills/setup-agent-stack/templates/global-routing.md": "446e2f1fb5b66c88695a27b78f23f79e1f26c1658fd12c1cbd6a5e4e01d04208",
-    "src/skills/skill-issue/SKILL.md.tmpl": "5e1b8cb9ec7607df8ee4266c71c96115127a28e1ad33aa75ab4cdfbabea3c5cc",
+    "src/skills/skill-issue/SKILL.md.tmpl": "148065fae8d0991db8768481f357ae38baa1478365c8a668fbb5615d2914fbb2",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
     "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
     "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
@@ -88,7 +88,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "ab8be01f87e93aed0114979032e22c23fe617f5757e28cb2b76cf4f1af3257c5",
+      "sha256": "8bdc72a2ff060d32889800338ecbac5e89c802ba4f98116ee5b841999aa60823",
       "mode": 420
     },
     "references/_stack/skills/spawn-evals/instructions.md": {
@@ -116,7 +116,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ef44b21ff559599e7c50d5e3c18f2caf06db2454a7edee1e345fc212a3eecd2a",
+      "sha256": "a9bd4d000331038f90852d1f6f9da9e7280101aa1c217eb1fbf333277dfa91d2",
       "mode": 420
     }
   }

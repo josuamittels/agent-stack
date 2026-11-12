@@ -1,6 +1,6 @@
 # Agent Stack
 
-Reusable agent skills for career applications, research, writing, decisions, and development. Each skill provides a focused workflow with its required instructions, templates, and resources bundled.
+Reusable agent skills for career applications, research, writing, design reviews, decisions, and development. Each skill provides a focused workflow with its required instructions, templates, and resources bundled.
 
 ## Install
 
@@ -80,6 +80,22 @@ npx skills add josuamittels/agent-stack --skill think-harder think-deeper mind-w
 
 # Claude Code
 npx skills add josuamittels/agent-stack --skill think-harder think-deeper mind-wandering pre-mortem ask-user-question -a claude-code
+```
+
+## Design reviews
+
+Review a supplied design through its aesthetics, the user jobs it supports, and accessibility. Each audit preserves evidence limits and returns concrete next actions.
+
+1. **Choose the scope.** Use [/audit-accessibility](src/skills/audit-accessibility/SKILL.md.tmpl) for access standards, [/audit-ux](src/skills/audit-ux/SKILL.md.tmpl) for user needs and task usability, or [/audit-design](src/skills/audit-design/SKILL.md.tmpl) for the coordinated review with deeper aesthetics.
+2. **Share the artifact and context.** Provide the design/interface and known audience, jobs, constraints and intended character. The workflow asks about consequential missing context.
+3. **Use the reports.** UX includes accessibility; Design adds its aesthetic critique. Review the linked reports and integrated action plan, with repairs, refinements and optional explorations kept distinct.
+
+```sh
+# Codex
+npx skills add josuamittels/agent-stack --skill audit-design audit-ux audit-accessibility -a codex
+
+# Claude Code
+npx skills add josuamittels/agent-stack --skill audit-design audit-ux audit-accessibility -a claude-code
 ```
 
 ## Colour

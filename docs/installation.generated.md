@@ -33,6 +33,42 @@ Bundled dependencies: think-harder.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
+## audit-accessibility
+
+Status: eligible experimental candidate.
+
+Audit a supplied interface, design, infographic, document, or media artifact against applicable accessibility standards. Fill a modular report.md with evidenced criterion outcomes, transparent scores, and prioritized remediation and verification actions.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question audit-accessibility check-colour-contrast spawn-evals think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, check-colour-contrast, spawn-evals, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available.
+
+## audit-design
+
+Status: eligible experimental candidate.
+
+Coordinate a design audit through Audit UX and its accessibility sub-audit, then add a deep aesthetic critique of intent, composition, coherence, craft, expression, and restraint. Return linked reports and one prioritized improvement plan for the supplied design.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question audit-accessibility audit-design audit-ux browse-skills check-colour-contrast create-guidelines create-skill pre-mortem spawn-evals think-deeper think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, audit-accessibility, audit-ux, browse-skills, check-colour-contrast, create-guidelines, create-skill, pre-mortem, spawn-evals, think-deeper, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available.
+
+## audit-ux
+
+Status: eligible experimental candidate.
+
+Audit how well a supplied design, interface, or information artifact serves its users' jobs, needs, expectations, and tasks. Clarify unresolved customer context, include an accessibility sub-audit, and fill a modular UX report with evidence, prioritized improvements, and validation actions.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question audit-accessibility audit-ux check-colour-contrast spawn-evals think-harder write -a codex`
+
+Bundled dependencies: ask-user-question, audit-accessibility, check-colour-contrast, spawn-evals, think-harder, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available.
+
 ## browse-skills
 
 Status: eligible experimental candidate.

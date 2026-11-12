@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "skill": "audit-accessibility",
+  "checks": [
+    {
+      "id": "criterion-inventory-accounted",
+      "description": "The completed criterion register has unique IDs matching the declared inventory; a WCAG 2.2 AA baseline retains all 55 A/AA required criteria.",
+      "handler": "check_inventory",
+      "mandatory": true,
+      "required_inputs": ["/outputs/audit", "/evidence/selected_criterion_ids", "/constraints/baseline"]
+    },
+    {
+      "id": "scores-match-outcomes",
+      "description": "Required-criterion counts and the two percentages match the four-state register and the visible report score table, with undefined denominators reported as not assessed.",
+      "handler": "check_scores",
+      "mandatory": true,
+      "required_inputs": ["/outputs/audit", "/outputs/main"]
+    },
+    {
+      "id": "barrier-action-traceability",
+      "description": "Confirmed outcomes reference recorded evidence, failures link bidirectionally to findings with remediation and retest actions, and unknowns name a next check.",
+      "handler": "check_traceability",
+      "mandatory": true,
+      "required_inputs": ["/outputs/audit"]
+    }
+  ]
+}

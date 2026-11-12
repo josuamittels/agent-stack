@@ -3,6 +3,139 @@ repository: josuamittels/agent-stack
 runtime:
   - runtime/paths.py
 skills:
+  audit-accessibility:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+    conditional:
+      - check-colour-contrast
+      - spawn-evals
+    optional: []
+    routes: []
+    files:
+      - skills/audit-accessibility/SKILL.md.tmpl
+      - skills/audit-accessibility/references/rubric.md
+      - skills/audit-accessibility/templates/report.md
+    resources:
+      - guidelines/aesthetics/accessibility.md
+      - guidelines/aesthetics/colour.md
+      - guidelines/aesthetics/composition.md
+      - guidelines/aesthetics/haptics.md
+      - guidelines/aesthetics/iconography.md
+      - guidelines/aesthetics/infographics.md
+      - guidelines/aesthetics/interaction.md
+      - guidelines/aesthetics/motion.md
+      - guidelines/aesthetics/reference.md
+      - guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md
+      - guidelines/aesthetics/references/composition/grid-structures.svg
+      - guidelines/aesthetics/references/composition/space-relationships.svg
+      - guidelines/aesthetics/references/iconography/construction.svg
+      - guidelines/aesthetics/sound.md
+      - guidelines/aesthetics/typography.md
+      - guidelines/coding/mermaid.md
+      - guidelines/languages/english.md
+    evaluations:
+      - audit-accessibility
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+      - Artifact inspection tools appropriate to the supplied medium; interactive
+        and assistive-technology evidence when available
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable evidence and required tools.
+  audit-design:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+      - audit-ux
+    conditional:
+      - create-guidelines
+    optional: []
+    routes: []
+    files:
+      - skills/audit-design/SKILL.md.tmpl
+    resources:
+      - guidelines/aesthetics/accessibility.md
+      - guidelines/aesthetics/colour.md
+      - guidelines/aesthetics/composition.md
+      - guidelines/aesthetics/haptics.md
+      - guidelines/aesthetics/iconography.md
+      - guidelines/aesthetics/infographics.md
+      - guidelines/aesthetics/interaction.md
+      - guidelines/aesthetics/motion.md
+      - guidelines/aesthetics/reference.md
+      - guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md
+      - guidelines/aesthetics/references/composition/grid-structures.svg
+      - guidelines/aesthetics/references/composition/space-relationships.svg
+      - guidelines/aesthetics/references/iconography/construction.svg
+      - guidelines/aesthetics/sound.md
+      - guidelines/aesthetics/typography.md
+      - guidelines/coding/mermaid.md
+      - guidelines/languages/english.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+      - Artifact inspection tools appropriate to the supplied medium; interactive
+        and assistive-technology evidence when available
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable evidence and required tools.
+  audit-ux:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - write
+      - audit-accessibility
+    conditional: []
+    optional: []
+    routes: []
+    files:
+      - skills/audit-ux/SKILL.md.tmpl
+      - skills/audit-ux/references/review-lenses.md
+      - skills/audit-ux/templates/report.md
+    resources:
+      - guidelines/aesthetics/accessibility.md
+      - guidelines/aesthetics/colour.md
+      - guidelines/aesthetics/composition.md
+      - guidelines/aesthetics/haptics.md
+      - guidelines/aesthetics/iconography.md
+      - guidelines/aesthetics/infographics.md
+      - guidelines/aesthetics/interaction.md
+      - guidelines/aesthetics/motion.md
+      - guidelines/aesthetics/reference.md
+      - guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md
+      - guidelines/aesthetics/references/composition/grid-structures.svg
+      - guidelines/aesthetics/references/composition/space-relationships.svg
+      - guidelines/aesthetics/references/iconography/construction.svg
+      - guidelines/aesthetics/sound.md
+      - guidelines/aesthetics/typography.md
+      - guidelines/coding/mermaid.md
+      - guidelines/languages/english.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Node.js >=22.20 for JavaScript helpers when present
+      - Python >=3.10 for Python helpers when present
+      - Artifact inspection tools appropriate to the supplied medium; interactive
+        and assistive-technology evidence when available
+    fallback: Read bundled instructions in the current context when native
+      invocation is unavailable; report unavailable evidence and required tools.
   ask-user-question:
     visibility: public
     required:
@@ -730,6 +863,9 @@ skills:
     conditional: []
     optional: []
     routes:
+      - audit-accessibility
+      - audit-design
+      - audit-ux
       - setup-agent-stack
       - ask-user-question
       - browse-skills

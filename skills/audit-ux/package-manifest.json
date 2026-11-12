@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
+  "name": "audit-ux",
+  "version": "0.1.0",
+  "status": "experimental",
+  "stack_version": "0.48.0",
+  "channel": "release",
+  "dependencies": [
+    {
+      "name": "ask-user-question",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "audit-accessibility",
+      "version": "0.1.0",
+      "status": "experimental"
+    },
+    {
+      "name": "audit-ux",
+      "version": "0.1.0",
+      "status": "experimental"
+    },
+    {
+      "name": "check-colour-contrast",
+      "version": "1.1.0",
+      "status": "stable"
+    },
+    {
+      "name": "spawn-evals",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "write",
+      "version": "2.0.0",
+      "status": "stable"
+    }
+  ],
+  "source_sha256": {
+    "src/evals/audit-accessibility/checks.py": "955165889cc3f4e2e8b2a203194d933d062045b96f175cec0c29146ee4676c89",
+    "src/evals/audit-accessibility/rubric.json": "9d1d2ec0d9383add5b6b29e63bb50302e0bfd3e3a566f504baef9fcdb081b8ba",
+    "src/guidelines/aesthetics/accessibility.md": "0f006685f74b05b7042eb1d04bc4a7a5d6e0c65fd6834c857246117148470907",
+    "src/guidelines/aesthetics/colour.md": "e735caa6f46e3950d2a7fc8a2ebe763c31258fc005627f17fea7289c00b6e8a5",
+    "src/guidelines/aesthetics/composition.md": "fdf0b5956ecfbe767354af9d8df6816d04bdb53fcd97fc1656c25d8a4a880e1a",
+    "src/guidelines/aesthetics/haptics.md": "861db392679cdffffac143c20c925d47332c04c8a37b0ee0578d3afbeb5a946d",
+    "src/guidelines/aesthetics/iconography.md": "2f6d0633adf3be868885ab18122179ef9d67864135f018d35a4fd00ace64a7a3",
+    "src/guidelines/aesthetics/infographics.md": "23ccc6bb19d5da6a0c222c77d2bdbea368e923e05ddfb57742fc9836f5c7413e",
+    "src/guidelines/aesthetics/interaction.md": "da10d15d7a45d4adbae6d1d07174998d8f891a39e3d86071c236add01ebc07f9",
+    "src/guidelines/aesthetics/motion.md": "664a9b5cc661d8206a6c8fb65e0b789f737c7cebdeb3c69637acc59b08b98e5b",
+    "src/guidelines/aesthetics/reference.md": "778dcf7dc1d8a1f881d94c474d3cdc357c77c439d7c7f64446b51656d9dcfa24",
+    "src/guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md": "ef3722b2cc7c7e1645c34cb34e704d625682586667c07065b620d3ec93cd4120",
+    "src/guidelines/aesthetics/references/composition/grid-structures.svg": "ede0541f58ff2c1bb5c3f8da7ac03c8a43fe1caedfb6437c40a0b686f5188b62",
+    "src/guidelines/aesthetics/references/composition/space-relationships.svg": "e1d8fe5750167710de7167cb769bce2be4c98d2f2914869c413c914b6d078300",
+    "src/guidelines/aesthetics/references/iconography/construction.svg": "404497ecc4e7c19f0b01babcb7621e91008a75f30470c8d9628fb24465e2d06e",
+    "src/guidelines/aesthetics/sound.md": "46876912b70b2471aac0c6d205004eb0180b2c1d033756c2915de3b8ad908336",
+    "src/guidelines/aesthetics/typography.md": "fa8fef312c52c98ab32ef86df6f573fd9f0a03fa3bfc62e4f5537a23e06a1136",
+    "src/guidelines/coding/mermaid.md": "67fdfb1d306f164230836b4b5063fd30f03be50acc51ff97a107a36b4feb9a06",
+    "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+    "src/guidelines/languages/english.md": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+    "src/guidelines/languages/french.md": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+    "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+    "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+    "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
+    "src/skills/audit-accessibility/SKILL.md.tmpl": "97ea0c3afd5345902b15f2457fec675e373a23f7ffd2af00c57c470c3a96e828",
+    "src/skills/audit-accessibility/references/rubric.md": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
+    "src/skills/audit-accessibility/templates/report.md": "2bb61f48501e18bde91ae05a34ba2312a79898dc0a6e22d2dc48d0b47c31f152",
+    "src/skills/audit-ux/SKILL.md.tmpl": "19b215663e80ddfd26c0f1ee68647d9e94c88f06a845749000ab7551d8978b2f",
+    "src/skills/audit-ux/references/review-lenses.md": "3656ed62e831a2d98cceda1c745c5ec4dd0cd25d5fd464c5bcf4bea9fbe59d37",
+    "src/skills/audit-ux/templates/report.md": "f33e94a3b4a44b60e737f30544607fd34357b7560318ceb9796fc38c85e62d01",
+    "src/skills/check-colour-contrast/SKILL.md.tmpl": "be0c848279a150205075641c8661cf7d75a280d69c8b7f065f366a19317e5529",
+    "src/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
+    "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
+    "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
+    "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
+    "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+    "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+    "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+  },
+  "files": {
+    "LICENSE": {
+      "sha256": "cefec577d7399313b978e334d814d4bf6b3be3dbee1ea4fcf8ee2100be6b00c1",
+      "mode": 420
+    },
+    "references/_stack/evals/audit-accessibility/checks.py": {
+      "sha256": "955165889cc3f4e2e8b2a203194d933d062045b96f175cec0c29146ee4676c89",
+      "mode": 420
+    },
+    "references/_stack/evals/audit-accessibility/rubric.json": {
+      "sha256": "9d1d2ec0d9383add5b6b29e63bb50302e0bfd3e3a566f504baef9fcdb081b8ba",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/accessibility.md": {
+      "sha256": "0f006685f74b05b7042eb1d04bc4a7a5d6e0c65fd6834c857246117148470907",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/colour.md": {
+      "sha256": "e735caa6f46e3950d2a7fc8a2ebe763c31258fc005627f17fea7289c00b6e8a5",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/composition.md": {
+      "sha256": "fdf0b5956ecfbe767354af9d8df6816d04bdb53fcd97fc1656c25d8a4a880e1a",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/haptics.md": {
+      "sha256": "861db392679cdffffac143c20c925d47332c04c8a37b0ee0578d3afbeb5a946d",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/iconography.md": {
+      "sha256": "2f6d0633adf3be868885ab18122179ef9d67864135f018d35a4fd00ace64a7a3",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/infographics.md": {
+      "sha256": "23ccc6bb19d5da6a0c222c77d2bdbea368e923e05ddfb57742fc9836f5c7413e",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/interaction.md": {
+      "sha256": "da10d15d7a45d4adbae6d1d07174998d8f891a39e3d86071c236add01ebc07f9",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/motion.md": {
+      "sha256": "664a9b5cc661d8206a6c8fb65e0b789f737c7cebdeb3c69637acc59b08b98e5b",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/reference.md": {
+      "sha256": "778dcf7dc1d8a1f881d94c474d3cdc357c77c439d7c7f64446b51656d9dcfa24",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md": {
+      "sha256": "ef3722b2cc7c7e1645c34cb34e704d625682586667c07065b620d3ec93cd4120",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/references/composition/grid-structures.svg": {
+      "sha256": "ede0541f58ff2c1bb5c3f8da7ac03c8a43fe1caedfb6437c40a0b686f5188b62",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/references/composition/space-relationships.svg": {
+      "sha256": "e1d8fe5750167710de7167cb769bce2be4c98d2f2914869c413c914b6d078300",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/references/iconography/construction.svg": {
+      "sha256": "404497ecc4e7c19f0b01babcb7621e91008a75f30470c8d9628fb24465e2d06e",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/sound.md": {
+      "sha256": "46876912b70b2471aac0c6d205004eb0180b2c1d033756c2915de3b8ad908336",
+      "mode": 420
+    },
+    "references/_stack/guidelines/aesthetics/typography.md": {
+      "sha256": "fa8fef312c52c98ab32ef86df6f573fd9f0a03fa3bfc62e4f5537a23e06a1136",
+      "mode": 420
+    },
+    "references/_stack/guidelines/coding/mermaid.md": {
+      "sha256": "67fdfb1d306f164230836b4b5063fd30f03be50acc51ff97a107a36b4feb9a06",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/dutch.md": {
+      "sha256": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/english.md": {
+      "sha256": "ffe8f29098a69941108139fa49d8eccff52cc2adc1c903167b19c2731c3260cd",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/french.md": {
+      "sha256": "b8881962c9917c9ef9518acad4b5df192b0f2751a11f69ca8089774ce74b7c36",
+      "mode": 420
+    },
+    "references/_stack/guidelines/languages/german.md": {
+      "sha256": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
+      "mode": 420
+    },
+    "references/_stack/runtime/paths.py": {
+      "sha256": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
+      "mode": 420
+    },
+    "references/_stack/skills/ask-user-question/instructions.md": {
+      "sha256": "5fcb8961af7102a6960c92e40aeca5e63161b87e0477c937031524a48fc96b85",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-accessibility/instructions.md": {
+      "sha256": "e57dd5e49d13a137f95a826461e0a8b66c95e2350f9af75ffe422aaf556493ec",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-accessibility/references/rubric.md": {
+      "sha256": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-accessibility/templates/report.md": {
+      "sha256": "2bb61f48501e18bde91ae05a34ba2312a79898dc0a6e22d2dc48d0b47c31f152",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-ux/instructions.md": {
+      "sha256": "f86d4f29f313177269d7faadd14cfb68bff5257bd880bae724e8435383615ac6",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-ux/references/review-lenses.md": {
+      "sha256": "3656ed62e831a2d98cceda1c745c5ec4dd0cd25d5fd464c5bcf4bea9fbe59d37",
+      "mode": 420
+    },
+    "references/_stack/skills/audit-ux/templates/report.md": {
+      "sha256": "f33e94a3b4a44b60e737f30544607fd34357b7560318ceb9796fc38c85e62d01",
+      "mode": 420
+    },
+    "references/_stack/skills/check-colour-contrast/instructions.md": {
+      "sha256": "5239b89b2b9e377f9dd0e938fde854ac7ba707bb13951d17fdefb9bac1a725ca",
+      "mode": 420
+    },
+    "references/_stack/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": {
+      "sha256": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/instructions.md": {
+      "sha256": "926c03507e38e2d91ba720992cbe22229a5c19069eea944cea51b434ee23903a",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/package-setup.md": {
+      "sha256": "d8035003e8e092d712595f0abcb10a2f2c7ac684c3869cb08d8ec93961d65406",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/references/runner.md": {
+      "sha256": "88f161aa98092aecff43e82cc59356f63bec8b5893a2837df67f1c9fccb8c885",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/checklib.py": {
+      "sha256": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
+      "mode": 420
+    },
+    "references/_stack/skills/spawn-evals/scripts/runner.py": {
+      "sha256": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
+      "mode": 420
+    },
+    "references/_stack/skills/think-harder/instructions.md": {
+      "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/write/instructions.md": {
+      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "mode": 420
+    },
+    "SKILL.md": {
+      "sha256": "fa5e255f7de45dc856e964a3784c862d7c90c2512b2ffd26d2fba068f94a493b",
+      "mode": 420
+    }
+  }
+}

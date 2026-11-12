@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "26b06770eb365df0a3a13998a8740121a7ec452ff1c73dfa4d8e679cc3e75617",
+  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
   "name": "spawn-evals",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.47.0",
+  "stack_version": "0.48.0",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "397731dbaeaf74d6831e11a7bf4d9a00b4a6fd95fefc3c6fce8ecc8d563eac00",
+      "sha256": "5783c5bb2d986fef165c0b5bcce2555bcd69ff4ae5be8c7e017274489a84f659",
       "mode": 420
     }
   }

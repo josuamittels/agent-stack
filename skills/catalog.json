@@ -1,10 +1,13 @@
 {
   "schema_version": 1,
-  "stack_version": "0.47.0",
+  "stack_version": "0.48.0",
   "channel": "release",
   "skills": [
     "answer-interview",
     "ask-user-question",
+    "audit-accessibility",
+    "audit-design",
+    "audit-ux",
     "browse-skills",
     "check-colour-contrast",
     "compose-career-profile",

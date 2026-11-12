@@ -44,6 +44,9 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 
 | Intended outcome and example phrases | Route | Distinguish from |
 | --- | --- | --- |
+| Audit accessibility: "check this interface for accessibility", "review this infographic against accessibility standards". | [audit-accessibility](../audit-accessibility/SKILL.md.tmpl) | Selects applicable criteria, reports fulfilled/failed/unknown/N/A outcomes, contrast evidence and descriptive scores, and fills a modular report. UX and broader aesthetics belong to their respective audits. |
+| Audit the whole design and deepen aesthetic quality: "audit this design", "make this more coherent", "critique its visual direction". | [audit-design](../audit-design/SKILL.md.tmpl) | Coordinates Audit UX and its accessibility sub-audit, then adds intent, composition, coherence, craft, expression and restraint. Returns a flexible critique and integrated actions; does not implement changes. |
+| Audit usability and user/job fit: "review this user journey", "does this design meet the customer's needs?", "is this flow understandable?". | [audit-ux](../audit-ux/SKILL.md.tmpl) | Resolves consequential customer questions, examines task outcomes, expectations and conventions, and invokes Audit Accessibility. Deep aesthetic critique belongs to Audit Design. |
 | Create or improve a reusable skill or explicitly requested discipline: "turn this workflow into a skill", "create a skill", "fix this skill's triggers", "author a discipline". | [create-skill](../create-skill/SKILL.md.tmpl) | Carrying out the task itself. User-chosen naming applies; create objective checker packages only for distinct authored target skills with meaningful script-verifiable criteria, never for Create Skill itself. Omit evaluator references when none apply. |
 | Generate repository documentation: "document this repo", "create docs", "build a documentation site". | [create-docs](../create-docs/SKILL.md.tmpl) | Requires a choice between interlinked Markdown and a Nextra site under the target repository’s `docs/`. Inspects components, interfaces, workflows, and states under the documentation guideline. Reusable standards belong to Create Guidelines; small prose edits use Write. |
 | Create or revise reusable standards: "write our accessibility guidelines", "document conventions", "repair the Mermaid reference", "define best practices". | [create-guidelines](../create-guidelines/SKILL.md.tmpl) | Applying existing standards to one artifact. This routes to the authoring skill, never to a guideline file. |
@@ -84,11 +87,15 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
+Audit Accessibility, Audit UX, and Audit Design are experimental and available. Use the narrowest requested audit: Design invokes UX, which invokes Accessibility. Their reports preserve evidence limits; the aesthetic layer has a flexible critique rather than a numerical beauty score.
+
 Setup Agent Stack is stable and configures automatic routing in global Codex or Claude Code instructions after installation. Answer Interview, Create CV, Draft Cover Letter, and Setup Career Stack are available as substantive skills with bundled resources and objective-check packages. Setup Career Stack initializes a career application workspace and routes application-form and interview questions to Answer Interview.
 
 Write, Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Show Me Your Work, Think Deeper, Think Harder, and Update Changelog have usable instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Maintainer discovery reads canonical `src/skills/`, never generated root `skills/` or `dist/`. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 
 ### Resolve neighboring intents
+
+- Accessibility-only checks select Audit Accessibility. User/job/task usability selects Audit UX and includes accessibility. A coordinated design review or deeper aesthetic critique selects Audit Design, which adds aesthetics on top of both. None authorizes implementation.
 
 - "Write a guide for users" means prose; "define our reusable writing standard" means guideline authoring. Mentioning "guidelines" does not by itself select create-guidelines.
 - "Write a Dutch announcement" starts with Write. "Translate this announcement into Dutch" starts with translate, even when the user also asks for natural phrasing.
