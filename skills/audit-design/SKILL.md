@@ -6,9 +6,9 @@ description: Coordinate a design audit through Audit UX and its accessibility
   prioritized improvement plan for the supplied design.
 license: MIT
 metadata:
-  version: 0.2.0
+  version: 0.2.1
   status: experimental
-  stack-version: 0.49.0
+  stack-version: 0.49.1
   distribution: release
 ---
 

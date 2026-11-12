@@ -1,7 +1,7 @@
 ---
 name: "audit-design"
 description: "Coordinate a design audit through Audit UX and its accessibility sub-audit, then add a deep aesthetic critique of intent, composition, coherence, craft, expression, and restraint. Return linked reports and one prioritized improvement plan for the supplied design."
-version: "0.2.0"
+version: "0.2.1"
 created: "2026-11-12"
 updated: "2026-11-12"
 author:
@@ -89,13 +89,15 @@ First inspect the overall impression, dominant message, attention structure, per
 | Lens | Review focus |
 | --- | --- |
 | Intent and character | Do the expressive choices support the purpose, subject, audience context, and intended emotional tone? Explain perceived effects without claiming a tested audience response. |
-| Composition and attention | How do hierarchy, proportion, balance, tension, grouping, sequence, rhythm and negative space work together? Does their structure serve the intended emphasis? |
-| Visual coherence | Do type roles, colour relationships, imagery, symbols, shapes and details share a recognizable logic? Distinguish meaningful variation from accidental inconsistency. |
+| Composition and attention | How do hierarchy, proportion, balance, tension, grouping, sequence, rhythm and negative space work together? Identify unclear rank, competing focal points, and secondary material that visually outranks the intended message. Does the perceived order serve the intended emphasis? |
+| Visual coherence | Do type roles, colour relationships, imagery, symbols, shapes and details share a recognizable logic? Compare equivalent roles across the available pages, regions and states. Identify accidental inconsistencies with paired examples; distinguish them from meaningful variation. |
 | Craft | Where do alignment, optical balance, spacing, cropping, edges, type setting, rendering or delivery weaken an otherwise strong idea? Distinguish an execution fault from deliberate roughness. |
-| Expression and distinction | Does the treatment have an appropriate, specific identity? Compare against the actual brief, brand or supplied references. Distinction means authored fit, not novelty or unsupported claims about competitors. |
+| Expression and distinction | Does the treatment have an appropriate, specific identity? Include how language, tone and imagery work together against the actual brief, brand, audience context or supplied references. Flag inappropriate or conflicting expression with concrete examples and a stated basis. Distinction means authored fit, not novelty or unsupported claims about competitors. |
 | Restraint and emphasis | Which decisions strengthen the concept and which compete, repeat or distract? Restraint can mean a clearer expressive hierarchy within a rich design; it does not require minimalism. |
 
 Develop the decisive relationships rather than listing every cosmetic detail. Explain the chain from visible detail to perceptual effect, then fit with intent and a practical response. Name the guideline principle and why it applies. A mismatch may span domains: an image crop, heading scale and accent colour can compete for the same emphasis. Trace repeated symptoms to a shared cause where supported.
+
+Use the UX findings for misleading wording, task comprehension and behavioral consistency. Add the aesthetic consequence when the same issue weakens hierarchy, coherence or brand expression, and link the findings rather than repeating the audit. Missing brand guidance limits a brand-fit judgment; label an interpretation or ask about consequential intent instead of inventing a brand rule.
 
 Preserve successful asymmetry, tension, density, eclecticism and intentional exceptions when they serve the work. Do not homogenize the design into a preferred style. Include relevant sizes, states, themes, languages or real-size proofs when available. Mark uninspected conditions. Use measurements to settle measurable claims, with source and conditions, while keeping estimates and proposed values distinct. Never infer exact design units or font metrics from scaled screenshots.
 

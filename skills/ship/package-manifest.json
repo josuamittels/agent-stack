@@ -4,7 +4,7 @@
   "name": "ship",
   "version": "0.9.0",
   "status": "experimental",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -441,7 +441,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "487d435dd46584f8583503d511c648b87fddb30b36397c806dba9c8e49c3f19e",
+      "sha256": "848e372643be86cb698d8e2b66a59a6fc66740463d052e4fc011c3ab1d2470fe",
       "mode": 420
     }
   }

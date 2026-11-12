@@ -4,7 +4,7 @@
   "name": "translate",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -81,7 +81,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "b0d16e44e5f091685715e1e4c394ad794f840d09ffc40c640e4e902549731a15",
+      "sha256": "01466cfaed930d44f6b33341f304b2470c2ddd42e258c4d19388cecb65eda2a1",
       "mode": 420
     }
   }

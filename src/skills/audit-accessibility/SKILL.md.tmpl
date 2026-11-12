@@ -1,7 +1,7 @@
 ---
 name: "audit-accessibility"
 description: "Audit a supplied interface, design, infographic, document, or media artifact against applicable accessibility standards. Fill a modular report.md with evidenced criterion outcomes, transparent scores, and prioritized remediation and verification actions."
-version: "0.1.0"
+version: "0.1.1"
 created: "2026-11-12"
 updated: "2026-11-12"
 author:
@@ -60,6 +60,8 @@ A screenshot supports its visible state. It cannot establish hidden content, foc
 ### 3. Assess the selected criteria
 
 Apply the status and severity rubrics in [rubric.md](references/rubric.md). Keep observations, criterion interpretations, and user-impact hypotheses distinguishable. Evaluate the complete condition and its exceptions. Product preferences and advisory improvements do not become normative failures.
+
+Include the access implications of unclear hierarchy, inconsistent identification/navigation, and ambiguous or misleading headings, labels and instructions when applicable. Use the owning guide to select the actual requirements for structure/relationships, meaningful sequence, descriptive text, consistent behavior and instructions; inspect semantics and operation when the decision depends on them. Visual emphasis alone does not establish semantic hierarchy. Tie a failure to the criterion's complete condition, and keep broader language or brand-tone concerns advisory unless an applicable requirement is demonstrably unmet.
 
 Retain case-level evidence and assign one aggregate outcome per criterion over its declared scope. A confirmed failing case means not fulfilled even if other cases pass. Without a failure, incomplete required evidence means unknown. Fulfilled requires adequate evidence across scoped cases. Not applicable needs a supported scope reason, not absence from a crop. Do not count each passing instance as a separate criterion or average away a failure.
 

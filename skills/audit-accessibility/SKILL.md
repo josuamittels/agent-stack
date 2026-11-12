@@ -6,9 +6,9 @@ description: Audit a supplied interface, design, infographic, document, or media
   remediation and verification actions.
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   status: experimental
-  stack-version: 0.49.0
+  stack-version: 0.49.1
   distribution: release
 ---
 

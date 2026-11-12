@@ -4,7 +4,7 @@
   "name": "create-docs",
   "version": "0.6.0",
   "status": "experimental",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -366,7 +366,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "c709167b20b87bb944142452f1ec2dce309c43aba24fde0cc60429340eeaf7fd",
+      "sha256": "d02f6642182055da67bcedfc73f043fb7a4e2f458873709a480d06d6bcfff013",
       "mode": 420
     }
   }

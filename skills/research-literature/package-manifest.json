@@ -4,7 +4,7 @@
   "name": "research-literature",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "34fa3141bb5e0f0e047687c9c72f0f14e8363b5d55a57fdf4b0410fb1aad5070",
+      "sha256": "5b9045bf1bee8e359fa10bf3bfb5ffb6138c1711b2797ffe6d48ba02b9adcc7d",
       "mode": 420
     }
   }

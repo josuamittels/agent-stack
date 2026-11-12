@@ -54,6 +54,8 @@ not an invented usability percentage or a substitute for observed-user testing. 
 
 {{Include successful decisions and justify exclusions. Avoid mechanically adding every heuristic or treating an aesthetic preference as a usability defect.}}
 
+{{Explicitly cover task/information hierarchy, consistency, and language where relevant. State whether each is supported, problematic, unknown or outside scope using the outcomes above. For hierarchy, identify the intended priority and competing cues. For inconsistency, compare concrete equivalent instances and explain any justified variation. For language, quote the text, identify the ambiguity, misleading implication or mismatch with users/brand context, and compare with available behavior or evidence. Link findings to concrete changes, suggested replacement wording and verification; keep unresolved user or brand context visible.}}
+
 ## Accessibility sub-audit
 
 | Item | Result |
@@ -96,7 +98,7 @@ not an invented usability percentage or a substitute for observed-user testing. 
 <!-- OPTIONAL MODULE: UI navigation, forms, controls and dynamic states. -->
 ## Interface behavior and continuity
 
-{{Assess relevant orientation/navigation, input and commitment, state feedback, recovery, help, interruptions and return paths. Include unavailable states as unknown. Reference task/finding/evidence IDs rather than repeat all findings.}}
+{{Assess relevant orientation/navigation, input and commitment, state feedback, recovery, help, interruptions and return paths. For relevant features/options, compare expected and actual placement/grouping, availability, behavior, scope and defaults. State the user evidence or convention behind the expectation; label untested expectations as hypotheses and unavailable behavior/states as unknown. Link mismatches to task consequences, concrete changes and verification. Reference task/finding/evidence IDs rather than repeat all findings.}}
 
 <!-- OPTIONAL MODULE: when learning or frequent/expert work changes the design. -->
 ## Learning and repeat use

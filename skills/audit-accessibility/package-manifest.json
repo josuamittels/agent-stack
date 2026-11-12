@@ -2,9 +2,9 @@
   "schema_version": 1,
   "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
   "name": "audit-accessibility",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "experimental",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "name": "audit-accessibility",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "status": "experimental"
     },
     {
@@ -63,9 +63,9 @@
     "src/guidelines/languages/german.md": "55d99dc4c432d5259254882b5cd18647485060080c2eaf551ccbc6c3ca7d7d3e",
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/audit-accessibility/SKILL.md.tmpl": "97ea0c3afd5345902b15f2457fec675e373a23f7ffd2af00c57c470c3a96e828",
+    "src/skills/audit-accessibility/SKILL.md.tmpl": "24c356773644392c312a20770c666c0e7e2722480de9aad32d1701def5321ce5",
     "src/skills/audit-accessibility/references/rubric.md": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
-    "src/skills/audit-accessibility/templates/report.md": "2bb61f48501e18bde91ae05a34ba2312a79898dc0a6e22d2dc48d0b47c31f152",
+    "src/skills/audit-accessibility/templates/report.md": "a5c521be9b306a8de06e2c621eb1cb4bbb1700b17b0578ccc94fd19a22fdb780",
     "src/skills/check-colour-contrast/SKILL.md.tmpl": "be0c848279a150205075641c8661cf7d75a280d69c8b7f065f366a19317e5529",
     "src/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
@@ -178,7 +178,7 @@
       "mode": 420
     },
     "references/_stack/skills/audit-accessibility/instructions.md": {
-      "sha256": "e57dd5e49d13a137f95a826461e0a8b66c95e2350f9af75ffe422aaf556493ec",
+      "sha256": "3fe3e17c753d4d6aa9dd5af0220f0d684fe8005f616d37982a09ceea9fb44dd4",
       "mode": 420
     },
     "references/_stack/skills/audit-accessibility/references/rubric.md": {
@@ -186,7 +186,7 @@
       "mode": 420
     },
     "references/_stack/skills/audit-accessibility/templates/report.md": {
-      "sha256": "2bb61f48501e18bde91ae05a34ba2312a79898dc0a6e22d2dc48d0b47c31f152",
+      "sha256": "a5c521be9b306a8de06e2c621eb1cb4bbb1700b17b0578ccc94fd19a22fdb780",
       "mode": 420
     },
     "references/_stack/skills/check-colour-contrast/instructions.md": {
@@ -226,7 +226,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "f6c6579be2c5600fcd26cba97550615b8e61749f8f7f450788db2e7365cff500",
+      "sha256": "b5d59cb259b17290d179a8d4285834ab4bb221a1365dc076672d651ce50e3541",
       "mode": 420
     }
   }

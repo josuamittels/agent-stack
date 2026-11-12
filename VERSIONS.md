@@ -6,7 +6,7 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.49.0` |
+| Version | `0.49.1` |
 | Status | `experimental` |
 | Recorded | `2026-11-12` |
 | Release date | Not released |
@@ -47,9 +47,9 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/guidelines/wireframes/reference.md` | `0.1.0` | `experimental` |
 | Skill | `src/skills/answer-interview/SKILL.md.tmpl` | `2.0.1` | `stable` |
 | Discipline | `src/skills/ask-user-question/SKILL.md.tmpl` | `1.0.0` | `stable` |
-| Skill | `src/skills/audit-accessibility/SKILL.md.tmpl` | `0.1.0` | `experimental` |
-| Skill | `src/skills/audit-design/SKILL.md.tmpl` | `0.2.0` | `experimental` |
-| Skill | `src/skills/audit-ux/SKILL.md.tmpl` | `0.1.0` | `experimental` |
+| Skill | `src/skills/audit-accessibility/SKILL.md.tmpl` | `0.1.1` | `experimental` |
+| Skill | `src/skills/audit-design/SKILL.md.tmpl` | `0.2.1` | `experimental` |
+| Skill | `src/skills/audit-ux/SKILL.md.tmpl` | `0.1.1` | `experimental` |
 | Discipline | `src/skills/browse-skills/SKILL.md.tmpl` | `1.1.0` | `experimental` |
 | Discipline | `src/skills/check-colour-contrast/SKILL.md.tmpl` | `1.1.0` | `stable` |
 | Skill | `src/skills/compose-career-profile/SKILL.md.tmpl` | `1.1.1` | `stable` |

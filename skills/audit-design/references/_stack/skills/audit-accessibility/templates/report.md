@@ -44,6 +44,8 @@ score-table machine labels stay stable; surrounding prose can be translated. -->
 
 {{Use one row per selected criterion with the criterion source/level and exact condition available through the linked source or notes. Full web AA baseline retains all 55 A/AA rows. Group by principle/category, or place a long register in an appendix. Keep advisory practices separate. Every fulfilled and N/A row needs evidence/rationale too.}}
 
+{{Where applicable, include hierarchy/structure and reading sequence, descriptive headings/labels/instructions, and consistent identification/navigation. Record exact wording or compared instances and the evidence needed for semantic or behavioral judgments. Keep language or brand preferences outside required scores unless the full applicable criterion is unmet.}}
+
 | ID and source/level | Required/advisory | Outcome | Evidence and rationale | Finding or next check |
 | --- | --- | --- | --- | --- |
 | {{criterion ID, source link, level}} | {{basis}} | {{Fulfilled / Not fulfilled / Unknown / Not applicable}} | {{evidence IDs, conditions/exceptions, observed result}} | {{finding IDs or specific verification}} |

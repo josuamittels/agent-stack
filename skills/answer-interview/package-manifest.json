@@ -4,7 +4,7 @@
   "name": "answer-interview",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.49.0",
+  "stack_version": "0.49.1",
   "channel": "release",
   "dependencies": [
     {
@@ -536,7 +536,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "14ceb80cc9d31a06badcb9f35bd18f3c1ab94b5808d30cae60f5ba2cb54a33fc",
+      "sha256": "d2aeba7305ec736ea05d40ea8af4baad7d5e9b519a43addd362eead5197c5cee",
       "mode": 420
     }
   }
