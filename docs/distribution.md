@@ -4,7 +4,13 @@ Read the [hosted documentation](https://agents.mittels.org) for capability guide
 
 ## Current availability
 
-Agent Stack is available on GitHub and remains experimental at version 0.48.1. `src/catalog.yaml` declares 31 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
+Agent Stack is available on GitHub and remains experimental at version 0.49.0. `src/catalog.yaml` declares 31 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
+
+## Hosted documentation updates
+
+The documentation website at [agents.mittels.org](https://agents.mittels.org) is a static export. From `docs/`, run `npm run deploy` to build Next.js, generate Pagefind and the sitemap, upload changed public files over explicit FTPS, and verify representative live content. Python 3.10+ must be available as `python` on PATH. Use `npm run build` followed by `npm run start` for a local static preview.
+
+The local profile is `src/skills/create-docs/.env.local`, created from the blank example in that directory. Actual connection values stay local and ignored. Root `AGENTS.md` records the owner's standing authorization for routine updates to this existing site. The publisher checks destination ownership, retains unrelated and obsolete remote files, and records results under `.local/docs-deploy/`. Consult the [deployment reference](../src/skills/create-docs/references/deployment.md) for first-setup collisions, protocol requirements, and verification limits.
 
 The stack itself must be non-draft before release archives can be prepared for publication. Experimental stacks may ship at 0.y.z; stable stacks require version 1.0 or later. Builds never promote lifecycle statuses. Preview packages are local development artifacts, not public releases.
 

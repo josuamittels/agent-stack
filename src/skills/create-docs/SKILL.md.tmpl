@@ -1,9 +1,9 @@
 ---
 name: create-docs
 description: "Create evidence-grounded documentation in root/docs for people who use a repository's product or resources. Explain its structure, components, and supported use; do not default to contributor or maintainer manuals."
-version: "0.5.0"
+version: "0.6.0"
 created: "2026-10-28"
-updated: "2026-10-28"
+updated: "2026-11-12"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -122,11 +122,19 @@ Check navigation, links and anchors, assets, examples, code fences, headings, an
 
 Prepare the invocation evidence described in [verification evidence](references/verification-evidence.md). Capture complete rendered HTML for each documentation page when a renderer is available. This supports deterministic page reachability and fragment checks. If rendering is unavailable, preserve the authored files and report the gap. Do not fabricate HTML evidence. Keep temporary previews and evaluation records out of published docs.
 
-### 6. Validate implementation
+### 6. Publish to an authorized configured destination
+
+When the request or established project instructions authorize hosted documentation updates, read [deployment](references/deployment.md) and complete that build/upload workflow after the documentation checks. A local profile supplies connection values; it does not by itself authorize a new external destination. Reuse the owner's standing authorization for routine updates to the same site instead of asking again. Preserve the generic generation-only behavior for projects without authorized publication.
+
+Build the current site for its actual hosting model, including search. Upload only public output, then verify the live homepage, changed nested routes, assets, redirects and a real search result. Keep configured credentials in an ignored local environment file in the responsible skill directory, outside the build output and public packages. Do not print their values. Report build, upload and live verification separately; a successful upload alone does not establish that the site works.
+
+For this Agent Stack repository, the hosted-documentation instructions in its root `AGENTS.md` establish the recurring deployment target and authorization. Use its local profile, not another project's credentials. Required publication failures remain unfinished work; continue unaffected verification and report a precise blocker when the destination cannot be updated.
+
+### 7. Validate implementation
 
 
 When invoked as a helper, return to the owning workflow without separate evaluation. For a skill with meaningful, deterministic, task-specific checks, invoke [Spawn Evals](../spawn-evals/SKILL.md.tmpl) once with a structured invocation record containing the original request, resolved constraints and their source, complete UTF-8 outputs, and machine-readable evidence. Its objective package in `src/evals/create-docs/` defines only those checks. Report PASS, FAIL, or NOT PASSED — UNVERIFIED with the failing or unavailable verification steps. Do not use model judges, sub-agents, qualitative assessments, weighted scores, or synthetic scenarios. If no package exists for an objectively checkable skill, report NOT PASSED — UNVERIFIED; do not create one during an ordinary skill invocation. If no meaningful objective check is possible for this skill, omit this entire validation section and all Spawn Evals references from the skill.
 
 ## Output
 
-Return the docs location and landing page, selected mode, end-user audience, covered components and outcomes, target revision, and verification results with precise limits. For capability repositories, report inventory coverage and distinguish available components from planned or excluded resources. For interactive output, include the working directory, resolved package versions or lockfile, and exact install, development, build, and start commands. Name remaining evidence gaps and the nonpublished authoring record. State whether reader validation occurred. Do not publish unless requested.
+Return the docs location and landing page, selected mode, end-user audience, covered components and outcomes, target revision, and verification results with precise limits. For capability repositories, report inventory coverage and distinguish available components from planned or excluded resources. For interactive output, include the working directory, resolved package versions or lockfile, and exact install, development, build, and preview commands. For authorized publication, include the live URL, actual deployment result and live verification limits. Name remaining evidence gaps and the nonpublished authoring record. State whether reader validation occurred. Publish only within the current request or established project authorization.

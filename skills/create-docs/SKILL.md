@@ -5,9 +5,9 @@ description: Create evidence-grounded documentation in root/docs for people who
   and supported use; do not default to contributor or maintainer manuals.
 license: MIT
 metadata:
-  version: 0.5.0
+  version: 0.6.0
   status: experimental
-  stack-version: 0.48.1
+  stack-version: 0.49.0
   distribution: release
 ---
 

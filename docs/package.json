@@ -4,8 +4,9 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-		"start": "next start",
+		"postbuild": "node scripts/postbuild.mjs",
+		"deploy": "python ../src/skills/create-docs/scripts/deploy_docs.py --project-root ..",
+		"start": "python -m http.server 3000 --bind 127.0.0.1 --directory out",
 		"postinstall": "node scripts/patch-nextra-layout.mjs"
 	},
 	"dependencies": {

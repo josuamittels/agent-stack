@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
+  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
   "name": "ship",
   "version": "0.9.0",
   "status": "experimental",
-  "stack_version": "0.48.1",
+  "stack_version": "0.49.0",
   "channel": "release",
   "dependencies": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "name": "create-docs",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "experimental"
     },
     {
@@ -122,9 +122,12 @@
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
     "src/skills/browse-skills/SKILL.md.tmpl": "b309faed29740c25e8e21b61c799f9b7a93749965544e85e88311ff96a164d7b",
-    "src/skills/create-docs/SKILL.md.tmpl": "ca256b84aa85013561d9bf97ff27e47ffc0b81220349af6fd6c99e969a6400e5",
+    "src/skills/create-docs/.env.example": "fb146b760aa7b8a6ba1fcc93560690409c560619b3c63ff19c3f3da856f19d9e",
+    "src/skills/create-docs/SKILL.md.tmpl": "3ea888c27df60ac885c0dd9a021acf7ef0af7bbebb7d89c1f65cc6fc7bca76ba",
+    "src/skills/create-docs/references/deployment.md": "90416435ff325b4c491a6e4be7a16e797cd644bbd6c8f4d23a6cab81fb4aacdd",
     "src/skills/create-docs/references/nextra-docs.md": "8729859b78721e4a556ba8f182c571a744018647337aa766288669539111b31e",
     "src/skills/create-docs/references/verification-evidence.md": "e1623d9e653754d62b6a76905dfd7cc461da287591604757e4c09b3d0c595b7c",
+    "src/skills/create-docs/scripts/deploy_docs.py": "bf5f5c33df1f18fdde66cc605bf70a2bb2596d525d221b8035e3bc8c15b949f8",
     "src/skills/create-docs/templates/nextra/.gitignore": "18dd06bc8b16ce0562945823ec6e122df6e0fc7b369c1a362b0ccf18db741c14",
     "src/skills/create-docs/templates/nextra/app/layout.jsx": "08c3af3406fb85fea778f66cfe08c616fabd6c6971665992fc512d1055f6cfd1",
     "src/skills/create-docs/templates/nextra/docs.config.js": "30e98e2ca81fb8ccf7ab316aebb6d810d450a985b70e36d2cebc092d7c54631c",
@@ -140,7 +143,7 @@
     "src/skills/pre-mortem/SKILL.md.tmpl": "8d9b42b2417c1f00f361443d03a4b7765ba59cf59bd0262db8a5901e2e42eb24",
     "src/skills/release-agent-stack/SKILL.md.tmpl": "c1096ee9fc32425d9240ad2bb6d49700e6b477a5c35ae0f37680ec810ddf56de",
     "src/skills/ship/SKILL.md.tmpl": "d84266a6a2dade6813f8e4d70936840f2e3fbba24c6fe4e126947a8fb4f1c961",
-    "src/skills/skill-issue/SKILL.md.tmpl": "148065fae8d0991db8768481f357ae38baa1478365c8a668fbb5615d2914fbb2",
+    "src/skills/skill-issue/SKILL.md.tmpl": "7a73eb7b77b508ae23c9d280ca7a7bdc41d4924d844930d931668b660ccc9739",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
     "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
     "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
@@ -293,8 +296,16 @@
       "sha256": "513802a5c193e397a0aa4ee930cbfe5c74259500c568de4b8f2c58044017d9c6",
       "mode": 420
     },
+    "references/_stack/skills/create-docs/.env.example": {
+      "sha256": "fb146b760aa7b8a6ba1fcc93560690409c560619b3c63ff19c3f3da856f19d9e",
+      "mode": 420
+    },
     "references/_stack/skills/create-docs/instructions.md": {
-      "sha256": "0cde3328b108f581a03aaf8853b0bc752b6fca6e2a697f80679efb3e1fcbe332",
+      "sha256": "7469b0e89187b10895a6139b52faf77183fb04d426391cff6d3c75560d55b5d1",
+      "mode": 420
+    },
+    "references/_stack/skills/create-docs/references/deployment.md": {
+      "sha256": "45232594de672abc63983eb1d10f45633d343c369f9fc080eb4056f0a6076c34",
       "mode": 420
     },
     "references/_stack/skills/create-docs/references/nextra-docs.md": {
@@ -303,6 +314,10 @@
     },
     "references/_stack/skills/create-docs/references/verification-evidence.md": {
       "sha256": "e1623d9e653754d62b6a76905dfd7cc461da287591604757e4c09b3d0c595b7c",
+      "mode": 420
+    },
+    "references/_stack/skills/create-docs/scripts/deploy_docs.py": {
+      "sha256": "bf5f5c33df1f18fdde66cc605bf70a2bb2596d525d221b8035e3bc8c15b949f8",
       "mode": 420
     },
     "references/_stack/skills/create-docs/templates/nextra/.gitignore": {
@@ -426,7 +441,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "af4ab96830d9d9d60baae4a00fc65ea4069a34e93e10eda2b0672add20033c98",
+      "sha256": "487d435dd46584f8583503d511c648b87fddb30b36397c806dba9c8e49c3f19e",
       "mode": 420
     }
   }

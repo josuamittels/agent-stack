@@ -1,0 +1,3 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+RedirectMatch 301 ^/capabilities/disciplines/natural-writing/?$ /capabilities/disciplines/write/

@@ -469,6 +469,9 @@ skills:
     optional: []
     routes: []
     files:
+      - skills/create-docs/.env.example
+      - skills/create-docs/references/deployment.md
+      - skills/create-docs/scripts/deploy_docs.py
       - skills/create-docs/references/nextra-docs.md
       - skills/create-docs/references/verification-evidence.md
       - skills/create-docs/SKILL.md.tmpl

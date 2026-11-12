@@ -3,12 +3,8 @@ import { fileURLToPath } from 'node:url'
 
 const withNextra = nextra({})
 export default withNextra({
+  output: 'export',
+  trailingSlash: true,
+  images: { unoptimized: true },
   turbopack: { root: fileURLToPath(new URL('.', import.meta.url)) },
-  async redirects() {
-    return [{
-      source: '/capabilities/disciplines/natural-writing',
-      destination: '/capabilities/disciplines/write',
-      permanent: true,
-    }]
-  },
 })

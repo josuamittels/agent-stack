@@ -25,3 +25,7 @@ sources/*
 /.next/
 /docs/.next/
 /docs/public/_pagefind/
+/docs/out/
+
+# Local documentation hosting profile.
+/src/skills/create-docs/.env.local

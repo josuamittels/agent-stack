@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "3f8ad8689e1d20a05c03765587101080e75099795014dfff492b83eacd83a080",
+  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
   "name": "browse-skills",
   "version": "1.1.0",
   "status": "experimental",
-  "stack_version": "0.48.1",
+  "stack_version": "0.49.0",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "1ab53a50912c760e478a91505bef1ece3e3cf53b8424eef5d4736f2cf45bfa50",
+      "sha256": "5fb9127ae66d947229fdbd9044f8476b024ff71d36a3d7510171c22d673fa60a",
       "mode": 420
     }
   }

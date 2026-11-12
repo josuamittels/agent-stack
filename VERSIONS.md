@@ -6,7 +6,7 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.48.1` |
+| Version | `0.49.0` |
 | Status | `experimental` |
 | Recorded | `2026-11-12` |
 | Release date | Not released |
@@ -57,7 +57,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/skills/compose-voice-profile/references/professional-voice-profile.md` | `2.0.0` | `stable` |
 | Discipline | `src/skills/convert-colour/SKILL.md.tmpl` | `1.1.0` | `stable` |
 | Skill | `src/skills/create-cv/SKILL.md.tmpl` | `2.0.1` | `stable` |
-| Skill | `src/skills/create-docs/SKILL.md.tmpl` | `0.5.0` | `experimental` |
+| Skill | `src/skills/create-docs/SKILL.md.tmpl` | `0.6.0` | `experimental` |
 | Reference | `src/skills/create-docs/references/nextra-docs.md` | `0.2.0` | `experimental` |
 | Skill | `src/skills/create-guidelines/SKILL.md.tmpl` | `0.6.0` | `experimental` |
 | Skill | `src/skills/create-skill/SKILL.md.tmpl` | `0.14.0` | `experimental` |

@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add configured documentation publication through Create Docs, with static export, built search and sitemap, verified explicit FTPS uploads, and live-content checks. Keep connection values in an ignored local profile and preserve unrelated remote files.
+
 - Add experimental [Audit Design](src/skills/audit-design/SKILL.md.tmpl), [Audit UX](src/skills/audit-ux/SKILL.md.tmpl), and [Audit Accessibility](src/skills/audit-accessibility/SKILL.md.tmpl). Review supplied artifacts with a layered aesthetic, task, and access assessment; receive linked reports, evidence limits, and one prioritized action plan.
 
 - Add the experimental [Infographics guide](src/guidelines/aesthetics/infographics.md) for charts, diagrams, geographic maps, and metro schematics, with explicit domain boundaries and links from related aesthetic guides.
