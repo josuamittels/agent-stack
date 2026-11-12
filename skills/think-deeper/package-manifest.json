@@ -4,7 +4,7 @@
   "name": "think-deeper",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.50.0",
+  "stack_version": "0.51.0",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8d65d6d04ffdd240ec342a915043f33246b8f6a653c3f48371b36a8a61487564",
+      "sha256": "c141c116275f33280e8670b101e273e785ada5b65805c5bdef111dc79fdc4bd1",
       "mode": 420
     }
   }

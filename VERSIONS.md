@@ -6,7 +6,7 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.50.0` |
+| Version | `0.51.0` |
 | Status | `experimental` |
 | Recorded | `2026-11-13` |
 | Release date | Not released |
@@ -66,7 +66,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Discipline | `src/skills/mind-wandering/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/pre-mortem/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Discipline | `src/skills/quit-the-yap/SKILL.md.tmpl` | `0.3.0` | `experimental` |
-| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.7.0` | `experimental` |
+| Discipline | `src/skills/release-agent-stack/SKILL.md.tmpl` | `0.8.0` | `experimental` |
 | Discipline | `src/skills/research-literature/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Reference | `src/skills/research-literature/references/arxiv-docs.md` | `1.0.0` | `stable` |
 | Reference | `src/skills/research-literature/references/crossref-docs.md` | `1.0.0` | `stable` |
@@ -86,7 +86,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/skills/research/references/workflow.md` | `1.0.0` | `stable` |
 | Skill | `src/skills/setup-agent-stack/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Skill | `src/skills/setup-career-stack/SKILL.md.tmpl` | `2.0.1` | `stable` |
-| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.9.0` | `experimental` |
+| Skill | `src/skills/ship/SKILL.md.tmpl` | `0.10.0` | `experimental` |
 | Discipline | `src/skills/show-me-your-work/SKILL.md.tmpl` | `0.2.0` | `experimental` |
 | Router | `src/skills/skill-issue/SKILL.md.tmpl` | `1.0.0` | `stable` |
 | Discipline | `src/skills/spawn-evals/SKILL.md.tmpl` | `1.0.0` | `stable` |

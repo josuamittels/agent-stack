@@ -4,7 +4,7 @@
   "name": "audit-ux",
   "version": "0.1.1",
   "status": "experimental",
-  "stack_version": "0.50.0",
+  "stack_version": "0.51.0",
   "channel": "release",
   "dependencies": [
     {
@@ -246,7 +246,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "c441d8a8658d5f4752c4da89e8681f7dcedd17a69068ebfdfaea5d962e90d4c5",
+      "sha256": "4bb9baf95637414cb19db728ab77f7f246efeabde89d2e1084645a5bbf3497e8",
       "mode": 420
     }
   }

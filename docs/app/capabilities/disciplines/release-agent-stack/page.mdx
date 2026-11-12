@@ -3,7 +3,7 @@ title: "Release Agent Stack"
 ---
 # Release Agent Stack
 
-> **Discipline** · **experimental** · **v0.7.0** · updated 2026-11-11
+> **Discipline** · **experimental** · **v0.8.0** · updated 2026-11-13
 
 ## Purpose
 
@@ -16,11 +16,13 @@ Use Release Agent Stack through the stack’s release route to reconcile compone
 3. **Refresh discovery as needed.** Update the map and routing catalog only when the released changes require it, then report the resulting state.
 4. **Update the user docs.** Run [Create Docs](/capabilities/skills/create-docs) on every release against the final change set. Update pages and navigation for user-facing changes; when a release appears internal-only, have Create Docs confirm whether any user docs need changes.
 
+5. **Build the packages.** Run the shipping build and full preview build to generate self-contained skills, individual and full-stack archives, native plugins, marketplace catalogs, and checksums. Non-draft stacks also generate release packages containing experimental and stable components. Draft components remain excluded; stable stacks require version 1.0 or later. Verify checksums before handing the candidate to Ship.
+
+6. **Plan the authorized Codex refresh.** After a successful push, have [Ship](/capabilities/skills/ship) refresh the global Codex installation from that exact revision when the user or repository instructions authorize it. Include newly shipped experimental and stable skills, exclude drafts, and verify installed files against the shipping packages.
+
 ## Inputs
 
 Use the confirmed repository root and identity evidence, original ship request, exact task change set, working-tree and branch state, current `VERSIONS.md`, and any proposed version or lifecycle transition.
-
-5. **Build the packages.** Run the shipping build and full preview build to generate self-contained skills, individual and full-stack archives, native plugins, marketplace catalogs, and checksums. Non-draft stacks also generate release packages containing experimental and stable components. Draft components remain excluded; stable stacks require version 1.0 or later. Verify checksums before handing the candidate to Ship.
 
 Ship reviews the package-build evidence and runs the final required checks before committing. Artifacts stay local until a separately authorized publication.
 
@@ -34,7 +36,7 @@ The [Skill Issue router](/capabilities/router/skill-issue) can select this disci
 
 ## Version and changes
 
-Version **0.7.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/release-agent-stack/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.8.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/release-agent-stack/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

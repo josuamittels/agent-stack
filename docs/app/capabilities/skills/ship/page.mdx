@@ -3,7 +3,7 @@ title: "Ship"
 ---
 # Ship
 
-> **Skill** · **experimental** · **v0.9.0** · updated 2026-11-11
+> **Skill** · **experimental** · **v0.10.0** · updated 2026-11-13
 
 ## Purpose
 
@@ -17,6 +17,7 @@ Use Ship to prepare and deliver an authorized repository change through the targ
 
 For Agent Stack, Ship first applies Release Agent Stack’s metadata, discovery, and documentation updates, then has Release Agent Stack run `npm run build` and the full `npm run build:preview`. Non-draft stacks also run `npm run package`; experimental stacks may ship at 0.y.z, while stable stacks require version 1.0 or later. Shipped components retain their experimental or stable labels; drafts are excluded. Ship verifies the generated archive checksums and final required checks before each commit. Generated packages and installation documentation belong to the matching commit. Build failure stops delivery; this step does not promote statuses or publish artifacts.
 
+After a successful Agent Stack push, Ship also completes the global Codex refresh when authorized by the user or repository instructions. It installs the shipping catalog from the pushed revision, updating existing packages and adding newly shipped experimental and stable skills. It verifies the installed files and reports a refresh failure separately from the successful push.
 
 ## Inputs
 
@@ -32,7 +33,7 @@ The [Skill Issue router](/capabilities/router/skill-issue) selects this skill wh
 
 ## Version and changes
 
-Version **0.9.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/ship/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **0.10.0**; status **experimental**. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/ship/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

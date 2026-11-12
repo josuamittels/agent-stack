@@ -2,9 +2,9 @@
   "schema_version": 1,
   "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
   "name": "ship",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "status": "experimental",
-  "stack_version": "0.50.0",
+  "stack_version": "0.51.0",
   "channel": "release",
   "dependencies": [
     {
@@ -39,12 +39,12 @@
     },
     {
       "name": "release-agent-stack",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "status": "experimental"
     },
     {
       "name": "ship",
-      "version": "0.9.0",
+      "version": "0.10.0",
       "status": "experimental"
     },
     {
@@ -141,8 +141,8 @@
     "src/skills/create-skill/references/authoring.md": "5d1f5029c740f20f583e64fbcdb7853f596b916f78635ed1511c2f5e0479555f",
     "src/skills/create-skill/templates/SKILL.md.tmpl": "d05822adb21a27579af3c4680c47c8ab9afb597cb94051ce6163b28d34c77216",
     "src/skills/pre-mortem/SKILL.md.tmpl": "8d9b42b2417c1f00f361443d03a4b7765ba59cf59bd0262db8a5901e2e42eb24",
-    "src/skills/release-agent-stack/SKILL.md.tmpl": "c1096ee9fc32425d9240ad2bb6d49700e6b477a5c35ae0f37680ec810ddf56de",
-    "src/skills/ship/SKILL.md.tmpl": "d84266a6a2dade6813f8e4d70936840f2e3fbba24c6fe4e126947a8fb4f1c961",
+    "src/skills/release-agent-stack/SKILL.md.tmpl": "78593390cb23b98a280fdf34a98239a8b86c9a97901d2b22e3bec53c89886570",
+    "src/skills/ship/SKILL.md.tmpl": "f31b7d4de19974edd46d2ffcff6c9b51170d352ec58e37a30df66431e37172d8",
     "src/skills/skill-issue/SKILL.md.tmpl": "496d8a9cdda56b41b9c1e07530b552f82a47c32e3f0646263a88d6aeb7266ac9",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
     "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
@@ -373,11 +373,11 @@
       "mode": 420
     },
     "references/_stack/skills/release-agent-stack/instructions.md": {
-      "sha256": "4811e155fb0b3b518539ea13572aa0f8b81c26b9d4948439bf1bd089c8d46fea",
+      "sha256": "ba7c78d5b6493c6f43ea62002ffae01bfa1064ce8cf71f184674f5f7d7d3d6be",
       "mode": 420
     },
     "references/_stack/skills/ship/instructions.md": {
-      "sha256": "f6baf2c5cf292c343b94ed03dfaff4f2715a02817edba15193c980792da43f6b",
+      "sha256": "768f465e96cf196714d9bad77681251b7debdf120c6603093ce49e04051dae6b",
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
@@ -441,7 +441,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "ab262ed247b09dc43b72b90a4a337a1d1e1ea0cf9048ebfe3e01895dccd98d60",
+      "sha256": "c1087530e8b4fe39fa62783a747bf39f0ae4c0b7bb3d55a922821f8256f1f354",
       "mode": 420
     }
   }

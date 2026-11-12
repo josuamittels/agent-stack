@@ -4,7 +4,7 @@ Read the [hosted documentation](https://agents.mittels.org) for capability guide
 
 ## Current availability
 
-Agent Stack is available on GitHub and remains experimental at version 0.50.0. `src/catalog.yaml` declares 32 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
+Agent Stack is available on GitHub and remains experimental at version 0.51.0. `src/catalog.yaml` declares 32 public candidates and three internal maintenance capabilities. Shipping includes experimental and stable candidates together with their non-draft bundled dependencies and guidance. Deprecated components remain available for compatibility. Draft candidates and consumers with draft required or conditional dependencies are excluded. Lifecycle labels remain visible; inclusion does not promote an experimental component to stable.
 
 ## Hosted documentation updates
 
@@ -135,6 +135,8 @@ npx skills remove translate
 Use the matching project/global scope options for the installed copy. Updating a skill replaces its bundled helpers together. Updating a separately installed helper does not change another skill’s pinned internal handoff.
 
 For reproducible installation or rollback, use the full GitHub tree URL containing an existing release tag, for example `https://github.com/josuamittels/agent-stack/tree/v1.0.0/skills/translate`. The example tag must exist; none is created by this implementation. Retain the project’s skill lockfile where the CLI supports it. For another host’s plugin manager, use its supported version/update controls rather than editing its cache.
+
+For this repository, `AGENTS.md` authorizes a global Codex refresh after each successful push. Ship installs the eligible shipping catalog from the pushed revision, updating existing Agent Stack skills and installing newly shipped experimental and stable skills together. It verifies installed files against the pushed packages and reports installation failures separately from Git delivery. Other skills and hosts remain outside this refresh.
 
 Updating installed skills does not mean installing new skills added to the catalog. To refresh the complete current set, rerun the full-set installation command. Do not install the same catalog through multiple managers at the same scope; choose one update owner.
 

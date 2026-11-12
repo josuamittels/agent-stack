@@ -1,9 +1,9 @@
 ---
 name: "ship"
 description: "Ship a reviewed change by following the target repository's release, changelog, test, and Git workflow. Use when asked to ship, release, push, or create or update a pull request."
-version: "0.9.0"
+version: "0.10.0"
 created: "2026-10-26"
-updated: "2026-11-11"
+updated: "2026-11-13"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -102,11 +102,13 @@ For a direct branch push, push only when explicitly requested or required by the
 
 For a pull request or merge request, confirm the host CLI and authentication before publishing. Check for an existing request from the branch and update it only as needed; otherwise create one with a concise title and a body that summarizes the change, checks, and known gaps. Do not let the host CLI perform an implicit push; push the reviewed ref explicitly, then create or update the request. If the request cannot be created after the branch push, report the pushed branch and failure without attempting destructive cleanup.
 
+After a successful Agent Stack push, complete the global Codex refresh returned by Release Agent Stack when the user or repository instructions authorize it. Use its pushed-revision shipping catalog, source-scoped installation, and file verification procedure. Treat a required refresh failure as unfinished work and report it separately from the successful push. Reuse standing authorization without asking again.
+
 Stop at the user’s requested or repository-defined boundary. Do not merge or publish a release just because the PR is open or its checks are green.
 
 ### 7. Report the delivery
 
-Report the repository and target, release version and changelog updates if applicable, checks with their actual results, commit IDs, pushed ref, PR/MR URL, and any unavailable or pending work. Distinguish local commits from pushed commits and a created request from a merged or published release.
+Report the repository and target, release version and changelog updates if applicable, checks with their actual results, commit IDs, pushed ref, PR/MR URL, and any unavailable or pending work. Include required Codex installation or refresh results, source revision, package names, actual paths, and verification gaps. Distinguish local commits from pushed commits and a created request from a merged or published release.
 
 Include a machine-readable evidence object in the completion record when it helps verify delivery or when repository policy requires it:
 
@@ -137,6 +139,7 @@ Ship performs these completion checks directly against the final candidate and d
 - Confirm every required local check passed against the final candidate. If any source or metadata changed after a check, rerun that check. Keep skipped, unavailable, failed, and pending results distinct from passed results.
 - For a hosted request, confirm its target and latest head commit. Check remote status against that exact head and report any pending, failed, skipped, or unavailable checks accurately.
 - For Agent Stack, recheck that the identity gate was satisfied, the component inventory matches current frontmatter, and the completed Git actions match the lifecycle route returned by Release Agent Stack.
+- For an authorized Agent Stack Codex refresh, confirm newly shipped skills and existing shipping packages are globally installed from the pushed revision, with installed file contents verified. Keep a failed refresh distinct from successful Git delivery.
 - Confirm the final state is the one requested: local commit, pushed branch, open PR/MR, merged change, or published release. Do not report a later state than the evidence supports.
 
 If a mismatch appears, repair it within the authorized scope, rerun affected checks, and repeat this validation. If it cannot be resolved safely, stop and report the mismatch and current delivery state.

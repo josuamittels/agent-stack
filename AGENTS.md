@@ -37,3 +37,7 @@ The local hosting profile is `src/skills/create-docs/.env.local`. It is ignored 
 ## Git delivery
 
 Ship authorized changes in this repository by committing and pushing directly to `main`. This is the owner's standing delivery preference and overrides the topic-branch and pull-request defaults in Ship and Release Agent Stack. Do not ask again for confirmation of this route. Keep unrelated work out of commits and complete the required release checks before pushing.
+
+## Local Codex skills after delivery
+
+After every successful authorized push, install newly shipped experimental or stable skills globally for Codex and refresh existing Agent Stack skills from that pushed revision. This is the owner's standing authorization for routine global Codex installation and updates from this repository. Do not ask again. Follow Release Agent Stack's post-push refresh procedure for the complete eligible shipping catalog. Preserve unrelated skills and other hosts. A failed refresh remains incomplete even when the push succeeded.

@@ -31,6 +31,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Refresh the globally installed Agent Stack catalog for Codex after an authorized successful push, including newly shipped experimental and stable skills, with verification against the pushed packages.
+
 - Give the stack map an explicit white background for consistent display.
 
 - Clarify the experimental design, UX, and accessibility audits for hierarchy, consistency, and appropriate language. UX now explicitly compares feature placement and behavior with evidenced user expectations; report prompts require concrete examples, corrections, and verification.

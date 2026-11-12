@@ -5,9 +5,9 @@ description: Ship a reviewed change by following the target repository's
   push, or create or update a pull request.
 license: MIT
 metadata:
-  version: 0.9.0
+  version: 0.10.0
   status: experimental
-  stack-version: 0.50.0
+  stack-version: 0.51.0
   distribution: release
 ---
 

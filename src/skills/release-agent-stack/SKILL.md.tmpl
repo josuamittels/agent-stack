@@ -1,9 +1,9 @@
 ---
 name: "release-agent-stack"
 description: "Apply Agent Stack repository release rules to VERSIONS.md, the component inventory, lifecycle delivery gate, and capability discovery files. Invoke only when the Agent Stack identity markers match."
-version: "0.7.0"
+version: "0.8.0"
 created: "2026-10-26"
-updated: "2026-11-11"
+updated: "2026-11-13"
 author:
   - "Josua Mittelstaedt"
 references: []
@@ -13,7 +13,7 @@ status: "experimental"
 
 # Release Agent Stack
 
-Apply Agent Stack-specific release metadata and delivery rules for the general [Ship](../../skills/ship/SKILL.md.tmpl) skill. Return the exact edits and delivery route to Ship; do not perform Git commits, pushes, PR creation, merges, tags, or publication here.
+Apply Agent Stack-specific release metadata and delivery rules for the general [Ship](../../skills/ship/SKILL.md.tmpl) skill. Return the exact edits, delivery route, and applicable post-push installation procedure to Ship; do not perform Git commits, pushes, PR creation, merges, tags, or publication here.
 
 ## Scope
 
@@ -100,7 +100,7 @@ Verify every checksum entry in each distribution produced by this step against t
 
 ### 7. Return the delivery route to Ship
 
-Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, package-build commands and outcomes, output paths and checksum verification, unresolved decisions, and delivery route:
+Return the current version and the sequential proposed version after each planned commit, lifecycle status, changed paths grouped by commit, inventory reconciliation for each commit, capability-map/router updates, documentation changes and Create Docs verification results, package-build commands and outcomes, output paths and checksum verification, any authorized post-push Codex refresh from step 8, unresolved decisions, and delivery route:
 
 Apply the component-status gate in step 3 before any push. Draft components remain excluded; promotion requires an explicit lifecycle decision.
 
@@ -111,9 +111,21 @@ Apply the component-status gate in step 3 before any push. Draft components rema
 
 Treat any unknown or unsupported status as a blocker. Do not derive lifecycle status from the numeric version.
 
+### 8. Define the authorized post-push Codex refresh
+
+When the user or repository instructions authorize global Codex installation and updates, return this procedure to Ship as a required completion step after a successful push. Reuse standing authorization for the same repository and host. A release request alone does not authorize host installation in other projects. Skip this step for local-only delivery or a failed push.
+
+Use the successfully pushed commit and its generated `skills/catalog.json` as the installation source and eligible name list. Include newly shipped experimental and stable skills and refresh the rest of that shipping catalog, retaining deprecated packages only as allowed by its compatibility policy. Exclude drafts, blocked consumers, source templates, and preview packages. Resolve the verified Git repository source to that exact pushed revision rather than a moving branch or the dirty checkout.
+
+Inventory the global Codex installation with `npx --yes skills list -g -a codex --json`. Refresh with the skills CLI's `add` command, using the verified repository source at the pushed revision, `-g`, `-a codex`, `-y`, and `--skill` followed by the eligible names. When source discovery matches the shipping catalog exactly, `--skill '*'` is equivalent. Use the documented source syntax supported by the available CLI. Avoid `--all`, which selects other agents too. A blanket `skills update` does not discover newly added skills and its agent selection may extend beyond Codex. This source-scoped reinstall updates existing packages and installs new ones together.
+
+Verify the command result, rerun the global Codex inventory, and compare each installed package's complete file set and bytes with its generated package at the pushed commit. Inspect the actual destination reported by the CLI rather than assuming a host directory. Preserve unrelated and manually installed skills, system skills, and other hosts. Report a conflicting installation or shadowing duplicate instead of deleting it automatically.
+
+Return the source revision, commands and results, installed or refreshed names, actual destinations, and any failure to Ship. Installation becomes available to Codex on the next turn. If refreshing fails after a successful push, preserve the delivered commit and retry the installation within scope. Report delivery and installation separately until both required steps succeed.
+
 ## Output
 
-Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run. Return the completed package-build evidence with the final per-commit candidate to Ship. Ship reviews generated output and executes the final required checks before committing; report package generation separately from those pending checks.
+Return the identity check, current and proposed versions, status, exact `VERSIONS.md` changes, inventory comparison, applicable map/router results, required delivery route, and any blocker to Ship. Distinguish checks performed from checks Ship still needs to run. Return the completed package-build evidence with the final per-commit candidate to Ship. Ship reviews generated output and executes the final required checks before committing, then completes any authorized Codex refresh after pushing; report package generation separately from those pending checks.
 
 ## Distribution readiness
 
