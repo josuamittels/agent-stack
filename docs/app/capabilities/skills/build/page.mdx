@@ -1,0 +1,51 @@
+---
+title: "Build"
+---
+
+# Build
+
+> **Skill** · **experimental** · **v0.1.0** · updated 2026-11-13
+
+## Purpose
+
+Use Build to implement, repair, or refactor software and interfaces. It follows your project's instructions and language standards, removes superseded implementation, and checks the resulting behavior before handoff.
+
+## Inputs
+
+Provide the target project and the feature, defect, or refactoring outcome. Include acceptance criteria, platform constraints, and a design brief or reference when available. Build inspects existing setup, code, tests, and applicable `AGENTS.md` files before asking about consequential gaps.
+
+For example, ask Build to repair a form that loses entered values after a failed submission. Include the route and reproduction steps. It traces the failure, repairs state handling, removes the replaced path, adds appropriate regression coverage, and exercises the repaired flow in the running interface.
+
+## Workflow
+
+1. **Inspect the project.** Establish expected behavior, affected callers, local standards, existing failures, and planned checks. A read-only subagent investigates a bounded question when delegation is available and permitted.
+2. **Apply coding and design guidance.** Read the relevant TypeScript, Python, SQL, or Mermaid guide. For interfaces, inspect the existing system and supplied brief, then use the [aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework) to select interaction, accessibility, composition, and other relevant guidance.
+3. **Implement a coherent change.** Extend the project's structure, keep responsibilities and state ownership clear, and remove obsolete code, configuration, tests, and dependencies made unnecessary by the change.
+4. **Test according to risk.** Run applicable project checks. Add meaningful behavior and regression tests where warranted, and verify real integration boundaries when isolated tests would miss the failure. Small presentation changes receive rendered inspection without redundant tests.
+5. **Inspect the working result.** Open changed web interfaces in a real browser, inspect screenshots, and exercise the affected journey and relevant failure states. Use a simulator or device for native UI, or the actual command or service boundary for non-UI work.
+6. **Review and repair.** A subagent that did not author the implementation inspects the complete change and available runtime evidence. Resolve substantiated findings, rerun affected checks, and recheck material fixes before handoff.
+
+## Code policy
+
+Author no code comments, docstrings, TODO markers, commented-out implementations, or suppression directives. Explain the code through names, types, small functions, validation, and tests. Keep necessary rationale in external documentation. Preserve existing required legal notices and executable headers, report conflicts, and leave unrelated legacy comments outside the changed scope alone.
+
+Compatibility code stays only for an identified supported consumer or deployment transition, with its removal condition recorded outside source code. Build does not remove deployed migration history or public contracts based only on a text search.
+
+## Result and limits
+
+Receive working changes with their key locations, cleanup account, test results, applicable rendered evidence, independent-review status, and remaining gaps. If browser access, runtime setup, or delegation is unavailable, the result identifies the missing evidence without claiming it was verified.
+
+The objective package checks Python comment tokens and docstrings in inventoried authored ranges. It does not check other languages or establish overall correctness. Project checks and engineering review remain necessary.
+
+Build does not publish, push, or release implicitly. Use [Ship](/capabilities/skills/ship) for authorized delivery. Choose [Audit Design](/capabilities/skills/audit-design) when you want a coordinated design assessment rather than implementation.
+
+## Version and changes
+
+Version **0.1.0**, status **experimental**. This initial version adds implementation, cleanup, risk-based testing, runtime inspection, and independent review. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/build/SKILL.md.tmpl)
+- [Verification evidence contract](https://github.com/josuamittels/agent-stack/blob/main/src/skills/build/references/verification.md)
+- [Coding guides](/guidelines-and-references/guidelines/coding)
+- [Aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework)

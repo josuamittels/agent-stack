@@ -33,3 +33,7 @@ During an authorized stack release, [release-agent-stack](src/skills/release-age
 Whenever this repository's documentation changes, build and publish the updated website at `https://agents.mittels.org`. The owner has authorized routine repeat deployments to this existing destination; do not ask again for the same build/upload operation. Follow Create Docs' deployment reference, using `npm run deploy` from `docs/` with an available Python 3.10+ interpreter on PATH.
 
 The local hosting profile is `src/skills/create-docs/.env.local`. It is ignored and is not a public skill resource. The publisher builds the static export and search index before uploading over explicit FTPS. It preserves unrelated remote files and records deployment results under `.local/docs-deploy/`. Verify the live site, nested routes, and search after publication. A failed or partial upload remains incomplete until resolved. A different destination or a conflicting remote file outside the managed site is a separate decision.
+
+## Git delivery
+
+Ship authorized changes in this repository by committing and pushing directly to `main`. This is the owner's standing delivery preference and overrides the topic-branch and pull-request defaults in Ship and Release Agent Stack. Do not ask again for confirmation of this route. Keep unrelated work out of commits and complete the required release checks before pushing.

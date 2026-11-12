@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
+  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
   "name": "show-me-your-work",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.49.2",
+  "stack_version": "0.50.0",
   "channel": "release",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "68023b4219b3777319bbdde77376fe8c0516f503ce7be4a6e18b561a17e589fc",
+      "sha256": "9b9a610869556343c01b23493555351a1d65b7ec195a334b4289ac1a8f47198d",
       "mode": 420
     }
   }

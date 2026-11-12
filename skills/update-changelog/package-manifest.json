@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
+  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
   "name": "update-changelog",
   "version": "0.3.0",
   "status": "experimental",
-  "stack_version": "0.49.2",
+  "stack_version": "0.50.0",
   "channel": "release",
   "dependencies": [
     {
@@ -66,7 +66,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "3289ab977aeb67100c024de001fdf2f15c10e34214394b27f20553866dc35c07",
+      "sha256": "dba5b9ded64947586567dda2fbccb365a53f94b891458d8f442cf16465d0733d",
       "mode": 420
     }
   }

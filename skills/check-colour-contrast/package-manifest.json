@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
+  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
   "name": "check-colour-contrast",
   "version": "1.1.0",
   "status": "stable",
-  "stack_version": "0.49.2",
+  "stack_version": "0.50.0",
   "channel": "release",
   "dependencies": [
     {
@@ -56,7 +56,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "bbe94c6c4faa31697f9b3499347e90edb3f0edfd83a23a5538bbfbb6fc9919ba",
+      "sha256": "18ec319e85c20bb59eff10be4b181601de497ba164c9c030c2e76dda7a3fe094",
       "mode": 420
     }
   }

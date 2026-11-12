@@ -2,6 +2,7 @@ export default {
 	"audit-accessibility": "Audit Accessibility",
 	"audit-design": "Audit Design",
 	"audit-ux": "Audit UX",
+	"build": "Build",
 	"setup-agent-stack": "Setup Agent Stack",
 	"compose-career-profile": "Compose Career Profile",
 	"compose-voice-profile": "Compose Voice Profile",

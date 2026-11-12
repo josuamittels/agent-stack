@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "a0cf51fc1993607be07361bd502070ac6f59598f3ed44a5568b9b35bda95dfb6",
+  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
   "name": "skill-issue",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.49.2",
+  "stack_version": "0.50.0",
   "channel": "release",
   "dependencies": [
     {
@@ -26,7 +26,7 @@
   "source_sha256": {
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/skill-issue/SKILL.md.tmpl": "7a73eb7b77b508ae23c9d280ca7a7bdc41d4924d844930d931668b660ccc9739",
+    "src/skills/skill-issue/SKILL.md.tmpl": "496d8a9cdda56b41b9c1e07530b552f82a47c32e3f0646263a88d6aeb7266ac9",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3"
   },
   "files": {
@@ -43,7 +43,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "8bdc72a2ff060d32889800338ecbac5e89c802ba4f98116ee5b841999aa60823",
+      "sha256": "597d24bb65d6c702229fdf0203ca16986bb45f6e05cba52929fbac512c7f8799",
       "mode": 420
     },
     "references/_stack/skills/think-harder/instructions.md": {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "e717ade21c22e6b1740f315aa81b7e4ace9c782562d8f0b6daf2999762964033",
+      "sha256": "227a4d1fbcce1aff53f9b60a20b475cbab4407a81285b5d8ce2b628f8b8ab7ec",
       "mode": 420
     }
   }

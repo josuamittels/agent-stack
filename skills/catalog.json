@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stack_version": "0.49.2",
+  "stack_version": "0.50.0",
   "channel": "release",
   "skills": [
     "answer-interview",
@@ -9,6 +9,7 @@
     "audit-design",
     "audit-ux",
     "browse-skills",
+    "build",
     "check-colour-contrast",
     "compose-career-profile",
     "compose-voice-profile",
