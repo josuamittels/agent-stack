@@ -6,7 +6,7 @@ This file records the coordinated version of the Agent Stack and snapshots the v
 
 | Field | Value |
 | --- | --- |
-| Version | `0.51.1` |
+| Version | `0.52.0` |
 | Status | `experimental` |
 | Recorded | `2026-11-14` |
 | Release date | Not released |
@@ -37,6 +37,7 @@ Component versions and statuses below are snapshots of each artifact's frontmatt
 | Reference | `src/guidelines/coding/python.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/coding/sql.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/coding/typescript.md` | `0.1.0` | `experimental` |
+| Reference | `src/guidelines/data/visualisation.md` | `0.2.0` | `experimental` |
 | Reference | `src/guidelines/docs/reference.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/git/reference.md` | `0.1.0` | `experimental` |
 | Reference | `src/guidelines/languages/dutch.md` | `1.0.0` | `stable` |

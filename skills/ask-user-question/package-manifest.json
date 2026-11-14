@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
+  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
   "name": "ask-user-question",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.51.1",
+  "stack_version": "0.52.0",
   "channel": "release",
   "dependencies": [
     {
@@ -41,7 +41,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "bd9aacd70c8a1373caf5e81788bd889033d58118f0c3f9524b51b10e38eab5a0",
+      "sha256": "850acc967cfac2fafdc675bbd29096850970a4197586d413fd256864e0d7d762",
       "mode": 420
     }
   }

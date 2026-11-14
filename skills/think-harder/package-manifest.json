@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
+  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
   "name": "think-harder",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.51.1",
+  "stack_version": "0.52.0",
   "channel": "release",
   "dependencies": [
     {
@@ -41,7 +41,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "b434c9abb4e50237b37d73c6615bc83eb00e4605717aa68767b183c613a40678",
+      "sha256": "03551371df6e5420f0c61f3924e98dd4d341349132965f399d7ef5f3a6a9b209",
       "mode": 420
     }
   }

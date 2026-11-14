@@ -519,7 +519,9 @@ test("shipping includes experimental skills and guides with their lifecycle labe
   };
   inspectGuides(path.join(ROOT, "src/guidelines"));
   assert.ok(!out.has("references/_stack/guidelines/data/analysis.md"));
-  assert.ok(!out.has("references/_stack/guidelines/data/visualisation.md"));
+  const visualisation = out.get("references/_stack/guidelines/data/visualisation.md");
+  assert.ok(visualisation, "the full guide set must include data visualisation");
+  assert.equal(parse(visualisation.bytes.toString().split("---")[1]).status, "experimental");
   const router = buildSkill(ctx, "skill-issue").get("references/_stack/skills/skill-issue/instructions.md").bytes.toString();
   assert.match(router, /\*\*create-guidelines\*\*/);
   validateSkill(out, "create-guidelines");

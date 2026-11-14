@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
+  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
   "name": "answer-interview",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.51.1",
+  "stack_version": "0.52.0",
   "channel": "release",
   "dependencies": [
     {
@@ -536,7 +536,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "d0bee57d148c71a423e7754deaef080c324d8d107b87dcaad296f0a29437080d",
+      "sha256": "a959556c85ceee7117303af15b5e1ee937e14ce8a656de17ebd4f3947d9787ac",
       "mode": 420
     }
   }

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "f736cfa2758eb1d14ee6bf314da48ce343d881f1d53acb956676fec9e0fb191d",
+  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
   "name": "audit-design",
   "version": "0.2.1",
   "status": "experimental",
-  "stack_version": "0.51.1",
+  "stack_version": "0.52.0",
   "channel": "release",
   "dependencies": [
     {
@@ -96,6 +96,7 @@
     "src/guidelines/coding/python.md": "b09b59fa6e05cc0557352227af9a8e170a1749377845659a1bbd27582e6d3aa0",
     "src/guidelines/coding/sql.md": "7294697707db2135805742497b341837ca49cca24394703a560c47fa9be6fb6e",
     "src/guidelines/coding/typescript.md": "067272889115db56f7eb066d1ef8034e24e250445fbedb8135cd5211761c0c61",
+    "src/guidelines/data/visualisation.md": "e2104967191bf8895e5ab5a5c90828523ec8a9e71878d0cfa5e61245a7318cbf",
     "src/guidelines/docs/reference.md": "ea6490707d335770a28f2f5fe9db140096c9e80dfd68e884ee5021fa1fc400f0",
     "src/guidelines/git/reference.md": "21e842c8d30793d0f7d444d73563e572f779fd62d6cb45f27c1660dfbd0d16d5",
     "src/guidelines/languages/dutch.md": "db52bdd4d06a81f971a4d9f898d68261321b7480a2d154b50c7348b8020de589",
@@ -223,6 +224,10 @@
     },
     "references/_stack/guidelines/coding/typescript.md": {
       "sha256": "067272889115db56f7eb066d1ef8034e24e250445fbedb8135cd5211761c0c61",
+      "mode": 420
+    },
+    "references/_stack/guidelines/data/visualisation.md": {
+      "sha256": "e2104967191bf8895e5ab5a5c90828523ec8a9e71878d0cfa5e61245a7318cbf",
       "mode": 420
     },
     "references/_stack/guidelines/docs/reference.md": {
@@ -366,7 +371,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "271dac2c53c0b1c1559bbdb5b5fc772b2b837a0184a3b9fcc04e8f093a496f94",
+      "sha256": "e6e0c5267f59357ca715c1a4767c831e2edbfb9ea849477b1808242b39271963",
       "mode": 420
     }
   }

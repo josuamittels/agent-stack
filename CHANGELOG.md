@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add the experimental [Data Visualisation guide](src/guidelines/data/visualisation.md) for purpose-led data selection, chart choice, perceptual encoding, advanced visualisations, dashboards, uncertainty, and accessible delivery, with worked examples and links to the aesthetics references.
+
 - Add experimental [Build](src/skills/build/SKILL.md.tmpl) for software and interface implementation with project and language standards, no authored code comments, scoped cleanup, risk-based tests, real runtime inspection, and independent subagent review.
 
 - Add configured documentation publication through Create Docs, with static export, built search and sitemap, verified explicit FTPS uploads, and live-content checks. Keep connection values in an ignored local profile and preserve unrelated remote files.

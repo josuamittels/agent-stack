@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stack_version": "0.51.1",
+  "stack_version": "0.52.0",
   "channel": "release",
   "skills": [
     "answer-interview",
