@@ -4,7 +4,7 @@
   "name": "create-skill",
   "version": "0.14.0",
   "status": "experimental",
-  "stack_version": "0.51.0",
+  "stack_version": "0.51.1",
   "channel": "release",
   "dependencies": [
     {
@@ -291,7 +291,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "cb764b02ede2506f700dcb1934640c616226d7a5abb57a57a87605d798de66a1",
+      "sha256": "0063cfcdf690566f674168703d048ee74a9e5411c7a850862d7ae99598fa5187",
       "mode": 420
     }
   }

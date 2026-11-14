@@ -4,7 +4,7 @@
   "name": "compose-career-profile",
   "version": "1.1.1",
   "status": "stable",
-  "stack_version": "0.51.0",
+  "stack_version": "0.51.1",
   "channel": "release",
   "dependencies": [
     {
@@ -101,7 +101,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "14fa71604f14c460d5cc891b2fdc52919af141c4ff44b2a64db4f8f717ecc5e2",
+      "sha256": "a45e5bca74293eac1d2d8c5f65ac9315ee272001601d94d050f4c3bb93ded156",
       "mode": 420
     }
   }

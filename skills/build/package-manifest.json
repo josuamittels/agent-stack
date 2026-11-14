@@ -4,7 +4,7 @@
   "name": "build",
   "version": "0.1.0",
   "status": "experimental",
-  "stack_version": "0.51.0",
+  "stack_version": "0.51.1",
   "channel": "release",
   "dependencies": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "name": "audit-accessibility",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "status": "experimental"
     },
     {
@@ -150,7 +150,7 @@
     "src/guidelines/wireframes/reference.md": "5ff02c838abc24a14b7c70731509e6ba1149d4b6984efcecef9d2a7cfdd90b8b",
     "src/runtime/paths.py": "8be0a2f6625aea6ec55df92b8b41ca3bc4881bb461f2e83a734125edfb237d27",
     "src/skills/ask-user-question/SKILL.md.tmpl": "e224156a4a0758b91409e0928c4a14c2493e2dca050fbbc11ff213289270f7d2",
-    "src/skills/audit-accessibility/SKILL.md.tmpl": "24c356773644392c312a20770c666c0e7e2722480de9aad32d1701def5321ce5",
+    "src/skills/audit-accessibility/SKILL.md.tmpl": "ae2af447e98561ed884127ac5256752a2a5f6f05f6eeea2c700fc5905e4ba19c",
     "src/skills/audit-accessibility/references/rubric.md": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
     "src/skills/audit-accessibility/templates/report.md": "a5c521be9b306a8de06e2c621eb1cb4bbb1700b17b0578ccc94fd19a22fdb780",
     "src/skills/audit-design/SKILL.md.tmpl": "4c5cc7686c1d649917924034b95f8506f45a75f4f4342d30afd0e5f251546a01",
@@ -349,7 +349,7 @@
       "mode": 420
     },
     "references/_stack/skills/audit-accessibility/instructions.md": {
-      "sha256": "3fe3e17c753d4d6aa9dd5af0220f0d684fe8005f616d37982a09ceea9fb44dd4",
+      "sha256": "3cd1e801ba06374b4f9c447ecf657e8185337b4263795c7448816a6a35662eb9",
       "mode": 420
     },
     "references/_stack/skills/audit-accessibility/references/rubric.md": {
@@ -541,7 +541,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "efbafb4c7fffc303f53a6b43b13e37a1556ab87a7eb0d8688bfaee68a8a03ba1",
+      "sha256": "5bb22dd0b21e472ece8e869176f5c14ad332126c09c663b374325ff5ab87860c",
       "mode": 420
     }
   }

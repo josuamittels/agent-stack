@@ -1,9 +1,9 @@
 ---
 name: "audit-accessibility"
 description: "Audit a supplied interface, design, infographic, document, or media artifact against applicable accessibility standards. Fill a modular report.md with evidenced criterion outcomes, transparent scores, and prioritized remediation and verification actions."
-version: "0.1.1"
+version: "0.1.2"
 created: "2026-11-12"
-updated: "2026-11-12"
+updated: "2026-11-14"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -65,7 +65,13 @@ Include the access implications of unclear hierarchy, inconsistent identificatio
 
 Retain case-level evidence and assign one aggregate outcome per criterion over its declared scope. A confirmed failing case means not fulfilled even if other cases pass. Without a failure, incomplete required evidence means unknown. Fulfilled requires adequate evidence across scoped cases. Not applicable needs a supported scope reason, not absence from a crop. Do not count each passing instance as a separate criterion or average away a failure.
 
-For reliable opaque foreground/background pairs, invoke [Check Colour Contrast](../check-colour-contrast/SKILL.md.tmpl) with the actual values and formats. Use [Colour's compositing/calculation guidance](../../guidelines/aesthetics/colour.md#calculate-srgb-contrast-correctly) for transparency, conversion, and variable backgrounds. Record element/state, source values, text size/weight or graphic role, applicable criterion/threshold, full-precision ratio, and result. Compare before rounding. Treat screenshot sampling and unknown scale as limited evidence. Do not infer exact CSS target sizes or font metrics from image pixels. Colour-vision simulation is supplementary evidence, not a criterion test.
+For UI reviews, include text and visual information needed to identify controls, states, and meaningful graphics in the scoped contrast checks. Cover relevant labels, placeholder and error text, icons, control boundaries, selected states, and focus indicators across the scoped themes and interaction states. Apply the owning guide's exceptions; a decorative boundary need not pass merely because it is visible. Retain locations for repeated pairs and disclose sampling.
+
+For each reliable opaque foreground/background pair, invoke [Check Colour Contrast](../check-colour-contrast/SKILL.md.tmpl) with the actual values and formats. Use its calculated ratio and interpret the result for the element's rendered text size and weight or non-text role. Verify text metrics from computed styles, design specifications at the delivered scale, or equivalent reliable evidence before using the large-text threshold. A control's text label uses the applicable text threshold; its necessary identifying visuals use the non-text threshold. Do not apply a blanket UI threshold to both. When text metrics are unavailable, report the conditional normal/large-text results and leave any size-dependent conclusion unknown.
+
+Use [Colour's compositing/calculation guidance](../../guidelines/aesthetics/colour.md#calculate-srgb-contrast-correctly) to resolve transparency, conversion, and variable backgrounds before passing supported opaque pairs to Check Colour Contrast. Check the least favorable relevant background and retain unresolved cases as verification gaps. Record element/state, source values and measurement method, text size/weight or graphic role, applicable criterion/threshold/exception, full-precision ratio, and result in the report's visual and contrast measurements. Compare before rounding. Treat screenshot sampling and unknown scale as limited evidence. Do not infer exact CSS target sizes or font metrics from image pixels.
+
+Inspect visibility and legibility in the rendered UI alongside the numeric results, including small or thin text, thin icon strokes, clipping, obscured content, and zoom or text enlargement where inspectable. A passing ratio does not establish usable visibility. Tie confirmed failures to the applicable criteria and keep additional readability concerns advisory. Colour-vision simulation is supplementary evidence, not a criterion test.
 
 ### 4. Turn barriers and gaps into actions
 

@@ -4,7 +4,7 @@ title: "Audit Accessibility"
 
 # Audit Accessibility
 
-> **Skill** · **experimental** · **v0.1.1** · updated 2026-11-12
+> **Skill** · **experimental** · **v0.1.2** · updated 2026-11-14
 
 ## Purpose
 
@@ -23,6 +23,8 @@ Provide an identifiable artifact and enough access to inspect it. Include the pu
 
 Applicable checks include structure and reading sequence, descriptive headings, labels and instructions, and consistent identification or navigation. Visual hierarchy alone does not prove semantic structure. Broader language and brand preferences remain advisory unless an applicable accessibility requirement is demonstrably unmet.
 
+UI contrast checks invoke [Check Colour Contrast](/capabilities/disciplines/check-colour-contrast) for measured foreground/background pairs. Results account for the rendered text size and weight or the visual role of a control, state, or graphic. Checks cover relevant labels, placeholders, errors, icons, control boundaries, selected states, and focus indicators across scoped themes and states. Missing measurements remain verification gaps. Rendered visibility and legibility are inspected alongside numeric ratios, including small or thin text and enlargement.
+
 ## Result and limits
 
 Receive report.md and audit.json with criterion outcomes, evidence, barrier severity, prioritized actions and two descriptive metrics: assessed fulfillment and assessment coverage. Neither metric establishes conformance. Advisory practices stay separate from required-criterion scores.
@@ -35,4 +37,4 @@ Choose [Audit Accessibility](/capabilities/skills/audit-accessibility) for acces
 
 ## Version and source
 
-Version **0.1.1**, status **experimental**. Read the [canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/audit-accessibility/SKILL.md.tmpl) and [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/audit-accessibility/SKILL.md.tmpl).
+Version **0.1.2**, status **experimental**. Read the [canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/audit-accessibility/SKILL.md.tmpl) and [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/audit-accessibility/SKILL.md.tmpl).

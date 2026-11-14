@@ -6,7 +6,7 @@ license: MIT
 metadata:
   version: 0.2.0
   status: experimental
-  stack-version: 0.51.0
+  stack-version: 0.51.1
   distribution: release
 ---
 

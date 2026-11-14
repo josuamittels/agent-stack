@@ -31,6 +31,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Clarify Audit Accessibility’s required Check Colour Contrast handoff for UI text, controls, and states, using rendered text size and weight alongside measured ratios and visibility checks.
+
 - Refresh the globally installed Agent Stack catalog for Codex after an authorized successful push, including newly shipped experimental and stable skills, with verification against the pushed packages.
 
 - Give the stack map an explicit white background for consistent display.

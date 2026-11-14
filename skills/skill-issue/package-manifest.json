@@ -4,7 +4,7 @@
   "name": "skill-issue",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.51.0",
+  "stack_version": "0.51.1",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8af63ce45cc958de17635f78915f4bbba249a9a6cc972a0204b670336aefcf04",
+      "sha256": "43a83980e70b5f5bb14ddf82ee6d47699350ffb1cd58e7e45034aa5778c85ee4",
       "mode": 420
     }
   }
