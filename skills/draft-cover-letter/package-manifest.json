@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
+  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
   "name": "draft-cover-letter",
   "version": "2.0.1",
   "status": "stable",
-  "stack_version": "0.52.0",
+  "stack_version": "0.53.0",
   "channel": "release",
   "dependencies": [
     {
@@ -511,7 +511,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "831969474d1d426ddd74f42a92c64f96a134f081c219474a4ac0a90f054a136e",
+      "sha256": "a612575ce43c3deed02296b8620c2f98c74d32740bf63c6619d514cfae07745d",
       "mode": 420
     }
   }

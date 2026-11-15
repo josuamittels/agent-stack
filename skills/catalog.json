@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stack_version": "0.52.0",
+  "stack_version": "0.53.0",
   "channel": "release",
   "skills": [
     "answer-interview",
@@ -22,6 +22,7 @@
     "mind-wandering",
     "pre-mortem",
     "quit-the-yap",
+    "refactor",
     "research",
     "research-literature",
     "setup-agent-stack",

@@ -83,6 +83,10 @@ flowchart LR
           setup_agent_stack["Setup Agent Stack"]
           global_routing_template@{ shape: tag-doc, label: "Global Routing Template" }
           host_targets@{ shape: doc, label: "Global Instruction Targets" }
+          refactor["Refactor"]
+          refactor_plan@{ shape: tag-doc, label: "Refactor Audit and Plan" }
+          refactor_decisions@{ shape: doc, label: "Component Decisions" }
+          refactor_verification@{ shape: doc, label: "Refactor Verification Evidence" }
           build["Build"]
           build_verification@{ shape: doc, label: "Build Verification Evidence" }
           prototype["Prototype"]
@@ -363,3 +367,17 @@ flowchart LR
 %% src/skills + src/guidelines + src/evals + src/runtime -> scripts/build-skills.mjs
 %% Non-draft closure -> root skills/; local previews -> dist/preview/; release artifacts -> dist/release/.
 %% Generated dependency snapshots are not independently maintained capabilities.
+
+    refactor --> build
+    refactor --> ship
+    refactor --> think_deeper
+    refactor --> pre_mortem
+    refactor --> show_me_your_work
+    refactor --> audit_design
+    refactor -.- refactor_plan
+    refactor -.- refactor_decisions
+    refactor -.- refactor_verification
+    class refactor skill
+    class refactor_plan,refactor_decisions,refactor_verification document
+    refactor -.- ts
+    refactor -.- python

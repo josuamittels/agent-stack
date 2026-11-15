@@ -1,0 +1,1 @@
+{"schema_version":1,"skill":"refactor","checks":[{"id":"migration-dependencies","description":"Migration tasks have unique IDs, resolvable acyclic dependencies, and any executed tasks follow their dependencies.","handler":"check_migration","mandatory":true,"required_inputs":["/evidence/migration"]}]}

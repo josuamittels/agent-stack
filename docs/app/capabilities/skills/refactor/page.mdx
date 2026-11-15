@@ -1,0 +1,61 @@
+---
+title: "Refactor"
+---
+
+# Refactor
+
+> **Skill** · **experimental** · **v0.1.1** · updated 2026-11-15
+
+## Purpose
+
+Use Refactor to audit and clean up a codebase, including applications and component libraries that depend on each other. It produces an evidence-backed master plan before implementation, then coordinates incremental changes when you request them.
+
+The audit covers repository structure, package boundaries, component duplication and variants, conventions, legacy code, artifacts, and comments. It follows applicable `AGENTS.md` files and established contracts. If requirements conflict, it presents the rules and consequences for your decision, then records the agreed standard in the relevant Markdown instructions.
+
+## Inputs
+
+Provide the repository paths, their relationship, the cleanup outcome, and whether you want an audit, a plan, or implementation. Include supported consumers, compatibility constraints, design standards, and delivery requirements where known. Refactor inspects accessible code and context to recover the remaining details.
+
+For example, ask Refactor to audit a web application and its shared UI library, consolidate duplicate buttons and cards, reduce unjustified variants, and remove obsolete local copies. An audit-only request returns findings and a plan. A complete cleanup request continues through implementation within the authorized scope.
+
+## Workflow
+
+1. **Establish the baseline.** Read repository rules, versions, package relationships, existing failures, and available checks. Use [Think Deeper](/capabilities/disciplines/think-deeper) to select useful investigation methods and record inspected, sampled, excluded, and inaccessible areas.
+2. **Trace architecture and consumers.** Map ownership and dependencies, including how applications receive built libraries, declarations, styles, tokens, and assets. Inspect production packaging as well as development aliases.
+3. **Compare component families.** Examine purpose, semantics, interactions, state, appearance, and actual consumers. Decide whether differences need one standard component, a legitimate variant, composition, a domain wrapper, separate components, or a temporary compatibility adapter.
+4. **Plan the migration and removals.** Fill in the [audit and master-plan template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/templates/audit-plan.md) with evidence, ownership decisions, task dependencies, caller mappings, removal checks, rollback, and release order. Use [Pre-Mortem](/capabilities/disciplines/pre-mortem) to challenge the concrete plan before edits.
+5. **Implement coherent waves.** Create refactor branches in affected repositories, subject to resolved project rules. Use [Build](/capabilities/skills/build) for implementation and review, and [Ship](/capabilities/skills/ship) for themed commits. Keep cross-repository changes compatible during the transition.
+6. **Verify the integrated result.** Run applicable checks, exercise changed journeys and built-package consumers, repeat cleanup checks, and resolve independent-review findings. Reconcile every planned task, removal, and remaining exception.
+
+## Coordinating agents
+
+For substantial implementation, Refactor defaults to about three domain agents when work can be edited independently. A coordinator settles shared APIs, tokens, ownership, compatibility, and migration order before assigning exclusive writable paths. Library components, application migration, and tooling or legacy cleanup are possible domains; the codebase determines the actual split.
+
+Audit agents may investigate separate areas in parallel with read-only access. The coordinator reconciles their evidence into one master plan. Tightly coupled work uses fewer agents or sequential changes. Shared files have one owner, Git operations are coordinated, and final independent review uses an agent that did not author the reviewed implementation. If delegation is unavailable, the result states that limitation.
+
+## Component and cleanup policy
+
+Visual resemblance alone does not justify merging components. The audit compares their contracts and real use cases. Each retained variant needs a meaningful purpose; distinct semantics or state behavior can justify separate components. Shared infrastructure needs actual consumers and maintenance benefits.
+
+Refactor requires comment-free handwritten code throughout the agreed cleanup scope, using names, types, structure, validation, and tests to express intent. Necessary rationale belongs in external documentation. Required legal notices and machine-interpreted metadata remain protected, and conflicts are raised for resolution.
+
+Unused-code reports and empty text searches identify removal candidates. Refactor also checks indirect references, public consumers, deployment conventions, and retention requirements before deleting them. Deployed migration history and required records are preserved.
+
+## Result and limits
+
+Receive the audit, master plan, component decisions, removal ledger, resolved rule changes, coverage, verification evidence, and remaining gaps. Implementation results also include branches, commit SHAs, themed changes, compatibility and release ordering, rollback, and review status.
+
+The objective checker verifies migration task references, acyclicity, and dependency order in the supplied execution record. It does not establish that the graph is complete, that claimed work occurred, or that the software is correct. Runtime checks and engineering review remain necessary. Missing repository, package, runtime, or consumer access limits the audit's coverage.
+
+For a bounded feature or defect, use [Build](/capabilities/skills/build). Pushing, merging, releasing, and deploying follow your authorization and repository rules.
+
+## Version and changes
+
+Version **0.1.1**, status **experimental**. This initial shipping version includes the audit and migration workflow, component decisions, and coordinated agent work. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/SKILL.md.tmpl)
+- [Component decision procedures and primary sources](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/references/component-decisions.md)
+- [Audit and master-plan template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/templates/audit-plan.md)
+- [Verification evidence contract](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/references/verification.md)

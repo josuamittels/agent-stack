@@ -237,6 +237,18 @@ Bundled dependencies: ask-user-question, think-harder, write.
 
 Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present.
 
+## refactor
+
+Status: eligible experimental candidate.
+
+Audit and refactor codebases and interacting component libraries. Plan architecture, component consolidation, variants, conventions, and legacy removal; implement in themed commits on refactor branches when requested.
+
+`npx skills add josuamittels/agent-stack --skill ask-user-question audit-accessibility audit-design audit-ux browse-skills build check-colour-contrast create-docs create-guidelines create-skill pre-mortem refactor ship show-me-your-work skill-issue spawn-evals think-deeper think-harder update-changelog write -a codex`
+
+Bundled dependencies: ask-user-question, audit-accessibility, audit-design, audit-ux, browse-skills, build, check-colour-contrast, create-docs, create-guidelines, create-skill, pre-mortem, release-agent-stack, ship, show-me-your-work, skill-issue, spawn-evals, think-deeper, think-harder, update-changelog, update-map, update-router, write.
+
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available; Python >=3.10 for objective Python source checks; Project language toolchain and declared checks; Browser or platform runtime for interface verification; Subagent support for independent review when permitted.
+
 ## research
 
 Status: eligible stable candidate.

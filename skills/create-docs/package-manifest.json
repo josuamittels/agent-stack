@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1cff4772a1fe51ef72d8f73e5d2fda6efa460044663be693d48e93e4fbc53813",
+  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
   "name": "create-docs",
   "version": "0.6.0",
   "status": "experimental",
-  "stack_version": "0.52.0",
+  "stack_version": "0.53.0",
   "channel": "release",
   "dependencies": [
     {
@@ -371,7 +371,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "199a143ea5c83d4be5e38c76cf125959bdc0d5b459b1da4ea421c0a0f39ec495",
+      "sha256": "383c6bc77a8379ebe5aca8d297354c60b176bbf8390358c5f159d3fd4a37704e",
       "mode": 420
     }
   }

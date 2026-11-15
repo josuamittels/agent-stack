@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "skill": "build",
+  "checks": [
+    {
+      "id": "python-no-comments",
+      "description": "Authored or rewritten Python source ranges contain zero comment tokens and zero module, class, or function docstrings.",
+      "handler": "check_python_no_comments",
+      "mandatory": true,
+      "required_inputs": ["/evidence/source_inventory"]
+    }
+  ]
+}

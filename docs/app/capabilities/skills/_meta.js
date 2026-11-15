@@ -14,6 +14,7 @@ export default {
 	"create-guidelines": "Create Guidelines",
 	"create-skill": "Create Skill",
 	"research": "Research",
+	"refactor": "Refactor",
 	"ship": "Ship",
 	"translate": "Translate"
 }

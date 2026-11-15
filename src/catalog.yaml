@@ -758,6 +758,42 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  refactor:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - think-deeper
+      - pre-mortem
+    conditional:
+      - build
+      - ship
+      - show-me-your-work
+      - spawn-evals
+      - audit-design
+    optional: []
+    routes: []
+    files:
+      - skills/refactor/SKILL.md.tmpl
+      - skills/refactor/templates/audit-plan.md
+      - skills/refactor/references/component-decisions.md
+      - skills/refactor/references/verification.md
+    resources:
+      - guidelines/coding/typescript.md
+      - guidelines/coding/python.md
+    evaluations:
+      - refactor
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Python >=3.10 for objective Python source checks
+      - Project language toolchain and declared checks
+      - Browser or platform runtime for interface verification
+      - Subagent support for independent review when permitted
+    fallback: Read bundled instructions when native invocation is unavailable;
+      report missing runtime, browser, or independent-review evidence.
   research:
     visibility: public
     required:

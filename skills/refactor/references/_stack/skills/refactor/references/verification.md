@@ -1,0 +1,5 @@
+# Verification evidence
+
+Read before the final objective handoff. Supply the shared runner record and complete audit/plan artifacts in `output_files`. Add `evidence.migration` with `tasks`, an array of objects containing unique nonempty string `id` and a `depends_on` array of task IDs, plus `execution_order`, an array of task IDs in the order implementation waves completed. Use an explicit empty execution order for audit-only work. Include all planned tasks, including blocked and deferred tasks; do not omit a dependency to make the graph pass.
+
+The checker verifies unique IDs, resolvable dependency references, acyclicity, unique execution entries, and that each executed task's dependencies precede it. It does not establish that the graph is complete, the claimed work occurred, the audit is correct, or the software is safe. Project checks, runtime inspection, comment tooling, and engineering review remain separate requirements. Missing or malformed evidence is unverified; contradictory valid evidence fails.
