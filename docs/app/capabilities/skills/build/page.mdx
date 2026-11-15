@@ -4,7 +4,7 @@ title: "Build"
 
 # Build
 
-> **Skill** · **experimental** · **v0.1.0** · updated 2026-11-13
+> **Skill** · **experimental** · **v0.2.0** · updated 2026-11-15
 
 ## Purpose
 
@@ -19,11 +19,12 @@ For example, ask Build to repair a form that loses entered values after a failed
 ## Workflow
 
 1. **Inspect the project.** Establish expected behavior, affected callers, local standards, existing failures, and planned checks. A read-only subagent investigates a bounded question when delegation is available and permitted.
-2. **Apply coding and design guidance.** Read the relevant TypeScript, Python, SQL, or Mermaid guide. For interfaces, inspect the existing system and supplied brief, then use the [aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework) to select interaction, accessibility, composition, and other relevant guidance.
-3. **Implement a coherent change.** Extend the project's structure, keep responsibilities and state ownership clear, and remove obsolete code, configuration, tests, and dependencies made unnecessary by the change.
-4. **Test according to risk.** Run applicable project checks. Add meaningful behavior and regression tests where warranted, and verify real integration boundaries when isolated tests would miss the failure. Small presentation changes receive rendered inspection without redundant tests.
-5. **Inspect the working result.** Open changed web interfaces in a real browser, inspect screenshots, and exercise the affected journey and relevant failure states. Use a simulator or device for native UI, or the actual command or service boundary for non-UI work.
-6. **Review and repair.** A subagent that did not author the implementation inspects the complete change and available runtime evidence. Resolve substantiated findings, rerun affected checks, and recheck material fixes before handoff.
+2. **Resolve interface design.** Before changing an interface, use [Design](/capabilities/skills/design) to settle its layout, exact copy, component choices, responsive behavior, and state rules. Reuse a complete current handoff or update only its gaps. Backend-only work skips this handoff.
+3. **Apply coding and design guidance.** Read the relevant TypeScript, Python, SQL, or Mermaid guide. For interfaces, inspect the existing system and supplied brief, then use the [aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework) to select interaction, accessibility, composition, and other relevant guidance.
+4. **Implement a coherent change.** Extend the project's structure, keep responsibilities and state ownership clear, and remove obsolete code, configuration, tests, and dependencies made unnecessary by the change.
+5. **Test according to risk.** Run applicable project checks. Add meaningful behavior and regression tests where warranted, and verify real integration boundaries when isolated tests would miss the failure. Small presentation changes receive rendered inspection without redundant tests.
+6. **Inspect the working result.** Open changed web interfaces in a real browser, inspect screenshots, and exercise the affected journey and relevant failure states. Compare the working interface with the Design handoff and resolve material departures. Use a simulator or device for native UI, or the actual command or service boundary for non-UI work.
+7. **Review and repair.** A subagent that did not author the implementation inspects the complete change and available runtime evidence. Resolve substantiated findings, rerun affected checks, and recheck material fixes before handoff.
 
 ## Code policy
 
@@ -43,7 +44,7 @@ For a comprehensive codebase audit, component-library consolidation, or a coordi
 
 ## Version and changes
 
-Version **0.1.0**, status **experimental**. This initial version adds implementation, cleanup, risk-based testing, runtime inspection, and independent review. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+Version **0.2.0**, status **experimental**. Interface work now calls Design before implementation and checks the working result against its handoff. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
 
 ## References
 

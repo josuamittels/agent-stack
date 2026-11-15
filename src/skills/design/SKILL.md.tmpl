@@ -1,0 +1,134 @@
+---
+name: "design"
+description: "Plan visual UI/UX for a new feature, product, or redesign in its repository and design system. Resolve structure, aesthetics, interactions, content, and states into an implementable handoff before Build changes the interface."
+version: "0.1.0"
+created: "2026-11-15"
+updated: "2026-11-15"
+author:
+  - "Josua Mittelstaedt"
+references:
+  - "Anthropic"
+  - "World Wide Web Consortium"
+  - "Jakob Nielsen"
+type: "skill"
+status: "experimental"
+---
+
+# Design
+
+Turn a feature or product idea into a coherent interface that serves its users and fits the project. Decide what belongs on screen, how it behaves, what it says, and how it looks. Return enough concrete design information for Build to implement without inventing product or visual decisions.
+
+## Scope
+
+Use for visual UI/UX planning of a new feature, a complete product, or a scoped redesign. Work from the audience, purpose, existing functionality, repository conventions, component library, market evidence, brand, and corporate identity supplied or recoverable from context. Treat the requested solution as a hypothesis about the user's need while preserving explicit requirements.
+
+When Build calls this skill, own design planning and return the handoff before interface implementation. For a design-only request, deliver the plan and stop. Assessment of an existing artifact belongs to [Audit Design](../audit-design/SKILL.md.tmpl); code and runtime verification belong to Build.
+
+### Boundaries
+
+Keep application code, dependencies, production data, and publication with the implementation owner. Read the repository and inspect available running views without consequential live actions. Create planning documents, diagrams, or static mockups within the authorized workspace. A static mockup is a design artifact; it does not authorize building the application or installing a design tool.
+
+Preserve fixed behavior, truthful content, brand constraints, supported platforms, and unrelated work. Propose a change to an explicit requirement separately with its reason; continue against the requirement until the user changes it. Simplify a suggested mechanism when the same intended outcome can be met more clearly, recording the consequential difference. Do not add features, navigation destinations, metrics, or explanatory sections merely to fill a familiar layout.
+
+Design review supports decisions. It does not prove usability, accessibility conformance, conversion, or user preference. Distinguish source inspection, rendered evidence, proposed behavior, and tested behavior.
+
+## Inputs
+
+Use the original request and intended outcome, target repository or project, known users and tasks, constraints, delivery platform, and implementation scope. Optional inputs include research, analytics, brand or voice guidance, design files, screenshots, assets, accessibility requirements, and an existing design handoff. Recover relevant facts from the project before asking the user.
+
+When called by Build, also receive its repository findings, affected routes and components, acceptance criteria, current limitations, and settled decisions. Reuse that evidence and clarification history. An existing handoff can be updated for the changed surface instead of restarting design.
+
+Resolve routine visual choices from evidence and conventions. Ask only when a missing product fact, permission, or consequential preference prevents a responsible decision. Record reasonable assumptions with their effect. Avoid an intake questionnaire or a mandatory style-selection gate. The goal is a clear interface with appropriate explanation; real user testing may still expose unanswered needs.
+
+### Default Procedures
+
+When task input is needed from the user, route the question through [ask-user-question](../ask-user-question/SKILL.md.tmpl) for preparation, delivery, and interpretation. First invoke [think-harder](../think-harder/SKILL.md.tmpl) when ambiguity, missing information, or competing interpretations may be resolved from context, relevant guidance, evidence, or a reasonable default. Skip Think Harder for direct permission or approval gates, explicitly requested interviews, and facts or preferences only the user can supply. Ask only about consequential unresolved items. Continue independent work and preserve approval requirements.
+
+If any discipline is unavailable, perform it directly and report the fallback. Carry unresolved constraints forward and do not invent answers or pretend the dependency ran.
+
+## Workflow
+
+Scale the work to the decisions still open. A local change can return a compact amendment to the existing design. A new product needs its primary journeys, shared structure, and visual system, with more detail on consequential or unfamiliar interactions. Reuse evidence and guidance already read in this task.
+
+### 1. Understand the task and the incumbent interface
+
+Inspect applicable project instructions, relevant documentation, route structure, feature code, data models and permissions, component exports and examples, tokens, typography, icon assets, and localization conventions. Record actual paths for evidence that constrains the design. Check component variants and behavior before claiming they can be reused. Follow relevant paths rather than inventorying the entire repository.
+
+Inspect available rendered screens or supplied images with the appropriate viewing tool. Examine the surrounding journey as well as the insertion point. Separate observed design conventions from accidental inconsistencies and source-based inferences. If the UI cannot run, continue source inspection and name the visual evidence gap. Do not describe an unseen render as inspected.
+
+Identify the user's starting situation, desired outcome, frequency and expertise, information needed to act, and what success and recovery mean. Mark what is supplied, observed, inferred, or unknown. Use research as evidence with its limits; competitor examples suggest possibilities rather than requirements. For a new project, establish the smallest coherent structure that supports its real tasks.
+
+### 2. Establish the design criteria and load aesthetics guidance
+
+Invoke [Think Deeper](../think-deeper/SKILL.md.tmpl) with the settled outcome, repository evidence, constraints, and open design decisions. Use its methods to expose task steps, content needs, difficult states, and the strongest available check. Keep its outside-check limits explicit when only planning evidence exists.
+
+Read the [aesthetics framework](../../guidelines/aesthetics/reference.md) before selecting domain sections. Follow its decision precedence and linked dependencies. These guides supply the design standards; do not replace them with a trend checklist or duplicate their numerical rules here.
+
+| Decision | Required guidance for that decision |
+| --- | --- |
+| Tasks, navigation, controls, feedback, commitment, and recovery | [Interaction](../../guidelines/aesthetics/interaction.md) |
+| Access constraints, semantics, input, focus, and adaptation | [Accessibility](../../guidelines/aesthetics/accessibility.md) |
+| Hierarchy, grouping, space, density, alignment, and responsive composition | [Composition](../../guidelines/aesthetics/composition.md) |
+| Text roles, measure, wrapping, and font choices | [Typography](../../guidelines/aesthetics/typography.md) |
+| Functional and expressive colour, themes, and palette roles | [Colour](../../guidelines/aesthetics/colour.md) |
+| Symbols and existing icon-family use | [Iconography](../../guidelines/aesthetics/iconography.md) |
+| Authored transitions or animation | [Motion](../../guidelines/aesthetics/motion.md) |
+| Charts, maps, or visual explanations | [Infographics](../../guidelines/aesthetics/infographics.md) |
+
+Apply Interaction, Accessibility, and Composition to every interface plan. Read each selected guide's use instructions, relevant decision sections, and handoff/verification sections. Load the relevant platform references through the framework for native work. Consult Sound or Haptics through that framework only when those channels serve the task. Verify changing platform or component specifications against current primary documentation when needed.
+
+State the desired experience as observable choices: visual hierarchy, content density, spatial rhythm, text roles, colour roles, surfaces, icon treatment, and interaction emphasis. Identify which existing choices to preserve. For a new identity, choose a few coordinated mechanisms tied to audience and purpose. Avoid imposing a universal minimal, playful, editorial, or maximal style. Record the selected guidance and how it changes consequential decisions.
+
+### 3. Question the screen and explore useful alternatives
+
+For each proposed region, field, control, and message, identify the user decision or action it serves. Retain required content; remove duplication and unsupported decoration. Distinguish essential, contextual, and advanced information. Keep frequently needed actions discoverable. Use progressive disclosure only when its entry is clear and the hidden material is secondary to the current task.
+
+Decide whether a task belongs inline, on a page, in a dialog, or in another existing pattern by its context, interruption cost, content, and recovery needs. Use established product and platform conventions unless a specific task problem justifies an exception. Avoid changing global navigation or shared components for a local problem without identifying affected consumers.
+
+Invoke [Mind Wandering](../mind-wandering/SKILL.md.tmpl) for a bounded exploration of the unsettled design. Pass the task, fixed constraints, current direction, and a concrete tension such as comparison versus scanning or guidance versus density. Try a different hierarchy, sequence, or representation rather than cosmetic reskins. For a settled local edit, a brief simpler alternative can be enough; do not force unrelated concepts.
+
+Compare viable alternatives against task clarity, visual character, system fit, access, content resilience, and implementation feasibility. Select and develop one direction with a brief reason and material tradeoffs. Preserve useful distinctiveness; avoid combining every idea into an overloaded compromise. Resolve routine choices rather than handing a menu of unfinished options to the user or Build.
+
+### 4. Specify the interface and its content
+
+Make the selected design spatially inspectable: use a labeled layout sketch, wireframe, storyboard, diagram, or static mockup suited to the task. Show order, grouping, relative scale, primary and secondary actions, and the relevant narrow/wide compositions. A mood board alone is insufficient. For a tiny adjustment, annotate the existing layout instead of drawing an entire screen. If tooling is unavailable, provide a precise textual layout with the limitation stated.
+
+Pair the visual representation with implementable decisions:
+
+- Identify screens, entry/exit points, navigation placement, and the sequence from start through success and recovery.
+- Map regions to real component paths, variants, tokens, and assets. Mark reuse, an existing variant change, or a genuinely new component. Explain new additions and shared-consumer effects. Label proposed symbols as proposals when the repository has none.
+- Specify layout rules, text hierarchy, spacing roles, widths, alignment, colour and surface roles, and asset behavior. Resolve existing token names and values where available. Give new values or bounded behavior when needed; do not leave instructions such as “make it elegant” for Build to interpret.
+- Define responsive changes from content and existing breakpoints: ordering, wrapping, stacking, overflow, navigation, and action placement. Cover relevant themes, languages, text expansion, and platform input modes. Do not assume a desktop screenshot determines mobile behavior.
+- Define each important control's trigger, resulting state, feedback, persistence, focus lifecycle, dismissal or back behavior, and recovery. Include loading, empty, partial, validation, error, disabled, permission, success, and destructive states when relevant; identify omissions by applicability rather than fabricating states.
+
+Use [Write](../write/SKILL.md.tmpl) for exact interface copy in the product's language and voice: labels, actions, hints, empty states, validation, errors, confirmations, and feedback. For supplied strings needing another language, invoke [Translate](../translate/SKILL.md.tmpl) and return its localized copy to the same design. Keep domain terms consistent with surrounding UI.
+
+Place explanation where it prevents a specific mistake or resolves a real ambiguity. Make the control or label clearer before adding helper prose. Explain unfamiliar concepts, required formats, and consequential effects near the relevant decision; move optional depth to a discoverable secondary surface. Do not hide necessary instructions in placeholders or hover-only help. Preserve visible labels and accessible names. Treat copy as layout material from the start.
+
+Check representative short, typical, and long content, missing values, realistic lists, and localized expansion against the composition. Use available real content without exposing private information. Mark invented examples as illustrative. Choose density to support scanning, comparison, and repeated work; preserve space where it improves grouping, emphasis, or recovery. Avoid both decorative emptiness and compression that makes the task harder.
+
+### 5. Critique and stress-test the selected proposal
+
+Use Audit Design's lenses for a bounded proposal critique: intent, composition, coherence, craft, expression, and restraint, alongside task clarity and access constraints. Walk the main journey and its important failure paths against the selected guides and repository evidence. Ask whether the first action is apparent, the information earns its place, the language removes ambiguity, and the design fits adjacent screens. Revise material weaknesses while preserving the direction's useful character.
+
+This is a planning critique, not a completed Audit Design invocation or independent user validation. When an actual rendered proposal warrants a coordinated audit, invoke [Audit Design](../audit-design/SKILL.md.tmpl) on the smallest useful set of screens and states. Pass the design version, audience/tasks, constraints, evidence, unresolved context, and an output location. Let it own its UX and accessibility chain; receive and address findings without claiming its uninspected states were verified. A requested full audit retains that skill's complete reporting requirements.
+
+Invoke [Pre-Mortem](../pre-mortem/SKILL.md.tmpl) on the concrete selected plan while it remains adjustable. Use first completion of the designed journey as the event horizon unless the task supplies another. Imagine failure through confusion, missed options, excessive explanation, hidden consequences, inaccessible states, unrealistic content, or mismatch with repository capabilities. Pass the success condition and known constraints; retain only plausible causes that can change a design decision or verification check.
+
+Apply the resulting changes. Record significant risks, their basis, prevention, and the check Build should perform. Stop when the material failure paths have a response and the design supports implementation; revisit only when new evidence exposes a gap. Keep unresolved product blockers distinct from hypotheses that can be checked after implementation. Do not claim a self-review is independent validation.
+
+### 6. Assemble and return the implementation handoff
+
+Use the [handoff scaffold](templates/design-handoff.md) to assemble the selected design, adapting its depth and omitting inapplicable sections. Save it at the project's established design/specification location, otherwise under a fresh `design/<task-slug>/` path in the authorized workspace. Preserve earlier decisions and artifacts; link revisions and visual references. Return inline if persistent storage is unavailable or the user requests it.
+
+Resolve contradictions among copy, visuals, component mappings, and state rules before handoff. Name any blocking unknown with its effect. Distinguish a settled decision, a bounded implementation choice, an assumption, and a deferred product decision. Build may choose code organization and equivalent implementation mechanics; it should not need to choose the primary journey, labels, hierarchy, or recovery contract.
+
+When called by Build, return the handoff and readiness status to that existing invocation. Build resumes implementation when consequential design blockers are resolved and later verifies the actual render, interactions, access, and difficult states. If constraints discovered during implementation invalidate a design decision, revise that portion with the new evidence. Do not call Build recursively or repeat intake for an unchanged brief.
+
+For a design-only request, return the artifacts without starting implementation. State the next implementation owner and remaining verification without introducing an approval gate the user did not request.
+
+## Output
+
+Return the selected interface design and its implementable handoff: task and scope, evidence and assumptions, aesthetic direction grounded in guidance, layout representation, exact copy, component/token mapping, interactions and state transitions, responsive/content rules, significant tradeoffs, pre-mortem responses, and acceptance checks with their owners. Keep rejected alternatives brief unless exploration itself was requested.
+
+Call the plan ready for implementation only when the primary journey, consequential visual and interaction decisions, copy, component feasibility, difficult states, and adaptations are specified with no unresolved design blocker. Otherwise return a partial handoff with the exact gap and independent work that can proceed. Separate planning readiness from rendered verification and real user validation. These are qualitative design judgments; no numerical aesthetic score or automated correctness verdict applies.

@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Added
 
+- Add experimental [Design](src/skills/design/SKILL.md.tmpl) to turn feature and product ideas into repository-aware interface plans, using aesthetics guidance, creative exploration, exact copy, component/state mappings, and a pre-mortem before implementation.
+
 - Add experimental Refactor for cross-repository audits, component-library consolidation, evidence-backed migration plans, coordinated domain agents, and verified cleanup through themed commits.
 
 - Add the experimental [Data Visualisation guide](src/guidelines/data/visualisation.md) for purpose-led data selection, chart choice, perceptual encoding, advanced visualisations, dashboards, uncertainty, and accessible delivery, with worked examples and links to the aesthetics references.
@@ -34,6 +36,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 - Add an interactive, end-user documentation site for the Agent Stack, covering its structure, capabilities, skills, disciplines, and guidelines.
 
 ### Changed
+
+- Route Build through Design before interface implementation, reuse settled handoffs, and compare the working result against the design. Backend-only changes skip design planning.
 
 - Clarify Audit Accessibility’s required Check Colour Contrast handoff for UI text, controls, and states, using rendered text size and weight alongside measured ratios and visibility checks.
 

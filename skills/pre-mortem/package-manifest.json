@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
+  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
   "name": "pre-mortem",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.53.0",
+  "stack_version": "0.54.0",
   "channel": "release",
   "dependencies": [
     {
@@ -51,7 +51,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "fcbff9aab362bcb412d2bfbba1dbb74dc7ec5c482bc3de95feea9d5920539a01",
+      "sha256": "1519eb10120b87c5f5d10b841e6d0baf77664ad9cd0dad5ca8d52fe3ad1e8a7a",
       "mode": 420
     }
   }

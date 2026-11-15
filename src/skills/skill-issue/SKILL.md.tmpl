@@ -51,6 +51,7 @@ If any discipline is unavailable, perform it directly and report the fallback. C
 | Generate or update repository documentation: "document this repo", "create docs", "build a documentation site", "update the configured docs website". | [create-docs](../create-docs/SKILL.md.tmpl) | Creates interlinked Markdown or a Nextra site under `docs/`, with configured publication when the request or project authorizes it. Inspects components, interfaces, workflows, and states. Reusable standards belong to Create Guidelines; small prose edits use Write. |
 | Create or revise reusable standards: "write our accessibility guidelines", "document conventions", "repair the Mermaid reference", "define best practices". | [create-guidelines](../create-guidelines/SKILL.md.tmpl) | Applying existing standards to one artifact. This routes to the authoring skill, never to a guideline file. |
 | Audit and refactor codebases and component libraries: "clean up this repo", "standardize components", "remove legacy code". | [refactor](../refactor/SKILL.md.tmpl) | Produces an evidence-backed audit and master plan; coordinates domain agents, component decisions, safe removal, refactor branches, Build implementation, and themed commits through Ship. Bounded features and defects use Build. |
+| Plan the interface for a feature, product, or redesign: "design this feature", "plan the UI/UX", "design this product before building". | [design](../design/SKILL.md.tmpl) | Produces a repository-aware visual and interaction plan, exact copy, component mapping, and implementation handoff. Assessment uses Audit Design; application code uses Build, which calls Design before UI implementation. |
 | Implement, repair, or refactor software: "build this app", "implement this feature", "fix this bug", "build this interface". | [build](../build/SKILL.md.tmpl) | Produces working code with project standards, comment-free authored code, cleanup, risk-based tests, real runtime inspection, and independent review. Assessment alone uses the requested audit; shipping uses Ship. |
 | Compose reusable career context from documents and a staged interview: "create a career profile", "build my application context", "help with career applications". | [compose-career-profile](../compose-career-profile/SKILL.md.tmpl) | Builds a reusable, evidence-grounded career profile. For a brand or author voice guide, use Compose Voice Profile. |
 | Answer job application, screening, or interview questions: "answer this application question", "help with this interview prompt", "fit this answer under 500 characters". | [answer-interview](../answer-interview/SKILL.md.tmpl) | Uses career evidence, the target job description, and the shared career voice profile to write a concise, authentic answer in chat, respecting the requested word or character limit. For a full motivation letter, use Draft Cover Letter. |
@@ -89,15 +90,19 @@ Use these through a matching skill first; select them directly for a scoped main
 
 ### Availability
 
-Build is experimental and available for software implementation, repair, refactoring, and frontend work. It loads applicable coding and aesthetics references and verifies changed behavior in its actual runtime.
+Design is experimental and available for visual UI/UX planning of new features, products, and scoped redesigns. It resolves design decisions into a concrete handoff and stops before application implementation.
 
-Audit Accessibility, Audit UX, and Audit Design are experimental and available. Use the narrowest requested audit: Design invokes UX, which invokes Accessibility. Their reports preserve evidence limits; the aesthetic layer has a flexible critique rather than a numerical beauty score.
+Build is experimental and available for software implementation, repair, refactoring, and frontend work. It invokes Design before interface implementation and reuses an existing complete handoff. It loads applicable coding and aesthetics references and verifies changed behavior in its actual runtime.
+
+Audit Accessibility, Audit UX, and Audit Design are experimental and available. Use the narrowest requested audit: Audit Design invokes Audit UX, which invokes Audit Accessibility. Their reports preserve evidence limits; the aesthetic layer has a flexible critique rather than a numerical beauty score.
 
 Setup Agent Stack is stable and configures automatic routing in global Codex or Claude Code instructions after installation. Answer Interview, Create CV, Draft Cover Letter, and Setup Career Stack are available as substantive skills with bundled resources and objective-check packages. Setup Career Stack initializes a career application workspace and routes application-form and interview questions to Answer Interview.
 
 Write, Ask User Question, Browse Skills, Check Colour Contrast, Convert Colour, Mind Wandering, Pre-Mortem, Show Me Your Work, Think Deeper, Think Harder, and Update Changelog have usable instructions. Research Web remains a planned method without usable instructions; use the caller's documented fallback when needed. Other planned map entries without substantive instruction files remain unavailable. Maintainer discovery reads canonical `src/skills/`, never generated root `skills/` or `dist/`. Recheck the files if a requested capability may have been implemented since this catalog was refreshed.
 
 ### Resolve neighboring intents
+
+- Creating a new interface plan selects Design. Implementing an interface selects Build, which calls Design for planning; reviewing an existing design selects the relevant audit.
 
 - Accessibility-only checks select Audit Accessibility. User/job/task usability selects Audit UX and includes accessibility. A coordinated design review or deeper aesthetic critique selects Audit Design, which adds aesthetics on top of both. None authorizes implementation.
 

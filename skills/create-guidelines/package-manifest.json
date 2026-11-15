@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
+  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
   "name": "create-guidelines",
   "version": "0.6.0",
   "status": "experimental",
-  "stack_version": "0.53.0",
+  "stack_version": "0.54.0",
   "channel": "release",
   "dependencies": [
     {
@@ -296,7 +296,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "689eba22a527fb765911c8577684792248767bd9da2c015c8385175967c567e8",
+      "sha256": "6cb91241c01717b4ba9de75c3dab79da5a4fe5de02c022b75263c09d55c3ba73",
       "mode": 420
     }
   }

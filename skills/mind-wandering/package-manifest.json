@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
+  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
   "name": "mind-wandering",
   "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.53.0",
+  "stack_version": "0.54.0",
   "channel": "release",
   "dependencies": [
     {
@@ -101,7 +101,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "70ebe73a1e50147e2f87666ce0f9613ea4f813a15872d80b14f8cf6904a9b633",
+      "sha256": "3229cd616c5363fcb7ff70de7c892616bb8eee9095d57ccb5e2bbcfbe0932b88",
       "mode": 420
     }
   }

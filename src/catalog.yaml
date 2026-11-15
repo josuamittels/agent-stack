@@ -163,6 +163,7 @@ skills:
       - think-harder
       - write
     conditional:
+      - design
       - audit-design
       - ship
       - spawn-evals
@@ -758,6 +759,50 @@ skills:
       - Python >=3.10 for Python helpers when present
     fallback: Read bundled instructions in the current context when native
       invocation is unavailable; report unavailable required tools.
+  design:
+    visibility: public
+    required:
+      - ask-user-question
+      - think-harder
+      - think-deeper
+      - mind-wandering
+      - pre-mortem
+      - write
+    conditional:
+      - audit-design
+      - translate
+    optional: []
+    routes: []
+    files:
+      - skills/design/SKILL.md.tmpl
+      - skills/design/templates/design-handoff.md
+    resources:
+      - guidelines/aesthetics/accessibility.md
+      - guidelines/aesthetics/colour.md
+      - guidelines/aesthetics/composition.md
+      - guidelines/aesthetics/haptics.md
+      - guidelines/aesthetics/iconography.md
+      - guidelines/aesthetics/infographics.md
+      - guidelines/aesthetics/interaction.md
+      - guidelines/aesthetics/motion.md
+      - guidelines/aesthetics/reference.md
+      - guidelines/aesthetics/references/apple-human-interface-guidelines/fundamentals/design-principles.md
+      - guidelines/aesthetics/references/composition/grid-structures.svg
+      - guidelines/aesthetics/references/composition/space-relationships.svg
+      - guidelines/aesthetics/references/iconography/construction.svg
+      - guidelines/aesthetics/sound.md
+      - guidelines/aesthetics/typography.md
+      - guidelines/languages/english.md
+    evaluations: []
+    hosts:
+      - codex
+      - claude-code
+      - chatgpt-work
+    requirements:
+      - Repository and design artifact inspection tools
+      - Browser or platform viewer for rendered evidence when available
+    fallback: Read bundled instructions in the current context when native invocation is
+      unavailable; report missing repository or rendered evidence.
   refactor:
     visibility: public
     required:
@@ -952,6 +997,7 @@ skills:
     conditional: []
     optional: []
     routes:
+      - design
       - audit-accessibility
       - audit-design
       - audit-ux

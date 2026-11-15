@@ -1,9 +1,9 @@
 ---
 name: build
 description: "Implement, repair, and refactor software, apps, and interfaces with project-aware structure, comment-free code, risk-based tests, rendered UI inspection, and independent subagent review. Use when working software or code changes are the requested outcome."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-11-13"
-updated: "2026-11-13"
+updated: "2026-11-15"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -66,7 +66,9 @@ Read project coding standards, formatter and linter configuration, supported run
 
 Read applicable sections before authoring. For another language, inspect local standards and consult official language or framework documentation for unresolved behavior. Verify APIs against actual dependency versions. Do not pretend that a missing stack guide exists or import another language's idioms indiscriminately.
 
-For frontend or native UI work, inspect the existing interface, design system, supplied brief, mockups, and assets before changing it. Without a supplied brief, establish a compact working direction from the product, audience, task, content, and existing system. State consequential assumptions and translate the direction into observable layout, typography, colour, and interaction choices. A design brief guides expression but does not replace accessibility requirements.
+Before implementing frontend or native interface changes, invoke [Design](../design/instructions.md) to resolve the affected visual, content, and interaction decisions. Pass the original outcome, repository findings and paths, audience/tasks, acceptance criteria, supplied brief or mockups, design system, existing decisions, constraints, permissions, and known evidence gaps. Design owns the plan; Build owns application code and runtime verification. Scale the handoff to the change: a settled local adjustment needs a compact amendment, while a new feature or product needs the relevant journey and system decisions. Backend-only work with no interface decisions skips this handoff.
+
+Receive the selected layout representation, exact copy, component/token mapping, responsive rules, important states and recovery, assumptions, risks, and acceptance checks. Reuse a current handoff that already covers these decisions; ask Design to resolve only gaps or changed constraints. Continue UI implementation when consequential design blockers are resolved. Keep permitted independent work moving while a product question is pending. If implementation evidence invalidates a decision, return that evidence to Design and revise the affected portion before proceeding. Do not silently redesign the interface during coding or restart an unchanged planning cycle. Explicit user instructions to skip planning take precedence; preserve and report consequential unresolved decisions.
 
 Read the [aesthetics framework](../../guidelines/aesthetics/reference.md) to select relevant domain guidance. Apply Interaction, Accessibility, and Composition to UI work. Load Typography, Colour, Iconography, and Motion when making those decisions. Follow the framework's platform references for native work. Reuse existing components and tokens. Do not invent an unrelated visual identity for a scoped fix.
 
@@ -111,7 +113,7 @@ Use a language-aware parser, tokenizer, or configured lint rule to check comment
 
 For web UI changes, start or reuse the documented development or preview server and open the affected route in a real browser. Use the host's supported browser tools and current instructions. Reuse project browser tests. Do not install a browser stack solely out of habit. Confirm readiness through a meaningful page state rather than a fixed sleep or an assumption that all network traffic stops.
 
-Inspect a screenshot of the actual rendered interface and exercise the changed journey. Compare the result with the design direction. Check relevant narrow and wide viewports, overflow and wrapping, keyboard access and focus, loading, empty, error, disabled, and success states as applicable. Inspect console and network failures relevant to the change. A screenshot establishes appearance only for that captured state. Verify interaction and persistence separately when the feature promises them.
+Inspect a screenshot of the actual rendered interface and exercise the changed journey. Compare the result with the Design handoff, including its exact copy, component choices, state rules, responsive behavior, and acceptance checks. Resolve material departures or return new constraints to Design before claiming completion. Check relevant narrow and wide viewports, overflow and wrapping, keyboard access and focus, loading, empty, error, disabled, and success states as applicable. Inspect console and network failures relevant to the change. A screenshot establishes appearance only for that captured state. Verify interaction and persistence separately when the feature promises them.
 
 Prefer role, label, or stable test-contract locators and condition-based assertions in browser automation. Reproduce the original bug and verify the repaired flow after reload. For native interfaces, use the appropriate simulator, emulator, or device and inspect its rendered result. For non-UI work, exercise the actual command, API, or service boundary instead of inventing a browser requirement.
 

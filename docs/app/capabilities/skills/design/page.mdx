@@ -1,0 +1,44 @@
+---
+title: "Design"
+---
+
+# Design
+
+> **Skill** · **experimental** · **v0.1.0** · updated 2026-11-15
+
+## Purpose
+
+Use Design to plan the visual UI/UX for a feature, a complete product, or a scoped redesign. It turns the intended outcome into a concrete interface that fits your repository, component library, existing product, and brand. It settles what belongs on screen, what it says, how it behaves, and how it looks before implementation.
+
+## Inputs
+
+Provide the feature or product idea, target project, intended users and tasks, and fixed constraints. Include research, brand or corporate identity guidance, screenshots, design files, assets, and acceptance criteria when available. Design inspects relevant functionality, permissions, routes, components, tokens, localization, and existing screens before asking about consequential gaps.
+
+For example, ask Design to plan a bulk-edit flow for an existing inventory product. It examines the current table and selection patterns, decides where the action belongs, specifies the fields and confirmation copy, and plans partial failure and recovery within the existing component system.
+
+## Workflow
+
+1. **Understand the task and project.** Inspect relevant source and available rendered screens. Separate observed conventions and supplied facts from assumptions, and establish the primary journey and success condition.
+2. **Set the design criteria.** Use [Think Deeper](/capabilities/disciplines/think-deeper) to identify overlooked needs and useful checks. Apply the [aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework), starting with interaction, accessibility, and composition, then load the visual and platform guidance needed for actual decisions.
+3. **Question and explore the interface.** Check what each region, option, and explanation contributes. Use [Mind Wandering](/capabilities/disciplines/mind-wandering) to explore meaningful alternatives, then select a direction against task clarity, visual character, system fit, access, and feasibility.
+4. **Specify the selected design.** Produce a spatial layout representation, exact copy through [Write](/capabilities/disciplines/write), component and token mappings, responsive rules, and relevant states and recovery. Use [Translate](/capabilities/skills/translate) for supplied text needing localization. Check realistic content lengths and decide where explanations earn their space.
+5. **Critique and stress-test it.** Review the proposal for intent, composition, coherence, craft, expression, restraint, task clarity, and access. Use [Pre-Mortem](/capabilities/disciplines/pre-mortem) to find plausible failure paths and revise the plan. A rendered proposal can receive a scoped [Audit Design](/capabilities/skills/audit-design) when that coordinated review is warranted.
+6. **Return an implementable handoff.** Fill in the [design handoff template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/design/templates/design-handoff.md) with settled decisions, evidence, risks, and acceptance checks. Return it to [Build](/capabilities/skills/build) when Build is the caller; a design-only request stops with the plan.
+
+## Result and limits
+
+Receive a selected interface design with its layout, exact copy, existing component and token references, interaction and state rules, responsive and content behavior, assumptions, tradeoffs, pre-mortem responses, and implementation checks. Design uses your project's specification location, otherwise a fresh `design/<task-slug>/` directory in the authorized workspace.
+
+A small change gets a compact amendment; a new product gets broader journey and system planning. Routine design choices are resolved from context and conventions. A consequential unknown becomes an explicit question or blocker. Suggested mechanisms can be improved to serve the intended outcome; explicit requirements remain binding until you change them.
+
+Design creates planning artifacts and stops before application code. Build implements the handoff and checks the actual render and behavior. An implementation constraint reopens only the affected design decisions. A planning critique does not establish usability, accessibility conformance, or real user validation.
+
+## Version and changes
+
+Version **0.1.0**, status **experimental**. This initial version adds repository-aware interface planning and the pre-implementation handoff from Build. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+
+## References
+
+- [Canonical instructions](https://github.com/josuamittels/agent-stack/blob/main/src/skills/design/SKILL.md.tmpl)
+- [Design handoff template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/design/templates/design-handoff.md)
+- [Aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework)

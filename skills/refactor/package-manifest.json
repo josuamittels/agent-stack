@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "46d52cc8ead51f0b4a02794ee22890ec4e68eeea3bb8341b104ad8ff818d3382",
+  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
   "name": "refactor",
   "version": "0.1.1",
   "status": "experimental",
-  "stack_version": "0.53.0",
+  "stack_version": "0.54.0",
   "channel": "release",
   "dependencies": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "name": "build",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "status": "experimental"
     },
     {
@@ -55,6 +55,16 @@
     {
       "name": "create-skill",
       "version": "0.14.0",
+      "status": "experimental"
+    },
+    {
+      "name": "design",
+      "version": "0.1.0",
+      "status": "experimental"
+    },
+    {
+      "name": "mind-wandering",
+      "version": "0.2.0",
       "status": "experimental"
     },
     {
@@ -99,6 +109,11 @@
     },
     {
       "name": "think-harder",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "name": "translate",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -171,7 +186,7 @@
     "src/skills/audit-ux/references/review-lenses.md": "822fa6be50aa4a4499725571596ebda7f92575eefd5bb78a30a1496c6922730c",
     "src/skills/audit-ux/templates/report.md": "ede71800f6dfcfb7cfa2f091d9f0316fbf32a42d5c6b35f518ff2f32074c8b01",
     "src/skills/browse-skills/SKILL.md.tmpl": "b309faed29740c25e8e21b61c799f9b7a93749965544e85e88311ff96a164d7b",
-    "src/skills/build/SKILL.md.tmpl": "9fcf8de99cbcf4354535cbb7509ab78e74855dabda988ecbe9f2dab96a4f87df",
+    "src/skills/build/SKILL.md.tmpl": "3e4298465bf0e89b7d58d6e2d3ce08b6140fb0f9b39d98e191dfe13e367b09bf",
     "src/skills/build/references/verification.md": "a3a3e5816bba51cca863adca25cf0e1c78beef0c79998902c9cc127398481693",
     "src/skills/check-colour-contrast/SKILL.md.tmpl": "be0c848279a150205075641c8661cf7d75a280d69c8b7f065f366a19317e5529",
     "src/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
@@ -193,6 +208,17 @@
     "src/skills/create-skill/SKILL.md.tmpl": "02b1dd7174f2746771a01fabf48cefa7d76d9d3a95eec24fcbf8c84d71ee1269",
     "src/skills/create-skill/references/authoring.md": "5d1f5029c740f20f583e64fbcdb7853f596b916f78635ed1511c2f5e0479555f",
     "src/skills/create-skill/templates/SKILL.md.tmpl": "d05822adb21a27579af3c4680c47c8ab9afb597cb94051ce6163b28d34c77216",
+    "src/skills/design/SKILL.md.tmpl": "e5f486da9643d9128936939f8b4afaa2cc422b0490667b01d184a9cf869de274",
+    "src/skills/design/templates/design-handoff.md": "74483c80e4a335327badf6ab674044cb5be032ba9b52793f0cdf6f31882db0b7",
+    "src/skills/mind-wandering/SKILL.md.tmpl": "481648bbb118eaa0641996b09988d8820e20a58d0def00676a36f239b9155aa0",
+    "src/skills/mind-wandering/references/agent-translation-human-creativity-techniques.md": "2f52476f9a6f0564a88cc01b3917d5248650b70ac0d3f51205dc8d23566203bc",
+    "src/skills/mind-wandering/references/analogies-and-prompts.md": "19abb3a1557268a3a48638813fdc9600f0aab6a198e0ad2398436600230a271f",
+    "src/skills/mind-wandering/references/attention-and-mind-wandering-creativity.md": "1654e222b338d2e5b63e57fe50db7a7322e745fbab784b3ad6b91970d48f8058",
+    "src/skills/mind-wandering/references/changing-representations.md": "5ff23452f5793f62f3d94f06797b3daedb30cae20d5558c5ebb1149f01118884",
+    "src/skills/mind-wandering/references/creative-moves.md": "324d94dbaad047828a9ac34a0e4aff39f1310b0399c7a612d0bc87732f4cd012",
+    "src/skills/mind-wandering/references/generation-and-evaluation-research.md": "b8e7c1dfc831e6333a5a083f1b94813292d36f8952357074c061f33cbbca8a3f",
+    "src/skills/mind-wandering/references/measuring-creativity.md": "16b609160b6eb851194d074fedb6f18e9d9cffc3618cbfe0baed1a0968409074",
+    "src/skills/mind-wandering/references/research-incubation.md": "0173515d567219704de892cc22b3f07b42b2d62fdd733b16d715d53c46d16e18",
     "src/skills/pre-mortem/SKILL.md.tmpl": "8d9b42b2417c1f00f361443d03a4b7765ba59cf59bd0262db8a5901e2e42eb24",
     "src/skills/refactor/SKILL.md.tmpl": "c9d8a7194669bacc53707a952347bd63ad1fefa79290943574a124fab488669a",
     "src/skills/refactor/references/component-decisions.md": "65a695852ccab2d77d64db6368062eeaed382d11e7aa0e0ac69f850216aab1e3",
@@ -202,7 +228,7 @@
     "src/skills/ship/SKILL.md.tmpl": "f31b7d4de19974edd46d2ffcff6c9b51170d352ec58e37a30df66431e37172d8",
     "src/skills/show-me-your-work/SKILL.md.tmpl": "d1046f59773bf5e3e9e6c87cf9aa05d328d0abd2deacb9066ca3e6cd14e6038b",
     "src/skills/show-me-your-work/templates/decision-log-template.tsv": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
-    "src/skills/skill-issue/SKILL.md.tmpl": "ae5ce8f0959feaf54a2e764caab0bfdfd0a317c069452f7a5065f0aa185d7b2c",
+    "src/skills/skill-issue/SKILL.md.tmpl": "ab94844b6a8d0719a093e3dbb1aca3febbb3c518102a1ffcb8d090d6742a626d",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
     "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
     "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
@@ -210,6 +236,7 @@
     "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
     "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
+    "src/skills/translate/SKILL.md.tmpl": "cb5e9111b2586de0b1a2d9bdc71796d004147f7e0c4731b406af443751ba7808",
     "src/skills/update-changelog/SKILL.md.tmpl": "43e8ef4b135404031c6db2a2c1022404bb3828013731698ca476d75b6acbe862",
     "src/skills/update-map/SKILL.md.tmpl": "ecbb7c63c3fcb6868a4ab5f9965c91ed6a97bdc1aec8473891e2c3fa9b1eea10",
     "src/skills/update-router/SKILL.md.tmpl": "00c00e278fd6d2fcdc569717b18fd492f2c620580e1392616c269ace7355055c",
@@ -412,7 +439,7 @@
       "mode": 420
     },
     "references/_stack/skills/build/instructions.md": {
-      "sha256": "3bb7794edce15379cc91c0c9471c4d9335f66e3b523e8880d612eb307a4de4a7",
+      "sha256": "be5b1f0bd7114c80630054ee8d8f4b23486c31069bb1d8eab7dd81992ebb6ab2",
       "mode": 420
     },
     "references/_stack/skills/build/references/verification.md": {
@@ -499,6 +526,50 @@
       "sha256": "d05822adb21a27579af3c4680c47c8ab9afb597cb94051ce6163b28d34c77216",
       "mode": 420
     },
+    "references/_stack/skills/design/instructions.md": {
+      "sha256": "532cd92334d8588815be236cb87686a23b7109413438c9579248e83b776f2e2d",
+      "mode": 420
+    },
+    "references/_stack/skills/design/templates/design-handoff.md": {
+      "sha256": "74483c80e4a335327badf6ab674044cb5be032ba9b52793f0cdf6f31882db0b7",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/instructions.md": {
+      "sha256": "6202f29e71fc67d9b9a47a04be6579f40f469fc69be76e665a2c573b8462b812",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/agent-translation-human-creativity-techniques.md": {
+      "sha256": "2f52476f9a6f0564a88cc01b3917d5248650b70ac0d3f51205dc8d23566203bc",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/analogies-and-prompts.md": {
+      "sha256": "19abb3a1557268a3a48638813fdc9600f0aab6a198e0ad2398436600230a271f",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/attention-and-mind-wandering-creativity.md": {
+      "sha256": "1654e222b338d2e5b63e57fe50db7a7322e745fbab784b3ad6b91970d48f8058",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/changing-representations.md": {
+      "sha256": "5ff23452f5793f62f3d94f06797b3daedb30cae20d5558c5ebb1149f01118884",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/creative-moves.md": {
+      "sha256": "324d94dbaad047828a9ac34a0e4aff39f1310b0399c7a612d0bc87732f4cd012",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/generation-and-evaluation-research.md": {
+      "sha256": "b8e7c1dfc831e6333a5a083f1b94813292d36f8952357074c061f33cbbca8a3f",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/measuring-creativity.md": {
+      "sha256": "16b609160b6eb851194d074fedb6f18e9d9cffc3618cbfe0baed1a0968409074",
+      "mode": 420
+    },
+    "references/_stack/skills/mind-wandering/references/research-incubation.md": {
+      "sha256": "0173515d567219704de892cc22b3f07b42b2d62fdd733b16d715d53c46d16e18",
+      "mode": 420
+    },
     "references/_stack/skills/pre-mortem/instructions.md": {
       "sha256": "1df008a53ce9227acb43f0b0e165cba37ed0b471f72ce9413c1b1f9770ec410f",
       "mode": 420
@@ -536,7 +607,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "91d0844465d553a107d30abbf49d7de3587869ab756fe2b8c8ec44b45305bb94",
+      "sha256": "6c02e67df7c3db21e2c74bf38ee1f5ac1fcebcac725587cbc64bd42b00508a4a",
       "mode": 420
     },
     "references/_stack/skills/spawn-evals/instructions.md": {
@@ -565,6 +636,10 @@
     },
     "references/_stack/skills/think-harder/instructions.md": {
       "sha256": "2e72b81a47cd6e26af8e5b061a2b21f8a8dee0944f760deeaa1a92baddbdf25b",
+      "mode": 420
+    },
+    "references/_stack/skills/translate/instructions.md": {
+      "sha256": "dd5d7392760a3b4f72c7f0de3e2ed7e607f64098e344f9bb52bd2d3450ff2146",
       "mode": 420
     },
     "references/_stack/skills/update-changelog/instructions.md": {
@@ -596,7 +671,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "58a74add9a95b9b7e7fce5926e4612f3d495dce4ce8a0edfbc5da6cab04aed63",
+      "sha256": "4222a3ba85c0d551b634904af82eddc1e43b4683a535c152ca08cdd3f0072a10",
       "mode": 420
     }
   }
