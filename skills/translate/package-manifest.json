@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "translate",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -81,7 +81,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "bda95dbbb25caeafb664e635d3003c0c014df4473dd1962d32fa0dfe24975296",
+      "sha256": "99f07a2d4c18a31bfd71e7d5b02883629ea178f107cafe31ff45352e4593bbf9",
       "mode": 420
     }
   }

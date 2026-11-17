@@ -259,7 +259,7 @@ Audit and refactor codebases and interacting component libraries. Plan architect
 
 Bundled dependencies: ask-user-question, audit-accessibility, audit-design, audit-ux, browse-skills, build, check-colour-contrast, create-docs, create-guidelines, create-skill, design, mind-wandering, pre-mortem, release-agent-stack, ship, show-me-your-work, skill-issue, spawn-evals, think-deeper, think-harder, translate, update-changelog, update-map, update-router, write.
 
-Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available; Python >=3.10 for objective Python source checks; Project language toolchain and declared checks; Browser or platform runtime for interface verification; Subagent support for independent review when permitted; Repository and design artifact inspection tools; Browser or platform viewer for rendered evidence when available.
+Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10 for Python helpers when present; Artifact inspection tools appropriate to the supplied medium; interactive and assistive-technology evidence when available; Python >=3.10 for objective Python source checks; Project language toolchain and declared checks; Browser or platform runtime for interface verification; Subagent support for independent review when permitted; Repository and design artifact inspection tools; Browser or platform viewer for rendered evidence when available; Python >=3.10 for objective migration dependency checks.
 
 ## research
 

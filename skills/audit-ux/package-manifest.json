@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "audit-ux",
   "version": "0.1.1",
   "status": "experimental",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -246,7 +246,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "51c0feb9ab2b23a3b0303cbb1ccb14c9a0e57d7349f68d08d219b135d58c5775",
+      "sha256": "4126496aec32cc7cd1c127de55a3ee751b52d9c2d7986928e59e4c1f68a30c97",
       "mode": 420
     }
   }

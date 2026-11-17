@@ -4,13 +4,13 @@ title: "Refactor"
 
 # Refactor
 
-> **Skill** · **experimental** · **v0.1.1** · updated 2026-11-15
+> **Skill** · **experimental** · **v0.2.0** · updated 2026-11-17
 
 ## Purpose
 
 Use Refactor to audit and clean up a codebase, including applications and component libraries that depend on each other. It produces an evidence-backed master plan before implementation, then coordinates incremental changes when you request them.
 
-The audit covers repository structure, package boundaries, component duplication and variants, conventions, legacy code, artifacts, and comments. It follows applicable `AGENTS.md` files and established contracts. If requirements conflict, it presents the rules and consequences for your decision, then records the agreed standard in the relevant Markdown instructions.
+The audit covers repository structure, package boundaries, component duplication and variants, naming, translations and strings, design consistency, legacy code, artifacts, and comments. It follows applicable `AGENTS.md` files and established contracts. If requirements conflict, it presents the rules and consequences for your decision, then records the agreed standard in the relevant Markdown instructions.
 
 ## Inputs
 
@@ -22,20 +22,46 @@ For example, ask Refactor to audit a web application and its shared UI library, 
 
 1. **Establish the baseline.** Read repository rules, versions, package relationships, existing failures, and available checks. Use [Think Deeper](/capabilities/disciplines/think-deeper) to select useful investigation methods and record inspected, sampled, excluded, and inaccessible areas.
 2. **Trace architecture and consumers.** Map ownership and dependencies, including how applications receive built libraries, declarations, styles, tokens, and assets. Inspect production packaging as well as development aliases.
-3. **Compare component families.** Examine purpose, semantics, interactions, state, appearance, and actual consumers. Decide whether differences need one standard component, a legitimate variant, composition, a domain wrapper, separate components, or a temporary compatibility adapter.
+3. **Resolve design direction and compare component families.** Use supplied standards or reconstruct the working system from rendered screens, repeated patterns, tokens, and relevant history. Compare component contracts, typography, spacing, containers, and page compositions. Decide whether differences need one standard component, a legitimate variant, composition, a domain wrapper, separate components, or a temporary compatibility adapter.
 4. **Plan the migration and removals.** Fill in the [audit and master-plan template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/refactor/templates/audit-plan.md) with evidence, ownership decisions, task dependencies, caller mappings, removal checks, rollback, and release order. Use [Pre-Mortem](/capabilities/disciplines/pre-mortem) to challenge the concrete plan before edits.
-5. **Implement coherent waves.** Create refactor branches in affected repositories, subject to resolved project rules. Use [Build](/capabilities/skills/build) for implementation and review, and [Ship](/capabilities/skills/ship) for themed commits. Keep cross-repository changes compatible during the transition.
-6. **Verify the integrated result.** Run applicable checks, exercise changed journeys and built-package consumers, repeat cleanup checks, and resolve independent-review findings. Reconcile every planned task, removal, and remaining exception.
+5. **Implement coherent waves.** Create refactor branches in affected repositories, subject to resolved project rules. Use [Build](/capabilities/skills/build) for implementation and review, and [Ship](/capabilities/skills/ship) for themed commits. Propagate renames and structural changes to every affected consumer, resource, test, story, and document while maintaining compatibility during the transition.
+6. **Verify the integrated result.** Run applicable checks, exercise changed journeys and built-package consumers, compare related screens together, and resolve independent-review findings. Verify translation lookups and remaining old references, then reconcile every planned task, removal, and exception.
 
 ## Coordinating agents
 
 For substantial implementation, Refactor defaults to about three domain agents when work can be edited independently. A coordinator settles shared APIs, tokens, ownership, compatibility, and migration order before assigning exclusive writable paths. Library components, application migration, and tooling or legacy cleanup are possible domains; the codebase determines the actual split.
+
+UI agents receive the same resolved design direction, canonical components, visual roles, tokens, composition patterns, and exceptions. Shared typography, containers, styles, translation catalogs, and naming maps have explicit owners so parallel work follows one standard.
 
 Audit agents may investigate separate areas in parallel with read-only access. The coordinator reconciles their evidence into one master plan. Tightly coupled work uses fewer agents or sequential changes. Shared files have one owner, Git operations are coordinated, and final independent review uses an agent that did not author the reviewed implementation. If delegation is unavailable, the result states that limitation.
 
 ## Component and cleanup policy
 
 Visual resemblance alone does not justify merging components. The audit compares their contracts and real use cases. Each retained variant needs a meaningful purpose; distinct semantics or state behavior can justify separate components. Shared infrastructure needs actual consumers and maintenance benefits.
+
+## Design consistency and legacy outliers
+
+Refactor works with an established design system or a scattered application without one. Supplied brand guidance, library contracts, and approved decisions provide the starting direction. Without them, it reconstructs a supported direction from the actual interface, recurring patterns, styles, tokens, stories, accessibility behavior, and repository history. It records what is supplied, observed, inferred, or unresolved. Materially competing directions need your decision; substantial new design choices use [Design](/capabilities/skills/design) before returning to the migration plan.
+
+History helps distinguish active evolution from superseded implementation. A recent timestamp or majority usage alone does not make a pattern canonical. Refactor compares approval, adoption, completeness across states, and runtime quality. When history is unavailable, the report states that limit instead of guessing which implementation is newer.
+
+The audit compares equivalent roles across routes, themes, viewports, and states. It examines actual font loading, type hierarchy and wrapping, spacing rhythm, alignment, grids, container widths, gutters, responsive behavior, surfaces, and control sizing. Rendered output and computed styles help expose drift caused by inheritance, fallback fonts, nested containers, and overrides. Meaningful hierarchy and task-specific density remain valid differences.
+
+Component-family checks actively look for outliers even when implementations have different names or no shared import. For example, fields are compared for label and help placement, text roles, density, padding, borders, icons, focus, errors, and disabled or read-only states. Text inputs, textareas, selects, and date controls can share appropriate field structure and tokens while retaining their own semantics and interaction. Appearance establishes a deviation; source, consumer, and supersession evidence establish whether it is legacy.
+
+Repeated headers, toolbars, form sections, settings groups, list/detail layouts, cards, and feedback states receive the same comparison. Refactor chooses a canonical composition where the contracts align, migrates consumers, and removes superseded styles, aliases, and overrides. Final verification compares the related screens and complete journeys together, including responsive transitions, focus continuity, and affected motion behavior. Screenshots alone do not establish interaction smoothness.
+
+## Naming, strings, and translations
+
+Refactor audits naming across files, directories, packages, exports, props, types, functions, routes, configuration, and translation keys. External names, URLs, persisted identifiers, and configuration keys are compatibility contracts. Renaming them requires a consumer migration or a documented transition.
+
+For localized products, it inventories catalogs, namespaces, loaders, fallback chains, extraction tools, and shared versus product-specific ownership. Checks cover missing, extra, or duplicate keys; conflicting copies; hardcoded strings; placeholders; plural and select branches; and message syntax. Equal-looking messages are not merged without semantic and translator context. Locale grammar and plural categories can legitimately differ.
+
+Structural changes preserve translated values, meaning, formatting, placeholders, and fallback behavior. Actual translation work uses [Translate](/capabilities/skills/translate). A rename ledger maps old names and paths to new ones across every affected product and locale, including dynamic callers, generated outputs, tests, stories, examples, and documentation.
+
+Verification uses available parsers, message compilers, extractors, and locale checks, then exercises changed lookups, interpolation, fallbacks, and affected layouts in the actual products. Remaining old references need reconciliation; a clean text search does not prove complete propagation. Each affected consumer and locale is migrated and verified, or reported as blocked or explicitly deferred with your agreement.
+
+## Code cleanup
 
 Refactor requires comment-free handwritten code throughout the agreed cleanup scope, using names, types, structure, validation, and tests to express intent. Necessary rationale belongs in external documentation. Required legal notices and machine-interpreted metadata remain protected, and conflicts are raised for resolution.
 
@@ -51,7 +77,7 @@ For a bounded feature or defect, use [Build](/capabilities/skills/build). Pushin
 
 ## Version and changes
 
-Version **0.1.1**, status **experimental**. This initial shipping version includes the audit and migration workflow, component decisions, and coordinated agent work. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+Version **0.2.0**, status **experimental**. This version expands the audit to naming, strings and translations, propagation across consumers, design-direction inference, visual family outliers, typography and layout, and verified consolidation of repeated page compositions. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
 
 ## References
 

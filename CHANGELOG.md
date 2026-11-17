@@ -4,6 +4,10 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ## [Unreleased]
 
+### Changed
+
+- Extend experimental Refactor with translation and naming audits, complete reference migrations, inferred design direction, component-family outlier detection, and consistent typography, spacing, containers, and reusable page compositions.
+
 ### Added
 
 - Add experimental [Design](src/skills/design/SKILL.md.tmpl) to turn feature and product ideas into repository-aware interface plans, using aesthetics guidance, creative exploration, exact copy, component/state mappings, and a pre-mortem before implementation.

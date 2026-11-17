@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "research",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -396,7 +396,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "31125a4a0aae3e3ed5182e221ae7021f0422b5ec6fbfea7fb7dd8e34095ac501",
+      "sha256": "3065b4de2178bde9160656ae555240f842e1b6bbc2424feff2db760a88490793",
       "mode": 420
     }
   }

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "create-skill",
   "version": "0.14.0",
   "status": "experimental",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -296,7 +296,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "400de20859454304388dade104ba3e3e81bb8b47d5806a40a038cc32390f5287",
+      "sha256": "d23b0860aac8c5dce64f193397acabd2be71e8aa778d9069978b059aae2cb5b0",
       "mode": 420
     }
   }

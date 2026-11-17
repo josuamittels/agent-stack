@@ -5,9 +5,9 @@ description: Audit and refactor codebases and interacting component libraries.
   removal; implement in themed commits on refactor branches when requested.
 license: MIT
 metadata:
-  version: 0.1.1
+  version: 0.2.0
   status: experimental
-  stack-version: 0.54.0
+  stack-version: 0.55.0
   distribution: release
 ---
 

@@ -23,9 +23,29 @@ Describe current and target ownership, package graph, import direction, state/sc
 | Family | Implementations and consumers | Purpose/semantics/state | Differences and variants | Decision and rationale | Canonical owner and API mapping | Checks |
 | --- | --- | --- | --- | --- | --- | --- |
 
+## Design direction and UI consistency
+
+Record supplied design authorities, observed patterns, relevant Git evolution and supersession evidence, inferred direction, confidence, competing directions, and unavailable history or renders. Record the selected aesthetics/coding guidance and resolved decisions. Without a supplied system, define the minimum maintained visual-role, token, component, and page-composition contract needed for this product.
+
+| Role or repeated task | Routes/products and rendered evidence | Inconsistent typography, space, container, composition, or behavior | Intended rule and canonical owner | Migration task and justified exceptions | Before/after and runtime checks |
+| --- | --- | --- | --- | --- | --- |
+
+Classify implementations as canonical, contextual alternatives, transitions, experiments, obsolete, or unresolved. Link obsolete components, tokens, styles, and overrides to replacements and removal tasks. Include all affected consumers and supported states; distinguish intentional visual changes from behavior-preserving refactoring.
+
+Include a component-family outlier pass: compare equivalent roles and states, record unexplained deviations from shared design foundations, trace their causes and possible legacy origins, and resolve each through consolidation or an evidenced exception. For form fields include labels/help/errors, text roles, density, padding, borders, surfaces, icons, focus, and disabled/read-only presentation across actual forms.
+
 ## Removal ledger
 
 | Item | Obsolescence evidence | Indirect/public consumers checked | Replacement or retention | Task | Verification and recovery |
+| --- | --- | --- | --- | --- | --- |
+
+## Translation and naming consistency
+
+Record authoritative naming rules, supported locales, source locales and fallbacks, namespace/file/key organization, shared versus product ownership, loaders and extraction tools, locale parity exceptions, placeholder and plural/select contracts, hardcoded strings, and unresolved coverage. Distinguish structural migration from changes to translated meaning.
+
+## Rename and reference ledger
+
+| Old name, path, or key | Replacement and rationale | Affected products, locales, and consumers | Task and migration order | Compatibility or historical exceptions | Reference and runtime verification |
 | --- | --- | --- | --- | --- | --- |
 
 ## Migration tasks

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "audit-accessibility",
   "version": "0.1.2",
   "status": "experimental",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -226,7 +226,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "6f506752553f47f50227ad256320783ae9e08b4ed74dd6aa751a50984c1ff081",
+      "sha256": "1f4b4ff011c4f2333449625e084f8e1a4897fb5618d8ca5d4bffe566290afc25",
       "mode": 420
     }
   }

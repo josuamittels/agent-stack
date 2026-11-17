@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "audit-design",
   "version": "0.2.1",
   "status": "experimental",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -371,7 +371,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "8d7c57b0d77d4af2f547e828e7e58382cd5ad83cfe8ee8ff189fad859b11dd33",
+      "sha256": "404406edcd56e8dadffc2fe8d54e30a27323eb105478294cb6c0247a3b7afae5",
       "mode": 420
     }
   }

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "1b69a8b8d43e62549123cabed93c2015fac7cc9462995ebf00c41d82bbbfd6f9",
+  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
   "name": "design",
   "version": "0.1.0",
   "status": "experimental",
-  "stack_version": "0.54.0",
+  "stack_version": "0.55.0",
   "channel": "release",
   "dependencies": [
     {
@@ -446,7 +446,7 @@
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "0a8533b6ead0f001fd9bb12b1145c397510aa1870d4c1d74e6ffa195589cee48",
+      "sha256": "8948b2b8650ff5e74da4f9d169768e644f4e8c18bd0c9ae7c08c0f92d8db69c0",
       "mode": 420
     }
   }
