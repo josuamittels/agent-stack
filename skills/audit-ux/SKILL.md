@@ -7,9 +7,9 @@ description: Audit how well a supplied design, interface, or information
   actions.
 license: MIT
 metadata:
-  version: 0.1.1
+  version: 0.2.0
   status: experimental
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

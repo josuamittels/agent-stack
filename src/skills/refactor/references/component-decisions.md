@@ -2,6 +2,8 @@
 
 Read during a component-library audit. These are decision procedures for the audit, applied under the target repositories' standards. Verify framework-specific details against the installed version. Record the evidence supporting each decision; there is no scientifically established universal component count, variant limit, or directory layout.
 
+Use this reference to consolidate code against established contracts. Visual differences help identify divergent implementations; they do not authorize redesign or establish which design is better. Infer implementation authority from documented rules, shared sources, consumers, and corroborated migration evidence. Escalate consequential ambiguity instead of creating a new visual or UX direction. Detailed experience and language review belongs to separately scoped Audit Design or Audit UX work.
+
 ## Compare contracts before appearances
 
 Compare user purpose, semantic role, keyboard and focus behavior, state transitions, accessible naming, data requirements, layout, tokens, and supported consumers. Two blue rectangles may be a navigation link and an action button. Preserve their different semantics even if they share styling. Two differently named action buttons with the same contract may belong to one canonical component.

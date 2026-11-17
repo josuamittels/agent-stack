@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
+  "catalog_sha256": "a6276f2c27b489bba2f91ac5f4892a6320923981f0252df1d6a7d53d711dbce7",
   "name": "audit-ux",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "status": "experimental",
-  "stack_version": "0.55.0",
+  "stack_version": "0.56.0",
   "channel": "release",
   "dependencies": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "name": "audit-ux",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "status": "experimental"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "write",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "status": "stable"
     }
   ],
@@ -71,9 +71,9 @@
     "src/skills/audit-accessibility/SKILL.md.tmpl": "ae2af447e98561ed884127ac5256752a2a5f6f05f6eeea2c700fc5905e4ba19c",
     "src/skills/audit-accessibility/references/rubric.md": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
     "src/skills/audit-accessibility/templates/report.md": "a5c521be9b306a8de06e2c621eb1cb4bbb1700b17b0578ccc94fd19a22fdb780",
-    "src/skills/audit-ux/SKILL.md.tmpl": "920ec5f23229cae9253ae78032d5bd544095382c1dc1d5d82f9eb23c654bd3a8",
-    "src/skills/audit-ux/references/review-lenses.md": "822fa6be50aa4a4499725571596ebda7f92575eefd5bb78a30a1496c6922730c",
-    "src/skills/audit-ux/templates/report.md": "ede71800f6dfcfb7cfa2f091d9f0316fbf32a42d5c6b35f518ff2f32074c8b01",
+    "src/skills/audit-ux/SKILL.md.tmpl": "ce1e9a1dadb1f6055d44637ba126ea653ac8b2c295ad6eb306c8e52fa2e369cb",
+    "src/skills/audit-ux/references/review-lenses.md": "111c0d3cf11049eb8cba7850d6514f1e8b839516105c3df83f736493d6b910c5",
+    "src/skills/audit-ux/templates/report.md": "3685034a45ffacf7e8005b03b4d311437c6a638a4b2aed3226b8db3882e32e88",
     "src/skills/check-colour-contrast/SKILL.md.tmpl": "be0c848279a150205075641c8661cf7d75a280d69c8b7f065f366a19317e5529",
     "src/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
@@ -82,7 +82,7 @@
     "src/skills/spawn-evals/scripts/checklib.py": "af92f99ea5f213d71b842aa9bc1de7a6d48ebb9c660ed3b38ed3a654c553941e",
     "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
-    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+    "src/skills/write/SKILL.md.tmpl": "e7860999b575b5e9c3f50e8b37495c25265903332a67d812623cce28fec11df7"
   },
   "files": {
     "LICENSE": {
@@ -198,15 +198,15 @@
       "mode": 420
     },
     "references/_stack/skills/audit-ux/instructions.md": {
-      "sha256": "0dc8c88b0c698a651731be093ab803d0f73fbcf8c6c5c5a561d12f4e30cb167d",
+      "sha256": "4f9c1682cc41244e604b312d26539e026d7a026f12313957918593313466d1c8",
       "mode": 420
     },
     "references/_stack/skills/audit-ux/references/review-lenses.md": {
-      "sha256": "822fa6be50aa4a4499725571596ebda7f92575eefd5bb78a30a1496c6922730c",
+      "sha256": "111c0d3cf11049eb8cba7850d6514f1e8b839516105c3df83f736493d6b910c5",
       "mode": 420
     },
     "references/_stack/skills/audit-ux/templates/report.md": {
-      "sha256": "ede71800f6dfcfb7cfa2f091d9f0316fbf32a42d5c6b35f518ff2f32074c8b01",
+      "sha256": "3685034a45ffacf7e8005b03b4d311437c6a638a4b2aed3226b8db3882e32e88",
       "mode": 420
     },
     "references/_stack/skills/check-colour-contrast/instructions.md": {
@@ -242,11 +242,11 @@
       "mode": 420
     },
     "references/_stack/skills/write/instructions.md": {
-      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "sha256": "9216c71257050f4ceb607e599e40301074248402803b3a60e2a563120faa3d8a",
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "4126496aec32cc7cd1c127de55a3ee751b52d9c2d7986928e59e4c1f68a30c97",
+      "sha256": "677fa008d8d1c109884813c619c8010011abb51c07679057e3ae0f0c8127d08b",
       "mode": 420
     }
   }

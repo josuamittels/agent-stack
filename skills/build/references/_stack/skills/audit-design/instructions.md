@@ -1,9 +1,9 @@
 ---
 name: "audit-design"
 description: "Coordinate a design audit through Audit UX and its accessibility sub-audit, then add a deep aesthetic critique of intent, composition, coherence, craft, expression, and restraint. Return linked reports and one prioritized improvement plan for the supplied design."
-version: "0.2.1"
+version: "0.3.0"
 created: "2026-11-12"
-updated: "2026-11-12"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -83,6 +83,12 @@ Consume behavior/access constraints from the helpers and read their owning guide
 Write a short aesthetic thesis: what currently gives this design its character, what it appears to be trying to communicate, and where its choices reinforce or weaken that direction. Tie adjectives to visible mechanisms. For example, explain which scale, spacing, image or type relationships create a restrained or energetic effect. Distinguish the brief's intent from the reviewer's interpretation and actual audience evidence.
 
 ### 4. Evaluate the whole, the details, and their relationships
+
+For consistency reviews, compare related screens and component families, including differently named or app-local implementations. Request the supplied design authority or the evidence behind an inferred direction; absence of a formal system does not prevent a bounded review. Compare equivalent roles, states, themes, and viewports. Trace unexplained outliers to source styles, overrides, tokens, or duplicated components when accessible. Appearance establishes a deviation; history and supersession/consumer evidence establish possible legacy status. Mark unresolved alternatives rather than treating the newest or most common implementation as automatically correct.
+
+Use the selected aesthetics guides to diagnose typography, actual fonts, weight, tracking/kerning, spacing, containers, composition, and state treatment. Pair rendered evidence with computed styles when available. For fields, compare shared label/help/error structure, density, padding, borders, surfaces, icons, focus, and disabled/read-only treatment while preserving control-specific semantics. Apply the same family comparison to buttons, cards, dialogs, navigation, tables, and reusable page sections. Record location, expected role/contract, cause, consequence, confidence, and consolidation or justified exception. Ask the UX helper to assess task/context consistency and language in those same instances; retain its ownership of those judgments.
+
+For a post-change review, compare related routes and full affected journeys against the resolved handoff, not isolated screenshots. Include relevant responsive states, themes, locales, typography, containers, shared sections, focus continuity, layout stability, and affected motion/reduced-motion behavior through their owning guides. Distinguish visual inspection from runtime interaction and user evidence. Return remaining inconsistencies and coverage gaps to the implementation coordinator; do not undertake migration or delete legacy code during the audit.
 
 First inspect the overall impression, dominant message, attention structure, perceived weight, density, rhythm, and character. Then examine normal viewing size and close details. Finally return to the whole and compare recurring roles across the family. Use the following lenses selectively rather than producing a fixed scorecard:
 

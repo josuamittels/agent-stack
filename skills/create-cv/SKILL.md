@@ -6,7 +6,7 @@ license: MIT
 metadata:
   version: 2.0.1
   status: stable
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

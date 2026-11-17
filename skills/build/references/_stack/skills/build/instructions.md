@@ -1,9 +1,9 @@
 ---
 name: build
 description: "Implement, repair, and refactor software, apps, and interfaces with project-aware structure, comment-free code, risk-based tests, rendered UI inspection, and independent subagent review. Use when working software or code changes are the requested outcome."
-version: "0.2.0"
+version: "0.2.1"
 created: "2026-11-13"
-updated: "2026-11-15"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -66,7 +66,7 @@ Read project coding standards, formatter and linter configuration, supported run
 
 Read applicable sections before authoring. For another language, inspect local standards and consult official language or framework documentation for unresolved behavior. Verify APIs against actual dependency versions. Do not pretend that a missing stack guide exists or import another language's idioms indiscriminately.
 
-Before implementing frontend or native interface changes, invoke [Design](../design/instructions.md) to resolve the affected visual, content, and interaction decisions. Pass the original outcome, repository findings and paths, audience/tasks, acceptance criteria, supplied brief or mockups, design system, existing decisions, constraints, permissions, and known evidence gaps. Design owns the plan; Build owns application code and runtime verification. Scale the handoff to the change: a settled local adjustment needs a compact amendment, while a new feature or product needs the relevant journey and system decisions. Backend-only work with no interface decisions skips this handoff.
+Before implementing frontend or native interface changes with unsettled visual, content, or interaction decisions, invoke [Design](../design/instructions.md) to resolve the affected visual, content, and interaction decisions. Pass the original outcome, repository findings and paths, audience/tasks, acceptance criteria, supplied brief or mockups, design system, existing decisions, constraints, permissions, and known evidence gaps. Design owns the plan; Build owns application code and runtime verification. Scale the handoff to the change: a settled local adjustment needs a compact amendment, while a new feature or product needs the relevant journey and system decisions. Backend-only work and structural refactoring with no new interface decisions skip this handoff. For such refactors, record the established component, behavior, copy, and rendered-state contracts as the preservation baseline and verify them after consolidation. Changing file ownership, imports, resource keys, or shared implementation does not by itself authorize redesign or copy improvement.
 
 Receive the selected layout representation, exact copy, component/token mapping, responsive rules, important states and recovery, assumptions, risks, and acceptance checks. Reuse a current handoff that already covers these decisions; ask Design to resolve only gaps or changed constraints. Continue UI implementation when consequential design blockers are resolved. Keep permitted independent work moving while a product question is pending. If implementation evidence invalidates a decision, return that evidence to Design and revise the affected portion before proceeding. Do not silently redesign the interface during coding or restart an unchanged planning cycle. Explicit user instructions to skip planning take precedence; preserve and report consequential unresolved decisions.
 

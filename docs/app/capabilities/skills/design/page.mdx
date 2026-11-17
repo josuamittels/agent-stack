@@ -4,7 +4,7 @@ title: "Design"
 
 # Design
 
-> **Skill** · **experimental** · **v0.1.0** · updated 2026-11-15
+> **Skill** · **experimental** · **v0.2.0** · updated 2026-11-17
 
 ## Purpose
 
@@ -25,6 +25,10 @@ For example, ask Design to plan a bulk-edit flow for an existing inventory produ
 5. **Critique and stress-test it.** Review the proposal for intent, composition, coherence, craft, expression, restraint, task clarity, and access. Use [Pre-Mortem](/capabilities/disciplines/pre-mortem) to find plausible failure paths and revise the plan. A rendered proposal can receive a scoped [Audit Design](/capabilities/skills/audit-design) when that coordinated review is warranted.
 6. **Return an implementable handoff.** Fill in the [design handoff template](https://github.com/josuamittels/agent-stack/blob/main/src/skills/design/templates/design-handoff.md) with settled decisions, evidence, risks, and acceptance checks. Return it to [Build](/capabilities/skills/build) when Build is the caller; a design-only request stops with the plan.
 
+## Current scope
+
+For consolidation or redesign, use supplied standards and corroborated history to establish direction; recency alone does not establish authority. Resolve reusable page compositions and justified exceptions in the handoff. Refactor may consume existing decisions without invoking a new design workflow.
+
 ## Result and limits
 
 Receive a selected interface design with its layout, exact copy, existing component and token references, interaction and state rules, responsive and content behavior, assumptions, tradeoffs, pre-mortem responses, and implementation checks. Design uses your project's specification location, otherwise a fresh `design/<task-slug>/` directory in the authorized workspace.
@@ -35,7 +39,7 @@ Design creates planning artifacts and stops before application code. Build imple
 
 ## Version and changes
 
-Version **0.1.0**, status **experimental**. This initial version adds repository-aware interface planning and the pre-implementation handoff from Build. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+Version **0.2.0**, status **experimental**. This revision clarifies existing-direction evidence and reusable compositions within interface planning. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
 
 ## References
 

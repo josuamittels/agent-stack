@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
+  "catalog_sha256": "a6276f2c27b489bba2f91ac5f4892a6320923981f0252df1d6a7d53d711dbce7",
   "name": "build",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "experimental",
-  "stack_version": "0.55.0",
+  "stack_version": "0.56.0",
   "channel": "release",
   "dependencies": [
     {
@@ -19,12 +19,12 @@
     },
     {
       "name": "audit-design",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "status": "experimental"
     },
     {
       "name": "audit-ux",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "status": "experimental"
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "name": "build",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "status": "experimental"
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "name": "design",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "status": "experimental"
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "name": "translate",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "name": "write",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "status": "stable"
     }
   ],
@@ -169,12 +169,12 @@
     "src/skills/audit-accessibility/SKILL.md.tmpl": "ae2af447e98561ed884127ac5256752a2a5f6f05f6eeea2c700fc5905e4ba19c",
     "src/skills/audit-accessibility/references/rubric.md": "b27bd7b65c2d9da3032ae393bc61bd1ae59d661dcd6bcac9348d2ed8cb718608",
     "src/skills/audit-accessibility/templates/report.md": "a5c521be9b306a8de06e2c621eb1cb4bbb1700b17b0578ccc94fd19a22fdb780",
-    "src/skills/audit-design/SKILL.md.tmpl": "4c5cc7686c1d649917924034b95f8506f45a75f4f4342d30afd0e5f251546a01",
-    "src/skills/audit-ux/SKILL.md.tmpl": "920ec5f23229cae9253ae78032d5bd544095382c1dc1d5d82f9eb23c654bd3a8",
-    "src/skills/audit-ux/references/review-lenses.md": "822fa6be50aa4a4499725571596ebda7f92575eefd5bb78a30a1496c6922730c",
-    "src/skills/audit-ux/templates/report.md": "ede71800f6dfcfb7cfa2f091d9f0316fbf32a42d5c6b35f518ff2f32074c8b01",
+    "src/skills/audit-design/SKILL.md.tmpl": "0a3c6eec00d536af08e6e3478ae5845afe11f747da96cabab9eadfa958f7cd60",
+    "src/skills/audit-ux/SKILL.md.tmpl": "ce1e9a1dadb1f6055d44637ba126ea653ac8b2c295ad6eb306c8e52fa2e369cb",
+    "src/skills/audit-ux/references/review-lenses.md": "111c0d3cf11049eb8cba7850d6514f1e8b839516105c3df83f736493d6b910c5",
+    "src/skills/audit-ux/templates/report.md": "3685034a45ffacf7e8005b03b4d311437c6a638a4b2aed3226b8db3882e32e88",
     "src/skills/browse-skills/SKILL.md.tmpl": "b309faed29740c25e8e21b61c799f9b7a93749965544e85e88311ff96a164d7b",
-    "src/skills/build/SKILL.md.tmpl": "3e4298465bf0e89b7d58d6e2d3ce08b6140fb0f9b39d98e191dfe13e367b09bf",
+    "src/skills/build/SKILL.md.tmpl": "bb673d6302ce72254e325df00b740db5f1b4301b627be4ca50b92292b445841b",
     "src/skills/build/references/verification.md": "a3a3e5816bba51cca863adca25cf0e1c78beef0c79998902c9cc127398481693",
     "src/skills/check-colour-contrast/SKILL.md.tmpl": "be0c848279a150205075641c8661cf7d75a280d69c8b7f065f366a19317e5529",
     "src/skills/check-colour-contrast/scripts/check-colour-contrast.mjs": "5c6e7a443cd1fa3625bdc2020f1123279a6adec016ccdf68ffa18c26d190fc3c",
@@ -196,7 +196,7 @@
     "src/skills/create-skill/SKILL.md.tmpl": "02b1dd7174f2746771a01fabf48cefa7d76d9d3a95eec24fcbf8c84d71ee1269",
     "src/skills/create-skill/references/authoring.md": "5d1f5029c740f20f583e64fbcdb7853f596b916f78635ed1511c2f5e0479555f",
     "src/skills/create-skill/templates/SKILL.md.tmpl": "d05822adb21a27579af3c4680c47c8ab9afb597cb94051ce6163b28d34c77216",
-    "src/skills/design/SKILL.md.tmpl": "e5f486da9643d9128936939f8b4afaa2cc422b0490667b01d184a9cf869de274",
+    "src/skills/design/SKILL.md.tmpl": "beedab62fc69e783b6809e82b3d231cdce274fc0a513044ee6ffecbfc3abe5f6",
     "src/skills/design/templates/design-handoff.md": "74483c80e4a335327badf6ab674044cb5be032ba9b52793f0cdf6f31882db0b7",
     "src/skills/mind-wandering/SKILL.md.tmpl": "481648bbb118eaa0641996b09988d8820e20a58d0def00676a36f239b9155aa0",
     "src/skills/mind-wandering/references/agent-translation-human-creativity-techniques.md": "2f52476f9a6f0564a88cc01b3917d5248650b70ac0d3f51205dc8d23566203bc",
@@ -210,7 +210,7 @@
     "src/skills/pre-mortem/SKILL.md.tmpl": "8d9b42b2417c1f00f361443d03a4b7765ba59cf59bd0262db8a5901e2e42eb24",
     "src/skills/release-agent-stack/SKILL.md.tmpl": "78593390cb23b98a280fdf34a98239a8b86c9a97901d2b22e3bec53c89886570",
     "src/skills/ship/SKILL.md.tmpl": "f31b7d4de19974edd46d2ffcff6c9b51170d352ec58e37a30df66431e37172d8",
-    "src/skills/skill-issue/SKILL.md.tmpl": "04c2a16485824b352b0b7986cd39a0e8164f4c8d5a16446f16fbe4857832f1b8",
+    "src/skills/skill-issue/SKILL.md.tmpl": "a86d9c47f0c5d073801f4efc9d1aa525443ec516e2cc3e42c7a9c65cbb7b47bb",
     "src/skills/spawn-evals/SKILL.md.tmpl": "d360322beec5ced85098ea3cff5a1a7edc6e36aa64fa5aca96f22575cfdf7753",
     "src/skills/spawn-evals/references/package-setup.md": "ba3a4e17fc7756b77711630bc057de93804f15592f3676aa8d7bbbd64b42ccdf",
     "src/skills/spawn-evals/references/runner.md": "94eaa165469045bff7ec465d2712ae5046ac86c47335e28d0d9babdae5022763",
@@ -218,14 +218,14 @@
     "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
     "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
-    "src/skills/translate/SKILL.md.tmpl": "cb5e9111b2586de0b1a2d9bdc71796d004147f7e0c4731b406af443751ba7808",
+    "src/skills/translate/SKILL.md.tmpl": "a5bad1ba652106bad7d17d80ac8f5aa325f0ec1a956e2d32802680329f0951d6",
     "src/skills/update-changelog/SKILL.md.tmpl": "43e8ef4b135404031c6db2a2c1022404bb3828013731698ca476d75b6acbe862",
     "src/skills/update-map/SKILL.md.tmpl": "ecbb7c63c3fcb6868a4ab5f9965c91ed6a97bdc1aec8473891e2c3fa9b1eea10",
     "src/skills/update-router/SKILL.md.tmpl": "00c00e278fd6d2fcdc569717b18fd492f2c620580e1392616c269ace7355055c",
     "src/skills/update-router/scripts/sections.mjs": "cda918e5ecbc98a2a5a7244f44bb5c6e549134f8c7dadf08b1539895b07f3f81",
     "src/skills/update-router/templates/AGENTS.md": "138f75403cb61e637e4e401c18f81f2011d3d6b9c4a8d77bdb30f72429f5385d",
     "src/skills/update-router/templates/router.md": "5329ed400fbf483cb13b28b7de57ebf375b65c274c360b8be3d98889912963ae",
-    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+    "src/skills/write/SKILL.md.tmpl": "e7860999b575b5e9c3f50e8b37495c25265903332a67d812623cce28fec11df7"
   },
   "files": {
     "LICENSE": {
@@ -393,19 +393,19 @@
       "mode": 420
     },
     "references/_stack/skills/audit-design/instructions.md": {
-      "sha256": "f896624416b2a602691fd2d73ed4c8baf664b6c848d03aa0767a6033ef832fd2",
+      "sha256": "4b7355b87fe44235fa90cce65b42da767260e4e8c883739c3282143aec4774a7",
       "mode": 420
     },
     "references/_stack/skills/audit-ux/instructions.md": {
-      "sha256": "0dc8c88b0c698a651731be093ab803d0f73fbcf8c6c5c5a561d12f4e30cb167d",
+      "sha256": "4f9c1682cc41244e604b312d26539e026d7a026f12313957918593313466d1c8",
       "mode": 420
     },
     "references/_stack/skills/audit-ux/references/review-lenses.md": {
-      "sha256": "822fa6be50aa4a4499725571596ebda7f92575eefd5bb78a30a1496c6922730c",
+      "sha256": "111c0d3cf11049eb8cba7850d6514f1e8b839516105c3df83f736493d6b910c5",
       "mode": 420
     },
     "references/_stack/skills/audit-ux/templates/report.md": {
-      "sha256": "ede71800f6dfcfb7cfa2f091d9f0316fbf32a42d5c6b35f518ff2f32074c8b01",
+      "sha256": "3685034a45ffacf7e8005b03b4d311437c6a638a4b2aed3226b8db3882e32e88",
       "mode": 420
     },
     "references/_stack/skills/browse-skills/instructions.md": {
@@ -413,7 +413,7 @@
       "mode": 420
     },
     "references/_stack/skills/build/instructions.md": {
-      "sha256": "be5b1f0bd7114c80630054ee8d8f4b23486c31069bb1d8eab7dd81992ebb6ab2",
+      "sha256": "6fd2440fb876052d1744a057bda948cca6f5d92aa6269b447c0e15cd7da96f24",
       "mode": 420
     },
     "references/_stack/skills/build/references/verification.md": {
@@ -501,7 +501,7 @@
       "mode": 420
     },
     "references/_stack/skills/design/instructions.md": {
-      "sha256": "532cd92334d8588815be236cb87686a23b7109413438c9579248e83b776f2e2d",
+      "sha256": "4ca6f70317f4ce8abb54168ca73d5735bd781c3d95e1ac39281c8fb8a7a10811",
       "mode": 420
     },
     "references/_stack/skills/design/templates/design-handoff.md": {
@@ -557,7 +557,7 @@
       "mode": 420
     },
     "references/_stack/skills/skill-issue/instructions.md": {
-      "sha256": "6c02e67df7c3db21e2c74bf38ee1f5ac1fcebcac725587cbc64bd42b00508a4a",
+      "sha256": "e7f59f892c4176d74b7fdc13d593515623cc91ae5ff1bdb8317a35926c71b595",
       "mode": 420
     },
     "references/_stack/skills/spawn-evals/instructions.md": {
@@ -589,7 +589,7 @@
       "mode": 420
     },
     "references/_stack/skills/translate/instructions.md": {
-      "sha256": "dd5d7392760a3b4f72c7f0de3e2ed7e607f64098e344f9bb52bd2d3450ff2146",
+      "sha256": "5645e4d771dec164c36257925de1118a431234400f273624bc2965afd53a9f73",
       "mode": 420
     },
     "references/_stack/skills/update-changelog/instructions.md": {
@@ -617,11 +617,11 @@
       "mode": 420
     },
     "references/_stack/skills/write/instructions.md": {
-      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "sha256": "9216c71257050f4ceb607e599e40301074248402803b3a60e2a563120faa3d8a",
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "e89f0fa9eb9213865ec04ecd943c8ea5dfe84fa9640ee6f3f8ecb729ebd41164",
+      "sha256": "f0dab48c101d114424649e316f9a19cdb11b17ba0d9701aff3dfd5a125145877",
       "mode": 420
     }
   }

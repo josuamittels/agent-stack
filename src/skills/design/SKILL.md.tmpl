@@ -1,9 +1,9 @@
 ---
 name: "design"
 description: "Plan visual UI/UX for a new feature, product, or redesign in its repository and design system. Resolve structure, aesthetics, interactions, content, and states into an implementable handoff before Build changes the interface."
-version: "0.1.0"
+version: "0.2.0"
 created: "2026-11-15"
-updated: "2026-11-15"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -54,6 +54,8 @@ Scale the work to the decisions still open. A local change can return a compact 
 
 Inspect applicable project instructions, relevant documentation, route structure, feature code, data models and permissions, component exports and examples, tokens, typography, icon assets, and localization conventions. Record actual paths for evidence that constrains the design. Check component variants and behavior before claiming they can be reused. Follow relevant paths rather than inventorying the entire repository.
 
+For consolidation or redesign, establish which design decisions are authoritative. Use supplied standards and approved decisions where available; without a formal system, infer a bounded working direction from rendered patterns, tokens, component contracts, and task needs. Correlate Git history and supersession notes with approval, adoption, completeness across states, and runtime quality. Recency, file modification times, or majority usage alone do not establish authority. Distinguish supplied, observed, inferred, and unresolved direction; report unavailable history and resolve consequential competing directions before handoff. Return canonical patterns, justified exceptions, and a map from superseded designs to replacements. Code deletion and migration execution stay with Build or the cleanup coordinator.
+
 Inspect available rendered screens or supplied images with the appropriate viewing tool. Examine the surrounding journey as well as the insertion point. Separate observed design conventions from accidental inconsistencies and source-based inferences. If the UI cannot run, continue source inspection and name the visual evidence gap. Do not describe an unseen render as inspected.
 
 Identify the user's starting situation, desired outcome, frequency and expertise, information needed to act, and what success and recovery mean. Mark what is supplied, observed, inferred, or unknown. Use research as evidence with its limits; competitor examples suggest possibilities rather than requirements. For a new project, establish the smallest coherent structure that supports its real tasks.
@@ -100,6 +102,8 @@ Pair the visual representation with implementable decisions:
 - Specify layout rules, text hierarchy, spacing roles, widths, alignment, colour and surface roles, and asset behavior. Resolve existing token names and values where available. Give new values or bounded behavior when needed; do not leave instructions such as “make it elegant” for Build to interpret.
 - Define responsive changes from content and existing breakpoints: ordering, wrapping, stacking, overflow, navigation, and action placement. Cover relevant themes, languages, text expansion, and platform input modes. Do not assume a desktop screenshot determines mobile behavior.
 - Define each important control's trigger, resulting state, feedback, persistence, focus lifecycle, dismissal or back behavior, and recovery. Include loading, empty, partial, validation, error, disabled, permission, success, and destructive states when relevant; identify omissions by applicability rather than fabricating states.
+
+For repeated tasks across related pages, resolve one coherent composition where the content and interaction contracts align. Map shared field structure, headers/actions, toolbars, form sections, containers, list/detail layouts, and feedback states to real primitives and domain compositions. Document stable slots and legitimate contextual differences rather than page-name flags or a universal configurable page. Use existing typography, spacing, and container contracts through the selected aesthetics guidance. Return affected consumers and visual acceptance criteria to the implementation owner.
 
 Use [Write](../write/SKILL.md.tmpl) for exact interface copy in the product's language and voice: labels, actions, hints, empty states, validation, errors, confirmations, and feedback. For supplied strings needing another language, invoke [Translate](../translate/SKILL.md.tmpl) and return its localized copy to the same design. Keep domain terms consistent with surrounding UI.
 

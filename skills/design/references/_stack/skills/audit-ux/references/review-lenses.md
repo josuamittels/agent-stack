@@ -61,6 +61,16 @@ For a task, step or selected principle, use these qualitative outcomes:
 
 These labels are judgments for a bounded review, not measurements or an additive score. Keep technical accessibility's own status labels in its subreport. Do not convert its percentage metrics into a UX rating.
 
+## Context and localization lens for product language
+
+Use when reviewing interface copy, help, or messages in a user journey. Establish the intended person's role, mission, prior knowledge, current state, and success condition from the audit's user evidence. Compare the information they need at this step with what the interface supplies. Record too little context, unjustified assumptions, or excessive/repeated explanation as a concrete task concern. Judge adequacy by the decision or action supported, rather than word count or a preference for brevity.
+
+Trace labels, actions, accessible names, guidance, validation, empty/loading/error/success states, confirmations, permissions, and consequential claims to their screen and resource key where available. Check whether the person can identify the next action, anticipate its scope and conditions, recognize completion, and recover. Compare promised timing, costs, permissions, persistence, and outcomes with available behavior. Quote exact wording; separate observed contradiction from an unverified claim. Brand tone does not override truthful consequences or informed choice.
+
+Compare terminology and message meaning across related states and roles. Distinguish essential decision context from optional help and identify where information should appear. Propose the intended meaning, replacement wording where useful, placement change, and verification question. Final prose/localization and design planning stay with their owners; an audit-only request returns recommendations.
+
+For multilingual products, inspect each reviewed locale as an experience in its own right rather than treating resource/key parity as proof of comprehension. Use supplied locale conventions, terminology, and audience knowledge without inventing cultural preferences. Flag unnatural or stale wording, misleading adaptations, inconsistent address, and missing localized context; retain legitimate grammatical differences. Mark languages, states, runtime claims, and native-speaker review outside available competence or evidence as unknown. A walkthrough predicts possible problems; actual comprehension requires appropriate user evidence.
+
 ## Impact and priority
 
 | Severity | Anchor |

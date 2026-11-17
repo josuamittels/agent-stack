@@ -6,9 +6,9 @@ description: Implement, repair, and refactor software, apps, and interfaces with
   changes are the requested outcome.
 license: MIT
 metadata:
-  version: 0.2.0
+  version: 0.2.1
   status: experimental
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

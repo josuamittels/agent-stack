@@ -1,9 +1,9 @@
 ---
 name: translate
 description: "Translate and localize human-facing text into a target language with fluent, culturally appropriate phrasing. Use for prose, product copy, documentation, and messages that should read naturally in their destination language while preserving the source's meaning, intent, and factual claims."
-version: "1.0.0"
+version: "1.1.0"
 created: "2026-10-24"
-updated: "2026-10-31"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -74,6 +74,10 @@ Localize presentation of dates, numbers, units, currencies, and forms of address
 
 ### 3. Invoke Write
 
+For app resources, prepare a message-to-context map before translating: user role and task, screen/state, intended action or consequence, source key, terminology and register, target locale, and protected interpolation/plural/select/rich-text contracts. Read existing translations as content in their own right when a review is requested; identify stale meanings or fluent but misleading promises. Resolve consequential ambiguity in the source with the owner before propagating it. Equal source strings may require different localizations in different contexts; do not merge them mechanically.
+
+Apply the treatment selected in step 2 to each context. Natural localization is the default, including appropriate local terminology, address, idiom, and presentation conventions while preserving facts and task consequences. Preserve grammatical differences such as plural categories and word order instead of imposing English structure or equal message length. Supply exact protected tokens, resource serialization/escape rules, and framework constraints to Write; locale-specific grammar is compatible with a stable functional contract.
+
 Before producing target prose, require [write](../write/instructions.md). Pass the original source and internal brief, including the target locale, permitted adaptations, terminology, protected elements, and fidelity requirements.
 
 Have Write compose the target-language text using its mandatory language-guideline selection and fallback. Keep the requested output language even when its guidance falls back to English. Do not duplicate its prose guidelines here.
@@ -81,6 +85,10 @@ Have Write compose the target-language text using its mandatory language-guideli
 Use the host's invocation mechanism when available. Otherwise read and apply the skill in the current context. Do not claim a separate invocation occurred when it did not. If Write or its required usable guidance is unavailable, report the dependency and withhold the translation rather than bypassing it.
 
 Explicitly identify prose authorized for translation, including quoted passages. Distinguish it from citations, code, identifiers, interpolation variables, link destinations, and other elements that must remain exact. Preserve attribution and distinguish translated quotations from original-language wording where necessary.
+
+### 4. Check app-resource integration when applicable
+
+Return key-to-localized-value mappings or valid resources in the requested format, with unresolved meaning and review limits identified. Where rendered access is available and within scope, inspect interpolation, plural/select cases, formatting, truncation, expansion, and relevant RTL layouts in context; otherwise give these checks to the owning design or implementation workflow. Distinguish source comparison, rendered checks, and actual native-speaker/user review. Updating loaders, keys, consumers, and generated artifacts remains the implementation owner's work.
 
 ## Output
 

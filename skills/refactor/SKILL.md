@@ -1,13 +1,14 @@
 ---
 name: refactor
 description: Audit and refactor codebases and interacting component libraries.
-  Plan architecture, component consolidation, variants, conventions, and legacy
-  removal; implement in themed commits on refactor branches when requested.
+  Plan code ownership, structure, duplication, legacy removal, and consistent
+  implementation; migrate consumers in themed commits on refactor branches when
+  requested.
 license: MIT
 metadata:
-  version: 0.2.0
+  version: 0.4.0
   status: experimental
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

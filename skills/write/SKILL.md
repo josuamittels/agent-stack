@@ -7,9 +7,9 @@ description: Write, edit, and translate any prose people will read, including
   phrasing.
 license: MIT
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   status: stable
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

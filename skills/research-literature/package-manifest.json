@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
+  "catalog_sha256": "a6276f2c27b489bba2f91ac5f4892a6320923981f0252df1d6a7d53d711dbce7",
   "name": "research-literature",
   "version": "1.0.0",
   "status": "stable",
-  "stack_version": "0.55.0",
+  "stack_version": "0.56.0",
   "channel": "release",
   "dependencies": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "write",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "status": "stable"
     }
   ],
@@ -112,7 +112,7 @@
     "src/skills/spawn-evals/scripts/runner.py": "d9198eb9bf7596851193801f8fa3bb1eacbc65878e63f398b6bc119f35310fb7",
     "src/skills/think-deeper/SKILL.md.tmpl": "c634bbbac5889fb7cce34a9e9325f77c954050664400154ed0f59f0b2471bedf",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
-    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+    "src/skills/write/SKILL.md.tmpl": "e7860999b575b5e9c3f50e8b37495c25265903332a67d812623cce28fec11df7"
   },
   "files": {
     "LICENSE": {
@@ -392,11 +392,11 @@
       "mode": 420
     },
     "references/_stack/skills/write/instructions.md": {
-      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "sha256": "9216c71257050f4ceb607e599e40301074248402803b3a60e2a563120faa3d8a",
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "f9f81dc91d5c228a161fc3e914da77fd9b3fb1cbca2f0842c79a9c5c15d9a136",
+      "sha256": "1a728e35a6de04f95b0184aae9832cb4b3918b9f42419ddc62d945a78dfdee0e",
       "mode": 420
     }
   }

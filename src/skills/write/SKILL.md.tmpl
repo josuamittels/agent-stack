@@ -1,9 +1,9 @@
 ---
 name: write
 description: "Write, edit, and translate any prose people will read, including product interfaces, websites, documentation, articles, and messages. Apply when producing human-facing text, including within implementation tasks, to preserve meaning, fit the intended voice and audience, and remove formulaic AI phrasing."
-version: "2.0.0"
+version: "2.1.0"
 created: "2026-10-24"
-updated: "2026-11-02"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -65,6 +65,10 @@ Fallback selects guidance, not output language. Keep the requested language and 
 A usable reference is mandatory. If neither the selected reference nor the English fallback can be read, report the missing dependency and withhold the prose deliverable. Do not silently substitute general writing advice.
 
 ### 3. Tailor and compose
+
+For interface copy, use the user/task, screen/state, verified behavior, terminology/voice, and available layout constraints supplied by the owning workflow. Resolve consequential missing meaning through the shared clarification procedure before drafting. Produce exact labels, actions, help, errors, confirmations, and feedback as requested, keeping equivalent terms coherent across the supplied journey. Return unresolved behavioral claims to the owner rather than inventing guarantees. When an audit or Design handoff exists, implement its settled content requirements instead of repeating the audit or redesigning the flow. The language guides own prose standards; this workflow owns applying them to the supplied content contract.
+
+When editing resource files, distinguish authorized user-facing values from keys, placeholders, markup, links, and other protected syntax. Return copy in the requested valid format with identifiers preserved unless renaming is explicitly authorized. Cross-product reference migration and runtime integration belong to the implementation owner.
 
 Turn supplied style descriptions into concrete choices about vocabulary, formality, rhythm, explanatory depth, directness, questions, emphasis, and closing language.
 

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "47482776f2d88933baff884e20f77c6e6b0814769c99c079d6c6c3aa5340d671",
+  "catalog_sha256": "a6276f2c27b489bba2f91ac5f4892a6320923981f0252df1d6a7d53d711dbce7",
   "name": "compose-career-profile",
   "version": "1.1.1",
   "status": "stable",
-  "stack_version": "0.55.0",
+  "stack_version": "0.56.0",
   "channel": "release",
   "dependencies": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "write",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "status": "stable"
     }
   ],
@@ -41,7 +41,7 @@
     "src/skills/compose-career-profile/scripts/career_workspace.py": "6feae03c62d3482244acac0917ed4ddfe2d1d01e085b3252772f45d48d2ba64b",
     "src/skills/compose-career-profile/templates/career-profile.md": "2242205449d3211353accdff5b9a13725e1d1a3048fc7fd4c6ba236f8eb0fd8e",
     "src/skills/think-harder/SKILL.md.tmpl": "be727f5f934e431ab6aebdedc70c0059c0020667d7d9732bd931f51490ae15c3",
-    "src/skills/write/SKILL.md.tmpl": "a0f08b3bd21be744023cd0d3d785d9c7ac5f9ca282539e4ed7dfffa1bad73932"
+    "src/skills/write/SKILL.md.tmpl": "e7860999b575b5e9c3f50e8b37495c25265903332a67d812623cce28fec11df7"
   },
   "files": {
     "LICENSE": {
@@ -97,11 +97,11 @@
       "mode": 420
     },
     "references/_stack/skills/write/instructions.md": {
-      "sha256": "78a990609d03fbc5b09177ce9cb08169de41c7302841f34987be328e37ccaabd",
+      "sha256": "9216c71257050f4ceb607e599e40301074248402803b3a60e2a563120faa3d8a",
       "mode": 420
     },
     "SKILL.md": {
-      "sha256": "87e2752bab6a1e3eceadd85cf654306a55117975abddda6fcc3134a9b327fbb7",
+      "sha256": "71ef1b27c13456437d3b0dcd94e163f332d6024d544e98b6133cc51541b7ee9e",
       "mode": 420
     }
   }

@@ -6,9 +6,9 @@ description: Plan visual UI/UX for a new feature, product, or redesign in its
   interface.
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.2.0
   status: experimental
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

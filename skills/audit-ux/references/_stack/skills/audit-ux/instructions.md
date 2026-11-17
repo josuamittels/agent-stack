@@ -1,9 +1,9 @@
 ---
 name: "audit-ux"
 description: "Audit how well a supplied design, interface, or information artifact serves its users' jobs, needs, expectations, and tasks. Clarify unresolved customer context, include an accessibility sub-audit, and fill a modular UX report with evidence, prioritized improvements, and validation actions."
-version: "0.1.1"
+version: "0.2.0"
 created: "2026-11-12"
-updated: "2026-11-12"
+updated: "2026-11-17"
 author:
   - "Josua Mittelstaedt"
 references:
@@ -60,13 +60,17 @@ Define representative tasks in outcome language, with IDs, user/context, trigger
 
 Read the applicable review lenses and select the report modules. Explain which principles apply to each task or information need. Use conventions relevant to the actual platform, domain, and user experience. Name the comparison and explain a departure's cost or benefit rather than treating a familiar pattern as universally required.
 
+For requested app-language or localization audits, inspect translation JSONs or other message resources alongside their consuming screens, journeys, roles, and states. Use keys to trace wording and coverage; assess whether the language gives the intended person enough truthful, natural context through the context/localization lens. Source resources alone cannot establish rendered placement, dynamic meaning, or comprehension. Resource organization, duplicate-key integrity, reference migration, and code ownership remain implementation concerns; keep those distinct from the content findings returned by this audit.
+
 ### 3. Walk the experience and assess usability
 
 For each task, inspect entry, orientation, decisions, action, feedback, completion, and relevant interruption/recovery. At each step examine whether the intended person can understand the local goal, find the action or information, anticipate its effect, and recognize progress toward the larger outcome. For static artifacts, follow the reading/comparison/decision sequence instead of inventing a click path.
 
 Assess both first-use learnability and repeat-use efficiency. Check task/need fit, information scent, language and conceptual model, choice and memory burden, consistency/conventions, feedback/state, control, error prevention/recovery, continuity, help, and informed choice where applicable. Use the lenses as diagnostic questions, not a quota of faults. Fewer clicks, more engagement, or visual simplicity do not by themselves establish better UX.
 
-Explicitly review hierarchy, consistency and language using the corresponding review lenses. Check whether emphasis and sequence help the person identify the main message, next step and important conditions. Compare equivalent controls, terms and consequences across the available scope. Inspect labels, instructions, claims, errors and calls to action for ambiguity, misleading promises or omissions, and language inappropriate to the user's knowledge, circumstances or supplied brand guidance. Compare wording with actual behavior or available evidence; unavailable behavior leaves a truthfulness question open. Quote the relevant text and give a concrete correction or a question needed to resolve it. Brand voice does not justify obscuring a consequence or pressuring a choice.
+Explicitly review hierarchy, consistency and language using the corresponding review lenses. Check whether emphasis and sequence help the person identify the main message, next step and important conditions. Compare equivalent controls, terms and consequences across the available scope. Inspect labels, instructions, claims, errors and calls to action for ambiguity, misleading promises or omissions, and language inappropriate to the user's knowledge, circumstances or supplied brand guidance. Compare wording with actual behavior or available evidence; unavailable behavior leaves a truthfulness question open. For a product-language review, apply the context and localization lens in the required review-lenses reference to complete journeys as well as individual messages. Trace resource keys to rendered states when available; compare copy claims with actual behavior and mark unknowns. Return suggested meaning/context corrections and validation needs to the owning workflow; final source copy belongs to Write, locale adaptation to Translate, and changed placement or interaction structure to Design. Do not invoke those production workflows during an audit-only request.
+
+Quote the relevant text and give a concrete correction or a question needed to resolve it. Brand voice does not justify obscuring a consequence or pressuring a choice.
 
 For interfaces, inspect whether features and options are located, grouped and available where and when the intended user would look for them. Include navigation, contextual actions, settings, defaults and relevant permission/state differences. Compare the result suggested by a control's label, icon, placement and convention with its actual behavior, scope and feedback. Ground expectations in supplied user evidence, relevant conventions or a labeled hypothesis; the reviewer's preference is insufficient. Record expected location/effect, observed location/effect, task consequence and a concrete correction or validation question. A static mockup can support a placement concern while leaving behavior unverified.
 

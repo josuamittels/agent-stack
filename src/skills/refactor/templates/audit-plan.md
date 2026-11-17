@@ -2,7 +2,7 @@
 
 ## Contract and coverage
 
-Record requested mode, outcomes, repositories, bases, versions, instruction paths, supported consumers, baseline commands/results, and inspected/sampled/excluded/unavailable areas.
+Record requested mode, outcomes, project purpose and domain terminology, implemented users/roles and primary flows, repositories, bases, versions, instruction paths, supported consumers, preservation baseline, baseline commands/results, and inspected/sampled/excluded/unavailable areas.
 
 ## Rules and decisions
 
@@ -23,16 +23,12 @@ Describe current and target ownership, package graph, import direction, state/sc
 | Family | Implementations and consumers | Purpose/semantics/state | Differences and variants | Decision and rationale | Canonical owner and API mapping | Checks |
 | --- | --- | --- | --- | --- | --- | --- |
 
-## Design direction and UI consistency
+## Established UI contracts and consolidation
 
-Record supplied design authorities, observed patterns, relevant Git evolution and supersession evidence, inferred direction, confidence, competing directions, and unavailable history or renders. Record the selected aesthetics/coding guidance and resolved decisions. Without a supplied system, define the minimum maintained visual-role, token, component, and page-composition contract needed for this product.
+Record authoritative component/token/style sources, code owners, consumer and supersession evidence, migration history, justified alternatives, and unresolved authority. Describe which implementations diverge from the same established contract and how consolidation preserves behavior and meaning. Do not propose a new design direction here.
 
-| Role or repeated task | Routes/products and rendered evidence | Inconsistent typography, space, container, composition, or behavior | Intended rule and canonical owner | Migration task and justified exceptions | Before/after and runtime checks |
+| Existing pattern and contract | Duplicate/divergent implementations and consumers | Canonical source and evidence | Preserved differences | Migration/removal task | Regression verification |
 | --- | --- | --- | --- | --- | --- |
-
-Classify implementations as canonical, contextual alternatives, transitions, experiments, obsolete, or unresolved. Link obsolete components, tokens, styles, and overrides to replacements and removal tasks. Include all affected consumers and supported states; distinguish intentional visual changes from behavior-preserving refactoring.
-
-Include a component-family outlier pass: compare equivalent roles and states, record unexplained deviations from shared design foundations, trace their causes and possible legacy origins, and resolve each through consolidation or an evidenced exception. For form fields include labels/help/errors, text roles, density, padding, borders, surfaces, icons, focus, and disabled/read-only presentation across actual forms.
 
 ## Removal ledger
 
@@ -47,6 +43,10 @@ Record authoritative naming rules, supported locales, source locales and fallbac
 
 | Old name, path, or key | Replacement and rationale | Affected products, locales, and consumers | Task and migration order | Compatibility or historical exceptions | Reference and runtime verification |
 | --- | --- | --- | --- | --- | --- |
+
+## Supplied decisions and out-of-scope observations
+
+Reference existing approved decisions or supplied findings only where they establish a migration target or preservation constraint. Record optional product/design/content concerns separately without initiating audits or making improvements prerequisites for cleanup.
 
 ## Migration tasks
 

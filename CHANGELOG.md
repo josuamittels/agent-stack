@@ -6,6 +6,8 @@ Notable changes to Agent Stack are recorded here. Versions follow the coordinate
 
 ### Changed
 
+- Keep Refactor focused on code ownership, duplication, resource organization, consistent implementation, and legacy migration without triggering product audits. Place contextual language review and UI family review in Audit UX and Audit Design, direction planning in Design, and interface writing/localization in Write and Translate. Build skips new design planning for structural refactors without new interface decisions.
+
 - Extend experimental Refactor with translation and naming audits, complete reference migrations, inferred design direction, component-family outlier detection, and consistent typography, spacing, containers, and reusable page compositions.
 
 ### Added

@@ -6,9 +6,9 @@ description: Translate and localize human-facing text into a target language
   language while preserving the source's meaning, intent, and factual claims.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   status: stable
-  stack-version: 0.55.0
+  stack-version: 0.56.0
   distribution: release
 ---
 

@@ -4,7 +4,7 @@ title: "Build"
 
 # Build
 
-> **Skill** · **experimental** · **v0.2.0** · updated 2026-11-15
+> **Skill** · **experimental** · **v0.2.1** · updated 2026-11-17
 
 ## Purpose
 
@@ -19,11 +19,11 @@ For example, ask Build to repair a form that loses entered values after a failed
 ## Workflow
 
 1. **Inspect the project.** Establish expected behavior, affected callers, local standards, existing failures, and planned checks. A read-only subagent investigates a bounded question when delegation is available and permitted.
-2. **Resolve interface design.** Before changing an interface, use [Design](/capabilities/skills/design) to settle its layout, exact copy, component choices, responsive behavior, and state rules. Reuse a complete current handoff or update only its gaps. Backend-only work skips this handoff.
+2. **Resolve interface design.** For unsettled interface decisions, use [Design](/capabilities/skills/design) to settle layout, exact copy, component choices, responsive behavior, and states. Reuse a current complete handoff. Backend-only changes and structural refactors without new interface decisions skip planning and use the existing contracts as a preservation baseline.
 3. **Apply coding and design guidance.** Read the relevant TypeScript, Python, SQL, or Mermaid guide. For interfaces, inspect the existing system and supplied brief, then use the [aesthetics framework](/guidelines-and-references/guidelines/aesthetics/aesthetics-framework) to select interaction, accessibility, composition, and other relevant guidance.
 4. **Implement a coherent change.** Extend the project's structure, keep responsibilities and state ownership clear, and remove obsolete code, configuration, tests, and dependencies made unnecessary by the change.
 5. **Test according to risk.** Run applicable project checks. Add meaningful behavior and regression tests where warranted, and verify real integration boundaries when isolated tests would miss the failure. Small presentation changes receive rendered inspection without redundant tests.
-6. **Inspect the working result.** Open changed web interfaces in a real browser, inspect screenshots, and exercise the affected journey and relevant failure states. Compare the working interface with the Design handoff and resolve material departures. Use a simulator or device for native UI, or the actual command or service boundary for non-UI work.
+6. **Inspect the working result.** Open changed web interfaces in a real browser, inspect screenshots, and exercise the affected journey and relevant failure states. Compare the working interface with the applicable Design handoff or preservation baseline and resolve material departures. Use a simulator or device for native UI, or the actual command or service boundary for non-UI work.
 7. **Review and repair.** A subagent that did not author the implementation inspects the complete change and available runtime evidence. Resolve substantiated findings, rerun affected checks, and recheck material fixes before handoff.
 
 ## Code policy
@@ -31,6 +31,10 @@ For example, ask Build to repair a form that loses entered values after a failed
 Author no code comments, docstrings, TODO markers, commented-out implementations, or suppression directives. Explain the code through names, types, small functions, validation, and tests. Keep necessary rationale in external documentation. Preserve existing required legal notices and executable headers, report conflicts, and leave unrelated legacy comments outside the changed scope alone.
 
 Compatibility code stays only for an identified supported consumer or deployment transition, with its removal condition recorded outside source code. Build does not remove deployed migration history or public contracts based only on a text search.
+
+## Current scope
+
+Structural refactoring without new visual, content, or interaction decisions skips new Design planning. Build records the existing interface and behavior as a preservation baseline and verifies it after cleanup.
 
 ## Result and limits
 
@@ -44,7 +48,7 @@ For a comprehensive codebase audit, component-library consolidation, or a coordi
 
 ## Version and changes
 
-Version **0.2.0**, status **experimental**. Interface work now calls Design before implementation and checks the working result against its handoff. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
+Version **0.2.1**, status **experimental**. Interface work now calls Design before implementation and checks the working result against its handoff. See the [stack changelog](https://github.com/josuamittels/agent-stack/blob/main/CHANGELOG.md) for recorded changes.
 
 ## References
 

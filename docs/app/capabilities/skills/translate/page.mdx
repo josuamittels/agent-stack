@@ -3,7 +3,7 @@ title: "Translate"
 ---
 # Translate
 
-> **Skill** · **stable** · **v1.0.0** · updated 2026-10-31
+> **Skill** · **stable** · **v1.1.0** · updated 2026-11-17
 
 ## Purpose
 
@@ -20,6 +20,10 @@ Use Translate to translate supplied text or adapt it for a target language, loca
 
 Apply this sequence before the clarification instructions below.
 
+## Current scope
+
+App localization uses each message’s user/task/state, resource key, intended meaning, locale, terminology, and protected placeholder/plural/select contracts. Review existing locale wording in context, preserve valid grammatical differences, and return natural localized values or valid resources. Runtime integration and reference migration stay with the implementation owner.
+
 ## Result
 
 When used as a helper inside another requested skill, return the completed translation to that owner.
@@ -30,7 +34,7 @@ The [Skill Issue router](/capabilities/router/skill-issue) selects this skill wh
 
 ## Version and changes
 
-Version **1.0.0**; status **stable**. This is the first stable release. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/translate/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
+Version **1.1.0**; status **stable**. This revision adds context-aware application resource localization. Changes are recorded in the [source history](https://github.com/josuamittels/agent-stack/commits/main/src/skills/translate/SKILL.md.tmpl). The stack-wide inventory is in [VERSIONS.md](https://github.com/josuamittels/agent-stack/blob/main/VERSIONS.md).
 
 ## References
 

@@ -56,6 +56,15 @@ not an invented usability percentage or a substitute for observed-user testing. 
 
 {{Explicitly cover task/information hierarchy, consistency, and language where relevant. State whether each is supported, problematic, unknown or outside scope using the outcomes above. For hierarchy, identify the intended priority and competing cues. For inconsistency, compare concrete equivalent instances and explain any justified variation. For language, quote the text, identify the ambiguity, misleading implication or mismatch with users/brand context, and compare with available behavior or evidence. Link findings to concrete changes, suggested replacement wording and verification; keep unresolved user or brand context visible.}}
 
+## Product language and locale context
+
+{{Include for product-language review; omit when outside scope. Link user/task evidence and note locale/state coverage, assumptions, unavailable behavior, and native/user review limits.}}
+
+| User/task/state and locale | Screen/resource key | Exact wording and available behavior | Missing/excessive context, ambiguity, or misleading implication | Intended correction and owner | Verification need |
+| --- | --- | --- | --- | --- | --- |
+
+{{Assess complete journeys and related terminology alongside individual messages. Distinguish resource consistency, expert concerns, rendered evidence, and actual comprehension evidence. Link findings to the integrated actions rather than duplicating them.}}
+
 ## Accessibility sub-audit
 
 | Item | Result |

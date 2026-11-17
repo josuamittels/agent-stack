@@ -815,9 +815,6 @@ skills:
       - ship
       - show-me-your-work
       - spawn-evals
-      - audit-design
-      - design
-      - translate
     optional: []
     routes: []
     files:
@@ -826,11 +823,6 @@ skills:
       - skills/refactor/references/component-decisions.md
       - skills/refactor/references/verification.md
     resources:
-      - guidelines/aesthetics/reference.md
-      - guidelines/aesthetics/interaction.md
-      - guidelines/aesthetics/accessibility.md
-      - guidelines/aesthetics/composition.md
-      - guidelines/aesthetics/typography.md
       - guidelines/coding/typescript.md
       - guidelines/coding/python.md
     evaluations:

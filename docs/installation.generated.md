@@ -253,7 +253,7 @@ Requirements: Node.js >=22.20 for JavaScript helpers when present; Python >=3.10
 
 Status: eligible experimental candidate.
 
-Audit and refactor codebases and interacting component libraries. Plan architecture, component consolidation, variants, conventions, and legacy removal; implement in themed commits on refactor branches when requested.
+Audit and refactor codebases and interacting component libraries. Plan code ownership, structure, duplication, legacy removal, and consistent implementation; migrate consumers in themed commits on refactor branches when requested.
 
 `npx skills add josuamittels/agent-stack --skill ask-user-question audit-accessibility audit-design audit-ux browse-skills build check-colour-contrast create-docs create-guidelines create-skill design mind-wandering pre-mortem refactor ship show-me-your-work skill-issue spawn-evals think-deeper think-harder translate update-changelog write -a codex`
 
